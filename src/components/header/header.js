@@ -26,8 +26,7 @@ class Header extends React.Component {
 
   handleScroll = (_$event) => {
     const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-    const scrollRatio = scrolledSize / (window.innerHeight || window.screen.height);
-    const scrollDegree = Math.min(170 + (scrollRatio * 360), 250);
+    const scrollDegree = Math.min(scrolledSize * 2, 180);
 
     this.setState({ scrollDegree: scrollDegree })
   }

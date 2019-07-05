@@ -1,21 +1,23 @@
 section.navigation {
   &.fix {
     background-color: var(--color-primary);
-    border-color: rgba(34,34,34,.05);
     transition: all .35s;
     z-index: 3;
     color: #ffffff;
 
-    h3 {
+    a.home {
       visibility: visible;
       opacity: 1;
     }
   }
 
   h3 {
+    color: #ffffff;
+  }
+
+  a.home {
     visibility: hidden;
     opacity: 0;
-    color: #ffffff;
   }
 
   a.home {
@@ -29,9 +31,9 @@ section.navigation {
       width: 20px;
       height: 20px;
       margin-right: 8px;
-      background: white;
+      background: #ffffff;
       border-radius: 50%;
-      border: 2px solid white;
+      border: 1px solid #ffffff;
     }
   }
 }

@@ -24,7 +24,7 @@ class Navigation extends React.Component {
 
   handleScroll = (_$event) => {
     const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-    this.setState({ scrolled: scrolledSize > 90 })
+    this.setState({ scrolled: scrolledSize > 70 })
   }
 
   render() {

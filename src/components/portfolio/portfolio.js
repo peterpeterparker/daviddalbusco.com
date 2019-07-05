@@ -1,12 +1,19 @@
 import React from "react"
 
-import "./portfolio.scss"
 import { graphql, StaticQuery } from "gatsby"
+import "./portfolio.scss"
+
+import Chapter from "../chapter/chapter"
 
 class Portfolio extends React.Component {
 
   render() {
     return <section className="portfolio">
+      <main>
+        <Chapter icon="suitcase">
+          <h2>Portfolio</h2>
+        </Chapter>
+      </main>
     </section>
   }
 }

@@ -5,7 +5,7 @@ import "./header.scss"
 import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Chapter from "../chapter/chapter"
 
 class Header extends React.Component {
 
@@ -37,15 +37,9 @@ class Header extends React.Component {
       <main>
         <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid}/>
 
-        <h1>David Dal Busco</h1>
-
-        <div className="divider">
-          <div></div>
-
-          <FontAwesomeIcon icon={["fal", "robot"]} size="2x"/>
-
-          <div></div>
-        </div>
+        <Chapter icon="robot">
+          <h1>David Dal Busco</h1>
+        </Chapter>
 
         <p>{this.props.data.site.siteMetadata.description}</p>
       </main>

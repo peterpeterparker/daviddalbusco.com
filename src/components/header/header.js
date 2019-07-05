@@ -53,7 +53,7 @@ class Header extends React.Component {
   }
 }
 
-export default ({ scrollRatio }) => (
+export default () => (
   <StaticQuery
     query={graphql`
     query {
@@ -72,7 +72,7 @@ export default ({ scrollRatio }) => (
     }
   `}
     render={(data) => (
-      <Header data={data} scrollRatio={scrollRatio}/>
+      <Header data={data}/>
     )}
   />
 )

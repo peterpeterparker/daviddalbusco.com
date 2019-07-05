@@ -9,8 +9,31 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 class Header extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      scrolled: false,
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
+  handleScroll = (_$event) => {
+    const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+    const scrollRatio = scrolledSize / (window.innerHeight || window.screen.height);
+    const scrollDegree = Math.min(170 + (scrollRatio * 360), 250);
+
+    this.setState({ scrollDegree: scrollDegree })
+  }
+
   render() {
-    return <section className="header">
+    return <section className="header" style={{background: (this.state.scrollDegree > 0 ? `linear-gradient(${this.state.scrollDegree}deg, var(--color-primary), var(--color-secondary))` : undefined)}}>
       <div className="container">
         <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid}/>
 
@@ -30,7 +53,7 @@ class Header extends React.Component {
   }
 }
 
-export default () => (
+export default ({ scrollRatio }) => (
   <StaticQuery
     query={graphql`
     query {
@@ -49,7 +72,7 @@ export default () => (
     }
   `}
     render={(data) => (
-      <Header data={data}/>
+      <Header data={data} scrollRatio={scrollRatio}/>
     )}
   />
 )

@@ -6,6 +6,26 @@ import "./navigation.scss"
 
 class Navigation extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      scrolled: false,
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
+  handleScroll = (_$event) => {
+    const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+    this.setState({ scrolled: scrolledSize > 60 })
+  }
+
   render() {
     return <section
       style={{
@@ -16,7 +36,7 @@ class Navigation extends React.Component {
         left: 0,
         zIndex: 1030,
       }}
-      className={this.props.scrolled ? "navigation fix" : "navigation"}
+      className={this.state.scrolled ? "navigation fix" : "navigation"}
     >
       <div
         style={{

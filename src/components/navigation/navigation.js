@@ -1,8 +1,9 @@
-import { Link } from "gatsby"
+import { graphql, Link, StaticQuery } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
 import "./navigation.scss"
+import Img from "gatsby-image"
 
 class Navigation extends React.Component {
 
@@ -23,7 +24,7 @@ class Navigation extends React.Component {
 
   handleScroll = (_$event) => {
     const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-    this.setState({ scrolled: scrolledSize > 60 })
+    this.setState({ scrolled: scrolledSize > 90 })
   }
 
   render() {
@@ -38,24 +39,25 @@ class Navigation extends React.Component {
       }}
       className={this.state.scrolled ? "navigation fix" : "navigation"}
     >
-      <div
+      <div className="container"
         style={{
-          margin: `0 auto`,
-          maxWidth: 960,
           padding: `1.45rem 1.0875rem`,
         }}
       >
-        <h3 style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
               color: `inherit`,
               textDecoration: `none`,
             }}
+            className="main"
           >
-            {this.props.siteTitle}
+            <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid}/>
+
+            <h3 style={{ margin: 0 }}>
+              {this.props.siteTitle}
+            </h3>
           </Link>
-        </h3>
       </div>
     </section>
   }
@@ -69,4 +71,21 @@ Navigation.defaultProps = {
   siteTitle: ``,
 }
 
-export default Navigation
+export default ({siteTitle}) => (
+  <StaticQuery
+    query={graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "daviddalbusco-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 48) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `}
+    render={(data) => (
+      <Navigation data={data} siteTitle={siteTitle}/>
+    )}
+  />
+)

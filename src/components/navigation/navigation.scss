@@ -7,12 +7,31 @@ section.navigation {
     color: #ffffff;
 
     h3 {
-      display: initial;
+      visibility: visible;
+      opacity: 1;
     }
   }
 
   h3 {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     color: #ffffff;
+  }
+
+  a.main {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: fit-content;
+
+    div.gatsby-image-wrapper {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      background: white;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
   }
 }

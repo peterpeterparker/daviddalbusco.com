@@ -5,6 +5,11 @@ import Layout from "../components/layout/layout"
 import Image from "../components/image/image"
 import SEO from "../components/seo/seo"
 
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faRobot } from "@fortawesome/pro-light-svg-icons"
+
+library.add(faRobot)
+
 const IndexPage = () => (
   <Layout>
     <SEO title='Home'/>

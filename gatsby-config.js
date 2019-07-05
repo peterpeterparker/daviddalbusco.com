@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `David Dal Busco`,
-    description: `Freelancer | Full Stack Development Web, PWA and Mobile iOS/Android | Project management | UX and IT consulting`,
+    description: `Freelancer - Full Stack Development Web, PWA and Mobile iOS/Android - Project management - UX and IT consulting`,
     author: `David Dal Busco`,
   },
   plugins: [

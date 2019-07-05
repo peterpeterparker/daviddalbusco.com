@@ -13,6 +13,7 @@ import Header from "../header/header"
 
 import "../../theme/variables.scss"
 import "../../theme/theme.scss"
+import "../../theme/container.scss"
 
 import Portfolio from "../portfolio/portfolio"
 

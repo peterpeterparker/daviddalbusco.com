@@ -18,9 +18,29 @@ import Navigation from "../navigation/navigation"
 
 class Layout extends React.Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      scrolled: false,
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
+  handleScroll = (_$event) => {
+    const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+    this.setState({ scrolled: scrolledSize > 60 })
+  }
+
   render() {
     return <>
-      <Navigation siteTitle={this.props.data.site.siteMetadata.title}/>
+      <Navigation siteTitle={this.props.data.site.siteMetadata.title} scrolled={this.state.scrolled}/>
       {this.props.children}
       <footer>
         © {new Date().getFullYear()}, Built with

@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 class Chapter extends React.Component {
 
   render() {
-    return <div class="chapter">
+    return <div className="chapter">
       {this.props.children}
 
       <div className="divider">

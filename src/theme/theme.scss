@@ -262,11 +262,14 @@ img {
   max-width: 100%;
 }
 
-h1 {
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
   color: inherit;
   font-weight: 500;
   text-rendering: optimizeLegibility;
-  text-transform: uppercase;
   line-height: 1.1;
 }
 

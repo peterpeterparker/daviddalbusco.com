@@ -1,0 +1,17 @@
+header {
+  &.main-navbar-fix {
+    background-color: var(--color-primary);
+    border-color: rgba(34,34,34,.05);
+    transition: all .35s;
+    z-index: 3;
+    color: #ffffff;
+
+    h3 {
+      display: initial;
+    }
+  }
+
+  h3 {
+    display: none;
+  }
+}

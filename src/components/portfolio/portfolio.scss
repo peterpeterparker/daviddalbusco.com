@@ -2,7 +2,7 @@ section {
   width: 100vw;
   height: 100vh;
 
-  background: var(--color-primary);
+  background: linear-gradient(170deg, var(--color-primary), var(--color-secondary));
   color: white;
 
   div.container {

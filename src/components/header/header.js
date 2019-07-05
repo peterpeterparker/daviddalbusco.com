@@ -2,34 +2,64 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
+import "./header.scss"
+
+class Header extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      scrolled: false,
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
+  handleScroll = (_$event) => {
+    const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+    this.setState({ scrolled: scrolledSize > 60 })
+  }
+
+  render() {
+    return <header
       style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        marginBottom: `1.45rem`,
+        position: "fixed",
+        top: 0,
+        right: 0,
+        left: 0,
+        zIndex: 1030,
       }}
+      className={this.state.scrolled ? "main-navbar-fix" : undefined}
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+      <div
+        style={{
+          margin: `0 auto`,
+          maxWidth: 960,
+          padding: `1.45rem 1.0875rem`,
+        }}
+      >
+        <h3 style={{ margin: 0 }}>
+          <Link
+            to="/"
+            style={{
+              color: `inherit`,
+              textDecoration: `none`,
+            }}
+          >
+            {this.props.siteTitle}
+          </Link>
+        </h3>
+      </div>
+    </header>
+  }
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

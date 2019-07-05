@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 
 import "../../theme/variables.scss"
-import "../../theme/container.scss"
+import "../../theme/main.scss"
 import "../../theme/main.scss"
 import "../../theme/theme.scss"
 

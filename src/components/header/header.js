@@ -34,7 +34,7 @@ class Header extends React.Component {
 
   render() {
     return <section className="header" style={{background: (this.state.scrollDegree > 0 ? `linear-gradient(${this.state.scrollDegree}deg, var(--color-primary), var(--color-secondary))` : undefined)}}>
-      <div className="container">
+      <main>
         <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid}/>
 
         <h1>David Dal Busco</h1>
@@ -48,7 +48,7 @@ class Header extends React.Component {
         </div>
 
         <p>{this.props.data.site.siteMetadata.description}</p>
-      </div>
+      </main>
     </section>
   }
 }

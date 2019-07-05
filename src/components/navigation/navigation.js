@@ -39,7 +39,7 @@ class Navigation extends React.Component {
       }}
       className={this.state.scrolled ? "navigation fix" : "navigation"}
     >
-      <div className="container"
+      <main
         style={{
           padding: `1.45rem 1.0875rem`,
         }}
@@ -50,7 +50,7 @@ class Navigation extends React.Component {
               color: `inherit`,
               textDecoration: `none`,
             }}
-            className="main"
+            className="home"
           >
             <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid}/>
 
@@ -58,7 +58,7 @@ class Navigation extends React.Component {
               {this.props.siteTitle}
             </h3>
           </Link>
-      </div>
+      </main>
     </section>
   }
 }

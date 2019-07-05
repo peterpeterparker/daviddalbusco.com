@@ -1,72 +1,55 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 
 import "./header.scss"
 
+import { graphql, StaticQuery } from "gatsby"
+import Img from "gatsby-image"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 class Header extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      scrolled: false,
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll)
-  }
-
-  handleScroll = (_$event) => {
-    const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-    this.setState({ scrolled: scrolledSize > 60 })
-  }
-
   render() {
-    return <header
-      style={{
-        marginBottom: `1.45rem`,
-        position: "fixed",
-        top: 0,
-        right: 0,
-        left: 0,
-        zIndex: 1030,
-      }}
-      className={this.state.scrolled ? "main-navbar-fix" : undefined}
-    >
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
-        <h3 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `inherit`,
-              textDecoration: `none`,
-            }}
-          >
-            {this.props.siteTitle}
-          </Link>
-        </h3>
+    return <section>
+      <div className="container">
+        <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid}/>
+
+        <h1>David Dal Busco</h1>
+
+        <div className="divider">
+          <div></div>
+
+          <FontAwesomeIcon icon={["fal", "robot"]} size="2x"/>
+
+          <div></div>
+        </div>
+
+        <p>{this.props.data.site.siteMetadata.description}</p>
       </div>
-    </header>
+    </section>
   }
 }
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default () => (
+  <StaticQuery
+    query={graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "daviddalbusco.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 480) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      site {
+        siteMetadata {
+          description
+        }
+      }
+    }
+  `}
+    render={(data) => (
+      <Header data={data}/>
+    )}
+  />
+)

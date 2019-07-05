@@ -1,17 +1,72 @@
-header {
-  &.main-navbar-fix {
-    background-color: var(--color-primary);
-    border-color: rgba(34,34,34,.05);
-    transition: all .35s;
-    z-index: 3;
-    color: #ffffff;
+section {
+  width: 100vw;
+  height: 100vh;
 
-    h3 {
-      display: initial;
+  background: linear-gradient(170deg, var(--color-primary), var(--color-secondary));
+  color: white;
+
+  div.container {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    h1 {
+      font-size: 2.75rem;
+      line-height: 2.75rem;
+
+      @media (min-width: 992px) {
+        font-size: 4rem;
+        line-height: 3.5rem;
+      }
     }
-  }
 
-  h3 {
-    display: none;
+    div.gatsby-image-wrapper {
+      width: 40vw;
+      height: 40vw;
+      max-width: 260px;
+      max-height: 260px;
+      border-radius: 50%;
+      margin: 0 0 2.75rem;
+    }
+
+    div.divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      margin: 0 0 1.45rem;
+
+      svg {
+        margin-bottom: 0.2rem;
+      }
+
+      div {
+        background-color: #fff;
+
+        width: 100%;
+        max-width: 7rem;
+        height: .15rem;
+        border-radius: 1rem;
+
+        &:first-of-type {
+          margin-right: 1rem;
+        }
+
+        &:last-of-type {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    p {
+      text-align: center;
+      max-width: 620px;
+      font-size: 1.5rem;
+    }
   }
 }

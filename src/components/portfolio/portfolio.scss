@@ -1,3 +1,116 @@
 section.portfolio {
   padding: 6rem 0;
+
+  div.projects {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: auto;
+    grid-gap: 1.75rem;
+
+    margin: auto;
+
+    article {
+      justify-self: center;
+      align-self: center;
+
+      width: 100%;
+      height: 100%;
+
+      position: relative;
+
+      > div {
+        border-radius: .5rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 15rem;
+      }
+
+      > div.summary {
+        background: #F2F2F2;
+
+        div.gatsby-image-wrapper {
+          width: 8rem;
+          height: 8rem;
+        }
+      }
+
+      &.ourenergy {
+        > div {
+
+          &.details {
+            background: #FCEA03;
+          }
+        }
+      }
+
+      &.deckdeckgo {
+        > div {
+          background: #0cd1e8;
+
+          &.details {
+            background: #3A81FE;
+            color: white;
+          }
+        }
+      }
+
+      &.fluster {
+        > div {
+          background: #FF65A9;
+
+          &.details {
+            background: #feb79c;
+            color: white;
+          }
+        }
+      }
+
+      > div.details  {
+        visibility: hidden;
+        opacity: 0;
+
+        color: inherit;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        cursor: pointer;
+
+        transition: all 1s;
+
+        h2, p {
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        h2 {
+          top: 50%;
+          margin: 0;
+          width: calc(100% - 1.45rem);
+          text-align: center;
+        }
+
+        p {
+          bottom: 0;
+          text-decoration: underline;
+        }
+      }
+
+      &:hover {
+        > div.details {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+
+    }
+  }
 }

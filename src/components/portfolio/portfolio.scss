@@ -1,0 +1,19 @@
+section {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  background: var(--color-primary);
+  color: white;
+
+  div.gatsby-image-wrapper {
+    width: 22vw;
+    height: 22vw;
+    border-radius: 50%;
+  }
+}

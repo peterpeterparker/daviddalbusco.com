@@ -1,5 +1,5 @@
-navigation {
-  &.main-navbar-fix {
+section.navigation {
+  &.fix {
     background-color: var(--color-primary);
     border-color: rgba(34,34,34,.05);
     transition: all .35s;

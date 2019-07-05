@@ -27,7 +27,7 @@ class Navigation extends React.Component {
   }
 
   render() {
-    return <navigation
+    return <section
       style={{
         marginBottom: `1.45rem`,
         position: "fixed",
@@ -36,7 +36,7 @@ class Navigation extends React.Component {
         left: 0,
         zIndex: 1030,
       }}
-      className={this.state.scrolled ? "main-navbar-fix" : undefined}
+      className={this.state.scrolled ? "navigation fix" : "navigation"}
     >
       <div
         style={{
@@ -57,7 +57,7 @@ class Navigation extends React.Component {
           </Link>
         </h3>
       </div>
-    </navigation>
+    </section>
   }
 }
 

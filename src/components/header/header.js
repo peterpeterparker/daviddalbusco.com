@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 class Header extends React.Component {
 
   render() {
-    return <section>
+    return <section className="header">
       <div className="container">
         <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid}/>
 

@@ -7,7 +7,7 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 
 import "../../theme/variables.scss"
 import "../../theme/container.scss"
@@ -16,8 +16,29 @@ import "../../theme/theme.scss"
 
 import Navigation from "../navigation/navigation"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+class Layout extends React.Component {
+
+  render() {
+    return <>
+      <Navigation siteTitle={this.props.data.site.siteMetadata.title}/>
+      {this.props.children}
+      <footer>
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a href="https://www.gatsbyjs.org">Gatsby</a>
+      </footer>
+    </>
+  }
+
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default ({ children }) => (
+  <StaticQuery
+    query={graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -25,23 +46,11 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
-
-  return (
-    <>
-      <Navigation siteTitle={data.site.siteMetadata.title}/>
-      {children}
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </>
-  )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+  `}
+    render={(data) => (
+      <Layout data={data}>
+        {children}
+      </Layout>
+    )}
+  />
+)

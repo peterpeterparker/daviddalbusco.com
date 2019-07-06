@@ -23,7 +23,7 @@ input[type="submit"] {
   transition: background-color 0.5s;
   font-size: 1.25rem;
 
-  &:hover {
+  &:hover, &:active {
     background-color: var(--color-secondary);
     text-decoration: none;
   }

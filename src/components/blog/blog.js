@@ -1,8 +1,6 @@
 import React from "react"
 
-import { graphql, StaticQuery } from "gatsby"
-
-import "./blog.scss"
+import { graphql, StaticQuery, Link } from "gatsby"
 
 import Chapter from "../chapter/chapter"
 import Post from "../post/post"
@@ -21,6 +19,8 @@ class Blog extends React.Component {
         {postList.edges.map(({ node }, i) => (
           <Post node={node} key={i}/>
         ))}
+
+        <Link to='/blog/' className="link-to-blog"><h2>And more...</h2></Link>
       </main>
     </section>
   }

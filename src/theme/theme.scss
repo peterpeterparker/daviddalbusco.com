@@ -48,12 +48,14 @@ template {
 }
 
 a {
+  color: inherit;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a:active,
 a:hover {
+  color: var(--color-highlight);
   outline-width: 0;
 }
 

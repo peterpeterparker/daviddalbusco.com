@@ -2,9 +2,8 @@ a.post {
   text-decoration: none;
   color: inherit;
 
-  &:hover {
+  &:hover, &:active {
     text-decoration: none;
-    color: var(--color-highlight);
 
     article {
       div.image {

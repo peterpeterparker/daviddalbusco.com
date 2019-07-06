@@ -23,9 +23,9 @@ Sihlquai 131
             <div className="web">
               <h2>On the web</h2>
               <a href="http://twitter.com/daviddalbusco/"><FontAwesomeIcon icon={["fab", "twitter"]} size="2x"/></a>
-              <a href="https://medium.com/@david.dalbusco"><FontAwesomeIcon icon={["fab", "medium"]} size="2x"/></a>
-              <a href="http://dev.to/daviddalbusco/"><FontAwesomeIcon icon={["fab", "dev"]} size="2x"/></a>
               <a href="https://www.linkedin.com/in/david-dal-busco/"><FontAwesomeIcon icon={["fab", "linkedin-in"]} size="2x"/></a>
+              <a href="http://dev.to/daviddalbusco/"><FontAwesomeIcon icon={["fab", "dev"]} size="2x"/></a>
+              <a href="https://medium.com/@david.dalbusco"><FontAwesomeIcon icon={["fab", "medium"]} size="2x"/></a>
               <a href="https://github.com/peterpeterparker"><FontAwesomeIcon icon={["fab", "github"]} size="2x"/></a>
             </div>
           </main>

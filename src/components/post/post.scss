@@ -36,10 +36,8 @@ a.post {
       position: relative;
       align-items: center;
 
-      img {
-        border-radius: .5rem;
-        margin: 0;
-      }
+      --deckgo-lazy-img-border-radius: .5rem;
+      --deckgo-lazy-img-display: block;
 
       > div {
         width: 100%;

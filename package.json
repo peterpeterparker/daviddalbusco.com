@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "author": "David Dal Busco <david@fluster.io>",
   "dependencies": {
+    "@deckdeckgo/lazy-img": "^1.0.0-alpha.9",
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/pro-light-svg-icons": "^5.9.0",

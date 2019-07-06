@@ -14,7 +14,7 @@ class Post extends React.Component {
       return <Link to={this.props.node.frontmatter.path} className="post">
         <article>
           <div className="image">
-            <img src={this.props.node.frontmatter.image} alt={this.props.node.frontmatter.title}/>
+            <deckgo-lazy-img img-src={this.props.node.frontmatter.image} img-alt={this.props.node.frontmatter.title}/>
 
             <div>
               <p>Read the article</p>

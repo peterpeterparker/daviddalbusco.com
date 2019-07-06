@@ -23,6 +23,9 @@ import { faDev } from "@fortawesome/free-brands-svg-icons"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
+import { defineCustomElements } from '@deckdeckgo/lazy-img/dist/loader'
+defineCustomElements(window);
+
 library.add(faRobot)
 library.add(faSuitcase)
 library.add(faNewspaper)

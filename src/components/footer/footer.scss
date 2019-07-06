@@ -1,0 +1,54 @@
+footer {
+  text-align: center;
+  color: #ffffff;
+
+  p, h3 {
+    margin: 0;
+    white-space: pre-wrap;
+    text-align: center;
+  }
+  
+  a {
+    color: #ffffff;
+
+    svg {
+      margin-left: 4px;
+    }
+  }
+
+  &.contact {
+    background: var(--color-primary);
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-rows: auto;
+
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+
+      > div {
+        padding: 1.45rem;
+      }
+
+      div.web {
+        a {
+          margin: 0 0.25rem;
+        }
+      }
+
+      @media (min-width: 992px) {
+        max-width: 720px;
+      }
+    }
+  }
+
+  &.opensource {
+    background: var(--color-secondary);
+
+    p {
+      font-size: 0.75rem;
+      padding: 0.45rem 0;
+    }
+  }
+}

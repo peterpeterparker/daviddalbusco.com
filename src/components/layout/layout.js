@@ -15,6 +15,7 @@ import "../../theme/main.scss"
 import "../../theme/theme.scss"
 
 import Navigation from "../navigation/navigation"
+import Footer from "../footer/footer"
 
 class Layout extends React.Component {
 
@@ -22,11 +23,7 @@ class Layout extends React.Component {
     return <>
       <Navigation siteTitle={this.props.data.site.siteMetadata.title}/>
       {this.props.children}
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer/>
     </>
   }
 

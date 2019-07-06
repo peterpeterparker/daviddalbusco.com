@@ -6,7 +6,7 @@ import "./about.scss"
 class About extends React.Component {
 
   render() {
-    return <section className="about">
+    return <section className="about extraspace">
       <main className="small">
         <Chapter icon="address-card">
           <h2>About</h2>

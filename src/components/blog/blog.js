@@ -9,7 +9,7 @@ class Blog extends React.Component {
   render() {
     const postList = this.props.data.allMarkdownRemark;
 
-    return <section className="blog">
+    return <section className="blog extraspace">
       <main>
         <Chapter icon="newspaper">
           <h2>Blog</h2>

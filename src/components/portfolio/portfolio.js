@@ -9,7 +9,7 @@ import Img from "gatsby-image"
 class Portfolio extends React.Component {
 
   render() {
-    return <section className="portfolio">
+    return <section className="portfolio extraspace">
       <main>
         <Chapter icon="suitcase">
           <h2>Portfolio</h2>

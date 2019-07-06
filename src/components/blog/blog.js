@@ -1,8 +1,11 @@
 import React from "react"
 
+import { graphql, StaticQuery } from "gatsby"
+
 import "./blog.scss"
+
 import Chapter from "../chapter/chapter"
-import { graphql, Link, StaticQuery } from "gatsby"
+import Post from "../post/post"
 
 class Blog extends React.Component {
 
@@ -16,12 +19,7 @@ class Blog extends React.Component {
         </Chapter>
 
         {postList.edges.map(({ node }, i) => (
-          <Link to={node.frontmatter.path} key={i} className="link" >
-            <div className="post-list">
-              <h1>{node.frontmatter.title}</h1>
-              <span>{node.frontmatter.date}</span>
-            </div>
-          </Link>
+          <Post node={node} key={i}/>
         ))}
       </main>
     </section>
@@ -38,7 +36,10 @@ export default () => (
               frontmatter {
                 date(formatString: "MMMM Do YYYY")
                 title,
-                path
+                path,
+                image,
+                description,
+                tags
               }
             }
           }

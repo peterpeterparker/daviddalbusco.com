@@ -16,7 +16,7 @@ class Portfolio extends React.Component {
         </Chapter>
 
         <div className="projects">
-          <article  className="ourenergy">
+          <article className="ourenergy">
             <div className="summary">
               <Img fluid={this.props.data.ourEnergyImage.childImageSharp.fluid}/>
             </div>

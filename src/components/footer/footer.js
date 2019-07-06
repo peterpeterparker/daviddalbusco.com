@@ -9,7 +9,7 @@ class Footer extends React.Component {
   render() {
     return <>
         <footer className="contact">
-          <main>
+          <main className="small">
             <div className="address">
               <h2>Address</h2>
               <p>
@@ -31,7 +31,7 @@ Sihlquai 131
           </main>
         </footer>
         <footer className="opensource">
-          <main>
+          <main className="small">
             <p>I've built this website. Its open source code is available on <a href="https://github.com/peterpeterparker/daviddalbusco.com">Github<FontAwesomeIcon icon={["fab", "github"]}/></a></p>
           </main>
         </footer>

@@ -7,6 +7,7 @@ import Header from "../components/header/header"
 import Portfolio from "../components/portfolio/portfolio"
 import Blog from "../components/blog/blog"
 import About from "../components/about/about"
+import Contact from "../components/contact/contact"
 
 import { library } from "@fortawesome/fontawesome-svg-core"
 
@@ -14,6 +15,7 @@ import { faRobot } from "@fortawesome/pro-light-svg-icons"
 import { faSuitcase } from "@fortawesome/pro-light-svg-icons"
 import { faNewspaper } from "@fortawesome/pro-light-svg-icons"
 import { faAddressCard } from "@fortawesome/pro-light-svg-icons"
+import { faEnvelope } from "@fortawesome/pro-light-svg-icons"
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faMedium } from "@fortawesome/free-brands-svg-icons"
@@ -25,6 +27,7 @@ library.add(faRobot)
 library.add(faSuitcase)
 library.add(faNewspaper)
 library.add(faAddressCard)
+library.add(faEnvelope)
 
 library.add(faGithub)
 library.add(faMedium)
@@ -39,6 +42,7 @@ const IndexPage = () => (
     <Portfolio/>
     <About/>
     <Blog/>
+    <Contact/>
   </Layout>
 )
 

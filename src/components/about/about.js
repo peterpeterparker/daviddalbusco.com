@@ -7,7 +7,7 @@ class About extends React.Component {
 
   render() {
     return <section className="about">
-      <main>
+      <main className="small">
         <Chapter icon="address-card">
           <h2>About</h2>
         </Chapter>

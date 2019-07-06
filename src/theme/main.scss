@@ -19,13 +19,13 @@ main {
 }
 
 @media (min-width: 992px) {
-  main {
+  main:not(.small) {
     max-width: 960px;
   }
 }
 
 @media (min-width: 1200px) {
-  main {
+  main:not(.small) {
     max-width: 1140px;
   }
 }

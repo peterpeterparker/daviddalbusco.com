@@ -1,5 +1,5 @@
 ---
-path: "/blog/my-first-post"
+path: "/blog/angular-services-without-angular-thank-you-typescript"
 date: "2019-06-30"
 title: "Angular services without Angular? Thank you Typescript"
 description: "Create a singleton service with Typescript to narrow specific functions or share data across components"

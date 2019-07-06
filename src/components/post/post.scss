@@ -74,12 +74,11 @@ a.post {
       }
 
       p {
-        font-size: 1rem;
         margin: 0;
 
         &:last-of-type {
           color: var(--color-highlight);
-          font-size: 0.75rem;
+          font-size: 1rem;
         }
       }
     }

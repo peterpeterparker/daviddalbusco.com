@@ -36,7 +36,7 @@ library.add(faTwitter)
 library.add(faLinkedinIn)
 
 const IndexPage = () => (
-  <Layout>
+  <Layout fixNav={false}>
     <SEO title='Home'/>
     <Header/>
     <Portfolio/>

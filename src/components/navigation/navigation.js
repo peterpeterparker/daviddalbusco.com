@@ -37,7 +37,7 @@ class Navigation extends React.Component {
         left: 0,
         zIndex: 1030,
       }}
-      className={this.state.scrolled ? "navigation fix" : "navigation"}
+      className={this.props.fix ? "navigation fix" : (this.state.scrolled ? "navigation fix animated" : "navigation")}
     >
       <main
         style={{
@@ -71,7 +71,7 @@ Navigation.defaultProps = {
   siteTitle: ``,
 }
 
-export default ({siteTitle}) => (
+export default ({siteTitle, fix}) => (
   <StaticQuery
     query={graphql`
     query {
@@ -85,7 +85,7 @@ export default ({siteTitle}) => (
     }
   `}
     render={(data) => (
-      <Navigation data={data} siteTitle={siteTitle}/>
+      <Navigation data={data} siteTitle={siteTitle} fix={fix}/>
     )}
   />
 )

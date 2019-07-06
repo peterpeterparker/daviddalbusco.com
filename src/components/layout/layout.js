@@ -23,7 +23,7 @@ class Layout extends React.Component {
 
   render() {
     return <>
-      <Navigation siteTitle={this.props.data.site.siteMetadata.title}/>
+      <Navigation siteTitle={this.props.data.site.siteMetadata.title} fix={this.props.fixNav}/>
       {this.props.children}
       <Footer/>
     </>
@@ -35,7 +35,7 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default ({ children }) => (
+export default ({ children, fixNav }) => (
   <StaticQuery
     query={graphql`
     query SiteTitleQuery {
@@ -47,7 +47,7 @@ export default ({ children }) => (
     }
   `}
     render={(data) => (
-      <Layout data={data}>
+      <Layout data={data} fixNav={fixNav}>
         {children}
       </Layout>
     )}

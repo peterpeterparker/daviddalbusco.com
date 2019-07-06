@@ -1,9 +1,12 @@
 section.navigation {
   &.fix {
     background-color: var(--color-primary);
-    transition: all .35s;
     z-index: 3;
     color: #ffffff;
+
+    &.animated {
+      transition: all .35s;
+    }
 
     a.home {
       visibility: visible;

@@ -13,7 +13,7 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
   }
 }
 
-input[type="submit"] {
+input[type="submit"], a.button * {
   border-radius: 8px;
   background-color: var(--color-primary);
   padding: 16px;
@@ -24,8 +24,20 @@ input[type="submit"] {
   font-size: 1.25rem;
 
   &:hover, &:active {
-    background-color: var(--color-secondary);
+    background-color: var(--color-highlight);
     text-decoration: none;
+  }
+}
+
+a.button {
+  text-decoration: none;
+
+  &:hover, &:active {
+    text-decoration: none;
+  }
+
+  * {
+    width: fit-content;
   }
 }
 

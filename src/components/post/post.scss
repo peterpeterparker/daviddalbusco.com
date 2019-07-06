@@ -4,6 +4,7 @@ a.post {
 
   &:hover, &:active {
     text-decoration: none;
+    color: var(--color-highlight);
 
     article {
       div.image {

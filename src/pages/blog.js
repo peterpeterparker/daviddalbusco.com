@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link, StaticQuery } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
@@ -11,7 +11,7 @@ class BlogPage extends React.Component {
   render() {
     const postList = this.props.data.allMarkdownRemark;
 
-    return <Layout>
+    return <Layout fixNav={true}>
       <SEO title="Blog" />
 
       <section className="blog extraspace">

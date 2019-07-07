@@ -24,8 +24,9 @@ import { faDev } from "@fortawesome/free-brands-svg-icons"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
-import { defineCustomElements } from '@deckdeckgo/lazy-img/dist/loader'
-defineCustomElements(window);
+import { defineCustomElements } from "@deckdeckgo/lazy-img/dist/loader"
+
+defineCustomElements(window)
 
 library.add(faRobot)
 library.add(faSuitcase)
@@ -42,7 +43,7 @@ library.add(faLinkedinIn)
 
 const IndexPage = () => (
   <Layout fixNav={false}>
-    <SEO title='Home'/>
+    <SEO/>
     <Header/>
     <Portfolio/>
     <About/>

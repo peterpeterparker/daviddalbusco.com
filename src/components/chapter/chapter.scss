@@ -35,7 +35,7 @@ div.chapter {
       margin-bottom: 0.2rem;
     }
 
-    div {
+    > div:not(.gatsby-image-wrapper) {
       background-color: currentColor;
 
       width: 100%;
@@ -50,6 +50,11 @@ div.chapter {
       &:last-of-type {
         margin-left: 1rem;
       }
+    }
+
+    > div.gatsby-image-wrapper {
+      width: 2.45rem;
+      height: 2.45rem;
     }
 
   }

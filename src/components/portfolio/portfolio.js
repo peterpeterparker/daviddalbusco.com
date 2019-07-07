@@ -1,6 +1,6 @@
 import React from "react"
 
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, StaticQuery, Link } from "gatsby"
 import "./portfolio.scss"
 
 import Chapter from "../chapter/chapter"
@@ -16,17 +16,19 @@ class Portfolio extends React.Component {
         </Chapter>
 
         <div className="projects">
-          <article className="ourenergy">
-            <div className="summary">
-              <Img fluid={this.props.data.ourEnergyImage.childImageSharp.fluid}/>
-            </div>
+          <Link to="/portfolio/our-energy-eth-zurich">
+            <article className="ourenergy">
+              <div className="summary">
+                <Img fluid={this.props.data.ourEnergyImage.childImageSharp.fluid}/>
+              </div>
 
-            <div className="details">
-              <h2>Our Energy - ETH Zürich</h2>
+              <div className="details">
+                <h2>Our Energy - ETH Zürich</h2>
 
-              <p>Details</p>
-            </div>
-          </article>
+                <p>Details</p>
+              </div>
+            </article>
+          </Link>
 
           <article className="deckdeckgo">
             <div className="summary">

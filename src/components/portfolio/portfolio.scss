@@ -8,6 +8,17 @@ section.portfolio {
 
     margin: auto;
 
+    a {
+      color: inherit;
+      text-decoration: inherit;
+
+      &:hover,
+      &:active {
+        color: inherit;
+        text-decoration: inherit;
+      }
+    }
+
     article {
       justify-self: center;
       align-self: center;

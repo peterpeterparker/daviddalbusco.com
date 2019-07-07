@@ -16,6 +16,10 @@ class Menu extends React.Component {
     return (
       <div className={this.state.open ? "menu open" : "menu"} onClick={() => this.close()} ref={this.props.innerRef}>
         <Link to="/"><h1>Home</h1></Link>
+        <Link to="/#portfolio"><h1>Portfolio</h1></Link>
+        <Link to="/#about"><h1>About</h1></Link>
+        <Link to="/blog"><h1>Blog</h1></Link>
+        <Link to="/#contact"><h1>Contact</h1></Link>
       </div>
     )
   }

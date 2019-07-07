@@ -16,6 +16,7 @@ import { faSuitcase } from "@fortawesome/pro-light-svg-icons"
 import { faNewspaper } from "@fortawesome/pro-light-svg-icons"
 import { faAddressCard } from "@fortawesome/pro-light-svg-icons"
 import { faEnvelope } from "@fortawesome/pro-light-svg-icons"
+import { faBars } from "@fortawesome/pro-light-svg-icons"
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faMedium } from "@fortawesome/free-brands-svg-icons"
@@ -31,6 +32,7 @@ library.add(faSuitcase)
 library.add(faNewspaper)
 library.add(faAddressCard)
 library.add(faEnvelope)
+library.add(faBars)
 
 library.add(faGithub)
 library.add(faMedium)

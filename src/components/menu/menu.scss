@@ -1,0 +1,36 @@
+div.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #ffffff;
+  z-index: 1031;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all .5s;
+
+  cursor: pointer;
+
+  &.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  a {
+    pointer-events: all;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+  }
+}

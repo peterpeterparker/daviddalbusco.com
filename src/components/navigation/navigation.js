@@ -5,6 +5,10 @@ import React from "react"
 import "./navigation.scss"
 import Img from "gatsby-image"
 
+import Menu from "../menu/menu"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
 class Navigation extends React.Component {
 
   constructor(props) {
@@ -24,26 +28,30 @@ class Navigation extends React.Component {
 
   handleScroll = (_$event) => {
     const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-    this.setState({ scrolled: scrolledSize > 70 })
+    const scrollTrigger = scrolledSize > 70
+    if (this.state.scrolled !== scrollTrigger) {
+      this.setState({ scrolled: scrollTrigger })
+    }
   }
 
   render() {
-    return <section
-      style={{
-        marginBottom: `1.45rem`,
-        position: "fixed",
-        top: 0,
-        right: 0,
-        left: 0,
-        zIndex: 1030,
-      }}
-      className={this.props.fix ? "navigation fix" : (this.state.scrolled ? "navigation fix animated" : "navigation")}
-    >
-      <main
+    return <>
+      <section
         style={{
-          padding: `1.45rem 1.0875rem`,
+          marginBottom: `1.45rem`,
+          position: "fixed",
+          top: 0,
+          right: 0,
+          left: 0,
+          zIndex: 1030,
         }}
+        className={this.props.fix ? "navigation fix" : (this.state.scrolled ? "navigation fix animated" : "navigation")}
       >
+        <main
+          style={{
+            padding: `1.45rem 1.0875rem`,
+          }}
+        >
           <Link
             to="/"
             style={{
@@ -58,8 +66,17 @@ class Navigation extends React.Component {
               {this.props.siteTitle}
             </h3>
           </Link>
-      </main>
-    </section>
+
+          <button className="menu" onClick={() => this.toggleMenu()}><FontAwesomeIcon icon={["fal", "bars"]} size="lg"/>
+          </button>
+        </main>
+      </section>
+      <Menu ref={el => this.childMenu = el}/>
+    </>
+  }
+
+  toggleMenu() {
+    this.childMenu.open()
   }
 }
 
@@ -71,7 +88,7 @@ Navigation.defaultProps = {
   siteTitle: ``,
 }
 
-export default ({siteTitle, fix}) => (
+export default ({ siteTitle, fix }) => (
   <StaticQuery
     query={graphql`
     query {

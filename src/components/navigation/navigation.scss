@@ -1,4 +1,9 @@
 section.navigation {
+  main {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &.fix {
     background-color: var(--color-primary);
     z-index: 3;
@@ -14,7 +19,7 @@ section.navigation {
     }
   }
 
-  h3 {
+  h3, svg {
     color: #ffffff;
   }
 
@@ -38,5 +43,12 @@ section.navigation {
       border-radius: 50%;
       border: 1px solid #ffffff;
     }
+  }
+
+  button.menu {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    cursor: pointer;
   }
 }

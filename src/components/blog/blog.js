@@ -5,8 +5,6 @@ import { graphql, StaticQuery, Link } from "gatsby"
 import Chapter from "../chapter/chapter"
 import Post from "../post/post"
 
-import "./blog.scss"
-
 class Blog extends React.Component {
 
   render() {
@@ -22,7 +20,7 @@ class Blog extends React.Component {
           <Post node={node} key={i}/>
         ))}
 
-        <Link to='/blog/' className="link-to-blog button"><h2>More articles</h2></Link>
+        <Link to='/blog/' className="button"><h2>More articles</h2></Link>
       </main>
     </section>
   }

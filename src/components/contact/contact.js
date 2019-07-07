@@ -6,7 +6,7 @@ import "./contact.scss"
 class Contact extends React.Component {
 
   render() {
-    return <section className="contact extraspace" id="contact">
+    return <section className="contact" id="contact">
       <main className="small">
         <Chapter icon="envelope">
           <h2>Contact</h2>

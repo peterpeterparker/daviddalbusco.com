@@ -13,6 +13,10 @@ input[type="text"], input[type="tel"], input[type="email"], textarea {
   }
 }
 
+input[type="submit"], a.button {
+  margin: 2.75rem 0 0;
+}
+
 input[type="submit"], a.button * {
   border-radius: 8px;
   background-color: var(--color-primary);
@@ -22,6 +26,8 @@ input[type="submit"], a.button * {
   cursor: pointer;
   transition: background-color 0.5s;
   font-size: 1.25rem;
+  font-weight: 300;
+  text-transform: uppercase;
 
   &:hover, &:active {
     background-color: var(--color-highlight);
@@ -31,6 +37,13 @@ input[type="submit"], a.button * {
 
 a.button {
   text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+
+  h2 {
+    margin: 0;
+  }
 
   &:hover, &:active {
     text-decoration: none;

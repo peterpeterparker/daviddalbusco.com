@@ -1,7 +1,7 @@
 import React from "react"
 import SEO from "../../components/seo/seo"
 import Layout from "../../components/layout/layout"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, Link, StaticQuery } from "gatsby"
 import Chapter from "../../components/chapter/chapter"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -70,6 +70,8 @@ class OurEnergyPage extends React.Component {
             <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
             <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a></p>
           </article>
+
+          <Link to='/#portfolio' className="button"><h2>Portfolio</h2></Link>
         </main>
       </section>
     </Layout>

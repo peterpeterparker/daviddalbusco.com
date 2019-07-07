@@ -37,12 +37,16 @@ class OurEnergyPage extends React.Component {
 
             <Slider images={images}/>
           </article>
+        </main>
+      </section>
 
+      <section className="factsheet">
+        <main>
           <Chapter icon="info-circle">
             <h3>Fact sheet</h3>
           </Chapter>
 
-          <article className="factsheet">
+          <article>
             <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a
               href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
               href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
@@ -51,9 +55,11 @@ class OurEnergyPage extends React.Component {
             <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
             <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a></p>
           </article>
-
-          <Link to='/#portfolio' className="button"><h2>Portfolio</h2></Link>
         </main>
+      </section>
+
+      <section className="back-portfolio">
+        <Link to='/#portfolio' className="button"><h2>Portfolio</h2></Link>
       </section>
     </Layout>
   }

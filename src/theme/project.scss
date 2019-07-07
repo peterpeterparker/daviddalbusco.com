@@ -18,12 +18,10 @@ section.project {
       flex-direction: column;
     }
   }
+}
 
-  h3 {
-    margin: 3.75rem 0 1.45rem;
-  }
-
-  article.factsheet {
+section.factsheet {
+  article {
     text-align: center;
     padding: 0 0 1rem;
 
@@ -36,4 +34,8 @@ section.project {
       }
     }
   }
+}
+
+section.back-portfolio {
+  padding: 0 0 6rem;
 }

@@ -14,5 +14,37 @@ section.project {
       align-items: center;
       flex-direction: column;
     }
+
+    div.deck-container {
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+
+      width: 100%;
+      height: 20rem;
+
+      deckgo-deck {
+        --slide-padding-top: 0;
+        --slide-padding-start: 0;
+        --slide-padding-end: 0;
+        --slide-padding-bottom: 0;
+        --pager-display: none;
+
+        deckgo-slide-title {
+          div[slot="title"] {
+            width: var(--slide-width);
+            height: var(--slide-height);
+
+            div.gatsby-image-wrapper {
+              max-height: 100%;
+
+              img {
+                object-fit: contain !important;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

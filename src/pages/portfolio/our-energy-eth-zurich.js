@@ -3,6 +3,7 @@ import SEO from "../../components/seo/seo"
 import Layout from "../../components/layout/layout"
 import { graphql, StaticQuery } from "gatsby"
 import Chapter from "../../components/chapter/chapter"
+import Img from "gatsby-image"
 
 class OurEnergyPage extends React.Component {
 
@@ -24,6 +25,27 @@ class OurEnergyPage extends React.Component {
             </div>
 
             <div className="screenshots">
+              <div className="deck-container">
+                <deckgo-deck embedded="true">
+                  <deckgo-slide-title>
+                    <div slot="title">
+                      <Img fluid={this.props.data.ourEnergyScreenshot1.childImageSharp.fluid}/>
+                    </div>
+                  </deckgo-slide-title>
+
+                  <deckgo-slide-title>
+                    <div slot="title">
+                      <Img fluid={this.props.data.ourEnergyScreenshot2.childImageSharp.fluid}/>
+                    </div>
+                  </deckgo-slide-title>
+
+                  <deckgo-slide-title>
+                    <div slot="title">
+                      <Img fluid={this.props.data.ourEnergyScreenshot3.childImageSharp.fluid}/>
+                    </div>
+                  </deckgo-slide-title>
+                </deckgo-deck>
+              </div>
             </div>
           </article>
         </main>
@@ -40,6 +62,27 @@ export default () => (
         ourEnergyImage: file(relativePath: { eq: "portfolio/ourenergy-icon.png" }) {
           childImageSharp {
             fluid(maxWidth: 240) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+        ourEnergyScreenshot1: file(relativePath: { eq: "portfolio/ourenergy/screenshot1.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 540) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+        ourEnergyScreenshot2: file(relativePath: { eq: "portfolio/ourenergy/screenshot2.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 540) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+        ourEnergyScreenshot3: file(relativePath: { eq: "portfolio/ourenergy/screenshot3.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 540) {
               ...GatsbyImageSharpFluid
             }
           }

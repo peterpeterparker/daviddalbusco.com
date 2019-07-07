@@ -24,9 +24,11 @@ import { faDev } from "@fortawesome/free-brands-svg-icons"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
-import { defineCustomElements } from "@deckdeckgo/lazy-img/dist/loader"
+import { defineCustomElements as deckdeckgoLazyImgLoader } from "@deckdeckgo/lazy-img/dist/loader"
+import { defineCustomElements as deckdeckgoCoreLoader } from "@deckdeckgo/core/dist/loader"
 
-defineCustomElements(window)
+deckdeckgoLazyImgLoader(window)
+deckdeckgoCoreLoader(window)
 
 library.add(faRobot)
 library.add(faSuitcase)

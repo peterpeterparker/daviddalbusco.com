@@ -12,7 +12,27 @@ section.project {
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+
+    div.introduction {
       flex-direction: column;
+    }
+
+    div.screenshots {
+      button {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        cursor: pointer;
+        padding: 0 0.75rem;
+
+        &:hover,
+        &:active {
+          svg {
+            color: var(--color-highlight);
+          }
+        }
+      }
     }
 
     div.deck-container {
@@ -20,7 +40,7 @@ section.project {
       display: inline-block;
       position: relative;
 
-      width: 100%;
+      width: 50%;
       height: 20rem;
 
       deckgo-deck {

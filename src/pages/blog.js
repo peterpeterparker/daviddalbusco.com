@@ -14,7 +14,7 @@ class BlogPage extends React.Component {
     return <Layout fixNav={true}>
       <SEO title="Blog" />
 
-      <section className="blog extraspace">
+      <section className="blog extrabigspace">
         <main>
           <Chapter icon="newspaper">
             <h2>Blog</h2>

@@ -18,7 +18,7 @@ class OurEnergyPage extends React.Component {
             <h2> Our Energy - ETH Zürich</h2>
           </Chapter>
 
-          <article>
+          <article className="info">
             <div className="introduction">
               <p>I have developed the application "Our Energy" for a team of researchers at the <a
                 href="https://ethz.ch/">ETH Zürich</a>.</p>
@@ -58,6 +58,17 @@ class OurEnergyPage extends React.Component {
               <button onClick={() => this.nextSlide()}><FontAwesomeIcon icon={["fal", "chevron-right"]} size="3x"/></button>
 
             </div>
+          </article>
+
+          <Chapter icon="info-circle">
+            <h3>Fact sheet</h3>
+          </Chapter>
+
+          <article className="factsheet">
+            <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
+            <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
+            <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
+            <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a></p>
           </article>
         </main>
       </section>

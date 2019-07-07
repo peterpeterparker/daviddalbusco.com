@@ -1,5 +1,5 @@
 div.chapter {
-  h1, h2 {
+  h1, h2, h3 {
     text-align: center;
   }
 
@@ -20,6 +20,16 @@ div.chapter {
     @media (min-width: 992px) {
       font-size: 3rem;
       line-height: 2.5rem;
+    }
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    line-height: 1.5rem;
+
+    @media (min-width: 992px) {
+      font-size: 2.5rem;
+      line-height: 2.25rem;
     }
   }
 

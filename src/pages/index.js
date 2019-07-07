@@ -19,6 +19,7 @@ import { faEnvelope } from "@fortawesome/pro-light-svg-icons"
 import { faBars } from "@fortawesome/pro-light-svg-icons"
 import { faChevronRight } from "@fortawesome/pro-light-svg-icons"
 import { faChevronLeft } from "@fortawesome/pro-light-svg-icons"
+import { faInfoCircle } from "@fortawesome/pro-light-svg-icons"
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faMedium } from "@fortawesome/free-brands-svg-icons"
@@ -40,6 +41,7 @@ library.add(faEnvelope)
 library.add(faBars)
 library.add(faChevronRight)
 library.add(faChevronLeft)
+library.add(faInfoCircle)
 
 library.add(faGithub)
 library.add(faMedium)

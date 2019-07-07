@@ -2,13 +2,19 @@ import React from "react"
 import SEO from "../../components/seo/seo"
 import Layout from "../../components/layout/layout"
 import { graphql, Link, StaticQuery } from "gatsby"
+
 import Chapter from "../../components/chapter/chapter"
-import Img from "gatsby-image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Slider from "../../components/slider/slider"
 
 class OurEnergyPage extends React.Component {
 
   render() {
+    const images = [
+      this.props.data.ourEnergyScreenshot1.childImageSharp.fluid,
+      this.props.data.ourEnergyScreenshot2.childImageSharp.fluid,
+      this.props.data.ourEnergyScreenshot3.childImageSharp.fluid,
+    ]
+
     return <Layout fixNav={true}>
       <SEO title="Our Energy - ETH Zürich"/>
 
@@ -29,35 +35,7 @@ class OurEnergyPage extends React.Component {
                 Einsiedeln in Switzerland.</p>
             </div>
 
-            <div className="screenshots">
-
-              <button onClick={() => this.prevSlide()}><FontAwesomeIcon icon={["fal", "chevron-left"]} size="3x"/></button>
-
-              <div className="deck-container">
-                <deckgo-deck embedded="true">
-                  <deckgo-slide-title>
-                    <div slot="title">
-                      <Img fluid={this.props.data.ourEnergyScreenshot1.childImageSharp.fluid}/>
-                    </div>
-                  </deckgo-slide-title>
-
-                  <deckgo-slide-title>
-                    <div slot="title">
-                      <Img fluid={this.props.data.ourEnergyScreenshot2.childImageSharp.fluid}/>
-                    </div>
-                  </deckgo-slide-title>
-
-                  <deckgo-slide-title>
-                    <div slot="title">
-                      <Img fluid={this.props.data.ourEnergyScreenshot3.childImageSharp.fluid}/>
-                    </div>
-                  </deckgo-slide-title>
-                </deckgo-deck>
-              </div>
-
-              <button onClick={() => this.nextSlide()}><FontAwesomeIcon icon={["fal", "chevron-right"]} size="3x"/></button>
-
-            </div>
+            <Slider images={images}/>
           </article>
 
           <Chapter icon="info-circle">
@@ -65,8 +43,11 @@ class OurEnergyPage extends React.Component {
           </Chapter>
 
           <article className="factsheet">
-            <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
-            <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
+            <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a
+              href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
+              href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
+            <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a
+              href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
             <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
             <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a></p>
           </article>
@@ -75,20 +56,6 @@ class OurEnergyPage extends React.Component {
         </main>
       </section>
     </Layout>
-  }
-
-  async nextSlide() {
-    const deck = document.querySelector("deckgo-deck")
-    if (deck) {
-      await deck.slideNext()
-    }
-  }
-
-  async prevSlide() {
-    const deck = document.querySelector("deckgo-deck")
-    if (deck) {
-      await deck.slidePrev()
-    }
   }
 
 }

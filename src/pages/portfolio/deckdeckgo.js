@@ -9,6 +9,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 class OurEnergyPage extends React.Component {
 
+  async componentDidMount() {
+    const youtube = document.querySelector('deckgo-youtube');
+
+    youtube.width = youtube.parentElement.offsetWidth > 768 ? youtube.parentElement.offsetWidth / 2 : youtube.parentElement.offsetWidth;
+    youtube.height= youtube.parentElement.offsetHeight;
+
+    await youtube.lazyLoadContent();
+  }
+
   render() {
     return <Layout fixNav={true}>
       <SEO title="DeckDeckGo"/>
@@ -27,7 +36,8 @@ class OurEnergyPage extends React.Component {
               <p>Meanwhile <a href="https://nmattia.com">Nicolas Mattia</a> joined the project and together we decided to have even more fun by turning it into a fully web open source editor for presentations.</p>
             </div>
 
-            <iframe title="DeckDeckGo" width="450" height="315" src="https://www.youtube.com/embed/3o3oGBTTRSs" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <deckgo-youtube src="https://www.youtube.com/watch?v=3o3oGBTTRSs" frameTitle={'DeckDeckGo'}>
+            </deckgo-youtube>
           </article>
         </main>
       </section>

@@ -1,29 +1,18 @@
-section.project {
+section.project, section.factsheet {
 
-  article.info {
+  article {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: auto;
     grid-gap: 1.75rem;
 
     margin: 1.75rem 0;
-
-    div.introduction {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    div.introduction {
-      flex-direction: column;
-    }
   }
 }
 
 section.factsheet {
   article {
-    text-align: center;
-    padding: 0;
+    grid-gap: 0 1.75rem;
 
     a {
       text-decoration: none;

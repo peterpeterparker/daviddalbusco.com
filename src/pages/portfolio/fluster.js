@@ -29,7 +29,7 @@ class FlusterPage extends React.Component {
           </Chapter>
 
           <article className="info">
-            <div className="introduction">
+            <div>
               <p>I have developed "Fluster" as a personal project for which I am no longer really active.</p>
               <p>When I moved to Zürich I was struggling to find flat and roommates, that's why I tried to develop my
                 own platform to help others and myself to solve such problems.</p>
@@ -49,20 +49,25 @@ class FlusterPage extends React.Component {
           </Chapter>
 
           <article>
-            <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a
-              href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
-              href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
-            <p><strong>Website:</strong> <a href="https:fluster.io">Fluster.io</a></p>
-            <p><strong>Technology (application):</strong> <a href="http://ionicframework.com">Ionic</a>, <a
-              href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
-            <p><strong>Technology (website):</strong>: <a href="http://angular.io">Angular</a>, <a
-              href="https://material.angular.io/">Angular Material</a> and <a href="https://angular.io/guide/universal">Angular
-              Service-side Rendering (SSR)</a></p>
-            <p><strong>Technology (backend, API):</strong> <a href="https://nodejs.org/">NodeJS</a> and <a
-              href="https://expressjs.com">ExpressJS</a></p>
-            <p><strong>Infrastructure:</strong> <a href="https://aws.amazon.com/ec2/">Amazon EC2</a> and <a
-              href="https://aws.amazon.com/fr/sns/">Amazon SNS</a></p>
-            <p><strong>Database:</strong> <a href="https://www.mongodb.com">MongoDB</a></p>
+            <div>
+              <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a
+                href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
+                href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
+              <p><strong>Website:</strong> <a href="https:fluster.io">Fluster.io</a></p>
+              <p><strong>Infrastructure:</strong> <a href="https://aws.amazon.com/ec2/">Amazon EC2</a> and <a
+                href="https://aws.amazon.com/fr/sns/">Amazon SNS</a></p>
+              <p><strong>Database:</strong> <a href="https://www.mongodb.com">MongoDB</a></p>
+            </div>
+
+            <div>
+              <p><strong>Technology (application):</strong> <a href="http://ionicframework.com">Ionic</a>, <a
+                href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
+              <p><strong>Technology (website):</strong>: <a href="http://angular.io">Angular</a>, <a
+                href="https://material.angular.io/">Angular Material</a> and <a href="https://angular.io/guide/universal">Angular
+                Service-side Rendering (SSR)</a></p>
+              <p><strong>Technology (backend, API):</strong> <a href="https://nodejs.org/">NodeJS</a> and <a
+                href="https://expressjs.com">ExpressJS</a></p>
+            </div>
           </article>
         </main>
       </section>

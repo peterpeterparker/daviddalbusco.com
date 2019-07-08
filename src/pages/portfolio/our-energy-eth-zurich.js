@@ -26,7 +26,7 @@ class OurEnergyPage extends React.Component {
           </Chapter>
 
           <article className="info">
-            <div className="introduction">
+            <div>
               <p>I have developed the application "Our Energy" for a team of researchers at the <a
                 href="https://ethz.ch/">ETH Zürich</a>.</p>
               <p>It is a mobile and web application for citizens to learn how they can intelligently use electricity
@@ -48,13 +48,17 @@ class OurEnergyPage extends React.Component {
           </Chapter>
 
           <article>
-            <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a
-              href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
-              href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
-            <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a
-              href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
-            <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
-            <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a></p>
+            <div>
+              <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a
+                href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
+                href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
+              <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a
+                href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
+            </div>
+            <div>
+              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
+              <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a></p>
+            </div>
           </article>
         </main>
       </section>

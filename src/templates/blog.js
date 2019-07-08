@@ -1,7 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
+
 import SEO from "../components/seo/seo"
 import Layout from "../components/layout/layout"
+import Blog from "../components/blog/blog"
 
 export default function Template({data}) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
@@ -21,6 +23,8 @@ export default function Template({data}) {
           />
         </main>
       </section>
+
+      <Blog/>
     </Layout>
   )
 }

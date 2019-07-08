@@ -58,6 +58,22 @@ section.portfolio {
         }
       }
 
+      &.bonjour {
+        > div {
+          background: #FFD664;
+
+          div.gatsby-image-wrapper {
+            border: 1px solid #8F7C76;
+            border-radius: 50%;
+            background: #F0F0ED;
+          }
+
+          &.details {
+            background: #80F4EC;
+          }
+        }
+      }
+
       &.deckdeckgo {
         > div {
           background: #0cd1e8;

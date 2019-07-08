@@ -18,6 +18,8 @@ class Portfolio extends React.Component {
         <div className="projects">
           {this.renderOurEnergy()}
 
+          {this.renderBonjour()}
+
           {this.renderDeckDeckGo()}
 
           {this.renderFluster()}
@@ -44,6 +46,26 @@ class Portfolio extends React.Component {
 
           <div className="details">
             <h2>Our Energy - ETH Zürich</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined;
+    }
+  }
+
+  renderBonjour() {
+    if (!this.props || this.props.filter !== 'bonjour') {
+      return <Link to="/portfolio/bonjour">
+        <article className="bonjour">
+          <div className="summary">
+            <Img fluid={this.props.data.bonjourImage.childImageSharp.fluid}/>
+          </div>
+
+          <div className="details">
+            <h2>Bonjour</h2>
 
             <p>Details</p>
           </div>
@@ -100,6 +122,13 @@ export default ({filter}) => (
     query={graphql`
     query {
       ourEnergyImage: file(relativePath: { eq: "portfolio/ourenergy-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      bonjourImage: file(relativePath: { eq: "portfolio/bonjour-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

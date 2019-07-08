@@ -78,7 +78,7 @@ class Portfolio extends React.Component {
 
   renderDeckDeckGo() {
     if (!this.props || this.props.filter !== 'deckdeckgo') {
-      return <Link to="/portfolio/our-energy-eth-zurich">
+      return <Link to="/portfolio/deckdeckgo">
         <article className="deckdeckgo">
           <div className="summary">
             <Img fluid={this.props.data.deckDeckGoImage.childImageSharp.fluid}/>

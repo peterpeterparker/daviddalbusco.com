@@ -52,10 +52,11 @@ class OurEnergyPage extends React.Component {
               <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a
                 href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
                 href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
-              <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a
-                href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
+              <p><strong>Website:</strong> <a href="http://www.ia.arch.ethz.ch/our-energy/"> iA, Chair of Information Architecture, ETH Zürich</a></p>
             </div>
             <div>
+              <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a
+                href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
               <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
               <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a></p>
             </div>

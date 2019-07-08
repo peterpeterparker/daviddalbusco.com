@@ -12,10 +12,12 @@ class OurEnergyPage extends React.Component {
   async componentDidMount() {
     const youtube = document.querySelector('deckgo-youtube');
 
-    youtube.width = youtube.parentElement.offsetWidth > 768 ? youtube.parentElement.offsetWidth / 2 : youtube.parentElement.offsetWidth;
-    youtube.height= youtube.parentElement.offsetHeight;
+    if (youtube) {
+      youtube.width = youtube.parentElement.offsetWidth > 768 ? youtube.parentElement.offsetWidth / 2 : youtube.parentElement.offsetWidth;
+      youtube.height= youtube.parentElement.offsetHeight;
 
-    await youtube.lazyLoadContent();
+      await youtube.lazyLoadContent();
+    }
   }
 
   render() {

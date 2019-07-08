@@ -28,12 +28,6 @@ import { faDev } from "@fortawesome/free-brands-svg-icons"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
-import { defineCustomElements as deckdeckgoLazyImgLoader } from "@deckdeckgo/lazy-img/dist/loader"
-import { defineCustomElements as deckdeckgoCoreLoader } from "@deckdeckgo/core/dist/loader"
-
-deckdeckgoLazyImgLoader(window)
-deckdeckgoCoreLoader(window)
-
 library.add(faRobot)
 library.add(faSuitcase)
 library.add(faNewspaper)
@@ -51,15 +45,32 @@ library.add(faDev)
 library.add(faTwitter)
 library.add(faLinkedinIn)
 
-const IndexPage = () => (
-  <Layout fixNav={false}>
-    <SEO/>
-    <Header/>
-    <Portfolio/>
-    <About/>
-    <Blog/>
-    <Contact/>
-  </Layout>
-)
+class IndexPage extends React.Component {
 
-export default IndexPage
+    async componentDidMount() {
+        try {
+            const deckdeckgoLazyImgLoader = require("@deckdeckgo/lazy-img/dist/loader")
+            const deckdeckgoCoreLoader = require("@deckdeckgo/core/dist/loader")
+
+            await deckdeckgoLazyImgLoader.defineCustomElements(window)
+            await deckdeckgoCoreLoader.defineCustomElements(window)
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    render() {
+        return <Layout fixNav={false}>
+            <SEO/>
+            <Header/>
+            <Portfolio/>
+            <About/>
+            <Blog/>
+            <Contact/>
+        </Layout>
+    }
+}
+
+export default () => (
+  <IndexPage/>
+)

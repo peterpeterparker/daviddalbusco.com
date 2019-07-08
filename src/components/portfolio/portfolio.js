@@ -12,56 +12,90 @@ class Portfolio extends React.Component {
     return <section className="portfolio extraspace" id="portfolio">
       <main>
         <Chapter icon="suitcase">
-          <h2>Portfolio</h2>
+          {this.renderTitle()}
         </Chapter>
 
         <div className="projects">
-          <Link to="/portfolio/our-energy-eth-zurich">
-            <article className="ourenergy">
-              <div className="summary">
-                <Img fluid={this.props.data.ourEnergyImage.childImageSharp.fluid}/>
-              </div>
+          {this.renderOurEnergy()}
 
-              <div className="details">
-                <h2>Our Energy - ETH Zürich</h2>
+          {this.renderDeckDeckGo()}
 
-                <p>Details</p>
-              </div>
-            </article>
-          </Link>
-
-          <article className="deckdeckgo">
-            <div className="summary">
-              <Img fluid={this.props.data.deckDeckGoImage.childImageSharp.fluid}/>
-            </div>
-
-            <div className="details">
-              <h2>DeckDeckGo</h2>
-
-              <p>Details</p>
-            </div>
-          </article>
-
-          <Link to="/portfolio/fluster">
-            <article className="fluster">
-              <div className="summary">
-                <Img fluid={this.props.data.flusterImage.childImageSharp.fluid}/>
-              </div>
-
-              <div className="details">
-                <h2>Fluster</h2>
-
-                <p>Details</p>
-              </div>
-            </article>
-          </Link>
+          {this.renderFluster()}
         </div>
       </main>
     </section>
   }
+
+  renderTitle() {
+    if (!this.props || !this.props.filter || this.props.filter === undefined || this.props.filter === '') {
+      return <h2>Portfolio</h2>
+    } else {
+      return <h2>Other projects</h2>
+    }
+  }
+
+  renderOurEnergy() {
+    if (!this.props || this.props.filter !== 'ourenergy') {
+      return <Link to="/portfolio/our-energy-eth-zurich">
+        <article className="ourenergy">
+          <div className="summary">
+            <Img fluid={this.props.data.ourEnergyImage.childImageSharp.fluid}/>
+          </div>
+
+          <div className="details">
+            <h2>Our Energy - ETH Zürich</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined;
+    }
+  }
+
+  renderDeckDeckGo() {
+    if (!this.props || this.props.filter !== 'deckdeckgo') {
+      return <Link to="/portfolio/our-energy-eth-zurich">
+        <article className="deckdeckgo">
+          <div className="summary">
+            <Img fluid={this.props.data.deckDeckGoImage.childImageSharp.fluid}/>
+          </div>
+
+          <div className="details">
+            <h2>DeckDeckGo</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined;
+    }
+  }
+
+  renderFluster() {
+    if (!this.props || this.props.filter !== 'fluster') {
+      return <Link to="/portfolio/fluster">
+        <article className="fluster">
+          <div className="summary">
+            <Img fluid={this.props.data.flusterImage.childImageSharp.fluid}/>
+          </div>
+
+          <div className="details">
+            <h2>Fluster</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined;
+    }
+  }
 }
 
-export default () => (
+export default ({filter}) => (
   <StaticQuery
     query={graphql`
     query {
@@ -89,7 +123,7 @@ export default () => (
     }
   `}
     render={(data) => (
-      <Portfolio data={data}/>
+      <Portfolio data={data} filter={filter}/>
     )}
   />
 )

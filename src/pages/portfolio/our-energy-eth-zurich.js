@@ -1,10 +1,11 @@
 import React from "react"
 import SEO from "../../components/seo/seo"
 import Layout from "../../components/layout/layout"
-import { graphql, Link, StaticQuery } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 
 import Chapter from "../../components/chapter/chapter"
 import Slider from "../../components/slider/slider"
+import PortFolio from "../../components/portfolio/portfolio"
 
 class OurEnergyPage extends React.Component {
 
@@ -21,7 +22,7 @@ class OurEnergyPage extends React.Component {
       <section className="project extrabigspace">
         <main>
           <Chapter img={this.props.data.ourEnergyImage.childImageSharp.fluid}>
-            <h2>Our Energy - ETH Zürich</h2>
+            <h1>Our Energy - ETH Zürich</h1>
           </Chapter>
 
           <article className="info">
@@ -43,7 +44,7 @@ class OurEnergyPage extends React.Component {
       <section className="factsheet">
         <main>
           <Chapter icon="info-circle">
-            <h3>Fact sheet</h3>
+            <h2>Fact sheet</h2>
           </Chapter>
 
           <article>
@@ -58,9 +59,7 @@ class OurEnergyPage extends React.Component {
         </main>
       </section>
 
-      <section className="back-portfolio">
-        <Link to='/#portfolio' className="button"><h2>Portfolio</h2></Link>
-      </section>
+      <PortFolio filter={'ourenergy'}/>
     </Layout>
   }
 

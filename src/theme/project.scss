@@ -23,7 +23,7 @@ section.project {
 section.factsheet {
   article {
     text-align: center;
-    padding: 0 0 1rem;
+    padding: 0;
 
     a {
       text-decoration: none;
@@ -36,12 +36,8 @@ section.factsheet {
   }
 }
 
-section.back-portfolio {
-  padding: 0 0 6rem;
-}
-
 section.open-source {
-  padding: 4rem 0 2rem;
+  padding: 4rem 0 0;
 
   p {
     text-align: center;

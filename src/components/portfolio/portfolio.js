@@ -42,17 +42,19 @@ class Portfolio extends React.Component {
             </div>
           </article>
 
-          <article className="fluster">
-            <div className="summary">
-              <Img fluid={this.props.data.flusterImage.childImageSharp.fluid}/>
-            </div>
+          <Link to="/portfolio/fluster">
+            <article className="fluster">
+              <div className="summary">
+                <Img fluid={this.props.data.flusterImage.childImageSharp.fluid}/>
+              </div>
 
-            <div className="details">
-              <h2>Fluster</h2>
+              <div className="details">
+                <h2>Fluster</h2>
 
-              <p>Details</p>
-            </div>
-          </article>
+                <p>Details</p>
+              </div>
+            </article>
+          </Link>
         </div>
       </main>
     </section>

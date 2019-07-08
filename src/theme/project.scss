@@ -39,3 +39,17 @@ section.factsheet {
 section.back-portfolio {
   padding: 0 0 6rem;
 }
+
+section.open-source {
+  padding: 4rem 0 2rem;
+
+  p {
+    text-align: center;
+  }
+
+  a {
+    svg {
+      margin-left: 4px;
+    }
+  }
+}

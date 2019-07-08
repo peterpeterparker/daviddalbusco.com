@@ -21,7 +21,7 @@ class OurEnergyPage extends React.Component {
       <section className="project extrabigspace">
         <main>
           <Chapter img={this.props.data.ourEnergyImage.childImageSharp.fluid}>
-            <h2> Our Energy - ETH Zürich</h2>
+            <h2>Our Energy - ETH Zürich</h2>
           </Chapter>
 
           <article className="info">

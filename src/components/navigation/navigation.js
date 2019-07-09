@@ -67,7 +67,7 @@ class Navigation extends React.Component {
             </h3>
           </Link>
 
-          <button className="menu" onClick={() => this.toggleMenu()}><FontAwesomeIcon icon={["fal", "bars"]} size="lg"/>
+          <button className="menu" title="Menu" onClick={() => this.toggleMenu()}><FontAwesomeIcon icon={["fal", "bars"]} size="lg"/>
           </button>
         </main>
       </section>

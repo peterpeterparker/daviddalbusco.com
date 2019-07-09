@@ -66,3 +66,10 @@ class IndexPage extends React.Component {
 export default () => (
   <IndexPage/>
 )
+
+// IE9: https://stackoverflow.com/questions/5472938/does-ie9-support-console-log-and-is-it-a-real-function#answer-5473193
+const log = Function.prototype.bind.call(console.log, console);
+log.apply(console, ['%cDavid Dal Busco', 'color: #ff65a9;font-size:2rem;font-weight: 300;']);
+log.apply(console, ['%cHey, interested in the code of this website? Lucky you, it is open source 😜', 'color: #2d294c;font-size:1rem;font-weight: 300;']);
+log.apply(console, ['%cCome say hi on Github', 'color: #2d294c;font-size:1rem;font-weight: 300;']);
+log.apply(console, ['%chttps://github.com/peterpeterparker/daviddalbusco.com', 'font-size:1rem;font-weight: 300;']);

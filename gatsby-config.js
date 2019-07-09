@@ -30,8 +30,8 @@ module.exports = {
         short_name: `David`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#221f39`,
-        display: `minimal-ui`,
+        theme_color: `#2d294c`,
+        display: `standalone`,
         icon: `src/images/daviddalbusco-icon.png`, // This path is relative to the root of the site.
       },
     },

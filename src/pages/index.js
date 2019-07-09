@@ -51,18 +51,6 @@ library.add(faLinkedinIn)
 
 class IndexPage extends React.Component {
 
-    async componentDidMount() {
-        try {
-            const deckdeckgoLazyImgLoader = require("@deckdeckgo/lazy-img/dist/loader")
-            const deckdeckgoCoreLoader = require("@deckdeckgo/core/dist/loader")
-
-            await deckdeckgoLazyImgLoader.defineCustomElements(window)
-            await deckdeckgoCoreLoader.defineCustomElements(window)
-        } catch (err) {
-            console.error(err);
-        }
-    }
-
     render() {
         return <Layout fixNav={false}>
             <SEO/>

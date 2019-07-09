@@ -22,6 +22,18 @@ import Footer from "../footer/footer"
 
 class Layout extends React.Component {
 
+  async componentDidMount() {
+    try {
+      const deckdeckgoLazyImgLoader = require("@deckdeckgo/lazy-img/dist/loader")
+      const deckdeckgoCoreLoader = require("@deckdeckgo/core/dist/loader")
+
+      await deckdeckgoLazyImgLoader.defineCustomElements(window)
+      await deckdeckgoCoreLoader.defineCustomElements(window)
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   render() {
     return <>
       <Navigation siteTitle={this.props.data.site.siteMetadata.title} fix={this.props.fixNav}/>

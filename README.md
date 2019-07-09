@@ -1,5 +1,3 @@
-# DavidDalBusco.com
-
 Hello,
 
 I'm [David Dal Busco]. I'm a freelancer, full stack developer Web, PWA and Mobile iOS/Android, project manager, UX and IT consultant.

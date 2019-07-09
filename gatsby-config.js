@@ -27,9 +27,9 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `daviddalbusco.com`,
-        short_name: `starter`,
+        short_name: `David`,
         start_url: `/`,
-        background_color: `#221f39`,
+        background_color: `#ffffff`,
         theme_color: `#221f39`,
         display: `minimal-ui`,
         icon: `src/images/daviddalbusco-icon.png`, // This path is relative to the root of the site.

@@ -3,6 +3,9 @@ module.exports = {
     title: `David Dal Busco`,
     description: `Freelancer - Full Stack Development Web, PWA and Mobile iOS/Android - Project management - UX and IT consulting`,
     author: `David Dal Busco`,
+    url: "https://daviddalbusco.com",
+    image: "/images/daviddalbusco.jpg",
+    twitterUsername: "@daviddalbusco",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

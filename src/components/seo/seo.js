@@ -18,7 +18,10 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
-            author
+            author,
+            url,
+            image,
+            twitterUsername
           }
         }
       }
@@ -26,13 +29,14 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaTitle = title ? title : site.siteMetadata.title;
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title ? title : site.siteMetadata.title}
+      title={metaTitle}
       titleTemplate={title ? `%s | ${site.siteMetadata.title}` : `%s`}
       meta={[
         {
@@ -41,7 +45,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           property: `og:description`,
@@ -50,6 +54,14 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: site.siteMetadata.url,
+        },
+        {
+          property: `og:image`,
+          content: `${site.siteMetadata.url}${site.siteMetadata.image}`,
         },
         {
           name: `twitter:card`,
@@ -61,11 +73,19 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: metaTitle,
         },
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: `${site.siteMetadata.url}${site.siteMetadata.image}`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.twitterUsername,
         },
       ].concat(meta)}
     />

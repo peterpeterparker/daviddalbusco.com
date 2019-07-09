@@ -9,7 +9,7 @@ import Blog from "../components/blog/blog"
 import About from "../components/about/about"
 import Contact from "../components/contact/contact"
 
-import { library } from "@fortawesome/fontawesome-svg-core"
+import { library, config } from "@fortawesome/fontawesome-svg-core"
 
 import { faRobot } from "@fortawesome/pro-light-svg-icons"
 import { faSuitcase } from "@fortawesome/pro-light-svg-icons"
@@ -27,6 +27,10 @@ import { faMedium } from "@fortawesome/free-brands-svg-icons"
 import { faDev } from "@fortawesome/free-brands-svg-icons"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
+
+// https://github.com/FortAwesome/react-fontawesome/issues/134#issuecomment-471940596
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false;
 
 library.add(faRobot)
 library.add(faSuitcase)

@@ -22,7 +22,11 @@ section.header {
       max-width: 260px;
       max-height: 260px;
       border-radius: 50%;
-      margin: 0 0 2.75rem;
+      margin: 0 0 2.25rem;
+
+      @media (max-height: 560px) {
+        display: none;
+      }
     }
 
     p {

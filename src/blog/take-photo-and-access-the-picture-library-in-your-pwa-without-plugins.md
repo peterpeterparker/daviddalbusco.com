@@ -12,7 +12,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*94yTSEwDkPK52B22ll74mQ.jpeg"
 
 I recently developed a new feature in our upcoming web open source editor for presentations, [DeckDeckGo](https://deckdeckgo.com), to let users upload their own pictures. Turn out, as our application is a Progressive Web App, that the feature I implemented not only let users access their picture library on their phones but also allow them to take photos and upload these directly in their presentations 🚀
 
-In this new blog post I’ll share how you could implement such a feature and will also try to display how you could limit the uploaded file size, upload the results to [Firebase Storage](https://firebase.google.com/docs/storage) (the solution I implemented) or convert the result to a [base64](https://en.wikipedia.org/wiki/Base64) string (in case you would have that requirement).
+In this new blog post I’ll share how you could implement such a feature and will also try to display how you could limit the uploaded file size, upload the results to [Firebase Storage](https://firebase.google.com/docs/storage) (the solution I implemented) or convert the result to a [base64](https://en.wikipedia.org/wiki/Base64) string or to a blob with a local object URL (in case you would have one of these requirements).
 
 <iframe width="280" height="158" src="https://www.youtube.com/embed/VMNa3RnWxHI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
 <br/>
@@ -161,6 +161,34 @@ private
         }
     });
 }
+```
+
+### Convert the image to a blob and create a local object URL
+
+I had a chat this morning with [Sergey Rudenko](https://medium.com/@sergey.rudenko) who pointed out the fact that converting the image to a blob in order to create and use a local object url, instead of base64, might improve the performance in special cases. That’s why he provided me the following alternative, which might interest you too.
+
+Kudos Sergey and thank your for this nice add-ons 👍
+
+```
+private convert(myFile: File): Promise<string> {
+        return new Promise<string>((resolve, reject) => {
+            const fileReader = new FileReader();
+            if (fileReader && myFile) {
+                fileReader.readAsDataURL(myFile);
+                fileReader.onload = () => {
+                    const blob = new Blob([new Uint8Array(
+                               fileReader.result as ArrayBuffer)]);
+                    const blobURL = URL.createObjectURL(blob);
+                    resolve(blobURL);
+                };
+                fileReader.onerror = (error) => {
+                    reject(error);
+                };
+            } else {
+                reject('No file provided');
+            }
+        });
+    }
 ```
 
 ### Cherry on the cake 🍒🎂

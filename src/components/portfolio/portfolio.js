@@ -5,12 +5,22 @@ import "./portfolio.scss"
 
 import Chapter from "../chapter/chapter"
 import Img from "gatsby-image"
+
 import { DeckDeckGoUtils } from "@deckdeckgo/utils"
 
 
 class Portfolio extends React.Component {
 
-  mobile = DeckDeckGoUtils.isMobile()
+  constructor(props) {
+    super(props)
+    this.state = {
+      mobile: false,
+    }
+  }
+
+  componentDidMount() {
+    this.setState({mobile: DeckDeckGoUtils.isMobile()})
+  }
 
   render() {
     return <section className="portfolio extraspace" id="portfolio">
@@ -43,7 +53,7 @@ class Portfolio extends React.Component {
   renderOurEnergy() {
     if (!this.props || this.props.filter !== "ourenergy") {
       return <Link to="/portfolio/our-energy-eth-zurich">
-        <article className={this.mobile ? "ourenergy mobile" : "ourenergy"}>
+        <article className={this.state.mobile ? "ourenergy mobile" : "ourenergy"}>
           <div className="summary">
             <Img fluid={this.props.data.ourEnergyImage.childImageSharp.fluid}/>
 
@@ -65,7 +75,7 @@ class Portfolio extends React.Component {
   renderBonjour() {
     if (!this.props || this.props.filter !== "bonjour") {
       return <Link to="/portfolio/bonjour">
-        <article className={this.mobile ? "bonjour mobile" : "bonjour"}>
+        <article className={this.state.mobile ? "bonjour mobile" : "bonjour"}>
           <div className="summary">
             <Img fluid={this.props.data.bonjourImage.childImageSharp.fluid}/>
 
@@ -87,7 +97,7 @@ class Portfolio extends React.Component {
   renderDeckDeckGo() {
     if (!this.props || this.props.filter !== "deckdeckgo") {
       return <Link to="/portfolio/deckdeckgo">
-        <article className={this.mobile ? "deckdeckgo mobile" : "deckdeckgo"}>
+        <article className={this.state.mobile ? "deckdeckgo mobile" : "deckdeckgo"}>
           <div className="summary">
             <Img fluid={this.props.data.deckDeckGoImage.childImageSharp.fluid}/>
 
@@ -109,7 +119,7 @@ class Portfolio extends React.Component {
   renderFluster() {
     if (!this.props || this.props.filter !== "fluster") {
       return <Link to="/portfolio/fluster">
-        <article className={this.mobile ? "fluster mobile" : "fluster"}>
+        <article className={this.state.mobile ? "fluster mobile" : "fluster"}>
           <div className="summary">
             <Img fluid={this.props.data.flusterImage.childImageSharp.fluid}/>
 

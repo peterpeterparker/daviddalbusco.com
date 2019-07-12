@@ -23,6 +23,8 @@ import Footer from "../footer/footer"
 class Layout extends React.Component {
 
   async componentDidMount() {
+    // TODO: To be removed when https://github.com/ionic-team/stencil/issues/1724 will be solved
+    // Use import instead when solved
     try {
       const deckdeckgoLazyImgLoader = require("@deckdeckgo/lazy-img/dist/loader")
       const deckdeckgoCoreLoader = require("@deckdeckgo/core/dist/loader")

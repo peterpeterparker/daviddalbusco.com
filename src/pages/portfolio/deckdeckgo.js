@@ -10,6 +10,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 class OurEnergyPage extends React.Component {
 
   async componentDidMount() {
+    // TODO: Workaround. To be removed when https://github.com/ionic-team/stencil/issues/1724 will be solved
+    try {
+      const deckdeckgoCoreLoader = require("@deckdeckgo/core/dist/loader")
+
+      await deckdeckgoCoreLoader.defineCustomElements(window)
+    } catch (err) {
+      console.error(err);
+    }
+
     const youtube = document.querySelector('deckgo-youtube');
 
     if (youtube) {

@@ -5,8 +5,12 @@ import "./portfolio.scss"
 
 import Chapter from "../chapter/chapter"
 import Img from "gatsby-image"
+import { DeckDeckGoUtils } from "@deckdeckgo/utils"
+
 
 class Portfolio extends React.Component {
+
+  mobile = DeckDeckGoUtils.isMobile()
 
   render() {
     return <section className="portfolio extraspace" id="portfolio">
@@ -29,7 +33,7 @@ class Portfolio extends React.Component {
   }
 
   renderTitle() {
-    if (!this.props || !this.props.filter || this.props.filter === undefined || this.props.filter === '') {
+    if (!this.props || !this.props.filter || this.props.filter === undefined || this.props.filter === "") {
       return <h2>Portfolio</h2>
     } else {
       return <h2>Other projects</h2>
@@ -37,11 +41,13 @@ class Portfolio extends React.Component {
   }
 
   renderOurEnergy() {
-    if (!this.props || this.props.filter !== 'ourenergy') {
+    if (!this.props || this.props.filter !== "ourenergy") {
       return <Link to="/portfolio/our-energy-eth-zurich">
-        <article className="ourenergy">
+        <article className={this.mobile ? "ourenergy mobile" : "ourenergy"}>
           <div className="summary">
             <Img fluid={this.props.data.ourEnergyImage.childImageSharp.fluid}/>
+
+            <h3>Our Energy - ETH Zürich</h3>
           </div>
 
           <div className="details">
@@ -52,16 +58,18 @@ class Portfolio extends React.Component {
         </article>
       </Link>
     } else {
-      return undefined;
+      return undefined
     }
   }
 
   renderBonjour() {
-    if (!this.props || this.props.filter !== 'bonjour') {
+    if (!this.props || this.props.filter !== "bonjour") {
       return <Link to="/portfolio/bonjour">
-        <article className="bonjour">
+        <article className={this.mobile ? "bonjour mobile" : "bonjour"}>
           <div className="summary">
             <Img fluid={this.props.data.bonjourImage.childImageSharp.fluid}/>
+
+            <h3>Bonjour</h3>
           </div>
 
           <div className="details">
@@ -72,16 +80,18 @@ class Portfolio extends React.Component {
         </article>
       </Link>
     } else {
-      return undefined;
+      return undefined
     }
   }
 
   renderDeckDeckGo() {
-    if (!this.props || this.props.filter !== 'deckdeckgo') {
+    if (!this.props || this.props.filter !== "deckdeckgo") {
       return <Link to="/portfolio/deckdeckgo">
-        <article className="deckdeckgo">
+        <article className={this.mobile ? "deckdeckgo mobile" : "deckdeckgo"}>
           <div className="summary">
             <Img fluid={this.props.data.deckDeckGoImage.childImageSharp.fluid}/>
+
+            <h3>DeckDeckGo</h3>
           </div>
 
           <div className="details">
@@ -92,16 +102,18 @@ class Portfolio extends React.Component {
         </article>
       </Link>
     } else {
-      return undefined;
+      return undefined
     }
   }
 
   renderFluster() {
-    if (!this.props || this.props.filter !== 'fluster') {
+    if (!this.props || this.props.filter !== "fluster") {
       return <Link to="/portfolio/fluster">
-        <article className="fluster">
+        <article className={this.mobile ? "fluster mobile" : "fluster"}>
           <div className="summary">
             <Img fluid={this.props.data.flusterImage.childImageSharp.fluid}/>
+
+            <h3>Fluster</h3>
           </div>
 
           <div className="details">
@@ -112,12 +124,12 @@ class Portfolio extends React.Component {
         </article>
       </Link>
     } else {
-      return undefined;
+      return undefined
     }
   }
 }
 
-export default ({filter}) => (
+export default ({ filter }) => (
   <StaticQuery
     query={graphql`
     query {

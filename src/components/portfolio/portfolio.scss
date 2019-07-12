@@ -78,9 +78,12 @@ section.portfolio {
         > div {
           background: #0cd1e8;
 
+          &.summary, &.details {
+            color: white;
+          }
+
           &.details {
             background: #3A81FE;
-            color: white;
           }
         }
       }
@@ -89,9 +92,12 @@ section.portfolio {
         > div {
           background: #FF65A9;
 
+          &.summary, &.details {
+            color: white;
+          }
+
           &.details {
             background: #feb79c;
-            color: white;
           }
         }
       }
@@ -129,13 +135,30 @@ section.portfolio {
         }
       }
 
-      &:hover, &:active {
-        > div.details {
-          visibility: visible;
-          opacity: 1;
+      &:not(.mobile) {
+        div.summary {
+          h3 {
+            display: none;
+          }
+        }
+
+        &:hover, &:active {
+          > div.details {
+            visibility: visible;
+            opacity: 1;
+          }
         }
       }
 
+      &.mobile {
+        div.summary {
+          h3 {
+            text-align: center;
+            padding: 1.25rem 0 0;
+            margin: 0;
+          }
+        }
+      }
     }
   }
 }

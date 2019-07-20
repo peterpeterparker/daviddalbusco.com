@@ -8,6 +8,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*0cBVakg6yb906eFR0VLm8Q.jpeg"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*0cBVakg6yb906eFR0VLm8Q.jpeg)
+
 *Photo by [samsommer](https://unsplash.com/@samsomfotos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
 We are currently [developing](https://daviddalbusco.com/blog/we-are-developing-an-open-source-editor-for-presentations) an open source web editor for presentations called [DeckDeckGo] which, hopefully, we will be able to release in beta around the end of the summer (🤞).

@@ -199,10 +199,11 @@ $ curl -i -H "Accept: application/json" -X GET  https://us-central1-your-cool-ap
 
 # Cherry on the cake 🍒🎂
 
-Our project is open source and we try to encourage others to do so too, that's why we released this particular function in our monorepo under the [GNU Affero General Public License](https://en.wikipedia.org/wiki/GNU_Affero_General_Public_License). Therefore if your project is cool too (😉) be our guest and clone `https://github.com/deckgo/deckdeckgo/tree/master/cloud`.
+Our project is open source and we try to encourage others to do so too, that's why we released this particular function in our monorepo under the [GNU Affero General Public License](https://en.wikipedia.org/wiki/GNU_Affero_General_Public_License). Therefore if your project is cool too (😉) be our guest and clone:
+
+`https://github.com/deckgo/deckdeckgo/tree/master/cloud`.
 
 To infinity and beyond 🚀
-
 David
 
 [DeckDeckGo]: https://deckdeckgo.com

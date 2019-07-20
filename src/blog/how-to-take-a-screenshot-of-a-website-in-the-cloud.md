@@ -17,6 +17,7 @@ Why I allowed my self to be so frontal in my opening sentence? Well, here we go:
 We are far, far away of such an application and community but it does not mean we can't dream a bit, specially as the project is a side one which we implement at nights and on the weekends for fun. Therefore we have decided to already implement the first piece of this idea in our beta. The main screen, which I call the "feed", will present all the decks which are going to be edited and published (as standalone Progressive Web Apps…but that's another story 😉) with our tool. For that purpose, as for their social cards, we had the need, or we decided, to capture in the cloud a screenshot of the first slide of such decks and that's why I'm writing this new blog post to display how you could create a [Google Functions for Firebase](https://firebase.google.com/docs/functions) to  take a screenshot of a website in the cloud 📸
 
 ![](https://cdn-images-1.medium.com/max/1600/1*UhdAPdzil3pwgFMecgqfJw.gif)
+
 *A sneak peek of our feed filled with our test presentations*
 
 # Introduction of the solution

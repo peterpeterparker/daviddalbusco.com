@@ -118,6 +118,21 @@ What's happening there 🤔? We are telling Puppeteer to run a headless Chrome w
 
 I did not came to that really neat solution alone. It is actually the result of an exchange   with Matthias Max, CEO of [bitflower](https://www.bitflower.net/), on the [StencilJS Slack](https://stencil-worldwide.herokuapp.com/) channel. Kudos to him, I would for example not have seriously thought in a first place on disabling the service workers if he would not have shared his idea and code, thanks a lot Matthias 👍
 
+## Tips and tricks
+
+In case you would need more memory to run your cloud function (it was the case for our project), you could extend the above declaration with, for example, 1GB of memory and a timeout of 2 minutes.
+
+```
+const runtimeOpts = {
+    timeoutSeconds: 120,
+    memory: <const> '1GB'
+};
+
+export const takeScreenshot =
+                 functions.runWith(runtimeOpts)
+                 .https.onRequest(takeScreenShotOnRequest);
+```
+
 # Save to the storage
 
 Saving the image buffer to the storage is actually, don't know why I'm still surprised by the simplicity of Google Firebase, really easy. Using the Firebase Admin we just need to reference the default bucket, create a file object and saves it, nothing more, nothing left.

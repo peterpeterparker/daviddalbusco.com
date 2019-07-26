@@ -38,6 +38,7 @@ Interested? 👉 [Issue #45: [core] the countdown slide template](https://github
 The “only” transition effect currently happening when swiping between slides is a “slide” effect (current slide is dragged away of the window and the new one is dragged in).
 
 ![](https://cdn-images-1.medium.com/max/1600/1*kEdSJGj91MbKjl3as1w7FA.gif)
+
 *Current “slide” effect*
 
 I thought it would be neat to have an option to select another type of animation beginning with the implementation of a  “fade effect” transition.

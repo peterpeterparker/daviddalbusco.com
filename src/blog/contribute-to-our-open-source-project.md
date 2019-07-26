@@ -28,7 +28,7 @@ The presentations developed with DeckDeckGo are based on predefined templates. T
 
 A couple of months ago, I went to a meetup where the organizer kept telling “we are beginning in 10 minutes” followed by “we are beginning in 5 minutes” and then in “now in 2 minutes” etc. I thought, specially if there is a large crowd, that it would be maybe cool to just display the information on the big screen. That’s why I came to the idea of having a template where the user could just pass a date and time as parameter and DeckDeckGo takes care or rendering a count down on screen 😁
 
-![](https://cdn-images-1.medium.com/max/1600/1*3OOXjRi5p98qfu8mLD03cQ.png)
+![](https://cdn-images-1.medium.com/max/1600/1*voVxknfmRH_le-JkDvJD2Q.png)
 *Our remote control has a “timer” feature, maybe its design could be use as inspiration*
 
 Interested? 👉 [Issue #45: [core] the countdown slide template](https://github.com/deckgo/deckdeckgo/issues/45)
@@ -49,7 +49,7 @@ Interested? 👉 [Issue #70: [core] Transition animation with “fade effect”]
 
 Among all the templates, there is a [YouTube template](https://docs.deckdeckgo.com/slides/youtube) which helps to easily integrate YouTube videos in the presentations. It is also interconnected with our [remote control](https://deckdeckgo.app) to let the speakers stop/start their video remotely 📱
 
-<iframe width="280" height="158" src="https://www.youtube.com/watch?v=3o3oGBTTRSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
+<iframe width="280" height="158" src="https://www.youtube.com/watch?v=3o3oGBTTRSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 
 *A video I recorded when I released the remote control*
@@ -64,7 +64,7 @@ Interested? 👉 [Issue #204: [core] Handle Youtube short URL](https://github.co
 
 With our Web Component to format and highlight code, which use [Prism.js](https://prismjs.com)under the hood, it is already possible to highlight specific lines. I was thinking that adding an option to add automatically line numbers at the begin of each lines would be a nice add-ons. I could think that these numbers could be useful when the speaker want to reference a line while talking or also when the component would be use in a web page, might help if needed to make references more clear.
 
-![](https://cdn-images-1.medium.com/max/1600/1*DpuRsjAYALZu8xdVnH3xrA.png)
+![](https://cdn-images-1.medium.com/max/1600/1*fv8n52dHip5HUJABheKN2w.png)
 *A sneak peek of this component in our upcoming editor for presentations*
 
 Interested? 👉 [Issue #115: [highlight-code] display optionally line numbers](https://github.com/deckgo/deckdeckgo/issues/115)

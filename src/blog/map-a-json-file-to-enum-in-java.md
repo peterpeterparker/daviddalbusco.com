@@ -7,8 +7,6 @@ tags: "#java #tutorial #webdev #maven"
 image: "https://cdn-images-1.medium.com/max/1600/1*qSYqGVlUNNhJgsYDxenv9A.jpeg"
 ---
 
-# Map a JSON file to ENUM in Java
-
 ![](https://cdn-images-1.medium.com/max/1600/1*qSYqGVlUNNhJgsYDxenv9A.jpeg)
 *More about Le Gruyère AOP on [MySwitzerland.com](https://www.myswitzerland.com/en-ch/experiences/food-wine/le-gruyere-aop/)*
 

@@ -12,7 +12,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*rKupQcNGK0DIGsSwjPxVsQ.jpeg"
 
 I'm currently sitting in a bus between Zürich and Munich on my way for a weekend trip where I plan to not work and nerd that much. Ok I admit it, that plan doesn't begin exactly as I just told and I may have to work for a client tomorrow morning, but, I've got an awesome news to share: 
 
-We are about to launch [DeckDeckGo](https://deckdeckgo.com), our upcoming open source web editor for presentations, next month (mid-end September 2019) 🎉
+We are about to launch [DeckDeckGo](https://deckdeckgo.com), our upcoming [open source](https://github.com/deckgo/deckdeckgo) web editor for presentations, next month (Mid to late September 2019) 🎉
 
 ![](https://cdn-images-1.medium.com/max/1600/1*H0grMl4nUD8LuzAl3QX8Dg.gif)
 *A quick overview of some of the features of our upcoming editor*
@@ -52,11 +52,11 @@ If you are still here and are up to give us hand, here's how you could participa
 
 1. Reach me on [Twitter](https://twitter.com/daviddalbusco), per [Email](david.dalbusco@outlook.com) or on our [Slack channel](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) to get started
 
-2. I'll answer and give you access to our platform. I will also be there in case you would need any help or support (I hope that our platform and editor are self explanatory, but if they would not be, we are going to be happy to gather your feedback and improve what's need to be improved before the start)
+2. I'll answer and give you access to our platform. I will also be there in case you would need any help or support
 
-3. Hopefully, our tool isn't that buggy and you won't discover that much bugs, but you might find some, I mean, we are humans after all 🤖 If you would, obviously with you, the help of contributors and by our selves we are going to fix these before launch
+3. You develop your presentations, ultimately publish them but don't share them "publicly in the wild" as long as we don't officially start
 
-4. You develop your presentations, ultimately publish them but don't share them "publicly in the wild" as long as we don't officially start
+4. Hopefully, our tool isn't that buggy and you won't discover that much bugs, but you might find some, I mean, we are humans after all 🤖 If that would be the unfortunate case, obviously we are going to fix these before launch
 
 5. Mid to late September 2019 we start our platform with plenty of content thanks to your help and we spend the all day wearing our biggest smiles because we are just lucky bastards who could count on awesome people like you 😃
 
@@ -66,4 +66,4 @@ To infinity and beyond 🚀
  
 David
 
-*P.S. Funny story, it was actually only 30 minutes travel remaining, I totally misunderstand my ticket. It was a good surprise, kind of feel I've used a time travel machine* 🤣 *Cheers from Munich*
+*P.S. Funny story, it was actually only 30 remaining minutes, I totally misunderstand my ticket. It was a good surprise, kind of feel I've used a time travel machine* 🤣 *Cheers from Munich*

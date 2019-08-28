@@ -15,11 +15,13 @@ I'm currently sitting in a bus between Zürich and Munich on my way for a weeken
 We are about to launch [DeckDeckGo](https://deckdeckgo.com), our upcoming [open source](https://github.com/deckgo/deckdeckgo) web editor for presentations, next month (Mid to late September 2019) 🎉
 
 ![](https://cdn-images-1.medium.com/max/1600/1*H0grMl4nUD8LuzAl3QX8Dg.gif)
+
 *A quick overview of some of the features of our upcoming editor*
 
 # Launch without content sucks
 
 ![](https://cdn-images-1.medium.com/max/1600/1*JMCskumAuEW6DcSDl02Z2w.gif)
+
 *The feels when they left the house, miss you Uncle Phil*
 
 It turns out that our solution is not "just" an editor but we are hopping that it would become someday an online community for sharing presentations, slides and talks about your interests and ideas (🤞). That's kind of our dream.
@@ -35,6 +37,7 @@ That's why **we need your help to get started** and are hoping that you would be
 # Almost nothing to win
 
 ![](https://cdn-images-1.medium.com/max/1600/1*nevdIt2eQwdLfv6fOlnFcA.gif)
+
 *What a strange choice of Gifs for this article, I miss Frank Drebin too*
 
 Whenever you have to create a new presentation in the next weeks, are just interested to try out our editor before anyone else or are maybe interested to replicate one of your favorite previous presentations, we would really appreciate your help.
@@ -46,6 +49,7 @@ Furthermore, if you would visit Zürich someday, I'll be happy to guide you thro
 # How to participate?
 
 ![](https://cdn-images-1.medium.com/max/1600/1*5ay_HPHArSh83KMlHDhKnw.gif)
+
 *Join the dark side of the force - Gandalf*
 
 If you are still here and are up to give us hand, here's how you could participate and what's the plan:

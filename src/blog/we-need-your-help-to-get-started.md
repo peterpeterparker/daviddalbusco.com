@@ -54,7 +54,7 @@ Furthermore, if you would visit Zürich someday, I'll be happy to guide you thro
 
 If you are still here and are up to give us hand, here's how you could participate and what's the plan:
 
-1. Reach me on [Twitter](https://twitter.com/daviddalbusco), per [Email](david.dalbusco@outlook.com) or on our [Slack channel](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) to get started
+1. Reach me on [Twitter](https://twitter.com/daviddalbusco), per [Email](mailto:david.dalbusco@outlook.com) or on our [Slack channel](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) to get started
 
 2. I'll answer and give you access to our platform. I will also be there in case you would need any help or support
 

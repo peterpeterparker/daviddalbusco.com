@@ -43,7 +43,7 @@ That being said and as I briefly introduced it above, we had some, I hope you wi
 
 *My mum better understood “a cloud solution” than “we developed it with the web”*
 
-DeckDeckGo is** **a **cloud** solution. It works everywhere on any devices, **projectors, desktops, mobiles or tablets** without any prior installation and without data save locally 🎥🖥️💻📱☁️
+DeckDeckGo is a **cloud** solution. It works everywhere on any devices, **projectors, desktops, mobiles or tablets** without any prior installation and without data save locally 🎥🖥️💻📱☁️
 
 There is by the way even no “Save” button in our editor, it does the job for you and save your data when these have to be saved 😁
 

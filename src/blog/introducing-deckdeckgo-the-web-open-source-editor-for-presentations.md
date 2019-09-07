@@ -43,7 +43,7 @@ That being said and as I briefly introduced it above, we had some, I hope you wi
 
 *My mum better understood “a cloud solution” than “we developed it with the web”*
 
-DeckDeckGo is a **cloud** solution. It works everywhere on any devices, **projectors, desktops, mobiles or tablets** without any prior installation and without data save locally 🎥🖥️💻📱☁️
+DeckDeckGo is a cloud solution. It works everywhere on any devices, **projectors**, **desktops**, **mobiles** or **tablets** without any prior installation and without data save locally 🎥🖥️💻📱☁️
 
 There is by the way even no “Save” button in our editor, it does the job for you and save your data when these have to be saved 😁
 
@@ -103,6 +103,9 @@ I was a bit more lazy on the integration of [Youtube](https://www.youtube.com) v
 #### Remote control
 
 Out of the box, without any special hardware, any presentations could be remote controlled with our “remote control” application. It handles currently actions like swiping slides, displaying notes, drawing on the presentation and even offers a countdown feature. We are also taking advantages of QR codes in order to establish easily the connection between the controller and the decks.
+
+<iframe width="280" height="158" src="https://www.youtube.com/embed/3o3oGBTTRSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
+<br/>
 
 *Hey, it’s me, David 👋*
 

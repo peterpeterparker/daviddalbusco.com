@@ -9,8 +9,6 @@ image: "https://cdn-images-1.medium.com/max/1600/1*qSYqGVlUNNhJgsYDxenv9A.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/2400/1*TmZb15Yzu3mGVG7uMkHvHw.png)
 
-*Background photo by [wisconsinpictures](https://unsplash.com/@wisconsinpictures?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
-
 We are very happy and excited to share with you today our web open source editor for presentations: [DeckDeckGo](https://beta.deckdeckgo.com)
 
 I still almost not believe that we managed to reach such a milestone. It took us a couple of months this year to develop it just for fun at nights and on weekends,  but yes, we did it  🎉
@@ -132,3 +130,5 @@ A picture speaks a thousand words, get started now to create your next presentat
 To infinity and beyond 🚀
 
 David
+
+P.S.: Background photo of the cover by [wisconsinpictures](https://unsplash.com/@wisconsinpictures?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

@@ -53,7 +53,7 @@ There is by the way even no “Save” button in our editor, it does the job for
 
 No export to PDF (at least not yet), therefore you may ask your self: How my gosh David, how I’m going to share my presentation then?
 
-Well, here’s a cool thing: DeckDeckGo package and publish every single presentation you would like to **share as a standalone application.** Most precisely as Progressive Web Apps. Basically you are not going to send a PDF to your friends a colleagues but you are going to send them a link to your app respectively to your presentation which is compatible with any device’s screen size 🚀
+Well, here’s a cool thing: DeckDeckGo package and publish every single presentation you would like to **share as a standalone application.** Most precisely as Progressive Web Apps. Basically you are not going to send a PDF to your friends a colleagues but you are going to send them a link to your app respectively to your presentation which is compatible with any device’s screen size and SEO friendly 🚀
 
 #### Online feed
 

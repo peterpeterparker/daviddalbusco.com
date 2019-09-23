@@ -58,19 +58,30 @@ section.portfolio {
         }
       }
 
-      &.bonjour {
+      &.bonjour-circle, &.bonjour-bloom {
         > div {
           background: #FFD664;
 
           div.gatsby-image-wrapper {
             border: 1px solid #8F7C76;
             border-radius: 50%;
-            background: #F0F0ED;
           }
 
           &.details {
             background: #80F4EC;
           }
+        }
+      }
+
+      &.bonjour-circle {
+        div.gatsby-image-wrapper {
+          background: #F0F0ED;
+        }
+      }
+
+      &.bonjour-bloom {
+        div.gatsby-image-wrapper {
+          background: #F6C691;
         }
       }
 

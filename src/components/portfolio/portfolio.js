@@ -6,8 +6,7 @@ import "./portfolio.scss"
 import Chapter from "../chapter/chapter"
 import Img from "gatsby-image"
 
-import { DeckDeckGoUtils } from "@deckdeckgo/utils"
-
+import {isMobile} from "@deckdeckgo/utils"
 
 class Portfolio extends React.Component {
 
@@ -19,7 +18,7 @@ class Portfolio extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({mobile: DeckDeckGoUtils.isMobile()})
+    this.setState({mobile: isMobile()})
   }
 
   render() {

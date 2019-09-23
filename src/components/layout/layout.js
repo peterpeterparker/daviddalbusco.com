@@ -28,9 +28,15 @@ class Layout extends React.Component {
     try {
       const deckdeckgoLazyImgLoader = require("@deckdeckgo/lazy-img/dist/loader")
       const deckdeckgoCoreLoader = require("@deckdeckgo/core/dist/loader")
+      const deckdeckgoSlideTitleLoader = require("@deckdeckgo/slide-title/dist/loader")
 
-      await deckdeckgoLazyImgLoader.defineCustomElements(window)
-      await deckdeckgoCoreLoader.defineCustomElements(window)
+      const promises = []
+
+      promises.push(deckdeckgoLazyImgLoader.defineCustomElements(window))
+      promises.push(deckdeckgoCoreLoader.defineCustomElements(window));
+      promises.push(deckdeckgoSlideTitleLoader.defineCustomElements(window));
+
+      await Promise.all(promises);
     } catch (err) {
       console.error(err);
     }

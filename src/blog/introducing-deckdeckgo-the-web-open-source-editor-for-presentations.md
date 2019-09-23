@@ -1,10 +1,10 @@
 ---
 path: "/blog/introducing-deckdeckgo-the-web-open-source-editor-for-presentations"
-date: "2019-09-XX"
+date: "2019-09-24"
 title: "Introducing DeckDeckGo: the web open source editor for presentations"
 description: "Introducing DeckDeckGo: the web open source editor for presentations"
 tags: "#webdev #showdev #opensource #motivation"
-image: "https://cdn-images-1.medium.com/max/1600/1*qSYqGVlUNNhJgsYDxenv9A.jpeg"
+image: "https://cdn-images-1.medium.com/max/2400/1*TmZb15Yzu3mGVG7uMkHvHw.png"
 ---
 
 ![](https://cdn-images-1.medium.com/max/2400/1*TmZb15Yzu3mGVG7uMkHvHw.png)

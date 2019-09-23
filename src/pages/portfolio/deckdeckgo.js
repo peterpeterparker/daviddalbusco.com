@@ -7,7 +7,7 @@ import Chapter from "../../components/chapter/chapter"
 import PortFolio from "../../components/portfolio/portfolio"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-class OurEnergyPage extends React.Component {
+class DeckDeckGoPage extends React.Component {
 
   async componentDidMount() {
     // TODO: Workaround. To be removed when https://github.com/ionic-team/stencil/issues/1724 will be solved
@@ -109,7 +109,7 @@ export default () => (
       }
     `}
     render={(data) => (
-      <OurEnergyPage data={data}/>
+      <DeckDeckGoPage data={data}/>
     )}
   />
 )

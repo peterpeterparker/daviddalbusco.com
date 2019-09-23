@@ -31,7 +31,9 @@ class Portfolio extends React.Component {
         <div className="projects">
           {this.renderOurEnergy()}
 
-          {this.renderBonjour()}
+          {this.renderBonjourCircle()}
+
+          {this.renderBonjourBloom()}
 
           {this.renderDeckDeckGo()}
 
@@ -71,18 +73,40 @@ class Portfolio extends React.Component {
     }
   }
 
-  renderBonjour() {
-    if (!this.props || this.props.filter !== "bonjour") {
-      return <Link to="/portfolio/bonjour">
-        <article className={this.state.mobile ? "bonjour mobile" : "bonjour"}>
+  renderBonjourCircle() {
+    if (!this.props || this.props.filter !== "bonjour-circle") {
+      return <Link to="/portfolio/bonjour-circle">
+        <article className={this.state.mobile ? "bonjour-circle mobile" : "bonjour-circle"}>
           <div className="summary">
-            <Img fluid={this.props.data.bonjourImage.childImageSharp.fluid}/>
+            <Img fluid={this.props.data.bonjourCircleImage.childImageSharp.fluid}/>
 
-            <h3>Bonjour</h3>
+            <h3>Bonjour - Circle</h3>
           </div>
 
           <div className="details">
-            <h2>Bonjour</h2>
+            <h2>Bonjour - Circle</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
+  renderBonjourBloom() {
+    if (!this.props || this.props.filter !== "bonjour-bloom") {
+      return <Link to="/portfolio/bonjour-bloom">
+        <article className={this.state.mobile ? "bonjour-bloom mobile" : "bonjour-bloom"}>
+          <div className="summary">
+            <Img fluid={this.props.data.bonjourBloomImage.childImageSharp.fluid}/>
+
+            <h3>Bonjour - Bloom</h3>
+          </div>
+
+          <div className="details">
+            <h2>Bonjour - Bloom</h2>
 
             <p>Details</p>
           </div>
@@ -149,7 +173,14 @@ export default ({ filter }) => (
           }
         }
       },
-      bonjourImage: file(relativePath: { eq: "portfolio/bonjour-icon.png" }) {
+      bonjourCircleImage: file(relativePath: { eq: "portfolio/bonjour-circle-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      bonjourBloomImage: file(relativePath: { eq: "portfolio/bonjour-bloom-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

@@ -113,6 +113,20 @@ section.portfolio {
         }
       }
 
+      &.dvb {
+        > div {
+          background: #2E4051;
+
+          &.summary, &.details {
+            color: white;
+          }
+
+          &.details {
+            background: #f39800;
+          }
+        }
+      }
+
       > div.details  {
         visibility: hidden;
         opacity: 0;

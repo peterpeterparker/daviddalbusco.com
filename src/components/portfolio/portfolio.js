@@ -35,6 +35,8 @@ class Portfolio extends React.Component {
 
           {this.renderBonjourBloom()}
 
+          {this.renderDVB()}
+
           {this.renderDeckDeckGo()}
 
           {this.renderFluster()}
@@ -117,6 +119,28 @@ class Portfolio extends React.Component {
     }
   }
 
+  renderDVB() {
+    if (!this.props || this.props.filter !== "dvb") {
+      return <Link to="/portfolio/dvbern">
+        <article className={this.state.mobile ? "dvb mobile" : "dvb"}>
+          <div className="summary">
+            <Img fluid={this.props.data.dvbImage.childImageSharp.fluid}/>
+
+            <h3>DV Bern AG</h3>
+          </div>
+
+          <div className="details">
+            <h2>DV Bern AG</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
   renderDeckDeckGo() {
     if (!this.props || this.props.filter !== "deckdeckgo") {
       return <Link to="/portfolio/deckdeckgo">
@@ -181,6 +205,13 @@ export default ({ filter }) => (
         }
       },
       bonjourBloomImage: file(relativePath: { eq: "portfolio/bonjour-bloom-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      dvbImage: file(relativePath: { eq: "portfolio/dvb-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

@@ -45,7 +45,7 @@ The process might take a while (more than 1'500 dependencies have to be fetched)
 
 ```bash
 cd demo-qrcode-react
-``
+```
 
 #### 2. Install the component with npm
 

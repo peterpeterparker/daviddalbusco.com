@@ -151,7 +151,7 @@ public class HelloWorldBean {
 
 Finally, to present this message, we add a new servlet, `hello.xhtml`, in `src/main/webapp` which uses our above bean.
 
-```xhtml
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -192,7 +192,7 @@ We proceed as the pasts steps by adding a new `<dependency/>` to our `pom.xml`:
 
 No special configuration is needed and out of the box we should already be able to use their components. We could for example extend our `hello.xhtml` with an horizontal panel.
 
-```xhtml
+```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"

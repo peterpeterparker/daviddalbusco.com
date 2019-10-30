@@ -4,11 +4,10 @@ date: "2019-10-30"
 title: "Create a Primefaces JSF project with Maven and Widfly"
 description: "How to create a Primefaces and JSF project with Maven and Widfly as a local server"
 tags: "#tutorial #java #jsf #primefaces"
-image: "https://cdn-images-1.medium.com/max/1600/1*35EpK66yg5VJBNvbzaLBmw.jpeg"
+image: "https://cdn-images-1.medium.com/max/1600/1*w93lFGpSosbY9UblQNqUCA.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*35EpK66yg5VJBNvbzaLBmw.jpeg)
-*Photo by [Michal Mrozek](https://unsplash.com/@miqul?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/fuerteventura?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+![](https://cdn-images-1.medium.com/max/1600/1*w93lFGpSosbY9UblQNqUCA.jpeg)
 
 I'm currently on my way to Fuerteventura to enjoy a week of holidays ☀️ Earlier this year, I found out that writing blog posts was a great way to use wisely my time spent traveling, that's why I'm repeating the experience.
 

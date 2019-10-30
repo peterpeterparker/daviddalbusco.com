@@ -1,8 +1,8 @@
 ---
-path: "/blog/create-a-primefaces-jsf-project-with-maven-and-widfly"
+path: "/blog/create-a-primefaces-jsf-project-with-maven-and-wildfly"
 date: "2019-10-30"
-title: "Create a Primefaces JSF project with Maven and Widfly"
-description: "How to create a Primefaces and JSF project with Maven and Widfly as a local server"
+title: "Create a Primefaces JSF project with Maven and Wildfly"
+description: "How to create a Primefaces and JSF project with Maven and Wildfly as a local server"
 tags: "#tutorial #java #jsf #primefaces"
 image: "https://cdn-images-1.medium.com/max/1600/1*w93lFGpSosbY9UblQNqUCA.jpeg"
 ---

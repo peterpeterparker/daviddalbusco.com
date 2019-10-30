@@ -12,7 +12,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*35EpK66yg5VJBNvbzaLBmw.jpeg"
 
 I'm currently on my way to Fuerteventura to enjoy a week of holidays ☀️ Earlier this year, I found out that writing blog posts was a great way to use wisely my time spent traveling, that's why I'm repeating the experience.
 
-When I thought about which subject I should write about earlier this morning (I don't generally have any plan in advance when it comes to writing) I came to the idea that it would be maybe interesting to share my favorite JSF trick (or hack, depends if you see the glass half empty or full). But before doing so, I had to initialize a clean blank project, that's why I've decided to first write this tutorial. Moreover, I spare the other article idea for my way back home 😋   
+When I thought about which subject I should write about earlier this morning (I don't generally have any plan in advance when it comes to writing) I came to the idea that it would be maybe interesting to share my favorite JSF trick (or hack, depends if you see the glass half empty or full). But before doing so, I had to initialize a clean blank project, that's why I've decided to first write this tutorial 😋   
 
 ### But why a JSF project?
 
@@ -20,7 +20,7 @@ When I thought about which subject I should write about earlier this morning (I 
 
 *But why a JSF project?*
 
-Honestly, I don't know exactly why anyone would be still interested to create a brand new JSF project in 2019 and even why would anyone even read this article 🤣. Not that I don't like Java, I still do and I still think it's a good match for certain types of projects, notably when it goes to the back- and middle-end layers but I would personally not use or advice it for the frontend part of any **new** projects.
+Honestly, I don't know exactly why anyone would be still interested to create a brand new JavaServer Faces API (JSF) project in 2019 and even why would anyone even read this article 🤣. Not that I don't like Java, I still do and I still think it's a good match for certain types of projects, notably when it goes to the back- and middle-end layers but I would personally not use or advice it for the frontend part of any **new** projects.
 
 That's why I'm really curious to hear your voice, why are you reading this article? Why are you looking to create a JSF project? Let me know with a comment 😁
 
@@ -137,10 +137,14 @@ Beside the dependency, we also have to configure our application server to make 
 Our application being configured, we could created our first Java bean, `HelloWorldBean.java`, in `src/main/java`. This class will be a simple backed bean which exposes a method to say hello to the world from Fuerteventura.
 
 ```java
-import javax.faces.bean.ManagedBean;
+import java.io.Serializable;
 
-@ManagedBean(name = "helloworld", eager = true)
-public class HelloWorldBean {
+import javax.inject.Named;
+import javax.faces.view.ViewScoped;
+
+@Named("helloworld")
+@ViewScoped
+public class HelloWorldBean implements Serializable {
 
 	public String getMessage() {
 		return "Hello World from Fuertefentura";
@@ -227,7 +231,7 @@ Finally we could check [http://localhost:8080/jsf-demo/hello.xhtml](http://local
 ![](https://cdn-images-1.medium.com/max/1600/1*hBnP4yj5wIgn9fE-NJc-bA.png)
 *“Hello World from Fuerteventura” presented in a Primefaces’ panel*
 
-Voilà, we did it! We created a Primefaces JSF project with Maven and Widfly and are now able to make some testing 🎉 Moreover, when it comes to me, even if I'm not looking forward to going home (yet), I could use this blank new project as a support for my next article 😆
+Voilà, we did it! We created a Primefaces JSF project with Maven and Widfly and are now able to make some testing 🎉 Moreover, even if I'm not looking forward to going home, I will be able to use this blank new project as a starter kit for my next article 😆
 
 To infinity and beyond 🚀
 

@@ -61,7 +61,7 @@ Moreover, the speaker notes weren’t really cleverly displayed. That’s why we
 
 Earlier October I attended the [DINAcon](https://dinacon.ch) 2019 conference in Bern. The speakers were presenting their subjects on a shiny stage, behind a stylish thin desk which aimed, I guess, to be discrete but on the other hand, they were still using a laptop to have a look at their talk and notes 🤔
 
-![](https://cdn-images-1.medium.com/max/1600/1*my_eIv0NEZw1KmSsZtH7ng.jpeg)
+![](https://cdn-images-1.medium.com/max/1600/1*iXSRsFNZUOItDFyevXYsqQ.png)
 
 *[Katariina Kari](https://twitter.com/katsi111) speaking about “Knowledge Graph” and having a quick look at her laptop at DINACon 2019 (source [Flickr](https://www.flickr.com/photos/140845441@N04/48947571397/in/album-72157711466719708))*
 

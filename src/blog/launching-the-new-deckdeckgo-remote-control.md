@@ -13,7 +13,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*pk4BfD4Sqt6gHIX4lpYO8g.png"
 
 A little bit more than a month ago, we [introduced](https://medium.com/better-programming/introducing-deckdeckgo-the-web-open-source-editor-for-presentations-ac0f51fad711) our web open source editor for presentations: [DeckDeckGo](https://deckdeckgo.com)
 
-Our launch went way behind our expectations, quickly three thousand people had tried out our editor and we received a lot of positive feedback. It was really an unexpected reception and just an heartwarming experience. Thank you all, for everything 🙏
+Our launch went way above our expectations, quickly three thousand people had tried out our editor and we received a lot of positive feedback. It was really an unexpected reception and just an heartwarming experience. Thank you all, for everything 🙏
 
 Following this release we spent the month of October improving our platform, thanks to our community and their many Pull Requests. It was definitely a really nice [Hacktoberfest 2019](http://hacktoberfest.digitalocean.com) season for us.
 

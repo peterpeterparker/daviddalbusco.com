@@ -50,7 +50,7 @@ class BonjourBloomPage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Available:</strong> <a href="https://bonjour-bloom.web.app">Progressive Web App</a></p>
+              <p><strong>Available:</strong> <a href="https://bonjour-bloom.web.app">Progressive Web Apps</a></p>
               <p><strong>Website:</strong> <a href="https://bonjour.help"> Bonjour.help</a></p>
             </div>
             <div>

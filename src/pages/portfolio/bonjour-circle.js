@@ -25,7 +25,7 @@ class BonjourCirclePage extends React.Component {
               <p>One of these, called "OneCircle", is the upcoming app that asks “Bonjour! How are you today?” on a
                 daily basis and then informs close relatives.</p>
               <p>"Bonjour" is a charity "Think-and-do Tank" projects, an incubator for idea, tools and impulse for a
-                bette self-determined life.</p>
+                better self-determined life.</p>
               <p>Their goal is to work together for a better future.</p>
             </div>
           </article>

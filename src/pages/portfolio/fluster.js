@@ -50,7 +50,7 @@ class FlusterPage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web App</a>, <a
+              <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web Apps</a>, <a
                 href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
                 href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
               <p><strong>Website:</strong> <a href="https:fluster.io">Fluster.io</a></p>

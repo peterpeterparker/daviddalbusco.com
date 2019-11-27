@@ -39,6 +39,9 @@ For my website I’m using [Font Awesome](https://fontawesome.com) and notably t
 
 The Font Awesome NPM token could either be set up globally or per project. The method we need to build our project with a CI is the last one, “per project”. For that purpose, we create a new file `.npmrc` in the root of your project . To the contrary of the documentation, we only add one line in the file respectively we only add  the reference to the Font Awesome packet manager. We deliberately ignore to specify anything regarding our token.
 
+```javascript
+@fortawesome:registry=https://npm.fontawesome.com/
+```
 
 ### Set up a new secret in GitHub
 

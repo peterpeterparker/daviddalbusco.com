@@ -2,7 +2,7 @@
 path: "/blog/infinite-scroll-with-ionic-react"
 date: "2019-12-02"
 title: "Infinite Scroll with Ionic + React"
-description: "How to implement an Infinite Scroll in Ionic and React with or without Hooks"
+description: "How to implement an Infinite Scroll with Ionic + React and Hooks"
 tags: "#programming #react #javascript #tutorial"
 image: "https://cdn-images-1.medium.com/max/1600/1*VST3XVmoX1R3hAXJ8OGw4A.jpeg"
 ---

@@ -22,10 +22,10 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    return <section className="portfolio extraspace" id="portfolio">
+    return [<section className="portfolio extraspace" id="portfolio" key="portfolio">
       <main>
         <Chapter icon="suitcase">
-          {this.renderTitle()}
+          <h2>Portfolio</h2>
         </Chapter>
 
         <div className="projects">
@@ -36,7 +36,16 @@ class Portfolio extends React.Component {
           {this.renderBonjourBloom()}
 
           {this.renderDVB()}
+        </div>
+      </main>
+    </section>,
+    <section className="other-projects extraspace-bottom" id="other-projects" key="otherProjects">
+      <main>
+        <Chapter icon="pencil-ruler">
+          <h2>Other projects</h2>
+        </Chapter>
 
+        <div className="projects">
           {this.renderDeckDeckGo()}
 
           {this.renderWooof()}
@@ -45,14 +54,7 @@ class Portfolio extends React.Component {
         </div>
       </main>
     </section>
-  }
-
-  renderTitle() {
-    if (!this.props || !this.props.filter || this.props.filter === undefined || this.props.filter === "") {
-      return <h2>Portfolio</h2>
-    } else {
-      return <h2>Other projects</h2>
-    }
+    ]
   }
 
   renderOurEnergy() {

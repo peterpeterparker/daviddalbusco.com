@@ -31,6 +31,8 @@ class Portfolio extends React.Component {
         <div className="projects">
           {this.renderOurEnergy()}
 
+          {this.renderETHLibraryLab()}
+
           {this.renderBonjourCircle()}
 
           {this.renderBonjourBloom()}
@@ -69,6 +71,28 @@ class Portfolio extends React.Component {
 
           <div className="details">
             <h2>Our Energy - ETH Zürich</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
+  renderETHLibraryLab() {
+    if (!this.props || this.props.filter !== "eth-library-lab") {
+      return <Link to="/portfolio/eth-library-lab">
+        <article className={this.state.mobile ? "eth-library-lab mobile" : "eth-library-lab"}>
+          <div className="summary">
+            <Img fluid={this.props.data.ethLibraryLabImage.childImageSharp.fluid}/>
+
+            <h3>ETH Library Lab</h3>
+          </div>
+
+          <div className="details">
+            <h2>ETH Library Lab</h2>
 
             <p>Details</p>
           </div>
@@ -217,6 +241,13 @@ export default ({ filter }) => (
     query={graphql`
     query {
       ourEnergyImage: file(relativePath: { eq: "portfolio/ourenergy-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      ethLibraryLabImage: file(relativePath: { eq: "portfolio/eth-library-lab-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

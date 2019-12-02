@@ -59,6 +59,23 @@ section.portfolio, section.other-projects {
         }
       }
 
+      &.eth-library-lab {
+        > div {
+          background: #BBC3CC;
+
+          div.gatsby-image-wrapper {
+            border: 1px solid #728D99;
+            border-radius: 50%;
+            background: #F0F0ED;
+          }
+
+          &.details {
+            background: #1F407A;
+            color: white;
+          }
+        }
+      }
+
       &.bonjour-circle, &.bonjour-bloom {
         > div {
           background: #FFD664;

@@ -21,6 +21,7 @@ import { faChevronRight } from "@fortawesome/pro-light-svg-icons"
 import { faChevronLeft } from "@fortawesome/pro-light-svg-icons"
 import { faInfoCircle } from "@fortawesome/pro-light-svg-icons"
 import { faBookSpells } from "@fortawesome/pro-light-svg-icons"
+import { faPencilRuler } from "@fortawesome/pro-light-svg-icons"
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faMedium } from "@fortawesome/free-brands-svg-icons"
@@ -42,6 +43,7 @@ library.add(faChevronRight)
 library.add(faChevronLeft)
 library.add(faInfoCircle)
 library.add(faBookSpells)
+library.add(faPencilRuler)
 
 library.add(faGithub)
 library.add(faMedium)

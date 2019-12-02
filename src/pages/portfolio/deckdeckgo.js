@@ -52,7 +52,7 @@ class DeckDeckGoPage extends React.Component {
                 to have even more fun by turning it into a fully web open source editor for presentations.</p>
             </div>
 
-            <iframe frameBorder={0} src="https://beta.deckdeckgo.io/daviddalbusco/introducing-deckdeckgo/"></iframe>
+            <iframe title="Introducing DeckDeckGo" frameBorder={0} src="https://beta.deckdeckgo.io/daviddalbusco/introducing-deckdeckgo/"></iframe>
           </article>
         </main>
       </section>

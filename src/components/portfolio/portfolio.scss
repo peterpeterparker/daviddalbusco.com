@@ -99,6 +99,15 @@ section.portfolio {
         }
       }
 
+      &.wooof {
+        > div {
+          &.details {
+            background: #F16664;
+            color: white;
+          }
+        }
+      }
+
       &.fluster {
         > div {
           background: #FF65A9;

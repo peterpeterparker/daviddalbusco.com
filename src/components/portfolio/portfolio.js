@@ -39,6 +39,8 @@ class Portfolio extends React.Component {
 
           {this.renderDeckDeckGo()}
 
+          {this.renderWooof()}
+
           {this.renderFluster()}
         </div>
       </main>
@@ -163,6 +165,28 @@ class Portfolio extends React.Component {
     }
   }
 
+  renderWooof() {
+    if (!this.props || this.props.filter !== "wooof") {
+      return <Link to="/portfolio/wooof">
+        <article className={this.state.mobile ? "wooof mobile" : "wooof"}>
+          <div className="summary">
+            <Img fluid={this.props.data.wooofImage.childImageSharp.fluid}/>
+
+            <h3>Wooof</h3>
+          </div>
+
+          <div className="details">
+            <h2>Wooof</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
   renderFluster() {
     if (!this.props || this.props.filter !== "fluster") {
       return <Link to="/portfolio/fluster">
@@ -174,7 +198,7 @@ class Portfolio extends React.Component {
           </div>
 
           <div className="details">
-            <h2>Fluster</h2>
+            <h2>Wooof</h2>
 
             <p>Details</p>
           </div>
@@ -219,6 +243,13 @@ export default ({ filter }) => (
         }
       },
       deckDeckGoImage: file(relativePath: { eq: "portfolio/deckdeckgo-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      wooofImage: file(relativePath: { eq: "portfolio/wooof-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

@@ -16,8 +16,6 @@ We had this idea for a long time and it took us a bit of time to realize it, tha
 <iframe width="280" height="158" src="https://www.youtube.com/embed/GuF58XBzTj0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
 <br/>
 
-*A demo or our new feature with a large audience 🤣*
-
 ### User Experience
 
 UX could often be discussed and I’ve to say, in case of that particular feature, even more, as many solutions are feasible. I scratched my head for days, filling papers and taking notes until I finally figured out the core principles of the solution which were meaningful to me and hopefully to others too:

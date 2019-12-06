@@ -18,7 +18,7 @@ We had this idea for a long time and it took us a bit of time to realize it, tha
 
 ### User Experience
 
-UX could often be discussed and I’ve to say, in case of that particular feature, even more, as many solutions are feasible. I scratched my head for days, filling papers and taking notes until I finally figured out the core principles of the solution which were meaningful to me and hopefully to others too:
+UX could often be discussed and I have to say that, for that feature in particular, many solutions are feasible. I scratched my head for days, filling papers and taking notes until I finally figured out the core principles of the solution which were meaningful to me and hopefully to others too:
 
 * An audience could be a crowd, a small or large crowd. In case of live polling, not all participants are on the same page. Some might be fast to vote, some might be slow. Some people are near the projected slides or screen, others are probably faraway. Some might even be sleepy, some might have their phones in their bags, etc.
 

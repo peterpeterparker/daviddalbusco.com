@@ -22,7 +22,7 @@ UX could often be discussed and I have to say that, for that feature in particul
 
 * An audience could be a crowd, a small or large. In case of live polling, not all participants are on the same page. Some might be fast to vote, some might be slow. Some people are near the projected slides or screen, others are probably far away. Some might even be asleep, some might have their phones in their bags, etc.
 
-* As a speaker I notably find convenient when I don’t have to switch between multiple applications, it could even to some extension makes me a bit less stressed. As an attendee, I tend to think that it needs me less effort to follow a presentation without to many media cut-offs. Summarized, I like when the presentation’s flow remains as smooth as possible.
+* As a speaker I find convenient when I don’t have to switch between multiple applications -- it could even to some extent makes me a bit less stressed. As an attendee, I tend to think that it's easier to follow a presentation without too many media interruptions. To sum it up, I like when the presentation’s flow remains as smooth as possible.
 
 That’s why, at least in this first version of the features, all information are available at the same time and any time. Question, answers, connection information and even results of the vote, which are updated in real time, are all displayed on the same slide. Moreover, as I do think that QR codes are the best way to share links with the participants, the template also contains such a deep link to point them directly to the answers on their phones.
 

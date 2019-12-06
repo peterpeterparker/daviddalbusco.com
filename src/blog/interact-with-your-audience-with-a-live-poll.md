@@ -30,7 +30,7 @@ That’s why, at least in this first version of the feature, all the information
 
 ### Developer Mindset
 
-Since day one we always kept a developer mindset. That’s why both the editor and our developer starter kit are using the exact same core, the same web components as engine. Needless to say that it didn’t changed. This new feature isn’t just available in our editor but also available with our starter kit. If you rather like to develop your presentation using HTML or Markdown, it’s all cool and you have access to the exact same feature.
+Since day one we always kept a developer mindset. That’s why both the editor and our developer starter kit are using the exact same core, the same web components as engine. Needless to say that it didn’t change. This new feature isn’t just available in our editor but also available with our starter kit. If you would rather like to develop your presentation using HTML or Markdown, it’s all cool and you have access to the exact same feature.
 
 ```html
 <deckgo-deck>

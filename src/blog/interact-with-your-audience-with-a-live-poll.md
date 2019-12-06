@@ -4,7 +4,7 @@ date: "2019-12-05"
 title: "Interact With Your Audience With A Live Poll"
 description: "We are introducing a new feature to let your interact with your audience without leaving your presentation"
 tags: "#webdev #javascript #opensource #speaking"
-image: "https://cdn-images-1.medium.com/max/1600/1*VST3XVmoX1R3hAXJ8OGw4A.jpeg"
+image: "https://cdn-images-1.medium.com/max/1600/1*ULPgfU4_6DDEHDLDCdUMKQ.jpeg"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*ULPgfU4_6DDEHDLDCdUMKQ.jpeg)

@@ -20,7 +20,7 @@ We had this idea for a long time and it took us a bit of time to realize it, tha
 
 UX could often be discussed and I have to say that, for that feature in particular, many solutions are feasible. I scratched my head for days, filling papers and taking notes until I finally figured out the core principles of the solution which were meaningful to me and hopefully to others too:
 
-* An audience could be a crowd, a small or large crowd. In case of live polling, not all participants are on the same page. Some might be fast to vote, some might be slow. Some people are near the projected slides or screen, others are probably faraway. Some might even be sleepy, some might have their phones in their bags, etc.
+* An audience could be a crowd, a small or large. In case of live polling, not all participants are on the same page. Some might be fast to vote, some might be slow. Some people are near the projected slides or screen, others are probably far away. Some might even be asleep, some might have their phones in their bags, etc.
 
 * As a speaker I notably find convenient when I don’t have to switch between multiple applications, it could even to some extension makes me a bit less stressed. As an attendee, I tend to think that it needs me less effort to follow a presentation without to many media cut-offs. Summarized, I like when the presentation’s flow remains as smooth as possible.
 

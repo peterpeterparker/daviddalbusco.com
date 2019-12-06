@@ -24,7 +24,7 @@ UX could often be discussed and I have to say that, for that feature in particul
 
 * As a speaker I find convenient when I don’t have to switch between multiple applications -- it could even to some extent makes me a bit less stressed. As an attendee, I tend to think that it's easier to follow a presentation without too many media interruptions. To sum it up, I like when the presentation’s flow remains as smooth as possible.
 
-That’s why, at least in this first version of the features, all information are available at the same time and any time. Question, answers, connection information and even results of the vote, which are updated in real time, are all displayed on the same slide. Moreover, as I do think that QR codes are the best way to share links with the participants, the template also contains such a deep link to point them directly to the answers on their phones.
+That’s why, at least in this first version of the feature, all the information is available at the same time and any time. Question, answers, connection information and even results of the vote, which are updated in real time, are all displayed on the same slide. Moreover, as I do think that QR codes are the best way to share links with the participants, the template also contains a deep link to point them directly to the answers on their phones.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*6DlXoX4G2WZer9xVYymqug.gif)
 

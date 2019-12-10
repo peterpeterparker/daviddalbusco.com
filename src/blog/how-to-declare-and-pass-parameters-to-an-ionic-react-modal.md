@@ -78,8 +78,7 @@ Once we have created it, we could use it in our page to replace the previous con
 
 ```javascript
 import React, { useState } from 'react';
-import { IonModal, IonButton, IonContent
-} from '@ionic/react';
+import { IonModal, IonButton, IonContent} from '@ionic/react';
 
 import MyModal from './MyModal';
 

@@ -185,7 +185,7 @@ export const Tab1: React.FC = () => {
 export default Tab1;
 ```
 
-### References
+#### References
 
 Another possible solution could be the usage of a DOM reference to dismiss the modal.
 
@@ -259,6 +259,18 @@ export default Tab1;
 But unfortunately this method has a drawback. As we are modifying the state to synchronize it, our component is going to be “rerendered”. Therefore it is a bit less performant than the solution with `callback` and that’s why I found this first solution cleaner.
 
 *Side note: I spent several hours yesterday evening trying without success to wrap `shouldComponentUpdate` respectively `React.Memo` around the modal component in order to not render the page again when the state is modified after the modal is dismissed. It is probably possible and again I’ll be happy to hear any tips about this too 😉*
+
+#### Post Publication Update
+
+[Ely Lucas](https://twitter.com/elylucas) thankfully [answered](https://dev.to/elylucas/comment/imio) this blog post with a valid and interesting comment: modal could actually be dismissed without using the button. For example by hitting the Esc key or clicking on the backdrop.
+
+Therefore, a handler to `onDidDismiss` does have in any case to be defined to sync the open state (as we did in the previous chapter) after the dialog would have been closed.
+
+#### Summarized
+
+Closing the modal with a button through a `callback` or `reference` are both possible.
+
+On the other side, listening to `onDidDismiss` in order to set the state to `false`, even if it triggers a rerendering, is kind of mandatory.
 
 ### To Pass Parameters
 

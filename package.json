@@ -6,6 +6,7 @@
   "author": "David Dal Busco <david@fluster.io>",
   "dependencies": {
     "@deckdeckgo/core": "^1.0.0-rc.1-1",
+    "@deckdeckgo/highlight-code": "^1.0.0-rc.2-1",
     "@deckdeckgo/lazy-img": "^1.0.0-rc.1",
     "@deckdeckgo/slide-title": "^1.0.0-rc.1",
     "@deckdeckgo/utils": "^1.0.0-rc.1-4",
@@ -20,6 +21,7 @@
     "gatsby-plugin-react-helmet": "^3.1.16",
     "gatsby-plugin-sass": "^2.1.24",
     "gatsby-plugin-sharp": "^2.3.4",
+    "gatsby-remark-highlight-code": "^1.0.0",
     "gatsby-source-filesystem": "^2.1.39",
     "gatsby-transformer-remark": "^2.6.38",
     "gatsby-transformer-sharp": "^2.3.6",

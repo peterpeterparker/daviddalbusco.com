@@ -1,6 +1,6 @@
 ---
 path: "/blog/gatsby-add-stylish-cards-and-syntax-highlighting-to-show-your-code"
-date: "2019-12-16"
+date: "2019-12-17"
 title: "Gatsby: Add Stylish Cards And Syntax Highlighting To Show Your Code"
 description: "How to display the code of your Gatsby website and blog posts with styled cards and code highlighting"
 tags: "#gatsby #javascript #webdev #showdev"
@@ -83,6 +83,8 @@ That’s it, the plugin is configured and ready, after next build, the code of y
 As I explained above, the exact same Web Component could be used in any modern web applications and is, of course, open source. But the other cherry on the cake is the fact that we are using it in our open source web editor for presentations and developer kit.
 
 Therefore, if you are going to showcase code in an upcoming talk, give a try to [DeckDeckGo](https://deckdeckgo.com)  😃
+
+![](https://cdn-images-1.medium.com/max/1600/1*8SuFF5R9siRlSqAkTSXWjQ.gif)
 
 To infinity and beyond 🚀
 

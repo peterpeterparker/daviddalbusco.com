@@ -3,9 +3,10 @@ module.exports = {
     title: `David Dal Busco`,
     description: `Freelancer - Full Stack Development Web, PWA and Mobile iOS/Android - Project management - UX and IT consulting`,
     author: `David Dal Busco`,
-    url: "https://daviddalbusco.com",
+    url: `https://daviddalbusco.com`,
     image: "/images/daviddalbusco.jpg",
     twitterUsername: "@daviddalbusco",
+    siteUrl: `https://daviddalbusco.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -48,6 +49,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`
   ],
 }

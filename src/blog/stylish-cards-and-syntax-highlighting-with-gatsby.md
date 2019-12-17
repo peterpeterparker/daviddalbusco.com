@@ -17,6 +17,10 @@ I ate my dinner and implemented this idea the same night. I woke up the followin
 
 That’s why I’m happy to introduce [gatsby-remark-highlight-code](https://github.com/deckgo/gatsby-remark-highlight-code), a new Gatsby plugin to add stylish cards and syntax highlighting to code blocks in markdown files.
 
+![](https://cdn-images-1.medium.com/max/1600/1*GCniBVFbo7XLnf0E95JOqA.png)
+
+*This new plugin helps render such stylish cards for code blocks*
+
 ### Features
 
 The main advantages, in my opinion, of this new plugin are the followings:

@@ -7,6 +7,8 @@ tags: "#gatsby #javascript #webdev #showdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*8DbEBAv_L1pK-1Xm03XEzw.png"
 ---
 
+![](https://cdn-images-1.medium.com/max/1600/1*8DbEBAv_L1pK-1Xm03XEzw.png)
+
 I am a big fan of [Carbon](https://carbon.now.sh)! I often use it to share tips or mistakes I did on my [Twitter](https://twitter.com/daviddalbusco) feed.
 
 The other day, while I was cooking dinner, the idea suddenly hit me: why not improving our [DeckDeckGo](https://deckdeckgo.com) Web Component to highlight code, which use [PrismJS](https://prismjs.com) under the hood, to display per default such stylish cards instead of “just” displaying naked elements.

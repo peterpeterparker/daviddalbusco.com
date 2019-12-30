@@ -224,7 +224,7 @@ class Portfolio extends React.Component {
           </div>
 
           <div className="details">
-            <h2>Wooof</h2>
+            <h2>Fluster</h2>
 
             <p>Details</p>
           </div>

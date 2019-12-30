@@ -4,11 +4,12 @@ date: "2019-12-30"
 title: "Dark And Light Mode: OS Color Scheme And Theme Switcher"
 description: "How to add a dark and light mode theme switcher to your application which inherits the OS color scheme as default state too."
 tags: "#javascript #webdev #tutorial #webcomponents"
-image: "https://cdn-images-1.medium.com/max/1600/1*60gjPY2OUZBP77AaM92Tbw.jpeg"
+image: "https://cdn-images-1.medium.com/max/1600/1*EqOsVaqdhDXCI2Vwi7YAwg.png"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*60gjPY2OUZBP77AaM92Tbw.jpeg)
-*Photo by [Arto Marttinen](https://unsplash.com/@wandervisions?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+![](https://cdn-images-1.medium.com/max/1600/1*EqOsVaqdhDXCI2Vwi7YAwg.png)
+
+*Photo by [Sincerely Media](https://unsplash.com/@sincerelymedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
 There are a lot of good tutorials out there about the subject “dark mode” but less rarely one which covers the two main goals, in my opinion, of such an implementation in a real application. Respectively, giving the users the ability to switch between themes but also inheriting per default the OS color scheme given by the platform, specially as both Google and Apple began to rollout such modes in their products.
 

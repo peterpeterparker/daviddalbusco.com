@@ -3,7 +3,7 @@ path: "/blog/dark-and-light-mode-os-color-scheme-and-theme-switcher"
 date: "2019-12-30"
 title: "Dark And Light Mode: OS Color Scheme And Theme Switcher"
 description: "How to add a dark and light mode theme switcher to your application which inherits the OS color scheme as default state too."
-tags: "#javascript #webdev #tutorial"
+tags: "#javascript #webdev #tutorial #webcomponents"
 image: "https://cdn-images-1.medium.com/max/1600/1*60gjPY2OUZBP77AaM92Tbw.jpeg"
 ---
 
@@ -16,7 +16,7 @@ That’s why I’m writing this new blog post to share the solution we have impl
 
 ### Credits
 
-As staten above, we have developed such a feature with the help of our contributors, more precisely with the help of Grant Herman ([GitHub](https://github.com/grantlouisherman) / [Twitter](https://twitter.com/gherman1990)). He even helped us implement it in three different applications (our [editor](https://deckdeckgo.com), [remote control](https://deckdeckgo.app) and [documentation](https://docs.deckdeckgo.com) for developers). 
+As staten above, we have developed such a feature with the help of our contributors, more precisely with the help of Grant Herman ([GitHub](https://github.com/grantlouisherman) / [Twitter](https://twitter.com/gherman1990)). He even helped us implement it in three different applications 🤯 
 
 Definitely, not all heroes wear capes, thank you Grant 🙏
 
@@ -24,8 +24,8 @@ Definitely, not all heroes wear capes, thank you Grant 🙏
 
 To implement our solution, we are relying on two amazing pieces of software:
 
-* [idb-keyval](https://github.com/jakearchibald/idb-keyval), a super simple small promise-based keyval store implemented with IndexedDB, which we are using to save the user selection.
-* [RxJS](https://rxjs-dev.firebaseapp.com), a reactive extensions library for JavaScript, which we are using to store and propagate the state representing the theme in memory.
+* [idb-keyval](https://github.com/jakearchibald/idb-keyval): a super simple small promise-based keyval store implemented with IndexedDB, which we are using to save the user selection.
+* [RxJS](https://rxjs-dev.firebaseapp.com): a reactive extensions library for JavaScript, which we are using to store and propagate the state representing the theme in memory.
 
 We are going to use a runtime value to switch between themes, therefore, it would be also possible to implement such a solution using a [React Redux](https://react-redux.js.org) stored state. Don’t hesitate to ping me if you would like to get such an example, I also have got one ready in another new application I am currently developing 😉
 
@@ -129,6 +129,7 @@ import {Component, h} from '@stencil/core';
 import {Subscription} from 'rxjs';
 
 import {ThemeService} from './theme.service';
+
 @Component({
     tag: 'app-root',
     styleUrl: 'app-root.scss'
@@ -205,7 +206,7 @@ export class AppThemeSwitcher {
     render() {
         return <ion-toggle checked={this.darkTheme}
                            onClick={() => this.toggleTheme()}>
-        </ion-toggle>;
+        </ion-toggle>
     }
 }
 ```
@@ -319,7 +320,7 @@ export class AppThemeSwitcher {
   render() {
     return <ion-toggle checked={this.darkMode} 
                        onIonChange={() => this.toggleTheme()}>
-    </ion-toggle>;
+    </ion-toggle>
   }
 }
 ```

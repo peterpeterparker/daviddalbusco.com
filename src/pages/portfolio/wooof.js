@@ -54,7 +54,7 @@ class WooofPage extends React.Component {
 
             <div>
               <p><strong>Rest API</strong>: <a href="https://dog.ceo/dog-api/">Dog API</a></p>
-              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a> and <a href="https://github.com/peterpeterparker/wooof/actions">GitHub Actions</a></p>
+              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a> and <a href="https://github.com/peterpeterparker/wooof/tree/master/.github/workflows">GitHub Actions</a></p>
             </div>
           </article>
         </main>

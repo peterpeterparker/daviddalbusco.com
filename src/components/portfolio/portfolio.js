@@ -50,6 +50,8 @@ class Portfolio extends React.Component {
         <div className="projects">
           {this.renderDeckDeckGo()}
 
+          {this.renderTieTracker()}
+
           {this.renderWooof()}
 
           {this.renderFluster()}
@@ -191,6 +193,28 @@ class Portfolio extends React.Component {
     }
   }
 
+  renderTieTracker() {
+    if (!this.props || this.props.filter !== "tietracker") {
+      return <Link to="/portfolio/tietracker">
+        <article className={this.state.mobile ? "tietracker mobile" : "tietracker"}>
+          <div className="summary">
+            <Img fluid={this.props.data.tieTrackerImage.childImageSharp.fluid}/>
+
+            <h3>Tie Tracker</h3>
+          </div>
+
+          <div className="details">
+            <h2>Tie Tracker</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
   renderWooof() {
     if (!this.props || this.props.filter !== "wooof") {
       return <Link to="/portfolio/wooof">
@@ -283,6 +307,13 @@ export default ({ filter }) => (
         }
       },
       wooofImage: file(relativePath: { eq: "portfolio/wooof-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      tieTrackerImage: file(relativePath: { eq: "portfolio/tietracker-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

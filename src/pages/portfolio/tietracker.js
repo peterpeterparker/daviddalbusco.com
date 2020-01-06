@@ -29,8 +29,8 @@ class TieTrackerPage extends React.Component {
 
           <article className="info">
             <div>
-              <p>I was eager to improve my know-how regarding <a href="https://reactjs.org">React</a> and <a href="https://react-redux.js.org">Redux</a>, that's why I started the development of this simple, open source and free time tracking app ⏱️</p>
-              <p>But this is also the application I aim to use to track my productivity, when I work for my clients, and I plan to use to export my timesheet reports.</p>
+              <p>I was looking to improve my knowledge regarding <a href="https://reactjs.org">React</a> and <a href="https://react-redux.js.org">Redux</a>, that's why I started the development of this simple, open source and free time tracking app ⏱️</p>
+              <p>This is also the application I aim to use to track my working hours and plan to use, to export my timesheet reports.</p>
               <p>Furthermore, it was also interesting to develop a fully offline solution with <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a>, experiment <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a> (in order to defer "heavy" computation) and try out the new <a href="https://web.dev/native-file-system/">Native File System API</a>.</p>
             </div>
 

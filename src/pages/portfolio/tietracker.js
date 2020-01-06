@@ -47,7 +47,7 @@ class TieTrackerPage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Available:</strong> <a href="https://tietrackeer.com">Progressive Web Apps</a>, <a
+              <p><strong>Available:</strong> <a href="https://tietracker.com">Progressive Web Apps</a>, <a
                 href="https://itunes.apple.com/app/id1493399075">Apple Store</a> and <a
                 href="http://play.google.com/store/apps/details?id=com.tietracker.app">Google Play</a></p>
               <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a

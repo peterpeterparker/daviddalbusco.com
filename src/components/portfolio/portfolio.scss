@@ -126,6 +126,21 @@ section.portfolio, section.other-projects {
         }
       }
 
+      &.tietracker {
+        > div {
+          background: #230F29;
+
+          &.summary {
+            color: white;
+          }
+
+          &.details {
+            background: #5BE8CD;
+            color: black;
+          }
+        }
+      }
+
       &.fluster {
         > div {
           background: #FF65A9;

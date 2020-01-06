@@ -1,0 +1,121 @@
+import React from "react"
+import SEO from "../../components/seo/seo"
+import Layout from "../../components/layout/layout"
+import { graphql, StaticQuery } from "gatsby"
+
+import Chapter from "../../components/chapter/chapter"
+import Slider from "../../components/slider/slider"
+import PortFolio from "../../components/portfolio/portfolio"
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+class TieTrackerPage extends React.Component {
+
+  render() {
+    const images = [
+      this.props.data.tieTrackerScreenshot1.childImageSharp.fluid,
+      this.props.data.tieTrackerScreenshot2.childImageSharp.fluid,
+      this.props.data.tieTrackerScreenshot3.childImageSharp.fluid
+    ]
+
+    return <Layout fixNav={true}>
+      <SEO title="Tie Tracker"/>
+
+      <section className="project extrabigspace">
+        <main>
+          <Chapter img={this.props.data.tieTrackerImage.childImageSharp.fluid}>
+            <h1>Tie Tracker</h1>
+          </Chapter>
+
+          <article className="info">
+            <div>
+              <p>I was eager to improve my know-how regarding <a href="https://reactjs.org">React</a> and <a href="https://react-redux.js.org">Redux</a>, that's why I started the development of this simple, open source and free time tracking app ⏱️</p>
+              <p>But this is also the application I aim to use to track my productivity, when I work for my clients, and I plan to use to export my timesheet reports.</p>
+              <p>Furthermore, it was also interesting to develop a fully offline solution with <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a>, experiment <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a> (in order to defer "heavy" computation) and try out the new <a href="https://web.dev/native-file-system/">Native File System API</a>.</p>
+            </div>
+
+            <Slider images={images}/>
+          </article>
+        </main>
+      </section>
+
+      <section className="factsheet">
+        <main>
+          <Chapter icon="info-circle">
+            <h2>Fact sheet</h2>
+          </Chapter>
+
+          <article>
+            <div>
+              <p><strong>Available:</strong> <a href="https://tietracker.com">Progressive Web Apps</a>, <a
+                href="https://itunes.apple.com/app/id1493399075">Apple Store</a> and <a
+                href="http://play.google.com/store/apps/details?id=com.tietracker.app">Google Play</a></p>
+              <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a
+                href="https://reactjs.org/">React</a> and <a href="https://capacitor.ionicframework.com">Capacitor</a></p>
+            </div>
+            <div>
+              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Hosting</a> and <a href="https://github.com/peterpeterparker/tietracker/tree/master/.github/workflows">GitHub Actions</a></p>
+              <p><strong>Database:</strong> Offline with <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a></p>
+            </div>
+          </article>
+        </main>
+      </section>
+
+      <section className="open-source">
+        <main>
+          <Chapter icon="book-spells">
+            <h2>Open source</h2>
+          </Chapter>
+
+          <article>
+            <p>This project is open source and available on <a href="https://github.com/peterpeterparker/tietracker">Github<FontAwesomeIcon
+              icon={["fab", "github"]}/></a></p>
+          </article>
+        </main>
+      </section>
+
+      <PortFolio filter={"tietracker"}/>
+    </Layout>
+  }
+
+}
+
+export default () => (
+  <StaticQuery
+    query={graphql`
+      query {
+        tieTrackerImage: file(relativePath: { eq: "portfolio/tietracker-icon.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 240) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+        tieTrackerScreenshot1: file(relativePath: { eq: "portfolio/tietracker/screenshot1.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 540) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+        tieTrackerScreenshot2: file(relativePath: { eq: "portfolio/tietracker/screenshot2.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 540) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        },
+        tieTrackerScreenshot3: file(relativePath: { eq: "portfolio/tietracker/screenshot3.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 540) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `}
+    render={(data) => (
+      <TieTrackerPage data={data}/>
+    )}
+  />
+)

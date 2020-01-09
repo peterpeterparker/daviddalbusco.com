@@ -23,8 +23,6 @@ In this article we are going to lazy load a music video clip from my hometown fr
 <iframe width="280" height="158" src="https://www.youtube.com/embed/ol0Wz6tqtZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
 <br/>
 
-*Maxi Push Rodeo Club — L’Indicible Feu de Joie en Session Piscine*
-
 ### Getting Started
 
 I implemented this experiment with [React](https://reactjs.org/) but the concept could be use with or without any frameworks. Before we actually defer the loading of the video, let’s add it to a component (I collected the `iframe` code using the share action and embedded code provided Youtube).

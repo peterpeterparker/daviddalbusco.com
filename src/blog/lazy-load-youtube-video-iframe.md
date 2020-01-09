@@ -283,6 +283,10 @@ We proceed with our final test, notice that the video is lazy loaded, we play wi
 
 ![](https://cdn-images-1.medium.com/max/1600/1*skQICbYpu0Q-x2C6u3TgkA.gif)
 
+### Contribute To Our Project
+
+Even if it does the job, our component can be improved. I notably think that a smoother transition to display the video would be useful. That’s why I opened a good first issue in our repo on [GitHub](https://github.com/deckgo/deckdeckgo/issues/570). If you are up to give a hand, your help would be appreciated 🙏.
+
 ### Cherry on the Cake 🍒🎂
 
 Our component `@deckdeckgo/youtube` is a Web Component developed with [Stencil](https://stenciljs.com) and therefore it could be use in any modern web applications, with or without any frameworks. Moreover, if like me you tend to be a bit “bundlephobic”, it will add to your application, once minified and gzipped, only [198 bytes](https://bundlephobia.com/result?p=@deckdeckgo/youtube@1.0.0-rc.1-2).

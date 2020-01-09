@@ -2,7 +2,6 @@ import React from "react"
 import Chapter from "../chapter/chapter"
 
 import "./about.scss"
-import { Link } from "gatsby"
 
 class About extends React.Component {
 

@@ -10,7 +10,7 @@ export default function Template({data}) {
   const { frontmatter, html } = markdownRemark
   return (
     <Layout fixNav={true}>
-      <SEO title="Blog" />
+      <SEO title={frontmatter.title} description={frontmatter.description} keywords={frontmatter.tags} canonical={frontmatter.canonical} />
 
       <section className="post">
         <main>
@@ -39,7 +39,8 @@ export const pageQuery = graphql`
         path,
         image,
         description,
-        tags
+        tags,
+        canonical
       }
     }
   }

@@ -49,7 +49,7 @@ It is worth to notice, notably as DeckDeckGo is a Progressive Web Apps and could
 
 We just have one thing to say about accessibility: Roy ([Twitter](https://twitter.com/donroyco) / [GitHub](https://github.com/donroyco)) is a **hero**.
 
-A cold Saturday last December, my inbox began to throw notifications about new GitHub issues which were recently opened, one after the other for quite an amount of time. All had to do with accessibility and moreover all were really well documented and totally correct, not questions ask. All these inputs were provided by Rob. He took some times, out of nowhere, to go through DeckDeckGo in order to test its accessibility. Afterwards he even provided three different GitHub issues’ templates which were missing too.
+A cold Saturday last December, my inbox began to throw notifications about new GitHub issues which were recently opened, one after the other for quite an amount of time. All had to do with accessibility and moreover all were really well documented and totally correct, not questions ask. All these inputs were provided by Roy. He took some times, out of nowhere, to go through DeckDeckGo in order to test its accessibility. Afterwards he even provided three different GitHub issues’ templates which were missing too.
 
 Really what could I say, if you don’t have faith in humanity and open source, Roy’s story is there to show you the opposite.
 

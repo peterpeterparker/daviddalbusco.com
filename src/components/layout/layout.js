@@ -30,6 +30,7 @@ class Layout extends React.Component {
       const deckdeckgoCoreLoader = require("@deckdeckgo/core/dist/loader")
       const deckdeckgoSlideTitleLoader = require("@deckdeckgo/slide-title/dist/loader")
       const deckdeckgoHighlightCodeLoader = require("@deckdeckgo/highlight-code/dist/loader")
+      const deckdeckgoYoutubeLoader = require("@deckdeckgo/youtube/dist/loader")
 
       const promises = []
 
@@ -37,6 +38,7 @@ class Layout extends React.Component {
       promises.push(deckdeckgoCoreLoader.defineCustomElements(window));
       promises.push(deckdeckgoSlideTitleLoader.defineCustomElements(window));
       promises.push(deckdeckgoHighlightCodeLoader.defineCustomElements(window));
+      promises.push(deckdeckgoYoutubeLoader.defineCustomElements(window));
 
       await Promise.all(promises);
     } catch (err) {

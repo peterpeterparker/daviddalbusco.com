@@ -1,14 +1,14 @@
 import React from "react"
 
 import { graphql, StaticQuery, Link } from "gatsby"
-import "./portfolio.scss"
+import "./projects.scss"
 
 import Chapter from "../chapter/chapter"
 import Img from "gatsby-image"
 
 import {isMobile} from "@deckdeckgo/utils"
 
-class Portfolio extends React.Component {
+class Projects extends React.Component {
 
   constructor(props) {
     super(props)
@@ -22,7 +22,7 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    return [<section className="portfolio extraspace" id="portfolio" key="portfolio">
+    return [<section className={`portfolio ${this.props && this.props.all ? 'extrabigspace' : 'extraspace'}`} id="portfolio" key="portfolio">
       <main>
         <Chapter icon="suitcase">
           <h2>Portfolio</h2>
@@ -43,8 +43,8 @@ class Portfolio extends React.Component {
     </section>,
     <section className="other-projects extraspace-bottom" id="other-projects" key="otherProjects">
       <main>
-        <Chapter icon="pencil-ruler">
-          <h2>Other projects</h2>
+        <Chapter icon="browser">
+          <h2>Personal projects</h2>
         </Chapter>
 
         <div className="projects">
@@ -52,13 +52,40 @@ class Portfolio extends React.Component {
 
           {this.renderTieTracker()}
 
-          {this.renderWooof()}
-
           {this.renderFluster()}
         </div>
+
+        {
+          this.props && this.props.all ? undefined : <Link to='/portfolio/' className="button"><h2>AND MORE</h2></Link>
+        }
+      </main>
+    </section>,
+    this.renderPrototypes()
+    ]
+  }
+
+  renderPrototypes() {
+    if (!this.props || !this.props.all) {
+      return undefined;
+    }
+
+    return <section className="other-projects extraspace-bottom" id="other-projects" key="otherProjects">
+      <main>
+        <Chapter icon="pencil-ruler">
+          <h2>Other prototypes</h2>
+        </Chapter>
+
+        <div className="projects">
+          {this.renderWooof()}
+
+          {this.renderWatamato()}
+        </div>
+
+        {
+          this.props && this.props.all ? undefined : <Link to='/portfolio/' className="button"><h2>AND MORE</h2></Link>
+        }
       </main>
     </section>
-    ]
   }
 
   renderOurEnergy() {
@@ -237,6 +264,28 @@ class Portfolio extends React.Component {
     }
   }
 
+  renderWatamato() {
+    if (!this.props || this.props.filter !== "watamato") {
+      return <Link to="/portfolio/watamato">
+        <article className={this.state.mobile ? "watamato mobile" : "watamato"}>
+          <div className="summary">
+            <Img fluid={this.props.data.watamatoImage.childImageSharp.fluid}/>
+
+            <h3>Watamato</h3>
+          </div>
+
+          <div className="details">
+            <h2>Watamato</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
   renderFluster() {
     if (!this.props || this.props.filter !== "fluster") {
       return <Link to="/portfolio/fluster">
@@ -260,7 +309,7 @@ class Portfolio extends React.Component {
   }
 }
 
-export default ({ filter }) => (
+export default ({ filter, all }) => (
   <StaticQuery
     query={graphql`
     query {
@@ -313,6 +362,13 @@ export default ({ filter }) => (
           }
         }
       },
+      watamatoImage: file(relativePath: { eq: "portfolio/watamato-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
       tieTrackerImage: file(relativePath: { eq: "portfolio/tietracker-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
@@ -330,7 +386,7 @@ export default ({ filter }) => (
     }
   `}
     render={(data) => (
-      <Portfolio data={data} filter={filter}/>
+      <Projects data={data} filter={filter} all={all}/>
     )}
   />
 )

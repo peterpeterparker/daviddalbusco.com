@@ -5,7 +5,7 @@ import { graphql, StaticQuery } from "gatsby"
 
 import Chapter from "../../components/chapter/chapter"
 import Slider from "../../components/slider/slider"
-import PortFolio from "../../components/portfolio/portfolio"
+import Projects from "../../components/projects/projects"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -73,7 +73,7 @@ class WooofPage extends React.Component {
         </main>
       </section>
 
-      <PortFolio filter={"wooof"}/>
+      <Projects filter={"wooof"}/>
     </Layout>
   }
 

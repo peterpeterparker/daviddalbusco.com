@@ -38,3 +38,15 @@ section.open-source {
     }
   }
 }
+
+div.video {
+  display: flex;
+  align-self: flex-start;
+  justify-self: center;
+  border-radius: 4px;
+  overflow: hidden;
+
+  deckgo-youtube {
+    margin-bottom: -4px;
+  }
+}

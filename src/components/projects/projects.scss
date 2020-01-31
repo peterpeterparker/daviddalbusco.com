@@ -126,6 +126,15 @@ section.portfolio, section.other-projects {
         }
       }
 
+      &.watamato {
+        > div {
+          &.details {
+            background: #EB5A46;
+            color: white;
+          }
+        }
+      }
+
       &.tietracker {
         > div {
           background: #230F29;

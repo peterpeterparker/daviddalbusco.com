@@ -5,7 +5,7 @@ import { graphql, StaticQuery } from "gatsby"
 
 import Chapter from "../../components/chapter/chapter"
 import Slider from "../../components/slider/slider"
-import PortFolio from "../../components/portfolio/portfolio"
+import Projects from "../../components/projects/projects"
 
 class OurEnergyPage extends React.Component {
 
@@ -64,7 +64,7 @@ class OurEnergyPage extends React.Component {
         </main>
       </section>
 
-      <PortFolio filter={'ourenergy'}/>
+      <Projects filter={'ourenergy'}/>
     </Layout>
   }
 

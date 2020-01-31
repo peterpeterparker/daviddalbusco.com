@@ -4,7 +4,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 
 import Header from "../components/header/header"
-import Portfolio from "../components/portfolio/portfolio"
+import Projects from "../components/projects/projects"
 import Blog from "../components/blog/blog"
 import About from "../components/about/about"
 import Contact from "../components/contact/contact"
@@ -22,6 +22,7 @@ import { faChevronLeft } from "@fortawesome/pro-light-svg-icons"
 import { faInfoCircle } from "@fortawesome/pro-light-svg-icons"
 import { faBookSpells } from "@fortawesome/pro-light-svg-icons"
 import { faPencilRuler } from "@fortawesome/pro-light-svg-icons"
+import { faBrowser } from "@fortawesome/pro-light-svg-icons"
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faMedium } from "@fortawesome/free-brands-svg-icons"
@@ -44,6 +45,7 @@ library.add(faChevronLeft)
 library.add(faInfoCircle)
 library.add(faBookSpells)
 library.add(faPencilRuler)
+library.add(faBrowser)
 
 library.add(faGithub)
 library.add(faMedium)
@@ -57,7 +59,7 @@ class IndexPage extends React.Component {
         return <Layout fixNav={false}>
             <SEO/>
             <Header/>
-            <Portfolio/>
+            <Projects/>
             <About/>
             <Blog/>
             <Contact/>

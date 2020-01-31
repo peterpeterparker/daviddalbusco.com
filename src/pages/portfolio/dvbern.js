@@ -4,7 +4,7 @@ import Layout from "../../components/layout/layout"
 import { graphql, StaticQuery } from "gatsby"
 
 import Chapter from "../../components/chapter/chapter"
-import PortFolio from "../../components/portfolio/portfolio"
+import Projects from "../../components/projects/projects"
 
 class DVBernPage extends React.Component {
 
@@ -54,7 +54,7 @@ class DVBernPage extends React.Component {
         </main>
       </section>
 
-      <PortFolio filter={"dvb"}/>
+      <Projects filter={"dvb"}/>
     </Layout>
   }
 

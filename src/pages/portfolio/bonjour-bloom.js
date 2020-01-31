@@ -4,7 +4,7 @@ import Layout from "../../components/layout/layout"
 import { graphql, StaticQuery } from "gatsby"
 
 import Chapter from "../../components/chapter/chapter"
-import PortFolio from "../../components/portfolio/portfolio"
+import Projects from "../../components/projects/projects"
 import Slider from "../../components/slider/slider"
 
 class BonjourBloomPage extends React.Component {
@@ -62,7 +62,7 @@ class BonjourBloomPage extends React.Component {
         </main>
       </section>
 
-      <PortFolio filter={"bonjour-bloom"}/>
+      <Projects filter={"bonjour-bloom"}/>
     </Layout>
   }
 

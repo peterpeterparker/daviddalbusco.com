@@ -4,7 +4,7 @@ import Layout from "../components/layout/layout"
 import SEO from "../components/seo/seo"
 
 import Header from "../components/header/header"
-import Portfolio from "../components/portfolio/portfolio"
+import Projects from "../components/projects/projects"
 import Blog from "../components/blog/blog"
 import About from "../components/about/about"
 import Contact from "../components/contact/contact"
@@ -57,7 +57,7 @@ class IndexPage extends React.Component {
         return <Layout fixNav={false}>
             <SEO/>
             <Header/>
-            <Portfolio/>
+            <Projects/>
             <About/>
             <Blog/>
             <Contact/>

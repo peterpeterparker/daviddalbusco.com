@@ -4,7 +4,7 @@ import Layout from "../../components/layout/layout"
 import { graphql, StaticQuery } from "gatsby"
 
 import Chapter from "../../components/chapter/chapter"
-import PortFolio from "../../components/portfolio/portfolio"
+import Projects from "../../components/projects/projects"
 
 class BonjourCirclePage extends React.Component {
 
@@ -53,7 +53,7 @@ class BonjourCirclePage extends React.Component {
         </main>
       </section>
 
-      <PortFolio filter={"bonjour-circle"}/>
+      <Projects filter={"bonjour-circle"}/>
     </Layout>
   }
 

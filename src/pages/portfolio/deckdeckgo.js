@@ -4,7 +4,7 @@ import Layout from "../../components/layout/layout"
 import { graphql, StaticQuery } from "gatsby"
 
 import Chapter from "../../components/chapter/chapter"
-import PortFolio from "../../components/portfolio/portfolio"
+import Projects from "../../components/projects/projects"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import { debounce } from "@deckdeckgo/utils"
@@ -101,7 +101,7 @@ class DeckDeckGoPage extends React.Component {
         </main>
       </section>
 
-      <PortFolio filter={"deckdeckgo"}/>
+      <Projects filter={"deckdeckgo"}/>
     </Layout>
   }
 

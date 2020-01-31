@@ -1,14 +1,14 @@
 import React from "react"
 
 import { graphql, StaticQuery, Link } from "gatsby"
-import "./portfolio.scss"
+import "./projects.scss"
 
 import Chapter from "../chapter/chapter"
 import Img from "gatsby-image"
 
 import {isMobile} from "@deckdeckgo/utils"
 
-class Portfolio extends React.Component {
+class Projects extends React.Component {
 
   constructor(props) {
     super(props)
@@ -22,7 +22,7 @@ class Portfolio extends React.Component {
   }
 
   render() {
-    return [<section className="portfolio extraspace" id="portfolio" key="portfolio">
+    return [<section className={`portfolio ${this.props && this.props.all ? 'extrabigspace' : 'extraspace'}`} id="portfolio" key="portfolio">
       <main>
         <Chapter icon="suitcase">
           <h2>Portfolio</h2>
@@ -56,6 +56,10 @@ class Portfolio extends React.Component {
 
           {this.renderFluster()}
         </div>
+
+        {
+          this.props && this.props.all ? undefined : <Link to='/portfolio/' className="button"><h2>AND MORE</h2></Link>
+        }
       </main>
     </section>
     ]
@@ -260,7 +264,7 @@ class Portfolio extends React.Component {
   }
 }
 
-export default ({ filter }) => (
+export default ({ filter, all }) => (
   <StaticQuery
     query={graphql`
     query {
@@ -330,7 +334,7 @@ export default ({ filter }) => (
     }
   `}
     render={(data) => (
-      <Portfolio data={data} filter={filter}/>
+      <Projects data={data} filter={filter} all={all}/>
     )}
   />
 )

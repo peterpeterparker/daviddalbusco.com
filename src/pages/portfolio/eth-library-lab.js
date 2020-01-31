@@ -4,7 +4,7 @@ import Layout from "../../components/layout/layout"
 import { graphql, StaticQuery } from "gatsby"
 
 import Chapter from "../../components/chapter/chapter"
-import PortFolio from "../../components/portfolio/portfolio"
+import Projects from "../../components/projects/projects"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 class EthLibraryLabPage extends React.Component {
@@ -49,7 +49,7 @@ class EthLibraryLabPage extends React.Component {
         </main>
       </section>
 
-      <PortFolio filter={"eth-library-lab"}/>
+      <Projects filter={"eth-library-lab"}/>
     </Layout>
   }
 

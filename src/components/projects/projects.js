@@ -43,16 +43,14 @@ class Projects extends React.Component {
     </section>,
     <section className="other-projects extraspace-bottom" id="other-projects" key="otherProjects">
       <main>
-        <Chapter icon="pencil-ruler">
-          <h2>Other projects</h2>
+        <Chapter icon="browser">
+          <h2>Personal projects</h2>
         </Chapter>
 
         <div className="projects">
           {this.renderDeckDeckGo()}
 
           {this.renderTieTracker()}
-
-          {this.renderWooof()}
 
           {this.renderFluster()}
         </div>
@@ -61,8 +59,33 @@ class Projects extends React.Component {
           this.props && this.props.all ? undefined : <Link to='/portfolio/' className="button"><h2>AND MORE</h2></Link>
         }
       </main>
-    </section>
+    </section>,
+    this.renderPrototypes()
     ]
+  }
+
+  renderPrototypes() {
+    if (!this.props || !this.props.all) {
+      return undefined;
+    }
+
+    return <section className="other-projects extraspace-bottom" id="other-projects" key="otherProjects">
+      <main>
+        <Chapter icon="pencil-ruler">
+          <h2>Other prototypes</h2>
+        </Chapter>
+
+        <div className="projects">
+          {this.renderWooof()}
+
+          {this.renderWatamato()}
+        </div>
+
+        {
+          this.props && this.props.all ? undefined : <Link to='/portfolio/' className="button"><h2>AND MORE</h2></Link>
+        }
+      </main>
+    </section>
   }
 
   renderOurEnergy() {
@@ -241,6 +264,28 @@ class Projects extends React.Component {
     }
   }
 
+  renderWatamato() {
+    if (!this.props || this.props.filter !== "watamato") {
+      return <Link to="/portfolio/watamato">
+        <article className={this.state.mobile ? "watamato mobile" : "watamato"}>
+          <div className="summary">
+            <Img fluid={this.props.data.watamatoImage.childImageSharp.fluid}/>
+
+            <h3>Watamato</h3>
+          </div>
+
+          <div className="details">
+            <h2>Watamato</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
   renderFluster() {
     if (!this.props || this.props.filter !== "fluster") {
       return <Link to="/portfolio/fluster">
@@ -311,6 +356,13 @@ export default ({ filter, all }) => (
         }
       },
       wooofImage: file(relativePath: { eq: "portfolio/wooof-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      watamatoImage: file(relativePath: { eq: "portfolio/watamato-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

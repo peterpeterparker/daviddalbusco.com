@@ -5,7 +5,7 @@ title: "Firebase Storage Gotchas 😅"
 description: "Sharing some Google Cloud Storage key points I learned while implementing private assets and reverting two days of work."
 tags: "#firebase #javascript #webdev #serverless"
 image: "https://cdn-images-1.medium.com/max/1600/1*58twqItpOjtMRuQquE2l5w.jpeg"
-canonical: https://medium.com/@david.dalbusco/infinite-scroll-with-ionic-angular-and-firestore-f7a66e0e942c
+canonical: https://medium.com/@david.dalbusco/firebase-storage-gotchas-63a7cfef7677
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*58twqItpOjtMRuQquE2l5w.jpeg)
@@ -20,7 +20,7 @@ After two working days, I finally noticed that I misinterpreted one fundamental 
 
 ### Rules: Storage Does Not Have Access To Firestore
 
-Sometimes when things are not written down, I’m asking my self if there aren’t, because it is not possible or because it is obviously, for the author of the documentation, the contrary, it is possible.
+Sometimes when things are not written down, I'm asking my self if they aren't, because they are not possible or because they actually are possible 🤔.
 
 Being able to write Storage rules by querying [Firestore](https://firebase.google.com/docs/firestore) was one of these things and the answer is **no.** There is currently no possibility to access a Firebase product from another product.
 
@@ -39,7 +39,7 @@ service firebase.storage {
 }
 ```
 
-But the above rule still implies that users would be able overwrite data provided by other users. To overcome this problem, we could prefix the data of each users in the Storage with their respective `userId`.
+But the above rule still implies that users would be able overwrite data provided by other users. To overcome this problem, we can prefix the data of each users in the Storage with their respective `userId`.
 
 For example, if you are using the [Firebase JavaScript SDK](https://github.com/firebase/firebase-js-sdk), an upload would look like the following:
 
@@ -50,7 +50,7 @@ const ref: Reference =
 await ref.put(data);
 ```
 
-Once the storage files ordered in that structure, we would then be able to define a rule like the following which would only allow users to write and read data in their respective folder of the storage:
+Once the storage files ordered in that structure, we are then be able to define a rule like the following which only allows users to write and read data in their respective folder of the storage:
 
 ```javascript
 rules_version = '2';
@@ -66,7 +66,7 @@ service firebase.storage {
 
 ### Format: Storage References
 
-To access a public file or a private one for with a granted rule access, the Storage URL could be made of the following parts:
+To access a public file or a private one, with a granted rule access, the Storage URL could be made of the following parts:
 
 ```html
 <img src={`https://firebasestorage.googleapis.com/v0/b/${projectId}.appspot.com/o/${encodeURIComponent(path)}?alt=media`}/>
@@ -103,7 +103,7 @@ try {
 
 ### downloadURL: Public But Private
 
-This was my biggest “gotcha” and the reason why I reverted days of work.
+This was my biggest “gotcha” and the reason why I reverted hours of work.
 
 For each and every single asset uploaded in the Storage, Firebase create, regardless if you use them or not, a `downloadUrl` which is **public**, regardless of your rules, and accessible on the internet. **But**, because the url contains a `token` which is essentially impossible for anyone to guess, these urls are, as long as we don’t share these with anyone, **private**.
 
@@ -125,6 +125,6 @@ It is also worth to notice, that for each overwrites, Firebase will also generat
 
 That’s it, I think this is the summary of my learnings. Firebase Storage is definitely an incredible developer friendly piece of software and all the content and assets of every single users of [DeckDeckGo](https://deckdeckgo.com) is private until they decide to share publicly their presentations.
 
-To infinity and beyond
+To infinity and beyond 🚀
 
 David

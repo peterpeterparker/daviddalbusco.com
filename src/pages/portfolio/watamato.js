@@ -54,7 +54,7 @@ class WatamatoPage extends React.Component {
 
           <article className="info">
             <div>
-              <p>Once again I had to find a flat in Zürich and therefore once again I had to use search engines I don't like much in terms of UX 🙈</p>
+              <p>Once again I had to find a flat in Zürich and therefore once again I had to use search engines I don't like much in terms of UX.</p>
               <p>That's why I have built myself, in just a couple of days, a <a href="https://trello.com">Trello</a> like board for my flat hunting.</p>
               <p>Moreover, from a technical point of view, it was an interesting use case to try out <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a> and the development of the board itself was also surprisingly a bit challenging, as maintaining a dynamic sorted order and using a single infinite scroller for multiple columns at the same time wasn't that straight forward.</p>
             </div>

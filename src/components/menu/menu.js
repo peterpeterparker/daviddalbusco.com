@@ -14,7 +14,7 @@ class Menu extends React.Component {
 
   render() {
     return (
-      <div className={this.state.open ? "menu open" : "menu"} onClick={() => this.close()} ref={this.props.innerRef}>
+      <div role="button" tabIndex="0" className={this.state.open ? "menu open" : "menu"} onClick={() => this.close()} onKeyDown={() => this.close()} ref={this.props.innerRef}>
         <Link to="/"><h1>Home</h1></Link>
         <Link to="/#portfolio"><h1>Portfolio</h1></Link>
         <Link to="/#about"><h1>About</h1></Link>

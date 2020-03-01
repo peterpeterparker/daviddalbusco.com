@@ -24,7 +24,7 @@ A couple of months ago, when we were brainstorming new ideas, [Nicolas](https://
 
 Moreover, even if at first glance it might looks easy to implement, we discovered while developing it, that the required maths were actually more challenging than expected and therefore obviously even more fun 😉
 
-*Nicolas published today a post in which he details the mathematical problems and solutions. [Check it out on his blog]([Check it out on his blog](https://nmattia.com/posts/2020-03-03-drag-resize-rotate.html)).*
+*Nicolas published today a post in which he details the mathematical problems and solutions. [Check it out on his blog](https://nmattia.com/posts/2020-03-03-drag-resize-rotate.html).*
 
 ### Getting Started
 

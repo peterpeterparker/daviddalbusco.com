@@ -63,7 +63,7 @@ All together tested in the browser looks like the following.
 
 ### Options
 
-The cool thing, I think, about this component is that you don’t have to write any JavaScript code to use it. It should just be wrapped around and element and “it works”. It provides a couple of options, which are all documented in the related [chapter](https://docs.deckdeckgo.com/components/drr) of our documentation for developers. It notably does support various units (percent, viewport related or pixels) and each actions could be disabled separately. Its design can be customized with various CSS4 variables and finally it bubbles two events, one when the component is selected or unselected and another one when it has changed.
+The cool thing about this component, I think, is that you don’t have to write any JavaScript to use it. You wrap it around any element and “it works”. It provides a couple of options, which are all documented in the related [chapter](https://docs.deckdeckgo.com/components/drr) of our documentation for developers. It notably supports various units (percent, viewport related or pixels) and each action can be disabled separately. Its design can be customized with various CSS4 variables and finally it bubbles two events, one when the component is selected or unselected and another one when it has changed.
 
 It is also worth to notice that it does support both mouse and touch interactions.
 

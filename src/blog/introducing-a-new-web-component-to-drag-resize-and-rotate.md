@@ -28,7 +28,7 @@ While it may look easy to develop at first glance, during development we discove
 
 ### Getting Started
 
-The easiest way to try out our component is probably using  it, with the help of [Unpkg](https://unpkg.com/), in a plain HTML file.
+The easiest way to try out our component is to use it, with the help of [Unpkg](https://unpkg.com/), in a plain HTML file.
 
 ```html
 <html>

@@ -20,7 +20,7 @@ A demo is worth a thousand words:
 
 We really care about performance and dependencie. That’s why we tend to be a bit bundleophibic and, let’s face it, we are also nerds 🤷. Coding is as much a job as it is a hobby. That’s why we like to spend our evenings and weekends developing that kind of stuff.
 
-A couple of months ago, when we were brainstorming new ideas, [Nicolas](https://twitter.com/nasmattia) suggested to add a new template which would let users draw technical schema directly in our editor. This concept implied two complexities, preserving the aspect ratio of the content of the slide across devices and being able to manipulate (drag, resize and rotate) its content, that’s why it took us a bit to schedule and realize it.
+A couple of months ago, when we were brainstorming new ideas, [Nicolas](https://twitter.com/nasmattia) suggested adding a new template which would let users draw technical schemas, directly in our editor. This concept implied two complexities: preserving the aspect ratio of the content of the slide across devices and being able to manipulate (drag, resize and rotate) its content. That’s why it took us some time to schedule and realize it.
 
 Moreover, even if at first glance it might looks easy to implement, we discovered while developing it, that the required maths were actually more challenging than expected and therefore obviously even more fun 😉
 

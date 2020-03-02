@@ -42,7 +42,7 @@ The easiest way to try out our component is to use it, with the help of [Unpkg](
 </html>
 ```
 
-Once the component imported, it can be used to drag, resize or rotate any elements. For that purpose, it should be just wrapped around each of these which have to be manipulated. For example, let’s say we have a division element.
+Once the imported, the component can be used to drag, resize or rotate any elements. For that purpose, it should be just wrapped around each of these which have to be manipulated. For example, let’s say we have a division element.
 
 ```html
 <div style="background: purple;"></div>

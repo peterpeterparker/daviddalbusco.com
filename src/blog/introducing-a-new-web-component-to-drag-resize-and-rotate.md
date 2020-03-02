@@ -48,7 +48,7 @@ Once the component imported, it can be used to drag, resize or rotate any elemen
 <div style="background: purple;"></div>
 ```
 
-If we want to make it movable, draggable and resizable, we wrap it in our Web Component `<deckgo-drr/>` , we specify its default size and position with CSS4 variables and … that’s it 🎉.
+If we want to make it movable, draggable and resizable, we wrap it in our Web Component `<deckgo-drr/>`, we specify its default size and position with CSS4 variables and … that’s it 🎉.
 
 ```html
 <deckgo-drr

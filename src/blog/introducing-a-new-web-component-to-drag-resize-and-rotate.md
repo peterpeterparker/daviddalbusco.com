@@ -69,7 +69,7 @@ It is also worth noticing that it does support both mouse and touch interactions
 
 ### What’s Next
 
-What’s coming next is actually up to you 😉. We are open source and are eager to hear your feedback. Ping us on our [Slack](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) channel, open an issue in our [repo](https://github.com/deckgo/deckdeckgo) or even provide a Pull Request, you are most welcomed to contribute to our pet project [DeckDeckGo](https://deckdeckgo.com) in any ways or simply by using it to compose your next slides 🙏.
+What’s coming next is actually up to you 😉. We are open source and are eager to hear your feedback. Ping us on our [Slack](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) channel, open an issue in our [repo](https://github.com/deckgo/deckdeckgo) or even provide a Pull Request, you are most welcome to contribute to our pet project [DeckDeckGo](https://deckdeckgo.com) in any ways or simply by using it to compose your next slides 🙏.
 
 To infinite and beyond 🚀!
 

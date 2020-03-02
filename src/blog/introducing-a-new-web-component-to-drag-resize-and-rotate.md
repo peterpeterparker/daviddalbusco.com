@@ -18,11 +18,11 @@ A demo is worth a thousand words:
 
 ### Back Story
 
-We really care about performance and dependencie. That’s why we tend to be a bit bundleophibic and, let’s face it, we are also nerds 🤷. Coding is as much a job as it is a hobby. That’s why we like to spend our evenings and weekends developing that kind of stuff.
+We really care about performance and dependencies. That’s why we tend to be a bit bundleophibic and, let’s face it, we are also nerds 🤷. Coding is as much a job as it is a hobby. That’s why we like to spend our evenings and weekends developing that kind of stuff.
 
 A couple of months ago, when we were brainstorming new ideas, [Nicolas](https://twitter.com/nasmattia) suggested adding a new template which would let users draw technical schemas, directly in our editor. This concept implied two complexities: preserving the aspect ratio of the content of the slide across devices and being able to manipulate (drag, resize and rotate) its content. That’s why it took us some time to schedule and realize it.
 
-While it may look easy to develop at first glance, during development we discovered that the required maths were actually more challenging than expected and therefore obviously even more fun 😉
+While it may look easy to develop at first glance, during development we discovered that the required maths were actually more challenging than expected and therefore obviously even more fun 😉.
 
 *Nicolas published today a post in which he details the mathematical problems and solutions. [Check it out on his blog](https://nmattia.com/posts/2020-03-03-drag-resize-rotate.html).*
 

@@ -12,7 +12,7 @@ canonical: https://medium.com/@david.dalbusco/syntax-highlighting-displayed-in-u
 
 Today we are happy to unleash a new open source Web Component that we developed for our web editor for presentations, [DeckDeckGo](https://deckdeckgo.com). With it you can add **drag**, **resize** and **rotate** features to your applications or websites, regardless of your web framework. Cherry on the cake: it works out of the box -- no extra JavaScript needed.
 
-A demo is worth a thousand words, therefore here's what you can expect from it respectively how we are using it to let our users manipulate elements:
+A demo is worth a thousand words:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*_hmiwuTByWYJXuViGPBxFQ.gif)
 

@@ -2,7 +2,7 @@
 path: "/blog/introducing-a-new-web-component-to-drag-resize-and-rotate"
 date: "2020-03-03"
 title: "Introducing A New Web Component To Drag, Resize And Rotate"
-description: "Add drag, drop and resize capabilities to your web apps with this new Web Component compatible with or without any modern frameworks"
+description: "Add drag, drop and resize capabilities to any web apps"
 tags: "#webdev #showdev #javascript #opensource"
 image: "https://cdn-images-1.medium.com/max/1600/1*1pqUKDcoxfwUQ6jN6tZ0xQ.png"
 canonical: https://medium.com/@david.dalbusco/syntax-highlighting-displayed-in-ubuntu-terminal-like-a7e9c310b504

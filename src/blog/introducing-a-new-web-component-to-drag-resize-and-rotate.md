@@ -33,8 +33,8 @@ The easiest way to try out our component is to use it, with the help of [Unpkg](
 ```html
 <html>
 <head>
-  <script type="module" src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize/deckdeckgo-drag-resize.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize/deckdeckgo-drag-resize.js"></script>
+  <script type="module" src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize-rotate/deckdeckgo-drag-resize-rotate.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize-rotate/deckdeckgo-drag-resize-rotate.js"></script>
 </head>
 
 <body>

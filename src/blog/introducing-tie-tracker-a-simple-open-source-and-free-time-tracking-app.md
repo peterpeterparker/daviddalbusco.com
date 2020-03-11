@@ -13,6 +13,7 @@ canonical: "https://medium.com/@david.dalbusco/introducing-tie-tracker-e407daec4
 I’m happy to share with you [Tie Tracker](https://tietracker.app.link): a simple, open source and free time tracking app ⏱️.
 
 <iframe width="280" height="158" src="https://www.youtube.com/embed/iXDPd6hShA0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
+<br/>
 
 ### Back Story
 

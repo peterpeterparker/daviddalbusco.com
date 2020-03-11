@@ -59,7 +59,7 @@ Obviously, at least for the few of you who are reading my articles time to time 
 
 ### What’s Next
 
-I use [Tie Tracker](https://tietracker.app.link/) since three months and I have billed several clients with it, therefore it already improved my daily work life. However, there are still two features I would like to develop and if there would be a public interests for an online mode in order to save the data in the cloud, I would consider to go further. Get in touch if you are interested!
+I have used [Tie Tracker](https://tietracker.app.link/) for three months now and I have billed several clients with it, therefore it already improved my daily work life. However, there are still two features I would like to develop and if there would be a public interests for an online mode in order to save the data in the cloud, I would consider to go further. Get in touch if you are interested!
 
 To infinity and beyond 🚀
 

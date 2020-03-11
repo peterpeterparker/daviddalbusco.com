@@ -5,7 +5,7 @@ title: "Create A React Custom Hooks For Your Web Components"
 description: "How to create a React custom hooks to bind your Web Components events with useEffect"
 tags: "#react #javascript #tutorial #webdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*5KdZblpLM1bckDE3zr4kFA.jpeg"
-canonical: https://medium.com/@david.dalbusco/create-a-react-custom-hooks-for-your-web-components-f4319bb4bc35
+canonical: "https://medium.com/@david.dalbusco/create-a-react-custom-hooks-for-your-web-components-f4319bb4bc35"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*5KdZblpLM1bckDE3zr4kFA.jpeg)

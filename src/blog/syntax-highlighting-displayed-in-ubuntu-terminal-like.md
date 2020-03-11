@@ -5,7 +5,7 @@ title: "Syntax Highlighting Displayed In Ubuntu Terminal Like"
 description: "Display the code of your apps, websites or blogs with code highlighting in stylish Ubuntu Terminal like"
 tags: "#webdev #showdev #javascript #css"
 image: "https://cdn-images-1.medium.com/max/1600/1*sJQnreNU9DZ0ARLHDil8gg.png"
-canonical: https://medium.com/@david.dalbusco/syntax-highlighting-displayed-in-ubuntu-terminal-like-a7e9c310b504
+canonical: "https://medium.com/@david.dalbusco/syntax-highlighting-displayed-in-ubuntu-terminal-like-a7e9c310b504"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*sJQnreNU9DZ0ARLHDil8gg.png)

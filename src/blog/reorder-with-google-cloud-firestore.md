@@ -5,7 +5,7 @@ title: "Reorder With Google Cloud Firestore"
 description: "How to maintain a list of data dynamically sorted with Cloud Firestore collection"
 tags: "#firebase #javascript #webdev #serverless"
 image: "https://cdn-images-1.medium.com/max/1600/1*wRwngS5dVwEFcnpF4t1q4w.jpeg"
-canonical: https://medium.com/@david.dalbusco/reorder-with-google-cloud-firestore-8e13ea9f7fb9
+canonical: "https://medium.com/@david.dalbusco/reorder-with-google-cloud-firestore-8e13ea9f7fb9"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*wRwngS5dVwEFcnpF4t1q4w.jpeg)

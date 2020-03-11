@@ -3,9 +3,9 @@ path: "/blog/introducing-tie-tracker-a-simple-open-source-and-free-time-tracking
 date: "2020-03-11"
 title: "Introducing: Tie Tracker. A simple, open source and free time tracking app ⏱️"
 description: "Introducing: Tie Tracker. A simple, open source and free time tracking app ⏱️"
-tags: "#webdev #showdev #opensource #motivation"
+tags: "#webdev #showdev #javascript #react"
 image: "https://cdn-images-1.medium.com/max/1600/1*jjeZp6_jbltdQSeOcTGdlg.png"
-canonical: https://medium.com/@david.dalbusco/introducing-a-new-web-component-to-drag-resize-and-rotate-e08db59fad2f
+canonical: "https://medium.com/@david.dalbusco/introducing-tie-tracker-e407daec4121"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*jjeZp6_jbltdQSeOcTGdlg.png)
@@ -17,13 +17,13 @@ I’m happy to share with you [Tie Tracker](https://tietracker.app.link): a simp
 
 ### Back Story
 
-Last December, in between clients’ projects and I had some spare time to invest in learning new concepts. Of all of interesting subjects, one particular retained my attention: improving my [React](https://reactjs.org) skills and giving a real try to [Redux](https://react-redux.js.org).
+Last December, in between clients' projects, I had some spare time to learn new concepts. Of all of interesting subjects out there, one particular retained my attention: improving my [React](https://reactjs.org) skills and giving a real try to [Redux](https://react-redux.js.org).
 
 Knowing my self, in comparison to experimenting, I knew  I had to implement something concrete to get to feel comfortable with the technologies, specially with Redux. That’s why I came back to my long time idea to implement a time tracking and reporting application which perfectly matches my business processes.
 
-Nevertheless, at this point, I was still unsure to start or not this project. After all, developing an application needs a certain effort. Moreover, I was not that motivated to develop yet again another solution which would need a cloud, authentication and databases.
+Nevertheless, at this point, I was still unsure to start or not this project. After all, developing an application needs a certain effort. Moreover, I was not that motivated to develop yet again another solution which would need a cloud, authentication and database.
 
-But after much thinking about it, I finally found the last bit of motivations: I would develop the app to run entirely offline, with the help of[IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), and I would  give a try to [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) to defer “heavy” computation.
+But after much thinking about it, I finally found the last bit of motivation: I would develop the app to run entirely offline, with the help of [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), and I would  give a try to [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) to defer “heavy” computation.
 
 And that was it, I was all in. I started my new [Ionic](https://ionicframework.com) app and I developed my new tool 😁.
 
@@ -37,7 +37,7 @@ The application helps track productivity and billable hours for a list of client
 
 ### Reporting
 
-For my company, I use a third party online accounting system to generate my client’s monthly bill. When I send these, I join a report of every worked hours I spent on the projects for the selected period. So far, I was editing these timesheets manually but fortunately, I can now extract these on demand directly from Tie Tracker 😄.
+For my company, I use a third party online accounting system to generate my client’s bill. When I send these, I join a report of every worked hours I spent on the projects for the selected period. So far, I was editing these timesheets manually but fortunately, I can now extract these on demand directly from Tie Tracker 😄.
 
 * ✅ Export open invoices to XLSX timesheets
 * ✅ Weekly work summary

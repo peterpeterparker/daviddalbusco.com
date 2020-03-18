@@ -2,7 +2,7 @@
 path: "/blog/how-to-call-the-service-worker-from-the-web-app-context"
 date: "2020-03-16"
 title: "How To Call The Service Worker From The Web App Context"
-description: "How To Call The Service Worker From The Web App Context #OTAD-33"
+description: "How To Call The Service Worker From The Web App Context #OneTrickADay-34"
 tags: "#motivation #javascript #tutorial"
 image: "https://miro.medium.com/max/4160/1*4H2Zo7JLHzdfoDc-ltuy3A.png"
 canonical: "https://medium.com/@david.dalbusco/one-trick-a-day-d-34-469a0336a07e"

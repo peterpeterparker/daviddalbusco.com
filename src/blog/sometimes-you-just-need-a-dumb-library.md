@@ -12,7 +12,7 @@ canonical: "https://medium.com/@david.dalbusco/sometimes-you-just-need-a-dumb-li
 
 *Photo by [Benjamin Davies](https://unsplash.com/@bendavisual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
-I [challenged](https://medium.com/@david.dalbusco/one-trick-a-day-d-34-469a0336a07e) my self to share a blog post very day until end of the current quarantine in Switzerland, the 19th April 2020. **Thirty-one** days left until hopefully better days.
+I [challenged](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) my self to share a blog post very day until end of the current quarantine in Switzerland, the 19th April 2020. **Thirty-one** days left until hopefully better days.
 
 *****
 

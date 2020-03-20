@@ -18,4 +18,9 @@ section.post {
   p.tags {
     color: var(--color-highlight);
   }
+
+  hr {
+    width: 7rem;
+    margin: 1.75rem auto;
+  }
 }

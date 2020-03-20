@@ -20,31 +20,19 @@ import "../../theme/theme.scss"
 import Navigation from "../navigation/navigation"
 import Footer from "../footer/footer"
 
+import { defineCustomElements as deckDeckGoLazyImgElement } from '@deckdeckgo/lazy-img/dist/loader';
+import { defineCustomElements as deckDeckGoCoreElement } from '@deckdeckgo/core/dist/loader';
+import { defineCustomElements as deckDeckGoSlideTitleElement } from '@deckdeckgo/slide-title/dist/loader';
+import { defineCustomElements as deckDeckGoYoutubeElement } from '@deckdeckgo/youtube/dist/loader';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+
+deckDeckGoLazyImgElement();
+deckDeckGoCoreElement();
+deckDeckGoSlideTitleElement();
+deckDeckGoYoutubeElement();
+deckDeckGoHighlightElement();
+
 class Layout extends React.Component {
-
-  async componentDidMount() {
-    // TODO: To be removed when https://github.com/ionic-team/stencil/issues/1724 will be solved
-    // Use import instead when solved
-    try {
-      const deckdeckgoLazyImgLoader = require("@deckdeckgo/lazy-img/dist/loader")
-      const deckdeckgoCoreLoader = require("@deckdeckgo/core/dist/loader")
-      const deckdeckgoSlideTitleLoader = require("@deckdeckgo/slide-title/dist/loader")
-      const deckdeckgoHighlightCodeLoader = require("@deckdeckgo/highlight-code/dist/loader")
-      const deckdeckgoYoutubeLoader = require("@deckdeckgo/youtube/dist/loader")
-
-      const promises = []
-
-      promises.push(deckdeckgoLazyImgLoader.defineCustomElements(window))
-      promises.push(deckdeckgoCoreLoader.defineCustomElements(window));
-      promises.push(deckdeckgoSlideTitleLoader.defineCustomElements(window));
-      promises.push(deckdeckgoHighlightCodeLoader.defineCustomElements(window));
-      promises.push(deckdeckgoYoutubeLoader.defineCustomElements(window));
-
-      await Promise.all(promises);
-    } catch (err) {
-      console.error(err);
-    }
-  }
 
   render() {
     return <>

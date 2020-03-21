@@ -138,8 +138,8 @@ const Layout = ({ children, location, messages }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  location: PropTypes.node.isRequired,
-  messages: PropTypes.node.isRequired,
+  location: PropTypes.any.isRequired,
+  messages: PropTypes.any.isRequired,
 }
 
 export default Layout

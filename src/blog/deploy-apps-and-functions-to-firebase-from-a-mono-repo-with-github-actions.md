@@ -4,7 +4,7 @@ date: "2020-03-23"
 title: "Deploy Apps And Functions To Firebase From A Mono Repo With GitHub Actions"
 description: "How to deploy applications and functions from a mono repo with GitHub Actions to Firebase Hosting and Functions"
 tags: "#devops #github #webdev #yaml"
-image: "https://cdn-images-1.medium.com/max/1600/1*KwiK0jtPVZnLUyZV1BPdag.png"
+image: "https://cdn-images-1.medium.com/max/1600/1*-sJcIhzFM8ypB7ifPgYdow.png"
 canonical: "https://medium.com/@david.dalbusco/deploy-apps-and-functions-to-firebase-from-a-mono-repo-with-github-actions-371082ed7031"
 ---
 

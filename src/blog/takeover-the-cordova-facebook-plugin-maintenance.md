@@ -12,7 +12,7 @@ canonical: "https://medium.com/@david.dalbusco/takeover-the-cordova-facebook-plu
 
 *Photo by [Thought Catalog](https://unsplash.com/@thoughtcatalog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/facebook?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
-I share [one trick a day](https://medium.com/@david.dalbusco/one-trick-a-day-d-34-469a0336a07e) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twenty-four** days left until hopefully better days.
+I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twenty-three** days left until hopefully better days.
 
 *****
 

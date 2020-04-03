@@ -55,7 +55,8 @@ In order to transform an array to an object in JavaScript, I did not find so far
 Meanwhile, I use the [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) function. Fun fact, that’s probably one of the few times that I am using it. I use often `forEach` , `map` , `filter` and `find` but `reduce` , truly rarely.
 
 ```javascript
-const bands: {name: string, genre: string}[] = [
+// {name: string, genre: string}[]
+const bands = [
   {
     name: 'Ratm',
     genre: 'rock'
@@ -66,12 +67,13 @@ const bands: {name: string, genre: string}[] = [
   }
 ];
 
-const artists: {ratm: string, bruno: string} = bands.reduce(
-  (obj: { [index: string]: string }, item) => {
+// {ratm: string, bruno: string}
+const artists = bands.reduce(
+  (obj, item) => {
     obj[item.name] = item.genre;
     return obj;
   },
-  {}) as {ratm: string, bruno: string};
+  {});
 
 console.log(artists);
 

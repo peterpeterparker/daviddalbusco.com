@@ -1,5 +1,5 @@
 ---
-path: "/blog/jjsx-for-angular-developers"
+path: "/blog/jsx-for-angular-developers"
 date: "2020-04-03"
 title: "JSX For Angular Developers"
 description: "A brief introduction to JSX in Stencil or React for Angular developers"

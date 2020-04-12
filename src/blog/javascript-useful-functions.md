@@ -5,7 +5,7 @@ title: "JavaScript Useful Functions"
 description: "A couple of useful JavaScript functions such as unifying events, debouncing or detecting mobile browsers"
 tags: "#javascript #webdev #programming #tools"
 image: "https://cdn-images-1.medium.com/max/1600/1*qvaNuuGMVDesVbjYY_fdoQ.png"
-canonical: "https://medium.com/@david.dalbusco/github-actions-hide-and-set-angular-environment-variables-e753d06d16a8"
+canonical: "https://medium.com/@david.dalbusco/javascript-useful-functions-2d9d3a9b603f"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*qvaNuuGMVDesVbjYY_fdoQ.png)

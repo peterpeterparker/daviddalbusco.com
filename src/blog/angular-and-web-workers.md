@@ -3,7 +3,7 @@ path: "/blog/angular-and-web-workers"
 date: "2020-04-15"
 title: "Angular And Web Workers"
 description: "How to integrate Web Workers to your Angular applications"
-tags: "#angular #javascript #showev #webdev"
+tags: "#angular #javascript #showdev #webdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*0EDeEWFc3O8KxelyJArjjA.png"
 canonical: "https://medium.com/@david.dalbusco/angular-and-web-workers-17cd3bf9acca"
 ---

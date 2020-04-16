@@ -12,7 +12,7 @@ canonical: "https://medium.com/@david.dalbusco/angular-and-web-workers-17cd3bf9a
 
 *Photo by [Darya Tryfanava](https://unsplash.com/@darya_tryfanava?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
-I share [one trick a day](https://medium.com/@david.dalbusco/one-trick-a-day-d-34-469a0336a07e) until the original scheduled date of the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Four** days left until this first milestone. Hopefully better days are ahead.
+I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the original scheduled date of the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Four** days left until this first milestone. Hopefully better days are ahead.
 
 *****
 

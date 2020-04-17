@@ -18,7 +18,7 @@ This week I developed a new landing page for [DeckDeckGo](https://deckdeckgo.com
 
 ### Soundtrack
 
-In this article we are going to lazy load a music video clip from my hometown friends [Maxi Puch Rodeo Club](https://maxipuchrodeoclub.bandcamp.com). I could only highly advice you to play the following video in order to stream some great music while reading this blog post 😉
+In this article we are going to lazy load a music video clip from my hometown friends [Maxi Puch Rodeo Club](https://maxipuchrodeoclub.bandcamp.com). I could only highly advise you to play the following video in order to stream some great music while reading this blog post 😉
 
 <iframe width="280" height="158" src="https://www.youtube.com/embed/ol0Wz6tqtZA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
 <br/>

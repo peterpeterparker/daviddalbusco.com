@@ -14,7 +14,7 @@ I’m currently sitting in a plane between Lisbon and Zürich, back from a famil
 
 I’m not sure this post will ever actually interest anyone, but well, I think that at least it will makes my travel faster. Moreover, my mum is currently reading a novel next to me and I also don’t want to disturb her, it’s a win-win situation 😉
 
-I also write these lines because I just finished to read the [MAKE](http://makebook.io) book of [Pieter Levels](https://twitter.com/levelsio) which was really interesting. His “indie” point of view on the startup “world” seems honest and quite refreshing to me. I could definitely advice you to acquire it.
+I also write these lines because I just finished to read the [MAKE](http://makebook.io) book of [Pieter Levels](https://twitter.com/levelsio) which was really interesting. His “indie” point of view on the startup “world” seems honest and quite refreshing to me. I could definitely advise you to acquire it.
 
 ### Introduction
 

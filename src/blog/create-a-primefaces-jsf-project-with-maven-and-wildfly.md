@@ -19,7 +19,7 @@ When I thought about which subject I should write about earlier this morning (I 
 
 *But why a JSF project?*
 
-Honestly, I don't know exactly why anyone would be still interested to create a brand new JavaServer Faces API (JSF) project in 2019 or why would anyone even read this article 🤣. Not that I don't like Java, I still do and I still think it's a good match for certain types of projects, notably when it goes to the back- and middle-end layers but I would personally not use or advice it for the frontend part of any **new** projects.
+Honestly, I don't know exactly why anyone would be still interested to create a brand new JavaServer Faces API (JSF) project in 2019 or why would anyone even read this article 🤣. Not that I don't like Java, I still do and I still think it's a good match for certain types of projects, notably when it goes to the back- and middle-end layers but I would personally not use or advise it for the frontend part of any **new** projects.
 
 That's why I'm really curious to hear your voice, why are you reading this article? Why are you looking to create a JSF project? Let me know with a comment 😁
 

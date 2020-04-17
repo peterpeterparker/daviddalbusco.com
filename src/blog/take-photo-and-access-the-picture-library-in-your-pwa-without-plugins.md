@@ -21,7 +21,7 @@ In this new blog post I’ll share how you could implement such a feature and wi
 
 ### Before we start
 
-The following solution works just fine in a Progressive Web App but are not going to work in an iOS and Android application you would develop with web technologies. Therefore, if you are targeting the web, both above platforms and only want to write one single code base for all of these, I could advice you to have a look, for example, to [Capacitor](https://capacitor.ionicframework.com).
+The following solution works just fine in a Progressive Web App but are not going to work in an iOS and Android application you would develop with web technologies. Therefore, if you are targeting the web, both above platforms and only want to write one single code base for all of these, I could advise you to have a look, for example, to [Capacitor](https://capacitor.ionicframework.com).
 
 ### Getting started
 

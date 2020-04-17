@@ -36,7 +36,7 @@ We are providing some guidance in our [documentation](https://docs.deckdeckgo.co
 
 To fetch the component from a CDN, as for example [Unpkg](https://unpkg.com/), add the following to the header of your HTML.
 
-```hthml
+```html
 <script type="module" src="https://unpkg.com/@deckdeckgo/inline-editor@latest/dist/deckdeckgo-inline-editor/deckdeckgo-inline-editor.esm.js"></script>
 
 <script nomodule="" src="https://unpkg.com/@deckdeckgo/inline-editor@latest/dist/deckdeckgo-inline-editor/deckdeckgo-inline-editor.js"></script>

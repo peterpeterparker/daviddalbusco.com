@@ -4,7 +4,7 @@ date: "2020-06-10"
 title: "Fullscreen: Practical Tips And Tricks"
 description: "Toggle the fullscreen mode with any browser, a Sass mixin for polyfill and hide the mouse on inactivity"
 tags: "#javascript #webdev #css #typescript"
-image: "https://cdn-images-1.medium.com/max/1600/1*01MP69dykx8YMQqMeRB2OQ.jpeg"
+image: "https://cdn-images-1.medium.com/max/1600/1*qyf7I6z6WCwU_jGOBpacng.jpeg"
 canonical: "https://medium.com/@david.dalbusco/fullscreen-practical-tips-and-tricks-cebcba69fb95"
 ---
 

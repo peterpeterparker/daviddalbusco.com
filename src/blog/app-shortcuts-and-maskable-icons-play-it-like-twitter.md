@@ -31,6 +31,9 @@ Thank you Twitter 🙏
 
 In this post I share the answers and resources we used to add App Shortcuts and maskable icons to our editor for presentations.
 
+<iframe width="280" height="158" src="https://www.youtube.com/embed/na52DkSdrA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
+<br/>
+
 *****
 
 ### App Shortcuts

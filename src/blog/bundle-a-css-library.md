@@ -1,5 +1,5 @@
 ---
-path: "/blog/bundle-a-css-ibrary"
+path: "/blog/bundle-a-css-library"
 date: "2020-07-01"
 title: "Bundle A CSS Library"
 description: "How to build your own custom CSS library with SASS, postcss and clean-css."

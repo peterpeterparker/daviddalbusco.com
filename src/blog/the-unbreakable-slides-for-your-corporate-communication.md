@@ -22,7 +22,7 @@ Today we are thrilled to announce that [DeckDeckGo](https://deckdeckgo.com) is r
 
 ### Templates And Options That Match Your CI/CD
 
-With this new offering, we aim to collaborate with your company to provide you with a new kind of editor for presentations and assist you the best we can to help you implement your CI/CD in your slides. Together with your designer and according to your guidelines, we create a set of unbreakable templates to apply your design, logo, colors, fonts, styles and any other option. Those will be used by all your collaborators.
+With this new feature, we aim to provide you with a new kind of editor for presentations and to assist you in the implementation of your brand's CI/CD into your slides. In close collaboration with your designer and adhering to your guidelines, we will create a set of unbreakable templates to which you can apply your design, logo, colors, fonts, styles and any other specifications. These templates will then be used by all your employees and collaborators going forward, thereby streamlining your company's visual identity.
 
 But wait, there's more! Below are some other features we are unveiling for enterprise customers.
 

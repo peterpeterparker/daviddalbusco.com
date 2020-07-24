@@ -52,7 +52,7 @@ Over time, your corporate style will evolve. We simplify this stylistic growth.
 
 You can publish your decks under your own domain name. It's also possible to create authenticated links for private content.
 
-FInally, if you prefer to integrate DeckDeckGo into your infrastructure and private network instead of using our SAAS platform, we are here to help.
+Finally, if you prefer to integrate DeckDeckGo into your infrastructure and private network instead of using our SaaS platform, we are here to help.
 
 *****
 

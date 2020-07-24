@@ -14,11 +14,9 @@ canonical: "https://medium.com/@david.dalbusco/app-shortcuts-and-maskable-icons-
 
 > Did you have a look at Bob’s presentation? He used the wrong logo, again.
 
-Something that never ceases to surprise me when I attend professional presentations, is to notice how much they can vary, even within the same company. Templates, formatting, palette of colors, fonts, logo, you name it, all of these tend to be fluctuant. Even if companies try to ensure that their corporate identity and design are the one used in their employees' slides, it is rarely consistent.
+It is astonishing how much the look and feel of presentations vary, even within the same company. Templates, formatting, color palettes, fonts, logo... you name it, they are never the same across two slide decks. Presentations are rarely consistent, even when companies invest time and effort in corporate identity and design guidelines.
 
-On the other hand, when we created [DeckDeckGo](https://deckdeckgo.com), a web editor for presentations, we designed it to be powered by self-contained templates that may, or may not, allow a certain number of features, with no other limitation than what the web can do.
-
-Based on these two observations, we are thrilled to unveil today our offering for [enterprise](https://deckdeckgo.com/enterprise) customers.
+Today, we are thrilled to announce that [DeckDeckGo](https://deckdeckgo.com) is receiving support for templates for our [enterprise](https://deckdeckgo.com/enterprise) customers. Create the template once, and all presentations are using it.
 
 *****
 
@@ -26,41 +24,41 @@ Based on these two observations, we are thrilled to unveil today our offering fo
 
 With this new offering, we aim to collaborate with your company to provide you with a new kind of editor for presentations and assist you the best we can to help you implement your CI/CD in your slides. Together with your designer and according to your guidelines, we create a set of unbreakable templates to apply your design, logo, colors, fonts, styles and any other option. Those will be used by all your collaborators.
 
-But, there is more and here are some of the main features we have in mind for companies!
+But wait, there's more! Below are some other features we are unveiling for enterprise customers.
 
 *****
 
 #### More Than Static Content
 
-Templates are made with the web and have no other limits than what it can do. It means that if your business offers web solutions, you can integrate these within your slides.
+Templates are made with the web and have no other limits than the web's own. It means that if your business offers web solutions, you can integrate these within your slides.
 
 *****
 
 #### Collaborate And Shared Library
 
-There is no team without communication. That’s why multiple users can edit a presentation at the same time and are able to express and exchange comments, without having to use multiple communication channels.
+There is no team without communication. That’s why multiple users can edit the same presentation in real time, and share ideas and comments.
 
-Likewise, with the help of a company’s media library, collaborators are able to share their assets’ resources.
+Moreover, collaborators can now upload and use a company's media resources and assets in their slide decks.
 
 *****
 
 #### Always Up-To-Date
 
-Over time your corporate style will evolve. We can make the propagation of these changes easier.
+Over time your corporate style will evolve. We make the propagation of these changes easier.
 
 *****
 
 #### Custom Domain, In Housing and Share Privately
 
-You can publish your decks under your own domain name. It is also possible to create private links to prevent access to your published content.
+You can publish your decks under your own domain name. It is also possible to create authenticated links for private content.
 
-If you would rather like to integrate DeckDeckGo in your infrastructure and private network instead of using our SASS platform, we are here to help.
+FInally, if you would rather integrate DeckDeckGo in your infrastructure and private network instead of using our SASS platform, we are here to help.
 
 *****
 
 ### And So Much More
 
-These features listed above are the ones we think are specific to business but DeckDeckGo is so much more than that.
+Here's what's new for our enterprise customers, but we're also releasing a ton of new features for the general public!
 
 *****
 
@@ -86,13 +84,13 @@ Syntax-highlighted code, math formulas, charts, Youtube, Unsplash, Tenor, Google
 
 #### Remote control
 
-Control your presentations remotely, draw over your slides and set a timer from your phone or tablet.
+Control your presentations remotely, draw on your slides and set a timer from your phone or tablet.
 
 *****
 
 #### Speaker notes
 
-Write notes for your slides. If you wish, it would even be possible to publish these within your slides.
+Write notes for your slides. Embed them in your presentation when needed.
 
 *****
 

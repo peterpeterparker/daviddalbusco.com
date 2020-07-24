@@ -16,7 +16,7 @@ canonical: "https://medium.com/@david.dalbusco/app-shortcuts-and-maskable-icons-
 
 It's astonishing how much the look and feel of presentations vary, even within the same company. Templates, formatting, color palettes, fonts, logo – you name it, they are never the same across two decks. Presentations are rarely consistent, even when companies invest time and effort in brand identity and design guidelines.
 
-Today, we are thrilled to announce that [DeckDeckGo](https://deckdeckgo.com) is receiving support for templates for our [enterprise](https://deckdeckgo.com/enterprise) customers. Create the template once, and all presentations are using it.
+Today we are thrilled to announce that [DeckDeckGo](https://deckdeckgo.com) is receiving support for templates for our [enterprise](https://deckdeckgo.com/enterprise) customers. Create a template once and all presentations will then use the same.
 
 *****
 

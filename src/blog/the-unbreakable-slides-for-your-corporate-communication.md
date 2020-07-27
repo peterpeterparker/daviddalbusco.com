@@ -58,7 +58,7 @@ Finally, if you prefer to integrate DeckDeckGo into your infrastructure and priv
 
 ### And So Much More
 
-That rounds up the new features for our enterprise customers - but we have already released a ton of things for any users!
+That rounds up the new features for our enterprise customers - but we have already released a ton of things for everyone else!
 
 *****
 

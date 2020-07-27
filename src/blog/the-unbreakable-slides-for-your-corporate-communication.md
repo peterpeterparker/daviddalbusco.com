@@ -14,53 +14,51 @@ canonical: "https://medium.com/@david.dalbusco/app-shortcuts-and-maskable-icons-
 
 > Did you have a look at Bob’s presentation? He used the wrong logo, again.
 
-Something that never miss to surprise me when I attend professional presentations, is to notice how much they can vary, even within the same company. Templates, formatting, palette of colors, fonts, logo, you name it, all of these tend to be fluctuant. Even if some companies try to ensure that their corporate identity and design are the one used in their employee’s slides, it is rarely consistent.
+It's astonishing how much the look and feel of presentations vary, even within the same company. Templates, formatting, color palettes, fonts, logo – you name it, they are never the same across two decks. Presentations are rarely consistent, even when companies invest time and effort in brand identity and design guidelines.
 
-On the other hand, when we created [DeckDeckGo](https://deckdeckgo.com), a web editor for presentations, we designed it to be powered by self-contained templates that may, or may not, allow a certain number of features, with no other limitation that what the web can do.
-
-Base on these two observations, we are thrilled to unveil today our offering for [enterprise](https://deckdeckgo.com/enterprise) customers.
+Today we are thrilled to announce that [DeckDeckGo](https://deckdeckgo.com) is receiving support for templates for our [enterprise](https://deckdeckgo.com/enterprise) customers. Create a template once and all presentations will then use the same.
 
 *****
 
 ### Templates And Options That Match Your CI/CD
 
-With this new offering, we aim to collaborate with your company to provide you our new kind of editor for presentations and assist you the best we can to make you implement your CI/CD in your slides. Together with your designer or according your guidelines, we create a set of unbreakable templates to apply your design, logo, colors, fonts, styles and any other options. Those will be used by all your collaborators.
+With this new feature, we aim to provide you with a new kind of editor for presentations and to assist you in the implementation of your brand's CI/CD into your slides. In close collaboration with your designer and adhering to your guidelines, we will create a set of unbreakable templates to which you can apply your design, logo, colors, fonts, styles and any other specifications. These templates will then be used by all your employees and collaborators going forward, thereby streamlining your company's visual identity.
 
-But, there is more and here are some of the main features we have in mind for companies!
+That's not all! Below are some other features we are rolling out for enterprise customers.
 
 *****
 
 #### More Than Static Content
 
-Templates are made with the web and have no other limits than what it can do. It notably means that if your business do offer web solutions, you can integrated these within your slides.
+Templates are made with the web and have no other limits than the web's own. It means that if your business offers web solutions, you can integrate these within your slides.
 
 *****
 
-#### Collaborate And Shared Library
+#### Collaborate And Share A Library
 
-There is no team without communication. That’s why, multiple users can edit a presentation at the same time and are able to express and exchange comments, without having to use multiple communications channels.
+Teams are nothing without good communication. That’s why multiple users can edit the same presentation in real time and share ideas and comments.
 
-Likewise, with the help of a company’s media library, collaborators are able to share their assets’ resources.
+What's more, collaborators can now upload and use your company's media resources and assets in their own slide decks.
 
 *****
 
 #### Always Up-To-Date
 
-Over time your corporate style will evolve. We can make the propagation of these changes easier.
+Over time, your corporate style will evolve. We simplify this stylistic growth.
 
 *****
 
 #### Custom Domain, In Housing and Share Privately
 
-You can publish your decks under your own domain name. It is also possible to create private links to prevent access to your published content.
+You can publish your decks under your own domain name. It's also possible to create authenticated links for private content.
 
-If you rather like to integrate DeckDeckGo in your infrastructure and private network rather than using our SASS platform, we are open to the ideas too.
+Finally, if you prefer to integrate DeckDeckGo into your infrastructure and private network instead of using our SaaS platform, we are here to help.
 
 *****
 
 ### And So Much More
 
-These above main features are the one we think are specific to business but DeckDeckGo is so much more than that.
+That rounds up the new features for our enterprise customers – but we're also releasing a ton of new things for private users!
 
 *****
 
@@ -80,39 +78,39 @@ Engage with your audience in real time by running polls within your slides. Get 
 
 #### Editing
 
-Syntax highlighted code, math formulas, charts, Youtube, Unsplash, Tenor, Google fonts. We have integrated the useful services directly in the editor and are providing many components to render information smoothly.
+Syntax-highlighted code, math formulas, charts, YouTube, Unsplash, Tenor, Google Fonts. We integrated the most useful services directly in the editor and are providing many components to render information smoothly.
 
 *****
 
 #### Remote control
 
-Control your presentations remotely, draw over your slides and set a timer from your phone or tablet.
+Control your presentations remotely, draw on your slides and set a timer from your phone or tablet.
 
 *****
 
 #### Speaker notes
 
-Write notes for your slides. If you wish, it would even be possible to publish these within your slides.
+Write speaker notes for your slides. Embed them in your presentation when and where needed.
 
 *****
 
 #### Open Source
 
-DeckDeckGo is open source. All the code of our applications and components are available on [Github](http://github.com/deckgo/deckdeckgo).
+DeckDeckGo is open source. All of the code from our applications and components is available on [Github](http://github.com/deckgo/deckdeckgo).
 
-We encourage enterprise to adopt this approach but we do understand if you prefer to keep your corporate templates private.
+We encourage companies to adopt this approach, but we do understand if you prefer to keep your corporate templates private.
 
 *****
 
 #### Developer Kit
 
-All public features used by our editor are available as a developer kit therefore, if you rather like to prepare your presentation with HTML or Markdown, go for it `npm init deckeckgo` .
+All public features used by our editor are available as a developer kit. Therefore, if you would rather prepare your presentation with HTML or Markdown, go for it by using `npm init deckeckgo`.
 
 *****
 
 ### Get In Touch
 
-I hope the above introduction and having given a try to [DeckDeckGo](https://deckdeckgo.com) made you curious about our solution for enterprise. Get in touch for a tailored discussion about your needs, send us an [email](mailto:hello@deckdeckgo.com).
+I hope the above introduction (and giving [DeckDeckGo](https://deckdeckgo.com) a try for yourself) made you curious about our solutions for enterprise clients. Get in touch for a tailored discussion about your needs by sending us an [email](mailto:hello@deckdeckgo.com).
 
 To infinity and beyond
 

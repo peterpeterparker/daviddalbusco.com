@@ -1,7 +1,7 @@
 ---
-path: "/blog/the-unbreakable-slides-for-your-corporate-communication"
-date: "2020-07-23"
-title: "The Unbreakable Slides For Your Corporate Communication"
+path: "/blog/professional-presentation-building-tailored-to-your-brand"
+date: "2020-07-30"
+title: "Professional presentation building, tailored to your brand."
 description: "Introducing another kind of editor for your company's presentations."
 tags: "#showdev #webdev #enterprise #presentation"
 image: "https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg"

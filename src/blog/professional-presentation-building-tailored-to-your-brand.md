@@ -3,7 +3,7 @@ path: "/blog/professional-presentation-building-tailored-to-your-brand"
 date: "2020-07-30"
 title: "Professional presentation building, tailored to your brand."
 description: "Introducing another kind of editor for your company's presentations."
-tags: "#showdev #startup #presentation #enterprise"
+tags: "#showdev #startup #presentation #productivity"
 image: "https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg"
 canonical: "https://medium.com/@david.dalbusco/app-shortcuts-and-maskable-icons-play-it-like-twitter-c7da9b7e90fa"
 ---

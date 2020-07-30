@@ -112,6 +112,6 @@ All public features used by our editor are available as a developer kit. Therefo
 
 I hope the above introduction (and giving [DeckDeckGo](https://deckdeckgo.com) a try for yourself) made you curious about our solutions for enterprise clients. Get in touch for a tailored discussion about your needs by sending us an [email](mailto:hello@deckdeckgo.com).
 
-To infinity and beyond
+To infinity and beyond!
 
 David

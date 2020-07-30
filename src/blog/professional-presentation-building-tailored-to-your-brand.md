@@ -4,7 +4,7 @@ date: "2020-07-30"
 title: "Professional presentation building, tailored to your brand."
 description: "Introducing another kind of editor for your company's presentations."
 tags: "#showdev #startup #presentation #productivity"
-image: "https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg"
+image: "https://cdn-images-1.medium.com/max/1600/1*G1Y71S6H20wCW7WbgrQXew.jpeg"
 canonical: "https://medium.com/@david.dalbusco/professional-presentation-building-tailored-to-your-brand-c3d1d6695915"
 ---
 

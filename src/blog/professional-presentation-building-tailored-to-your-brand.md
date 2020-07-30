@@ -5,7 +5,7 @@ title: "Professional presentation building, tailored to your brand."
 description: "Introducing another kind of editor for your company's presentations."
 tags: "#showdev #startup #presentation #productivity"
 image: "https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg"
-canonical: "https://medium.com/@david.dalbusco/app-shortcuts-and-maskable-icons-play-it-like-twitter-c7da9b7e90fa"
+canonical: "https://medium.com/@david.dalbusco/professional-presentation-building-tailored-to-your-brand-c3d1d6695915"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*G1Y71S6H20wCW7WbgrQXew.jpeg)

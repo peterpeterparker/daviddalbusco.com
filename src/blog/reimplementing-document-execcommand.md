@@ -1,8 +1,8 @@
 ---
 path: "/blog/reimplementing-document-execcommand"
 date: "2020-08-13"
-title: "Reimplementing document.execCommand()"
-description: "The execCommand method has been marked has obsolete, here is how I reimplemented its styling command."
+title: "Re-implementing document.execCommand()"
+description: "The execCommand method has been marked has obsolete, here is how I re-implemented its styling command."
 tags: "#javascript #webdev #showdev #html"
 image: "https://cdn-images-1.medium.com/max/1600/1*BDpmr6_txiIdod6OCOyvZA.jpeg"
 canonical: "https://medium.com/@david.dalbusco/reimplementing-document-execcommand-6ffc33a80f02"
@@ -20,7 +20,7 @@ For [DeckDeckGo](https://deckdeckgo.com), an open source web editor for slides, 
 
 Because it may be future proof to proactively replace its usage by a custom implementation, I spent quite some time reimplementing it 😄.
 
-Even though my implementation does not look that bad (I hope), I kind of feel, I had to reimplement the wheel. That’s why I am sharing with you my solution, hoping that some of you might point out some improvements or even better, send us [pull requests](https://github.com/deckgo/deckdeckgo/) to make the component rock solid 🙏.
+Even though my implementation does not look that bad (I hope), I kind of feel, I had to re-implement the wheel. That’s why I am sharing with you my solution, hoping that some of you might point out some improvements or even better, send us [pull requests](https://github.com/deckgo/deckdeckgo/) to make the component rock solid 🙏.
 
 *****
 
@@ -36,7 +36,7 @@ It can change text style (bold, italic, underline and strikethrough), fore- and 
 
 ### Limitation
 
-My following reimplementation of `document.execCommand` do seems to work well but, it does not support an undo functionality (yet), what’s still a bummer 😕.
+My following re-implementation of `document.execCommand` do seems to work well but, it does not support an undo functionality (yet), what’s still a bummer 😕.
 
 As for the code itself, I am open to any suggestions, ping me with your best ideas!
 
@@ -44,7 +44,7 @@ As for the code itself, I am open to any suggestions, ping me with your best ide
 
 ### Goal
 
-The objective shared in the blog post is the reimplementation of following functions (source [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)):
+The objective shared in the blog post is the re-implementation of following functions (source [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)):
 
 ```javascript
 document.execCommand(aCommandName, aShowDefaultUI, aValueArgument)

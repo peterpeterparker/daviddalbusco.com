@@ -1,6 +1,6 @@
 section.about {
-  background: var(--color-secondary);
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
 
   main {
     p {
@@ -10,9 +10,9 @@ section.about {
 
     mark {
       background: var(--color-highlight);
-      color: white;
-      padding: 2px;
-      border-radius: 4px;
+      color: var(--color-primary);
+      padding: 2px 8px;
+      border-radius: 16px;
 
       a {
         text-decoration: none;

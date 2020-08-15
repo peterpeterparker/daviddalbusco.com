@@ -41,6 +41,11 @@ footer {
 
   &.opensource {
     background: var(--color-secondary);
+    color: var(--color-secondary-contrast);
+
+    a {
+      color: var(--color-secondary-contrast);
+    }
 
     p {
       font-size: 0.75rem;

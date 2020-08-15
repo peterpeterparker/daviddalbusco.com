@@ -11,7 +11,7 @@ class Post extends React.Component {
 
   renderPost() {
     if (this.props.node && this.props.node.frontmatter) {
-      return <Link to={this.props.node.frontmatter.path} className="post">
+      return <Link to={this.props.node.frontmatter.path} className="post" aria-label={this.props.node.frontmatter.title}>
         <article>
           <div className="image">
             <deckgo-lazy-img img-src={this.props.node.frontmatter.image} img-alt={this.props.node.frontmatter.title}/>

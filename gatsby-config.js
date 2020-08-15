@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `David Dal Busco`,
-    description: `Freelancer - Web, PWA and Mobile iOS/Android Development - Project management - UX and IT consulting`,
+    description: `Freelance Web Developer - Web, Progressive Web Apps and Mobile - Project management - UX and IT consulting`,
     author: `David Dal Busco`,
     url: `https://daviddalbusco.com`,
     image: "/images/daviddalbusco.jpg",

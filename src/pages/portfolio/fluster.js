@@ -30,11 +30,11 @@ class FlusterPage extends React.Component {
 
           <article className="info">
             <div>
-              <p>I have developed "Fluster" as a personal project for which I am no longer really active.</p>
+              <p>I used to develop "Fluster" as a personal project.</p>
               <p>When I moved to Zürich I was struggling to find flat and roommates, that's why I tried to develop my
                 own platform to help others and myself to solve such problems.</p>
-              <p>The startup itself did not succeed but it allowed me to become a freelancer and start my own company,
-                therefore I see the all experience and outcome as a personal win.</p>
+              <p>The startup itself failed but, it allowed me to become a freelancer and to start my own company,
+                therefore I consider the all experience as a win.</p>
             </div>
 
             <Slider images={images}/>
@@ -50,10 +50,7 @@ class FlusterPage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web Apps</a>, <a
-                href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
-                href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
-              <p><strong>Website:</strong> <a href="https:fluster.io">Fluster.io</a></p>
+              <p><strong>Discontinued:</strong> Used to be available as Progressive Web Apps and in the Apple Store and Google Play</p>
               <p><strong>Infrastructure:</strong> <a href="https://aws.amazon.com/ec2/">Amazon EC2</a> and <a
                 href="https://aws.amazon.com/fr/sns/">Amazon SNS</a></p>
               <p><strong>Database:</strong> <a href="https://www.mongodb.com">MongoDB</a></p>

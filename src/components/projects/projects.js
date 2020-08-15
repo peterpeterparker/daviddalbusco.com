@@ -47,12 +47,12 @@ class Projects extends React.Component {
           <h2>Personal projects</h2>
         </Chapter>
 
-        <div className="projects">
+        <div className={`projects ${!this.props || !this.props.all ? 'preview' : ''}`}>
           {this.renderDeckDeckGo()}
 
           {this.renderTieTracker()}
 
-          {this.renderFluster()}
+          {this.props && this.props.all ? this.renderFluster() : undefined}
         </div>
 
         {

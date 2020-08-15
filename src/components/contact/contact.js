@@ -14,10 +14,10 @@ class Contact extends React.Component {
 
         <form action="https://formspree.io/david@fluster.io" method="POST">
 
-          <input type="text" name="name" placeholder="Your name"/>
-          <input type="email" name="_replyto" placeholder="Your email"/>
-          <input type="tel" name="phone" placeholder="Your phone"/>
-          <textarea name="message" placeholder="Your message" rows="4"></textarea>
+          <input type="text" name="name" placeholder="Your name" aria-label="Your name"/>
+          <input type="email" name="_replyto" placeholder="Your email" aria-label="Your email"/>
+          <input type="tel" name="phone" placeholder="Your phone" aria-label="Your phone"/>
+          <textarea name="message" placeholder="Your message" rows="4" aria-label="Your message"></textarea>
 
           <input type="text" name="_gotcha" style={{ display: "none" }}/>
           <input type="hidden" name="_next" value="https://daviddalbusco.com" />

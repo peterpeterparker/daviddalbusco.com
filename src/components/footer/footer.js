@@ -32,7 +32,7 @@ Sihlquai 131
         </footer>
         <footer className="opensource">
           <main className="small">
-            <p>I have developed this website. Its open source code is available on <a href="https://github.com/peterpeterparker/daviddalbusco.com">Github<FontAwesomeIcon icon={["fab", "github"]}/></a></p>
+            <p>This website is open source code and available on <a href="https://github.com/peterpeterparker/daviddalbusco.com">Github<FontAwesomeIcon icon={["fab", "github"]}/></a></p>
           </main>
         </footer>
       </>

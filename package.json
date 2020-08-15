@@ -1,7 +1,7 @@
 {
   "name": "daviddalbusco.com",
   "private": true,
-  "description": "David Dal Busco - Freelancer - Full Stack Development Web, PWA and Mobile iOS/Android - Project management - UX and IT consulting",
+  "description": "David Dal Busco - Freelancer - Web, PWA and Mobile iOS/Android Development - Project management - UX and IT consulting",
   "version": "1.8.1",
   "author": "David Dal Busco <david@fluster.io>",
   "dependencies": {
@@ -43,7 +43,7 @@
     "freelance",
     "freelancer",
     "development",
-    "full stack development",
+    "web development",
     "web",
     "PWA",
     "Progressive Web Apps",

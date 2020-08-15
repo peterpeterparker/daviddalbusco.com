@@ -7,6 +7,12 @@ section.portfolio, section.other-projects {
     grid-template-rows: auto;
     grid-gap: 1.75rem;
 
+    @media (min-width: 992px) {
+      &.preview {
+        width: calc(2 * 100% / 3);
+      }
+    }
+
     margin: auto;
 
     a {

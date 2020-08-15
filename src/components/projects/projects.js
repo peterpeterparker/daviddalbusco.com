@@ -41,7 +41,7 @@ class Projects extends React.Component {
         </div>
       </main>
     </section>,
-    <section className="other-projects extraspace-bottom" id="other-projects" key="otherProjects">
+    <section className="other-projects extraspace-bottom" key="sideProjects">
       <main>
         <Chapter icon="browser">
           <h2>Personal projects</h2>
@@ -69,13 +69,13 @@ class Projects extends React.Component {
       return undefined;
     }
 
-    return <section className="other-projects extraspace-bottom" id="other-projects" key="otherProjects">
+    return <section className="other-projects extraspace-bottom" key="otherProjects">
       <main>
         <Chapter icon="pencil-ruler">
           <h2>Other prototypes</h2>
         </Chapter>
 
-        <div className="projects">
+        <div className="projects preview">
           {this.renderWooof()}
 
           {this.renderWatamato()}

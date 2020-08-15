@@ -9,7 +9,7 @@ class Slider extends React.Component {
   render() {
     return <div className="slider">
 
-      <button onClick={() => this.prevSlide()}><FontAwesomeIcon icon={["fal", "chevron-left"]} size="3x"/></button>
+      <button onClick={() => this.prevSlide()} aria-label="Previous slide"><FontAwesomeIcon icon={["fal", "chevron-left"]} size="3x"/></button>
 
       <div className="deck-container">
         <deckgo-deck embedded="true">
@@ -17,7 +17,7 @@ class Slider extends React.Component {
         </deckgo-deck>
       </div>
 
-      <button onClick={() => this.nextSlide()}><FontAwesomeIcon icon={["fal", "chevron-right"]} size="3x"/></button>
+      <button onClick={() => this.nextSlide()} aria-label="Next slide"><FontAwesomeIcon icon={["fal", "chevron-right"]} size="3x"/></button>
 
     </div>
   }

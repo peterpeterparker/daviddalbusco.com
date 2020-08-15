@@ -56,7 +56,7 @@ class Projects extends React.Component {
         </div>
 
         {
-          this.props && this.props.all ? undefined : <Link to='/portfolio/' className="button"><h2>AND MORE</h2></Link>
+          this.props && this.props.all ? undefined : <Link to='/portfolio/' aria-label="Portfolio" className="button"><h2>AND MORE</h2></Link>
         }
       </main>
     </section>,
@@ -82,7 +82,7 @@ class Projects extends React.Component {
         </div>
 
         {
-          this.props && this.props.all ? undefined : <Link to='/portfolio/' className="button"><h2>AND MORE</h2></Link>
+          this.props && this.props.all ? undefined : <Link to='/portfolio/' aria-label="Portfolio" className="button"><h2>AND MORE</h2></Link>
         }
       </main>
     </section>
@@ -90,7 +90,7 @@ class Projects extends React.Component {
 
   renderOurEnergy() {
     if (!this.props || this.props.filter !== "ourenergy") {
-      return <Link to="/portfolio/our-energy-eth-zurich">
+      return <Link to="/portfolio/our-energy-eth-zurich" aria-label="Our Energy - ETH Zürich">
         <article className={this.state.mobile ? "ourenergy mobile" : "ourenergy"}>
           <div className="summary">
             <Img fluid={this.props.data.ourEnergyImage.childImageSharp.fluid}/>
@@ -112,7 +112,7 @@ class Projects extends React.Component {
 
   renderETHLibraryLab() {
     if (!this.props || this.props.filter !== "eth-library-lab") {
-      return <Link to="/portfolio/eth-library-lab">
+      return <Link to="/portfolio/eth-library-lab" aria-label="ETH Library Lab">
         <article className={this.state.mobile ? "eth-library-lab mobile" : "eth-library-lab"}>
           <div className="summary">
             <Img fluid={this.props.data.ethLibraryLabImage.childImageSharp.fluid}/>
@@ -134,7 +134,7 @@ class Projects extends React.Component {
 
   renderBonjourCircle() {
     if (!this.props || this.props.filter !== "bonjour-circle") {
-      return <Link to="/portfolio/bonjour-circle">
+      return <Link to="/portfolio/bonjour-circle" aria-label="Circle">
         <article className={this.state.mobile ? "bonjour-circle mobile" : "bonjour-circle"}>
           <div className="summary">
             <Img fluid={this.props.data.bonjourCircleImage.childImageSharp.fluid}/>
@@ -156,7 +156,7 @@ class Projects extends React.Component {
 
   renderBonjourBloom() {
     if (!this.props || this.props.filter !== "bonjour-bloom") {
-      return <Link to="/portfolio/bonjour-bloom">
+      return <Link to="/portfolio/bonjour-bloom" aria-label="Bloom">
         <article className={this.state.mobile ? "bonjour-bloom mobile" : "bonjour-bloom"}>
           <div className="summary">
             <Img fluid={this.props.data.bonjourBloomImage.childImageSharp.fluid}/>
@@ -178,7 +178,7 @@ class Projects extends React.Component {
 
   renderDVB() {
     if (!this.props || this.props.filter !== "dvb") {
-      return <Link to="/portfolio/dvbern">
+      return <Link to="/portfolio/dvbern" aria-label="DV Bern AG">
         <article className={this.state.mobile ? "dvb mobile" : "dvb"}>
           <div className="summary">
             <Img fluid={this.props.data.dvbImage.childImageSharp.fluid}/>
@@ -200,7 +200,7 @@ class Projects extends React.Component {
 
   renderDeckDeckGo() {
     if (!this.props || this.props.filter !== "deckdeckgo") {
-      return <Link to="/portfolio/deckdeckgo">
+      return <Link to="/portfolio/deckdeckgo" aria-label="DeckDeckGo">
         <article className={this.state.mobile ? "deckdeckgo mobile" : "deckdeckgo"}>
           <div className="summary">
             <Img fluid={this.props.data.deckDeckGoImage.childImageSharp.fluid}/>
@@ -222,7 +222,7 @@ class Projects extends React.Component {
 
   renderTieTracker() {
     if (!this.props || this.props.filter !== "tietracker") {
-      return <Link to="/portfolio/tietracker">
+      return <Link to="/portfolio/tietracker" aria-label="Tie Tracker">
         <article className={this.state.mobile ? "tietracker mobile" : "tietracker"}>
           <div className="summary">
             <Img fluid={this.props.data.tieTrackerImage.childImageSharp.fluid}/>
@@ -244,7 +244,7 @@ class Projects extends React.Component {
 
   renderWooof() {
     if (!this.props || this.props.filter !== "wooof") {
-      return <Link to="/portfolio/wooof">
+      return <Link to="/portfolio/wooof" aria-label="Wooof">
         <article className={this.state.mobile ? "wooof mobile" : "wooof"}>
           <div className="summary">
             <Img fluid={this.props.data.wooofImage.childImageSharp.fluid}/>
@@ -266,7 +266,7 @@ class Projects extends React.Component {
 
   renderWatamato() {
     if (!this.props || this.props.filter !== "watamato") {
-      return <Link to="/portfolio/watamato">
+      return <Link to="/portfolio/watamato" aria-label="Watamato">
         <article className={this.state.mobile ? "watamato mobile" : "watamato"}>
           <div className="summary">
             <Img fluid={this.props.data.watamatoImage.childImageSharp.fluid}/>
@@ -288,7 +288,7 @@ class Projects extends React.Component {
 
   renderFluster() {
     if (!this.props || this.props.filter !== "fluster") {
-      return <Link to="/portfolio/fluster">
+      return <Link to="/portfolio/fluster" aria-label="Fluster">
         <article className={this.state.mobile ? "fluster mobile" : "fluster"}>
           <div className="summary">
             <Img fluid={this.props.data.flusterImage.childImageSharp.fluid}/>

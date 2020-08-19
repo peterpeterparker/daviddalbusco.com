@@ -28,7 +28,7 @@ class OurEnergyPage extends React.Component {
           <article className="info">
             <div>
               <p>I have developed the application "Our Energy" for a team of researchers at the <a
-                href="https://ethz.ch/">ETH Zürich</a>.</p>
+                href="https://ethz.ch/" rel="noopener noreferrer">ETH Zürich</a>.</p>
               <p>It is a mobile and web application for citizens to learn how they can intelligently use electricity
                 produce from a community scale PV system. This is especially for people who have not yet installed solar
                 or who are interested in solar.</p>
@@ -49,16 +49,16 @@ class OurEnergyPage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Available:</strong> <a href="http://ourenergy.ch">Progressive Web Apps</a>, <a
-                href="https://itunes.apple.com/app/id1453497591">Apple Store</a> and <a
-                href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy">Google Play</a></p>
-              <p><strong>Website:</strong> <a href="http://www.ia.arch.ethz.ch/our-energy/"> iA, Chair of Information Architecture, ETH Zürich</a></p>
+              <p><strong>Available:</strong> <a href="http://ourenergy.ch" rel="noopener noreferrer">Progressive Web Apps</a>, <a
+                href="https://itunes.apple.com/app/id1453497591" rel="noopener noreferrer">Apple Store</a> and <a
+                href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy" rel="noopener noreferrer">Google Play</a></p>
+              <p><strong>Website:</strong> <a href="http://www.ia.arch.ethz.ch/our-energy/" rel="noopener noreferrer"> iA, Chair of Information Architecture, ETH Zürich</a></p>
             </div>
             <div>
-              <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a
-                href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
-              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
-              <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a></p>
+              <p><strong>Technology:</strong> <a href="http://ionicframework.com" rel="noopener noreferrer">Ionic</a>, <a
+                href="http://angular.io" rel="noopener noreferrer">Angular</a> and <a href="http://cordova.apache.org" rel="noopener noreferrer">Cordova</a></p>
+              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com" rel="noopener noreferrer">Google Cloud Firebase</a></p>
+              <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore" rel="noopener noreferrer">Google Firestore</a></p>
             </div>
           </article>
         </main>

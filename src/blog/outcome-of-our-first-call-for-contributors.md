@@ -27,7 +27,7 @@ It’s kind of cool to think, that if you are improving or fixing a component, t
 
 The goal of this feature was to add an option to our code highlighter component, which use [Prism.js](https://prismjs.com) under the hood, in order to be able to automatically display line numbers at the begin of each lines.
 
-This feature was developed by Stefan Nieuwenhuis ([Twitter](https://twitter.com/stefannhs) / [Github](https://github.com/StefanNieuwenhuis)) and was submitted in the PR [#213](https://github.com/deckgo/deckdeckgo/pull/213). Not all heroes wear capes, you are awesome Stefan 👍
+This feature was developed by Stefan Nieuwenhuis ([Twitter](https://twitter.com/stefannhs) / [GitHub](https://github.com/StefanNieuwenhuis)) and was submitted in the PR [#213](https://github.com/deckgo/deckdeckgo/pull/213). Not all heroes wear capes, you are awesome Stefan 👍
 
 ![](https://cdn-images-1.medium.com/max/1600/1*nuVLuov6bXRr6SpREDzzxA.gif)
 
@@ -37,7 +37,7 @@ This feature was developed by Stefan Nieuwenhuis ([Twitter](https://twitter.com/
 
 We faced an issue with our component and “Youtube” template (which allow users and developers to easily integrate Youtube video in their presentations) when short url were used to embed video, as urls have to respect a specific format.
 
-This fix was developed by Rohit Bokade ([Github](https://github.com/bokaderohit98)) and was submitted in PR [#207](https://github.com/deckgo/deckdeckgo/pull/207). The force is strong with you Rohit, thanks a lot 👍
+This fix was developed by Rohit Bokade ([GitHub](https://github.com/bokaderohit98)) and was submitted in PR [#207](https://github.com/deckgo/deckdeckgo/pull/207). The force is strong with you Rohit, thanks a lot 👍
 
 ![](https://cdn-images-1.medium.com/max/1600/1*GpJzea6l2X946tufjgb5kw.gif)
 

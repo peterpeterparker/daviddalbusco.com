@@ -11,7 +11,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*uC9a-6ZDkV2PKxYv0QW6Kw.jpeg"
 
 In a previous [article](https://medium.com/stencil-tricks/environment-variables-with-stenciljs-57e9da591280) I described how I implemented environment variables in my [Stencil’s](https://stenciljs.com/) projects or in my projects created with the [Ionic PWA toolkit](https://ionicframework.com/pwa/toolkit).
 
-Since this publication, we began to work actively on our upcoming editor for PWA presentations, [DeckDeckGo](https://deckdeckgo.com), and as the project is open source and published on [Github](https://github.com/deckgo/deckdeckgo), we thought that it would maybe be a not too bad idea to not publish our API keys and other [Firebase](https://firebase.google.com) tokens online in our public repo 😉
+Since this publication, we began to work actively on our upcoming editor for PWA presentations, [DeckDeckGo](https://deckdeckgo.com), and as the project is open source and published on [GitHub](https://github.com/deckgo/deckdeckgo), we thought that it would maybe be a not too bad idea to not publish our API keys and other [Firebase](https://firebase.google.com) tokens online in our public repo 😉
 
 For that reason, I had to go a step further than my previous post respectively I had to find and develop a solution to save separately our keys. Therefore I’m happy to share my solution with this new blog post 😃
 

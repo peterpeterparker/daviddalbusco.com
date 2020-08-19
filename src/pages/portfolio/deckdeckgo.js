@@ -42,13 +42,13 @@ class DeckDeckGoPage extends React.Component {
           <article className="info">
             <div>
               <p>I started this project, "DeckDeckGo", in october 2018. I had to prepare a talk about <a
-                href="https://ionicframework.com">Ionic</a> v4 and Web Components and I noticed that I wasn't using the
+                href="https://ionicframework.com" rel="noopener noreferrer">Ionic</a> v4 and Web Components and I noticed that I wasn't using the
                 technology I was about to display.</p>
               <p>As any engineer, what did I do in such situation? I created quickly a library using <a
-                href="https://stenciljs.com">StencilJS</a> to write my presentation only with Web Components.</p>
+                href="https://stenciljs.com" rel="noopener noreferrer">StencilJS</a> to write my presentation only with Web Components.</p>
               <p>After the presentation I did continue to "work" on my spare time on the project as it is for me a way
                 to learn new technologies and concept.</p>
-              <p>Meanwhile <a href="https://nmattia.com">Nicolas Mattia</a> joined the project and together we decided
+              <p>Meanwhile <a href="https://nmattia.com" rel="noopener noreferrer">Nicolas Mattia</a> joined the project and together we decided
                 to have even more fun by turning it into a fully web open source editor for presentations.</p>
             </div>
 
@@ -66,14 +66,14 @@ class DeckDeckGoPage extends React.Component {
           <article>
             <div>
               <p><strong>Available:</strong> Progressive Web Apps</p>
-              <p><strong>Website:</strong> <a href="https://deckdeckgo.com"> DeckDeckGo.com</a></p>
+              <p><strong>Website:</strong> <a href="https://deckdeckgo.com" rel="noopener noreferrer"> DeckDeckGo.com</a></p>
             </div>
             <div>
-              <p><strong>Technology:</strong> <a href="https://stenciljs.com">StencilJS</a>, <a
-                href="http://ionicframework.com">Ionic</a>, <a href="https://webrtc.org">WebRTC</a>, <a
-                href="https://d3js.org">D3js</a>, etc.</p>
-              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
-              <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a>
+              <p><strong>Technology:</strong> <a href="https://stenciljs.com" rel="noopener noreferrer">StencilJS</a>, <a
+                href="http://ionicframework.com" rel="noopener noreferrer">Ionic</a>, <a href="https://webrtc.org" rel="noopener noreferrer">WebRTC</a>, <a
+                href="https://d3js.org" rel="noopener noreferrer">D3js</a>, etc.</p>
+              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com" rel="noopener noreferrer">Google Cloud Firebase</a></p>
+              <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore" rel="noopener noreferrer">Google Firestore</a>
               </p>
             </div>
           </article>
@@ -95,7 +95,7 @@ class DeckDeckGoPage extends React.Component {
 
           <article>
             <p>This project is open source and available on <a
-              href="https://github.com/deckgo/deckdeckgo">Github<FontAwesomeIcon
+              href="https://github.com/deckgo/deckdeckgo">GitHub<FontAwesomeIcon
               icon={["fab", "github"]}/></a></p>
           </article>
         </main>

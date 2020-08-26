@@ -87,7 +87,7 @@ Therefore, without any pressure, our actual goal is to expose DeckDeckGo to its 
 
 ### Cherry on the cake 🍒🎂
 
-DeckDeckGo, I guess you get it, is open source, therefore, if you wish to track our progress or wish to already contribute to our “small” pet project, you could find us on [Github](https://github.com/deckgo/deckdeckgo) .
+DeckDeckGo, I guess you get it, is open source, therefore, if you wish to track our progress or wish to already contribute to our “small” pet project, you could find us on [GitHub](https://github.com/deckgo/deckdeckgo) .
 
 Finally, if you would like to help us shape a cool presentation platform and editor by joining our [beta program](https://deckdeckgo.com/?index=2), that would be awesome. We would love to have you on board and to hear from you, “join the deck side” 😉
 

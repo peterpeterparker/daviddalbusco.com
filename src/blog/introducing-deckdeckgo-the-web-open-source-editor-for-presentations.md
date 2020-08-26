@@ -117,7 +117,7 @@ We are using [Google Firebase](https://firebase.google.com/) for the authenticat
 
 DeckDeckGo is open source, it’s in our DNA, sharing is caring. All our libraries are published under MIT license and our applications and infrastructure are published under AGPLv3 and above license.
 
-Of course we are always looking for new contributors. We would love to hear from you, don’t hesitate to join us on our [slack channel](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) or on [Github](https://github.com/deckgo/deckdeckgo) 🙏
+Of course we are always looking for new contributors. We would love to hear from you, don’t hesitate to join us on our [slack channel](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) or on [GitHub](https://github.com/deckgo/deckdeckgo) 🙏
 
 ### Developer mindset
 

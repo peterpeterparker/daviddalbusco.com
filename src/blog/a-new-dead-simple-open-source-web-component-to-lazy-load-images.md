@@ -82,7 +82,7 @@ Once this small blog post was published, I received a couple of feedbacks and no
 
 For once in my small blog posts, there are more than just one cherry on the cake 😉
 
-First of all, the component is open source and its code is available on our [Github repo](https://github.com/deckgo/deckdeckgo/tree/master/webcomponents/lazy-img), therefore you could access it and improve it according your needs.
+First of all, the component is open source and its code is available on our [GitHub repo](https://github.com/deckgo/deckdeckgo/tree/master/webcomponents/lazy-img), therefore you could access it and improve it according your needs.
 
 Secondly, I took a bit of time to document all its attributes and features which are available in our [documentation website](https://docs.deckdeckgo.com/components/lazy-img).
 

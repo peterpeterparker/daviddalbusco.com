@@ -55,8 +55,8 @@ class WatamatoPage extends React.Component {
           <article className="info">
             <div>
               <p>Once again I had to find a flat in Zürich and therefore once again I had to use search engines I don't like much in terms of UX.</p>
-              <p>That's why I have built myself, in just a couple of days, a <a href="https://trello.com">Trello</a> like board for my flat hunting.</p>
-              <p>Moreover, from a technical point of view, it was an interesting use case to try out <a href="https://github.com/puppeteer/puppeteer">Puppeteer</a> and the development of the board itself was also surprisingly a bit challenging, as maintaining a dynamic sorted order and using a single infinite scroller for multiple columns at the same time wasn't that straight forward.</p>
+              <p>That's why I have built myself, in just a couple of days, a <a href="https://trello.com" rel="noopener noreferrer">Trello</a> like board for my flat hunting.</p>
+              <p>Moreover, from a technical point of view, it was an interesting use case to try out <a href="https://github.com/puppeteer/puppeteer" rel="noopener noreferrer">Puppeteer</a> and the development of the board itself was also surprisingly a bit challenging, as maintaining a dynamic sorted order and using a single infinite scroller for multiple columns at the same time wasn't that straight forward.</p>
             </div>
 
             <div className="video">
@@ -74,13 +74,13 @@ class WatamatoPage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Available:</strong> <a href="http://watamato.com">Progressive Web Apps</a></p>
-              <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a> and <a
-                href="https://angular.io/">Angular</a> </p>
+              <p><strong>Available:</strong> <a href="http://watamato.com" rel="noopener noreferrer">Progressive Web Apps</a></p>
+              <p><strong>Technology:</strong> <a href="http://ionicframework.com" rel="noopener noreferrer">Ionic</a> and <a
+                href="https://angular.io/" rel="noopener noreferrer">Angular</a> </p>
             </div>
 
             <div>
-              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a> and <a href="https://github.com/peterpeterparker/watamato/tree/master/.github/workflows">GitHub Actions</a></p>
+              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com" rel="noopener noreferrer">Google Cloud Firebase</a> and <a href="https://github.com/peterpeterparker/watamato/tree/master/.github/workflows" rel="noopener noreferrer">GitHub Actions</a></p>
             </div>
           </article>
         </main>
@@ -93,7 +93,7 @@ class WatamatoPage extends React.Component {
           </Chapter>
 
           <article>
-            <p>This project is open source and available on <a href="https://github.com/peterpeterparker/watamato">Github<FontAwesomeIcon
+            <p>This project is open source and available on <a href="https://github.com/peterpeterparker/watamato" rel="noopener noreferrer">GitHub<FontAwesomeIcon
               icon={["fab", "github"]}/></a></p>
           </article>
         </main>

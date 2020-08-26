@@ -227,7 +227,7 @@ Our component is pretty neat but you may want to improve it with some Intersecti
 
 ### Cherry on the cake 🍒🎂
 
-Like I said in my introduction, I did implement such a component for our upcoming open source editor for PWA presentations called DeckDeckGo. Therefore you could find my implementation on Github.
+Like I said in my introduction, I did implement such a component for our upcoming open source editor for PWA presentations called DeckDeckGo. Therefore you could find my implementation on GitHub.
 
 [https://github.com/deckgo/deckdeckgo/tree/master/studio/src/app/components/feed/card/app-feed-lazy-img](https://github.com/deckgo/deckdeckgo/tree/master/studio/src/app/components/feed/card/app-feed-lazy-img)
 

@@ -27,13 +27,13 @@ class BonjourBloomPage extends React.Component {
 
           <article className="info">
             <div>
-              <p>I developed several components and applications for <a href="https://www.customfuture.com">customfuture
+              <p>I developed several components and applications for <a href="https://www.customfuture.com" rel="noopener noreferrer">customfuture
                 SA</a> and "Bonjour".</p>
               <p>One of these, called "Bloom", is a prototype to provide an interactive
                 self-appraisal tool.</p>
               <p>From a technical point a view, what's interesting in this particular project created in a short time
                 frame, is the fact that
-                several <a href="https://stenciljs.com/">StencilJS</a> Web Components have been developed in order to
+                several <a href="https://stenciljs.com/" rel="noopener noreferrer">StencilJS</a> Web Components have been developed in order to
                 reuse them in the future in any modern applications, regardless of their technologies.</p>
             </div>
 
@@ -50,13 +50,13 @@ class BonjourBloomPage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Available:</strong> <a href="https://bonjour-bloom.web.app">Progressive Web Apps</a></p>
-              <p><strong>Website:</strong> <a href="https://bonjour.help"> Bonjour.help</a></p>
+              <p><strong>Available:</strong> <a href="https://bonjour-bloom.web.app" rel="noopener noreferrer">Progressive Web Apps</a></p>
+              <p><strong>Website:</strong> <a href="https://bonjour.help" rel="noopener noreferrer"> Bonjour.help</a></p>
             </div>
             <div>
-              <p><strong>Technology:</strong> <a href="https://stenciljs.com/">StencilJS</a>, <a
-                href="http://ionicframework.com">Ionic</a> and <a
-                href="http://angular.io">Angular</a></p>
+              <p><strong>Technology:</strong> <a href="https://stenciljs.com/" rel="noopener noreferrer">StencilJS</a>, <a
+                href="http://ionicframework.com" rel="noopener noreferrer">Ionic</a> and <a
+                href="http://angular.io" rel="noopener noreferrer">Angular</a></p>
             </div>
           </article>
         </main>

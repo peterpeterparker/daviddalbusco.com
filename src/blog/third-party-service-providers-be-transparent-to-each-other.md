@@ -32,7 +32,7 @@ Here is the copy of what we are currently using respectively what we are display
 
 ### Services
 
-We aim to be transparent, therefore, furthermore than open sourcing our all code on [Github](http://github.com/deckgo/deckdeckgo), here are the list of services we are using to provide DeckDeckGo.
+We aim to be transparent, therefore, furthermore than open sourcing our all code on [GitHub](http://github.com/deckgo/deckdeckgo), here are the list of services we are using to provide DeckDeckGo.
 
 #### Amazon
 
@@ -40,7 +40,7 @@ We use AWS [Lambda](https://aws.amazon.com/lambda/), [RDS](https://aws.amazon.co
 
 #### Google
 
-We are using [Firestore](https://firebase.google.com/products/firestore/) to save your data and the presentations you are editing. We are also using Google Firebase [Hosting](https://firebase.google.com/products/hosting/) and [Authentication](https://firebase.google.com/products/auth/). Both feature are good match to serve and deploy easily Progressive Web Apps. Their Authentication is also interesting as it provides the social login we were looking for (like Email and Github).
+We are using [Firestore](https://firebase.google.com/products/firestore/) to save your data and the presentations you are editing. We are also using Google Firebase [Hosting](https://firebase.google.com/products/hosting/) and [Authentication](https://firebase.google.com/products/auth/). Both feature are good match to serve and deploy easily Progressive Web Apps. Their Authentication is also interesting as it provides the social login we were looking for (like Email and GitHub).
 
 #### Tenor and Unsplash
 

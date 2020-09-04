@@ -20,7 +20,7 @@ class BonjourCirclePage extends React.Component {
 
           <article className="info">
             <div>
-              <p>I developed several components and applications for <a href="https://www.customfuture.com">customfuture
+              <p>I developed several components and applications for <a href="https://www.customfuture.com" rel="noopener noreferrer">customfuture
                 SA</a> and "Bonjour".</p>
               <p>One of these, called "OneCircle", is the upcoming app that asks “Bonjour! How are you today?” on a
                 daily basis and then informs close relatives.</p>
@@ -40,13 +40,13 @@ class BonjourCirclePage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a
-                href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
-              <p><strong>Website:</strong> <a href="https://bonjour.help"> Bonjour.help</a></p>
+              <p><strong>Technology:</strong> <a href="http://ionicframework.com" rel="noopener noreferrer">Ionic</a>, <a
+                href="http://angular.io" rel="noopener noreferrer">Angular</a> and <a href="http://cordova.apache.org" rel="noopener noreferrer">Cordova</a></p>
+              <p><strong>Website:</strong> <a href="https://bonjour.help" rel="noopener noreferrer"> Bonjour.help</a></p>
             </div>
             <div>
-              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Firebase</a></p>
-              <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore">Google Firestore</a>
+              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com" rel="noopener noreferrer">Google Cloud Firebase</a></p>
+              <p><strong>Database:</strong> <a href="https://firebase.google.com/docs/firestore" rel="noopener noreferrer">Google Firestore</a>
               </p>
             </div>
           </article>

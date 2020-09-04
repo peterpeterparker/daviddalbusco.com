@@ -20,7 +20,7 @@ class DVBernPage extends React.Component {
 
           <article className="info">
             <div>
-              <p>I had the pleasure of collaborating again with <a href="https://www.dvbern.ch">DV Bern AG</a>, a
+              <p>I had the pleasure of collaborating again with <a href="https://www.dvbern.ch" rel="noopener noreferrer">DV Bern AG</a>, a
                 company by
                 which I used to be employed, on a project related to the commercial register ("Handelsregister" /
                 "Register du commerce").</p>
@@ -40,14 +40,14 @@ class DVBernPage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Technology:</strong> <a href="https://www.java.com">Java</a>, <a href="https://jakarta.ee">Jakarta
+              <p><strong>Technology:</strong> <a href="https://www.java.com" rel="noopener noreferrer">Java</a>, <a href="https://jakarta.ee" rel="noopener noreferrer">Jakarta
                 EE</a> and <a
-                href="https://www.primefaces.org">PrimeFaces</a></p>
-              <p><strong>Website:</strong> <a href="https://dvbern.ch"> dvbern.ch</a></p>
+                href="https://www.primefaces.org" rel="noopener noreferrer">PrimeFaces</a></p>
+              <p><strong>Website:</strong> <a href="https://dvbern.ch" rel="noopener noreferrer"> dvbern.ch</a></p>
             </div>
             <div>
               <p><strong>Infrastructure:</strong> DV Bern AG provide its own IT-Services solution</p>
-              <p><strong>Database:</strong> <a href="https://www.postgresql.org">PostgreSQL</a>
+              <p><strong>Database:</strong> <a href="https://www.postgresql.org" rel="noopener noreferrer">PostgreSQL</a>
               </p>
             </div>
           </article>

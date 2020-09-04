@@ -51,19 +51,19 @@ class FlusterPage extends React.Component {
           <article>
             <div>
               <p><strong>Discontinued:</strong> Used to be available as Progressive Web Apps and in the Apple Store and Google Play</p>
-              <p><strong>Infrastructure:</strong> <a href="https://aws.amazon.com/ec2/">Amazon EC2</a> and <a
-                href="https://aws.amazon.com/fr/sns/">Amazon SNS</a></p>
-              <p><strong>Database:</strong> <a href="https://www.mongodb.com">MongoDB</a></p>
+              <p><strong>Infrastructure:</strong> <a href="https://aws.amazon.com/ec2/" rel="noopener noreferrer">Amazon EC2</a> and <a
+                href="https://aws.amazon.com/fr/sns/" rel="noopener noreferrer">Amazon SNS</a></p>
+              <p><strong>Database:</strong> <a href="https://www.mongodb.com" rel="noopener noreferrer">MongoDB</a></p>
             </div>
 
             <div>
-              <p><strong>Technology (application):</strong> <a href="http://ionicframework.com">Ionic</a>, <a
-                href="http://angular.io">Angular</a> and <a href="http://cordova.apache.org">Cordova</a></p>
-              <p><strong>Technology (website):</strong>: <a href="http://angular.io">Angular</a>, <a
-                href="https://material.angular.io/">Angular Material</a> and <a href="https://angular.io/guide/universal">Angular
+              <p><strong>Technology (application):</strong> <a href="http://ionicframework.com" rel="noopener noreferrer">Ionic</a>, <a
+                href="http://angular.io" rel="noopener noreferrer">Angular</a> and <a href="http://cordova.apache.org" rel="noopener noreferrer">Cordova</a></p>
+              <p><strong>Technology (website):</strong>: <a href="http://angular.io" rel="noopener noreferrer">Angular</a>, <a
+                href="https://material.angular.io/" rel="noopener noreferrer">Angular Material</a> and <a href="https://angular.io/guide/universal" rel="noopener noreferrer">Angular
                 Service-side Rendering (SSR)</a></p>
-              <p><strong>Technology (backend, API):</strong> <a href="https://nodejs.org/">NodeJS</a> and <a
-                href="https://expressjs.com">ExpressJS</a></p>
+              <p><strong>Technology (backend, API):</strong> <a href="https://nodejs.org/" rel="noopener noreferrer">NodeJS</a> and <a
+                href="https://expressjs.com" rel="noopener noreferrer">ExpressJS</a></p>
             </div>
           </article>
         </main>
@@ -76,7 +76,7 @@ class FlusterPage extends React.Component {
           </Chapter>
 
           <article>
-            <p>This project is open source and available on <a href="https://github.com/fluster">Github<FontAwesomeIcon
+            <p>This project is open source and available on <a href="https://github.com/fluster">GitHub<FontAwesomeIcon
               icon={["fab", "github"]}/></a></p>
           </article>
         </main>

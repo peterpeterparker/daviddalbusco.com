@@ -21,7 +21,7 @@ class EthLibraryLabPage extends React.Component {
 
           <article className="info">
             <div>
-              <p>I am providing consulting services to the <a href="http://www.librarylab.ethz.ch">ETH Library Lab</a>, an initiative for human-centered innovation in the knowledge sphere from <a href="https://ethz.ch/">ETH Zürich</a>.</p>
+              <p>I am providing consulting services to the <a href="http://www.librarylab.ethz.ch" rel="noopener noreferrer">ETH Library Lab</a>, an initiative for human-centered innovation in the knowledge sphere from <a href="https://ethz.ch/" rel="noopener noreferrer">ETH Zürich</a>.</p>
               <p>The lab has for mission to help students, researchers and educators to unleash their full potential by boosting ideas that support them in discovering, accessing, using or sharing scientific information and knowledge.</p>
               <p>As part of their projects, I use my engineering background and experience to provide:</p>
               <ul>
@@ -43,7 +43,7 @@ class EthLibraryLabPage extends React.Component {
 
           <article>
             <p>The Lab seeks to advance tools, systems, practices and services and therefore will publish, at least, some projects and prototypes as open source softwares on <a
-              href="https://github.com/eth-library-lab">Github<FontAwesomeIcon
+              href="https://github.com/eth-library-lab" rel="noopener noreferrer">GitHub<FontAwesomeIcon
               icon={["fab", "github"]}/></a></p>
           </article>
         </main>

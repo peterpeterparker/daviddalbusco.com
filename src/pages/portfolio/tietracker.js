@@ -29,9 +29,9 @@ class TieTrackerPage extends React.Component {
 
           <article className="info">
             <div>
-              <p>I was looking to improve my knowledge regarding <a href="https://reactjs.org">React</a> and <a href="https://react-redux.js.org">Redux</a>, that's why I started the development of this simple, open source and free time tracking app ⏱️</p>
+              <p>I was looking to improve my knowledge regarding <a href="https://reactjs.org" rel="noopener noreferrer">React</a> and <a href="https://react-redux.js.org" rel="noopener noreferrer">Redux</a>, that's why I started the development of this simple, open source and free time tracking app ⏱️</p>
               <p>This is also the application I aim to use to track my working hours and plan to use, to export my timesheet reports.</p>
-              <p>Furthermore, it was also interesting to develop a fully offline solution with <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a>, experiment <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers">Web Workers</a> (in order to defer "heavy" computation) and try out the new <a href="https://web.dev/native-file-system/">Native File System API</a>.</p>
+              <p>Furthermore, it was also interesting to develop a fully offline solution with <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" rel="noopener noreferrer">IndexedDB</a>, experiment <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers" rel="noopener noreferrer">Web Workers</a> (in order to defer "heavy" computation) and try out the new <a href="https://web.dev/native-file-system/" rel="noopener noreferrer">Native File System API</a>.</p>
             </div>
 
             <Slider images={images}/>
@@ -47,15 +47,15 @@ class TieTrackerPage extends React.Component {
 
           <article>
             <div>
-              <p><strong>Available:</strong> <a href="https://tietracker.com">Progressive Web Apps</a>, <a
-                href="https://itunes.apple.com/app/id1493399075">Apple Store</a> and <a
-                href="http://play.google.com/store/apps/details?id=com.tietracker.app">Google Play</a></p>
-              <p><strong>Technology:</strong> <a href="http://ionicframework.com">Ionic</a>, <a
-                href="https://reactjs.org/">React</a> and <a href="https://capacitor.ionicframework.com">Capacitor</a></p>
+              <p><strong>Available:</strong> <a href="https://tietracker.com" rel="noopener noreferrer">Progressive Web Apps</a>, <a
+                href="https://itunes.apple.com/app/id1493399075" rel="noopener noreferrer">Apple Store</a> and <a
+                href="http://play.google.com/store/apps/details?id=com.tietracker.app" rel="noopener noreferrer">Google Play</a></p>
+              <p><strong>Technology:</strong> <a href="http://ionicframework.com" rel="noopener noreferrer">Ionic</a>, <a
+                href="https://reactjs.org/" rel="noopener noreferrer">React</a> and <a href="https://capacitor.ionicframework.com" rel="noopener noreferrer">Capacitor</a></p>
             </div>
             <div>
-              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com">Google Cloud Hosting</a> and <a href="https://github.com/peterpeterparker/tietracker/tree/master/.github/workflows">GitHub Actions</a></p>
-              <p><strong>Database:</strong> Offline with <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a></p>
+              <p><strong>Infrastructure:</strong> <a href="https://firebase.google.com" rel="noopener noreferrer">Google Cloud Hosting</a> and <a href="https://github.com/peterpeterparker/tietracker/tree/master/.github/workflows" rel="noopener noreferrer">GitHub Actions</a></p>
+              <p><strong>Database:</strong> Offline with <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" rel="noopener noreferrer">IndexedDB</a></p>
             </div>
           </article>
         </main>
@@ -68,7 +68,7 @@ class TieTrackerPage extends React.Component {
           </Chapter>
 
           <article>
-            <p>This project is open source and available on <a href="https://github.com/peterpeterparker/tietracker">Github<FontAwesomeIcon
+            <p>This project is open source and available on <a href="https://github.com/peterpeterparker/tietracker" rel="noopener noreferrer">GitHub<FontAwesomeIcon
               icon={["fab", "github"]}/></a></p>
           </article>
         </main>

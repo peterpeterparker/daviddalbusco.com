@@ -11,6 +11,10 @@ section.post {
     margin: 2.75rem 0 1.75rem;
   }
 
+  h1, h2, h3 {
+    text-shadow: 1px 1px var(--color-secondary);
+  }
+
   p.date {
     margin: 0;
   }
@@ -22,5 +26,16 @@ section.post {
   hr {
     width: 7rem;
     margin: 1.75rem auto;
+  }
+
+  img, iframe {
+    box-shadow: 1px 1px var(--color-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 0.5rem;
+  }
+
+  deckgo-highlight-code {
+    box-shadow: 3px 4px var(--color-secondary);
+    border: 1px solid var(--color-secondary);
   }
 }

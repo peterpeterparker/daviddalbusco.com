@@ -25,6 +25,8 @@ div.menu {
   }
 
   a {
+    text-shadow: -1px 2px var(--color-secondary);
+
     pointer-events: all;
     text-decoration: none;
 

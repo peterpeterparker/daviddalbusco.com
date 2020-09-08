@@ -50,6 +50,9 @@ section.portfolio, section.other-projects {
       > div.summary {
         background: #F2F2F2;
 
+        box-shadow: 3px 3px var(--color-primary);
+        border: 1px solid var(--color-primary);
+
         div.gatsby-image-wrapper {
           width: 8rem;
           height: 8rem;

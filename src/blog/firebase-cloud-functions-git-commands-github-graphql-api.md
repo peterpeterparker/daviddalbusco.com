@@ -5,7 +5,7 @@ title: "Firebase Cloud Functions: Git Commands & GitHub GraphQL API"
 description: "Execute Git commands, such as Clone or Push, and use the GitHub GraphQL API, to create a Pull Request, in Firebase Cloud Functions."
 tags: "#firebase #javascript #webdev #showdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*CLLQh8vkxSkbYBCoXjU95A.png"
-canonical: "https://medium.com/@david.dalbusco/send-email-from-firebase-cloud-functions-e406e1f3eea7"
+canonical: "https://medium.com/@david.dalbusco/firebase-cloud-functions-git-github-graphql-api-5c8577591cb1"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*CLLQh8vkxSkbYBCoXjU95A.png)

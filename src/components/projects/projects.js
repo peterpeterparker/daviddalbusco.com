@@ -56,7 +56,7 @@ class Projects extends React.Component {
         </div>
 
         {
-          this.props && this.props.all ? undefined : <Link to='/portfolio/' aria-label="Portfolio" className="button"><h2>AND MORE</h2></Link>
+          this.props && this.props.all ? undefined : <Link to='/portfolio/' aria-label="Portfolio" className="button"><h2>And more</h2></Link>
         }
       </main>
     </section>,
@@ -82,7 +82,7 @@ class Projects extends React.Component {
         </div>
 
         {
-          this.props && this.props.all ? undefined : <Link to='/portfolio/' aria-label="Portfolio" className="button"><h2>AND MORE</h2></Link>
+          this.props && this.props.all ? undefined : <Link to='/portfolio/' aria-label="Portfolio" className="button"><h2>And more</h2></Link>
         }
       </main>
     </section>

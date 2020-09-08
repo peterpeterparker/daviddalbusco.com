@@ -68,7 +68,7 @@ abbr[title] {
 b,
 strong {
   font-weight: inherit;
-  font-weight: bolder;
+  font-weight: 700;
 }
 
 dfn {
@@ -244,7 +244,7 @@ html {
 
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-weight: normal;
+  font-weight: 400;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -260,10 +260,6 @@ img, h1, h2, h3, h4, h5, h6, hgroup, p, figure, table, fieldset, form, noscript,
 
 img {
   max-width: 100%;
-}
-
-h1, h2, h3 {
-  text-transform: uppercase;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -300,7 +296,6 @@ h6 {
 p, ul, ol {
   font-size: 1.25rem;
   line-height: 1.5;
-  font-weight: 300;
 }
 
 ul, ol, dl, dd {
@@ -345,7 +340,7 @@ hr {
 }
 
 b, strong, dt, th {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 li {

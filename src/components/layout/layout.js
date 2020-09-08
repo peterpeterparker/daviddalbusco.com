@@ -15,6 +15,7 @@ import "../../theme/section.scss"
 import "../../theme/blog.scss"
 import "../../theme/project.scss"
 import "../../theme/input.scss"
+import "../../theme/fonts.scss"
 import "../../theme/theme.scss"
 
 import Navigation from "../navigation/navigation"

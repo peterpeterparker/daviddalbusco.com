@@ -1,6 +1,6 @@
 ---
 path: "/blog/firebase-cloud-functions-git-commands-github-graphql-api"
-date: "2020-09-01"
+date: "2020-09-08"
 title: "Firebase Cloud Functions: Git Commands & GitHub GraphQL API"
 description: "Execute Git commands, such as Clone or Push, and use the GitHub GraphQL API, to create a Pull Request, in Firebase Cloud Functions."
 tags: "#firebase #javascript #webdev #showdev"
@@ -16,7 +16,8 @@ We recently released an exciting new unique feature at [DeckDeckGo](https://deck
 
 In addition to being able to deploy online your presentations as Progressive Web Apps, our web open source editor can now push their source codes to [GitHub](https://github.com) too 🎉.
 
-[Video]
+<iframe width="280" height="158" src="https://www.youtube.com/watch?v=yVYEacO7qrQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br/>
 
 This new function runs in [Firebase Cloud Functions](https://firebase.google.com/docs/functions/). Because we like to share our discoveries, here are the key elements we learned while developing this integration.
 

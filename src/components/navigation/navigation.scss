@@ -8,7 +8,7 @@ section.navigation {
     background-color: var(--color-primary);
     z-index: 3;
     color: #ffffff;
-    border-bottom: 3px solid var(--color-highlight);
+    border-bottom: 3px solid var(--color-secondary);
 
     &.animated {
       transition: all .35s;

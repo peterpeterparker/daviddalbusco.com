@@ -7,10 +7,16 @@ div.chapter {
     font-size: 2.75rem;
     line-height: 2.75rem;
 
+    text-shadow: 2px 2px var(--color-primary);
+
     @media (min-width: 992px) {
       font-size: 4rem;
       line-height: 3.5rem;
     }
+  }
+
+  h2, h3 {
+    text-shadow: 1px 1px var(--color-secondary);
   }
 
   h2 {

@@ -24,7 +24,7 @@ a.post {
     grid-template-rows: auto;
     grid-gap: 1.75rem;
 
-    margin: 1.75rem 0;
+    margin: 1.75rem 0 2.75rem;
 
     div.image, div.details {
       display: flex;
@@ -38,6 +38,10 @@ a.post {
 
       --deckgo-lazy-img-border-radius: .5rem;
       --deckgo-lazy-img-display: block;
+
+      box-shadow: 3px 3px var(--color-primary);
+      border: 1px solid var(--color-primary);
+      border-radius: 0.5rem;
 
       > div {
         width: 100%;

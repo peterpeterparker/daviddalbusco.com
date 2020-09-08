@@ -37,7 +37,15 @@ input[type="submit"], a.button * {
   &:hover, &:active {
     background-color: var(--color-highlight);
     text-decoration: none;
+
+    box-shadow: 3px 3px var(--color-primary);
+    border: 1px solid var(--color-primary);
   }
+}
+
+input[type="submit"] {
+  box-shadow: 3px 3px var(--color-secondary);
+  border: 1px solid var(--color-secondary);
 }
 
 a.button {
@@ -48,6 +56,9 @@ a.button {
 
   h2 {
     margin: 0;
+
+    box-shadow: 3px 3px var(--color-secondary);
+    border: 1px solid var(--color-secondary);
   }
 
   &:hover, &:active {

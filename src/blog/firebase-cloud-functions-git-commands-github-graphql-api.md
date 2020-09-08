@@ -72,9 +72,9 @@ Before going further, you may ask yourself how we are going to be able to execut
 
 > The only writeable part of the filesystem is the `/tmp` directory, which you can use to store temporary files in a function instance. This is a local disk mount point known as a "tmpfs" volume in which data written to the volume is stored in memory. Note that it will consume memory resources provisioned for the function.
 
-In addition, as far as I understand, temporary directories are not share across functions. It means for example that you cannot use such a folder to share data.
+In addition, temporary directories are not share across functions. It means for example that you cannot use such a folder to share data.
 
-The `tmp` order has not to be hardcoded. Instead of such, the [Node.js OS module](https://nodejs.org/api/os.html) can be used to retrieve the temporary folder. It can be more handy to use such function if for some reason it would change in the future, you never know 😉.
+The `tmp` order has not to be hardcoded. Instead of such, the [Node.js OS module](https://nodejs.org/api/os.html) can be used to retrieve the temporary folder. It can be more handy to it if for some reason it would change in the future, you never know 😉.
 
 ```javascript
 import * as os from 'os';
@@ -82,7 +82,7 @@ import * as os from 'os';
 console.log(os.tmpdir()); // -> /tmp
 ```
 
-Using it together with the [Path module](https://nodejs.org/api/path.html), we can even create a short utility function to resolve files’ paths locally in the function.
+Using it together with the [Path module](https://nodejs.org/api/path.html), we can even create a short utility function to resolve files’ paths locally.
 
 ```javascript
 import * as path from 'path';
@@ -133,7 +133,7 @@ export async function clone(repoUrl: string, repoName: string) {
 })();
 ```
 
-Even though temporary folder are probably going to be empty, it is probably a safe bet to try to delete the working directory first. That’s why I call the `deleteDir` in the above function.
+Even though temporary folder are probably going to be empty, it is probably a safe bet to try to delete the working subdirectory first. That’s why I call the `deleteDir` in the above function.
 
 ```javascript
 import * as rimraf from 'rimraf';
@@ -218,7 +218,7 @@ The last, or new, depends on the point of view, version (v4) of the GitHub API c
 
 #### Query
 
-I did not use any GraphQL clients (as for example [Apollo](https://github.com/apollographql/apollo-client)) to perform the queries. Instead, I developed a utility function to perform the HTTPS requests.
+I did not use any GraphQL clients (as for example [Apollo](https://github.com/apollographql/apollo-client)) to perform the queries. Instead, I developed a utility to perform the HTTPS requests.
 
 ```javascript
 import fetch, {Response} from 'node-fetch';
@@ -362,11 +362,11 @@ export function createPR(githubToken: string,
 
 I learned many new things while developing this feature and, I hope that with the help of this blog post, I was able to share the major learnings.
 
-In addition to this post and its external links to documentations, we are open source, you can always have a look at our [repo](https://github.com/deckgo/deckdeckgo/)’s source code or contribute to our project.
+In addition, we are open source, you can always have a look at our [repo](https://github.com/deckgo/deckdeckgo/)’s source code or contribute to our project.
 
 You are also most welcomed to give a try to [DeckDeckGo](https://deckdeckgo.com) for your next presentations.
 
-I am also looking forward to checkout and, probably even star, the GitHub repo that will contain the source code of your slides 😉.
+I am also looking forward to checkout and give a try to the GitHub repos that will contain the source code of your slides 😉.
 
 To infinity and beyond!
 

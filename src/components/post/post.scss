@@ -43,6 +43,8 @@ a.post {
       border: 1px solid var(--color-primary);
       border-radius: 0.5rem;
 
+      overflow: hidden;
+
       > div {
         width: 100%;
         height: 100%;
@@ -50,7 +52,6 @@ a.post {
         position: absolute;
         top: 0;
         left: 0;
-        border-radius: .5rem;
 
         visibility: hidden;
         opacity: 0;

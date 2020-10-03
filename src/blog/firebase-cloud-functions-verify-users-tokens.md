@@ -45,7 +45,7 @@ import * as functions from 'firebase-functions';
 export async function verifyToken(
                 request: functions.Request): Promise<boolean> {
   try {
-    const token: string | undefined = await geToken(request);
+    const token: string | undefined = await getToken(request);
 
     if (!token) {
       return false;
@@ -60,7 +60,7 @@ export async function verifyToken(
   }
 }
 
-async function geToken(request: functions.Request): 
+async function getToken(request: functions.Request): 
                        Promise<string | undefined> {
   if (!request.headers.authorization) {
     return undefined;

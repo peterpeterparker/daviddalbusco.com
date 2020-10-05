@@ -224,7 +224,7 @@ As previously, it works as expected.
 
 I was asking my self if data could also be used in `providers` , therefore I added a service to test this specific question.
 
-```
+```javascript
 import { Injectable } from '@angular/core';
 
 import store from '../stores/clicks.store';

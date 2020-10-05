@@ -13,9 +13,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
       - name: Install Dependencies
-        run: |
-          npm config set '//npm.fontawesome.com/:_authToken' "${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}"
-          npm ci
+        run: npm ci
       - name: Build
         run: npm run build
       - name: Archive Production Artifact

@@ -24,7 +24,7 @@ class Chapter extends React.Component {
 
   renderIcon() {
     if (this.props.icon) {
-      return <FontAwesomeIcon icon={["fal", this.props.icon]} size="2x"/>
+      return <FontAwesomeIcon icon={['fas', this.props.icon]} size="2x"/>
     } else {
       return undefined
     }

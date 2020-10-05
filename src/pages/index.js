@@ -11,18 +11,18 @@ import Contact from "../components/contact/contact"
 
 import { library, config } from "@fortawesome/fontawesome-svg-core"
 
-import { faRobot } from "@fortawesome/pro-light-svg-icons"
-import { faSuitcase } from "@fortawesome/pro-light-svg-icons"
-import { faNewspaper } from "@fortawesome/pro-light-svg-icons"
-import { faAddressCard } from "@fortawesome/pro-light-svg-icons"
-import { faEnvelope } from "@fortawesome/pro-light-svg-icons"
-import { faBars } from "@fortawesome/pro-light-svg-icons"
-import { faChevronRight } from "@fortawesome/pro-light-svg-icons"
-import { faChevronLeft } from "@fortawesome/pro-light-svg-icons"
-import { faInfoCircle } from "@fortawesome/pro-light-svg-icons"
-import { faBookSpells } from "@fortawesome/pro-light-svg-icons"
-import { faPencilRuler } from "@fortawesome/pro-light-svg-icons"
-import { faBrowser } from "@fortawesome/pro-light-svg-icons"
+import { faRobot } from "@fortawesome/free-solid-svg-icons"
+import { faSuitcase } from "@fortawesome/free-solid-svg-icons"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons"
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons"
+import { faPencilRuler } from "@fortawesome/free-solid-svg-icons"
+import { faHatWizard } from "@fortawesome/free-solid-svg-icons"
+import { faCodeBranch } from "@fortawesome/free-solid-svg-icons"
+import { faNewspaper } from "@fortawesome/free-solid-svg-icons"
+import { faAddressCard } from "@fortawesome/free-solid-svg-icons"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faMedium } from "@fortawesome/free-brands-svg-icons"
@@ -36,16 +36,17 @@ config.autoAddCss = false;
 
 library.add(faRobot)
 library.add(faSuitcase)
-library.add(faNewspaper)
-library.add(faAddressCard)
-library.add(faEnvelope)
 library.add(faBars)
 library.add(faChevronRight)
 library.add(faChevronLeft)
 library.add(faInfoCircle)
-library.add(faBookSpells)
 library.add(faPencilRuler)
-library.add(faBrowser)
+library.add(faHatWizard)
+library.add(faCodeBranch)
+library.add(faNewspaper)
+library.add(faAddressCard)
+
+library.add(faEnvelope)
 
 library.add(faGithub)
 library.add(faMedium)

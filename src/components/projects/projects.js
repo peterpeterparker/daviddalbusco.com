@@ -43,7 +43,7 @@ class Projects extends React.Component {
     </section>,
     <section className="other-projects extraspace-bottom" key="sideProjects">
       <main>
-        <Chapter icon="browser">
+        <Chapter icon="hat-wizard">
           <h2>Personal projects</h2>
         </Chapter>
 

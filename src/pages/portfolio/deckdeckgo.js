@@ -89,7 +89,7 @@ class DeckDeckGoPage extends React.Component {
 
       <section className="open-source">
         <main>
-          <Chapter icon="book-spells">
+          <Chapter icon="code-branch">
             <h2>Open source</h2>
           </Chapter>
 

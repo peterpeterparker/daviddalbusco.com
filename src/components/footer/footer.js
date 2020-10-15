@@ -25,7 +25,7 @@ Sihlquai 131
               <a href="http://twitter.com/daviddalbusco/" aria-label="Twitter"><FontAwesomeIcon icon={["fab", "twitter"]} size="2x"/></a>
               <a href="https://www.linkedin.com/in/david-dal-busco/" aria-label="Linkedin"><FontAwesomeIcon icon={["fab", "linkedin-in"]} size="2x"/></a>
               <a href="http://dev.to/daviddalbusco/" aria-label="Dev.to"><FontAwesomeIcon icon={["fab", "dev"]} size="2x"/></a>
-              <a href="https://medium.com/@david.dalbusco" aria-label="Medium"><FontAwesomeIcon icon={["fab", "medium"]} size="2x"/></a>
+              <a href="https://daviddalbusco.medium.com" aria-label="Medium"><FontAwesomeIcon icon={["fab", "medium"]} size="2x"/></a>
               <a href="https://github.com/peterpeterparker" aria-label="GitHub"><FontAwesomeIcon icon={["fab", "github"]} size="2x"/></a>
             </div>
           </main>

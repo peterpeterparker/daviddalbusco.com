@@ -20,7 +20,7 @@ That’s why, instead of charging them for such process, I had the idea to wrap 
 
 ### Last Update
 
-This blog post has been updated for the last time  Tuesday 3rd November 2020.
+This blog post has been updated for the last time **Tuesday 3rd November 2020**.
 
 *****
 

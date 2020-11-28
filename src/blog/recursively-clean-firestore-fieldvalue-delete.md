@@ -130,11 +130,7 @@ function shouldAttributeBeCleaned<T>(attr: T): boolean {
     return false;
   }
 
-  const firestoreDelete = Object.keys(attr).find((key: string) => {
-    return attr[key] === 'FieldValue.delete';
-  });
-
-  return firestoreDelete !== null && firestoreDelete !== undefined;
+  return JSON.stringify(attr) === JSON.stringify(firebase.firestore.FieldValue.delete());
 }
 ```
 

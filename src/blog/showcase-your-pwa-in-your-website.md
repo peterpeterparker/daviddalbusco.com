@@ -1,8 +1,8 @@
 ---
 path: "/blog/showcase-your-pwa-in-your-website"
 date: "2020-05-08"
-title: "Showcase Your PWA In Your Website"
-description: "Introducing a new Web Component to embed applications in websites with stylish mobile devices iframes"
+title: "Showcase Your PWA In Your Website"
+description: "Introducing a new Web Component to embed applications in websites with stylish mobile devices iframes"
 tags: "#showdev #webdev #javascript #webcomponents"
 image: "https://cdn-images-1.medium.com/max/1600/1*dH35UnXlx3cw1RX4l8KIdw.png"
 canonical: "https://medium.com/@david.dalbusco/develop-a-konami-code-for-any-apps-with-stencil-bd8b11a50071"

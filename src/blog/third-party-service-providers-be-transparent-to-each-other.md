@@ -1,7 +1,7 @@
 ---
 path: "/blog/third-party-service-providers-be-transparent-to-each-other"
 date: "2020-04-06"
-title: "Third Party Service Providers. Be transparent to each other!"
+title: "Third Party Service Providers. Be transparent to each other!"
 description: "Call to display your third party providers."
 tags: "#motivation #data #opensource #communication"
 image: "https://cdn-images-1.medium.com/max/1600/1*5qdXAhgCLQUv5yxL_wiDaQ.png"

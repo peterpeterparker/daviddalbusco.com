@@ -1,7 +1,7 @@
 ---
 path: "/blog/react-and-web-workers"
 date: "2020-04-07"
-title: "React And Web Workers"
+title: "React And Web Workers"
 description: "How to interact with Web Workers in React applications"
 tags: "#react #showdev #webdev #javascript"
 image: "https://cdn-images-1.medium.com/max/1600/1*zuX14URmAiO36mikljilOg.png"

@@ -2,7 +2,7 @@
 path: "/blog/angular-testing-mock-private-functions"
 date: "2020-04-08"
 title: "Angular Testing: Mock Private Functions"
-description: "How to mock a private function in your automated Angular tests with Jasmine or Jest"
+description: "How to mock a private function in your automated Angular tests with Jasmine or Jest"
 tags: "#angular #testing #javascript #webdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*hVf0bMRV3eeYXaj6D2ZJJg.png"
 canonical: "https://medium.com/@david.dalbusco/angular-testing-mock-private-functions-2c5e480ea7bb"

@@ -1,8 +1,8 @@
 ---
 path: "/blog/integrate-the-same-qr-code-web-component-in-react-angular-or-vue"
 date: "2019-10-08"
-title: "Integrate the same QR code Web Component in React, Angular or Vue"
-description: "How to integrate the same QR code Web Component developed with StencilJS in React, Angular or Vue"
+title: "Integrate the same QR code Web Component in React, Angular or Vue"
+description: "How to integrate the same QR code Web Component developed with StencilJS in React, Angular or Vue"
 tags: "#tutorial #react #vue #angular"
 image: "https://cdn-images-1.medium.com/max/1600/1*fqN7UAsguHXdG2ojvxgvJA.jpeg"
 ---

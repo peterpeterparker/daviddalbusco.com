@@ -2,7 +2,7 @@
 path: "/blog/lazy-load-youtube-video-iframe"
 date: "2020-01-09"
 title: "Lazy Load YouTube Video <iFrame/>"
-description: "How to lazy load Youtube Video using the Intersection Observer API."
+description: "How to lazy load Youtube Video using the Intersection Observer API."
 tags: "#javascript #react #tutorial #webdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*IwlNLyd4Db7716sLSeGq_w.jpeg"
 canonical: "https://medium.com/@david.dalbusco/lazy-load-youtube-video-iframe-8838e1913751"

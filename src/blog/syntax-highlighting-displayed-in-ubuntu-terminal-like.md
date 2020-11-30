@@ -1,7 +1,7 @@
 ---
 path: "/blog/syntax-highlighting-displayed-in-ubuntu-terminal-like"
 date: "2020-02-24"
-title: "Syntax Highlighting Displayed In Ubuntu Terminal Like"
+title: "Syntax Highlighting Displayed In Ubuntu Terminal Like"
 description: "Display the code of your apps, websites or blogs with code highlighting in stylish Ubuntu Terminal like"
 tags: "#webdev #showdev #javascript #css"
 image: "https://cdn-images-1.medium.com/max/1600/1*sJQnreNU9DZ0ARLHDil8gg.png"

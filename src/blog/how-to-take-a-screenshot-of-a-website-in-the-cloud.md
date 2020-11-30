@@ -1,7 +1,7 @@
 ---
 path: "/blog/how-to-take-a-screenshot-of-a-website-in-the-cloud"
 date: "2019-07-20"
-title: "How to take a screenshot of a website in the cloud"
+title: "How to take a screenshot of a website in the cloud"
 description: "How to take a screenshot of a website in the cloud using Puppeteer in a Google Firebase Functions and to save the results to Google Firebase Storage"
 tags: "#javascript #webdev #tutorial #programming"
 image: "https://cdn-images-1.medium.com/max/1600/1*0cBVakg6yb906eFR0VLm8Q.jpeg"
@@ -21,11 +21,11 @@ We are far, far away of such an application and community but it does not mean w
 
 *A sneak peek of our feed filled with our test presentations*
 
-# Introduction of the solution
+# Introduction of the solution
 
 As introduced above, for this solution, we are going to write a new Google Functions for Firebase in order to run our process in the cloud. For the particular case of the screenshot, we are going to use [Puppeteer](https://github.com/GoogleChrome/puppeteer). We are going to use it to run a headless Chrome, where we are going to load the website, and to take the screenshot too. Finally we are going to write the results in [Google Firebase Storage](https://firebase.google.com/docs/storage).
 
-# Before we start
+# Before we start
 
 To be honest, as always, Google published a really well written article in August 2018 which introduces the [headless Chrome support in Cloud Functions and App Engine](https://cloud.google.com/blog/products/gcp/introducing-headless-chrome-support-in-cloud-functions-and-app-engine) which exactly displays how to take a screenshot. In comparison to this article, this post introduces the storage but also improves a bit the way of capturing the screenshot, so I hope you still do think it deserves a read and even your time 🙏
 
@@ -133,7 +133,7 @@ export const takeScreenshot =
                  .https.onRequest(takeScreenShotOnRequest);
 ```
 
-# Save to the storage
+# Save to the storage
 
 Saving the image buffer to the storage is actually, don't know why I'm still surprised by the simplicity of Google Firebase, really easy. Using the Firebase Admin we just need to reference the default bucket, create a file object and saves it, nothing more, nothing left.
 
@@ -196,7 +196,7 @@ function saveScreenShot(imageBuffer: string): Promise<string> {
 
 That's it, we have implemented a Google Cloud Function to take and save a screenshot of our website 🎉
 
-# Trying it out
+# Trying it out
 
 As I said above, I won't go in the details of the interaction with Firebase. That being said, you could deploy your function running the following command in a terminal:
 
@@ -212,7 +212,7 @@ $ curl -i -H "Accept: application/json" -X GET  https://us-central1-your-cool-ap
 
 *Replace `https://us-central1-your-cool-app.cloundfuntions.net` with your application/functions URL.*
 
-# Cherry on the cake 🍒🎂
+# Cherry on the cake 🍒🎂
 
 Our project is open source and we try to encourage others to do so too, that's why we released this particular function in our monorepo under the [GNU Affero General Public License](https://en.wikipedia.org/wiki/GNU_Affero_General_Public_License). Therefore if your project is cool too (😉) be our guest and clone:
 

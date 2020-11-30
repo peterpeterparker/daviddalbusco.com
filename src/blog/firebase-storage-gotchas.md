@@ -1,8 +1,8 @@
 ---
 path: "/blog/firebase-storage-gotchas"
 date: "2020-02-04"
-title: "Firebase Storage Gotchas 😅"
-description: "Sharing some Google Cloud Storage key points I learned while implementing private assets and reverting two days of work."
+title: "Firebase Storage Gotchas 😅"
+description: "Sharing some Google Cloud Storage key points I learned while implementing private assets and reverting two days of work."
 tags: "#firebase #javascript #webdev #serverless"
 image: "https://cdn-images-1.medium.com/max/1600/1*58twqItpOjtMRuQquE2l5w.jpeg"
 canonical: "https://medium.com/@david.dalbusco/firebase-storage-gotchas-63a7cfef7677"

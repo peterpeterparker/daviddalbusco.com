@@ -1,7 +1,7 @@
 ---
 path: "/blog/create-a-modal-for-your-angular-app-without-libs"
 date: "2020-03-30"
-title: "Create A Modal For Your Angular App Without Libs"
+title: "Create A Modal For Your Angular App Without Libs"
 description: "How to create a modal for your application developed with Angular without the use of any libraries or dependencies"
 tags: "#angular #webdev #javascript #css"
 image: "https://cdn-images-1.medium.com/max/1600/1*xNE1YF5sWgrqysu1GqwUNA.png"

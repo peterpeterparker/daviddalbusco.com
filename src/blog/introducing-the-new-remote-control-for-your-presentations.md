@@ -1,8 +1,8 @@
 ---
 path: "/blog/introducing-the-new-remote-control-for-your-presentations"
 date: "2019-11-12"
-title: "Introducing the new remote control for your presentations"
-description: "Introducing the new remote control for your presentations developed with the web open source editor DeckDeckGo"
+title: "Introducing the new remote control for your presentations"
+description: "Introducing the new remote control for your presentations developed with the web open source editor DeckDeckGo"
 tags: "#webdev #showdev #opensource #motivation"
 image: "https://cdn-images-1.medium.com/max/1600/1*pk4BfD4Sqt6gHIX4lpYO8g.png"
 ---

@@ -2,7 +2,7 @@
 path: "/blog/an-ionic-page-with-a-back-or-a-menu-button-and-my-swiss-recipe-to-cook-rosti"
 date: "2019-05-11"
 title: "An Ionic page with a back or a menu button and my Swiss recipe to cook Rösti"
-description: "An Ionic page with a back or a menu button and my Swiss recipe to cook Rösti"
+description: "An Ionic page with a back or a menu button and my Swiss recipe to cook Rösti"
 tags: "#showdev #webdev #ionic #cooking"
 image: "https://cdn-images-1.medium.com/max/1600/1*RLw_zF55AGJaTXkMOgwTNQ.png"
 ---

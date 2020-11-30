@@ -1,8 +1,8 @@
 ---
 path: "/blog/sometimes-you-just-need-a-dumb-library"
 date: "2020-03-19"
-title: "Sometimes You Just Need A Dumb Library"
-description: "How to create a library with Rollup and Typescript #OneTrickADay-31"
+title: "Sometimes You Just Need A Dumb Library"
+description: "How to create a library with Rollup and Typescript #OneTrickADay-31"
 tags: "#showdev #javascript #tutorial #programming"
 image: "https://cdn-images-1.medium.com/max/1600/1*3WQ_e2_-d02nvob2rlEJCA.png"
 canonical: "https://medium.com/@david.dalbusco/sometimes-you-just-need-a-dumb-library-5f8e79e667dd"
@@ -148,7 +148,7 @@ export default {
 
 #### Installation Of The Dependencies
 
-Everything is in place, we can now install the dependencies. Before doing so, we create an empty new file `index.ts` in a new folder `src` , otherwise the installation will end up in error, as a build is chained with the process.
+Everything is in place, we can now install the dependencies. Before doing so, we create an empty new file `index.ts` in a new folder `src` , otherwise the installation will end up in error, as a build is chained with the process.
 
 ```bash
 mkdir src && touch src/index.ts

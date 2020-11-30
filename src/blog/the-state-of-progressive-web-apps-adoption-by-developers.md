@@ -2,7 +2,7 @@
 path: "/blog/the-state-of-progressive-web-apps-adoption-by-developers"
 date: "2020-06-21"
 title: "The State Of Progressive Web Apps Adoption By Developers"
-description: "Are PWA preached or adopted by developers? Do they use these despite the lack of support on iOS? Here are some hints I gathered with polls the last few days."
+description: "Are PWA preached or adopted by developers? Do they use these despite the lack of support on iOS? Here are some hints I gathered with polls the last few days."
 tags: "#showdev #webdev #pwa #discuss"
 image: "https://cdn-images-1.medium.com/max/1600/1*CJ0b6w9jioWxBedVLqS6NQ.jpeg"
 canonical: "https://medium.com/@david.dalbusco/the-state-of-progressive-web-apps-adoption-by-developers-8b119783d3b9"

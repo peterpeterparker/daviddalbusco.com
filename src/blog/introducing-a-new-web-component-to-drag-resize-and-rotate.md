@@ -1,8 +1,8 @@
 ---
 path: "/blog/introducing-a-new-web-component-to-drag-resize-and-rotate"
 date: "2020-03-03"
-title: "Introducing A New Web Component To Drag, Resize And Rotate"
-description: "Add drag, drop and resize capabilities to any web apps"
+title: "Introducing A New Web Component To Drag, Resize And Rotate"
+description: "Add drag, drop and resize capabilities to any web apps"
 tags: "#webdev #showdev #javascript #opensource"
 image: "https://cdn-images-1.medium.com/max/1600/1*1pqUKDcoxfwUQ6jN6tZ0xQ.png"
 canonical: "https://medium.com/@david.dalbusco/introducing-a-new-web-component-to-drag-resize-and-rotate-e08db59fad2f"

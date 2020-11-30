@@ -2,7 +2,7 @@
 path: "/blog/github-actions-hide-and-set-angular-environment-variables"
 date: "2020-04-11"
 title: "GitHub Actions: Hide And Set Angular Environment Variables"
-description: "How to hide Angular environments variables from your repo and set these at build time while using GitHub Actions"
+description: "How to hide Angular environments variables from your repo and set these at build time while using GitHub Actions"
 tags: "#angular #devops #github #javascript"
 image: "https://cdn-images-1.medium.com/max/1600/1*D8K_z16GbcE3t3YqgvPbEQ.png"
 canonical: "https://medium.com/@david.dalbusco/github-actions-hide-and-set-angular-environment-variables-e753d06d16a8"

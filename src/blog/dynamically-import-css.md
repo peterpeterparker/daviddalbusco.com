@@ -1,7 +1,7 @@
 ---
 path: "/blog/dynamically-import-css"
 date: "2020-06-01"
-title: "Dynamically Import CSS"
+title: "Dynamically Import CSS"
 description: "Lazy load CSS with the help of dynamic import() demonstrated in a Stencil Web Components"
 tags: "#javascript #webdev #css #typescript"
 image: "https://cdn-images-1.medium.com/max/1600/1*01MP69dykx8YMQqMeRB2OQ.jpeg"

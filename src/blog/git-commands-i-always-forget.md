@@ -1,8 +1,8 @@
 ---
 path: "/blog/git-commands-i-always-forget"
 date: "2020-04-16"
-title: "Git Commands I Always Forget"
-description: "Revert last commit, change last or multiple commit messages or delete tags"
+title: "Git Commands I Always Forget"
+description: "Revert last commit, change last or multiple commit messages or delete tags"
 tags: "#git #bash #github"
 image: "https://cdn-images-1.medium.com/max/1600/1*9xilCpCgG-BqhOICl-zNCg.png"
 canonical: "https://medium.com/@david.dalbusco/git-commands-i-always-forget-24cbb71c502a"

@@ -2,7 +2,7 @@
 path: "/blog/a-new-dead-simple-open-source-web-component-to-lazy-load-images"
 date: "2019-05-17"
 title: "A new dead simple open source Web Component to lazy load images"
-description: "A new dead simple open source Web Component to lazy load images developed with StencilJS"
+description: "A new dead simple open source Web Component to lazy load images developed with StencilJS"
 tags: "#webdev #javascript #programming #opensource"
 image: "https://cdn-images-1.medium.com/max/2400/1*fGVtZ0a_ki-Vg14YzJqKYQ.jpeg"
 ---

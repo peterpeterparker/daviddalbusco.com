@@ -1,7 +1,7 @@
 ---
 path: "/blog/react-web-workers-indexeddb-and-exceljs"
 date: "2020-04-10"
-title: "React, Web Workers, IndexedDB and ExcelJS"
+title: "React, Web Workers, IndexedDB and ExcelJS"
 description: "How to generate an Excel spreadsheet with IndexedDB data and a Web Worker within a React application"
 tags: "#react #showdev #webdev #javascript"
 image: "https://cdn-images-1.medium.com/max/1600/1*KfXCp8tFOBqrJDS6BUIkYQ.png"

@@ -1,7 +1,7 @@
 ---
 path: "/blog/starting-in-a-new-company-think-npmrc-and-git-name"
 date: "2020-03-24"
-title: "Starting In A New Company? Think Npmrc And Git Name"
+title: "Starting In A New Company? Think Npmrc And Git Name"
 description: "How to configure your company's npm Enterprise registry and provide your name for Git interactions"
 tags: "#git #npm #bash #freelance"
 image: "https://cdn-images-1.medium.com/max/1600/1*HG7Ivs6JrMErB7GdQZWSog.png"

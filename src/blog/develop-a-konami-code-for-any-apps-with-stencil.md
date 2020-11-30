@@ -1,7 +1,7 @@
 ---
 path: "/blog/develop-a-konami-code-for-any-apps-with-stencil"
 date: "2020-04-19"
-title: "Develop A Konami Code For Any Apps With Stencil"
+title: "Develop A Konami Code For Any Apps With Stencil"
 description: "How to create  a Web Component with Stencil to add a Konami Code feature in any modern web applications"
 tags: "#javascript #webdev #beginners #tutorial"
 image: "https://cdn-images-1.medium.com/max/1600/1*xQKl3mFjtshpfAN2gQZ4Bw.png"

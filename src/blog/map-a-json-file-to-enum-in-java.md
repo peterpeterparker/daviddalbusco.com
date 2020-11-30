@@ -1,8 +1,8 @@
 ---
 path: "/blog/map-a-json-file-to-enum-in-java"
 date: "2019-08-16"
-title: "Map a JSON file to ENUM in Java"
-description: "Map a JSON file to ENUM in Java"
+title: "Map a JSON file to ENUM inJava"
+description: "Map a JSON file to ENUM inJava"
 tags: "#java #tutorial #webdev #maven"
 image: "https://cdn-images-1.medium.com/max/1600/1*qSYqGVlUNNhJgsYDxenv9A.jpeg"
 ---

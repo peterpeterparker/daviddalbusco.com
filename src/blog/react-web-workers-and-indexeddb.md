@@ -2,7 +2,7 @@
 path: "/blog/react-web-workers-and-indexeddb"
 date: "2020-04-09"
 title: "React, Web Workers and IndexedDB"
-description: "How to use IndexedDB in React applications with Web Workers"
+description: "How to use IndexedDB in React applications with WebWorkers"
 tags: "#react #showdev #webdev #javascript"
 image: "https://cdn-images-1.medium.com/max/1600/1*Ih6g24vTLWb_Zl-yiNOuNA.png"
 canonical: "https://medium.com/@david.dalbusco/react-web-workers-and-indexeddb-a973797e771b"

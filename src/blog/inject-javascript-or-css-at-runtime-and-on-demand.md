@@ -1,7 +1,7 @@
 ---
 path: "/blog/inject-javascript-or-css-at-runtime-and-on-demand"
 date: "2020-03-18"
-title: "Inject JavaScript Or CSS At Runtime And On Demand"
+title: "Inject JavaScript Or CSS At Runtime And OnDemand"
 description: "How to load a JavaScript library, component or a style only when you really need it #OneTrickADay-32"
 tags: "#webdev #javascript #css #html"
 image: "https://cdn-images-1.medium.com/max/1600/1*NFVyLIxNmR6l8QJjFmzIpg.png"

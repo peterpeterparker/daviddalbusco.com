@@ -2,7 +2,7 @@
 path: "/blog/takeover-the-cordova-facebook-plugin-maintenance"
 date: "2020-03-27"
 title: "Takeover The Cordova Facebook Plugin Maintenance"
-description: "I am giving up being the active maintainer of the Cordova Facebook Plugin. Anyone willing to replace me?"
+description: "I am giving up being the active maintainer of the Cordova Facebook Plugin. Anyone willing to replaceme?"
 tags: "#facebook #cordova #motivation #meta"
 image: "https://cdn-images-1.medium.com/max/1600/1*EPWjs7wN0Q2-8F2EeaiIqw.png"
 canonical: "https://medium.com/@david.dalbusco/takeover-the-cordova-facebook-plugin-maintenance-e0ffd09cacd0"

@@ -1,8 +1,8 @@
 ---
 path: "/blog/currency-picker-and-formatter-with-ionic-react"
 date: "2020-04-18"
-title: "Currency Picker And Formatter With Ionic React"
-description: "Build a currency picker and formatter for your application developed with Ionic and React"
+title: "Currency Picker And Formatter With IonicReact"
+description: "Build a currency picker and formatter for your application developed with Ionic andReact"
 tags: "#react #ionic #javascript #webdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*vNyq4W-5NQoeX5jo8TqBQw.png"
 canonical: "https://medium.com/@david.dalbusco/currency-picker-and-formatter-with-ionic-react-ede8e2ff53df"

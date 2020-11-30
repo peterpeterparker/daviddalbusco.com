@@ -1,8 +1,8 @@
 ---
 path: "/blog/internationalization-with-gatsby"
 date: "2020-03-20"
-title: "Internationalization with Gatsby"
-description: "How to internationalize your Gatsby website with gatsby-plugin-i18n and react-intl in 2020"
+title: "Internationalization withGatsby"
+description: "How to internationalize your Gatsby website with gatsby-plugin-i18n and react-intl in2020"
 tags: "#javascript #webdev #a11y #tutorial"
 image: "https://cdn-images-1.medium.com/max/1600/1*tuOyAQ0r1d4nnAcA1xccyQ.png"
 canonical: "https://medium.com/@david.dalbusco/internationalization-with-gatsby-ae3991c39e92"

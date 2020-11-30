@@ -1,8 +1,8 @@
 ---
 path: "/blog/trick-javaserver-faces-load-your-bean-data-from-the-client-side"
 date: "2019-11-04"
-title: "Trick JavaServer Faces, load your bean data from the client side"
-description: "How to trick JSF (JavaServer Faces) while loading your bean data from the client side with the help of Primefaces"
+title: "Trick JavaServer Faces, load your bean data from the clientside"
+description: "How to trick JSF (JavaServer Faces) while loading your bean data from the clientside with the help of Primefaces"
 tags: "#java #tutorial #webdev #primefaces"
 image: "https://cdn-images-1.medium.com/max/1600/1*QSKH-4KVY9VB1ssOElKYhQ.jpeg"
 ---

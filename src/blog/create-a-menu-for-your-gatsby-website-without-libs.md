@@ -1,7 +1,7 @@
 ---
 path: "/blog/create-a-menu-for-your-gatsby-website-without-libs"
 date: "2020-03-29"
-title: "Create A Menu For Your Gatsby Website Without Libs"
+title: "Create A Menu For Your Gatsby Website WithoutLibs"
 description: "How to create a menu for your Gatsby website without the use of any libraries or dependencies"
 tags: "#gatsby #webdev #javascript #css"
 image: "https://cdn-images-1.medium.com/max/1600/1*yi2pw2XA-49C9nGuXudI1A.png"

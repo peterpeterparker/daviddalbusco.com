@@ -1,8 +1,8 @@
 ---
 path: "/blog/how-to-make-your-pwa-offline-on-demand"
 date: "2020-05-21"
-title: "How To Make Your PWA Offline On Demand"
-description: "Download your Progressive Web Apps content à la Netflix or Spotify"
+title: "How To Make Your PWA Offline OnDemand"
+description: "Download your Progressive Web Apps content à la Netflix orSpotify"
 tags: "#showdev #webdev #javascript #pwa"
 image: "https://cdn-images-1.medium.com/max/1600/1*LBBws2VRETowxwxMNKN--w.jpeg"
 canonical: "https://medium.com/@david.dalbusco/how-to-make-your-pwa-offline-on-demand-7566d2f59280"

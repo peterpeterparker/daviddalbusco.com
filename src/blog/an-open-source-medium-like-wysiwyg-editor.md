@@ -1,7 +1,7 @@
 ---
 path: "/blog/an-open-source-medium-like-wysiwyg-editor"
 date: "2020-04-17"
-title: "An Open Source Medium Like WYSIWYG Editor"
+title: "An Open Source Medium Like WYSIWYGEditor"
 description: "Add our WYSIWYG floating or sticky editor to any web applications"
 tags: "#showdev #webdev #javascript #webcomponents"
 image: "https://cdn-images-1.medium.com/max/1600/1*mEgbLcMRBUaJIvwIdirEvg.png"

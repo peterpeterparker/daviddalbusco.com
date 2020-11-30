@@ -1,7 +1,7 @@
 ---
 path: "/blog/dark-and-light-mode-os-color-scheme-and-theme-switcher"
 date: "2019-12-30"
-title: "Dark And Light Mode: OS Color Scheme And Theme Switcher"
+title: "Dark And Light Mode: OS Color Scheme And ThemeSwitcher"
 description: "How to add a dark and light mode theme switcher to your application which inherits the OS color scheme as default state too."
 tags: "#javascript #webdev #tutorial #webcomponents"
 image: "https://cdn-images-1.medium.com/max/1600/1*EqOsVaqdhDXCI2Vwi7YAwg.png"

@@ -1,8 +1,8 @@
 ---
 path: "/blog/stylish-cards-and-syntax-highlighting-with-gatsby"
 date: "2019-12-17"
-title: "Stylish Cards And Syntax Highlighting With Gatsby"
-description: "How to display the code of your Gatsby website and blog with styled cards and code highlighting with a new plugin"
+title: "Stylish Cards And Syntax Highlighting WithGatsby"
+description: "How to display the code of your Gatsby website and blog with styled cards and code highlighting with a newplugin"
 tags: "#gatsby #javascript #webdev #showdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*8DbEBAv_L1pK-1Xm03XEzw.png"
 ---

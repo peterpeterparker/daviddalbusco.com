@@ -1,7 +1,7 @@
 ---
 path: "/blog/how-to-keep-secret-your-font-awesome-pro-token-in-public-github-actions"
 date: "2019-11-27"
-title: "How to keep secret your Font Awesome Pro token in public GitHub actions"
+title: "How to keep secret your Font Awesome Pro token in public GitHubactions"
 description: "Configure your GitHub actions to keep secret your Font Awesome Pro token or NPM private tokens"
 tags: "#devops #webdev #github #fontawesome"
 image: "https://cdn-images-1.medium.com/max/1600/1*oASKWYL2zJdXrSghTn92PA.jpeg"

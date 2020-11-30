@@ -1,8 +1,8 @@
 ---
 path: "/blog/app-shortcuts-and-maskable-icons-play-it-like-twitter"
 date: "2020-07-16"
-title: "App Shortcuts And Maskable Icons: Play It Like Twitter"
-description: "Follow the Twitter example to add App Shortcuts and maskable icons to your Progressive Web Apps."
+title: "App Shortcuts And Maskable Icons: Play It LikeTwitter"
+description: "Follow the Twitter example to add App Shortcuts and maskable icons to your Progressive WebApps."
 tags: "#showdev #webdev #design #pwa"
 image: "https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg"
 canonical: "https://medium.com/@david.dalbusco/app-shortcuts-and-maskable-icons-play-it-like-twitter-c7da9b7e90fa"

@@ -1,8 +1,8 @@
 ---
 path: "/blog/debounce-with-vanilla-javascript-or-rxjs"
 date: "2019-09-18"
-title: "Debounce with vanilla JavaScript or RxJS"
-description: "Debounce with vanilla JavaScript or RxJS"
+title: "Debounce with vanilla JavaScript orRxJS"
+description: "Debounce with vanilla JavaScript orRxJS"
 tags: "#tutorial #javascript #rxjs #webdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*710b8KhbLG3vPrV2cL-3dw.jpeg"
 ---

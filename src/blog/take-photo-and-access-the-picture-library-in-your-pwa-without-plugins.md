@@ -1,7 +1,7 @@
 ---
 path: "/blog/take-photo-and-access-the-picture-library-in-your-pwa-without-plugins"
 date: "2019-07-10"
-title: "Take photo and access the picture library in your PWA (without plugins)"
+title: "Take photo and access the picture library in your PWA (withoutplugins)"
 description: "How to access camera and photo library in a Progressive Web App using web technologies and no plugins"
 tags: "#javascript #webdev #programming #beginners"
 image: "https://cdn-images-1.medium.com/max/1600/1*94yTSEwDkPK52B22ll74mQ.jpeg"

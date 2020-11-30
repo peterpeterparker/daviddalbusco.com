@@ -1,8 +1,8 @@
 ---
 path: "/blog/create-your-own-npm-cli"
 date: "2020-04-05"
-title: "Create Your Own NPM Cli"
-description: "How to create your own npm init command for your project"
+title: "Create Your Own NPMCli"
+description: "How to create your own npm init command for yourproject"
 tags: "#webdev #showdev #devops #npm"
 image: "https://cdn-images-1.medium.com/max/1600/1*QchuRONVGccKfb0imrxMig.png"
 canonical: "https://medium.com/@david.dalbusco/create-your-own-npm-cli-fbe9e3d4fce"

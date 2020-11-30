@@ -1,8 +1,8 @@
 ---
 path: "/blog/contribute-to-our-open-source-project"
 date: "2019-07-26"
-title: "Contribute to our open source project"
-description: "Are you looking to contribute to a new open source project? Or want to get started with technologies like Web Components and StencilJS ? Contribute to our open source project DeckDeckGo"
+title: "Contribute to our open sourceproject"
+description: "Are you looking to contribute to a new open source project? Or want to get started with technologies like Web Components and StencilJS? Contribute to our open source project DeckDeckGo"
 tags: "#opensource #beginners #motivation #webdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*5Fjoye88JFo3hqnenly5UQ.jpeg"
 ---

@@ -1,8 +1,8 @@
 ---
 path: "/blog/add-a-slider-to-you-angular-app"
 date: "2020-03-31"
-title: "Add A Slider To You Angular App"
-description: "Use our core Web Component to add a slider to your application developed with Angular"
+title: "Add A Slider To You AngularApp"
+description: "Use our core Web Component to add a slider to your application developed withAngular"
 tags: "#angular #webdev #javascript #showdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*fscs8H-c-4EwHK_3wDN1ow.png"
 canonical: "https://medium.com/@david.dalbusco/add-a-slider-to-you-angular-app-ef997363399c"

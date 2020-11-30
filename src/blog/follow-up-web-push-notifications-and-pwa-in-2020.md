@@ -1,8 +1,8 @@
 ---
 path: "/blog/follow-up-web-push-notifications-and-pwa-in-2020"
 date: "2020-04-14"
-title: "Follow-up: Web Push Notifications And PWA In 2020"
-description: "A follow-up to my one year old tutorial Web Push Notifications In Progressive Web Apps with Ionic And Angular"
+title: "Follow-up: Web Push Notifications And PWA In2020"
+description: "A follow-up to my one year old tutorial Web Push Notifications In Progressive Web Apps with Ionic AndAngular"
 tags: "#javascript #ios #android #angular"
 image: "https://cdn-images-1.medium.com/max/1600/1*W6Eot89ZwJa994WQum55Sg.png"
 canonical: "https://medium.com/@david.dalbusco/follow-up-web-push-notifications-and-pwa-in-2020-54d27fbc829a"

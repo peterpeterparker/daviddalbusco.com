@@ -1,8 +1,8 @@
 ---
 path: "/blog/gatsby-tricks-viewport-css-modules-transition-and-i18n-tricks"
 date: "2020-03-26"
-title: "Gatsby Tricks: Viewport, CSS Modules Transition And i18n Tricks"
-description: "Overriding Viewport settings, CSS modules transition and an i18n formatting tricks with Gatsby"
+title: "Gatsby Tricks: Viewport, CSS Modules Transition And i18nTricks"
+description: "Overriding Viewport settings, CSS modules transition and an i18n formatting tricks withGatsby"
 tags: "#javascript #webdev #gatsby #css"
 image: "https://cdn-images-1.medium.com/max/1600/1*ytcX2rE89fOxjHjKfEAJng.png"
 canonical: "https://medium.com/@david.dalbusco/gatsby-tricks-viewport-css-modules-transition-and-i18n-tricks-a3d1089a4910"

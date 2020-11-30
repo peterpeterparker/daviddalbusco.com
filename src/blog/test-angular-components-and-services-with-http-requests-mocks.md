@@ -1,8 +1,8 @@
 ---
 path: "/blog/test-angular-components-and-services-with-http-requests-mocks"
 date: "2020-04-01"
-title: "Test Angular Components and Services With HTTP Mocks"
-description: "How to test Angular Components and Services with the help of mocked HTTP requests"
+title: "Test Angular Components and Services With HTTPMocks"
+description: "How to test Angular Components and Services with the help of mocked HTTPrequests"
 tags: "#angular #testing #javascript #webdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*ARj7jYIrVb-eR7B0OOD2Zg.png"
 canonical: "https://medium.com/@david.dalbusco/test-angular-components-and-services-with-http-mocks-e143d90fa27d"

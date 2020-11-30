@@ -1,8 +1,8 @@
 ---
 path: "/blog/how-to-declare-and-use-ionic-modals-with-stencil"
 date: "2020-03-21"
-title: "How To Declare And Use Ionic Modals With Stencil"
-description: "How to declare and use Ionic modals with Stencil incl. passing parameters, close actions and hardware back button support"
+title: "How To Declare And Use Ionic Modals WithStencil"
+description: "How to declare and use Ionic modals with Stencil incl. passing parameters, close actions and hardware back buttonsupport"
 tags: "#javascript #webdev #showdev #ionic"
 image: "https://cdn-images-1.medium.com/max/1600/1*MUxo-oCL6aB0QEjOH8AU3A.png"
 canonical: "https://medium.com/@david.dalbusco/how-to-declare-and-use-ionic-modals-with-stencil-d5d97e69c930"

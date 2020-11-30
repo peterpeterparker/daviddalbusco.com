@@ -1,8 +1,8 @@
 ---
 path: "/blog/test-angular-pipes-with-services"
 date: "2020-03-25"
-title: "Test Angular Pipes With Services"
-description: "How to test an Angular pipe which uses injected services"
+title: "Test Angular Pipes WithServices"
+description: "How to test an Angular pipe which uses injectedservices"
 tags: "#angular #testing #javascript #webdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*q3KXO31t7qXMjn0bf5Z3OQ.png"
 canonical: "https://medium.com/@david.dalbusco/test-angular-pipes-with-services-4cf77e34e576"

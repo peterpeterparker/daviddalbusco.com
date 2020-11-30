@@ -31,6 +31,8 @@ class Projects extends React.Component {
         <div className="projects">
           {this.renderOurEnergy()}
 
+          {this.renderOwlly()}
+
           {this.renderETHLibraryLab()}
 
           {this.renderBonjourCircle()}
@@ -212,6 +214,28 @@ class Projects extends React.Component {
 
           <div className="details">
             <h2>Ineexa</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
+  renderOwlly() {
+    if (!this.props || this.props.filter !== "owlly") {
+      return <Link to="/portfolio/owlly" aria-label="Owlly">
+        <article className={this.state.mobile ? "owlly mobile" : "owlly"}>
+          <div className="summary">
+            <Img fluid={this.props.data.owllyImage.childImageSharp.fluid}/>
+
+            <h3>Owlly</h3>
+          </div>
+
+          <div className="details">
+            <h2>Owlly</h2>
 
             <p>Details</p>
           </div>
@@ -408,6 +432,13 @@ export default ({ filter, all }) => (
         }
       },
       ineexaImage: file(relativePath: { eq: "portfolio/ineexa-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      owllyImage: file(relativePath: { eq: "portfolio/owlly-dark-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

@@ -205,6 +205,24 @@ section.portfolio, section.other-projects {
         }
       }
 
+      &.owlly {
+        > div {
+          background: linear-gradient(155deg, #00a6d4 0%, #81bc4f);
+
+          &.summary {
+            color: black;
+          }
+
+          &.details {
+            color: white;
+          }
+
+          &.details {
+            background: black;
+          }
+        }
+      }
+
       > div.details  {
         visibility: hidden;
         opacity: 0;

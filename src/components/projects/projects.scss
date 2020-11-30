@@ -187,6 +187,24 @@ section.portfolio, section.other-projects {
         }
       }
 
+      &.ineexa {
+        > div {
+          background: #f3f3f3;
+
+          &.summary {
+            color: black;
+          }
+
+          &.details {
+            color: white;
+          }
+
+          &.details {
+            background: #ff6d00;
+          }
+        }
+      }
+
       > div.details  {
         visibility: hidden;
         opacity: 0;

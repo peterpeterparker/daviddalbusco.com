@@ -38,6 +38,8 @@ class Projects extends React.Component {
           {this.renderBonjourBloom()}
 
           {this.renderDVB()}
+
+          {this.renderIneexa()}
         </div>
       </main>
     </section>,
@@ -188,6 +190,28 @@ class Projects extends React.Component {
 
           <div className="details">
             <h2>DV Bern AG</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
+  renderIneexa() {
+    if (!this.props || this.props.filter !== "ineexa") {
+      return <Link to="/portfolio/ineexa" aria-label="Ineexa">
+        <article className={this.state.mobile ? "ineexa mobile" : "ineexa"}>
+          <div className="summary">
+            <Img fluid={this.props.data.ineexaImage.childImageSharp.fluid}/>
+
+            <h3>Ineexa</h3>
+          </div>
+
+          <div className="details">
+            <h2>Ineexa</h2>
 
             <p>Details</p>
           </div>
@@ -377,6 +401,13 @@ export default ({ filter, all }) => (
         }
       },
       flusterImage: file(relativePath: { eq: "portfolio/fluster-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      ineexaImage: file(relativePath: { eq: "portfolio/ineexa-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

@@ -24,7 +24,7 @@ As a result, I notably had to create a custom generic lazy loaded modal.
 
 ### Meta
 
-This blog post has been published in November 2020. The solution has been tested with Angular v11 and Tailwind v3.
+This blog post has been published in November 2020. The solution has been tested with Angular v11 and Tailwind v2.
 
 *****
 

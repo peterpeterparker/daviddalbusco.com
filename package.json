@@ -2,7 +2,7 @@
   "name": "daviddalbusco.com",
   "private": true,
   "description": "David Dal Busco - Freelance Web Developer - Web, Progressive Web Apps and Mobile (iOS/Android) - Project management - UX and IT consulting",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "author": "David Dal Busco <david@fluster.io>",
   "dependencies": {
     "@deckdeckgo/core": "^8.1.1",

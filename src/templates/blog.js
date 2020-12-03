@@ -7,7 +7,7 @@ import Blog from "../components/blog/blog"
 
 export default function Template({data}) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html } = markdownRemark
+  const { frontmatter, html, timeToRead } = markdownRemark
   return (
     <Layout fixNav={true}>
       <SEO title={frontmatter.title} description={frontmatter.description} keywords={frontmatter.tags} canonical={frontmatter.canonical} />
@@ -15,7 +15,7 @@ export default function Template({data}) {
       <section className="post">
         <main>
           <h1>{frontmatter.title}</h1>
-          <p className="date">{frontmatter.date}</p>
+          <p className="date">{frontmatter.date} · {timeToRead} min read</p>
           <p className="tags">{frontmatter.tags}</p>
           <div
             className="blog-post-content"
@@ -41,7 +41,8 @@ export const pageQuery = graphql`
         description,
         tags,
         canonical
-      }
+      },
+      timeToRead
     }
   }
 `

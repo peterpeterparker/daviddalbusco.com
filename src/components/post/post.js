@@ -23,7 +23,7 @@ class Post extends React.Component {
 
           <div className="details">
             <h2>{this.props.node.frontmatter.title}</h2>
-            <p>{this.props.node.frontmatter.date}</p>
+            <p>{this.props.node.frontmatter.date} · {this.props.node.timeToRead} min read</p>
             <p>{this.props.node.frontmatter.tags}</p>
           </div>
         </article>

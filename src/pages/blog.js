@@ -44,7 +44,8 @@ export default () => (
                 image,
                 description,
                 tags
-              }
+              },
+              timeToRead
             }
           }
         }

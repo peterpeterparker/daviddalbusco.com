@@ -9,30 +9,8 @@ import Chapter from "../chapter/chapter"
 
 class Header extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      scrolled: false,
-    }
-  }
-
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll)
-  }
-
-  handleScroll = (_$event) => {
-    const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-    const scrollDegree = Math.min(scrolledSize * 2, 180);
-
-    this.setState({ scrollDegree: scrollDegree })
-  }
-
   render() {
-    return <section className="header" style={{background: (this.state.scrollDegree > 0 ? `linear-gradient(${this.state.scrollDegree}deg, var(--color-primary), var(--color-secondary))` : undefined)}}>
+    return <section className="header">
       <main>
         <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid}/>
 

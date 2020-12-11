@@ -38,5 +38,7 @@ section.post {
   deckgo-highlight-code {
     box-shadow: 3px 4px var(--color-secondary);
     border: 1px solid var(--color-secondary);
+    --deckgo-highlight-code-carbon-toolbar-display: none;
+    --deckgo-highlight-code-carbon-header-padding: 8px;
   }
 }

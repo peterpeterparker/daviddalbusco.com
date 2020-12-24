@@ -235,6 +235,12 @@ And voilà, that’s it, our Gastby site is internationalized 🎉. Of course yo
 
 *****
 
+### More Tips And Tricks
+
+I have later on published a follow-up article, [More Gatsby i18n Tips And Tricks](https://daviddalbusco.com/blog/more-gatsby-i18n-tips-and-tricks), about the internalization of Gatsby website. Check it out if you are eager to read more tips and tricks 😉.
+
+*****
+
 ### Summary
 
 Well it was really unexpected to me to have had to spend so much time to unleash internationalization in a new project, that’s why I hope that this small “how to” might help anyone in the future. And as always, if you notice anything which can be improved, don’t hesitate to ping me with a comment or a [tweet](https://twitter.com/daviddalbusco).

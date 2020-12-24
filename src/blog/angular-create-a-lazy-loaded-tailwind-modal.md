@@ -371,7 +371,3 @@ I am really grateful to have had the opportunity to be hired as a freelancer to 
 To infinity and beyond!
 
 David
-
-*****
-
-You can reach me on [Twitter](https://twitter.com/daviddalbusco) and give a try to our open source editor for slides [DeckDeckGo](https://deckdeckgo.com/) for your next presentations 😉.

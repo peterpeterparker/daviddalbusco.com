@@ -121,9 +121,3 @@ As underlined in the introduction of this post, I am really not sure if anyone w
 To infinity and beyond!
 
 David
-
-*****
-
-You can reach me out on [Twitter](https://twitter.com/daviddalbusco) and, why not, give a try to [DeckDeckGo](https://deckdeckgo.com/) for your next presentations.
-
-[![DeckDeckGo](https://deckdeckgo.com/assets/meta/deckdeckgo-meta.png)](https://deckdeckgo.com)

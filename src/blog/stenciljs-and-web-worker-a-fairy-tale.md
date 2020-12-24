@@ -117,7 +117,3 @@ The [Stencil’s](https://stenciljs.com) compiler, having simplified this kind o
 To infinity and beyond!
 
 David
-
-*****
-
-You can reach me on [Twitter](https://twitter.com/daviddalbusco) and, why not, give a try to [DeckDeckGo](https://deckdeckgo.com/) for your next presentations.

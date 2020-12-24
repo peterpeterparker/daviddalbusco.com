@@ -11,7 +11,7 @@ class Footer extends React.Component {
         <footer className="contact">
           <main className="small">
             <div className="address">
-              <h2>Address</h2>
+              <h2>Company / Address</h2>
               <p>
                 {`Fluster GmbH
 c/o The Hub Zürich Association

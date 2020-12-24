@@ -38,7 +38,15 @@ section.header {
     p {
       text-align: center;
       max-width: 620px;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+      }
+
+      &:first-of-type {
+        margin-bottom: 4px;
+      }
     }
   }
 }

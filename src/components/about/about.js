@@ -16,10 +16,9 @@ class About extends React.Component {
         </Chapter>
 
         <p>Hey, nice to meet you <span role="img" aria-label="Hello">👋</span>.</p>
-        <p>I'm a freelance web developer. I am experienced with <mark><a href="http://ionicframework.com">Ionic</a></mark>, <mark><a href="http://angular.io">Angular</a></mark>, <mark><a href="https://reactjs.org">React</a></mark> and I'm a huge fan of <mark><a href="https://stenciljs.com">StencilJS</a></mark> Web Components.</p>
-        <p>After my engineering degree, I spent many years collaborating on Java projects, which probably explains why I like to use <mark><a href="https://www.typescriptlang.org">TypeScript</a></mark> and why I can understand backend developers <span role="img" aria-label="Wink">😉</span>.</p>
-        <p>I also have got experience in project management, analysis of business requirements and I used to be a team lead. I also provide UX and IT consulting.</p>
-        <p>I speak fluently French, German and English and I'm currently based in Zürich, Switzerland.</p>
+        <p>I'm a freelance web developer based in Zürich, Switzerland. I am experienced with <mark><a href="http://ionicframework.com">Ionic</a></mark>, <mark><a href="http://angular.io">Angular</a></mark>, <mark><a href="https://reactjs.org">React</a></mark>. I developed this website with <mark><a href="https://gatsbyjs.com">Gatsby</a></mark> and I'm a huge fan of <mark><a href="https://stenciljs.com">StencilJS</a></mark> Web Components.</p>
+        <p>Throughout my career I also gathered experience in project management, analysis of business requirements and UX design (from a developer perspective).</p>
+        <p>I have a computer engineering degree and an executive master in business administration. I speak fluently French, German and English.</p>
         <p>You could hire me as a contractor, to be part of your team, or ask me to take over your overall projects.</p>
         <p>If you have got a Web, Progressive Web Apps or mobile (iOS/Android) project in mind, <mark><Link to="/#contact">get in touch!</Link></mark></p>
       </main>

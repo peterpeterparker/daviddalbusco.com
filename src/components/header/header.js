@@ -18,7 +18,8 @@ class Header extends React.Component {
           <h1>David Dal Busco</h1>
         </Chapter>
 
-        <p>{this.props.data.site.siteMetadata.description}</p>
+        <p>Freelance Web Developer - Web, PWA and Mobile</p>
+        <p>Project management - UX and IT consulting</p>
       </main>
     </section>
   }

@@ -189,6 +189,8 @@ Once every thing was in place and [published](https://www.npmjs.com/package/web-
 
 Meantime, since I was already there, I also developed some improvements and breaking changes to the component. Checkout its [showcase](https://webphotofilter.com/).
 
+*Note: I even implemented (see [branch](https://github.com/peterpeterparker/web-photo-filter/tree/webworker)) the usage of an [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) to defer the WebGL work to a web worker in order to improve the rendering in my little scanner. Unfortunately, I ultimately decided to not unleash this feature. It is really well supported by Chrome but, only available behind a flag in Firefox and, once again, not even implemented in Safari.*
+
 *****
 
 ### Share Files With Web Share API

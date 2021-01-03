@@ -80,6 +80,8 @@ class Projects extends React.Component {
         </Chapter>
 
         <div className="projects preview">
+          {this.renderRebelScan()}
+
           {this.renderWooof()}
 
           {this.renderWatamato()}
@@ -290,6 +292,28 @@ class Projects extends React.Component {
     }
   }
 
+  renderRebelScan() {
+    if (!this.props || this.props.filter !== "rebelscan") {
+      return <Link to="/portfolio/rebelscan" aria-label="Rebel Scan">
+        <article className={this.state.mobile ? "rebelscan mobile" : "rebelscan"}>
+          <div className="summary">
+            <Img fluid={this.props.data.rebelscanImage.childImageSharp.fluid}/>
+
+            <h3>Rebel Scan</h3>
+          </div>
+
+          <div className="details">
+            <h2>Rebel Scan</h2>
+
+            <p>Details</p>
+          </div>
+        </article>
+      </Link>
+    } else {
+      return undefined
+    }
+  }
+
   renderWooof() {
     if (!this.props || this.props.filter !== "wooof") {
       return <Link to="/portfolio/wooof" aria-label="Wooof">
@@ -404,6 +428,13 @@ export default ({ filter, all }) => (
         }
       },
       wooofImage: file(relativePath: { eq: "portfolio/wooof-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 240) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      },
+      rebelscanImage: file(relativePath: { eq: "portfolio/rebelscan-icon.png" }) {
         childImageSharp {
           fluid(maxWidth: 240) {
             ...GatsbyImageSharpFluid

@@ -187,9 +187,9 @@ That’s why the “output target” are made for. They copy the definition’s 
 
 Once every thing was in place and [published](https://www.npmjs.com/package/web-photo-filter-react), I was able to use my [Web Component](https://github.com/peterpeterparker/web-photo-filter) to apply Instagram-like WebGL filters to photos in my experiment, in order to add the “scanning” effect, using a combination of desaturate, saturation and contrast.
 
-Meantime, since I was already there, I also developed some improvements and breaking changes to the component. Checkout its [showcase](https://webphotofilter.com/).
+Meantime, since I was already there, I also developed some improvements and breaking changes to the component. I even implemented (see that [branch](https://github.com/peterpeterparker/web-photo-filter/tree/webworker)) the usage of an [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) to defer the WebGL work to a web worker in order to improve the rendering in my little scanner. Unfortunately, I ultimately decided to not unleash this feature. It is really well supported by Chrome but, only available behind a flag in Firefox and, not even implemented in Safari.
 
-*Note: I even implemented (see [branch](https://github.com/peterpeterparker/web-photo-filter/tree/webworker)) the usage of an [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) to defer the WebGL work to a web worker in order to improve the rendering in my little scanner. Unfortunately, I ultimately decided to not unleash this feature. It is really well supported by Chrome but, only available behind a flag in Firefox and, once again, not even implemented in Safari.*
+Checkout its [showcase](https://webphotofilter.com/).
 
 *****
 

@@ -163,11 +163,15 @@ It felt a bit like roller coaster of emotion developing this video conversion un
 
 #### One more thing
 
-Oh and, “One more thing”: it might not work on iPhone even if it works like a charm with Safari on OSX. I just did a quick test with my (real) iPhone and it thrown an error.
+Oh and, “One more thing”: it does not work on iPhone even if it works like a charm with Safari on OSX. I just did a quick test with my (real) iPhone and it thrown an error.
 
 > NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
 
-I don’t know, I don’t care.
+After some research, I found a Webkit [post](https://webkit.org/blog/6784/new-video-policies-for-ios/) explaining that video can, under certain rules, be automatically played on iOS. It did not work anyway therefore, I changed the UX on iPhone to start the process only after a user interaction.
+
+Nevertheless, it did solve the video issue but, lead to another one. The video is not streamed in the cropped canvas. At that point, I just decided to gave up trying to fix iOS for this experiment.
+
+Don’t know, don’t care.
 
 *****
 

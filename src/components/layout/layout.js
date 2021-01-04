@@ -11,6 +11,7 @@ import { graphql, StaticQuery } from "gatsby"
 
 import "../../theme/variables.scss"
 import "../../theme/main.scss"
+import "../../theme/frame.scss"
 import "../../theme/section.scss"
 import "../../theme/blog.scss"
 import "../../theme/project.scss"

@@ -126,6 +126,16 @@ section.portfolio, section.other-projects {
         }
       }
 
+      &.rebelscan {
+        > div {
+          background: linear-gradient(135deg, #00a5cf, #9fffcb);
+
+          &.details {
+            background: #af2bbf;
+          }
+        }
+      }
+
       &.wooof {
         > div {
           &.details {

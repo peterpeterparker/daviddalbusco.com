@@ -5,7 +5,7 @@ title: "A Little Scanner App Made With The Web"
 description: "I developed a little scanner prototype with the web during Christmas holidays to learn and try new skills."
 tags: "#webdev #showdev #javascript #react"
 image: "https://cdn-images-1.medium.com/max/1600/1*107_wVVJ8y3BVpo4SQKEkA.png"
-canonical: "https://daviddalbusco.medium.com/more-gatsby-i18n-tips-and-tricks-4b71fc692136"
+canonical: "https://daviddalbusco.medium.com/a-little-scanner-app-made-with-the-web-dc9ebe1f2d4"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*107_wVVJ8y3BVpo4SQKEkA.png)
@@ -163,15 +163,17 @@ It felt a bit like roller coaster of emotion developing this video conversion un
 
 #### One more thing
 
-Oh and, “One more thing”: it does not work on iPhone even if it works like a charm with Safari on OSX. I just did a quick test with my (real) iPhone and it thrown an error.
+Oh and, “One more thing”: it might not work on iPhone even if it works like a charm with Safari on OSX. I just did a quick test with my (real) iPhone and it thrown an error.
 
 > NotAllowedError: The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.
 
 After some research, I found a Webkit [post](https://webkit.org/blog/6784/new-video-policies-for-ios/) explaining that video can, under certain rules, be automatically played on iOS. It did not work anyway therefore, I changed the UX on iPhone to start the process only after a user interaction.
 
-Nevertheless, it did solve the video issue but, lead to another one. The video is not streamed in the cropped canvas. At that point, I just decided to gave up trying to fix iOS for this experiment.
+Nevertheless, it did solve the video issue but, lead to another one. The video was not streamed in the cropped canvas.
 
-Don’t know, don’t care.
+As I did not find any solution, in last resort, I decided to play my last card: calling my mum to ask her to test the feature on her iPad 😉. On the phone, she tried it and, called then my dad to take photos of the device to send me these "screenshots" per WhatsApp 🤣.
+
+To my surprise, it dit work out! Therefore, I came to the conclusion the iPhone with low memory cannot stream a video to canvas.
 
 *****
 
@@ -229,6 +231,8 @@ export const shareImage = async (src) => {
 ```
 
 On desktop, until Chrome supports it in its next version v89 (related [issue](https://www.chromestatus.com/feature/4777349178458112)), I implemented my “go to strategy” aka: if available, use the [File System API](https://web.dev/file-system-access/) and, if not, fallback on a good old school download.
+
+In addition, my mum discovered that the files seems to not be yet implemented on iOS. At least on her iPad (I did not ask her which version), the share was successfully triggered but, no image was attached to the resulting email. That's why, I also implemented to "old school" download solution for such devices.
 
 ```javascript
 export const savePdf = async (src) => {

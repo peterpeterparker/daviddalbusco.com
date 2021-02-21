@@ -70,7 +70,7 @@ class DVBernPage extends React.Component {
               </div>
               <div>
                 <p>
-                  <strong>Infrastructure:</strong> DV Bern AG provide its own IT-Services solution
+                  <strong>Infrastructure:</strong> DV Bern AG provides its own IT-Services solution
                 </p>
                 <p>
                   <strong>Database:</strong>{' '}

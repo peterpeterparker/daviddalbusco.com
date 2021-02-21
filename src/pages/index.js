@@ -11,7 +11,7 @@ import Contact from '../components/contact/contact';
 
 import {library, config} from '@fortawesome/fontawesome-svg-core';
 
-import {faRobot} from '@fortawesome/free-solid-svg-icons';
+import {faCode, faRobot} from '@fortawesome/free-solid-svg-icons';
 import {faSuitcase} from '@fortawesome/free-solid-svg-icons';
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
@@ -45,6 +45,7 @@ library.add(faHatWizard);
 library.add(faCodeBranch);
 library.add(faNewspaper);
 library.add(faAddressCard);
+library.add(faCode);
 
 library.add(faEnvelope);
 

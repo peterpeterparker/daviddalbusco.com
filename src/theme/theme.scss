@@ -1,6 +1,6 @@
 html {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -253,7 +253,21 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 
-img, h1, h2, h3, h4, h5, h6, hgroup, p, figure, table, fieldset, form, noscript, address {
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+p,
+figure,
+table,
+fieldset,
+form,
+noscript,
+address {
   padding: 0;
   margin: 0 0 1.45rem;
 }
@@ -262,7 +276,12 @@ img {
   max-width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: inherit;
   font-weight: 500;
   text-rendering: optimizeLegibility;
@@ -293,17 +312,23 @@ h6 {
   font-size: 0.78405rem;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   font-size: 1.25rem;
   line-height: 1.5;
 }
 
-ul, ol, dl, dd {
+ul,
+ol,
+dl,
+dd {
   padding: 0;
   margin: 0 0 1.45rem 1.45rem;
 }
 
-ul, ol {
+ul,
+ol {
   list-style-position: outside;
   list-style-image: none;
 }
@@ -339,7 +364,10 @@ hr {
   height: 1px;
 }
 
-b, strong, dt, th {
+b,
+strong,
+dt,
+th {
   font-weight: 700;
 }
 
@@ -347,17 +375,21 @@ li {
   margin-bottom: calc(1.45rem / 2);
 }
 
-ol li, ul li {
+ol li,
+ul li {
   padding-left: 0;
 }
 
-li > ol, li > ul {
+li > ol,
+li > ul {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
 }
 
-blockquote *:last-child, li *:last-child, p *:last-child {
+blockquote *:last-child,
+li *:last-child,
+p *:last-child {
   margin-bottom: 0;
 }
 
@@ -365,12 +397,15 @@ li > p {
   margin-bottom: calc(1.45rem / 2);
 }
 
-code, kbd, samp {
+code,
+kbd,
+samp {
   font-size: 0.85rem;
   line-height: 1.45rem;
 }
 
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
   cursor: help;
 }
@@ -407,8 +442,7 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-  "Liberation Mono", Menlo, Courier, monospace;
+  font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono", "Liberation Mono", Menlo, Courier, monospace;
   padding: 0.2em 0;
 }
 

@@ -1,5 +1,5 @@
-section.portfolio, section.other-projects {
-
+section.portfolio,
+section.other-projects {
   div.projects {
     display: grid;
 
@@ -36,7 +36,7 @@ section.portfolio, section.other-projects {
       position: relative;
 
       > div {
-        border-radius: .5rem;
+        border-radius: 0.5rem;
 
         display: flex;
         flex-direction: column;
@@ -48,7 +48,7 @@ section.portfolio, section.other-projects {
       }
 
       > div.summary {
-        background: #F2F2F2;
+        background: #f2f2f2;
 
         box-shadow: 3px 3px var(--color-primary);
         border: 1px solid var(--color-primary);
@@ -61,54 +61,54 @@ section.portfolio, section.other-projects {
 
       &.ourenergy {
         > div {
-
           &.details {
-            background: #FCEA03;
+            background: #fcea03;
           }
         }
       }
 
       &.eth-library-lab {
         > div {
-          background: #BBC3CC;
+          background: #bbc3cc;
 
           div.gatsby-image-wrapper {
-            border: 1px solid #728D99;
+            border: 1px solid #728d99;
             border-radius: 50%;
-            background: #F0F0ED;
+            background: #f0f0ed;
           }
 
           &.details {
-            background: #1F407A;
+            background: #1f407a;
             color: white;
           }
         }
       }
 
-      &.bonjour-circle, &.bonjour-bloom {
+      &.bonjour-circle,
+      &.bonjour-bloom {
         > div {
-          background: #FFD664;
+          background: #ffd664;
 
           div.gatsby-image-wrapper {
-            border: 1px solid #8F7C76;
+            border: 1px solid #8f7c76;
             border-radius: 50%;
           }
 
           &.details {
-            background: #80F4EC;
+            background: #80f4ec;
           }
         }
       }
 
       &.bonjour-circle {
         div.gatsby-image-wrapper {
-          background: #F0F0ED;
+          background: #f0f0ed;
         }
       }
 
       &.bonjour-bloom {
         div.gatsby-image-wrapper {
-          background: #F6C691;
+          background: #f6c691;
         }
       }
 
@@ -116,12 +116,13 @@ section.portfolio, section.other-projects {
         > div {
           background: #0cd1e8;
 
-          &.summary, &.details {
+          &.summary,
+          &.details {
             color: black;
           }
 
           &.details {
-            background: #3A81FE;
+            background: #3a81fe;
           }
         }
       }
@@ -139,7 +140,7 @@ section.portfolio, section.other-projects {
       &.wooof {
         > div {
           &.details {
-            background: #F16664;
+            background: #f16664;
             color: white;
           }
         }
@@ -148,7 +149,7 @@ section.portfolio, section.other-projects {
       &.watamato {
         > div {
           &.details {
-            background: #EB5A46;
+            background: #eb5a46;
             color: white;
           }
         }
@@ -156,14 +157,14 @@ section.portfolio, section.other-projects {
 
       &.tietracker {
         > div {
-          background: #230F29;
+          background: #230f29;
 
           &.summary {
             color: white;
           }
 
           &.details {
-            background: #5BE8CD;
+            background: #5be8cd;
             color: black;
           }
         }
@@ -171,9 +172,10 @@ section.portfolio, section.other-projects {
 
       &.fluster {
         > div {
-          background: #FF65A9;
+          background: #ff65a9;
 
-          &.summary, &.details {
+          &.summary,
+          &.details {
             color: white;
           }
 
@@ -185,9 +187,10 @@ section.portfolio, section.other-projects {
 
       &.dvb {
         > div {
-          background: #2E4051;
+          background: #2e4051;
 
-          &.summary, &.details {
+          &.summary,
+          &.details {
             color: white;
           }
 
@@ -233,7 +236,7 @@ section.portfolio, section.other-projects {
         }
       }
 
-      > div.details  {
+      > div.details {
         visibility: hidden;
         opacity: 0;
 
@@ -247,7 +250,8 @@ section.portfolio, section.other-projects {
 
         transition: all 1s;
 
-        h2, p {
+        h2,
+        p {
           position: absolute;
           left: 50%;
           transform: translate(-50%, -50%);
@@ -273,7 +277,8 @@ section.portfolio, section.other-projects {
           }
         }
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
           > div.details {
             visibility: visible;
             opacity: 1;

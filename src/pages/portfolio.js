@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react';
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo/seo"
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo/seo';
 
-import Projects from "../components/projects/projects"
+import Projects from '../components/projects/projects';
 
 class Portfolio extends React.Component {
   render() {
@@ -13,8 +13,8 @@ class Portfolio extends React.Component {
 
         <Projects all={true} />
       </Layout>
-    )
+    );
   }
 }
 
-export default Portfolio
+export default Portfolio;

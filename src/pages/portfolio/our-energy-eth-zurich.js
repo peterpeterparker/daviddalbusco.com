@@ -1,11 +1,11 @@
-import React from "react"
-import SEO from "../../components/seo/seo"
-import Layout from "../../components/layout/layout"
-import { graphql, StaticQuery } from "gatsby"
+import React from 'react';
+import SEO from '../../components/seo/seo';
+import Layout from '../../components/layout/layout';
+import {graphql, StaticQuery} from 'gatsby';
 
-import Chapter from "../../components/chapter/chapter"
-import Slider from "../../components/slider/slider"
-import Projects from "../../components/projects/projects"
+import Chapter from '../../components/chapter/chapter';
+import Slider from '../../components/slider/slider';
+import Projects from '../../components/projects/projects';
 
 class OurEnergyPage extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class OurEnergyPage extends React.Component {
       this.props.data.ourEnergyScreenshot1.childImageSharp.fluid,
       this.props.data.ourEnergyScreenshot2.childImageSharp.fluid,
       this.props.data.ourEnergyScreenshot3.childImageSharp.fluid,
-    ]
+    ];
 
     return (
       <Layout fixNav={true}>
@@ -28,22 +28,18 @@ class OurEnergyPage extends React.Component {
             <article className="info">
               <div>
                 <p>
-                  I have developed the application "Our Energy" for a team of
-                  researchers at the{" "}
+                  I have developed the application "Our Energy" for a team of researchers at the{' '}
                   <a href="https://ethz.ch/" rel="noopener noreferrer">
                     ETH Zürich
                   </a>
                   .
                 </p>
                 <p>
-                  It is a mobile and web application for citizens to learn how
-                  they can intelligently use electricity produce from a
-                  community scale PV system. This is especially for people who
-                  have not yet installed solar or who are interested in solar.
+                  It is a mobile and web application for citizens to learn how they can intelligently use electricity produce from a
+                  community scale PV system. This is especially for people who have not yet installed solar or who are interested in solar.
                 </p>
                 <p>
-                  This app was notably used as a support for a 2-week energy
-                  challenge in June 2019 for the people of Einsiedeln in
+                  This app was notably used as a support for a 2-week energy challenge in June 2019 for the people of Einsiedeln in
                   Switzerland.
                 </p>
               </div>
@@ -62,66 +58,51 @@ class OurEnergyPage extends React.Component {
             <article>
               <div>
                 <p>
-                  <strong>Available:</strong>{" "}
+                  <strong>Available:</strong>{' '}
                   <a href="http://ourenergy.ch" rel="noopener noreferrer">
                     Progressive Web Apps
                   </a>
-                  ,{" "}
-                  <a
-                    href="https://itunes.apple.com/app/id1453497591"
-                    rel="noopener noreferrer"
-                  >
+                  ,{' '}
+                  <a href="https://itunes.apple.com/app/id1453497591" rel="noopener noreferrer">
                     Apple Store
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy"
-                    rel="noopener noreferrer"
-                  >
+                  </a>{' '}
+                  and{' '}
+                  <a href="http://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy" rel="noopener noreferrer">
                     Google Play
                   </a>
                 </p>
                 <p>
-                  <strong>Website:</strong>{" "}
-                  <a
-                    href="http://www.ia.arch.ethz.ch/our-energy/"
-                    rel="noopener noreferrer"
-                  >
-                    {" "}
+                  <strong>Website:</strong>{' '}
+                  <a href="http://www.ia.arch.ethz.ch/our-energy/" rel="noopener noreferrer">
+                    {' '}
                     iA, Chair of Information Architecture, ETH Zürich
                   </a>
                 </p>
               </div>
               <div>
                 <p>
-                  <strong>Technology:</strong>{" "}
+                  <strong>Technology:</strong>{' '}
                   <a href="http://ionicframework.com" rel="noopener noreferrer">
                     Ionic
                   </a>
-                  ,{" "}
+                  ,{' '}
                   <a href="http://angular.io" rel="noopener noreferrer">
                     Angular
-                  </a>{" "}
-                  and{" "}
+                  </a>{' '}
+                  and{' '}
                   <a href="http://cordova.apache.org" rel="noopener noreferrer">
                     Cordova
                   </a>
                 </p>
                 <p>
-                  <strong>Infrastructure:</strong>{" "}
-                  <a
-                    href="https://firebase.google.com"
-                    rel="noopener noreferrer"
-                  >
+                  <strong>Infrastructure:</strong>{' '}
+                  <a href="https://firebase.google.com" rel="noopener noreferrer">
                     Google Cloud Firebase
                   </a>
                 </p>
                 <p>
-                  <strong>Database:</strong>{" "}
-                  <a
-                    href="https://firebase.google.com/docs/firestore"
-                    rel="noopener noreferrer"
-                  >
+                  <strong>Database:</strong>{' '}
+                  <a href="https://firebase.google.com/docs/firestore" rel="noopener noreferrer">
                     Google Firestore
                   </a>
                 </p>
@@ -130,9 +111,9 @@ class OurEnergyPage extends React.Component {
           </main>
         </section>
 
-        <Projects filter={"ourenergy"} />
+        <Projects filter={'ourenergy'} />
       </Layout>
-    )
+    );
   }
 }
 
@@ -140,36 +121,28 @@ const OurEnergyPageQuery = () => (
   <StaticQuery
     query={graphql`
       query {
-        ourEnergyImage: file(
-          relativePath: { eq: "portfolio/ourenergy-icon.png" }
-        ) {
+        ourEnergyImage: file(relativePath: {eq: "portfolio/ourenergy-icon.png"}) {
           childImageSharp {
             fluid(maxWidth: 240) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        ourEnergyScreenshot1: file(
-          relativePath: { eq: "portfolio/ourenergy/screenshot1.png" }
-        ) {
+        ourEnergyScreenshot1: file(relativePath: {eq: "portfolio/ourenergy/screenshot1.png"}) {
           childImageSharp {
             fluid(maxWidth: 540) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        ourEnergyScreenshot2: file(
-          relativePath: { eq: "portfolio/ourenergy/screenshot2.png" }
-        ) {
+        ourEnergyScreenshot2: file(relativePath: {eq: "portfolio/ourenergy/screenshot2.png"}) {
           childImageSharp {
             fluid(maxWidth: 540) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        ourEnergyScreenshot3: file(
-          relativePath: { eq: "portfolio/ourenergy/screenshot3.png" }
-        ) {
+        ourEnergyScreenshot3: file(relativePath: {eq: "portfolio/ourenergy/screenshot3.png"}) {
           childImageSharp {
             fluid(maxWidth: 540) {
               ...GatsbyImageSharpFluid
@@ -180,6 +153,6 @@ const OurEnergyPageQuery = () => (
     `}
     render={(data) => <OurEnergyPage data={data} />}
   />
-)
+);
 
-export default OurEnergyPageQuery
+export default OurEnergyPageQuery;

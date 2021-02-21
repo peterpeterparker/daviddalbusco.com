@@ -1,10 +1,10 @@
-import React from "react"
-import SEO from "../../components/seo/seo"
-import Layout from "../../components/layout/layout"
-import { graphql, StaticQuery } from "gatsby"
+import React from 'react';
+import SEO from '../../components/seo/seo';
+import Layout from '../../components/layout/layout';
+import {graphql, StaticQuery} from 'gatsby';
 
-import Chapter from "../../components/chapter/chapter"
-import Projects from "../../components/projects/projects"
+import Chapter from '../../components/chapter/chapter';
+import Projects from '../../components/projects/projects';
 
 class BonjourCirclePage extends React.Component {
   render() {
@@ -14,33 +14,26 @@ class BonjourCirclePage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter
-              img={this.props.data.bonjourCircleImage.childImageSharp.fluid}
-            >
+            <Chapter img={this.props.data.bonjourCircleImage.childImageSharp.fluid}>
               <h1>Bonjour - Circle</h1>
             </Chapter>
 
             <article className="info">
               <div>
                 <p>
-                  I developed several components and applications for{" "}
-                  <a
-                    href="https://www.customfuture.com"
-                    rel="noopener noreferrer"
-                  >
+                  I developed several components and applications for{' '}
+                  <a href="https://www.customfuture.com" rel="noopener noreferrer">
                     customfuture SA
-                  </a>{" "}
+                  </a>{' '}
                   and "Bonjour".
                 </p>
                 <p>
-                  One of these, called "OneCircle", is the upcoming app that
-                  asks “Bonjour! How are you today?” on a daily basis and then
+                  One of these, called "OneCircle", is the upcoming app that asks “Bonjour! How are you today?” on a daily basis and then
                   informs close relatives.
                 </p>
                 <p>
-                  "Bonjour" is a charity "Think-and-do Tank" projects, an
-                  incubator for idea, tools and impulse for a better
-                  self-determined life.
+                  "Bonjour" is a charity "Think-and-do Tank" projects, an incubator for idea, tools and impulse for a better self-determined
+                  life.
                 </p>
                 <p>Their goal is to work together for a better future.</p>
               </div>
@@ -57,43 +50,37 @@ class BonjourCirclePage extends React.Component {
             <article>
               <div>
                 <p>
-                  <strong>Technology:</strong>{" "}
+                  <strong>Technology:</strong>{' '}
                   <a href="http://ionicframework.com" rel="noopener noreferrer">
                     Ionic
                   </a>
-                  ,{" "}
+                  ,{' '}
                   <a href="http://angular.io" rel="noopener noreferrer">
                     Angular
-                  </a>{" "}
-                  and{" "}
+                  </a>{' '}
+                  and{' '}
                   <a href="http://cordova.apache.org" rel="noopener noreferrer">
                     Cordova
                   </a>
                 </p>
                 <p>
-                  <strong>Website:</strong>{" "}
+                  <strong>Website:</strong>{' '}
                   <a href="https://bonjour.help" rel="noopener noreferrer">
-                    {" "}
+                    {' '}
                     Bonjour.help
                   </a>
                 </p>
               </div>
               <div>
                 <p>
-                  <strong>Infrastructure:</strong>{" "}
-                  <a
-                    href="https://firebase.google.com"
-                    rel="noopener noreferrer"
-                  >
+                  <strong>Infrastructure:</strong>{' '}
+                  <a href="https://firebase.google.com" rel="noopener noreferrer">
                     Google Cloud Firebase
                   </a>
                 </p>
                 <p>
-                  <strong>Database:</strong>{" "}
-                  <a
-                    href="https://firebase.google.com/docs/firestore"
-                    rel="noopener noreferrer"
-                  >
+                  <strong>Database:</strong>{' '}
+                  <a href="https://firebase.google.com/docs/firestore" rel="noopener noreferrer">
                     Google Firestore
                   </a>
                 </p>
@@ -102,9 +89,9 @@ class BonjourCirclePage extends React.Component {
           </main>
         </section>
 
-        <Projects filter={"bonjour-circle"} />
+        <Projects filter={'bonjour-circle'} />
       </Layout>
-    )
+    );
   }
 }
 
@@ -112,9 +99,7 @@ const BonjourCirclePageQuery = () => (
   <StaticQuery
     query={graphql`
       query {
-        bonjourCircleImage: file(
-          relativePath: { eq: "portfolio/bonjour-circle-icon.png" }
-        ) {
+        bonjourCircleImage: file(relativePath: {eq: "portfolio/bonjour-circle-icon.png"}) {
           childImageSharp {
             fluid(maxWidth: 240) {
               ...GatsbyImageSharpFluid
@@ -125,6 +110,6 @@ const BonjourCirclePageQuery = () => (
     `}
     render={(data) => <BonjourCirclePage data={data} />}
   />
-)
+);
 
-export default BonjourCirclePageQuery
+export default BonjourCirclePageQuery;

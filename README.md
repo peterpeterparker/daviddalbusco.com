@@ -32,5 +32,5 @@ npm install -g gatsby-cli
 
 MIT © [David Dal Busco](mailto:david.dalbusco@outlook.com)
 
-[David Dal Busco]: https://daviddalbusco.com
-[Gatsby]: https://www.gatsbyjs.org/
+[david dal busco]: https://daviddalbusco.com
+[gatsby]: https://www.gatsbyjs.org/

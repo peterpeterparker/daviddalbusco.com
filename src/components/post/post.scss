@@ -2,7 +2,8 @@ a.post {
   text-decoration: none;
   color: inherit;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     text-decoration: none;
     color: var(--color-highlight);
 
@@ -26,7 +27,8 @@ a.post {
 
     margin: 1.75rem 0 2.75rem;
 
-    div.image, div.details {
+    div.image,
+    div.details {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -36,7 +38,7 @@ a.post {
       position: relative;
       align-items: center;
 
-      --deckgo-lazy-img-border-radius: .5rem;
+      --deckgo-lazy-img-border-radius: 0.5rem;
       --deckgo-lazy-img-display: block;
 
       box-shadow: 3px 3px var(--color-primary);

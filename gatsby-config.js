@@ -4,9 +4,9 @@ module.exports = {
     description: `Freelance Web Developer - Web, Progressive Web Apps and Mobile - Project management - UX and IT consulting`,
     author: `David Dal Busco`,
     url: `https://daviddalbusco.com`,
-    image: "/images/daviddalbusco.jpg",
-    twitterUsername: "@daviddalbusco",
-    siteUrl: `https://daviddalbusco.com`
+    image: '/images/daviddalbusco.jpg',
+    twitterUsername: '@daviddalbusco',
+    siteUrl: `https://daviddalbusco.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -35,7 +35,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-highlight-code`
+            resolve: `gatsby-remark-highlight-code`,
           },
         ],
       },
@@ -58,6 +58,6 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-feed`
+    `gatsby-plugin-feed`,
   ],
-}
+};

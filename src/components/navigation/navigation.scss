@@ -11,7 +11,7 @@ section.navigation {
     border-bottom: 3px solid var(--color-secondary);
 
     &.animated {
-      transition: all .35s;
+      transition: all 0.35s;
     }
 
     a.home {
@@ -20,7 +20,8 @@ section.navigation {
     }
   }
 
-  h3, svg {
+  h3,
+  svg {
     color: #ffffff;
   }
 

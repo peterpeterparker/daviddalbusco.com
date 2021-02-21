@@ -147,7 +147,7 @@ class OwllyPage extends React.Component {
   }
 }
 
-export default () => (
+const OwllyPageQuery = () => (
   <StaticQuery
     query={graphql`
       query {
@@ -165,3 +165,5 @@ export default () => (
     render={(data) => <OwllyPage data={data} />}
   />
 )
+
+export default OwllyPageQuery

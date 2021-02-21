@@ -6,17 +6,15 @@ import SEO from "../components/seo/seo"
 import Projects from "../components/projects/projects"
 
 class Portfolio extends React.Component {
-
   render() {
-    return <Layout fixNav={true}>
-      <SEO title="Portfolio" />
+    return (
+      <Layout fixNav={true}>
+        <SEO title="Portfolio" />
 
-      <Projects all={true}/>
-
-    </Layout>
+        <Projects all={true} />
+      </Layout>
+    )
   }
 }
 
-export default () => (
-  <Portfolio/>
-)
+export default Portfolio

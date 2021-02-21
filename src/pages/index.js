@@ -31,8 +31,8 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
 // https://github.com/FortAwesome/react-fontawesome/issues/134#issuecomment-471940596
-import '@fortawesome/fontawesome-svg-core/styles.css';
-config.autoAddCss = false;
+import "@fortawesome/fontawesome-svg-core/styles.css"
+config.autoAddCss = false
 
 library.add(faRobot)
 library.add(faSuitcase)
@@ -55,26 +55,37 @@ library.add(faTwitter)
 library.add(faLinkedinIn)
 
 class IndexPage extends React.Component {
-
-    render() {
-        return <Layout fixNav={false}>
-            <SEO/>
-            <Header/>
-            <Projects/>
-            <About/>
-            <Blog/>
-            <Contact/>
-        </Layout>
-    }
+  render() {
+    return (
+      <Layout fixNav={false}>
+        <SEO />
+        <Header />
+        <Projects />
+        <About />
+        <Blog />
+        <Contact />
+      </Layout>
+    )
+  }
 }
 
-export default () => (
-  <IndexPage/>
-)
+export default IndexPage
 
 // IE9: https://stackoverflow.com/questions/5472938/does-ie9-support-console-log-and-is-it-a-real-function#answer-5473193
-const log = Function.prototype.bind.call(console.log, console);
-log.apply(console, ['%cDavid Dal Busco', 'color: #ff65a9;font-size:2rem;font-weight: 300;']);
-log.apply(console, ['%cHey, interested in the code of this website? Lucky you, it is open source 😜', 'color: #2d294c;font-size:1rem;font-weight: 300;']);
-log.apply(console, ['%cCome say hi on Github', 'color: #2d294c;font-size:1rem;font-weight: 300;']);
-log.apply(console, ['%chttps://github.com/peterpeterparker/daviddalbusco.com', 'font-size:1rem;font-weight: 300;']);
+const log = Function.prototype.bind.call(console.log, console)
+log.apply(console, [
+  "%cDavid Dal Busco",
+  "color: #ff65a9;font-size:2rem;font-weight: 300;",
+])
+log.apply(console, [
+  "%cHey, interested in the code of this website? Lucky you, it is open source 😜",
+  "color: #2d294c;font-size:1rem;font-weight: 300;",
+])
+log.apply(console, [
+  "%cCome say hi on Github",
+  "color: #2d294c;font-size:1rem;font-weight: 300;",
+])
+log.apply(console, [
+  "%chttps://github.com/peterpeterparker/daviddalbusco.com",
+  "font-size:1rem;font-weight: 300;",
+])

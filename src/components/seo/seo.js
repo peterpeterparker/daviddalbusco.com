@@ -5,30 +5,30 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import {useStaticQuery, graphql} from 'gatsby';
 
-function SEO({ description, lang, meta, title, canonical }) {
-  const { site } = useStaticQuery(
+function SEO({description, lang, meta, title, canonical}) {
+  const {site} = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
             description
-            author,
-            url,
-            image,
+            author
+            url
+            image
             twitterUsername
           }
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
   const metaTitle = title ? title : site.siteMetadata.title;
 
   return (
@@ -38,9 +38,7 @@ function SEO({ description, lang, meta, title, canonical }) {
       }}
       title={metaTitle}
       titleTemplate={title ? `%s | ${site.siteMetadata.title}` : `%s`}
-      link={
-        canonical ? [{ rel: 'canonical', key: canonical, href: canonical }] : []
-      }
+      link={canonical ? [{rel: 'canonical', key: canonical, href: canonical}] : []}
       meta={[
         {
           name: `description`,
@@ -92,20 +90,20 @@ function SEO({ description, lang, meta, title, canonical }) {
         },
       ].concat(meta)}
     />
-  )
+  );
 }
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  canonical: PropTypes.string
-}
+  canonical: PropTypes.string,
+};
 
-export default SEO
+export default SEO;

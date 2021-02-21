@@ -17,7 +17,8 @@ section.about {
       a {
         text-decoration: none;
 
-        &:hover, &:active {
+        &:hover,
+        &:active {
           color: inherit;
           text-decoration: underline;
         }

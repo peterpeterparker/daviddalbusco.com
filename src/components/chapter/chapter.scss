@@ -1,5 +1,7 @@
 div.chapter {
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     text-align: center;
   }
 
@@ -15,7 +17,8 @@ div.chapter {
     }
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     text-shadow: 1px 1px var(--color-secondary);
   }
 
@@ -56,7 +59,7 @@ div.chapter {
 
       width: 100%;
       max-width: 7rem;
-      height: .15rem;
+      height: 0.15rem;
       border-radius: 1rem;
 
       &:first-of-type {
@@ -72,7 +75,5 @@ div.chapter {
       width: 2.45rem;
       height: 2.45rem;
     }
-
   }
 }
-

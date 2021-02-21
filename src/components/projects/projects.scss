@@ -200,6 +200,21 @@ section.other-projects {
         }
       }
 
+      &.mobi {
+        > div {
+          background: #DA2323;
+
+          &.summary,
+          &.details {
+            color: white;
+          }
+
+          &.details {
+            background: rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+
       &.ineexa {
         > div {
           background: #f3f3f3;

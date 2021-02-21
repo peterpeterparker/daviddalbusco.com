@@ -33,18 +33,31 @@ class Projects extends React.Component {
 
             {this.renderOwlly()}
 
-            {this.renderETHLibraryLab()}
-
             {this.renderBonjourCircle()}
 
             {this.renderBonjourBloom()}
-
-            {this.renderDVB()}
 
             {this.renderIneexa()}
           </div>
         </main>
       </section>,
+
+      <section className="other-projects extraspace-bottom" key="extDeveloperProjects">
+        <main>
+          <Chapter icon="code">
+            <h2>External developer & Consulting</h2>
+          </Chapter>
+
+          <div className="projects">
+            {this.renderMobi()}
+
+            {this.renderETHLibraryLab()}
+
+            {this.renderDVB()}
+          </div>
+        </main>
+      </section>,
+
       <section className="other-projects extraspace-bottom" key="sideProjects">
         <main>
           <Chapter icon="hat-wizard">
@@ -210,6 +223,26 @@ class Projects extends React.Component {
             <div className="details">
               <h2>DV Bern AG</h2>
 
+              <p>Details</p>
+            </div>
+          </article>
+        </Link>
+      );
+    } else {
+      return undefined;
+    }
+  }
+
+  renderMobi() {
+    if (!this.props || this.props.filter !== 'mobi') {
+      return (
+        <Link to="/portfolio/mobi" aria-label="Die Mobiliar - La Mobilière">
+          <article className={this.state.mobile ? 'mobi mobile' : 'mobi'}>
+            <div className="summary">
+              <Img fluid={this.props.data.mobiImage.childImageSharp.fluid} />
+            </div>
+
+            <div className="details">
               <p>Details</p>
             </div>
           </article>
@@ -446,6 +479,13 @@ export default ({filter, all}) => (
           }
         }
         dvbImage: file(relativePath: {eq: "portfolio/dvb-icon.png"}) {
+          childImageSharp {
+            fluid(maxWidth: 240) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        mobiImage: file(relativePath: {eq: "portfolio/mobi-icon.png"}) {
           childImageSharp {
             fluid(maxWidth: 240) {
               ...GatsbyImageSharpFluid

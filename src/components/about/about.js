@@ -53,7 +53,6 @@ class About extends React.Component {
             I have a computer engineering degree and an executive master in business administration. I speak fluently French, German and
             English.
           </p>
-          <p>You could hire me as a contractor, to be part of your team, or ask me to take over your overall projects.</p>
           <p>
             If you have got a Web, Progressive Web Apps or mobile (iOS/Android) project in mind,{' '}
             <mark>

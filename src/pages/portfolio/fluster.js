@@ -101,7 +101,7 @@ class FlusterPage extends React.Component {
                   </a>{' '}
                   and{' '}
                   <a href="https://angular.io/guide/universal" rel="noopener noreferrer">
-                    Angular Service-side Rendering (SSR)
+                    Angular Universal (Server-side Rendering, SSR)
                   </a>
                 </p>
                 <p>

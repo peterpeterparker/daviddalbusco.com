@@ -137,6 +137,18 @@ section.other-projects {
         }
       }
 
+      &.discoverweeklydev {
+        > div {
+          background: #161B22;
+          color: white;
+
+          &.details {
+            background: rgb(109,40,217);
+            color: white;
+          }
+        }
+      }
+
       &.wooof {
         > div {
           &.details {

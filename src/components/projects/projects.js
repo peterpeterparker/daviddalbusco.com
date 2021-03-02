@@ -69,6 +69,8 @@ class Projects extends React.Component {
 
             {this.renderTieTracker()}
 
+            {this.props && this.props.all ? this.renderDiscoverWeeklyDev() : undefined}
+
             {this.props && this.props.all ? this.renderFluster() : undefined}
           </div>
 
@@ -373,6 +375,30 @@ class Projects extends React.Component {
     }
   }
 
+  renderDiscoverWeeklyDev() {
+    if (!this.props || this.props.filter !== 'discoverweeklydev') {
+      return (
+        <Link to="/portfolio/discoverweeklydev" aria-label="DiscoverWeekly.dev">
+          <article className={this.state.mobile ? 'discoverweeklydev mobile' : 'discoverweeklydev'}>
+            <div className="summary">
+              <Img fluid={this.props.data.discoverweeklydevImage.childImageSharp.fluid} />
+
+              <h3>DiscoverWeekly.dev</h3>
+            </div>
+
+            <div className="details">
+              <h2>DiscoverWeekly.dev</h2>
+
+              <p>Details</p>
+            </div>
+          </article>
+        </Link>
+      );
+    } else {
+      return undefined;
+    }
+  }
+
   renderWooof() {
     if (!this.props || this.props.filter !== 'wooof') {
       return (
@@ -507,6 +533,13 @@ export default ({filter, all}) => (
           }
         }
         rebelscanImage: file(relativePath: {eq: "portfolio/rebelscan-icon.png"}) {
+          childImageSharp {
+            fluid(maxWidth: 240) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        discoverweeklydevImage: file(relativePath: {eq: "portfolio/discoverweeklydev-icon.png"}) {
           childImageSharp {
             fluid(maxWidth: 240) {
               ...GatsbyImageSharpFluid

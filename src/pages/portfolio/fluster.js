@@ -30,7 +30,7 @@ class FlusterPage extends React.Component {
 
             <article className="info">
               <div>
-                <p>I used to develop "Fluster" as a personal project.</p>
+                <p>I used to develop "Fluster" as a personal, now deprecated, project.</p>
                 <p>
                   When I moved to Zürich I was struggling to find flat and roommates, that's why I tried to develop my own platform to help
                   others and myself to solve such problems.

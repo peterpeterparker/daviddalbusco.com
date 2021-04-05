@@ -152,7 +152,7 @@ export class Question {
   render() {
     return <Host>
       <p>{translate('question')}</p>
-      <slot name="answer">{translate('supper', 'de')}</slot>
+      <slot name="answer">{translate('super', 'de')}</slot>
     </Host>;
   }
 }

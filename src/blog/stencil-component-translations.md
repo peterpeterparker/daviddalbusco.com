@@ -2,7 +2,7 @@
 path: "/blog/stencil-component-translations"
 date: "2021-04-05"
 title: "Stencil Component Translations"
-description: "A quick way to setup i18n for Stencil components without dependencies."
+description: "A quick way to set up i18n for Stencil components without dependencies."
 tags: "#javascript #typescript #stencil #showdev"
 image: "https://cdn-images-1.medium.com/max/1600/1*NXe3RbssR10n4RGMVGoZVg.jpeg"
 canonical: "https://daviddalbusco.medium.com/stencil-component-translations-4efc44018b1d"

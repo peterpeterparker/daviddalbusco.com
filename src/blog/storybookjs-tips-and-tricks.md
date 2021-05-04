@@ -67,6 +67,7 @@ According [StorybookJS](https://storybook.js.org/docs/react/writing-docs/docs-pa
 
 ```javascript
 import {Doc} from './Text.mdx';
+
 export default {
   title: 'Components/Text',
   parameters: {

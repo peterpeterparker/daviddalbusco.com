@@ -2,10 +2,10 @@
 path: "/blog/storybookjs-tips-and-tricks"
 date: "2021-05-05"
 title: "StorybookJS: Tips & Tricks"
-description: "Import Markdown files as Docs only pages, use a CDN to load dependencies & sort stories in StorybookJS."
+description: "Import Markdown files as Docs only pages, use a CDN to load dependencies & sort stories."
 tags: "#javascript #storybook #webdev #webcomponents"
 image: "https://cdn-images-1.medium.com/max/1600/1*0yBFNNJGxc4vkhEPgV21aA.jpeg"
-canonical: ""
+canonical: "https://daviddalbusco.medium.com/storybookjs-tips-tricks-785bc39aacbe"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*0yBFNNJGxc4vkhEPgV21aA.jpeg)
@@ -34,7 +34,7 @@ At the time of writing the StorybookJS issue [#11981](https://github.com/storybo
 
 #### Limitation
 
-Even though it works very well, I did not manage to highlight the block of codes displayed in the pages and imported from Markdown files. I also let a [comment](https://github.com/storybookjs/storybook/issues/11981#issuecomment-830158237) about it in the above issue.
+Even though it works very well, I did not manage to highlight the block of codes displayed in the pages and imported from Markdown files. I [commented](https://github.com/storybookjs/storybook/issues/11981#issuecomment-830158237) the issue accordingly.
 
 If you manage to solve this, let me now or, even better, send me a [Pull Request](https://github.com/deckgo/deckdeckgo/) on GitHub 😉.
 
@@ -42,7 +42,7 @@ If you manage to solve this, let me now or, even better, send me a [Pull Request
 
 #### Solution
 
-I am using the HTML flavor of Storybook, I handle my stories in `.js` files as for example in a `Text.stories.js` in which I document a paragraph which accept a background color as argument.
+I am using the HTML version of Storybook, I handle my stories in `.js` files as for example in a `Text.stories.js` in which I document a paragraph that accepts a background color as argument.
 
 ```javascript
 export default {
@@ -101,7 +101,7 @@ import readme from './readme.md';
 export const Doc = () => <Description markdown={readme} />;
 ```
 
-That’s it, the Markdown files are integrated as Docs pages in StorybookJS 🥳.
+That’s it, the Markdown file is integrated as Docs pages in StorybookJS 🥳.
 
 *****
 
@@ -144,7 +144,7 @@ export const parameters = {
         'Introduction',
         ['Introduction', 'Getting Started'],
         'Edit',
-        ['HTML', 'Lazy Loading'
+        ['HTML', 'Lazy Loading']
       ]
     }
   },

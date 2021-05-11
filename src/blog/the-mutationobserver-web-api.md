@@ -1,6 +1,6 @@
 ---
 path: "/blog/the-mutationobserver-web-api"
-date: "2021-05-10"
+date: "2021-05-11"
 title: "The MutationObserver Web API"
 description: "An introduction to the MutationObserver Web API which provides the ability to watch for changes being made to the document."
 tags: "#webdev #showdev #javascript #beginner"

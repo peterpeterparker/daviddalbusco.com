@@ -5,7 +5,7 @@ title: "The MutationObserver Web API"
 description: "An introduction to the MutationObserver Web API which provides the ability to watch for changes being made to the document."
 tags: "#webdev #showdev #javascript #beginner"
 image: "https://cdn-images-1.medium.com/max/1600/1*uslRrEbuAeXmZvnKzhpPaQ.jpeg"
-canonical: "https://daviddalbusco.medium.com/a-little-scanner-app-made-with-the-web-dc9ebe1f2d4"
+canonical: "https://daviddalbusco.medium.com/the-mutationobserver-web-api-cf469261eb36"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*uslRrEbuAeXmZvnKzhpPaQ.jpeg)
@@ -26,11 +26,11 @@ It is a web feature, natively implemented in all browsers (yes even Internet Exp
 
 ### In Other Words
 
-I specially dislike “The Last stand” movie but, do you remember when Rogue gets the vaccine (1) to remove her powers (2). Without any other information, we don’t know if the cure was effective or not. We can try our luck and get in contact to resolve the question (3) but, we cannot be sure of the results. On the other side, thanks to his psychokinesis power, the professor X is him able to detect the mutation (4) and knows if it worked out.
+I dislike "The Last stand" movie but, do you remember when Rogue gets the vaccine (1) to remove her powers (2)? Without any other information, we still don't know if the cure was effective or not. To resolve the question (3), we would have to try our luck and get in contact but, without knowing what result to expect. On the other hand, thanks to his psychokinesis power, the professor X would him be able to detect the mutation (4) and knows if it worked out or not.
 
 Our web page follows the same idea.
 
-When we apply a modification to the document (1), such as modifying a tag or an attribute, with or without framework, it is ultimately interpreted and rendered by the browser (2). Even though the operation is really fast, if we query (3) the DOM elements touched by our changes right afterwards, we cannot be 100% sure that the modifications were already applied. Fortunately, thanks to the `MutationObserver`, we can detect the mutation (4) to get to know when and if it effectively worked out.
+When we apply a modification to the DOM (1), such as modifying a tag or an attribute, with or without framework, it is interpreted and rendered by the browser (2). Even though the operation is really fast, if we query (3) the DOM elements touched by our changes right afterwards, we cannot be 100% sure that the modifications were already applied. Fortunately, thanks to the `MutationObserver`, we can detect the mutation (4) to get to know when and if it effectively worked out.
 
 *****
 
@@ -64,7 +64,7 @@ Last but, not least, it exposes a function `takeRecords()` which can be queried 
 
 ### Concrete Example
 
-I was developing some improvements in the WYSIWG inline editor of [DeckDeckGo](https://deckdeckgo.com) in which I had to apply a color to the user’s selection taken from an input field while preserving the range so that each time the user enters a new color, it is applied to the same selected text.
+I was developing some improvements in the WYSIWYG inline editor of [DeckDeckGo](https://deckdeckgo.com) in which I had to apply a color to the user’s selection, entered via an input field, while preserving the range so that each time the user enters a new color, it would be applied to the same selected text 🤪.
 
 Summarized something like following:
 
@@ -91,7 +91,7 @@ class Cmp {
 
 It should have worked right? Well, no, it did not or at least not fully 😉.
 
-Indeed, getting and applying the color to the selection did work as expected but, I was unable to save the range afterwards, `this.range` was not assigned to my expectation.
+Indeed, getting and applying the color to the selection did work as expected but, I was unable to save the range afterwards, `this.range` was not re-assigned as I was expecting.
 
 Fortunately, I was able to solve the issue with the `MutationObserver` .
 
@@ -127,13 +127,13 @@ class Cmp {
     }
 ```
 
-First (A) I created a new `MutationObserver`. I then defined which node element, in my case a parent one, had to be observed (B) and, I configured the observer (C) to begin receiving notifications through its callback function when DOM changes occurred. In the callback, I first disconnected (D) it, as only one event was interesting for my use case and finally (E) was able to save the range as expected 🥳.
+First (A) I created a new `MutationObserver`. I defined which node element, in my case a parent one, had to be observed (B) and, I configured the observer (C) to begin receiving notifications through its callback function when DOM changes occurred. In the callback, I first disconnected (D) it, as only one event was interesting for my use case and finally (E) was able to save the range as expected 🥳.
 
 *****
 
 ### Go Further
 
-If you liked the `MutationObserver` , I can suggest you to go further and, have a look to the [ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) and [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver).
+If you liked this introduction about the `MutationObserver` , I can suggest you to go further and, have a look to the [ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver) and [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver).
 
 The first one can for example be used to detect changes to the size of editable fields and, the second one to lazy load content.
 

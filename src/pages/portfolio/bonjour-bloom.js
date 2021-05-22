@@ -10,9 +10,9 @@ import Slider from '../../components/slider/slider';
 class BonjourBloomPage extends React.Component {
   render() {
     const images = [
-      this.props.data.bonjourBloomScreenshot1.childImageSharp.fluid,
-      this.props.data.bonjourBloomScreenshot2.childImageSharp.fluid,
-      this.props.data.bonjourBloomScreenshot3.childImageSharp.fluid,
+      this.props.data.bonjourBloomScreenshot1.childImageSharp.gatsbyImageData,
+      this.props.data.bonjourBloomScreenshot2.childImageSharp.gatsbyImageData,
+      this.props.data.bonjourBloomScreenshot3.childImageSharp.gatsbyImageData,
     ];
 
     return (
@@ -21,7 +21,7 @@ class BonjourBloomPage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.bonjourBloomImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.bonjourBloomImage.childImageSharp.gatsbyImageData}>
               <h1>Bonjour - Bloom</h1>
             </Chapter>
 
@@ -102,33 +102,25 @@ class BonjourBloomPage extends React.Component {
 const BonjourBloomPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         bonjourBloomImage: file(relativePath: {eq: "portfolio/bonjour-bloom-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         bonjourBloomScreenshot1: file(relativePath: {eq: "portfolio/bonjour/bloom/screenshot1.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         bonjourBloomScreenshot2: file(relativePath: {eq: "portfolio/bonjour/bloom/screenshot2.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         bonjourBloomScreenshot3: file(relativePath: {eq: "portfolio/bonjour/bloom/screenshot3.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

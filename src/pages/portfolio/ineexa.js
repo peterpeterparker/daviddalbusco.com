@@ -14,7 +14,7 @@ class IneexaPage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.ineexaImg.childImageSharp.fluid}>
+            <Chapter img={this.props.data.ineexaImg.childImageSharp.gatsbyImageData}>
               <h1>Ineexa</h1>
             </Chapter>
 
@@ -77,12 +77,10 @@ class IneexaPage extends React.Component {
 const IneexaPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         ineexaImg: file(relativePath: {eq: "portfolio/ineexa-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

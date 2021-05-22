@@ -15,7 +15,7 @@ class EthLibraryLabPage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.ethLibraryLab.childImageSharp.fluid}>
+            <Chapter img={this.props.data.ethLibraryLab.childImageSharp.gatsbyImageData}>
               <h1>ETH Library Lab</h1>
             </Chapter>
 
@@ -76,12 +76,10 @@ class EthLibraryLabPage extends React.Component {
 const EthLibraryLabPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         ethLibraryLab: file(relativePath: {eq: "portfolio/eth-library-lab-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

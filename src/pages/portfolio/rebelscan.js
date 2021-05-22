@@ -40,7 +40,7 @@ class RebelScanPage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.rebelscanImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.rebelscanImage.childImageSharp.gatsbyImageData}>
               <h1>Rebel Scan</h1>
             </Chapter>
 
@@ -170,12 +170,10 @@ class RebelScanPage extends React.Component {
 const RebelScanPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         rebelscanImage: file(relativePath: {eq: "portfolio/rebelscan-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

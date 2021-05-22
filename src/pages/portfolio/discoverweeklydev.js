@@ -40,7 +40,7 @@ class DiscoverWeeklyDevPage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.discoverweeeklydevDarkImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.discoverweeeklydevDarkImage.childImageSharp.gatsbyImageData}>
               <h1>DiscoverWeekly.dev</h1>
             </Chapter>
 
@@ -143,12 +143,10 @@ class DiscoverWeeklyDevPage extends React.Component {
 const DiscoverWeeklyDevPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         discoverweeeklydevDarkImage: file(relativePath: {eq: "portfolio/discoverweeklydev-dark-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

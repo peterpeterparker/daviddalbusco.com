@@ -14,7 +14,7 @@ class BonjourCirclePage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.bonjourCircleImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.bonjourCircleImage.childImageSharp.gatsbyImageData}>
               <h1>Bonjour - Circle</h1>
             </Chapter>
 
@@ -98,12 +98,10 @@ class BonjourCirclePage extends React.Component {
 const BonjourCirclePageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         bonjourCircleImage: file(relativePath: {eq: "portfolio/bonjour-circle-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

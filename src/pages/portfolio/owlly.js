@@ -15,7 +15,7 @@ class OwllyPage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.owllyLightImg.childImageSharp.fluid}>
+            <Chapter img={this.props.data.owllyLightImg.childImageSharp.gatsbyImageData}>
               <h1>Owlly</h1>
             </Chapter>
 
@@ -134,12 +134,10 @@ class OwllyPage extends React.Component {
 const OwllyPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         owllyLightImg: file(relativePath: {eq: "portfolio/owlly-light-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

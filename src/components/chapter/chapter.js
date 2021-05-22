@@ -1,9 +1,9 @@
 import React from 'react';
 
-import './chapter.scss';
-
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import Img from 'gatsby-image';
+import {GatsbyImage} from 'gatsby-plugin-image';
+
+import './chapter.scss';
 
 class Chapter extends React.Component {
   render() {
@@ -33,7 +33,7 @@ class Chapter extends React.Component {
 
   renderImg() {
     if (this.props.img) {
-      return <Img fluid={this.props.img} />;
+      return <GatsbyImage alt="" role="presentation" image={this.props.img} />;
     } else {
       return undefined;
     }

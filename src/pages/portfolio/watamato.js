@@ -56,7 +56,7 @@ class WatamatoPage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.watamatoImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.watamatoImage.childImageSharp.gatsbyImageData}>
               <h1>Watamato</h1>
             </Chapter>
 
@@ -159,12 +159,10 @@ class WatamatoPage extends React.Component {
 const WatamatoPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         watamatoImage: file(relativePath: {eq: "portfolio/watamato-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

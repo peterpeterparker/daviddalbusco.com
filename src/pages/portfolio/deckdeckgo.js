@@ -39,7 +39,7 @@ class DeckDeckGoPage extends React.Component {
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.deckdeckgoImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.deckdeckgoImage.childImageSharp.gatsbyImageData}>
               <h1>DeckDeckGo</h1>
             </Chapter>
 
@@ -172,12 +172,10 @@ class DeckDeckGoPage extends React.Component {
 const DeckDeckgoPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         deckdeckgoImage: file(relativePath: {eq: "portfolio/deckdeckgo-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

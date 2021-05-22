@@ -1,10 +1,11 @@
 import React from 'react';
 
 import {graphql, StaticQuery, Link} from 'gatsby';
-import './projects.scss';
 
 import Chapter from '../chapter/chapter';
-import Img from 'gatsby-image';
+import {GatsbyImage} from 'gatsby-plugin-image';
+
+import './projects.scss';
 
 import {isMobile} from '@deckdeckgo/utils';
 
@@ -121,7 +122,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/our-energy-eth-zurich" aria-label="Our Energy - ETH Zürich">
           <article className={this.state.mobile ? 'ourenergy mobile' : 'ourenergy'}>
             <div className="summary">
-              <Img fluid={this.props.data.ourEnergyImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.ourEnergyImage.childImageSharp.gatsbyImageData} />
 
               <h3>Our Energy - ETH Zürich</h3>
             </div>
@@ -145,7 +146,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/eth-library-lab" aria-label="ETH Library Lab">
           <article className={this.state.mobile ? 'eth-library-lab mobile' : 'eth-library-lab'}>
             <div className="summary">
-              <Img fluid={this.props.data.ethLibraryLabImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.ethLibraryLabImage.childImageSharp.gatsbyImageData} />
 
               <h3>ETH Library Lab</h3>
             </div>
@@ -169,7 +170,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/bonjour-circle" aria-label="Circle">
           <article className={this.state.mobile ? 'bonjour-circle mobile' : 'bonjour-circle'}>
             <div className="summary">
-              <Img fluid={this.props.data.bonjourCircleImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.bonjourCircleImage.childImageSharp.gatsbyImageData} />
 
               <h3>Bonjour - Circle</h3>
             </div>
@@ -193,7 +194,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/bonjour-bloom" aria-label="Bloom">
           <article className={this.state.mobile ? 'bonjour-bloom mobile' : 'bonjour-bloom'}>
             <div className="summary">
-              <Img fluid={this.props.data.bonjourBloomImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.bonjourBloomImage.childImageSharp.gatsbyImageData} />
 
               <h3>Bonjour - Bloom</h3>
             </div>
@@ -217,7 +218,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/dvbern" aria-label="DV Bern AG">
           <article className={this.state.mobile ? 'dvb mobile' : 'dvb'}>
             <div className="summary">
-              <Img fluid={this.props.data.dvbImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.dvbImage.childImageSharp.gatsbyImageData} />
 
               <h3>DV Bern AG</h3>
             </div>
@@ -241,7 +242,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/mobi" aria-label="Die Mobiliar - La Mobilière">
           <article className={this.state.mobile ? 'mobi mobile' : 'mobi'}>
             <div className="summary">
-              <Img fluid={this.props.data.mobiImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.mobiImage.childImageSharp.gatsbyImageData} />
             </div>
 
             <div className="details">
@@ -261,7 +262,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/ineexa" aria-label="Ineexa">
           <article className={this.state.mobile ? 'ineexa mobile' : 'ineexa'}>
             <div className="summary">
-              <Img fluid={this.props.data.ineexaImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.ineexaImage.childImageSharp.gatsbyImageData} />
 
               <h3>Ineexa</h3>
             </div>
@@ -285,7 +286,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/owlly" aria-label="Owlly">
           <article className={this.state.mobile ? 'owlly mobile' : 'owlly'}>
             <div className="summary">
-              <Img fluid={this.props.data.owllyImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.owllyImage.childImageSharp.gatsbyImageData} />
 
               <h3>Owlly</h3>
             </div>
@@ -309,7 +310,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/deckdeckgo" aria-label="DeckDeckGo">
           <article className={this.state.mobile ? 'deckdeckgo mobile' : 'deckdeckgo'}>
             <div className="summary">
-              <Img fluid={this.props.data.deckDeckGoImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.deckDeckGoImage.childImageSharp.gatsbyImageData} />
 
               <h3>DeckDeckGo</h3>
             </div>
@@ -333,7 +334,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/tietracker" aria-label="Tie Tracker">
           <article className={this.state.mobile ? 'tietracker mobile' : 'tietracker'}>
             <div className="summary">
-              <Img fluid={this.props.data.tieTrackerImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.tieTrackerImage.childImageSharp.gatsbyImageData} />
 
               <h3>Tie Tracker</h3>
             </div>
@@ -357,7 +358,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/rebelscan" aria-label="Rebel Scan">
           <article className={this.state.mobile ? 'rebelscan mobile' : 'rebelscan'}>
             <div className="summary">
-              <Img fluid={this.props.data.rebelscanImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.rebelscanImage.childImageSharp.gatsbyImageData} />
 
               <h3>Rebel Scan</h3>
             </div>
@@ -381,7 +382,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/discoverweeklydev" aria-label="DiscoverWeekly.dev">
           <article className={this.state.mobile ? 'discoverweeklydev mobile' : 'discoverweeklydev'}>
             <div className="summary">
-              <Img fluid={this.props.data.discoverweeklydevImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.discoverweeklydevImage.childImageSharp.gatsbyImageData} />
 
               <h3>DiscoverWeekly.dev</h3>
             </div>
@@ -405,7 +406,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/wooof" aria-label="Wooof">
           <article className={this.state.mobile ? 'wooof mobile' : 'wooof'}>
             <div className="summary">
-              <Img fluid={this.props.data.wooofImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.wooofImage.childImageSharp.gatsbyImageData} />
 
               <h3>Wooof</h3>
             </div>
@@ -429,7 +430,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/watamato" aria-label="Watamato">
           <article className={this.state.mobile ? 'watamato mobile' : 'watamato'}>
             <div className="summary">
-              <Img fluid={this.props.data.watamatoImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.watamatoImage.childImageSharp.gatsbyImageData} />
 
               <h3>Watamato</h3>
             </div>
@@ -453,7 +454,7 @@ class Projects extends React.Component {
         <Link to="/portfolio/fluster" aria-label="Fluster">
           <article className={this.state.mobile ? 'fluster mobile' : 'fluster'}>
             <div className="summary">
-              <Img fluid={this.props.data.flusterImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.flusterImage.childImageSharp.gatsbyImageData} />
 
               <h3>Fluster</h3>
             </div>
@@ -475,110 +476,80 @@ class Projects extends React.Component {
 export default ({filter, all}) => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         ourEnergyImage: file(relativePath: {eq: "portfolio/ourenergy-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         ethLibraryLabImage: file(relativePath: {eq: "portfolio/eth-library-lab-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         bonjourCircleImage: file(relativePath: {eq: "portfolio/bonjour-circle-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         bonjourBloomImage: file(relativePath: {eq: "portfolio/bonjour-bloom-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         dvbImage: file(relativePath: {eq: "portfolio/dvb-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         mobiImage: file(relativePath: {eq: "portfolio/mobi-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         deckDeckGoImage: file(relativePath: {eq: "portfolio/deckdeckgo-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         wooofImage: file(relativePath: {eq: "portfolio/wooof-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         rebelscanImage: file(relativePath: {eq: "portfolio/rebelscan-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         discoverweeklydevImage: file(relativePath: {eq: "portfolio/discoverweeklydev-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         watamatoImage: file(relativePath: {eq: "portfolio/watamato-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         tieTrackerImage: file(relativePath: {eq: "portfolio/tietracker-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         flusterImage: file(relativePath: {eq: "portfolio/fluster-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         ineexaImage: file(relativePath: {eq: "portfolio/ineexa-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         owllyImage: file(relativePath: {eq: "portfolio/owlly-dark-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

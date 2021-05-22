@@ -1,8 +1,9 @@
 import React from 'react';
 
-import './slider.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {GatsbyImage} from 'gatsby-plugin-image';
+
+import './slider.scss';
 
 class Slider extends React.Component {
   render() {

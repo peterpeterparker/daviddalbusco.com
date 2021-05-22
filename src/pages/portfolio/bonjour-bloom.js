@@ -4,8 +4,8 @@ import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
 import Chapter from '../../components/chapter/chapter';
-import Projects from '../../components/projects/projects';
 import Slider from '../../components/slider/slider';
+import Projects from '../../components/projects/projects';
 
 class BonjourBloomPage extends React.Component {
   render() {

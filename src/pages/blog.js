@@ -2,7 +2,7 @@ import React from 'react';
 import {graphql, StaticQuery} from 'gatsby';
 
 import Layout from '../components/layout/layout';
-import SEO from '../components/seo/seo';
+import Seo from '../components/seo/seo';
 import Chapter from '../components/chapter/chapter';
 import Post from '../components/post/post';
 
@@ -12,7 +12,7 @@ class BlogPage extends React.Component {
 
     return (
       <Layout fixNav={true}>
-        <SEO title="Blog" />
+        <Seo title="Blog" />
 
         <section className="blog extrabigspace">
           <main>

@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -10,11 +10,11 @@ class DVBernPage extends React.Component {
   render() {
     return (
       <Layout fixNav={true}>
-        <SEO title="DV Bern AG" />
+        <Seo title="DV Bern AG" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.dvbImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.dvbImage.childImageSharp.gatsbyImageData}>
               <h1>DV Bern AG</h1>
             </Chapter>
 
@@ -92,12 +92,10 @@ class DVBernPage extends React.Component {
 const DVBernPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         dvbImage: file(relativePath: {eq: "portfolio/dvb-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

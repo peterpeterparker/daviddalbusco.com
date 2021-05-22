@@ -37,4 +37,5 @@ class Post extends React.Component {
   }
 }
 
-export default ({node}) => <Post node={node} />;
+const post = ({node}) => <Post node={node} />;
+export default post;

@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -10,11 +10,11 @@ class BonjourCirclePage extends React.Component {
   render() {
     return (
       <Layout fixNav={true}>
-        <SEO title="Bonjour - Circle" />
+        <Seo title="Bonjour - Circle" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.bonjourCircleImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.bonjourCircleImage.childImageSharp.gatsbyImageData}>
               <h1>Bonjour - Circle</h1>
             </Chapter>
 
@@ -98,12 +98,10 @@ class BonjourCirclePage extends React.Component {
 const BonjourCirclePageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         bonjourCircleImage: file(relativePath: {eq: "portfolio/bonjour-circle-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

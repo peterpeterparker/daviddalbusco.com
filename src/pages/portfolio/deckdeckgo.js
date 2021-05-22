@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -35,11 +35,11 @@ class DeckDeckGoPage extends React.Component {
   render() {
     return (
       <Layout fixNav={true}>
-        <SEO title="DeckDeckGo" />
+        <Seo title="DeckDeckGo" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.deckdeckgoImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.deckdeckgoImage.childImageSharp.gatsbyImageData}>
               <h1>DeckDeckGo</h1>
             </Chapter>
 
@@ -172,12 +172,10 @@ class DeckDeckGoPage extends React.Component {
 const DeckDeckgoPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         deckdeckgoImage: file(relativePath: {eq: "portfolio/deckdeckgo-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

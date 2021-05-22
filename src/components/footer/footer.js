@@ -56,4 +56,5 @@ Sihlquai 131
   }
 }
 
-export default () => <Footer />;
+const footer = () => <Footer />;
+export default footer;

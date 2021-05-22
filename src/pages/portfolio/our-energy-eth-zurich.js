@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -10,18 +10,18 @@ import Projects from '../../components/projects/projects';
 class OurEnergyPage extends React.Component {
   render() {
     const images = [
-      this.props.data.ourEnergyScreenshot1.childImageSharp.fluid,
-      this.props.data.ourEnergyScreenshot2.childImageSharp.fluid,
-      this.props.data.ourEnergyScreenshot3.childImageSharp.fluid,
+      this.props.data.ourEnergyScreenshot1.childImageSharp.gatsbyImageData,
+      this.props.data.ourEnergyScreenshot2.childImageSharp.gatsbyImageData,
+      this.props.data.ourEnergyScreenshot3.childImageSharp.gatsbyImageData,
     ];
 
     return (
       <Layout fixNav={true}>
-        <SEO title="Our Energy - ETH Zürich" />
+        <Seo title="Our Energy - ETH Zürich" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.ourEnergyImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.ourEnergyImage.childImageSharp.gatsbyImageData}>
               <h1>Our Energy - ETH Zürich</h1>
             </Chapter>
 
@@ -120,33 +120,25 @@ class OurEnergyPage extends React.Component {
 const OurEnergyPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         ourEnergyImage: file(relativePath: {eq: "portfolio/ourenergy-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         ourEnergyScreenshot1: file(relativePath: {eq: "portfolio/ourenergy/screenshot1.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         ourEnergyScreenshot2: file(relativePath: {eq: "portfolio/ourenergy/screenshot2.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         ourEnergyScreenshot3: file(relativePath: {eq: "portfolio/ourenergy/screenshot3.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

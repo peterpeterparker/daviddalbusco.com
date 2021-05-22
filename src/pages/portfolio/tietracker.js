@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -12,18 +12,18 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 class TieTrackerPage extends React.Component {
   render() {
     const images = [
-      this.props.data.tieTrackerScreenshot1.childImageSharp.fluid,
-      this.props.data.tieTrackerScreenshot2.childImageSharp.fluid,
-      this.props.data.tieTrackerScreenshot3.childImageSharp.fluid,
+      this.props.data.tieTrackerScreenshot1.childImageSharp.gatsbyImageData,
+      this.props.data.tieTrackerScreenshot2.childImageSharp.gatsbyImageData,
+      this.props.data.tieTrackerScreenshot3.childImageSharp.gatsbyImageData,
     ];
 
     return (
       <Layout fixNav={true}>
-        <SEO title="Tie Tracker" />
+        <Seo title="Tie Tracker" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.tieTrackerImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.tieTrackerImage.childImageSharp.gatsbyImageData}>
               <h1>Tie Tracker</h1>
             </Chapter>
 
@@ -149,33 +149,25 @@ class TieTrackerPage extends React.Component {
 const TieTrackerPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         tieTrackerImage: file(relativePath: {eq: "portfolio/tietracker-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         tieTrackerScreenshot1: file(relativePath: {eq: "portfolio/tietracker/screenshot1.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         tieTrackerScreenshot2: file(relativePath: {eq: "portfolio/tietracker/screenshot2.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         tieTrackerScreenshot3: file(relativePath: {eq: "portfolio/tietracker/screenshot3.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

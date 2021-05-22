@@ -3,7 +3,7 @@ import React from 'react';
 import './header.scss';
 
 import {graphql, StaticQuery} from 'gatsby';
-import Img from 'gatsby-image';
+import {GatsbyImage} from 'gatsby-plugin-image';
 
 import Chapter from '../chapter/chapter';
 
@@ -12,7 +12,7 @@ class Header extends React.Component {
     return (
       <section className="header">
         <main>
-          <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid} />
+          <GatsbyImage alt="" role="presentation" image={this.props.data.placeholderImage.childImageSharp.gatsbyImageData} />
 
           <Chapter icon="robot">
             <h1>David Dal Busco</h1>
@@ -26,15 +26,13 @@ class Header extends React.Component {
   }
 }
 
-export default () => (
+const header = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         placeholderImage: file(relativePath: {eq: "daviddalbusco.jpg"}) {
           childImageSharp {
-            fluid(maxWidth: 260) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 260, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         site {
@@ -47,3 +45,4 @@ export default () => (
     render={(data) => <Header data={data} />}
   />
 );
+export default header;

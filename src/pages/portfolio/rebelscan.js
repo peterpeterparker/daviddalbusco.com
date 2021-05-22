@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -36,11 +36,11 @@ class RebelScanPage extends React.Component {
   render() {
     return (
       <Layout fixNav={true}>
-        <SEO title="Rebel Scan" />
+        <Seo title="Rebel Scan" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.rebelscanImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.rebelscanImage.childImageSharp.gatsbyImageData}>
               <h1>Rebel Scan</h1>
             </Chapter>
 
@@ -170,12 +170,10 @@ class RebelScanPage extends React.Component {
 const RebelScanPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         rebelscanImage: file(relativePath: {eq: "portfolio/rebelscan-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

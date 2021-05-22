@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -10,11 +10,11 @@ class IneexaPage extends React.Component {
   render() {
     return (
       <Layout fixNav={true}>
-        <SEO title="Ineexa" />
+        <Seo title="Ineexa" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.ineexaImg.childImageSharp.fluid}>
+            <Chapter img={this.props.data.ineexaImg.childImageSharp.gatsbyImageData}>
               <h1>Ineexa</h1>
             </Chapter>
 
@@ -77,12 +77,10 @@ class IneexaPage extends React.Component {
 const IneexaPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         ineexaImg: file(relativePath: {eq: "portfolio/ineexa-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

@@ -59,7 +59,3 @@ export default React.forwardRef((props, ref) => {
 
   return <Menu ref={menuRef} {...props} />;
 });
-//
-// export default () => (
-//   <Menu/>
-// )

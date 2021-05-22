@@ -1,8 +1,9 @@
 import React from 'react';
 
-import './slider.scss';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import Img from 'gatsby-image';
+import {GatsbyImage} from 'gatsby-plugin-image';
+
+import './slider.scss';
 
 class Slider extends React.Component {
   render() {
@@ -29,7 +30,7 @@ class Slider extends React.Component {
         return (
           <deckgo-slide-title key={i}>
             <div slot="title">
-              <Img fluid={image} />
+              <GatsbyImage alt="" role="presentation" image={image} />
             </div>
           </deckgo-slide-title>
         );
@@ -54,4 +55,5 @@ class Slider extends React.Component {
   }
 }
 
-export default ({images}) => <Slider images={images} />;
+const slider = ({images}) => <Slider images={images} />;
+export default slider;

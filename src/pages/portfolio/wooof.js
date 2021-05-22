@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -12,19 +12,19 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 class WooofPage extends React.Component {
   render() {
     const images = [
-      this.props.data.wooofScreenshot1.childImageSharp.fluid,
-      this.props.data.wooofScreenshot2.childImageSharp.fluid,
-      this.props.data.wooofScreenshot3.childImageSharp.fluid,
-      this.props.data.wooofScreenshot4.childImageSharp.fluid,
+      this.props.data.wooofScreenshot1.childImageSharp.gatsbyImageData,
+      this.props.data.wooofScreenshot2.childImageSharp.gatsbyImageData,
+      this.props.data.wooofScreenshot3.childImageSharp.gatsbyImageData,
+      this.props.data.wooofScreenshot4.childImageSharp.gatsbyImageData,
     ];
 
     return (
       <Layout fixNav={true}>
-        <SEO title="Wooof" />
+        <Seo title="Wooof" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.wooofImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.wooofImage.childImageSharp.gatsbyImageData}>
               <h1>Wooof</h1>
             </Chapter>
 
@@ -142,40 +142,30 @@ class WooofPage extends React.Component {
 const WooofPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         wooofImage: file(relativePath: {eq: "portfolio/wooof-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         wooofScreenshot1: file(relativePath: {eq: "portfolio/wooof/screenshot1.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         wooofScreenshot2: file(relativePath: {eq: "portfolio/wooof/screenshot2.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         wooofScreenshot3: file(relativePath: {eq: "portfolio/wooof/screenshot3.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         wooofScreenshot4: file(relativePath: {eq: "portfolio/wooof/screenshot4.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

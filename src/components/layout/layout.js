@@ -50,7 +50,7 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default ({children, fixNav}) => (
+const layout = ({children, fixNav}) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -68,3 +68,4 @@ export default ({children, fixNav}) => (
     )}
   />
 );
+export default layout;

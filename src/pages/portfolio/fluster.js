@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -12,19 +12,19 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 class FlusterPage extends React.Component {
   render() {
     const images = [
-      this.props.data.flusterScreenshot1.childImageSharp.fluid,
-      this.props.data.flusterScreenshot2.childImageSharp.fluid,
-      this.props.data.flusterScreenshot3.childImageSharp.fluid,
-      this.props.data.flusterScreenshot4.childImageSharp.fluid,
+      this.props.data.flusterScreenshot1.childImageSharp.gatsbyImageData,
+      this.props.data.flusterScreenshot2.childImageSharp.gatsbyImageData,
+      this.props.data.flusterScreenshot3.childImageSharp.gatsbyImageData,
+      this.props.data.flusterScreenshot4.childImageSharp.gatsbyImageData,
     ];
 
     return (
       <Layout fixNav={true}>
-        <SEO title="Fluster" />
+        <Seo title="Fluster" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.flusterImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.flusterImage.childImageSharp.gatsbyImageData}>
               <h1>Fluster</h1>
             </Chapter>
 
@@ -146,40 +146,30 @@ class FlusterPage extends React.Component {
 const FlusterPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         flusterImage: file(relativePath: {eq: "portfolio/fluster-icon-pink.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         flusterScreenshot1: file(relativePath: {eq: "portfolio/fluster/screenshot1.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         flusterScreenshot2: file(relativePath: {eq: "portfolio/fluster/screenshot2.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         flusterScreenshot3: file(relativePath: {eq: "portfolio/fluster/screenshot3.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         flusterScreenshot4: file(relativePath: {eq: "portfolio/fluster/screenshot4.png"}) {
           childImageSharp {
-            fluid(maxWidth: 540) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 540, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

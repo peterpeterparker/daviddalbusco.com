@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import './navigation.scss';
-import Img from 'gatsby-image';
+import {GatsbyImage} from 'gatsby-plugin-image';
 
 import Menu from '../menu/menu';
 
@@ -57,7 +57,7 @@ class Navigation extends React.Component {
                 textDecoration: `none`,
               }}
               className="home">
-              <Img fluid={this.props.data.placeholderImage.childImageSharp.fluid} />
+              <GatsbyImage alt="" role="presentation" image={this.props.data.placeholderImage.childImageSharp.gatsbyImageData} />
 
               <h3 style={{margin: 0}}>{this.props.siteTitle}</h3>
             </Link>
@@ -85,15 +85,13 @@ Navigation.defaultProps = {
   siteTitle: ``,
 };
 
-export default ({siteTitle, fix}) => (
+const navigation = ({siteTitle, fix}) => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         placeholderImage: file(relativePath: {eq: "daviddalbusco-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 48) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 48, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }
@@ -101,3 +99,4 @@ export default ({siteTitle, fix}) => (
     render={(data) => <Navigation data={data} siteTitle={siteTitle} fix={fix} />}
   />
 );
+export default navigation;

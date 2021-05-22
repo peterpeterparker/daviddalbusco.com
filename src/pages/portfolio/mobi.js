@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -10,11 +10,11 @@ class MobiPage extends React.Component {
   render() {
     return (
       <Layout fixNav={true}>
-        <SEO title="Die Mobiliar - La Mobilière" />
+        <Seo title="Die Mobiliar - La Mobilière" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.mobiDarkImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.mobiDarkImage.childImageSharp.gatsbyImageData}>
               <h1>Die Mobiliar</h1>
             </Chapter>
 
@@ -74,12 +74,10 @@ class MobiPage extends React.Component {
 const MobiPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         mobiDarkImage: file(relativePath: {eq: "portfolio/mobi-dark-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

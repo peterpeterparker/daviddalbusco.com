@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -52,11 +52,11 @@ class WatamatoPage extends React.Component {
   render() {
     return (
       <Layout fixNav={true}>
-        <SEO title="Watamato" />
+        <Seo title="Watamato" />
 
         <section className="project extrabigspace">
           <main>
-            <Chapter img={this.props.data.watamatoImage.childImageSharp.fluid}>
+            <Chapter img={this.props.data.watamatoImage.childImageSharp.gatsbyImageData}>
               <h1>Watamato</h1>
             </Chapter>
 
@@ -159,12 +159,10 @@ class WatamatoPage extends React.Component {
 const WatamatoPageQuery = () => (
   <StaticQuery
     query={graphql`
-      query {
+      {
         watamatoImage: file(relativePath: {eq: "portfolio/watamato-icon.png"}) {
           childImageSharp {
-            fluid(maxWidth: 240) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 240, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
       }

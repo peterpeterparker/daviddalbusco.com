@@ -1,13 +1,5 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
-import PropTypes from 'prop-types';
-import {graphql, StaticQuery} from 'gatsby';
+import {useStaticQuery, graphql} from 'gatsby';
 
 import '../../theme/variables.scss';
 import '../../theme/main.scss';
@@ -34,38 +26,26 @@ deckDeckGoSlideTitleElement();
 deckDeckGoYoutubeElement();
 deckDeckGoHighlightElement();
 
-class Layout extends React.Component {
-  render() {
-    return (
-      <>
-        <Navigation siteTitle={this.props.data.site.siteMetadata.title} fix={this.props.fixNav} />
-        {this.props.children}
-        <Footer />
-      </>
-    );
-  }
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-const layout = ({children, fixNav}) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
+const Layout = ({children, fixNav}) => {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
         }
       }
-    `}
-    render={(data) => (
-      <Layout data={data} fixNav={fixNav}>
-        {children}
-      </Layout>
-    )}
-  />
-);
-export default layout;
+    }
+  `);
+
+  return (
+    <>
+      <Navigation siteTitle={data.site.siteMetadata.title} fix={fixNav} />
+
+      {children}
+
+      <Footer />
+    </>
+  );
+};
+
+export default Layout;

@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql} from 'gatsby';
 
-import SEO from '../components/seo/seo';
+import Seo from '../components/seo/seo';
 import Layout from '../components/layout/layout';
 import Blog from '../components/blog/blog';
 
@@ -10,7 +10,7 @@ export default function Template({data}) {
   const {frontmatter, html, timeToRead} = markdownRemark;
   return (
     <Layout fixNav={true}>
-      <SEO title={frontmatter.title} description={frontmatter.description} keywords={frontmatter.tags} canonical={frontmatter.canonical} />
+      <Seo title={frontmatter.title} description={frontmatter.description} keywords={frontmatter.tags} canonical={frontmatter.canonical} />
 
       <section className="post">
         <main>
@@ -29,7 +29,7 @@ export default function Template({data}) {
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     markdownRemark(frontmatter: {path: {eq: $path}}) {
       html
       frontmatter {

@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -10,7 +10,7 @@ class IneexaPage extends React.Component {
   render() {
     return (
       <Layout fixNav={true}>
-        <SEO title="Ineexa" />
+        <Seo title="Ineexa" />
 
         <section className="project extrabigspace">
           <main>

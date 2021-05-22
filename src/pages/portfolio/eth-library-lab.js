@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../../components/seo/seo';
+import Seo from '../../components/seo/seo';
 import Layout from '../../components/layout/layout';
 import {graphql, StaticQuery} from 'gatsby';
 
@@ -11,7 +11,7 @@ class EthLibraryLabPage extends React.Component {
   render() {
     return (
       <Layout fixNav={true}>
-        <SEO title="ETH Library Lab" />
+        <Seo title="ETH Library Lab" />
 
         <section className="project extrabigspace">
           <main>

@@ -22,16 +22,19 @@ class About extends React.Component {
             </span>
             .
           </p>
+          <p>I'm a freelance web developer, open source enthusiast, based in Zürich, Switzerland.</p>
+
           <p>
-            I'm a freelance web developer based in Zürich, Switzerland. I am experienced with{' '}
+            {' '}
+            I am experienced with{' '}
             <mark>
               <a href="http://ionicframework.com">Ionic</a>
             </mark>
             ,{' '}
             <mark>
               <a href="http://angular.io">Angular</a>
-            </mark>
-            ,{' '}
+            </mark>{' '}
+            and{' '}
             <mark>
               <a href="https://reactjs.org">React</a>
             </mark>
@@ -39,22 +42,26 @@ class About extends React.Component {
             <mark>
               <a href="https://gatsbyjs.com">Gatsby</a>
             </mark>{' '}
-            and I'm a huge fan of{' '}
+            , used{' '}
+            <mark>
+              <a href="https://firebase.google.com/">Google Firebase</a>
+            </mark>{' '}
+            more than once and, I'm a huge fan of{' '}
             <mark>
               <a href="https://stenciljs.com">StencilJS</a>
             </mark>{' '}
             Web Components.
           </p>
           <p>
-            Throughout my career I also gathered experience in project management, analysis of business requirements and UX design (from a
-            developer perspective).
+            Throughout my career I also gathered experience in project management, business requirements and UX design (from a developer
+            perspective).
           </p>
           <p>
-            I have a computer engineering degree and an executive master in business administration. I speak fluently French, German and
+            I have a computer engineering degree and, an executive master in business administration. I speak fluently French, German and
             English.
           </p>
           <p>
-            If you have got a Web, Progressive Web Apps or mobile (iOS/Android) project in mind,{' '}
+            If you have got a web, Progressive Web Apps or mobile (iOS/Android) project in mind,{' '}
             <mark>
               <Link to="/#contact">get in touch!</Link>
             </mark>

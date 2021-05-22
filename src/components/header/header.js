@@ -32,7 +32,7 @@ const header = () => (
       {
         placeholderImage: file(relativePath: {eq: "daviddalbusco.jpg"}) {
           childImageSharp {
-            gatsbyImageData(width: 260, layout: CONSTRAINED, placeholder: BLURRED)
+            gatsbyImageData(width: 480, layout: CONSTRAINED, placeholder: BLURRED)
           }
         }
         site {

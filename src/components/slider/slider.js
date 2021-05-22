@@ -55,4 +55,5 @@ class Slider extends React.Component {
   }
 }
 
-export default ({images}) => <Slider images={images} />;
+const slider = ({images}) => <Slider images={images} />;
+export default slider;

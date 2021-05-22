@@ -85,7 +85,7 @@ Navigation.defaultProps = {
   siteTitle: ``,
 };
 
-export default ({siteTitle, fix}) => (
+const navigation = ({siteTitle, fix}) => (
   <StaticQuery
     query={graphql`
       {
@@ -99,3 +99,4 @@ export default ({siteTitle, fix}) => (
     render={(data) => <Navigation data={data} siteTitle={siteTitle} fix={fix} />}
   />
 );
+export default navigation;

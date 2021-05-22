@@ -40,8 +40,9 @@ class Chapter extends React.Component {
   }
 }
 
-export default ({children, icon, img}) => (
+const chapter = ({children, icon, img}) => (
   <Chapter icon={icon} img={img}>
     {children}
   </Chapter>
 );
+export default chapter;

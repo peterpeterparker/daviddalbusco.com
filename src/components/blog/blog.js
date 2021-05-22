@@ -29,7 +29,7 @@ class Blog extends React.Component {
   }
 }
 
-export default () => (
+const blog = () => (
   <StaticQuery
     query={graphql`
       query ListQuery {
@@ -53,3 +53,4 @@ export default () => (
     render={(data) => <Blog data={data} />}
   />
 );
+export default blog;

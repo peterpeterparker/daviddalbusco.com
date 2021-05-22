@@ -31,4 +31,5 @@ class Contact extends React.Component {
   }
 }
 
-export default () => <Contact />;
+const contact = () => <Contact />;
+export default contact;

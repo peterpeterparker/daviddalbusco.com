@@ -26,7 +26,7 @@ class Header extends React.Component {
   }
 }
 
-export default () => (
+const header = () => (
   <StaticQuery
     query={graphql`
       {
@@ -45,3 +45,4 @@ export default () => (
     render={(data) => <Header data={data} />}
   />
 );
+export default header;

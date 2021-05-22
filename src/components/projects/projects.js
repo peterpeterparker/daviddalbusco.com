@@ -473,7 +473,7 @@ class Projects extends React.Component {
   }
 }
 
-export default ({filter, all}) => (
+const projects = ({filter, all}) => (
   <StaticQuery
     query={graphql`
       {
@@ -557,3 +557,4 @@ export default ({filter, all}) => (
     render={(data) => <Projects data={data} filter={filter} all={all} />}
   />
 );
+export default projects;

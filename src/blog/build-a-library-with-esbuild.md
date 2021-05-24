@@ -5,7 +5,7 @@ title: "Build A Library With esbuild"
 description: "How to bundle ESM, IIFE or CommonJS libraries with esbuild."
 tags: "#javascript #esbuild #tutorial #typescript"
 image: "https://cdn-images-1.medium.com/max/1600/1*6sA4hPVV9wO_jo8l205Aig.jpeg"
-canonical: "https://daviddalbusco.medium.com/the-mutationobserver-web-api-cf469261eb36"
+canonical: "https://daviddalbusco.medium.com/build-a-library-with-esbuild-23235712f3c"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*6sA4hPVV9wO_jo8l205Aig.jpeg)
@@ -14,11 +14,13 @@ canonical: "https://daviddalbusco.medium.com/the-mutationobserver-web-api-cf4692
 
 I recently developed plugins and, migrated all the utilities of [DeckDeckGo](https://deckdeckgo.com) to build these with [esbuild](https://esbuild.github.io/).
 
+If you are looking to do the same, hope this tutorial helps you get started!
+
 *****
 
 ### Introduction
 
-[esbuild](https://esbuild.github.io/) is “an extremely fast JavaScript bundler”. It is its tagline and, according my tests, the least we can say is that it is true. It is blazing fast ⚡️.
+[esbuild](https://esbuild.github.io/) is “an extremely fast JavaScript bundler” made by [Evan Wallace](https://twitter.com/evanwallace). It is its tagline and, according my tests, the least we can say is that it is true. It is blazing fast ⚡️.
 
 Sometimes while migrating my libraries, I even found myself waiting for the end of a build because I did not notice that it was already finished. I assumed it would still need some more time, old habits die hard I guess 😅.
 

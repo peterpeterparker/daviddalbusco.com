@@ -15,6 +15,9 @@ Using CSS variables, at least when I’m writing these lines in June 2021, is no
 
 This is a bit unfortunate but, not unsolvable. In some recent development I bypassed this limitation by injecting `style` elements in the DOM, into my Web Components, in order to animate block of codes in [DeckDeckGo](https://deckdeckgo.com).
 
+<iframe width="280" height="158" src="https://www.youtube.com/embed/nast1X6dKo8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br/>
+
 *****
 
 ### Introduction

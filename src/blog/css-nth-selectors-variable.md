@@ -2,10 +2,10 @@
 path: "/blog/css-nth-selectors-variable"
 date: "2021-06-09"
 title: "CSS nth- Selectors Variable"
-description: "A practical hack to make CSS nth- selectors variable with Web Components."
-tags: "#javascript #webdev #tutorial #webcomponents"
+description: "A practical hack to make CSS nth- selectors variable within Web Components."
+tags: "#javascript #webdev #webcomponents #css"
 image: "https://cdn-images-1.medium.com/max/1600/1*bCYvMc19HUEZEmZylGOoGg.jpeg"
-canonical: "https://daviddalbusco.medium.com/build-a-library-with-esbuild-23235712f3c"
+canonical: "https://daviddalbusco.medium.com/css-nth-selectors-variable-502eccae2e03"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*bCYvMc19HUEZEmZylGOoGg.jpeg)

@@ -1,6 +1,6 @@
 ---
 path: "/blog/the-state-of-progressive-web-apps-adoption-by-developers-in-2021"
-date: "2020-06-22"
+date: "2021-06-22"
 title: "The State Of Progressive Web Apps Adoption By Developers In 2021"
 description: "Are PWA preached or adopted by developers? Do they use these on mobile and desktop? Do they develop these even if their support on iOS is not optimal? Do they think Apple will ever implement Web Push Notifications?"
 tags: "#showdev #webdev #pwa #discuss"
@@ -125,3 +125,5 @@ I just added a reminder for June 2022 in my calendar to run such surveys again a
 To infinity and beyond!
 
 David
+
+P.S.: You can read the results of the previous surveys, those of 2020, [here](https://daviddalbusco.com/blog/the-state-of-progressive-web-apps-adoption-by-developers).

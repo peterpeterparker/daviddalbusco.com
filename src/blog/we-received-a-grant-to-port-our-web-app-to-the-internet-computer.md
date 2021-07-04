@@ -66,7 +66,7 @@ To fulfill the proof of concept, and to get our grant 😜, we have defined the 
 
 *****
 
-#### 1 — Offline First & Hosting
+#### Milestone 1 — Offline First & Hosting
 
 Intrinsically and because it is still young too, we won’t be able to perform as much HTTP queries as we currently do, because they might be, at least for the time being, a bit slower than our current solution with Firestore. That’s why, we will have to approach the persistence of the data differently.
 

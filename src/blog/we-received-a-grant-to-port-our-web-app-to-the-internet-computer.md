@@ -78,7 +78,7 @@ Finally, in the same challenging milestone, we also aim to deploy our Progressiv
 
 *****
 
-#### 2 — Authentication
+#### Milestone 2 — Authentication
 
 The Internet Computer introduces a new secure method of cryptographic authentication that eliminates the ability for service providers to steal data, or track movements ([source](https://dfinity.org/technicals/web-authentication-identity)).
 

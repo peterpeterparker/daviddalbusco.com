@@ -84,7 +84,7 @@ The Internet Computer introduces a new secure method of cryptographic authentica
 
 In short: no more passwords at all 🤯!
 
-That is something we are eager to try, just for curiosity reason and because it does sound super cool.
+That is something we are eager to try, because we're super curious about it and because it does sound super cool.
 
 Of course, from a project perspective, we do need an authentication workflow to persist the users’ data on the network. That’s the cherry on top of the fun 😉.
 

@@ -22,7 +22,7 @@ In the coming weeks we will build a proof of concept to validate the feasibility
 
 ### DeckDeckGo
 
-DeckDeckGo is a web [open source](https://github.com/deckgo/deckdeckgo/) editor for slides. Unlike other tool, presentations can be published and viewed online or shared as Progressive Web Apps (PWA). The editor works on all devices (laptop, mobile, etc.), decks can be remotely controlled and interactions with the audience through live polls are also supported.
+DeckDeckGo is a web [open source](https://github.com/deckgo/deckdeckgo/) editor for slides. Unlike other tools, presentations can be published and viewed online or shared as Progressive Web Apps (PWA). The editor works on all devices (laptop, mobile, etc.), decks can be remotely controlled and interactions with the audience through live polls are also supported.
 
 It is the side project of my friend [Nicolas](https://www.nmattia.com) and [me](https://daviddalbusco.com/). Together with our community (2000+ registered users) and help of our contributors, we develop it since 2.5 years following our values: open source, transparency and knowledge sharing.
 

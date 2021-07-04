@@ -90,7 +90,7 @@ Of course, from a project perspective, we do need an authentication workflow to 
 
 *****
 
-#### 3 — Data Persistence
+#### Milestone 3 — Data Persistence
 
 Unlike the common web solution to query data through HTTP, there is no such function as `fetch` on the Internet Computer.
 

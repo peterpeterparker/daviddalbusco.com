@@ -14,7 +14,7 @@ canonical: "https://daviddalbusco.medium.com/the-state-of-progressive-web-apps-a
 
 *****
 
-Exciting news, we received a grant from the [DFINITY](https://dfinity.org/) foundation to try to port our web editor for slides, [DeckDeckGo](https://deckdeckgo.com), to the Internet Computer.
+Exciting news, we received a grant from the [DFINITY](https://dfinity.org/) foundation to try to port our web editor for slides, [DeckDeckGo](https://deckdeckgo.com), to the [Internet Computer](https://dfinity.org/faq/what-is-the-internet-computer).
 
 In the coming weeks we will build a proof of concept to validate the feasibility of such hypothesis. Here are some insights about the scope, goal and milestones of this inspiring project.
 

@@ -96,7 +96,7 @@ Unlike the common web solution to query data through HTTP, there is no such func
 
 The Internet Computer is primarily a distributed and decentralized platform for running software. Therefore, to persist data and run programs on it, the applications have to be deployed as WebAssembly modules. These are executed inside of a conceptual computational unit called a software canister.
 
-Once deployed, end-users can interact with the software canister by accessing the entry point functions you have defined for that canister through a front-end client such as a browser ([source](https://sdk.dfinity.org/docs/developers-guide/concepts/canisters-code.html)).
+Once deployed, end-users can interact with the software canister by accessing the entry point functions defined for that canister through a front-end client such as a browser ([source](https://sdk.dfinity.org/docs/developers-guide/concepts/canisters-code.html)).
 
 Summarized: We will have to write some WebAssembly functions to get and set our data in the Internet Computer. From our editor developed with [StencilJS](https://stenciljs.com/), we will then interact with these through async callbacks.
 

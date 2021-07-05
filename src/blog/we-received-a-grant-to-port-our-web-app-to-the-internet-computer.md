@@ -48,7 +48,7 @@ The Internet Computer is formed by an advanced decentralized protocol called ICP
 
 The description above is the official one but, let me try to synthesize my understanding:
 
-The Internet Computer is a decentralized blockchain like network on which you can run both smart contracts and web application. To my mum I would even say it is like bitcoin and cloud providers had a baby. In that way, you get best of both worlds and therefore open a new whole area of possibilities, what they call the singularity. In addition, they aim to try to challenge the monopolistic position of the [GAFAM](https://en.wikipedia.org/wiki/Big_Tech).
+The Internet Computer is a decentralized blockchain network on which you can run smart contracts that can host web applications. To my mum I would even say it is like bitcoin and cloud providers had a baby. In that way, you get best of both worlds and therefore open a new whole area of possibilities, what DFINITY calls the "Blockchain Singularity". In addition, they aim to try to challenge the monopolistic position of the [GAFAM](https://en.wikipedia.org/wiki/Big_Tech).
 
 *****
 

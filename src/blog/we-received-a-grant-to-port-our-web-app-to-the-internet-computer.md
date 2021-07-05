@@ -54,7 +54,7 @@ The Internet Computer is a decentralized blockchain network on which you can run
 
 ### Goal
 
-At this stage, our one and only goal is to test the feasibility of the concept: can our platform run and interact** with the Internet Computer? Even if we are really optimistic and everything we read and tried so far seem to validate the hypothesis, the ICP and its infrastructure is still young, it has “only” been officially launched a few weeks ago, on May 7th.
+At this stage, our one and only goal is to test the feasibility of the concept: can our platform run and interact** with the Internet Computer? Even if we are really optimistic and everything we read and tried so far seems to validate the hypothesis, the ICP and its infrastructure are still young, it has “only” been officially launched a few weeks ago, on May 7th.
 
 By run* I mean can we host our Progressive Web Apps, our editor, on the Internet Computer and by interact** I mean can it persists and read data, the decks and slides of the users.
 

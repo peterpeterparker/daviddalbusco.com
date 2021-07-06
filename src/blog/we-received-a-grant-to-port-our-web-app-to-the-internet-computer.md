@@ -4,8 +4,8 @@ date: "2021-07-06"
 title: "We Received A Grant To Port Our Web App To The Internet Computer"
 description: "Can our web editor for slides work on the futuristic internet of the DFINITY foundation? Let's figure it out."
 tags: "#webdev #showdev #opensource #motivation"
-image: "https://cdn-images-1.medium.com/max/1600/1*xFkV_aTp7qE6kKOt1NxCbA.jpeg"
-canonical: "https://daviddalbusco.medium.com/the-state-of-progressive-web-apps-adoption-by-developers-in-2021-32a2ec405f41"
+image: "https://cdn-images-1.medium.com/max/1600/1*uMo-wgL0-asMeYajl6CSfQ.png"
+canonical: "https://daviddalbusco.medium.com/we-received-a-grant-to-port-our-web-app-to-the-internet-computer-7be64806565a"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*uMo-wgL0-asMeYajl6CSfQ.png)

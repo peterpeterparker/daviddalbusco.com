@@ -3,7 +3,7 @@ path: "/blog/getting-started-with-the-internet-computer-web-hosting"
 date: "2021-07-19"
 title: "Getting Started With The Internet Computer Web-Hosting"
 description: "An introduction to deploy web applications on the decentralized blockchain network of the DFINITY foundation."
-tags: "#webdev #internetcomputer #programming #deployment"
+tags: "#webdev #serverless #hosting #programming"
 image: "https://cdn-images-1.medium.com/max/1600/1*VhdLdSsOyW8gtDkZoyE70g.jpeg"
 canonical: "https://daviddalbusco.medium.com/getting-started-with-the-internet-computer-web-hosting-b9b748350fc2"
 ---

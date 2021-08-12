@@ -2,7 +2,7 @@
 path: "/blog/internet-computer-web-app-decentralized-database-architecture"
 date: "2021-08-12"
 title: "Internet Computer: Web App Decentralized Database Architecture"
-description: "An introduction to the data persistence for web applications with the Internet Computer of the DFINITY foundation."
+description: "An approach of the data persistence for web applications with the Internet Computer of the DFINITY foundation."
 tags: "#webdev #serverless #database #programming"
 image: "https://cdn-images-1.medium.com/max/2600/1*-Nq7tvQRO507Is_U_LSuMA.jpeg"
 canonical: "https://daviddalbusco.medium.com/singleton-factory-patterns-with-typescript-59e5a405531e"

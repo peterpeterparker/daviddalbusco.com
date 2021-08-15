@@ -96,7 +96,7 @@ All users would use the same entry point and their data would also be saved in t
 
 ### The “Conservative”
 
-The Internet Computer does not provide a built-in out of the box database solution, that is not the goal of the DFINITY foundation (my understanding). They provide a futuristic blockchain network, that can run web applications too.
+The Internet Computer does not provide a built-in, just-add-water database solution, that is not the goal of the DFINITY foundation (my understanding). They provide a futuristic blockchain network, that can run web applications too. That's "all".
 
 It is up to the makers to build features on the top. They can implement features and, unleash these on the IC through canister smart contracts.
 

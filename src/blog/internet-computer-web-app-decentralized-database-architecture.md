@@ -318,7 +318,7 @@ The ultimate architecture is really scalable, as every user operates in his/her 
 
 However, it is worth noting that it is linked with more administration, whether during upgrade of their codes or handling their costs.
 
-Nevertheless, we are big fan of this architecture and, think that the advantages are totally worth it. Therefore, it is the concept we would unleash if our proof of concept would turn into a real live productive use case.
+Nevertheless, we are big fans of this architecture and think that the advantages are totally worth it. Therefore, it is the concept we would use if our proof of concept would turn into a real live productive use case.
 
 After all, great power comes with great responsibility!
 

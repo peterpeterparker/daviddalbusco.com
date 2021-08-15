@@ -36,7 +36,7 @@ You can of course challenge these by commenting on the blog post or by reaching 
 
 ### The “Nowadays”
 
-Before digging into the Internet Computer, let's review first a common concept, a good old' school fashion way approach.
+Before digging into the Internet Computer, let's first review some common, old fashion concepts.
 
 Nowadays, server-less or not, the data persistence is often solve with one database for all information.
 

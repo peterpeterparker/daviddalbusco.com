@@ -44,7 +44,7 @@ Nowadays, server-less or not, the data persistence is often solve with one datab
 
 Users use the (web) application. It calls endpoint(s) to persist and read data and, it returns the results to the users.
 
-In a more fresh microservice architecture style,  the application(s) is split as a collection of services but, to some extension, the outcome is still based on previous concept.
+In a microservice architecture,  the application(s) is split as a collection of services but, to some extension, the outcome is based on the same concept.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*3mAmSM4_l4QDF0aK2I_esA.png)
 

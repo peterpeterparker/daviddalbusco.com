@@ -304,7 +304,7 @@ Its implementation looks familiar to what we have seen before too but, with a sm
 
 Each user has his/her own little kingdom. That's why he/she does not need an identifier to lookup the data in a big pot of data. It doesn't even have to memorize the `userId`.
 
-It is the user kingdom, it contains only the personal data of the particular user!
+It is the user's kingdom, it contains only the personal data of that particular user!
 
 ![](https://cdn-images-1.medium.com/max/1600/1*LfdwUX1sVqLI9zp0WSWO_w.png)
 

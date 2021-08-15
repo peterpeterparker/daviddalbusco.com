@@ -267,7 +267,7 @@ The function `create` takes care of unleashing new users' canisters in the Inter
 
 The `get` function returns, if it exists, the ID of the user’s canister.
 
-Both `preupgrade` and `postupgrade` are used to persist the memory among upgrades (see [documentation](https://sdk.dfinity.org/docs/language-guide/upgrades.html)).
+Both `preupgrade` and `postupgrade` are used to persist the memory between upgrades (see [documentation](https://sdk.dfinity.org/docs/language-guide/upgrades.html)).
 
 Once the manager being set, we would be able to implement an `actor` dedicated to the personal data persistence of a user.
 

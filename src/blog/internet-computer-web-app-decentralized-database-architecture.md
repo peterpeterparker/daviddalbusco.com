@@ -50,7 +50,7 @@ In a microservice architecture,  the application(s) is split as a collection of 
 
 Users use the (web) application. It calls a dedicated service which in turn calls endpoint(s) to persist and read data and, returns the results to the users.
 
-Regardless of these architectures, mono- or micro-services, the persistence of the data finds place for all the users at the same place.
+Regardless of these architectures, mono- or micro-services, the data is stored in a monolithic database.
 
 *****
 

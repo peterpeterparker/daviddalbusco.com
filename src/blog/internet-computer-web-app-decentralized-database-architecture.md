@@ -122,7 +122,7 @@ The way we can picture the persistence of the data within a canister, like we wo
 
 Instead of a key-value database collection -- as there are no built-in databases available -- our actor would simply have an attribute holding the data.
 
-It can for example be a [Trie](https://sdk.dfinity.org/docs/base-libraries/trie), a functional maps (and sets) whose representation is “canonical”, and independent of operation history.
+That attribute can for example be a [Trie](https://sdk.dfinity.org/docs/base-libraries/trie), a functional map (and set) whose representation is “canonical”, and independent of operation history.
 
 To query (`get` ) and persist (`add` ) the data,  we would be able to implement an actor, a canister, as following:
 

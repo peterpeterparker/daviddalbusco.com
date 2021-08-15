@@ -175,7 +175,7 @@ actor {
 };
 ```
 
-The data would be saved in the network chain, replicated and decentralized, while using an approach we are familiar with.
+The data would be saved in the canister smart-contract, replicated and decentralized, while using an approach we are familiar with.
 
 *Note: *[Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=1638333901)* to related Motoko Playground to try and play with above example.*
 

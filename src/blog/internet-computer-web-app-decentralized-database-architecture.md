@@ -100,7 +100,7 @@ The Internet Computer does not provide a built-in, just-add-water database solut
 
 It is up to the makers to build features on top of it. They can implement features and unleash these on the IC through canister smart contracts.
 
-I picture my self a "canister" has a container that run a set of functions in the cloud, except that it is actually a decentralized blockchain network 😉. It can basically do anything that can be implemented, from computing to data persistence.
+I picture a "canister" as a container that runs a set of functions in the cloud, except that it is actually a decentralized blockchain network 😉. It can basically do anything that can be implemented, from computing to data persistence.
 
 After studying the [documentation](https://sdk.dfinity.org/docs/introduction/welcome.html) of the SDK, [examples](https://github.com/dfinity/examples) and the “[linkedup](https://github.com/dfinity/linkedup/)” demo,  our first approach had then for goal to replicate the approach we are familiar with, the one exposed previously, the “Nowadays".
 

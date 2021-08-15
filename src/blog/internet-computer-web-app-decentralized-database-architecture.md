@@ -11,7 +11,7 @@ canonical: "https://daviddalbusco.medium.com/singleton-factory-patterns-with-typ
 
 *Source: DFINITY [press kit](https://dfinity.org/media)*
 
-We are developing a proof of concept to port our web app, [DeckDeckGo](https://deckdeckgo.com/), to the Internet Computer of the [DFINITY](https://dfinity.org/) foundation.
+We are developing a proof of concept to port our web app, [DeckDeckGo](https://deckdeckgo.com/), to [DFINITY's Internet Computer](https://dfinity.org).
 
 After having succeed validating the hosting and password-less authentication solutions, we are tackling the last question of our POC: persisting the data of our users, their presentations, in the blockchain network.
 

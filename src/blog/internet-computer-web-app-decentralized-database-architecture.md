@@ -126,7 +126,7 @@ That attribute can for example be a [Trie](https://sdk.dfinity.org/docs/base-lib
 
 To query (`get` ) and persist (`add` ) the data,  we would be able to implement an actor, a canister, as following:
 
-*Canisters and features unleashed in the Internet Computer can commonly either be written in [Motoko](https://sdk.dfinity.org/docs/language-guide/motoko.html) or [Rust](https://www.rust-lang.org). Motoko is published and maintained by the DFINITY foundation and, most of the documentation’s examples are provided in that particular programming language. That is mostly why, we developed our proof of concept with it.*
+*Canisters and features unleashed in the Internet Computer can commonly either be written in [Motoko](https://sdk.dfinity.org/docs/language-guide/motoko.html) or [Rust](https://www.rust-lang.org). Motoko is published and maintained by the DFINITY foundation and most of the documentation’s examples are provided in that particular programming language. That is mostly why we developed our proof of concept with Motoko.*
 
 ```
 import Trie "mo:base/Trie";

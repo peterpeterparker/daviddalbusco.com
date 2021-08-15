@@ -17,7 +17,7 @@ After having validated the hosting and password-less authentication integration,
 
 Along the way, we tried out two concepts:
 
-* the “conservative one”:  a data persistence in a single database-like storage
+* a “conservative” one:  a data persistence in a single database-like storage
 * the “futuristic one 🤯”: generate on the fly a decentralized secure data persistence (database-like) for each deck of each user.
 
 In this article I present these two approaches.

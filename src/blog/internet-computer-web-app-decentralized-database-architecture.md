@@ -102,7 +102,7 @@ It is up to the makers to build features on top of it. They can implement featur
 
 I picture a "canister" as a container that runs a set of functions in the cloud, except that it is actually a decentralized blockchain network 😉. It can basically do anything that can be implemented, from computing to data persistence.
 
-After studying the [documentation](https://sdk.dfinity.org/docs/introduction/welcome.html) of the SDK, [examples](https://github.com/dfinity/examples) and the “[linkedup](https://github.com/dfinity/linkedup/)” demo,  our first approach had then for goal to replicate the approach we are familiar with, the one exposed previously, the “Nowadays".
+After studying the [documentation](https://sdk.dfinity.org/docs/introduction/welcome.html) of the SDK, [examples](https://github.com/dfinity/examples) and the “[linkedup](https://github.com/dfinity/linkedup/)” demo,  our first approach had then for goal to replicate the approach we are familiar with, i.e. the “Nowadays" or "monolithic" database approach.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*GK30d2fOgC-7UVWdAnrQFA.png)
 

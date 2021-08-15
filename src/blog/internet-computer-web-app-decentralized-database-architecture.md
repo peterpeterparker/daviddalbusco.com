@@ -110,7 +110,7 @@ However, given the blockchain nature of the Internet Computer, it may be good to
 
 ![](https://cdn-images-1.medium.com/max/1600/1*jI-CDFohigqIZCibwWrcqw.png)
 
-If we omit the chain aspect and, the decentralization, it basically works the same as what I am familiar with isn't?
+If we omit the blockchain aspect (and the decentralization), it basically works the same as what I am familiar with, doesn't it?
 
 *****
 

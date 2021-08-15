@@ -189,7 +189,7 @@ In our first approach, we did not use a `Trie` as in the example; instead we sto
 
 In addition, a canister can only store 4GB of memory pages due to the limitations of WebAssembly implementations ([source](https://medium.com/dfinity/a-technical-overview-of-the-internet-computer-f57c62abc20f)).
 
-That is why, we challenged our first idea and, tried to find a more scalable design.
+That is why, we challenged our first idea and, and tried to find a more scalable design.
 
 It resulted in an architecture in which a main actor acts as a a manager that generates on the fly a decentralized secure simple key-value database-like for each single data persistence of each user 🤯.
 

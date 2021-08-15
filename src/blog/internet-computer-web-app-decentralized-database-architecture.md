@@ -302,7 +302,7 @@ actor class Pet() = this {
 
 Its implementation looks familiar to what we have seen before too but, with a small important modification: there is no `entryId` anymore and, there is no `Trie` neither.
 
-Each user has his/her own little kingdom. That's why he/she do not need an identifier to lookup for the data in a big pot of data. It even do not have to memorize the `userId`.
+Each user has his/her own little kingdom. That's why he/she does not need an identifier to lookup the data in a big pot of data. It doesn't even have to memorize the `userId`.
 
 It is the user kingdom, it contains only the personal data of the particular user!
 

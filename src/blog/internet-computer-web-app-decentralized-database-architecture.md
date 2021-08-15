@@ -30,7 +30,7 @@ The scope of this blog post is limited to simple key-value database concepts. Th
 
 I do not know if anyone has already implemented heavier concepts with the IC (Internet Computer), such as a fully functional SQL database running on the blockchain.
 
-You can of course challenge these by commenting the blog post or by reaching out 😃.
+You can of course challenge these by commenting on the blog post or by reaching out 😃.
 
 *****
 

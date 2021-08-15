@@ -183,7 +183,7 @@ The data would be saved in the canister smart-contract, replicated and decentral
 
 ### The “Futuristic 🤯”
 
-Our first "Conservative" approach validated the hypothesis that a data persistence for our web application in the Internet Compute could be realized but, what about its scalability?
+Our first "Conservative" approach validated the hypothesis that data persistence for our web application in the Internet Compute could be done. But what about scalability?
 
 In our first approach, we did not use a `Trie` as in the example but, a `HashMap` to handle our data. In that way, it would have made the system a bit more scalable, as data would have potentially been still delivered quicker even with a large amount of data. However, at some point, we might have hit some limits anyway.
 

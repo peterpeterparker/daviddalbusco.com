@@ -62,7 +62,7 @@ If we develop, for example, an application that lists the kind of animals our us
 
 ![](https://cdn-images-1.medium.com/max/1600/1*I4CP0N8GvViWCuAzRLa3UA.png)
 
-To query and persist the data, we would then implement a getter (`get` ) and setter (`add` ) functions in our web application that would call the cloud database.
+To query and persist the data, we would then implement getter (`get` ) and setter (`add` ) functions in our web application that would call the cloud database.
 
 ```javascript
 import firebase from 'firebase/app';

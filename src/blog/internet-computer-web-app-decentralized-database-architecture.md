@@ -263,7 +263,7 @@ actor {
 };
 ```
 
-The function `create` takes care of unleashing new user’s canisters in the Internet Computer, those that will be used for the data persistence. It allocates first some few minimal cycles for the newly actors.
+The function `create` takes care of unleashing new users' canisters in the Internet Computer, those that will be used for the data persistence. It first allocates a minimal cycle count for the new actors.
 
 The `get` function returns, if it exists, the ID of the user’s canister.
 

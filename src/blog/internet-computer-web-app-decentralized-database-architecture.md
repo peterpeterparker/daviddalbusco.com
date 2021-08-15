@@ -205,7 +205,7 @@ A user, through the web app, requests  the manager to get him/her a personal dec
 
 We would need two actors to implement such a solution. One that acts as a “manager”, the canister that generates other canisters on the fly, and an implementation for the canisters that take care of the data persistence, those that are generated on the fly.
 
-The “manager” might have to track or not the list of canisters it has generated. If end users save on their side their references, such feature might not be needed. However, in following snippet we will assume it does has to keep track of what it generates.
+The “manager” might have to track or not the list of canisters it has generated, unless end users save on their side their references. However, in the following snippet we will assume it does have to keep track of what it generates.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*i1UedTMw4GxvoiwkQI9gvw.png)
 

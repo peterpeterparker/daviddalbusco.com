@@ -56,7 +56,7 @@ Regardless of these architectures, mono- or micro-services, the data is stored i
 
 #### Code Snippet
 
-I do not know the exact architecture of Google [Firestore](https://firebase.google.com/docs/firestore/quickstart) but, from a user and outside point of view perspective, it looks like a mono-database hosted in the cloud.
+I do not know the exact architecture of Google [Firestore](https://firebase.google.com/docs/firestore/quickstart) but, from a user and outside point of view, it looks like a mono-database hosted in the cloud.
 
 If we develop, for example, an application that list the kind of animals our users own, we would most probably define a db collection of `pets` to collect their entries.
 

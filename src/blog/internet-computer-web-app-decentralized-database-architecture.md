@@ -90,7 +90,7 @@ const add = async (userId, dog, cat) => {
 };
 ```
 
-All users would use the same entry point and, their data would also be saved in the same collection (`firestore.collection('pets')` ).
+All users would use the same entry point and their data would also be saved in the same collection (`firestore.collection('pets')` ).
 
 *****
 

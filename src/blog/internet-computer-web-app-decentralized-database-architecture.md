@@ -185,7 +185,7 @@ The data would be saved in the canister smart-contract, replicated and decentral
 
 Our first "Conservative" approach validated the hypothesis that data persistence for our web application in the Internet Compute could be done. But what about scalability?
 
-In our first approach, we did not use a `Trie` as in the example but, a `HashMap` to handle our data. In that way, it would have made the system a bit more scalable, as data would have potentially been still delivered quicker even with a large amount of data. However, at some point, we might have hit some limits anyway.
+In our first approach, we did not use a `Trie` as in the example; instead we store the data in a `HashMap`. That way, it would have made the system a bit more scalable, as data would have potentially been still delivered more quickly, even with a large amount of data. However, at some point, we might have hit some limits anyway.
 
 In addition, a canister can only store 4GB of memory pages due to the limitations of WebAssembly implementations ([source](https://medium.com/dfinity/a-technical-overview-of-the-internet-computer-f57c62abc20f)).
 

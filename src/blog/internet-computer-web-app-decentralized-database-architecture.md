@@ -116,7 +116,7 @@ If we omit the blockchain aspect (and the decentralization), it basically works 
 
 #### Code Snippet
 
-The way we can picture the persistence of the data within a canister, we would develop for our "pets" web application, would be again quite similar to previous architecture.
+The way we can picture the persistence of the data within a canister, like we would for our "pets" web application, would be again quite similar to the previous architecture.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*DcChK7ojaMYGqExH6F-YtQ.png)
 

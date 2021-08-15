@@ -98,7 +98,7 @@ All users would use the same entry point and their data would also be saved in t
 
 The Internet Computer does not provide a built-in, just-add-water database solution, that is not the goal of the DFINITY foundation (my understanding). They provide a futuristic blockchain network, that can run web applications too. That's "all".
 
-It is up to the makers to build features on the top. They can implement features and, unleash these on the IC through canister smart contracts.
+It is up to the makers to build features on top of it. They can implement features and unleash these on the IC through canister smart contracts.
 
 I picture my self a "canister" has a container that run a set of functions in the cloud, except that it is actually a decentralized blockchain network 😉. It can basically do anything that can be implemented, from computing to data persistence.
 

@@ -191,7 +191,7 @@ In addition, a canister can only store 4GB of memory pages due to the limitation
 
 That is why, we challenged our first idea and, and tried to find a more scalable design.
 
-It resulted in an architecture in which a main actor acts as a a manager that generates on the fly a decentralized secure simple key-value database-like for each single data persistence of each user 🤯.
+It resulted in an architecture in which a main actor acts as a a manager that -- on the fly, upon object creation -- generates a decentralized secure simple key-value database-like for each single data persistence of each user 🤯.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Dnw7c5hNpF8cm49nCmT3JA.png)
 

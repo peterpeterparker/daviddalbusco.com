@@ -28,7 +28,7 @@ In this article I present these two approaches.
 
 The scope of this blog post is limited to simple key-value database concepts. That kind of persistence is the one we rely on in DeckDeckGo.
 
-I do not know if anyone has yet implemented heavier concept with the IC (Internet Computer), such as a fully functional SQL database running in the chain.
+I do not know if anyone has already implemented heavier concepts with the IC (Internet Computer), such as a fully functional SQL database running on the blockchain.
 
 You can of course challenge these by commenting the blog post or by reaching out 😃.
 

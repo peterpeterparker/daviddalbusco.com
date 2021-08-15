@@ -197,7 +197,7 @@ It resulted in an architecture in which a main actor acts as a a manager that --
 
 In the above diagram I displayed only two users and, did not reflect the blockchain nature of the network but, hopefully, it pictures well the idea.
 
-A user, through the web app, requests  the manager to get his/her a personal decentralized secure simple key-value data persistence canister. Once obtained, he/she use this dedicated private space to query and persist his/her data.
+A user, through the web app, requests  the manager to get him/her a personal decentralized secure simple key-value data persistence canister. Once obtained, he/she uses this dedicated private space to query and persist his/her data.
 
 *****
 

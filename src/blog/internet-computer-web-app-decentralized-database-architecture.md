@@ -269,7 +269,7 @@ The `get` function returns, if it exists, the ID of the user’s canister.
 
 Both `preupgrade` and `postupgrade` are used to persist the memory between upgrades (see [documentation](https://sdk.dfinity.org/docs/language-guide/upgrades.html)).
 
-Once the manager being set, we would be able to implement an `actor` dedicated to the personal data persistence of a user.
+Once the manager developed, we would be able to implement an `actor` dedicated to the personal data persistence of a user.
 
 ```
 import Principal "mo:base/Principal";

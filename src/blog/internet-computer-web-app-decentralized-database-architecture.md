@@ -314,7 +314,7 @@ It is the user's kingdom, it contains only the personal data of that particular 
 
 ### Pros And Cons
 
-The ultimate architecture is really scalable, as every user operates in his/her own realm. It also separates the concern in clear ownerships and, fits well a secure approach.
+The ultimate architecture is really scalable, as every user operates in his/her own realm. It also separates the concern in clear ownerships and fits well a secure approach.
 
 However, it is worth to notice it is linked with more administration, whether during upgrade of their codes or handling their costs.
 

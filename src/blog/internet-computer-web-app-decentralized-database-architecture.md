@@ -175,7 +175,7 @@ actor {
 
 The data would be saved in the canister smart-contract, replicated and decentralized, while using an approach we are familiar with.
 
-*Note: *[Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=1638333901)* to related Motoko Playground to try and play with above example.*
+*Note: [Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=1638333901) to related Motoko Playground to try and play with above example.*
 
 *****
 
@@ -306,7 +306,7 @@ It is the user's kingdom, it contains only the personal data of that particular 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*LfdwUX1sVqLI9zp0WSWO_w.png)
 
-*Note: *[Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=4031577968)* to related Motoko Playground to check out above example.*
+*Note: [Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=4031577968) to related Motoko Playground to check out above example.*
 
 *****
 

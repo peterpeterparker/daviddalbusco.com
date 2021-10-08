@@ -60,7 +60,7 @@ Using a technology and providers that share and live by the same values goes wit
 
 #### GAFAM
 
-I originally intended to hit quite hard on the big tech in this chapter because I am convinced there is something viscerally rotten in their monopolistic influences on our life but, I think I will just summarize everything with one simple question: do you really want to pay for services that send Jeff Bezos to space?
+I originally intended to hit quite hard on the big tech in this chapter because I am convinced there is something viscerally rotten in their monopolistic influences on our life. Instead I will leave you with one simple question: do you really want to pay for services that send Jeff Bezos to space?
 
 *****
 

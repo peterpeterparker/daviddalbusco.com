@@ -24,7 +24,7 @@ Of course getting grants helps get motivated to use a new technology but, the re
 
 #### Decentralization
 
-Even though at first glance **decentralization** might not seem to bring much to our use case, after-all who need slides that are saved in a decentralized manner, we think the extra level of **security** it implies is an incredible opportunity.
+Even though at first glance **decentralization** might not seem to bring much to a presentation editor (who needs decentralized slides?), we think the extra level of **security** it adds is an incredible opportunity.
 
 We foresee an architecture in which each user gets one (or multiple) database-like smart contracts for his/her data. Users will get a clear ownership on their data and there won’t be one single node that will contain all content.
 

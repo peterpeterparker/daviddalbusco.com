@@ -88,7 +88,7 @@ The Internet Computer is primarily a distributed and decentralized platform for 
 
 To create slides, users must be able to upload their assets (images and csv files). That data is currently persisted in CDN Storage.
 
-This milestone is the re-implementation of such system on the Internet Computer using one or multiple canisters. As for the data, we aim to empower the ownership and privacy of the users’ content with a decentralized architecture.
+This milestone is the re-implementation of a similar system on the Internet Computer using one or multiple canisters. As for the data, we aim to empower the ownership and privacy of the users’ content with a decentralized architecture.
 
 *****
 

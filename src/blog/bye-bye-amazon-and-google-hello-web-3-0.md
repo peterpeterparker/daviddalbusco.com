@@ -36,7 +36,7 @@ Think about it, as I am writing these lines Wednesday Oct. 6, it was just report
 
 In addition, two days ago, Monday Oct. 5, Facebook suffered a massive blackout of seven hours during which none of their services were reachable. It was even reported that some employees could not access their building because the doors were connected to the same networks that were unreachable.
 
-Decentralization might not be the silver bullet but, these two recent incidents of major platforms showed me once again that the current model has its limits and comforts me in our decision.
+Decentralization is no silver bullet, but these two recent incidents of major platforms showed me once again that the current model has its limits and comforts me in our decision.
 
 *****
 

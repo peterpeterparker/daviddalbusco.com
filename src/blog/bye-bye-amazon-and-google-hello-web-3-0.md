@@ -130,6 +130,6 @@ To follow our adventure, you can star and watch our [GitHub repo](https://github
 
 A journey of a thousand miles begins with a single step and this blog post was mine.
 
-To dfinity and beyond.
+To DFINITY and beyond.
 
 David

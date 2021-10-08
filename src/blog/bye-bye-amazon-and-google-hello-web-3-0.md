@@ -70,7 +70,7 @@ We have no exact goal on the production launch date. On the contrary, without pr
 
 Meanwhile, we are also planning to unleash in production a transitional version of our editor that has been transformed to an “offline first” approach.
 
-Because we are planing no migration of the data, it will allow users to save their content to static files. The new version of the editor can open and save presentations to files as you would do with any desktop applications.
+Because we are planning no migration of the data, it will allow users to save their content to static files. The new version of the editor can open and save presentations to files as you would do with any desktop applications.
 
 *****
 

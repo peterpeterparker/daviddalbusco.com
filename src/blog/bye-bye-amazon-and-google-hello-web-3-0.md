@@ -76,7 +76,7 @@ Because we are planning no migration of the data, it will allow users to save th
 
 ### How?
 
-To fulfill the proof of concept, we already completed three milestones: “Offline first and Hosting”, “Authentication” and “Data Persistence”.
+To complete the proof of concept of porting DeckDeckGo on DFINITY's Internet Computer, we already completed three milestones: “Offline first and Hosting”, “Authentication” and “Data Persistence”.
 
 In order to achieve our short-term goal, and to get our second grant 😜, we have defined the following two new milestones:
 

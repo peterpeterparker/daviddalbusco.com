@@ -66,7 +66,7 @@ I originally intended to hit quite hard on the big tech in this chapter because 
 
 ### When?
 
-We have no exact goal on the productive launch date. To the contrary, without putting ourselves too much pressure, we do have for objective to reach a Beta milestone till end  of year or begin of next one. At that time, we hope to count on you to help us test the platform before its effective release.
+We have no exact goal on the production launch date. On the contrary, without pressuring ourselves too much, we do have for objective to reach a Beta milestone by the end of the year or the beginning of the next. At that time, we hope to count on you to help us test the platform before its official release.
 
 Meanwhile, we are also planning to unleash in production a transitional version of our editor that has been transformed to an “offline first” approach.
 

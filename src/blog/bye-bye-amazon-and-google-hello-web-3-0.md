@@ -26,7 +26,7 @@ Of course getting grants helps get motivated to use a new technology but, the re
 
 Even though at first glance **decentralization** might not seem to bring much to a presentation editor (who needs decentralized slides?), we think the extra level of **security** it adds is an incredible opportunity.
 
-We foresee an architecture in which each user gets one (or multiple) database-like smart contracts for his/her data. Users will get a clear ownership on their data and there won’t be one single node that will contain all content.
+We foresee an architecture in which each user gets one (or multiple) database-like smart contracts for their data. Users will get a clear ownership on their data and there won’t be one single node containing all the content.
 
 Moreover, thanks to the [Internet Identity](https://sdk.dfinity.org/docs/ic-identity-guide/what-is-ic-identity.html) that enables a secure anonymous authentication, the **privacy** will also be improved.
 

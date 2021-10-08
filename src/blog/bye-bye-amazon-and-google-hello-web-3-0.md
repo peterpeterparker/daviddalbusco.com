@@ -86,7 +86,7 @@ In order to achieve our short-term goal, and to get our second grant 😜, we ha
 
 The Internet Computer is primarily a distributed and decentralized platform for running software. To persist data and run programs on it, the applications have to be deployed as WebAssembly modules. These are executed inside of a conceptual computational unit called a software canister ([source](https://sdk.dfinity.org/docs/developers-guide/concepts/canisters-code.html)).
 
-To create slides, users must be able to upload their assets (images and csv files). That data is currently persisted in a CDN Storage.
+To create slides, users must be able to upload their assets (images and csv files). That data is currently persisted in CDN Storage.
 
 This milestone is the re-implementation of such system on the Internet Computer using one or multiple canisters. As for the data, we aim to empower the ownership and privacy of the users’ content with a decentralized architecture.
 

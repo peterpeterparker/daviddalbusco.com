@@ -18,7 +18,7 @@ Thanks to the help of a second 25k USD grant from the DFINITY foundation, we wil
 
 ### Why?
 
-Of course getting grants helps get motivated to use a new technology but, the reasons why we believe such a move is the right one have other motivations.
+Of course getting grants is a strong motivation to use a new technology, but there are other reasons why we think this is the right move.
 
 *****
 

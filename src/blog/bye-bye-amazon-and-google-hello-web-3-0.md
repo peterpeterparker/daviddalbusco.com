@@ -42,7 +42,7 @@ Decentralization is no silver bullet, but these two recent incidents of major pl
 
 #### Governance
 
-As a decentralized blockchain, all changes to the configuration and behavior of the Internet Computer are controlled by a governance body called the Network Nervous System (NNS — [source](https://sdk.dfinity.org/docs/developers-guide/concepts/governance.html)).
+As a decentralized blockchain, all changes to the configuration and behavior of the Internet Computer are controlled by a (decentralized, democratic) governance body called the Network Nervous System (NNS — [source](https://sdk.dfinity.org/docs/developers-guide/concepts/governance.html)).
 
 According to certain criteria (see “neurons” in the linked source), it is possible to get voting rights to define the future of the network.
 

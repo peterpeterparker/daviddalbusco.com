@@ -54,7 +54,7 @@ In other words, it is possible to become an actor and to get involved in the dev
 
 We share our learnings through blog posts and our project’s **open source** code is published on [GitHub](https://github.com/deckgo/deckdeckgo/).
 
-Using a technology and providers that share, and apply itself, the same values goes without saying.
+Using a technology and providers that share and live by the same values goes without saying.
 
 *****
 

@@ -104,7 +104,7 @@ In other words: our overall goal is to transform our editor in a way that user s
 
 From day one and until today, DeckDeckGo has always been a side project. Even though we do display an [Enterprise](https://deckdeckgo.com/en/enterprise) offering on our website, we never actively did any sales activities nor found the perfect partners (or time) to start such a collaboration.
 
-However, as we are about to transition to a new network model that requirea [cycles](https://sdk.dfinity.org/docs/developers-guide/concepts/tokens-cycles.html), which are used to pay for resource consumption, and have for goal to release kind of a unique tool, we do know have monetization in mind with nothing less than tokenization.
+However, as we are about to transition to a new network model that requires [cycles](https://sdk.dfinity.org/docs/developers-guide/concepts/tokens-cycles.html), which are used to pay for resource consumption, and have for goal to release kind of a unique tool, we do know have monetization in mind with nothing less than tokenization.
 
 *****
 

@@ -10,7 +10,7 @@ canonical: "https://daviddalbusco.medium.com/dynamically-import-esm-modules-from
 
 ![](https://cdn-images-1.medium.com/max/1600/1*YNwx6BRv02H0wpV7xsKhtg.png)
 
-It’s decided, we are porting our web editor for slides, [DeckDeckGo](https://deckdeckgo.com/), to [DFINITY](https://dfinity.org/)’s Internet Computer!
+It’s official, we are porting our web editor for slides, [DeckDeckGo](https://deckdeckgo.com/), to [DFINITY](https://dfinity.org/)’s Internet Computer!
 
 Thanks to the help of a second 25k USD grant from the DFINITY foundation, we will wrap up the work needed for running a beta version of DeckDeckGo on the Internet Computer ([sign up](http://eepurl.com/hKeMLD) to help us test it!).
 

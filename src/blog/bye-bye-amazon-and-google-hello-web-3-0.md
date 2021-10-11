@@ -1,6 +1,6 @@
 ---
 path: "/blog/bye-bye-amazon-and-google-hello-web-3-0"
-date: "2021-10-12"
+date: "2021-10-11"
 title: "Bye-Bye Amazon & Google, Hello Web 3.0"
 description: "We are migrating our web application to DFINITY's Internet Computer."
 tags: "#webdev #serverless #blockchain #programming"

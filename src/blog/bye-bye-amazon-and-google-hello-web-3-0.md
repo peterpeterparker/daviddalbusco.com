@@ -3,9 +3,9 @@ path: "/blog/bye-bye-amazon-and-google-hello-web-3-0"
 date: "2021-10-12"
 title: "Bye-Bye Amazon & Google, Hello Web 3.0"
 description: "We are migrating our web application to DFINITY's Internet Computer."
-tags: "#webdev #serverless #blockchain #motivation"
+tags: "#webdev #serverless #blockchain #programming"
 image: "https://cdn-images-1.medium.com/max/1600/1*YNwx6BRv02H0wpV7xsKhtg.png"
-canonical: "https://daviddalbusco.medium.com/dynamically-import-esm-modules-from-a-cdn-5a6f741e2a1c"
+canonical: "https://daviddalbusco.medium.com/bye-bye-amazon-google-hello-web-3-0-b01bfe8f8783"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*YNwx6BRv02H0wpV7xsKhtg.png)

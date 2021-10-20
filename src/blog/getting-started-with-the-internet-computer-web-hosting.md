@@ -18,6 +18,8 @@ Our project’s [first milestone](https://github.com/deckgo/deckdeckgo/milestone
 
 Here are the few things I learned along the way. Hopefully it will help you get started too.
 
+*Last update: Oct. 20, 2021*
+
 *****
 
 ### Introduction
@@ -32,7 +34,7 @@ If you are looking to ease the process of web-hosting, [Fleek](https://fleek.co/
 
 In comparison to established cloud providers, the DFINITY foundation does not offer any free tier plan to explore the Internet Computer yet.
 
-That being said, they might plan to launch such a concept soon according their [website](https://dfinity.org/developers) (see “Free Cycles”).
+That being said, it is possible to get free cycles to start building on the IC through their [Cycles Faucet](https://medium.com/dfinity/cycles-faucet-free-cycles-to-build-on-the-internet-computer-789166a95140) initiative.
 
 In addition, a [CHF 200 million program](https://medium.com/dfinity/dfinity-announces-chf-200-million-program-to-support-the-internet-computer-developer-ecosystem-c65aa290548c) to support the developer ecosystem, award teams to build dapps, tooling, and infrastructure on the Internet Computer.
 
@@ -88,31 +90,35 @@ I use these in many projects, and can understand that a team has to give priorit
 
 Anyway and fortunately, contributor [MioQuispe](https://github.com/MioQuispe) has created a CLI, [create-ic-app](https://github.com/MioQuispe/create-ic-app), which provides different flavor of starter kits.
 
-If you are using [Rollup](https://rollupjs.org/), as we do through [Stencil](https://stenciljs.com/), you can also check our repo (see [stencil.config.ts](https://github.com/deckgo/deckdeckgo/blob/feat/internet-computer/studio/stencil.config.ts) and [ic.config.ts](https://github.com/deckgo/deckdeckgo/blob/feat/internet-computer/studio/ic.config.ts)).
+If you are using [Rollup](https://rollupjs.org/), as we do through [Stencil](https://stenciljs.com/), you can also check our repo (see [stencil.config.ts](https://github.com/deckgo/deckdeckgo/blob/main/providers/ic/stencil.config.ts) and [dfx.config.ts](https://github.com/deckgo/deckdeckgo/blob/main/providers/ic/dfx.config.ts)).
 
 *****
 
-### Mo’ JS Chunks, Mo’ Problems
+### Deployment
 
-According to my tests, an Internet Computer's canister is currently not well suited for modern JavaScript app bundles split in multiple chunks.
+At first, I had the feeling the Internet Computer's was not really well suited for JavaScript bundles split in multiple chunks (ES modules) but, I was wrong.
 
-It gives me the feeling it excepts the application to be provided with one or two resources top, a `main.js` and `vendor.js`, and thus for following reasons:
+After some iterations, I solved my issues and answered my questions.
 
 *****
 
 #### Cost Of Upload
 
-Uploading assets to a canister takes time and costs too. Each resource is process and deploy in exchange for a few cycles.
+Uploading assets to a canister takes time and costs. Each resource is process and deploy in exchange for a few cycles.
 
-I did not find or get how these are calculated but, it seems that the amount of operations, of files transfer, has a bigger impact on the related costs than the size.
+I did not find or get how these are calculated but, it seems that the amount of operations, of files transfer, has a bigger impact on the related costs than the size. Being said, it's my observation, this might be incorrect.
 
-For example, uploading 10 JS files of 1kb seems to cost more than uploading 1 file of 10 kb.
+Each asset is analyzed and processed, it takes a few seconds to upload one resource.
 
-In addition, as each assets is analyzed and processed, it takes a few seconds to upload one resource.
+A hash is created for every uploaded assets and, if no changes are detected, files will not be analyzed and imported again. Therefore, the very first upload needs more resources than those who will follow.
 
-A hash is created for every uploaded assets and, if no changes are detected, files will not be analyzed and imported again.
+Nevertheless, I let you picture what it meant when I first tried to upload our application which contains >290 JavaScript chunks and >1'000 SVG images 🤪.
 
-Nevertheless, I let you picture what it meant when I first tried to upload our application which contains >290 JavaScript chunks and >1'000 SVG images!
+Anyway, I ultimately  managed to set up my project for the best. I notably removed all unused SVG (<100 are actually used) and other resources such as `.map`.
+
+I also observed more in details the cost of uploading these >290 JS chunks, which weight for the most only a couple of thousands bytes, and noticed that the related cost  was actually low.
+
+If I get it right, according [documentation](https://sdk.dfinity.org/docs/developers-guide/computation-and-storage-costs.html), the 0.013 tera Cycles which were debited from my account for such operation actually represent less than $0.02.
 
 *****
 
@@ -126,11 +132,13 @@ Fortunately, there is another sub-domain, `<your-app-id>.raw.ic0.app`  where no 
 
 *****
 
-#### A Solution
+### ES Modules
 
-If the boot time can be improved by using the `raw` sub-domain, the upload speed and cost may remain an issue. To mitigate this, I modified our application to not bundle our [Web Components](https://www.npmjs.com/search?q=%40deckdeckgo) and [Ionic](https://ionicframework.com/) design system.
+For a long period of time, I did not manage to deploy, or use, our application on the simulated local network.
 
-Instead, it fetches the dependencies at run time through other CDNs ([Unpkg](https://unpkg.com/) and [JSDelivr](https://www.jsdelivr.com/)). I also leverage a Service Worker so that these resources are going to be properly cached on the client side.
+I was using the test URL [http://localhost:8000/?canisterId=canister_id](http://localhost:8000/?canisterId=canister_id) which fails at loading ES modules because it cannot set the referrer correctly.
+
+Fortunately, thanks to a feedback of the DFINITY team, we figured out that using the canister id as a local subdomain instead of a query URL solves the issue: [http://canister_id.localhost:8000/](http://canister_id.localhost:8000/)
 
 *****
 

@@ -134,28 +134,6 @@ Instead, it fetches the dependencies at run time through other CDNs ([Unpkg](htt
 
 *****
 
-### Preload ESM Modules
-
-The simulated local development network environment of the DFINITY SDK does not like ESM Modules as long that each and single one of these are not preloaded. Otherwise, you web application will just not load.
-
-In production, once I deployed my application, I ran a quick Lighthouse test which also suggested me to preload several modules.
-
-That’s why, if you ship your application with ESM Modules, I suggest you to preload modules. In addition, add the links at the bottom of the DOM, [it improves the performance](https://twitter.com/daviddalbusco/status/1414626842686988289).
-
-```html
-<html>
-  <body>
-
-    <!-- Anything / your content -->
-
-    <link rel="modulepreload" href="/script1.js">
-    <link rel="modulepreload" href="/script2.js">
-  </body>
-</html>
-```
-
-*****
-
 ### Summary
 
 I still got a bit of work on the agenda but, our first milestone is coming well together. Yesterday I even started to have a look at the authentication (part of our second milestone). I hope above tips and tricks might help some other developers to get started with this exciting new technology.

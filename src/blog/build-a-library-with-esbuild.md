@@ -316,7 +316,7 @@ const minify = require('html-minifier-terser').minify;
     
     await writeFile(
         'lib/index.html',
-        `<script>${script.outputFiles[0].text}</script>${minify(html, minifyOptions)}`
+        `<script>${script.outputFiles[0].text}</script>${await minify(html, minifyOptions)}`
     );
 })();
 ```

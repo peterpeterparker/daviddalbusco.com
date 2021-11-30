@@ -165,7 +165,7 @@ public func postupgrade(stableData: [(Text, T)]) {
 
 To showcase the usage of such generic store in an actor, we create an empty canister that defines a type of object to store, such as a `Car` .
 
-We `import` the helper and declare both the objects we are going to use. The `store` itself and a stable `entries` we used to maintain the state on upgrades.
+We `import` the helper and declare both the objects we are going to use. The `store` itself and a stable `entries` to maintain the state on upgrades.
 
 ```javascript
 import Iter "mo:base/Iter";

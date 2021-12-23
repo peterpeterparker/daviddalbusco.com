@@ -201,7 +201,7 @@ const base64SVG: string =
 const imgSrc: string = `data:image/svg+xml;base64,${base64SVG}`;
 ```
 
-Secondly, even if the function threw no compilation nor runtime error, it was not yet ready. Indeed, no text was exported in the resulting canvas.
+Unfortunately, even if the function threw no compilation nor runtime error, it was not yet ready. Indeed, no text was exported in the resulting canvas.
 
 After some “die and retry” research, I figured out `foreignObject` content need their CSS styles to be **inlined** for export purpose.
 

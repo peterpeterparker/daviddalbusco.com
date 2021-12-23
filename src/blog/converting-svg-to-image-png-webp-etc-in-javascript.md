@@ -76,7 +76,7 @@ Using a `foreignObject` with an HTML element `<img/>` would have been possible f
 
 For the same reason, I was also not able to render the image directly from a URL (`href="https://..."`) and had to first transform it to a `base64` string.
 
-In this way only, the image is rendered and can be included in the converted image output.
+Only this way the image is rendered and can be included in the converted image output.
 
 ```javascript
 export const fetchImage = async ({imgSrc}: {imgSrc: string}): Promise<string | undefined> => {

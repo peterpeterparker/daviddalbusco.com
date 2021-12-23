@@ -261,7 +261,7 @@ export const svgToCanvas = ({svg, style}: {svg: SVGGraphicsElement; style: CSSSt
 };
 ```
 
-As I modified its declaration, I also had to change the caller in order to find and path the style of the text element.
+As I modified its declaration, I also had to change the caller in order to find the style of the text element.
 
 ```javascript
 @Method()

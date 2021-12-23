@@ -205,7 +205,7 @@ Unfortunately, even if the function threw no compilation nor runtime error, it w
 
 After some “die and retry” research, I figured out that the `foreignObject` content needs its CSS styles to be **inlined** when exporting.
 
-To solve this in a relative dynamical way, I implemented another function that replicates all CSS styles of the original text element to a clone.
+To solve this in a relatively dynamical way, I implemented another function that replicates all CSS styles of the original text element to a clone.
 
 ```javascript
 const inlineStyle = ({clone, style}: {clone: SVGGraphicsElement; style: CSSStyleDeclaration}) => {

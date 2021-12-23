@@ -203,7 +203,7 @@ const imgSrc: string = `data:image/svg+xml;base64,${base64SVG}`;
 
 Unfortunately, even if the function threw no compilation nor runtime error, it was not yet ready. Indeed, no text was exported in the resulting canvas.
 
-After some “die and retry” research, I figured out `foreignObject` content need their CSS styles to be **inlined** for export purpose.
+After some “die and retry” research, I figured out that the `foreignObject` content needs its CSS styles to be **inlined** when exporting.
 
 To solve this in a relative dynamical way, I implemented another function that replicates all CSS styles of the original text element to a clone.
 

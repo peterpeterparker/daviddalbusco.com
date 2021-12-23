@@ -193,7 +193,7 @@ However, in my component, using that approach threw an exception at runtime.
 
 > Security Error: Tainted canvases may not be exported.
 
-That’s why, I had no other choice than finding another way to instantiate the `Image` object which, fortunately, was possible by using another serialization method.
+I had no other choice than finding another way to instantiate the `Image` object which, fortunately, was possible by using another serialization method.
 
 ```javascript
 const base64SVG: string =

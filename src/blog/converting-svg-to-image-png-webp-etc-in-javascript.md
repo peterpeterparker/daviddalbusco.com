@@ -308,7 +308,7 @@ export const canvasToBlob =
 
 ### Conclusion
 
-Sometimes development takes a bit more time than excepted, it took me a day to develop, solve all issues, test and publish the component but, I am glad I did it.
+Sometimes development takes a bit more time than excepted, it took me a day to develop, solve all issues, test and publish the component, but I am glad I did it.
 
 Not only it resolves a feature I needed to notably publish this blog post but, I learned quite some new tricks along the way.
 

@@ -61,7 +61,7 @@ p {
 
 #### Image
 
-On the contrary of the text, to embed the image, I had to use a graphical `<image/>` element.
+Unlike the text, to embed the image, I had to use a graphical `<image/>` element.
 
 ```javascript
 <svg>

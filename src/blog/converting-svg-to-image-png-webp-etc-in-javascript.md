@@ -319,7 +319,7 @@ David
 
 ### Further Reading
 
-Wanna read more our project ?We are porting [DeckDeckGo](https://deckdeckgo.com/) to [DFINITY’s](https://dfinity.org/) Internet Computer. Here is the list of blog posts I published since we started the project:
+Wanna read more about our project? We are porting [DeckDeckGo](https://deckdeckgo.com/) to [DFINITY’s](https://dfinity.org/) Internet Computer. Here is the list of blog posts I published since we started the project:
 
 * [A Simple KeyVal Store Implemented in Motoko](https://daviddalbusco.com/blog/a-simple-keyval-store-implemented-in-motoko)
 * [TypeScript Utilities For Candid](https://daviddalbusco.com/blog/typescript-utilities-for-candid)

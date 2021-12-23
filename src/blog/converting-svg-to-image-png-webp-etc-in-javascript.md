@@ -72,7 +72,7 @@ Unlike the text, to embed the image, I had to use a graphical `<image/>` element
 </svg>
 ```
 
-Using a `foreignObject` with an HTML element `<img/>` would have been possible for rendering purpose but, I did not find a way to ultimately export it to the resulting image.
+Using a `foreignObject` with an HTML element `<img/>` would have been possible for rendering purposes but, I did not find a way to ultimately export it to the resulting image.
 
 For the same reason, I was also not able to render the image directly from a URL (`href="https://..."`) but, had first to transform it to a `base64` string.
 

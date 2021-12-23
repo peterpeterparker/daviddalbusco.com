@@ -16,7 +16,7 @@ canonical: "https://zhx6p-eqaaa-aaaai-abbrq-cai.raw.ic0.app/d/converting-svg-to-
 
 Last Monday I built and published [a new Web Component](https://docs.deckdeckgo.com/?path=/story/components-social-image--social-image), developed with [StencilJS](https://stenciljs.com/), to generate social images dynamically in the browser.
 
-For a given text and logo, the component renders a shadowed SVG that can be converted to image (PNG, Webp, etc.) and that without any third party dependencies.
+For a given text and logo, the component renders a shadowed SVG that can be converted to an image (PNG, Webp, etc.), and does so without any third party dependencies.
 
 This is how it works.
 

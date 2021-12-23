@@ -279,7 +279,7 @@ async toBlob(type: string = 'image/webp'): Promise<Blob> {
 
 #### Canvas To Image (Blob)
 
-Converting the canvas to an image result in a blob. In my original solution, I implemented such transformation with the help of the fetch API. It’s clean and compact.
+Converting the canvas to an image results in a blob. In my original solution, I implemented that transformation with the help of the fetch API. It’s clean and concise.
 
 ```javascript
 export const canvasToBlob =

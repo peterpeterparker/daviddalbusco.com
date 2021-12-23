@@ -105,7 +105,7 @@ const toBase64 = ({blob}: {blob: Blob}): Promise<string> => {
 };
 ```
 
-In above code snippet, the `imgSrc` is the URL to the image, the logo, that should be embedded. It is first fetched, then transformed to a `blob` and finally converted to a `base64` string.
+In the above code snippet, the `imgSrc` is the URL to the image -- the logo -- that should be embedded. It is first fetched, then transformed to a `blob` and finally converted to a `base64` string.
 
 *****
 

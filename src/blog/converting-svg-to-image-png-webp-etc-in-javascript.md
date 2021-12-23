@@ -32,7 +32,7 @@ To create the dynamic SVG, I used a `foreignObject` to embed the text with an HT
 
 #### ForeignObject
 
-I could have use `<text/>` elements to draw graphics instead of HTML elements but, the feature has the need to support dynamic inputs. These can be too long and might need to be truncated and displayed with three ending dots `...` .
+I could have used `<text/>` elements to draw graphics instead of HTML elements, however the feature needs to support dynamic inputs. These can be too long and might need to be truncated and displayed with three ending dots `...` .
 
 Feature I found easier to implement with CSS rather than with JavaScript. `<text/>` are not paragraphs but lines.
 

@@ -74,7 +74,7 @@ Unlike the text, to embed the image, I had to use a graphical `<image/>` element
 
 Using a `foreignObject` with an HTML element `<img/>` would have been possible for rendering purposes but, I did not find a way to ultimately export it to the resulting image.
 
-For the same reason, I was also not able to render the image directly from a URL (`href="https://..."`) but, had first to transform it to a `base64` string.
+For the same reason, I was also not able to render the image directly from a URL (`href="https://..."`) and had to first transform it to a `base64` string.
 
 In this way only, the image is rendered and can be included in the converted image output.
 

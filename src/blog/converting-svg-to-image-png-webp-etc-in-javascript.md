@@ -127,7 +127,7 @@ async toBlob(type: string = 'image/webp'): Promise<Blob> {
 }
 ```
 
-As you may notice, the above method define a default mime type for the export `image/webp`. According to my tests, it does also the job for other format such as `image/png` and `image/jpg`.
+As you may notice, the above method defines a default mime type (`image/webp`) for the export. According to my tests, it also works for other format such as `image/png` and `image/jpg`.
 
 *****
 

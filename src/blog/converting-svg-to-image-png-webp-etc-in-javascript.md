@@ -189,7 +189,7 @@ const blob: Blob = new Blob([svg.outerHTML],
 const blobURL: string = URL.createObjectURL(blob);
 ```
 
-However, in my component, using such approach threw an exception at runtime.
+However, in my component, using that approach threw an exception at runtime.
 
 > Security Error: Tainted canvases may not be exported.
 

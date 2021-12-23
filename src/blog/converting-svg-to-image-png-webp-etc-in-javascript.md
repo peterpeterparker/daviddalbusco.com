@@ -133,7 +133,7 @@ As you may notice, the above method defines a default mime type (`image/webp`) f
 
 #### SVG To Canvas
 
-In one of my previous work, a [Figma plugin](https://github.com/deckgo/figma-deckdeckgo-plugin), I already developed a function that convert SVG to `HTMLCanvasElement`.
+In one of my previous works (a [Figma plugin](https://github.com/deckgo/figma-deckdeckgo-plugin)) I already developed a function that convert SVG to `HTMLCanvasElement`.
 
 ```javascript
 export const transformCanvas = ({index}: Frame): Promise<SvgToCanvas | undefined> => {

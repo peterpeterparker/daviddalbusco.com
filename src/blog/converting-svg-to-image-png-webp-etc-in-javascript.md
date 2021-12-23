@@ -292,7 +292,7 @@ export const canvasToBlob =
 
 However, once again you might say 😅, I discovered an issue at runtime when I deployed my application.
 
-Such approach requires enabling `data:` in the `connect-src` rule of a content security policy (CSP) which is strongly discouraged.
+That approach requires enabling `data:` in the `connect-src` rule of the content security policy (CSP) which is strongly discouraged.
 
 Fortunately, there is another way to convert canvas to blob, the built-in [toBlob()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob) method that accept a `callback` as argument.
 

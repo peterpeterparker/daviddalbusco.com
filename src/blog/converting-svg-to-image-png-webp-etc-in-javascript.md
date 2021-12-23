@@ -181,7 +181,7 @@ export const transformCanvas = ({index}: Frame): Promise<SvgToCanvas | undefined
 
 At first, I had the feeling it would be a piece of cake to re-implement the exact same above function. Unfortunately, “feeling” was the only valid keyword in that sentence 😂.
 
-The first issue I faced was related to the conversion of the SVG to Blob. In previous method, it converts it using the SVG value and an object URL.
+The first issue I faced was related to the conversion of the SVG to Blob. In the previous method, it converts it using the SVG value and an object URL.
 
 ```javascript
 const blob: Blob = new Blob([svg.outerHTML], 

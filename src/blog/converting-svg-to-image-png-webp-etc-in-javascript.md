@@ -46,7 +46,7 @@ This is something I found easier to implement with CSS rather than with JavaScri
 </svg>
 ```
 
-The [-webkit-line-clamp](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) CSS property allows the limitation of content of block containers to the specified number of lines.
+The [-webkit-line-clamp](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-line-clamp) CSS property allows shrinking the content of block containers to the specified number of lines.
 
 ```javascript
 p {

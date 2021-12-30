@@ -21,3 +21,9 @@ blockquote {
   margin: 1.25rem 0;
   font-style: italic;
 }
+
+article p:first-child img {
+  box-shadow: 3px 3px black;
+  border: 1px solid black;
+  border-radius: 1px;
+}

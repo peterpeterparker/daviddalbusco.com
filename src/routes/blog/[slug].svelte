@@ -16,7 +16,7 @@
   import {browser} from '$app/env';
   import {onMount} from 'svelte';
 
-  import '../../theme/_code.scss';
+  import '../../theme/_blog.scss';
 
   import Seo from '$lib/components/seo.svelte';
   import type {BlogMetadata} from '$lib/types/blog';

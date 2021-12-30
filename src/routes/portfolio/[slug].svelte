@@ -35,7 +35,7 @@
 <main>
   {@html content}
 
-  <Button action={navigatePortfolio}>More projects</Button>
+  <Button action={navigatePortfolio}>Continue to portfolio</Button>
 </main>
 
 <style lang="scss">
@@ -53,7 +53,7 @@
     }
 
     :global(button:last-of-type) {
-      margin-top: 1.45rem;
+      margin-top: 2.45rem;
     }
   }
 </style>

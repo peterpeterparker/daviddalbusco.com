@@ -31,7 +31,7 @@
   </div>
 
   {#if more}
-    <Button action={navigateBlog}>More articles</Button>
+    <Button action={navigateBlog}>Read more articles</Button>
   {/if}
 </Section>
 

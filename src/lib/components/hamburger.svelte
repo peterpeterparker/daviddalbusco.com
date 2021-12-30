@@ -18,7 +18,7 @@
   };
 </script>
 
-<button on:click={onClick}>
+<button aria-label="Menu" on:click={onClick}>
   <div class="first" class:open />
   <div class="second" class:open />
   <div class="third" class:open />

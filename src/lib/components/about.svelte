@@ -39,7 +39,7 @@
   <p>
     In my humble opinion, decentralization might become the next big thing (we often need), that's why I am interested
     in blockchain networks, specially <mark>
-      <a href="https://dfinity.org/" rel="noopener noreferrer">DFINITY's</a>
+      <a href="https://dfinity.org/" rel="noopener noreferrer">DFINITY</a>
     </mark> Internet Computer.
   </p>
   <p>

@@ -15,7 +15,7 @@
   h1 {
     font-size: calc(var(--font-size-h1) * 2.5);
     line-height: calc(var(--line-height-h1) * 1.75);
-    text-shadow: 0.05em 0.05em var(--color-secondary);
+    text-shadow: 0.05em 0.05em var(--color-primary);
     margin: 0.75em 0 1.25em;
 
     @media screen and (max-width: 960px) {

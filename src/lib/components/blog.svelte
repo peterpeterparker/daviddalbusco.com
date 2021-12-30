@@ -36,6 +36,10 @@
 </Section>
 
 <style lang="scss">
+  .grid {
+    margin: 0 0 3.25em;
+  }
+
   p {
     margin: 0 0 3.25em;
   }

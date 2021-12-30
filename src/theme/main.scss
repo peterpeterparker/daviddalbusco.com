@@ -1,31 +1,9 @@
-main {
-  width: 100%;
-  padding-right: 1.45rem;
-  padding-left: 1.45rem;
-  margin-right: auto;
-  margin-left: auto;
+section,
+header {
+  margin: 2.45em;
 }
 
-@media (min-width: 576px) {
-  main {
-    max-width: 540px;
-  }
-}
-
-@media (min-width: 768px) {
-  main {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  main:not(.small) {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  main:not(.small) {
-    max-width: 1140px;
-  }
+nav {
+  padding: 0 2.45em;
+  margin: 1.45em 0;
 }

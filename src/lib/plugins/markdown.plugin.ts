@@ -47,7 +47,7 @@ const renderHTML = ({slug, path}: {slug: string; path: 'portfolio' | 'blog'}): s
   const codeRule = () => (tokens, idx, _options, _env) => {
     return `<deckgo-highlight-code 
                 language="${tokens[idx].params ? tokens[idx].params : 'javascript'}">
-                    <code slot="code">${tokens[idx].content}</code>
+                    <code slot="code">${utils.escapeHtml(tokens[idx].content)}</code>
             </deckgo-highlight-code>`;
   };
 
@@ -58,7 +58,9 @@ const renderHTML = ({slug, path}: {slug: string; path: 'portfolio' | 'blog'}): s
       ? ' title="' + utils.escapeHtml(utils.replaceEntities(tokens[idx].title)) + '"'
       : '';
     const target = options.linkTarget ? ' target="' + options.linkTarget + '"' : '';
-    return '<a href="' + utils.escapeHtml(tokens[idx].href) + '"' + title + target + ' rel="noopener noreferrer">';
+    return (
+      '<a href="' + utils.escapeHtml(tokens[idx].href) + '"' + title + target + ' rel="noopener noreferrer external">'
+    );
   };
 
   md.renderer.rules.link_open = linkOpenRule();

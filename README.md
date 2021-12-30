@@ -1,8 +1,8 @@
-Hello,
+Hi 👋
 
-I'm [David Dal Busco]. I'm a freelancer web developer.
+I'm [David Dal Busco], a freelance web developer, open source enthusiast, based in Zürich, Switzerland.
 
-This project is my personal website which showcases my portfolio and blog entries.
+This project is my personal website that showcases my portfolio and blog entries.
 
 ## Table of contents
 

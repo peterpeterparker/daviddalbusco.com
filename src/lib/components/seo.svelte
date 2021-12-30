@@ -19,7 +19,7 @@
 <meta content="website" property="og:type" />
 <meta content={url ?? defaultUrl} property="og:url" />
 <meta content={image ?? defaultImage} property="og:image" />
-<meta content="summary" name="twitter:card" />
+<meta content="summary_large_image" name="twitter:card" />
 <meta content={title ?? defaultTitle} name="twitter:creator" />
 <meta content={title ?? defaultTitle} name="twitter:title" />
 <meta content={description ?? defaultDescription} name="twitter:description" />

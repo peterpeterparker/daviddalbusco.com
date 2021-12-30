@@ -1,0 +1,9 @@
+section {
+  padding-top: 3.45em;
+}
+
+section > h2,
+section > p,
+section > form {
+  max-width: min(640px, 100vw);
+}

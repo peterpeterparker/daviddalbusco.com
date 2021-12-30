@@ -28,7 +28,7 @@
         ]
       },
       {
-        "source": "static/**/*",
+        "source": "fonts/**/*",
         "headers": [
           {
             "key": "Cache-Control",

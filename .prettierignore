@@ -1,4 +1,2 @@
-.cache
-.firebase
-public
-src/blog
+.svelte-kit/**/*
+build/**/*

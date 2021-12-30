@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://daviddalbusco.com/sitemap/sitemap-index.xml
+Host: https://daviddalbusco.com

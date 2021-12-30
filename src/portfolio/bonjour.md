@@ -18,7 +18,7 @@ Their goal is to work together for a better future.
 
 ## Fact sheet
 
-**Technology:** [Ionic](http://ionicframework.com/), [StencilJS](https://stenciljs.com/), [Angular](http://angular.io/), [Capacitor](https://capacitorjs.com/) and [Cordova](http://cordova.apache.org/)
+**Technology:** [Ionic](https://ionicframework.com/), [StencilJS](https://stenciljs.com/), [Angular](https://angular.io/), [Capacitor](https://capacitorjs.com/) and [Cordova](https://cordova.apache.org/)
 
 **Website:** [Bonjour.help](https://bonjour.help/)
 

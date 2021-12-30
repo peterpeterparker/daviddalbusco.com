@@ -472,7 +472,7 @@ export class CoinsService {
 }
 ```
 
-> If you never used shareReplay before, be careful when using it. Read more in the [blog post](https://blog.strongbrew.io/share-replay-issue/) of [Kwinten Pisman](http://kwintenp).
+> If you never used shareReplay before, be careful when using it. Read more in the [blog post](https://blog.strongbrew.io/share-replay-issue/) of Kwinten Pisman.
 
 Finally, we can remove our last subscription in the component and also all linked code that has for goal to handle the un-subscription.
 

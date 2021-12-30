@@ -16,7 +16,7 @@ In addition, I supported the team in their technical decisions and also develope
 
 ## Fact sheet
 
-**Technology:** [StencilJS](http://stenciljs.com/), [Angular](http://angular.io/) and [Tailwind CSS](http://tailwindcss.com/)
+**Technology:** [StencilJS](https://stenciljs.com/), [Angular](https://angular.io/) and [Tailwind CSS](https://tailwindcss.com/)
 
 **Website:** [Owlly](https://owlly.ch/)
 

@@ -18,9 +18,9 @@ It was also interesting to develop a fully offline solution with [IndexedDB](htt
 
 ## Fact sheet
 
-**Available:** [Progressive Web Apps](https://tietracker.com/), [Apple Store](https://itunes.apple.com/app/id1493399075) and [Google Play](http://play.google.com/store/apps/details?id=com.tietracker.app)
+**Available:** [Progressive Web Apps](https://tietracker.com/), [Apple Store](https://itunes.apple.com/app/id1493399075) and [Google Play](https://play.google.com/store/apps/details?id=com.tietracker.app)
 
-**Technology:** [Ionic](http://ionicframework.com/), [React](https://reactjs.org/) and [Capacitor](https://capacitor.ionicframework.com/)
+**Technology:** [Ionic](https://ionicframework.com/), [React](https://reactjs.org/) and [Capacitor](https://capacitor.ionicframework.com/)
 
 **Infrastructure:** [Google Cloud Hosting](https://firebase.google.com/) and [GitHub Actions](https://github.com/peterpeterparker/tietracker/tree/master/.github/workflows)
 

@@ -32,7 +32,7 @@ Here is the copy of what we are currently using respectively what we are display
 
 ### Services
 
-We aim to be transparent, therefore, furthermore than open sourcing our all code on [GitHub](http://github.com/deckgo/deckdeckgo), here are the list of services we are using to provide DeckDeckGo.
+We aim to be transparent, therefore, furthermore than open sourcing our all code on [GitHub](https://github.com/deckgo/deckdeckgo), here are the list of services we are using to provide DeckDeckGo.
 
 #### Amazon
 

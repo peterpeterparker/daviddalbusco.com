@@ -12,7 +12,7 @@ canonical: "https://daviddalbusco.medium.com/bye-bye-amazon-google-hello-web-3-0
 
 It’s official, we are porting our web editor for slides, [DeckDeckGo](https://deckdeckgo.com/), to [DFINITY](https://dfinity.org/)’s Internet Computer!
 
-Thanks to the help of a second 25k USD grant from the DFINITY foundation, we will wrap up the work needed for running a beta version of DeckDeckGo on the Internet Computer ([sign up](http://eepurl.com/hKeMLD) to help us test it!).
+Thanks to the help of a second 25k USD grant from the DFINITY foundation, we will wrap up the work needed for running a beta version of DeckDeckGo on the Internet Computer ([sign up](https://eepurl.com/hKeMLD) to help us test it!).
 
 *****
 
@@ -122,7 +122,7 @@ However, as we are about to transition to a new network model that requires [cyc
 
 ### Keep In Touch
 
-To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️ and [sign up](http://eepurl.com/hKeMLD) to join the list of beta tester.
+To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️ and [sign up](https://eepurl.com/hKeMLD) to join the list of beta tester.
 
 *****
 

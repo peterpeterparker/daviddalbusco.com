@@ -103,7 +103,7 @@ That being said, here are a couple of handy functions which help detects informa
 
 #### isMobile
 
-[Detect Mobile Browsers](http://detectmobilebrowsers.com) is providing an open source list of mobile devices which can be use to test our navigator to detect if the user is browsing or using the application on a mobile device or not.
+[Detect Mobile Browsers](https://detectmobilebrowsers.com) is providing an open source list of mobile devices which can be use to test our navigator to detect if the user is browsing or using the application on a mobile device or not.
 
 ```javascript
 export function isMobile() {

@@ -96,7 +96,7 @@ Write speaker notes for your slides. Embed them in your presentation when and wh
 
 #### Open Source
 
-DeckDeckGo is open source. All of the code from our applications and components is available on [GitHub](http://github.com/deckgo/deckdeckgo).
+DeckDeckGo is open source. All of the code from our applications and components is available on [GitHub](https://github.com/deckgo/deckdeckgo).
 
 We encourage companies to adopt this approach, but we do understand if you prefer to keep your corporate templates private.
 

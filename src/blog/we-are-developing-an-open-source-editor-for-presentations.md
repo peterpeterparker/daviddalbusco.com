@@ -14,7 +14,7 @@ I’m currently sitting in a plane between Lisbon and Zürich, back from a famil
 
 I’m not sure this post will ever actually interest anyone, but well, I think that at least it will makes my travel faster. Moreover, my mum is currently reading a novel next to me and I also don’t want to disturb her, it’s a win-win situation 😉
 
-I also write these lines because I just finished to read the [MAKE](http://makebook.io) book of [Pieter Levels](https://twitter.com/levelsio) which was really interesting. His “indie” point of view on the startup “world” seems honest and quite refreshing to me. I could definitely advise you to acquire it.
+I also write these lines because I just finished to read the [MAKE](https://makebook.io) book of [Pieter Levels](https://twitter.com/levelsio) which was really interesting. His “indie” point of view on the startup “world” seems honest and quite refreshing to me. I could definitely advise you to acquire it.
 
 ### Introduction
 
@@ -35,7 +35,7 @@ I want also to emphasis something else, which might be given for some, but which
 
 ### Who
 
-We, [Nicolas Mattia](https://twitter.com/nasmattia) and I, are developing DeckDeckGo. Instead of telling you in a common “biography” way who we are, I thought that trying to summarize the first time we met at the [Impact Hub Zürich](http://zurich.impacthub.ch) (a great co-working space in Zürich) would just speak by itself. Let me try to summarize this very first discussion:
+We, [Nicolas Mattia](https://twitter.com/nasmattia) and I, are developing DeckDeckGo. Instead of telling you in a common “biography” way who we are, I thought that trying to summarize the first time we met at the [Impact Hub Zürich](https://zurich.impacthub.ch) (a great co-working space in Zürich) would just speak by itself. Let me try to summarize this very first discussion:
 
 - Hey, I’m David, I come from the French-speaking area of Switzerland
 - Hey, I’m Nicolas, I come from the French-speaking part too
@@ -51,7 +51,7 @@ We, [Nicolas Mattia](https://twitter.com/nasmattia) and I, are developing DeckDe
 black magic Nicolas is using 🤣*
 
 - I’m a fullstack freelancer/project manager but currently I mostly develop apps
-using [Ionic](https://ionicframework.com) and [Angular](http://angular.io)
+using [Ionic](https://ionicframework.com) and [Angular](https://angular.io)
 - Nice. Let’s build something together one of these days
 - Definitely
 

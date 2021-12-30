@@ -13,11 +13,11 @@
   <p>
     I am experienced with
     <mark>
-      <a href="http://ionicframework.com" rel="noopener noreferrer">Ionic</a>
+      <a href="https://ionicframework.com" rel="noopener noreferrer">Ionic</a>
     </mark>
     ,
     <mark>
-      <a href="http://angular.io" rel="noopener noreferrer">Angular</a>
+      <a href="https://angular.io" rel="noopener noreferrer">Angular</a>
     </mark>
     and
     <mark>

@@ -27,7 +27,7 @@ I called the prototype [Rebel Scan](https://rebelscan.com/) because, it is just 
 
 ## Fact sheet
 
-**Available:** [Progressive Web Apps](http://rebelscan.com/)
+**Available:** [Progressive Web Apps](https://rebelscan.com/)
 
 **Technology:** [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [StencilJS](https://stenciljs.com/) and Web APIs
 

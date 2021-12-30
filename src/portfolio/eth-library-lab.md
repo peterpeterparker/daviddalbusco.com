@@ -8,7 +8,7 @@ type: "work"
 
 # ETH Library Lab
 
-I am providing consulting services to the [ETH Library Lab](http://www.librarylab.ethz.ch/), an initiative for human-centered innovation in the knowledge sphere from [ETH Zürich](https://ethz.ch/).
+I am providing consulting services to the [ETH Library Lab](https://www.librarylab.ethz.ch/), an initiative for human-centered innovation in the knowledge sphere from [ETH Zürich](https://ethz.ch/).
 
 The lab has for mission to help students, researchers and educators to unleash their full potential by boosting ideas that support them in discovering, accessing, using or sharing scientific information and knowledge.
 

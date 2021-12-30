@@ -366,7 +366,7 @@ If everything work as expected, the modal should be lazy loaded and, we should b
 
 ### Epilogue
 
-I am really grateful to have had the opportunity to be hired as a freelancer to collaborate on a project like  [Owlly](http://owlly.ch/). Once again, thank you Sandro for the opportunity. I also hope this tutorial is going to be helpful to anyone looking to set up modals with Angular and Tailwind and if you have idea of improvements, let me know!
+I am really grateful to have had the opportunity to be hired as a freelancer to collaborate on a project like  [Owlly](https://owlly.ch/). Once again, thank you Sandro for the opportunity. I also hope this tutorial is going to be helpful to anyone looking to set up modals with Angular and Tailwind and if you have idea of improvements, let me know!
 
 To infinity and beyond!
 

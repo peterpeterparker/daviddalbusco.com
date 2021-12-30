@@ -61,7 +61,7 @@ plugins: [
 
 Stencil components should currently be loaded at runtime in Gatsby (see issue [#1724](https://github.com/ionic-team/stencil/issues/1724) which should be soon finally solved as I heard in a Stencil chat recently).
 
-For that purpose, load the [@deckdeckgo/highlight-code](http://twitter.com/deckdeckgo/highlight-code) once in one of your pages or components are mounted.
+For that purpose, load the [@deckdeckgo/highlight-code](https://twitter.com/deckdeckgo/highlight-code) once in one of your pages or components are mounted.
 
 For example add the following in the main file of your website, in your `index.js`, or in the template of your blog or simply load it where you need it.
 

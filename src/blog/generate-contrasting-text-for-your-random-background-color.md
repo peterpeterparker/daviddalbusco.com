@@ -21,7 +21,7 @@ I also had to implement a function to convert hexadecimal to RGB colors. For tha
 
 ### Generate A Contrasting Text
 
-To generate a contrasting text, we are using the following formula defined by the [world wide web consortium (W3C)](https://www.w3.org/WAI/ER/WD-AERT/#color-contrast) to ensure that foreground and background color combinations provide sufficient contrast when viewed by someone having color deficits or when viewed on a black and white screen:
+To generate a contrasting text, we are using the following formula defined by the [world wide web consortium (W3C)](http://www.w3.org/WAI/ER/WD-AERT/#color-contrast) to ensure that foreground and background color combinations provide sufficient contrast when viewed by someone having color deficits or when viewed on a black and white screen:
 
 ```
 ((Red value X 299) + (Green value X 587) + (Blue value X 114)) / 1000

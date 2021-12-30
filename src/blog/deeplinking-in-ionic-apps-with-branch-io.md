@@ -50,7 +50,7 @@ A custom URI scheme, for example `myapp://` , is a scheme which can be handle on
 
 I generally don’t write about none open source solutions but so far, I did not found better solution than [Branch.io](https://branch.io) to setup deep links.
 
-There is a [Cordova Ionic plugin](https://github.com/ionic-team/ionic-plugin-deeplinks) to handle such links which is maintained by the community. When [Ionic](http://ionicframework.com) introduced it some years ago I used it at first but finally went for the Branch solution but to be honest I don’t remember exactly why, probably a specific case.
+There is a [Cordova Ionic plugin](https://github.com/ionic-team/ionic-plugin-deeplinks) to handle such links which is maintained by the community. When [Ionic](https://ionicframework.com) introduced it some years ago I used it at first but finally went for the Branch solution but to be honest I don’t remember exactly why, probably a specific case.
 
 Branch has a starter free plan.
 

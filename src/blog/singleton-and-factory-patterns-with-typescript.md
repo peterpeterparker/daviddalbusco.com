@@ -10,7 +10,7 @@ canonical: "https://daviddalbusco.medium.com/singleton-factory-patterns-with-typ
 
 ![](https://cdn-images-1.medium.com/max/1600/1*0XVEe8Cqa9xFGveX8JLMxA.jpeg)
 
-*[Eisvogel](http://www.zentrale.ch/) — The best ice creams in Zürich*
+*[Eisvogel](https://www.zentrale.ch/) — The best ice creams in Zürich*
 
 Of all design patterns I learned in engineering school, the singleton and factory are probably those I use the most in my day to day programming activities. Sometimes I even mix the two to double the fun 😜.
 

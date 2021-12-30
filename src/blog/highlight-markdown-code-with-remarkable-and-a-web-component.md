@@ -17,7 +17,7 @@ Earlier today, [Foad Sojoodi Farimani](https://twitter.com/fsfarimani) shared wi
 
 I found the idea absolutely awesome and I almost began directly to implement it (almost because I had to clean my flat first, weekend duties are the best 🤣). While commonly you would provide a library to the markdown parser you are using, in our case [Remarkable](https://github.com/jonschlinkert/remarkable) from [Jon Schlinkert](https://twitter.com/jonschlinkert), to highlight the code, I solved it instead by actually parsing it with the help of our  Web Component `<deckgo-highlight-code/>` 🤪.
 
-This [component](https://docs.deckdeckgo.com/components/code) is a wrapper which under the hood use [PrismJS](https://prismjs.com), from [Lea Verou](http://lea.verou.me) and [James DiGioia](https://twitter.com/jamesdigioia). It has the advantage to fetch at runtime the definition of the language it has to interpret which is kind of handy if the provided code could be from any types.
+This [component](https://docs.deckdeckgo.com/components/code) is a wrapper which under the hood use [PrismJS](https://prismjs.com), from [Lea Verou](https://lea.verou.me) and [James DiGioia](https://twitter.com/jamesdigioia). It has the advantage to fetch at runtime the definition of the language it has to interpret which is kind of handy if the provided code could be from any types.
 
 As it took me a bit of time to figure out how to bring everything together, I thought about letting a trace of it through this new blog post.
 

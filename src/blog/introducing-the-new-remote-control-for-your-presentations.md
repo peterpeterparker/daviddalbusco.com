@@ -15,7 +15,7 @@ A little more than a month ago, we [launched](https://daviddalbusco.com/blog/int
 
 It went way above our expectations, quickly three thousand people had tried out our editor and we received a lot of positive feedback. It was really an unexpected start and just an heartwarming experience. Thank you all, for everything 🙏
 
-Following this release we spent the month of October improving our platform, thanks to our community and many Pull Requests. It was definitely a really nice [Hacktoberfest 2019](http://hacktoberfest.digitalocean.com) season for us.
+Following this release we spent the month of October improving our platform, thanks to our community and many Pull Requests. It was definitely a really nice [Hacktoberfest 2019](https://hacktoberfest.digitalocean.com) season for us.
 
 Finally came the time to ask ourselves: **And now, what’s next?**
 

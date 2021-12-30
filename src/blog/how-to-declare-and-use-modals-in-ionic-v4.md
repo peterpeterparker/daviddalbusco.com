@@ -9,7 +9,7 @@ image: "https://cdn-images-1.medium.com/max/2000/1*jJJ6qFutpkXsD-aRYGs1tA.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/2000/1*jJJ6qFutpkXsD-aRYGs1tA.jpeg)
 
-I noticed that questions about the declaration and use of modals in [Ionic](http://ionicframework.com/) v4 with [Angular](http://angular.io/) often pops up, therefore I thought I would briefly describe how I solved this subject in my mobile application [Fluster](http://fluster.io/).
+I noticed that questions about the declaration and use of modals in [Ionic](https://ionicframework.com/) v4 with [Angular](https://angular.io/) often pops up, therefore I thought I would briefly describe how I solved this subject in my mobile application [Fluster](https://fluster.io/).
 
 ### Creating a modal
 

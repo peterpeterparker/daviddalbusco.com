@@ -73,7 +73,7 @@ Once rimraf installed, we can initiate  our `build` by editing the `scripts` in 
 }
 ```
 
-I selected `css` for the name of the output folder which will contains the CSS output. You can use another name, what does matter, is adding it to the file `package.json` in order to include it in the final bundle you might later install in your app or publish to [npm](http://npmjs.com/).
+I selected `css` for the name of the output folder which will contains the CSS output. You can use another name, what does matter, is adding it to the file `package.json` in order to include it in the final bundle you might later install in your app or publish to [npm](https://npmjs.com/).
 
 ```json
 "files": [

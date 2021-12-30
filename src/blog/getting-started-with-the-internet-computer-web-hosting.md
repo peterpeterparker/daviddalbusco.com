@@ -138,7 +138,7 @@ For a long period of time, I did not manage to deploy, or use, our application o
 
 I was using the test URL [http://localhost:8000/?canisterId=canister_id](http://localhost:8000/?canisterId=canister_id) which fails at loading ES modules because it cannot set the referrer correctly.
 
-Fortunately, thanks to a feedback of the DFINITY team, we figured out that using the canister id as a local subdomain instead of a query URL solves the issue: [http://canister_id.localhost:8000/](http://canister_id.localhost:8000/)
+Fortunately, thanks to a feedback of the DFINITY team, we figured out that using the canister id as a local subdomain instead of a query URL solves the issue: [https://canister_id.localhost:8000/](https://canister_id.localhost:8000/)
 
 *****
 

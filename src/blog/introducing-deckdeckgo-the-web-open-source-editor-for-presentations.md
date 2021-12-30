@@ -109,7 +109,7 @@ Out of the box, without any special hardware, any presentations could be remote 
 
 ### Technical fun facts
 
-I won’t deep to dive too much in the technical facts, as I hope that we will find time in the future to share articles about them, but to summarize, our application is developed with [StencilJS](http://stenciljs.com) Web Components. On the other side, our publication engine is developed with [Haskell](https://www.haskell.org), [Nix](https://nixos.org/nix/) and [Terraform](https://www.terraform.io) 🚀
+I won’t deep to dive too much in the technical facts, as I hope that we will find time in the future to share articles about them, but to summarize, our application is developed with [StencilJS](https://stenciljs.com) Web Components. On the other side, our publication engine is developed with [Haskell](https://www.haskell.org), [Nix](https://nixos.org/nix/) and [Terraform](https://www.terraform.io) 🚀
 
 We are using [Google Firebase](https://firebase.google.com/) for the authentication and to store the data (data you are editing and as storage) and are using [Amazon AWS](https://aws.amazon.com/) to deploy online the publications you would share.
 

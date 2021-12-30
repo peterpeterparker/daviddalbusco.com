@@ -22,7 +22,7 @@ This project was also for me a way to try out the usage of [Tailwind CSS](https:
 
 ## Fact sheet
 
-**Available:** [Progressive Web Apps](http://discoverweekly.dev/)
+**Available:** [Progressive Web Apps](https://discoverweekly.dev/)
 
 **Technology:** [Next.js](https://nextjs.org/) and [React](https://reactjs.org/)
 

@@ -144,7 +144,7 @@ Wanna read more our project? Here is the list of blog posts I published since we
 
 ### Keep In Touch
 
-To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️ and [sign up](http://eepurl.com/hKeMLD) to join the list of beta tester.
+To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️ and [sign up](https://eepurl.com/hKeMLD) to join the list of beta tester.
 
 *****
 

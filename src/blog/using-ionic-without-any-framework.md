@@ -9,13 +9,13 @@ image: "https://cdn-images-1.medium.com/max/2000/1*qMT7WHMPzBZai4ZikSlLTg.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/2000/1*qMT7WHMPzBZai4ZikSlLTg.jpeg)
 
-While I was preparing my last talk about Web Components and [Ionic](http://ionicframework.com/) v4, I noticed that I was using none of these to actually build my slides 🤔 That’s why I published this week [DeckDeckGo](https://deckdeckgo.com/), the new tool to create lightweight presentation using HTML and Ionic components 🚀
+While I was preparing my last talk about Web Components and [Ionic](https://ionicframework.com/) v4, I noticed that I was using none of these to actually build my slides 🤔 That’s why I published this week [DeckDeckGo](https://deckdeckgo.com/), the new tool to create lightweight presentation using HTML and Ionic components 🚀
 
 To follow-up what I learned while wrapping up together this new pet project, I thought it would be maybe interesting to wrote a brief article about how to use Ionic without any framework or with any framework, as you rather like😉
 
 ### Importing Ionic
 
-The goal of this article is to describe how to use Ionic in a simple `index.html` therefore we won’t rely on [NPM](http://npmjs.com/) and we are going to import Ionic from a CDN, most particularly from [Unpkg](https://unpkg.com/#/). To do so we are just then going to add the following lines to the `<head/>` of your HTML page:
+The goal of this article is to describe how to use Ionic in a simple `index.html` therefore we won’t rely on [NPM](https://npmjs.com/) and we are going to import Ionic from a CDN, most particularly from [Unpkg](https://unpkg.com/#/). To do so we are just then going to add the following lines to the `<head/>` of your HTML page:
 
 ```
 <!-- Import the Ionic CSS -->

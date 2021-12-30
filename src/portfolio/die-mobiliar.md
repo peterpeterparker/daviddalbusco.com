@@ -16,7 +16,7 @@ Together we develop new Angular applications (SPA) and libraries which were inte
 
 ## Fact sheet
 
-**Technology:** [Angular](http://angular.io/), [RxJS](https://rxjs.dev/) and [ngrx](https://ngrx.io/)
+**Technology:** [Angular](https://angular.io/), [RxJS](https://rxjs.dev/) and [ngrx](https://ngrx.io/)
 
 **Website:** [Die Mobiliar](https://www.mobiliar.ch/)
 

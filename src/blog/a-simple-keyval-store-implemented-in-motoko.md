@@ -14,7 +14,7 @@ canonical: "https://daviddalbusco.medium.com/a-simple-keyval-store-implemented-i
 
 *****
 
-I am a fond of offline web applications and most of my personal open source projects, such as [DeckDeckGo](http://deckdeckgo.com/) or [Tie Tracker](https://tietracker.app.link/), follow the approach.
+I am a fond of offline web applications and most of my personal open source projects, such as [DeckDeckGo](https://deckdeckgo.com/) or [Tie Tracker](https://tietracker.app.link/), follow the approach.
 
 In these two particular apps, I use [idb-keyval](https://github.com/jakearchibald/idb-keyval) to ease the interaction with IndexedDB through a keyval-like API.
 
@@ -249,7 +249,7 @@ Wanna read more our project? Here is the list of blog posts I published since we
 
 ### Keep In Touch
 
-To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️ and [sign up](http://eepurl.com/hKeMLD) to join the list of beta tester.
+To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️ and [sign up](https://eepurl.com/hKeMLD) to join the list of beta tester.
 
 *****
 

@@ -1,8 +1,7 @@
 <script context="module">
   import {base} from '$app/paths';
 
-  export const load = async ({page, fetch}) => {
-    const {params} = page;
+  export const load = async ({params, fetch}) => {
     const {slug} = params;
 
     const post = await fetch(`${base}/portfolio/${slug}.json`).then((r) => r.json());

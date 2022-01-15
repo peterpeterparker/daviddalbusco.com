@@ -26,7 +26,7 @@
 
     width: fit-content;
 
-    transition: color 0.25s ease-out, background 0.25s ease-out, transform 0.15s ease-out;
+    transition: color 0.25s ease-out, background 0.25s ease-out, transform 0.15s ease-out, box-shadow 0.15s ease-out;
 
     &:hover {
       background: var(--color-highlight);

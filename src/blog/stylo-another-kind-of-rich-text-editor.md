@@ -26,7 +26,7 @@ As a very first test, I wrote and published a blog post on our platform. Althoug
 
 That’s why I had the idea to extract the rich text editor capabilities of the core of our application -- under the assumption that it would be easier to improve and fix the text editor in isolation.
 
-In addition, by publishing the new library as a new open source repo, I was also hoping it would benefit from feedbacks and contributions.
+In addition, by publishing the new library as a new open source repo, I was also hoping it would benefit from community feedback and contributions.
 
 What can I add? I am an engineer, I like to code 😉.
 

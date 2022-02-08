@@ -24,7 +24,7 @@ Last year, while migrating our web editor for slides, [DeckDeckGo](https://deckd
 
 As a very first test, I wrote and published a blog post on our platform — [Converting SVG To Image (PNG, Webp, etc.) in JavaScript](https://zhx6p-eqaaa-aaaai-abbrq-cai.raw.ic0.app/d/converting-svg-to-image-in-javascript).
 
-Although I was satisfied with the result, I was of course also aware that further enhancements were needed.
+Although I was satisfied with the result, I thought: this can be better.
 
 That’s why I had the idea to extract the rich text editor capabilities of the core of our application. By limiting the scope of these features, I assumed it would be easier to improve and fix what still needed to be done.
 

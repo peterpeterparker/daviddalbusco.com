@@ -46,7 +46,7 @@ Unlike other WYSIWYG editors, Stylo has no sticky toolbar. It is inspired by des
 
 When writing the document, the user can use different types of paragraph that can be added through a floating menu. These elements can be simple HTML elements — i.e. h1, h2, code etc. — or more complex block — i.e. any Web Component.
 
-For styling purpose, another toolbar gives the user the ability to modify text — e.g. bold, italic, colors, etc. — and add hyperlinks.
+For styling purposes, another toolbar gives the user the ability to modify text — e.g. bold, italic, colors, etc. — and add hyperlinks.
 
 Last but not least, for an optimized experience on desktop, many actions can be performed without the need of the mouse. Opening the list of paragraphs can be triggered hitting “/” and **bold**, *italic* and `mark` are accessible through keyboard shortcuts.
 

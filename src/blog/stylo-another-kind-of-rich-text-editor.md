@@ -56,7 +56,7 @@ Last but not least, for an optimized experience on desktop, many actions can be 
 
 Conceptually, only one main element — a container — has to be set as editable and all its children are either HTML Elements or Web Components — i.e. no direct text node descendant.
 
-This decision was made for performance reason. In the future we might need to lazy load the content or improve the scrolling experience with some sort of infinite or other virtual scrolling approach. By limiting children to elements, it is possible to assign attributes such as unique ids directly in the DOM. <br>
+This decision was made for performance reasons. In the future we might need to lazy load the content or improve the scrolling experience with some sort of infinite scrolling or some other virtual scrolling approach. By limiting children to elements, it is possible to assign attributes such as unique ids directly in the DOM.
 
 This brings us to the customization. The list of paragraphs that can be added by the user is fully customizable. One entry — i.e. a plugin — in the list is a text, an icon and a function that adds a new element to the editable container.
 

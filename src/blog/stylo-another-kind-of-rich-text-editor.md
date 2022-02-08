@@ -103,7 +103,7 @@ Stylo is a framework agnostic library of reusable components developed with [Ste
 
 30kb gzipped might in certain circumstances already sound like a lot, especially to me, but in terms of WYSIWYG editor it actually turns out be lightweight.
 
-From what I observed, it might even be the lightest. There is also probably a bit of space for improvements.
+From what I observed, it might even be the lightest. There is also probably room for improvement.
 
 *****
 

@@ -58,7 +58,7 @@ Conceptually, only one main element — a container — has to be set as editabl
 
 This decision was made for performance reasons. In the future we might need to lazy load the content or improve the scrolling experience with some sort of infinite scrolling or some other virtual scrolling approach. By limiting children to elements, it is possible to assign attributes such as unique ids directly in the DOM.
 
-This brings us to the customization. The miscellaneous types of paragraphs that can be added by the user - e.g. block of code, titles, etc. - is fully customizable. One type - i.e. a plugin - is defined with a ​text​, an ​icon​ and a​ function that adds a new element to the document.
+This brings us to the customization. The various types of paragraphs that can be added by the user - e.g. block of code, titles, etc. - is fully customizable. Each type - i.e. plugin - is defined with a ​text​, an ​icon​ and a​ function that adds a new element to the document.
 
 For example, if we were to implement a plugin that generates a new paragraph that is itself a Web Component name <hello-world/>, the solution would look something like this:
 
@@ -87,7 +87,7 @@ export const hr: StyloPlugin = {
 
 Stylo exposes interfaces and utilities to ease the development of custom plugins. The most important being maybe `transformParagraph` which adds the elements to the DOM.
 
-Finally, it is worth to note the function createParagraphs is async which means the process of creating new elements can totally be hijacked by your application. As for example, when integrated in DeckDeckGo, the function does not always directly create new elements. For some more complex use cases, when the function is triggered, it opens modals that require more user interactions such as selecting an image before effectively modifying the content.
+Finally, it is worth noting that the function `createParagraphs` is async which means the process of creating new elements can totally be hijacked by your application. As for example, when integrated in DeckDeckGo, the function does not always directly create new elements. For some more complex use cases, when the function is triggered, it opens modals that require more user interactions such as selecting an image before effectively modifying the content.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*9GgkGbx_4D-hIwT8PxJivQ.gif)
 
@@ -101,9 +101,9 @@ Stylo is a framework agnostic library of reusable components developed with [Ste
 
 #### Lightweight 🪶
 
-30kb gzipped might in certain circumstances already sound like a lot, specially to me, but in terms of WYSIWYG editor it actually turns out be lightweight.
+30kb gzipped might in certain circumstances already sound like a lot, especially to me, but in terms of WYSIWYG editor it actually turns out be lightweight.
 
-From what I observed, it might even be the lightest. There is also probably a bit of space for improvements.
+From what I observed, it might even be the lightest. There is also probably room for improvement.
 
 *****
 

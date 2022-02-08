@@ -40,7 +40,7 @@ Not looking to oversell what Stylo can do — or do differently — but here are
 
 #### Interactive Design 🎯
 
-Unlike other WYSIWYG editor Stylo has no sticky toolbar. It is inspired by design and user experience of platforms that I like — i.e [Notion](https://www.notion.so/) and [Medium](https://medium.com/).
+Unlike other WYSIWYG editors, Stylo has no sticky toolbar. It is inspired by design and user experience of platforms that I like — i.e [Notion](https://www.notion.so/) and [Medium](https://medium.com/).
 
 ![](https://cdn-images-1.medium.com/max/1600/1*D-YYgIa5cY0Ya8FAN0Lyiw.gif)
 

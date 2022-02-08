@@ -109,7 +109,7 @@ From what I observed, it might even be the lightest. There is also probably a bi
 
 #### Future Proof 🚀
 
-While a handful of actions in the alpha version still rely on execCommand to apply styles (e.g. bold, italic) — the core of the library does not.
+While a handful of actions in the alpha version still rely on `execCommand` to apply styles (e.g. bold, italic) — the core of the library does not.
 
 Stylo controls what happens on every mutation. It uses the MutationObserver API to keep track of the changes and stack them in a custom “undo-redo” implementation. It also forward the information about what changed in the DOM to your application with custom events.
 

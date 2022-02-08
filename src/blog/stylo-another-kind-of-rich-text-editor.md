@@ -22,9 +22,7 @@ So, I developed a new open source WYSIWYG interactive editor for JavaScript. Its
 
 Last year, while migrating our web editor for slides, [DeckDeckGo](https://deckdeckgo.com), to [DFINITY](https://dfinity.org)’s Internet Computer, we started playing around with some new code to support documents as well.
 
-As a very first test, I wrote and published a blog post on our platform — [Converting SVG To Image (PNG, Webp, etc.) in JavaScript](https://zhx6p-eqaaa-aaaai-abbrq-cai.raw.ic0.app/d/converting-svg-to-image-in-javascript).
-
-Although I was satisfied with the result, I thought: this can be better.
+As a very first test, I wrote and published a blog post on our platform. Although I was satisfied with the result, I thought: this can be better.
 
 That’s why I had the idea to extract the rich text editor capabilities of the core of our application. By limiting the scope of these features, I assumed it would be easier to improve and fix what still needed to be done.
 

@@ -115,7 +115,7 @@ Stylo controls what happens on every mutation. It uses the MutationObserver API 
 
 Plugins are applied using plain vanilla JavaScript and the Selection API is also used to detect and apply transformations.
 
-That’s why, regardless of what will happen to the deprecated API, Stylo is built for the future.
+That's why, regardless of what happens to the deprecated API, Stylo is built for the future.
 
 *****
 

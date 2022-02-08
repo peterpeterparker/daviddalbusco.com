@@ -20,7 +20,7 @@ So, I developed a new open source WYSIWYG interactive editor for JavaScript. Its
 
 ### But Why?
 
-Last year, while migrating our web editor for slides, [DeckDeckGo](https://deckdeckgo.com), to [DFINITY](https://dfinity.org)’s Internet Computer, we started playing around with some new code to support support documents as well.
+Last year, while migrating our web editor for slides, [DeckDeckGo](https://deckdeckgo.com), to [DFINITY](https://dfinity.org)’s Internet Computer, we started playing around with some new code to support documents as well.
 
 As a very first test, I wrote and published a blog post on our platform — [Converting SVG To Image (PNG, Webp, etc.) in JavaScript](https://zhx6p-eqaaa-aaaai-abbrq-cai.raw.ic0.app/d/converting-svg-to-image-in-javascript).
 

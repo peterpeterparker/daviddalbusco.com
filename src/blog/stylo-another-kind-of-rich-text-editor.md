@@ -24,7 +24,7 @@ Last year, while migrating our web editor for slides, [DeckDeckGo](https://deckd
 
 As a very first test, I wrote and published a blog post on our platform. Although I was satisfied with the result, I thought: this can be better.
 
-That’s why I had the idea to extract the rich text editor capabilities of the core of our application. By limiting the scope of these features, I assumed it would be easier to improve and fix what still needed to be done.
+That’s why I had the idea to extract the rich text editor capabilities of the core of our application -- under the assumption that it would be easier to improve and fix the text editor in isolation.
 
 In addition, by publishing the new library as a new open source repo, I was also hoping it would benefit from feedbacks and contributions.
 

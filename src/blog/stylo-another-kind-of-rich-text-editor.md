@@ -87,7 +87,7 @@ export const hr: StyloPlugin = {
 
 Stylo exposes interfaces and utilities to ease the development of custom plugins. The most important being maybe `transformParagraph` which adds the elements to the DOM.
 
-Finally, it is worth to note the function createParagraphs is async which means the process of creating new elements can totally be hijacked by your application. As for example, when integrated in DeckDeckGo, the function does not always directly create new elements. For some more complex use cases, when the function is triggered, it opens modals that require more user interactions such as selecting an image before effectively modifying the content.
+Finally, it is worth noting that the function `createParagraphs` is async which means the process of creating new elements can totally be hijacked by your application. As for example, when integrated in DeckDeckGo, the function does not always directly create new elements. For some more complex use cases, when the function is triggered, it opens modals that require more user interactions such as selecting an image before effectively modifying the content.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*9GgkGbx_4D-hIwT8PxJivQ.gif)
 

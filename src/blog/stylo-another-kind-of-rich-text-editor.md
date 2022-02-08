@@ -60,7 +60,7 @@ This decision was made for performance reasons. In the future we might need to l
 
 This brings us to the customization. The miscellaneous types of paragraphs that can be added by the user - e.g. block of code, titles, etc. - is fully customizable. One type - i.e. a plugin - is defined with a ​text​, an ​icon​ and a​ function that adds a new element to the document.
 
-For example, if we would implement a plugin that generates a new paragraph that is itself a Web Component name <hello-world/>, the solution would look as following:
+For example, if we were to implement a plugin that generates a new paragraph that is itself a Web Component name <hello-world/>, the solution would look something like this:
 
 ```javascript
 import {createEmptyElement, StyloPlugin, StyloPluginCreateParagraphsParams, transformParagraph} from '@papyrs/stylo';

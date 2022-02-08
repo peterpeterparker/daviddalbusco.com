@@ -1,6 +1,6 @@
 ---
 path: "/blog/stylo-another-kind-of-rich-text-editor"
-date: "2022-02-08"
+date: "2022-02-09"
 title: "Stylo - Another Kind Of Rich Text Editor"
 description: "So, I developed a new open source WYSIWYG interactive editor for JavaScript."
 tags: "#javascript #showdev #webdev #webcomponents"

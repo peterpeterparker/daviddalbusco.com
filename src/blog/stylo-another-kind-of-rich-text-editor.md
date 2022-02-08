@@ -139,7 +139,7 @@ I did use it — not without noticing many bugs I need to fix — to write this 
 
 ### Conclusion
 
-I am well aware there is still quite some work to make [Stylo](https://stylojs.com) bulletproof but it is quite exciting because challenging 😉.
+I am well aware there is still quite some work to make [Stylo](https://stylojs.com) bulletproof but it is quite exciting because it is also challenging 😉.
 
 To infinity and beyond!
 David

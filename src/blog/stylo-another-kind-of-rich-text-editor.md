@@ -5,7 +5,7 @@ title: "Stylo - Another Kind Of Rich Text Editor"
 description: "So, I developed a new open source WYSIWYG interactive editor for JavaScript."
 tags: "#javascript #showdev #webdev #webcomponents"
 image: "https://cdn-images-1.medium.com/max/1600/1*kPGH8RB1reGGiq6nU0UaIg.jpeg"
-canonical: "https://zhx6p-eqaaa-aaaai-abbrq-cai.raw.ic0.app/d/converting-svg-to-image-in-javascript"
+canonical: "https://daviddalbusco.medium.com/announcing-stylo-another-kind-of-rich-text-editor-5bc123f02918"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*kPGH8RB1reGGiq6nU0UaIg.jpeg)

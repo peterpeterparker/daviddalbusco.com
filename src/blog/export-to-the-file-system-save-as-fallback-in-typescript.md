@@ -108,7 +108,7 @@ const writeFile =
 As a fallback, I add to the DOM a temporary anchor element that is automatically clicked. To export the file to the default download folder of the user, I provide an object as a URL for the `blob`.
 
 ```javascript
-const download = ({filename, blob}: {filename: string; blob: Blob}) => {
+const download = async ({filename, blob}: {filename: string; blob: Blob}) => {
   const a: HTMLAnchorElement = document.createElement('a');
   a.style.display = 'none';
   document.body.appendChild(a);

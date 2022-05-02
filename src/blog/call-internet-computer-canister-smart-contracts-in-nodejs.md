@@ -10,7 +10,7 @@ canonical: "https://daviddalbusco.medium.com/call-internet-computer-canister-sma
 
 ![https://unsplash.com/photos/oMpAz-DN-9I](https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw1fHx3ZWJ8ZW58MHx8fHwxNjUwNTQ3NDAz&ixlib=rb-1.2.1&q=80&w=1080)
 
-Photo by [Greg Rakozy](https://unsplash.com/@grakozy?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+*Photo by [Greg Rakozy](https://unsplash.com/@grakozy?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 * * *
 I spent last few months developing [Papyrs](https://papy.rs/) an open-source, privacy-first, decentralized blogging platform that lives 100% on chain. This new web editor is finally ready for testing, I can write some blog posts again 😁.
 
@@ -167,7 +167,3 @@ Calling canisters in NodeJS is really handy notably to implement tasks that have
 
 To infinity and beyond
 David
-
-* * *
-
-For more adventures, follow me on [Twitter](https://twitter.com/daviddalbusco)

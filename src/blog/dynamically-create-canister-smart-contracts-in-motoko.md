@@ -25,13 +25,13 @@ Unlike web2 projects that centralize user data in a single — or distributed �
 
 A main actor acts as a a manager that — on the fly, upon object creation — generates a decentralized, secure simple key-value database-like for each single data persistence of each user.
 
-![manager-buckets.png](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/manager-buckets.png?token=CS-cusHrUKnmwvP6TDNpy)
+![](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/manager-buckets.png?token=CS-cusHrUKnmwvP6TDNpy)
 
 
 
 In following chapters I introduce such a solution with a sample project developed in [Motoko](https://github.com/dfinity/motoko).
 
-*For more details about this architecture, you can read an article I wrote about it: [Internet Computer: Web App Decentralized Database Architecture](https://medium.com/geekculture/internet-computer-web-app-decentralized-database-architecture-8647d1a437b8).*
+*For more details about this architecture, you can read an article I wrote about it: [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture).*
 
 * * *
 

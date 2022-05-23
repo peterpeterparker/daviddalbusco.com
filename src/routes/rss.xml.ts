@@ -21,13 +21,12 @@ export const get = async (): Promise<EndpointOutput> => {
 
   return {
     headers,
-    body: `<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    body: `<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
         <channel>
             <title><![CDATA[David Dal Busco RSS Feed]]></title>
             <description><![CDATA[Freelance Web Developer - Web, Progressive Web Apps and Mobile]]></description>
             <link>${url}</link>
             <lastBuildDate>${lastBuildDate}</lastBuildDate>
-            <atom:link href="${url}/rss.xml" rel="self" type="application/rss+xml" ></atom:link>
             
             ${(await blog({posts})).join('')}
         </channel>
@@ -47,6 +46,11 @@ const blog = async ({posts}: {posts: MarkdownData<BlogMetadata>[]}): Promise<str
           <description><![CDATA[${description}]]></description>
           <link>${url}blog/${slug}/</link>
           <pubDate>${new Date(date).toUTCString()}</pubDate>
+          <content:encoded>${
+            escapedContent.length > contentMaxLength
+              ? `${escapedContent.slice(0, contentMaxLength)}...`
+              : escapedContent
+          }</content:encoded>
         </item>
       `;
   });

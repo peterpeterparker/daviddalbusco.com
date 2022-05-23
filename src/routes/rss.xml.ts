@@ -28,8 +28,9 @@ export const get = async (): Promise<EndpointOutput> => {
             <link>${url}</link>
             <lastBuildDate>${lastBuildDate}</lastBuildDate>
             <atom:link href="${url}/rss.xml" rel="self" type="application/rss+xml" />
+            
+            ${(await blog({posts})).join('')}
         </channel>
-        ${(await blog({posts})).join('')}
     </rss>`
   };
 };

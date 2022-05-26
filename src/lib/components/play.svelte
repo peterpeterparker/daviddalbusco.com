@@ -9,7 +9,7 @@
 <Projects {projects}>
   <h2>Play</h2>
 
-  <p>A list of personal and open source pet projects I've made mostly for fun or learning purpose.</p>
+  <p>A list of my open source projects I developed for fun and learning purpose.</p>
 </Projects>
 
 <style lang="scss">

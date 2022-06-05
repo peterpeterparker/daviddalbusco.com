@@ -33,8 +33,8 @@
       return;
     }
 
-    const {defineCustomElements} = await import(/* @vite-ignore */ '@deckdeckgo/highlight-code/dist/custom-elements');
-    defineCustomElements();
+    const {defineCustomElement} = await import(/* @vite-ignore */ '@deckdeckgo/highlight-code/dist/components/deckgo-highlight-code');
+    defineCustomElement();
   });
 
   const navigateBlog = () => goto('/blog');

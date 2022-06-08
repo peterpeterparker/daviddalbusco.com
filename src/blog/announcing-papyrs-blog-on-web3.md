@@ -42,7 +42,7 @@ The concept of decentralization - or web3 - is linked to a certain form of roman
 
 *The lesson is that when you compare centralized and decentralized systems you need to consider them dynamically, as processes, instead of statically, as rigid products. Centralized systems often start out fully baked, but only get better at the rate at which employees at the sponsoring company improve them. Decentralized systems start out half-baked but, under the right conditions, grow exponentially as they attract new contributors ([source](https://twg.io/whiteboard/why-decentralization-matters/)).*
 
-As a programmer my self, this idea is appealing. I also think that blockchain technology might lead to interesting new perspective for the future.
+As a programmer myself, this idea is appealing. I also think that blockchain technology might lead to interesting new perspectives for the future.
 
 I can notably imagine that consensus and other certification mechanism could potentially be useful to proof the validity of the articles that would be shared with Papyrs - i.e. could be used to prevent fake news and misinformation.
 

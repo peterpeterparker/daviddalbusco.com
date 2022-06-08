@@ -44,7 +44,7 @@ The concept of decentralization - or web3 - is linked to a certain form of roman
 
 As a programmer myself, this idea is appealing. I also think that blockchain technology might lead to interesting new perspectives for the future.
 
-I can notably imagine that consensus and other certification mechanism could potentially be useful to proof the validity of the articles that would be shared with Papyrs - i.e. could be used to prevent fake news and misinformation.
+I can for instance imagine that consensus and other certification mechanisms could potentially be useful to prove the validity of the articles shared with Papyrs - i.e. could be used to prevent fake news and misinformation.
 
 But that is for the future. Right now, my main commitment is empowering users ownership of their data by taking advantages of smart contracts.
 

@@ -30,7 +30,7 @@ On the other hand, I like to develop new ideas and thus double the fun 😜.
 
 ## Manifesto
 
-So, why launching another blogging application? After-all there are already many platforms that allow you to write articles isn't 🤷‍♂️?
+So, why launch another blogging application? After-all there are already many platforms that allow you to write articles, right 🤷‍♂️?
 
 Sure there is but none are following the guidelines that drive me.
 

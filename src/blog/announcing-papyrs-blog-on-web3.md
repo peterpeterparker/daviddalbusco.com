@@ -20,7 +20,7 @@ Last year, I was lucky enough to receive grants from the DFINITY foundation to p
 
 While I completed all milestones, I did not migrate it yet.
 
-Along the way, I had the idea of extending the platform to support documents. One thing leading to another, I ended developing my own rich text editor library, [Stylo](https://stylojs.com/), and decided to focus first on this new format hence me launching today a new blogging platform.
+Along the way, I had the idea of extending the platform to support documents. One thing leading to another, I ended developing my own rich text editor library, [Stylo](https://stylojs.com/), and decided to focus first on this new format; which is why today I'm launching a new blogging platform.
 
 On the one hand, thanks to this approach, I limit the number of functions I launch on the IC, which allows me to gain experience to later deploy our presentation editor more serenely.
 

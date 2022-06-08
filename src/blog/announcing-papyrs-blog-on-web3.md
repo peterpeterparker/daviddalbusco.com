@@ -58,7 +58,7 @@ That's why I developed Papyrs with a true privacy first approach.
 
 The editor works primarily offline and requires no sign-in. The blog posts can be loaded and exported to the file system. There is a Chrome [plugin](https://chrome.google.com/webstore/detail/papyrs-to-markdown/caacmbgdcjpdpmccocmbiljodkbkjglh) to convert these to markdown.
 
-If you are interested to save and share your blog posts online - on chain - then an authentication with [Internet Identity](https://identity.ic0.app/) is required.
+If you are interested in storing and sharing your blog posts online - on chain - then an authentication with [Internet Identity](https://identity.ic0.app/) is required.
 
 However, unlike any other auth providers, using this powerful password-less method preserve anonymity!
 

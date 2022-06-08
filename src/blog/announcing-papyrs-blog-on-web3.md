@@ -110,7 +110,7 @@ e.g. browsing [Unsplash](https://unsplash.com/) to select images for presentatio
 
 *Photo by [Jamie Street](https://unsplash.com/@jamie452?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
 
-Adding Gif from [Tenor](https://tenor.com/) for comic relief.
+Adding GIFs from [Tenor](https://tenor.com/) for comic relief.
 
 ![a good laugh](https://media.tenor.com/images/e82c2cd09db0bf410917cda2ef22ffd4/tenor.gif)
 

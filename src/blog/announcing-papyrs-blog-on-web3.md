@@ -18,7 +18,7 @@ So, I have developed a new open-source, privacy-first, decentralized blogging pl
 
 Last year, I was lucky enough to receive grants from the DFINITY foundation to port our web editor for slides, [DeckDeckGo](https://deckdeckgo.com/), to the [Internet Computer](https://smartcontracts.org/).
 
-While I completed all milestones, I did not migrated it yet.
+While I completed all milestones, I did not migrate it yet.
 
 Along the way, I had the idea of extending the platform to support documents. One thing leading to another, I ended developing my own rich text editor library, [Stylo](https://stylojs.com/), and decided to focus first on this new format hence me launching today a new blogging platform.
 

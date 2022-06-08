@@ -48,7 +48,7 @@ I can for instance imagine that consensus and other certification mechanisms cou
 
 But that is for the future. Right now, my main commitment is empowering users ownership of their data by taking advantages of smart contracts.
 
-Between ads networks - that I cannot stand - and Big Tech companies that exploit our private data, I developed a bit a pessimist view on the what has become Internet. Furthermore, as my parents say when they are pessimistic, it also feels that "the best is not to come".
+Between ads networks - that I cannot stand - and Big Tech companies that exploit our private data, I developed a bit a pessimist view on the what the Internet has become. Furthermore, as my parents say when they are pessimistic, it also feels that "the best is not to come".
 
 That's why I developed Papyrs with a true privacy first approach.
 

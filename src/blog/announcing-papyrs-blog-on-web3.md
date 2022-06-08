@@ -102,7 +102,7 @@ All this cannot happen without users but if some would be interested, I am convi
 
 ## Features
 
-As mentioned in previous chapter, I use the platform for blogging purpose my self. That is why I designed it the way I want with the features I often need.
+As mentioned in the previous chapter, I use the platform for blogging purpose myself. That is why I designed it the way I want with the features I often need.
 
 e.g. browsing [Unsplash](https://unsplash.com/) to select images for presentation purpose.
 

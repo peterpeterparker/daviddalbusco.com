@@ -94,7 +94,7 @@ As the saying goes, "sharing is caring" 🤗. I hope what I implemented can help
 
 ### Indie hacking
 
-Beside my opinionated point of views and the fact that I am the first user of my own project, I would lie if I would not admit that I have also some small hopes for Papyrs to generate revenue in the future.
+Beside my opinionated point of view and the fact that I am the first user of my own project, I would lie if I would not admit that I have also some small hopes for Papyrs to generate revenue in the future.
 
 All this cannot happen without users but if some would be interested, I am convinced there will be a way to find a model that can be both profitable for Papyrs and the content creators while absolutely making no concession on my values.
 

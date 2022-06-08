@@ -56,7 +56,7 @@ That's why I developed Papyrs with a true privacy first approach.
 
 * * *
 
-### Privacy first
+### Privacy-first
 
 The editor works primarily offline and requires no sign-in. The blog posts can be loaded and exported to the file system. There is a Chrome [plugin](https://chrome.google.com/webstore/detail/papyrs-to-markdown/caacmbgdcjpdpmccocmbiljodkbkjglh) to convert these to markdown.
 
@@ -70,7 +70,7 @@ Your data are your own, period.
 
 * * *
 
-### Open source
+### Open-source
 
 In my opinion, there can be no privacy without open source code. It is a matter of trust.
 

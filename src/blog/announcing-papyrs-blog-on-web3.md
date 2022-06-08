@@ -60,7 +60,7 @@ The editor works primarily offline and requires no sign-in. The blog posts can b
 
 If you are interested in storing and sharing your blog posts online - on chain - then an authentication with [Internet Identity](https://identity.ic0.app/) is required.
 
-However, unlike any other auth providers, using this powerful password-less method preserve anonymity!
+However, unlike any other auth providers, using this powerful password-less method preserves anonymity!
 
 Finally, as currently implemented, I - as the admin of the platform - have absolutely no privileges to read your data. As long as you do not share any content publicly, it remains fully private.
 

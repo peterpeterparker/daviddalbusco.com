@@ -143,6 +143,10 @@ export const addParagraph = ({
 };
 ```
 
+Sketching hand-draw like diagrams with [Excalidraw](https://excalidraw.com/).
+
+![https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/excalidraw-1655146692059.webp?token=Pc79eylT4f4H9_sg_mIlt](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/excalidraw-1655146692059.webp?token=Pc79eylT4f4H9_sg_mIlt)
+
 And more to come...
 
 * * *

@@ -1,11 +1,11 @@
 ---
 path: "/blog/announcing-papyrs-blog-on-web3"
-date: "2022-06-08"
+date: "2022-06-16"
 title: "Announcing Papyrs: Blog on web3"
-description: "I have developed a new open-source, privacy-first, decentralized blogging platform that lives 100% on chain and today I am making it available to anyone."
+description: "I have developed a new open-source, privacy-first, decentralized blogging platform and today I am making it available to anyone."
 tags: "#startup #programming #web3 #blockchain"
 image: "https://cdn-images-1.medium.com/max/1600/1*gEI9lNAq_sce_TsPXSt5Tg.jpeg"
-canonical: "https://medium.com/dfinity/dynamically-create-canister-smart-contracts-in-motoko-d3b38a748c07"
+canonical: "https://daviddalbusco.medium.com/announcing-papyrs-blog-on-web3-cf7a44800f35"
 ---
 
 So, I have developed a new open-source, privacy-first, decentralized blogging platform that lives 100% on chain and today I am making it available to anyone. I called it: [Papyrs](https://app.papy.rs).

@@ -18,6 +18,8 @@ A year ago I shared a [post](https://daviddalbusco.com/blog/build-a-library-with
 
 Here are these few add-ons that I hope, will be useful for your projects too.
 
+***
+
 ## Source and output
 
 It can be sometimes useful to define more than one entry point for the library - i.e. not just use a unique `index.ts` file as entry but multiple sources that provides logically-independent groups of code. esbuild supports such option through the parameter [entryPoints](https://esbuild.github.io/api/#entry-points).

@@ -1,6 +1,6 @@
 ---
 title: "DeckDeckGo"
-description: "A web editor for slides and documents that will soon run on the blockchain network of the DFINITY foundation."
+description: "An open source web editor for presentations."
 icon: "/images/portfolio/icons/deckdeckgo-icon.png"
 background: "#3a81fe"
 type: "play"

@@ -7,40 +7,27 @@
     About <img alt="" aria-hidden="true" loading="lazy" role="presentation" src="/icons/icon-256x256.png" />
   </h2>
 
-  <p>Hey, nice to meet you.</p>
-  <p>I'm a freelance web developer, open source enthusiast, based in Zürich, Switzerland.</p>
+  <p>Hi, nice to meet you 👋.</p>
+  <p>I'm a freelance web developer and contractor, open source enthusiast, based in Zürich, Switzerland.</p>
 
   <p>
     I am experienced with
+    <mark> <a href="https://svelte.dev/" rel="noopener noreferrer">Svelte</a></mark>,
+    <mark> <a href="https://angular.io" rel="noopener noreferrer">Angular</a></mark>,
     <mark>
-      <a href="https://ionicframework.com" rel="noopener noreferrer">Ionic</a>
-    </mark>
-    ,
-    <mark>
-      <a href="https://angular.io" rel="noopener noreferrer">Angular</a>
+      <a href="https://reactjs.org" rel="noopener noreferrer">React</a>
     </mark>
     and
     <mark>
-      <a href="https://reactjs.org" rel="noopener noreferrer">React</a>
-    </mark>. I developed this website with
-    <mark>
-      <a href="https://svelte.dev/" rel="noopener noreferrer">Svelte</a>
-    </mark>
-    , used
-    <mark>
-      <a href="https://firebase.google.com/" rel="noopener noreferrer">Google Firebase</a>
-    </mark>
-    more than once and I'm a huge fan of reusable
-    <mark>
       <a href="https://stenciljs.com" rel="noopener noreferrer">StencilJS</a>
     </mark>
-    Web Components and vanilla JavaScript.
+    but my true love is developing agnostic libraries and components with vanilla JavaScript / TypeScript.
   </p>
   <p>
-    In my humble opinion, decentralization might become the next big thing (we often need), that's why I am interested
-    in blockchain networks, specially <mark>
-      <a href="https://dfinity.org/" rel="noopener noreferrer">DFINITY</a>
-    </mark> Internet Computer.
+    In my humble opinion, decentralization and reclaiming the ownership on our data is the way to go. That's why I am
+    interested by the concept of blockchain networks and a fan of the <mark>
+      <a href="https://internetcomputer.org/" rel="noopener noreferrer">Internet Computer</a>
+    </mark>.
   </p>
   <p>
     Throughout my career I also gathered experience in project management, business requirements and UX design (from a
@@ -50,11 +37,10 @@
     I have a computer engineering and an executive master in business administration degrees. I speak fluently French,
     German and English.
   </p>
+  <p>When I do not code, you probably find me somewhere along the river or in the mountains running trails ⛰🏃.</p>
   <p>
-    If you have got a web, Progressive Web Apps or mobile (iOS/Android) project in mind,
-    <mark>
-      <a href="/#contact" rel="noopener noreferrer">get in touch!</a>
-    </mark>
+    If you have got any web or mobile project in mind,
+    <a href="/#contact" rel="noopener noreferrer">get in touch!</a>
   </p>
 </Section>
 

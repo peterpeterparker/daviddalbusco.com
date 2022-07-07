@@ -12,7 +12,7 @@ I miss discovering random music in a totally unpredictably way and not though al
 
 That's why, I made [DiscoverWeekly.dev](https://discoverweekly.dev/), a place where developers can share their favorite music by contributing to an open source repo.
 
-This project was also for me a way to try out the usage of [Tailwind CSS](https://tailwindcss.com/) on a larger application, test some[Vercel](https://vercel.com/) features I had on my bucket list and, finally, develop my first [ThreeJS](https://threejs.org/) 3d animated scene.
+This project was also for me a way to try out the usage of [Tailwind CSS](https://tailwindcss.com/) on a larger application (outcome: not a big fan, rather like custom design system and to not bloat the dom with classes), test [Vercel](https://vercel.com/) features and develop my first [ThreeJS](https://threejs.org/) 3d animated scene.
 
 <iframe
     title="DiscoverWeekly demo"

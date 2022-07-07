@@ -10,15 +10,15 @@ type: "play"
 
 DeckDeckGo is an open source web editor for presentations, documents and blog posts. It enables anyone with any type of devices (desktop, mobile or tablets) to easily create, present and share content.
 
-Originally developed and delivered with [Google Cloud](https://firebase.google.com/) and [Amazon AWS](https://aws.amazon.com/) service, we are currently porting the platform to [DFINITY’s](https://dfinity.org/) Internet Computer.
+![A screenshot of the DeckDeckGo editor](/images/portfolio/screenshots/deckdeckgo.webp)
 
 ## Fact sheet
 
 **Website:** [DeckDeckGo](https://deckdeckgo.com/)
 
-**Technology:** [StencilJS](https://stenciljs.com/), lots of TypeScript/JavaScript and [Motoko](https://smartcontracts.org/docs/language-guide/motoko.html)
+**Technology:** Mostly [StencilJS](https://stenciljs.com/) and lots of TypeScript/JavaScript. Website in [Gatsby](https://www.gatsbyjs.com/).
 
-**Infrastructure:** [DFINITY’s](https://dfinity.org/) blockchain network
+**Infrastructure:** Currently delivered with [Google Cloud](https://firebase.google.com/) and [Amazon AWS](https://aws.amazon.com/) service. Ultimately will be migrated to the [Internet Computer](https://internetcomputer.org/).
 
 ## Open source
 

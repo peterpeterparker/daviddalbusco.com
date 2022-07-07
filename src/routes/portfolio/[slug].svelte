@@ -44,7 +44,7 @@
     padding: 0 2.45rem;
 
     :global(img) {
-      padding: 3.75rem;
+      padding: 0;
     }
 
     :global(h2) {

@@ -1,12 +1,12 @@
 import {listSlugs} from '$lib/plugins/slug.plugin';
 import type {Slug} from '$lib/types/slug';
-import type {EndpointOutput} from '@sveltejs/kit';
+import type {ResponseBody} from '@sveltejs/kit';
 
 const url = 'https://daviddalbusco.com/';
 
 const staticPages: string[] = ['blog', 'portfolio'];
 
-export const get = async (): Promise<EndpointOutput> => {
+export const get = async (): Promise<ResponseBody> => {
   const headers: Record<string, string> = {
     'Cache-Control': 'max-age=3600',
     'Content-Type': 'application/xml'

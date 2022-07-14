@@ -1,14 +1,14 @@
 import {listBlog} from '$lib/plugins/blog.plugin';
 import type {BlogMetadata} from '$lib/types/blog';
 import type {MarkdownData} from '$lib/types/markdown';
-import type {EndpointOutput} from '@sveltejs/kit';
+import type {ResponseBody} from '@sveltejs/kit';
 
 const url = 'https://daviddalbusco.com/';
 
 // Even though there is not max-length for content in RSS 2.0, we limit the length and add three dots
 const contentMaxLength = 500;
 
-export const get = async (): Promise<EndpointOutput> => {
+export const get = async (): Promise<ResponseBody> => {
   const headers: Record<string, string> = {
     'Cache-Control': 'max-age=3600',
     'Content-Type': 'application/xml'
@@ -70,6 +70,8 @@ const escapeXml = (html: string): string => {
         return '&apos;';
       case '"':
         return '&quot;';
+      default:
+        return c;
     }
   });
 };

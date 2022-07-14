@@ -1,7 +1,7 @@
 <script context="module">
   import {base} from '$app/paths';
   export const load = async ({fetch}) => {
-    const {portfolio, blog} = await fetch(`${base}/index.json`).then((r) => r.json());
+    const {portfolio, blog} = await fetch(`${base}/.json`).then((r) => r.json());
 
     const {work, play} = portfolio;
 

@@ -22,7 +22,7 @@ Long story short, to convert ICP to cycles you need two things:
 1.  the exchange rate to transform the values which is returned by the cycles-minting canister (CMC)
 2.  a function that, well, does the conversion
 
-The CMC keeps a rolling average over the ICP closing price over the last 30 days (source [wiki](https://wiki.internetcomputer.org/wiki/Node_rewards)). It provides the information through the function `get\_average\_icp\_xdr\_conversion\_rate`.
+The CMC keeps a rolling average over the ICP closing price over the last 30 days (source [wiki](https://wiki.internetcomputer.org/wiki/Node_rewards)). It provides the information through the function `get_average_icp_xdr_conversion_rate`.
 
 * * *
 
@@ -48,7 +48,7 @@ In following code snippets I use these particular bindings.
 
 ## XDR conversion rate
 
-On mainnet, the canister ID of the CMC is `rkp4c-7iaaa-aaaaa-aaaca-cai`. This ID should be used to instantiate the actor in order to query `get\_icp\_xdr\_conversion\_rate` which returns `xdr\_permyriad\_per\_icp`, the actual conversion rate in XDR we are looking for.
+On mainnet, the canister ID of the CMC is `rkp4c-7iaaa-aaaaa-aaaca-cai`. This ID should be used to instantiate the actor in order to query `get_icp_xdr_conversion_rate` which returns `xdr_permyriad_per_icp`, the actual conversion rate in XDR we are looking for.
 
 1 XDR being equal to 1 Trillion cycles, I convert the result to trillion ratio before returning it.
 

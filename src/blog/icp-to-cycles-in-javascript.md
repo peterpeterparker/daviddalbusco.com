@@ -19,10 +19,8 @@ Until there is a library (e.g. [cmc-js](https://github.com/dfinity/ic-js) 👀) 
 
 Long story short, to convert ICP to cycles you need two things:
 
-1.  the exchange rate to transform the values which is returned by the cycles-minting canister (CMC)
+1.  the exchange rate to transform the values which is returned by the cycles-minting canister (CMC) through the function `get_icp_xdr_conversion_rate`
 2.  a function that, well, does the conversion
-
-The CMC keeps a rolling average over the ICP closing price over the last 30 days (source [wiki](https://wiki.internetcomputer.org/wiki/Node_rewards)). It provides the information through the function `get_average_icp_xdr_conversion_rate`.
 
 * * *
 

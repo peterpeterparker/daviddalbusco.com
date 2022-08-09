@@ -8,7 +8,12 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      fallback: 'index.html'
+    }),
+    serviceWorker: {
+      register: false
+    },
     prerender: {
       default: true
     }

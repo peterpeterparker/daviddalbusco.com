@@ -11,7 +11,8 @@ const config = {
     adapter: adapter(),
     prerender: {
       default: true
-    }
+    },
+    trailingSlash: 'always'
   }
 };
 

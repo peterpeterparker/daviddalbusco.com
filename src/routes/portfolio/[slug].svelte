@@ -25,8 +25,9 @@
   <Seo />
 
   <style>
-    body {
+    body > div:first-child {
       --menu-color: black;
+      --section-color: black;
     }
   </style>
 </svelte:head>

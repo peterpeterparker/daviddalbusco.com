@@ -46,6 +46,7 @@
   <style>
     body {
       --menu-color: black;
+      --section-color: black;
     }
   </style>
 </svelte:head>

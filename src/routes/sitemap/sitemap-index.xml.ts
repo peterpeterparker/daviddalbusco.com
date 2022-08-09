@@ -6,7 +6,7 @@ const url = 'https://daviddalbusco.com/';
 
 const staticPages: string[] = ['blog', 'portfolio'];
 
-export const get = async (): Promise<ResponseBody> => {
+export const GET = async (): Promise<ResponseBody> => {
   const headers: Record<string, string> = {
     'Cache-Control': 'max-age=3600',
     'Content-Type': 'application/xml'

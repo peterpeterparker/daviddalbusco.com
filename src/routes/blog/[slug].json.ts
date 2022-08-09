@@ -1,4 +1,4 @@
 import {getBlob} from '$lib/plugins/blog.plugin';
-import type {EndpointOutput} from '@sveltejs/kit';
+import type {ResponseBody} from '@sveltejs/kit';
 
-export const get = ({params}: {params: Record<string, string>}): Promise<EndpointOutput> => getBlob(params);
+export const GET = ({params}: {params: Record<string, string>}): Promise<ResponseBody> => getBlob(params);

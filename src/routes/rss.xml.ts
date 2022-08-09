@@ -8,7 +8,7 @@ const url = 'https://daviddalbusco.com/';
 // Even though there is not max-length for content in RSS 2.0, we limit the length and add three dots
 const contentMaxLength = 500;
 
-export const get = async (): Promise<ResponseBody> => {
+export const GET = async (): Promise<ResponseBody> => {
   const headers: Record<string, string> = {
     'Cache-Control': 'max-age=3600',
     'Content-Type': 'application/xml'

@@ -44,7 +44,7 @@
   <Seo {canonical} {description} {image} {title} url={`/blog/${slug}`} />
 
   <style>
-    body {
+    body > div:first-child {
       --menu-color: black;
       --section-color: black;
     }

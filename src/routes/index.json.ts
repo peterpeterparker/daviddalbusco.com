@@ -5,7 +5,7 @@ import type {MarkdownData} from '$lib/types/markdown';
 import type {Portfolio} from '$lib/types/portfolio';
 import type {ResponseBody} from '@sveltejs/kit';
 
-export const get = async (): Promise<ResponseBody> => {
+export const GET = async (): Promise<ResponseBody> => {
   const portfolio: Portfolio = await listPortfolio();
   const blog: MarkdownData<BlogMetadata>[] = await listBlog();
 

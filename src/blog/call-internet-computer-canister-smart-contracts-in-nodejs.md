@@ -3,7 +3,7 @@ path: "/blog/call-internet-computer-canister-smart-contracts-in-nodejs"
 date: "2022-04-22"
 title: "Call Internet Computer Canister Smart Contracts In NodeJS"
 description: "How to query canister smart contracts on the Internet Computer in a NodeJS context."
-tags: "#javascript #nodejs #web3 #tutorial"
+tags: "#javascript #nodejs #web3 #internetcomputer"
 image: "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw1fHx3ZWJ8ZW58MHx8fHwxNjUwNTQ3NDAz&ixlib=rb-1.2.1&q=80&w=1080"
 canonical: "https://daviddalbusco.medium.com/call-internet-computer-canister-smart-contracts-in-nodejs-ce1d495d95ce"
 ---

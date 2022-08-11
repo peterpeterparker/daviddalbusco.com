@@ -3,7 +3,7 @@ path: "/blog/how-to-programmatically-convert-icp-to-cycles-in-nodejs"
 date: "2022-07-15"
 title: "ICP to cycles in JavaScript"
 description: "How to programmatically convert ICP to cycles in NodeJS?"
-tags: "#javascript #nodejs #web3 #tutorial"
+tags: "#javascript #nodejs #web3 #internetcomputer"
 image: "https://images.unsplash.com/photo-1613905780946-26b73b6f6e11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwyMHx8bWF0aHxlbnwwfHx8fDE2NTc4MDgxNTQ&ixlib=rb-1.2.1&q=80&w=1080"
 canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/icp-to-cycles-in-javascript"
 ---

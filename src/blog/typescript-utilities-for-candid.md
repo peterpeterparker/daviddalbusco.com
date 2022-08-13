@@ -68,19 +68,19 @@ System [Time](https://smartcontracts.org/docs/base-libraries/Time.html) (nanosec
 export type Time = bigint;
 ```
 
-To convert JavaScript `Date` to big numbers, the built-in object [BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) can be instantiated.
+To convert JavaScript `Date` to big numbers, the built-in object [BigInt](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt) can be instantiated by multiplying seconds to nano seconds.
 
 ```javascript
 export const toTimestamp = (value: Date): Time => {
-  return BigInt(value.getTime());
+  return BigInt(value.getTime() * 1000 * 1000);
 };
 ```
 
-The other way around works by converting first the big numbers to their primitive [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) types.
+The other way around works by converting first the big numbers to their primitive [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) types and dividing it to seconds.
 
 ```javascript
 export const fromTimestamp = (value: Time): Date => {
-  return new Date(Number(value));
+  return new Date(Number(value) / (1000 * 1000));
 };
 ```
 
@@ -94,8 +94,8 @@ export const toNullableTimestamp = (value?: Date): [] | [Time] => {
 
 export const fromNullableTimestamp = 
        (value?: [] | [Time]): Date | undefined => {
-  return !isNaN(parseInt(`${value?.[0]}`)) ? 
-            new Date(`${value[0]}`) : undefined;
+  return !isNaN(parseInt(`${value?.[0]}`)) ?
+    fromTimestamp(value[0]) : undefined;
 };
 ```
 

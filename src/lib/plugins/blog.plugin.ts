@@ -1,7 +1,6 @@
 import {get, list} from '$lib/plugins/markdown.plugin';
 import type {BlogMetadata} from '$lib/types/blog';
 import type {MarkdownData} from '$lib/types/markdown';
-import type {EndpointOutput} from '@sveltejs/kit';
 
 export const listBlog = async (): Promise<MarkdownData<BlogMetadata>[]> => {
   const results: MarkdownData<BlogMetadata>[] = await list<BlogMetadata>({path: 'blog'});
@@ -18,7 +17,5 @@ export const listBlog = async (): Promise<MarkdownData<BlogMetadata>[]> => {
   return sortBlogs;
 };
 
-export const getBlob = async ({slug}: Record<string, string>): Promise<EndpointOutput> => {
-  const data: MarkdownData<BlogMetadata> = await get<BlogMetadata>({slug, path: 'blog'});
-  return {body: JSON.stringify(data)};
-};
+export const getBlob = async ({slug}: Record<string, string>): Promise<MarkdownData<BlogMetadata>> =>
+  get<BlogMetadata>({slug, path: 'blog'});

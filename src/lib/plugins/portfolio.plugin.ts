@@ -1,7 +1,6 @@
 import {get, list} from '$lib/plugins/markdown.plugin';
 import type {MarkdownData} from '$lib/types/markdown';
 import type {Portfolio, PortfolioMetadata} from '$lib/types/portfolio';
-import type {ResponseBody} from '@sveltejs/kit';
 
 export const listPortfolio = async (): Promise<Portfolio> => {
   const results: MarkdownData<PortfolioMetadata>[] = await list<PortfolioMetadata>({path: 'portfolio'});
@@ -34,7 +33,5 @@ export const listPortfolio = async (): Promise<Portfolio> => {
   return portfolio;
 };
 
-export const getPortfolio = async ({slug}: Record<string, string>): Promise<ResponseBody> => {
-  const data: MarkdownData<PortfolioMetadata> = await get<PortfolioMetadata>({slug, path: 'portfolio'});
-  return {body: JSON.stringify(data)};
-};
+export const getPortfolio = async ({slug}: Record<string, string>): Promise<MarkdownData<PortfolioMetadata>> =>
+  get<PortfolioMetadata>({slug, path: 'portfolio'});

@@ -1,14 +1,13 @@
 import {listBlog} from '$lib/plugins/blog.plugin';
 import type {BlogMetadata} from '$lib/types/blog';
 import type {MarkdownData} from '$lib/types/markdown';
-import type {ResponseBody} from '@sveltejs/kit';
 
 const url = 'https://daviddalbusco.com/';
 
 // Even though there is not max-length for content in RSS 2.0, we limit the length and add three dots
 const contentMaxLength = 500;
 
-export const GET = async (): Promise<ResponseBody> => {
+export const GET = async (): Promise<Response> => {
   const headers: Record<string, string> = {
     'Cache-Control': 'max-age=3600',
     'Content-Type': 'application/xml'
@@ -19,9 +18,8 @@ export const GET = async (): Promise<ResponseBody> => {
   // We do not know here whe the site was built but, we can know when last blog post was published
   const lastBuildDate: string = new Date(posts[0].metadata.date).toUTCString();
 
-  return {
-    headers,
-    body: `<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  return new Response(
+    `<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
         <channel>
             <title><![CDATA[David Dal Busco RSS Feed]]></title>
             <description><![CDATA[Freelance Web Developer - Web, Progressive Web Apps and Mobile]]></description>
@@ -30,8 +28,9 @@ export const GET = async (): Promise<ResponseBody> => {
             
             ${(await blog({posts})).join('')}
         </channel>
-    </rss>`
-  };
+    </rss>`,
+    {headers: headers}
+  );
 };
 
 const blog = async ({posts}: {posts: MarkdownData<BlogMetadata>[]}): Promise<string[]> => {

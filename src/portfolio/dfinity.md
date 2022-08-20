@@ -8,7 +8,7 @@ type: "work"
 
 # DFINITY
 
-I have the privilege of acting as a contractor for [DFINITY](https://dfinity.org) with the task of (re)developing the [Network Nervous System](https://nns.ic0.app/) (NNS) frontend dapp.
+I have the privilege to help [DFINITY](https://dfinity.org) with the task of (re)developing the [Network Nervous System](https://nns.ic0.app/) (NNS) frontend dapp.
 
 The NNS is the controlling mechanism by which the [Internet Computer](https://internetcomputer.org/)’s nodes and subnets are organized, tracked, and managed.
 

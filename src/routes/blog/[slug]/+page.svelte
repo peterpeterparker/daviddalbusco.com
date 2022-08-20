@@ -1,39 +1,37 @@
-<script context="module">
-  import {base} from '$app/paths';
-
-  export const load = async ({params, fetch}) => {
-    const {slug} = params;
-
-    const post = await fetch(`${base}/blog/${slug}.json`).then((r) => r.json());
-    return {
-      props: {...post}
-    };
-  };
-</script>
-
 <script lang="ts">
   import {browser} from '$app/env';
   import {onMount} from 'svelte';
 
-  import '../../theme/_blog.scss';
+  import '../../../theme/_blog.scss';
 
+  import type {PageData} from './$types';
   import Button from '$lib/components/button.svelte';
   import Seo from '$lib/components/seo.svelte';
   import type {BlogMetadata} from '$lib/types/blog';
-  import { goto } from "$app/navigation"
+  import {goto} from '$app/navigation';
+  import type {MarkdownData} from '$lib/types/markdown';
 
-  export let slug: string;
-  export let content: string;
-  export let metadata: BlogMetadata;
+  export let data: PageData;
 
-  export let {title, canonical, description, image, date: postDate, tags} = metadata;
+  let post: MarkdownData<BlogMetadata>;
+  $: ({post} = data);
+
+  let slug: string;
+  let content: string;
+  let metadata: BlogMetadata;
+
+  $: ({slug, content, metadata} = post);
+
+  $: ({title, canonical, description, image, date: postDate, tags} = metadata);
 
   onMount(async () => {
     if (!browser) {
       return;
     }
 
-    const {defineCustomElement} = await import(/* @vite-ignore */ '@deckdeckgo/highlight-code/dist/components/deckgo-highlight-code');
+    const {defineCustomElement} = await import(
+      /* @vite-ignore */ '@deckdeckgo/highlight-code/dist/components/deckgo-highlight-code'
+    );
     defineCustomElement();
   });
 

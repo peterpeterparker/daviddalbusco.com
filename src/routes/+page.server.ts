@@ -2,17 +2,17 @@ import {listBlog} from '$lib/plugins/blog.plugin';
 import {listPortfolio} from '$lib/plugins/portfolio.plugin';
 import type {BlogMetadata} from '$lib/types/blog';
 import type {MarkdownData} from '$lib/types/markdown';
-import type {Portfolio} from '$lib/types/portfolio';
-import type {ResponseBody} from '@sveltejs/kit';
+import type {Portfolio, PortfolioMetadata} from '$lib/types/portfolio';
 
-export const GET = async (): Promise<ResponseBody> => {
+export const load = async (): Promise<{
+  work: MarkdownData<PortfolioMetadata>[];
+  play: MarkdownData<PortfolioMetadata>[];
+  blog: MarkdownData<BlogMetadata>[];
+}> => {
   const portfolio: Portfolio = await listPortfolio();
   const blog: MarkdownData<BlogMetadata>[] = await listBlog();
 
-  return {
-    body: JSON.stringify({
-      portfolio,
-      blog: blog.slice(0, 4)
-    })
-  };
+  const {work, play} = portfolio;
+
+  return {work, play, blog: blog.slice(0, 4)};
 };

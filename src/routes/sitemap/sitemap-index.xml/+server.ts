@@ -1,20 +1,18 @@
 import {listSlugs} from '$lib/plugins/slug.plugin';
 import type {Slug} from '$lib/types/slug';
-import type {ResponseBody} from '@sveltejs/kit';
 
 const url = 'https://daviddalbusco.com/';
 
 const staticPages: string[] = ['blog', 'portfolio'];
 
-export const GET = async (): Promise<ResponseBody> => {
+export const GET = async (): Promise<Response> => {
   const headers: Record<string, string> = {
     'Cache-Control': 'max-age=3600',
     'Content-Type': 'application/xml'
   };
 
-  return {
-    headers,
-    body: `<?xml version="1.0" encoding="UTF-8" ?>
+  return new Response(
+    `<?xml version="1.0" encoding="UTF-8" ?>
     <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
@@ -36,8 +34,9 @@ export const GET = async (): Promise<ResponseBody> => {
       </url>`
         )
         .join('')}
-    </urlset>`
-  };
+    </urlset>`,
+    {headers: headers}
+  );
 };
 
 const pages = (): string[] => {

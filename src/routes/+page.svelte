@@ -1,17 +1,5 @@
-<script context="module">
-  import {base} from '$app/paths';
-  export const load = async ({fetch}) => {
-    const {portfolio, blog} = await fetch(`${base}/.json`).then((r) => r.json());
-
-    const {work, play} = portfolio;
-
-    return {
-      props: {work, play, blog}
-    };
-  };
-</script>
-
-<script>
+<script lang="ts">
+  import type { PageData } from "./$types";
   import Seo from '$lib/components/seo.svelte';
   import Blog from '$lib/components/blog.svelte';
   import Work from '$lib/components/work.svelte';
@@ -21,9 +9,13 @@
   import Contact from '$lib/components/contact.svelte';
   import {cleanBodyStyles} from '$lib/utils/styles.utils';
 
-  export let work;
-  export let play;
-  export let blog;
+  export let data: PageData;
+
+  let work;
+  let play;
+  let blog;
+
+  $: ({ work, play, blog } = data);
 
   const onScroll = () => {
     const scrolledSize = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;

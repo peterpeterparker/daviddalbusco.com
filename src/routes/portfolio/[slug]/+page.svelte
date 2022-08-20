@@ -1,22 +1,18 @@
-<script context="module">
-  import {base} from '$app/paths';
-
-  export const load = async ({params, fetch}) => {
-    const {slug} = params;
-
-    const post = await fetch(`${base}/portfolio/${slug}.json`).then((r) => r.json());
-    return {
-      props: {...post}
-    };
-  };
-</script>
-
 <script lang="ts">
+  import type {PageData} from './$types';
   import Seo from '$lib/components/seo.svelte';
   import Button from '$lib/components/button.svelte';
   import {goto} from '$app/navigation';
+  import type {MarkdownData} from '$lib/types/markdown';
+  import type {PortfolioMetadata} from '$lib/types/portfolio';
 
-  export let content: string;
+  export let data: PageData;
+
+  let portfolio: MarkdownData<PortfolioMetadata>;
+  $: ({portfolio} = data);
+
+  let content: string;
+  $: ({content} = portfolio);
 
   const navigatePortfolio = () => goto('/portfolio');
 </script>

@@ -1,5 +1,5 @@
 ---
-path: "/blog/few-things-to-know-before-launching-a-sveltekit-app-in-prod"
+path: "/blog/migrate-canister-smart-contracts-from-motoko-to-rust"
 date: "2022-11-10"
 title: "Migrate canister smart contracts from Motoko to Rust"
 description: "I migrated 500+ canisters from Motoko to Rust on the Internet Computer. Here are the two major things I learned."

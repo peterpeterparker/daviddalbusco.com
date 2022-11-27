@@ -30,9 +30,36 @@ The first two options are applicable for any dapps, the last two are more useful
 
 ## 1. Automatic Installation
 
-It's a bit verbose - or hacky depends the point of view - but it is possible to setup II for a project in `dfx` with a `custom` canister. By doing so, we can leverage the `build` callback to download and install II automatically.
+It is possible to set up II for a project with `dfx` >= 0.12.0 using a `custom` canister.
 
 So, just drop the following configuration in your project and that's already it.
+
+```bash
+{
+	"canisters": {
+
+        ...
+
+          "internet_identity": {
+			"type": "custom",
+            "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+            "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm",
+            "shrink": false
+			"remote": {
+				"candid": "internet_identity.did",
+				"id": {
+					"ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+				}
+			}
+		  }
+	},
+
+    ...
+
+}
+```
+
+Using `dfx` < v0.12.0, it's a bit more verbose - or hacky depends the point of view - but we can also leverage the `build` callback to download and install II automatically.
 
 ```javascript
 {

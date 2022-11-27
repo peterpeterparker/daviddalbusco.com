@@ -2,6 +2,8 @@ import {listBlog} from '$lib/plugins/blog.plugin';
 import type {BlogMetadata} from '$lib/types/blog';
 import type {MarkdownData} from '$lib/types/markdown';
 
+export const prerender = true;
+
 const url = 'https://daviddalbusco.com/';
 
 // Even though there is not max-length for content in RSS 2.0, we limit the length and add three dots

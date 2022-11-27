@@ -1,6 +1,8 @@
 import {listSlugs} from '$lib/plugins/slug.plugin';
 import type {Slug} from '$lib/types/slug';
 
+export const prerender = true;
+
 const url = 'https://daviddalbusco.com/';
 
 const staticPages: string[] = ['blog', 'portfolio'];

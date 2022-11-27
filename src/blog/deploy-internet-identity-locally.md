@@ -44,7 +44,7 @@ So, just drop the following configuration in your project and that's already it.
 			"type": "custom",
             "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
             "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm",
-            "shrink": false
+            "shrink": false,
 			"remote": {
 				"candid": "internet_identity.did",
 				"id": {

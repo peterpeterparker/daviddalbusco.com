@@ -71,7 +71,7 @@ import {AngularFireAnalyticsModule,
 
 import {environment} from '../environments/environment';
 
-@NgModule({
+@NgModule({
    providers: [
      {
        provide: CONFIG,

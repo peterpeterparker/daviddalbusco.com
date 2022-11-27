@@ -1,6 +1,7 @@
 <script>
   import Section from '$lib/components/section.svelte';
   import Button from '$lib/components/button.svelte';
+  import IconOpen from "$lib/icons/IconOpen.svelte";
 </script>
 
 <Section background="white" color="black">
@@ -19,6 +20,10 @@
 
     <Button type="submit">Send</Button>
   </form>
+
+  <p class="newsletter">
+    * I also send time to time a <a href="http://eepurl.com/giun5j" target="_blank" rel="external noopener noreferrer">Newsletter<IconOpen /></a> about the side projects I develop for fun and the last blog posts I published.
+  </p>
 </Section>
 
 <style lang="scss">
@@ -46,5 +51,9 @@
 
   textarea {
     resize: none;
+  }
+
+  .newsletter {
+    padding: 5.45rem 0 0;
   }
 </style>

@@ -1,6 +1,7 @@
 <script lang="ts">
   import {fly} from 'svelte/transition';
   import {createEventDispatcher} from 'svelte';
+  import IconOpen from "$lib/icons/IconOpen.svelte";
 
   export let open: boolean;
 
@@ -17,6 +18,7 @@
     <a href="/#portfolio" on:click={navigate} rel="external"><h2 in:fly={{y: 100, duration: 500}}>Portfolio</h2></a>
     <a href="/#about" on:click={navigate} rel="external"><h2 in:fly={{y: 100, duration: 500}}>About</h2></a>
     <a href="/blog" on:click={navigate}><h2 in:fly={{y: 100, duration: 500}}>Blog</h2></a>
+    <a href="http://eepurl.com/giun5j" target="_blank" on:click={navigate} rel="external noopener noreferrer"><h2 in:fly={{y: 100, duration: 500}}>Newsletter<IconOpen size="2.5rem" /></h2></a>
     <a href="/#contact" on:click={navigate} rel="external"><h2 in:fly={{y: 100, duration: 500}}>Contact</h2></a>
   {/if}
 </div>
@@ -48,5 +50,11 @@
     }
 
     padding: 5.45rem 2.45em;
+
+    @media screen and (max-width: 576px) {
+      a :global(svg) {
+        display: none;
+      }
+    };
   }
 </style>

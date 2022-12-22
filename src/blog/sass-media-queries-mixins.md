@@ -5,7 +5,7 @@ title: "Sass media queries mixins"
 description: "A Sass media queries mixin to avoid duplicating CSS breakpoints all over the place."
 tags: "#css #sass #mixins"
 image: "https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwyOHx8bGluZXxlbnwwfHx8fDE2NzE3MTI0MjM&ixlib=rb-4.0.3&q=80&w=1080"
-canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/sass-media-queries-mixins"
+canonical: "https://daviddalbusco.medium.com/sass-media-queries-mixins-1c5e5f605704"
 ---
 
 ![ELNÒS Shopping mall pattern](https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwyOHx8bGluZXxlbnwwfHx8fDE2NzE3MTI0MjM&ixlib=rb-4.0.3&q=80&w=1080)

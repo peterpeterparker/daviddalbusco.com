@@ -4,7 +4,7 @@
   let defaultTitle = 'David Dal Busco';
   let defaultDescription = 'Freelance Web Developer - Web, Progressive Web Apps and Mobile';
 
-  export let url: string | undefined = undefined;
+  export let url: string = defaultUrl;
   export let canonical: string | undefined = undefined;
   export let image: string | undefined = undefined;
   export let title: string | undefined = undefined;
@@ -17,7 +17,7 @@
 <meta content={title ?? defaultTitle} property="og:title" />
 <meta content={description ?? defaultDescription} property="og:description" />
 <meta content="website" property="og:type" />
-<meta content={url ?? defaultUrl} property="og:url" />
+<meta content={url} property="og:url" />
 <meta content={image ?? defaultImage} property="og:image" />
 <meta content="summary_large_image" name="twitter:card" />
 <meta content={title ?? defaultTitle} name="twitter:title" />

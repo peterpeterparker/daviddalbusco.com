@@ -8,7 +8,7 @@ type: "play"
 
 # DeckDeckGo
 
-DeckDeckGo is an open source web editor for presentations, documents and blog posts. It enables anyone with any type of devices (desktop, mobile or tablets) to easily create, present and share content.
+DeckDeckGo is a project of mine that is now deprecated. It was an open source web editor for creating presentations, documents, and blog posts. It used to enable anyone, regardless of their device type (desktop, mobile, or tablet), to easily create, present, and share content.
 
 ![A screenshot of the DeckDeckGo editor](/images/portfolio/screenshots/deckdeckgo.webp)
 

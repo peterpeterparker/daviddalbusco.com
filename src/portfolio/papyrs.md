@@ -2,7 +2,7 @@
 title: "Papyrs"
 description: "An open-source, privacy-first, decentralized blogging platform that lives 100% on chain."
 icon: "/images/portfolio/icons/papyrs-icon.png"
-background: "#C4CDFF"
+background: "#ffecd6"
 type: "play"
 ---
 
@@ -22,9 +22,9 @@ The application primarily works offline and can therefore be used by anyone out 
 
 **Website:** [Papyrs](https://papy.rs/)
 
-**Technology:** [SvelteKit](https://kit.svelte.dev/) and [StencilJS](https://stenciljs.com/) for the frontend dapp. [Motoko](https://internetcomputer.org/docs/current/developer-docs/build/languages/motoko/) for the canister smart contracts.
+**Technology:** [SvelteKit](https://kit.svelte.dev/) and [StencilJS](https://stenciljs.com/) for the frontend dapp. [Rust](https://www.rust-lang.org/) and [Motoko](https://internetcomputer.org/docs/current/developer-docs/build/languages/motoko/) for the canister smart contracts.
 
-**Infrastructure:** 100% on chain [Internet Computer](https://internetcomputer.org/).
+**Infrastructure:** 100% on blockchain [Internet Computer](https://internetcomputer.org/).
 
 ## Open source
 

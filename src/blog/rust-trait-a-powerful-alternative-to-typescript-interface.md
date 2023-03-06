@@ -2,10 +2,10 @@
 path: "/blog/rust-trait-a-powerful-alternative-to-typescript-interface"
 date: "2023-03-06"
 title: "Rust Trait: A Powerful Alternative To TypeScript Interface"
-description: "A comparison of TypeScript interfaces with its potential Rust equivalent to demonstrate how to achieve a simple flexible and composable code."
+description: "Comparing TypeScript “interface” with Rust “trait” for simple, flexible, and composable code."
 tags: "#rust #typescript #programming #webdev"
 image: "https://images.unsplash.com/photo-1579547621706-1a9c79d5c9f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxfHxHcmFkaWVudHxlbnwwfHx8fDE2NzgwMzYwNDI&ixlib=rb-4.0.3&q=80&w=1080"
-canonical: "https://juno.build/blog/introduction-juno"
+canonical: "https://medium.com/@daviddalbusco/rust-trait-a-powerful-alternative-to-typescript-interface-e671cd7f9690"
 ---
 
 ![Distorted Sun](https://images.unsplash.com/photo-1579547621706-1a9c79d5c9f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxfHxHcmFkaWVudHxlbnwwfHx8fDE2NzgwMzYwNDI&ixlib=rb-4.0.3&q=80&w=1080)

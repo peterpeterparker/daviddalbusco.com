@@ -22,7 +22,7 @@
   </form>
 
   <p class="newsletter">
-    * I also send time to time a <a href="http://eepurl.com/giun5j" target="_blank" rel="external noopener noreferrer">Newsletter<IconOpen /></a> about the side projects I develop for fun and the last blog posts I published.
+    * From time to time, I send out a <a href="http://eepurl.com/giun5j" target="_blank" rel="external noopener noreferrer">Newsletter<IconOpen /></a> that highlights the side projects I develop for fun, as well as my latest blog posts.
   </p>
 </Section>
 

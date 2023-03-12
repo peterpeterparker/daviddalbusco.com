@@ -52,6 +52,8 @@ fn world(name: String) -> String {
 To collect the methods that we need to generate their declarations, we use the `export\_service` macro from the Candid crate. We add a `query` method and prefix its name with two underscores, as it has no practical purpose for our canister.
 
 ```rust
+use ic_cdk::export::candid::{export_service};
+
 #[query(name = "__get_candid_interface_tmp_hack")]
 fn export_candid() -> String {
     export_service!();

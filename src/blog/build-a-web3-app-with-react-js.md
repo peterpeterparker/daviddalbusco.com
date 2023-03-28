@@ -53,22 +53,20 @@ npm i @junobuild/core
 After completing both of these steps, you can initialize Juno with your satellite ID at the top of your React app. This will configure the library to communicate with your smart contract.
 
 ```javascript
-import { initJuno } from "@junobuild/core";
 import { useEffect } from "react";
+import { initJuno } from "@junobuild/core";
 
 function App() {
-  useEffect(() => {
-    (async () =>
-      await initJuno({
-        satelliteId: "aaaaaa-bbbbb-ccccc-ddddd-cai"
-      }))();
-  }, []);
+    useEffect(() => {
+        (async () =>
+            await initJuno({
+                satelliteId: "pycrs-xiaaa-aaaal-ab6la-cai",
+            }))();
+    }, []);
 
-  return (
-    <>
-      <h1>Hello World</a>
-    </>
-  );
+    return (
+        <h1>Hello World</h1>
+    );
 }
 
 export default App;

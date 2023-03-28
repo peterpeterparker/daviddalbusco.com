@@ -141,16 +141,16 @@ In this tutorial, our goal is to store notes. To achieve this, you will need to 
 
 Once your app is set up and your collection is created, we can persist data on the blockchain using the `setDoc` function provided by the library.
 
-```javascript
+```typescript
 import { setDoc } from "@junobuild/core";
 
 // TypeScript example from the documentation
 await setDoc<Example>({
-  collection: "my_collection_key",
-  doc: {
-    key: "my_document_key",
-    data: myExample,
-  },
+    collection: "my_collection_key",
+    doc: {
+        key: "my_document_key",
+        data: myExample,
+    },
 });
 ```
 

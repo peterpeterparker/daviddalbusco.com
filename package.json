@@ -23,7 +23,7 @@
   "devDependencies": {
     "@stencil/core": "^2.20.0",
     "@sveltejs/adapter-static": "^2.0.1",
-    "@sveltejs/kit": "^1.10.0",
+    "@sveltejs/kit": "^1.15.2",
     "@types/remarkable": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",

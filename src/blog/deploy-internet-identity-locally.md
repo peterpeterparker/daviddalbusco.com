@@ -43,7 +43,7 @@ So, just drop the following configuration in your project and that's already it.
           "internet_identity": {
 			"type": "custom",
             "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
-            "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm",
+            "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz",
             "shrink": false,
 			"remote": {
 				"candid": "internet_identity.did",
@@ -70,8 +70,8 @@ Using `dfx` < v0.12.0, it's a bit more verbose - or hacky depends the point of v
           "internet_identity": {
 			"type": "custom",
 			"candid": "internet_identity.did",
-			"wasm": "internet_identity.wasm",
-			"build": "bash -c 'test -f internet_identity.wasm || curl -sSL https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm -o internet_identity.wasm; test -f internet_identity.did || curl -sSL https://raw.githubusercontent.com/dfinity/internet-identity/main/src/internet_identity/internet_identity.did -o internet_identity.did'",
+			"wasm": "internet_identity.wasm.gz",
+			"build": "bash -c 'test -f internet_identity.wasm.gz || curl -sSL https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz -o internet_identity.wasm.gz; test -f internet_identity.did || curl -sSL https://raw.githubusercontent.com/dfinity/internet-identity/main/src/internet_identity/internet_identity.did -o internet_identity.did'",
 			"remote": {
 				"candid": "internet_identity.did",
 				"id": {
@@ -88,10 +88,10 @@ Using `dfx` < v0.12.0, it's a bit more verbose - or hacky depends the point of v
 
 As we only want to deploy II locally, it is worth to note that above config contains a `remote` option that points to II on mainnet. Thanks to it, the wasm won't be deployed when we deploy our canisters to mainnet.
 
-You might also want to skip committing the `.did` and `.wasm` files - that are going to be automatically downloaded - by omitting these in your `.gitignore`.
+You might also want to skip committing the `.did` and `.wasm.gz` files - that are going to be automatically downloaded - by omitting these in your `.gitignore`.
 
 ```javascript
-internet_identity.wasm
+internet_identity.wasm.gz
 internet_identity.did
 ```
 

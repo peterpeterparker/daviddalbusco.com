@@ -10,8 +10,9 @@
   <h2 id="portfolio">Work & Clients</h2>
 
   <p>
-    I’ve worked with clients ranging from small startups, corporates, universities and foundations looking to develop
-    stunning web products and mobile applications.
+    Throughout my career, I've had the pleasure of collaborating with a diverse range of clients. From small startups
+    and corporates to universities and foundations, I've had the opportunity to assist them in creating exceptional web
+    products and mobile applications.
   </p>
 </Projects>
 

@@ -20,8 +20,8 @@
   <h2 id="blog">Blog</h2>
 
   <p>
-    New skills I learned, technologies I used or tutorials, sharing is caring. In my series of blog posts I share the
-    outcome of my recent hobby work.
+    New skills I have learned, technologies I have used, and tutorials I have followed. In my series of blog posts, I
+    share the outcomes of my recent hobby work.
   </p>
 
   <div class="grid">

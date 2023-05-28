@@ -7,8 +7,8 @@
     About <img alt="" aria-hidden="true" loading="lazy" role="presentation" src="/icons/icon-256x256.png" />
   </h2>
 
-  <p>Hi, nice to meet you 👋.</p>
-  <p>I'm a freelance web developer and contractor, open source enthusiast, based in Zürich, Switzerland.</p>
+  <p>Hi there! It's great to meet you! 👋</p>
+  <p>I'm a freelance web developer and contractor based in Zürich, Switzerland.</p>
 
   <p>
     My expertise lies in
@@ -20,24 +20,27 @@
     and
     <mark>
       <a href="https://stenciljs.com" rel="noopener noreferrer">StencilJS</a>
-    </mark>, but I'm truly passionate about developing agnostic libraries and components with vanilla
-    JavaScript/TypeScript.
+    </mark>, but I'm particularly passionate about developing agnostic JavaScript/TypeScript solutions.
   </p>
   <p>
-    I strongly believe that decentralization and taking back ownership of our data is the way forward. This is why I'm
-    interested in blockchain networks and a big fan of the <mark>
+    I believe in the principles of decentralization and data ownership, which is why I have a keen interest in
+    blockchain networks. As a proud supporter of the <mark>
       <a href="https://internetcomputer.org/" rel="noopener noreferrer">Internet Computer</a>
-    </mark>.
+    </mark>, I see tremendous potential in its future.
   </p>
   <p>
-    In addition to my technical skills, I have experience in project management, business requirements, and UX design
-    from a developer's perspective. I hold degrees in Computer Engineering and Executive Master in Business
-    Administration. I speak fluently French, German, and English.
+    In addition to my technical skills, I have experience in project management, business requirements analysis, and UX
+    design from a developer's perspective. I hold degrees in Computer Engineering and an Executive Master's in Business
+    Administration. I'm also fluent in French, German, and English.
   </p>
-  <p>When I'm not coding, you'll probably find me running trails in the mountains or along the river ⛰🏃.</p>
   <p>
-    If you have a web or mobile project in mind, feel free
-    <a href="/#contact" rel="noopener noreferrer">get in touch!</a>
+    When I'm not busy coding, you can often find me running on mountain trails or along the river. It's my way of
+    finding peace and staying active. ⛰🏃
+  </p>
+  <p>
+    If you have a web or mobile project in mind, feel free to
+    <a href="/#contact" rel="noopener noreferrer">reach out!</a> I would be more than happy to discuss how I can contribute
+    to the success of your project.
   </p>
 </Section>
 

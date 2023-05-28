@@ -9,7 +9,10 @@
 <Projects {projects}>
   <h2>Play</h2>
 
-  <p>A list of my open source projects I developed for fun and learning purpose.</p>
+  <p>
+    As an open source enthusiast, I have actively engaged in developing various projects for both fun and learning
+    purposes. Here are some notable products I have developed:
+  </p>
 </Projects>
 
 <style lang="scss">

@@ -54,7 +54,7 @@ I developed the UI using several independent and reusable UI components. Rather 
 
 The integration process of Juno begins with a straightforward initialization at the root of the project, specifically in App.tsx , connecting the application to its associated smart contract, which we affectionately named “Satellite.” Once connected, it gains the ability to interact with the blockchain.
 
-```typescript jsx
+```typescript
 import { initJuno } from "@junobuild/core";
 import { useEffect, useState } from "react";
 import { Scene } from "./components/Scene.tsx";
@@ -98,7 +98,7 @@ In the code snippet mentioned above, you may have noticed the use of two context
 
 Juno offers a convenient observable function called authSubscribe() which provides information about the user’s sign-in status. To replicate this status across the entire application, I leveraged an effect and context mechanism. This allowed me to effectively propagate the user’s sign-in status throughout the app.
 
-```typescript jsx
+```typescript
 import { authSubscribe, User } from "@junobuild/core";
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { Spinner } from "../misc/Spinner.tsx";
@@ -146,7 +146,7 @@ In addition to the authentication functionality, I also incorporated a “busy�
 
 Implementing the initialization and interaction with web workers within a context was a new experience for me, and I must say, it’s pretty cool. In fact, I might even consider writing a separate blog post about it on my personal website because it’s an intriguing topic worth exploring further.
 
-```typescript jsx
+```typescript
 import {
   createContext,
   ReactNode,

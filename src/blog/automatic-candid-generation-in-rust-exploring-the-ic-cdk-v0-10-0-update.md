@@ -100,12 +100,12 @@ use ic_cdk_macros::{query, update, export_candid};
 
 #[query]
 fn hello(name: String) -> String {
-format!("Hello, {}!", name)
+    format!("Hello, {}!", name)
 }
 
 #[update]
 fn world(name: String) -> String {
-format!("World, {}!", name)
+    format!("World, {}!", name)
 }
 
 // Generate did files
@@ -136,7 +136,7 @@ CANISTERS=console,observatory,mission_control,satellite
 
 for canister in $(echo $CANISTERS | sed "s/,/ /g")
 do
-generate_did "$canister"
+  generate_did "$canister"
 done
 ```
 

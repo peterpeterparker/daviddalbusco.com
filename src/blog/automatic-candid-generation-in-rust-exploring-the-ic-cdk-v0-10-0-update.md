@@ -117,7 +117,7 @@ export_candid!();
 
 5. Add the following script to your project or copy it from Juno’s repo: [https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh](https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh)
 
-```bach
+```bash
 #!/usr/bin/env bash
 
 function generate_did() {

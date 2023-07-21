@@ -18,7 +18,7 @@ So, yesterday I upgraded [Juno](https://juno.build/) to the latest release of [i
 
 ## Previous Workaround
 
-If you have previously relied on automatic type generation, chances are you used the export_service crate and the workaround involving generating and writing the did files to the file system through a test by running cargo test .
+If you have previously relied on automatic type generation, chances are you used the `export_service` crate and the workaround involving generating and writing the `did` files to the file system through a test by running `cargo test`.
 
 I covered this approach in a [previous blog post](https://daviddalbusco.com/blog/automatically-generate-candid-from-rust-on-the-ic/) earlier this year, but to summarize, your code most probably looked like the following:
 
@@ -73,11 +73,11 @@ mod tests {
 
 ## New Solution
 
-No more workarounds! ic_cdk v0.10.0 introduces a new macro called export_candid, designed specifically to facilitate automatic generation of the did files.
+No more workarounds! ic_cdk v0.10.0 introduces a new macro called `export_candid`, designed specifically to facilitate automatic generation of the `did` files.
 
-Therefore, if you are migrating or starting a new canister and want to generate the types automatically, the new solution basically consists of adding export_candid!() at the end of lib.rs, and that's all you need for the code.
+Therefore, if you are migrating or starting a new canister and want to generate the types automatically, the new solution basically consists of adding `export_candid!()` at the end of `lib.rs`, and that's all you need for the code.
 
-However, it’s worth noting that the effective creation of the files is not yet integrated into dfx. As a result, you will need a script to generate them.
+However, it’s worth noting that the effective creation of the files is not yet integrated into `dfx`. As a result, you will need a script to generate them.
 
 But no worries, I will spare you the hassle of building such a script and share a solution with you in the next chapter.
 
@@ -85,13 +85,13 @@ But no worries, I will spare you the hassle of building such a script and share 
 
 If you are following this blog post to generate did files automatically for a new canister, you can skip the first steps and jump directly to step 4. However, if you are migrating an existing project that implements the workaround, begin by removing it:
 
-1. Remove all #[candid_method(query)] and #[candid_method(update)] from your code. These attributes are no longer required and, in fact, they conflict with the new solution.
+1. Remove all `#[candid_method(query)]` and `#[candid_method(update)]` from your code. These attributes are no longer required and, in fact, they conflict with the new solution.
 
-2. Delete the all workaround export_service and save_candid test.
+2. Delete the all workaround `export_service` and `save_candid` test.
 
-3. Suppress the related imports (use ic_cdk::export::candid::{export_service, candid_method}) that have become unused.
+3. Suppress the related imports (`use ic_cdk::export::candid::{export_service, candid_method}`) that have become unused.
 
-4. Import and add the export_candid macro at the end of your lib.rs
+4. Import and add the `export_candid` macro at the end of your `lib.rs`
 
 ```rust
 use ic_cdk_macros::{query, update, export_candid};
@@ -142,11 +142,11 @@ done
 
 6. Optional: ⭐️ star [Juno’s repo on GitHub](https://github.com/buildwithjuno/juno) and show your support!
 
-7. Update the scripts variable CANISTERS with the names of the canisters in your project (comma separated list).
+7. Update the scripts variable `CANISTERS` with the names of the canisters in your project (comma separated list).
 
-That’s it, you’re all set! You can now run $ did.sh in your terminal to generate the did files for your project 🎉.
+That’s it, you’re all set! You can now run `$ did.sh` in your terminal to generate the `did` files for your project 🎉.
 
-Personally, I like to automate and chain tasks, including the generation of the related formatted JavaScript file. That’s why I also suggest setting up the following scripts in your package.json to go a step further:
+Personally, I like to automate and chain tasks, including the generation of the related formatted JavaScript file. That’s why I also suggest setting up the following scripts in your `package.json` to go a step further:
 
 ```json
 "scripts": {
@@ -155,7 +155,7 @@ Personally, I like to automate and chain tasks, including the generation of the 
 }
 ```
 
-That way, you can now run npm run generate which will take care of everything to have everything set up for implementing your frontend.
+That way, you can now run `npm run generate` which will take care of everything to have everything set up for implementing your frontend.
 
 ## Known Errors and Solutions
 
@@ -163,7 +163,7 @@ During the migration process, I encountered various issues. Below are the proble
 
 ### **duplicate method name**
 
-If you have forgotten to remove the attribute macro #[candid_method] from your code, running the did.sh script may result in an error: duplicate method name and cannot find function . Make sure to remove the attribute macro to resolve this issue (see step 1. of previous chapter).
+If you have forgotten to remove the attribute macro `#[candid_method]` from your code, running the `did.sh` script may result in an error: `duplicate method name` and `cannot find function`. Make sure to remove the attribute macro to resolve this issue (see step 1. of previous chapter).
 
 ```
 error: duplicate method name del_controllers
@@ -203,7 +203,7 @@ Caused by:
     2: wasm trap: wasm `unreachable` instruction executed
 ```
 
-If you do face such issue, the root cause is probably the usage of the candid::Func in the declaration of the strategy:
+If you do face such issue, the root cause is probably the usage of the `candid::Func` in the declaration of the strategy:
 
 ```rust
 #[derive(CandidType, Deserialize, Clone)]

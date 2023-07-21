@@ -98,13 +98,11 @@ use ic_cdk_macros::{query, update, export_candid};
 
 // Your code
 
-#[candid_method(query)]
 #[query]
 fn hello(name: String) -> String {
 format!("Hello, {}!", name)
 }
 
-#[candid_method(update)]
 #[update]
 fn world(name: String) -> String {
 format!("World, {}!", name)
@@ -217,7 +215,7 @@ pub enum StreamingStrategy {
 }
 ```
 
-This can be solve by using a define_function! which is the recommend way according [Yan Chen](https://github.com/chenyan-dfinity).
+This can be solve by using for example a `define_function!`.
 
 ```rust
 use candid::{define_function, CandidType, Deserialize};
@@ -232,6 +230,8 @@ pub enum StreamingStrategy {
     },
 }
 ```
+
+*Note that the recommended signature for `CallbackFunc` is most probably `(ArgToken) -> (StreamingCallbackHttpresponse) query` but the above does the job for me.*
 
 However, by modifying the type, the usage of the strategy will most probably need to be updated as well. For example, this was my original usage:
 

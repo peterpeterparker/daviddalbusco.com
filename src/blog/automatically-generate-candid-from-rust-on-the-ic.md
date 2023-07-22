@@ -14,6 +14,10 @@ canonical: "https://medium.com/@daviddalbusco/automatically-generate-candid-from
 
 * * *
 
+>  Update July 22nd, 2023: There is now a better way to automatically generate Candid from Rust. Check out my new [blog post](https://daviddalbusco.com/blog/automatic-candid-generation-in-rust-exploring-the-ic-cdk-v0-10-0-update/) about that subject!
+
+* * *
+
 The ability to auto-generate the Candid declaration from Rust code on the Internet Computer is expected to become available in the second quarter of 2023.
 
 In the meantime, a workaround can be used to generate these types, which I notably use in my open-source Blockchain-as-a-Service project, [Juno](https://juno.build/).

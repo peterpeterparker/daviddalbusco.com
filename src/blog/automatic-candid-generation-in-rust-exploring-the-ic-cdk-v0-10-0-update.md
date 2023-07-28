@@ -286,9 +286,7 @@ Caused by:
     1: unknown import: `ic0::stable64_size` has not been defined
 ```
 
-The root cause of this issue is likely related to your `dfx` version. When I wrote this article, I was using `v0.13.1`, and after upgrading to `v0.14.1`, I no longer faced the problem.
-
-There is also a [PR](https://github.com/dfinity/stable-structures/pull/108) in development that can potentially help resolve the issue. However, implementing this fix will require updating your project with a new version of the stable structures crate. In the meantime, you can try using the patch that is currently in progress if you wish.
+There is currently a [PR](https://github.com/dfinity/stable-structures/pull/108) in development that will solve the issue. It will ultimately require updating your project with a new version of the stable structures crate but, meanwhile, you can try using the patch that is in progress if you wish. It worked out for me.
 
 ```
 ic-stable-structures = { git = "https://github.com/lwshang/stable-structures.git", branch = "lwshang/update_cdk"}

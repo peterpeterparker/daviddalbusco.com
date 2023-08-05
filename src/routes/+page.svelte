@@ -7,6 +7,7 @@
   import Hero from '$lib/components/hero.svelte';
   import About from '$lib/components/about.svelte';
   import Contact from '$lib/components/contact.svelte';
+  import Newsletter from '$lib/components/newsletter.svelte';
   import {cleanBodyStyles} from '$lib/utils/styles.utils';
 
   export let data: PageData;
@@ -50,6 +51,8 @@
 <Play projects={play} />
 
 <About />
+
+<Newsletter />
 
 <Blog more={true} posts={blog} />
 

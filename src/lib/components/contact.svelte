@@ -5,7 +5,7 @@
 </script>
 
 <Section background="white" color="black">
-  <h1 id="contact">Contact</h1>
+  <h2 id="contact">Contact</h2>
 
   <p>Get in touch through this form and let's work together!</p>
 

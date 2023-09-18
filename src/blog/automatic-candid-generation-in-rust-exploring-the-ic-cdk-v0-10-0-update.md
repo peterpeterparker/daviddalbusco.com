@@ -16,6 +16,8 @@ Photo by [Bilal O.](https://unsplash.com/@lightcircle?utm_source=unsplash&utm_me
 
 So, yesterday I upgraded [Juno](https://juno.build/) to the latest release of [ic_cdk](https://github.com/dfinity/cdk-rs/blob/main/src/ic-cdk/CHANGELOG.md#0100---2023-07-13) and discovered that the automatic generation of the Candid declarations needed an update. In this post, I will walk you through the process of migrating your project.
 
+> **Update**: On September 18th, 2023, a new version of the ic_cdk v0.11.0 has been released, and this article has been updated accordingly.
+
 ## Previous Workaround
 
 If you have previously relied on automatic type generation, chances are you used the `export_service` crate and the workaround involving generating and writing the `did` files to the file system through a test by running `cargo test`.
@@ -113,7 +115,13 @@ fn world(name: String) -> String {
 export_candid!();
 ```
 
-5. Add the following script to your project or copy it from Juno’s repo: [https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh](https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh)
+5. Install [candid-extractor](https://crates.io/crates/candid-extractor), a new CLI tool to extract candid definition from canister WASM.
+
+```bash
+cargo install candid-extractor
+```
+
+6. Add the following script to your project or copy it from Juno’s repo: [https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh](https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh)
 
 ```bash
 #!/usr/bin/env bash
@@ -140,9 +148,9 @@ do
 done
 ```
 
-6. Optional: ⭐️ star [Juno’s repo on GitHub](https://github.com/buildwithjuno/juno) and show your support!
+7. Optional: ⭐️ star [Juno’s repo on GitHub](https://github.com/buildwithjuno/juno) and show your support!
 
-7. Update the scripts variable `CANISTERS` with the names of the canisters in your project (comma separated list).
+8. Update the scripts variable `CANISTERS` with the names of the canisters in your project (comma separated list).
 
 That’s it, you’re all set! You can now run `$ did.sh` in your terminal to generate the `did` files for your project 🎉.
 
@@ -231,7 +239,7 @@ pub enum StreamingStrategy {
 }
 ```
 
-*Note that the recommended signature for `CallbackFunc` is most probably `(ArgToken) -> (StreamingCallbackHttpresponse) query` but the above does the job for me.*
+_Note that the recommended signature for `CallbackFunc` is most probably `(ArgToken) -> (StreamingCallbackHttpresponse) query` but the above does the job for me._
 
 However, by modifying the type, the usage of the strategy will most probably need to be updated as well. For example, this was my original usage:
 
@@ -286,11 +294,9 @@ Caused by:
     1: unknown import: `ic0::stable64_size` has not been defined
 ```
 
-There is currently a [PR](https://github.com/dfinity/stable-structures/pull/108) in development that will solve the issue. It will ultimately require updating your project with a new version of the stable structures crate but, meanwhile, you can try using the patch that is in progress if you wish. It worked out for me.
+This issue was present in ic_cdk v0.10.0 but has been resolved in v0.11.0 🥳.
 
-```
-ic-stable-structures = { git = "https://github.com/lwshang/stable-structures.git", branch = "lwshang/update_cdk"}
-```
+---
 
 Thanks for reading! Follow me on [Twitter](https://twitter.com/daviddalbusco) for more coding content and reach out if you have any questions.
 

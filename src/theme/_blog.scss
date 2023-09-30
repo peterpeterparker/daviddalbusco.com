@@ -1,29 +1,29 @@
 deckgo-highlight-code {
-  box-shadow: 3px 3px black;
-  border: 1px solid black;
-  --deckgo-highlight-code-carbon-toolbar-display: none;
-  --deckgo-highlight-code-carbon-header-padding: 8px;
-  --deckgo-highlight-code-carbon-border-radius: 1px;
-  --deckgo-highlight-code-font-size: 0.9em;
-  --deckgo-highlight-code-line-height: 1em;
-  --deckgo-highlight-code-scroll: hidden;
+	box-shadow: 3px 3px black;
+	border: 1px solid black;
+	--deckgo-highlight-code-carbon-toolbar-display: none;
+	--deckgo-highlight-code-carbon-header-padding: 8px;
+	--deckgo-highlight-code-carbon-border-radius: 1px;
+	--deckgo-highlight-code-font-size: 0.9em;
+	--deckgo-highlight-code-line-height: 1em;
+	--deckgo-highlight-code-scroll: hidden;
 }
 
 code {
-  font-family: Menlo, monospace;
-  background: rgba(0, 0, 0, 0.05);
-  padding: 0.25rem 0.45rem;
+	font-family: Menlo, monospace;
+	background: rgba(0, 0, 0, 0.05);
+	padding: 0.25rem 0.45rem;
 }
 
 blockquote {
-  box-shadow: black 3px 0 0 0 inset;
-  padding-left: 0.75rem;
-  margin: 1.25rem 0;
-  font-style: italic;
+	box-shadow: black 3px 0 0 0 inset;
+	padding-left: 0.75rem;
+	margin: 1.25rem 0;
+	font-style: italic;
 }
 
 article p:first-child img {
-  box-shadow: 3px 3px black;
-  border: 1px solid black;
-  border-radius: 1px;
+	box-shadow: 3px 3px black;
+	border: 1px solid black;
+	border-radius: 1px;
 }

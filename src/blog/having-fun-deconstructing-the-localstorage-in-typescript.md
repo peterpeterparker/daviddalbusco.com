@@ -10,13 +10,13 @@ canonical: "https://daviddalbusco.medium.com/having-fun-deconstructing-the-local
 
 ![https://unsplash.com/photos/koyy-5uzlPU](https://images.unsplash.com/photo-1528396518501-b53b655eb9b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw5N3x8c3RvcmFnZXxlbnwwfHx8fDE2NjIwMjQyOTQ&ixlib=rb-1.2.1&q=80&w=1080)
 
-*Photo by [Katya Ross](https://unsplash.com/@katya?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Katya Ross](https://unsplash.com/@katya?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I recently implemented some features with the [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage). While I always had read values using the [getItem()](https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem) method of the interface, I replaced this approach in my recent work with deconstruction of the storage object.
 
 For no particular reason. I just like to deconstruct things, a lot 😄.
 
-* * *
+---
 
 ## Old school
 
@@ -25,22 +25,22 @@ Back in the days - until last few weeks 😉 - I would have probably implemented
 ```typescript
 type MyType = unknown;
 
-const isValid = (value: string | null): value is string => [null, undefined, ""].includes(value)
+const isValid = (value: string | null): value is string => [null, undefined, ""].includes(value);
 
 const oldSchool = (): MyType | undefined => {
-  const value: string | null = localStorage.getItem("my_key");
+	const value: string | null = localStorage.getItem("my_key");
 
-  if (!isValid(value)) {
-    return undefined;
-  }
+	if (!isValid(value)) {
+		return undefined;
+	}
 
-  return JSON.parse(value);
+	return JSON.parse(value);
 };
 ```
 
 i.e. I would have first get the `string` value (stringified `JSON.stringify()` representation of the object I would have saved in the storage) using `getItem()` before double checking its validity and parsing it back to an object.
 
-* * *
+---
 
 ## New school
 
@@ -48,13 +48,13 @@ While I nowadays keep following previous logic ("read, check validity and parse"
 
 ```typescript
 const newSchool = (): MyType | undefined => {
-  const { my_key: value }: Storage = localStorage;
+	const { my_key: value }: Storage = localStorage;
 
-  if (!isValid(value)) {
-    return undefined;
-  }
+	if (!isValid(value)) {
+		return undefined;
+	}
 
-  return JSON.parse(value);
+	return JSON.parse(value);
 };
 ```
 
@@ -64,18 +64,18 @@ This approach is possible in TypeScript because the `Storage` interface - repres
 
 ```typescript
 interface Storage {
-    readonly length: number;
-    clear(): void;
-    getItem(key: string): string | null;
-    key(index: number): string | null;
-    removeItem(key: string): void;
-    setItem(key: string, value: string): void;
-    // HERE 😃 [name: string]: any;
-    [name: string]: any;
+	readonly length: number;
+	clear(): void;
+	getItem(key: string): string | null;
+	key(index: number): string | null;
+	removeItem(key: string): void;
+	setItem(key: string, value: string): void;
+	// HERE 😃 [name: string]: any;
+	[name: string]: any;
 }
 ```
 
-* * *
+---
 
 ## SSR & pre-rendering
 
@@ -87,19 +87,19 @@ Moreover, as in addition to the deconstruction pattern, I also like to inline ev
 import { browser } from "$app/env";
 
 const newSchool = (): MyType | undefined => {
-  const { my_key: value }: Storage = browser
-    ? localStorage
-    : ({ my_key: undefined } as unknown as Storage);
+	const { my_key: value }: Storage = browser
+		? localStorage
+		: ({ my_key: undefined } as unknown as Storage);
 
-  if (!isValid(value)) {
-    return undefined;
-  }
+	if (!isValid(value)) {
+		return undefined;
+	}
 
-  return JSON.parse(value);
+	return JSON.parse(value);
 };
 ```
 
-* * *
+---
 
 ## Generic
 
@@ -107,19 +107,19 @@ At this point you might say "Yes David, good, this is cool and stuffs but, what 
 
 ```typescript
 const newSchool = <T>(key: string): T | undefined => {
-  const { [key]: value }: Storage = browser
-    ? localStorage
-    : ({ [key]: undefined } as unknown as Storage);
+	const { [key]: value }: Storage = browser
+		? localStorage
+		: ({ [key]: undefined } as unknown as Storage);
 
-  if (!isValid(value)) {
-    return undefined;
-  }
+	if (!isValid(value)) {
+		return undefined;
+	}
 
-  return JSON.parse(value);
+	return JSON.parse(value);
 };
 ```
 
-* * *
+---
 
 ## Summary
 
@@ -130,27 +130,19 @@ Therefore, here is the final form of my generic function to read items that have
 ```typescript
 import { browser } from "$app/env";
 
-const isValid = (value: string | null): value is string =>
-  [null, undefined, ""].includes(value);
+const isValid = (value: string | null): value is string => [null, undefined, ""].includes(value);
 
-const getStorageItem = <T>({
-  key,
-  defaultValue,
-}: {
-  key: string;
-  defaultValue: T;
-}): T => {
-  const { [key]: value }: Storage = browser
-    ? localStorage
-    : ({ [key]: undefined } as unknown as Storage);
+const getStorageItem = <T>({ key, defaultValue }: { key: string; defaultValue: T }): T => {
+	const { [key]: value }: Storage = browser
+		? localStorage
+		: ({ [key]: undefined } as unknown as Storage);
 
-  if (!isValid(value)) {
-    return defaultValue;
-  }
+	if (!isValid(value)) {
+		return defaultValue;
+	}
 
-  return JSON.parse(value);
+	return JSON.parse(value);
 };
-
 ```
 
 To infinity and beyond  

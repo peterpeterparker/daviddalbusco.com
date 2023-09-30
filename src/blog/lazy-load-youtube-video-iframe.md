@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/lazy-load-youtube-video-iframe-88
 
 ![](https://cdn-images-1.medium.com/max/1600/1*IwlNLyd4Db7716sLSeGq_w.jpeg)
 
-*Photo by [Julia Joppien](https://unsplash.com/@vitreous_macula?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Julia Joppien](https://unsplash.com/@vitreous_macula?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 The [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) is often used to lazy load images but did you know that it can be used to defer any types of elements?
 
-This week I developed a new landing page for [DeckDeckGo](https://deckdeckgo.com), our web open source editor for presentations, in which I’ll showcase some video.  That’s why, for performance reason, I had to postpone their loading and why also, I’m sharing this new blog post.
+This week I developed a new landing page for [DeckDeckGo](https://deckdeckgo.com), our web open source editor for presentations, in which I’ll showcase some video. That’s why, for performance reason, I had to postpone their loading and why also, I’m sharing this new blog post.
 
 ### Soundtrack
 
@@ -28,34 +28,32 @@ In this article we are going to lazy load a music video clip from my hometown fr
 I implemented this experiment with [React](https://reactjs.org/) but the concept could be use with or without any frameworks. Before we actually defer the loading of the video, let’s add it to a component (I collected the `iframe` embedded code using the share action provided by Youtube).
 
 ```javascript
-import React, {} from 'react';
+import React from "react";
 
 const Video = () => {
-    return (
-        <div>
+	return (
+		<div>
+			<div style={{ display: "block", height: "2000px", background: "violet" }}>
+				Maxi Puch Rodeo Club
+			</div>
 
-            <div style={{'display': 'block',
-                          'height': '2000px',
-                          'background': 'violet'}}>
-                Maxi Puch Rodeo Club
-            </div>
-
-            <div>
-                <iframe 
-                    width="560" height="315"
-                    src="https://www.youtube.com/embed/ol0Wz6tqtZA"
-                    frameBorder="0"
-                    allow="accelerometer;
+			<div>
+				<iframe
+					width="560"
+					height="315"
+					src="https://www.youtube.com/embed/ol0Wz6tqtZA"
+					frameBorder="0"
+					allow="accelerometer;
                            autoplay;
                            encrypted-media;
                            gyroscope;
                            picture-in-picture"
-                    allowFullScreen
-                    title="Maxi Puch Rodeo Club">
-                </iframe>
-            </div>
-        </div>
-    );
+					allowFullScreen
+					title="Maxi Puch Rodeo Club"
+				></iframe>
+			</div>
+		</div>
+	);
 };
 
 export default Video;
@@ -78,41 +76,38 @@ To defer the loading of the video, we are going to use the Intersection Observer
 That’s why we are also wrapping our element in a container, because we do need an element to observe during the page lifecycle, regardless of the state of our video. Furthermore, we also create a reference to it in order to instantiate our observer later on.
 
 ```javascript
-import React, {createRef, useState} from 'react';
+import React, { createRef, useState } from "react";
 
 const Video = () => {
+	const [showVideo, setShowVideo] = useState(false);
 
-    const [showVideo, setShowVideo] = useState(false);
+	const container = createRef();
 
-    const container = createRef();
+	return (
+		<div>
+			<div style={{ display: "block", height: "2000px", background: "violet" }}>
+				Maxi Puch Rodeo Club
+			</div>
 
-    return (
-        <div>
-
-            <div style={{'display': 'block',
-                          'height': '2000px',
-                          'background': 'violet'}}>
-                Maxi Puch Rodeo Club
-            </div>
-
-            <div ref={container}>
-                {
-                  showVideo ? <iframe 
-                    width="560" height="315"
-                    src="https://www.youtube.com/embed/ol0Wz6tqtZA"
-                    frameBorder="0"
-                    allow="accelerometer;
+			<div ref={container}>
+				{showVideo ? (
+					<iframe
+						width="560"
+						height="315"
+						src="https://www.youtube.com/embed/ol0Wz6tqtZA"
+						frameBorder="0"
+						allow="accelerometer;
                            autoplay;
                            encrypted-media;
                            gyroscope;
                            picture-in-picture"
-                    allowFullScreen
-                    title="Maxi Puch Rodeo Club">
-                  </iframe>: undefined
-                }
-            </div>
-        </div>
-    );
+						allowFullScreen
+						title="Maxi Puch Rodeo Club"
+					></iframe>
+				) : undefined}
+			</div>
+		</div>
+	);
 };
 
 export default Video;
@@ -128,8 +123,8 @@ Finally we can create our observer. The `rootMargin` is used to add a bounding b
 
 ```javascript
 const videoObserver = new IntersectionObserver(onVideoIntersection, {
-    rootMargin: '100px 0px',
-    threshold: 0.25
+	rootMargin: "100px 0px",
+	threshold: 0.25
 });
 ```
 
@@ -137,30 +132,30 @@ To instruct it to observe our container, we add a `useEffect` hook which will be
 
 ```javascript
 useEffect(() => {
-    if (window && 'IntersectionObserver' in window) {
-        if (container && container.current) {
-            videoObserver.observe(container.current);
-        }
-    } else {
-        setShowVideo(true);
-    }
+	if (window && "IntersectionObserver" in window) {
+		if (container && container.current) {
+			videoObserver.observe(container.current);
+		}
+	} else {
+		setShowVideo(true);
+	}
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 }, [container]);
 ```
 
-Finally, we declare a function which will be triggered when the container reaches the viewport.  We use it to modify our state, in order to display the video, and to `disconnect` our observer, as we do not need it anymore.
+Finally, we declare a function which will be triggered when the container reaches the viewport. We use it to modify our state, in order to display the video, and to `disconnect` our observer, as we do not need it anymore.
 
 ```javascript
 function onVideoIntersection(entries) {
-    if (!entries || entries.length <= 0) {
-        return;
-    }
+	if (!entries || entries.length <= 0) {
+		return;
+	}
 
-    if (entries[0].isIntersecting) {
-        setShowVideo(true);
-        videoObserver.disconnect();
-    }
+	if (entries[0].isIntersecting) {
+		setShowVideo(true);
+		videoObserver.disconnect();
+	}
 }
 ```
 
@@ -181,99 +176,86 @@ npm install @deckdeckgo/youtube --save
 And load it in our application.
 
 ```javascript
-import { applyPolyfills, defineCustomElements }
-         from '@deckdeckgo/youtube/dist/loader';
+import { applyPolyfills, defineCustomElements } from "@deckdeckgo/youtube/dist/loader";
 
 applyPolyfills().then(() => {
-    defineCustomElements(window);
+	defineCustomElements(window);
 });
 ```
 
-Then, we remove our state to display or not the video, because the Web Component won't load anything until further notice.  We replace it with a new function called `loadVideo` in which we execute the component's method `lazyLoadContent` which takes care of everything.
+Then, we remove our state to display or not the video, because the Web Component won't load anything until further notice. We replace it with a new function called `loadVideo` in which we execute the component's method `lazyLoadContent` which takes care of everything.
 
 ```javascript
 async function loadVideo() {
-    if (container && container.current) {
-        container.current.lazyLoadContent();
-    }
+	if (container && container.current) {
+		container.current.lazyLoadContent();
+	}
 }
 ```
 
 Finally, we add two buttons, used to call `play` and `pause` and we replace our `iframe` with the component `<deckgo-youtube/>`.
 
 ```javascript
-import React, {createRef, useEffect} from 'react';
+import React, { createRef, useEffect } from "react";
 
-import { applyPolyfills, defineCustomElements } 
-         from '@deckdeckgo/youtube/dist/loader';
+import { applyPolyfills, defineCustomElements } from "@deckdeckgo/youtube/dist/loader";
 
 applyPolyfills().then(() => {
-    defineCustomElements(window);
+	defineCustomElements(window);
 });
 
 const Video = () => {
+	const container = createRef();
 
-    const container = createRef();
+	const videoObserver = new IntersectionObserver(onVideoIntersection, {
+		rootMargin: "100px 0px",
+		threshold: 0.25
+	});
 
-    const videoObserver = new
-        IntersectionObserver(onVideoIntersection, {
-          rootMargin: '100px 0px',
-          threshold: 0.25
-        });
+	useEffect(() => {
+		if (window && "IntersectionObserver" in window) {
+			if (container && container.current) {
+				videoObserver.observe(container.current);
+			}
+		} else {
+			loadVideo();
+		}
 
-    useEffect(() => {
-        if (window && 'IntersectionObserver' in window) {
-            if (container && container.current) {
-                videoObserver.observe(container.current);
-            }
-        } else {
-            loadVideo();
-        }
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [container]);
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [container]);
+	function onVideoIntersection(entries) {
+		if (!entries || entries.length <= 0) {
+			return;
+		}
 
-    function onVideoIntersection(entries) {
-        if (!entries || entries.length <= 0) {
-            return;
-        }
+		if (entries[0].isIntersecting) {
+			loadVideo();
+			videoObserver.disconnect();
+		}
+	}
 
-        if (entries[0].isIntersecting) {
-            loadVideo();
-            videoObserver.disconnect();
-        }
-    }
+	async function loadVideo() {
+		if (container && container.current) {
+			container.current.lazyLoadContent();
+		}
+	}
 
-    async function loadVideo() {
-        if (container && container.current) {
-            container.current.lazyLoadContent();
-        }
-    }
+	return (
+		<div>
+			<div style={{ display: "block", height: "2000px", background: "violet" }}>
+				Maxi Puch Rodeo Club
+			</div>
 
-    return (
-        <div>
+			<button onClick={async () => await container.current.play()}>Start</button>
+			<button onClick={async () => await container.current.pause()}>Pause</button>
 
-            <div style={{'display': 'block',
-                          'height': '2000px',
-                          'background': 'violet'}}>
-                Maxi Puch Rodeo Club
-            </div>
-
-            <button onClick={async () => 
-               await container.current.play()}>
-                 Start
-            </button>
-            <button onClick={async () => 
-               await container.current.pause()}>
-                 Pause
-            </button>
-
-            <deckgo-youtube
-               ref={container} 
-               src="https://www.youtube.com/embed/ol0Wz6tqtZA">
-            </deckgo-youtube>
-        </div>
-    );
+			<deckgo-youtube
+				ref={container}
+				src="https://www.youtube.com/embed/ol0Wz6tqtZA"
+			></deckgo-youtube>
+		</div>
+	);
 };
 
 export default Video;

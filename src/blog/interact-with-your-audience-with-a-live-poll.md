@@ -9,7 +9,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*ULPgfU4_6DDEHDLDCdUMKQ.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*ULPgfU4_6DDEHDLDCdUMKQ.jpeg)
 
-*Photo by [Nicholas Green](https://unsplash.com/@nickxshotz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Nicholas Green](https://unsplash.com/@nickxshotz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 We had this idea for a long time and it took us a bit of time to realize it, that’s why we are so excited to introduce today the new feature of [DeckDeckGo](https://deckdeckgo.com/), our web open-source editor for presentations, to make possible the interaction with your audience through live polling without having to leave your slides 🔥
 
@@ -20,9 +20,9 @@ We had this idea for a long time and it took us a bit of time to realize it, tha
 
 UX could often be discussed and I have to say that, for that feature in particular, many solutions are feasible. I scratched my head for days, filling papers and taking notes until I finally figured out the core principles of the solution which were meaningful to me and hopefully to others too:
 
-* An audience could be a crowd, a small or large. In case of live polling, not all participants are on the same page. Some might be fast to vote, some might be slow. Some people are near the projected slides or screen, others are probably far away. Some might even be asleep, some might have their phones in their bags, etc.
+- An audience could be a crowd, a small or large. In case of live polling, not all participants are on the same page. Some might be fast to vote, some might be slow. Some people are near the projected slides or screen, others are probably far away. Some might even be asleep, some might have their phones in their bags, etc.
 
-* As a speaker I find convenient when I don’t have to switch between multiple applications -- it could even to some extent makes me a bit less stressed. As an attendee, I tend to think that it's easier to follow a presentation without too many media interruptions. To sum it up, I like when the presentation’s flow remains as smooth as possible.
+- As a speaker I find convenient when I don’t have to switch between multiple applications -- it could even to some extent makes me a bit less stressed. As an attendee, I tend to think that it's easier to follow a presentation without too many media interruptions. To sum it up, I like when the presentation’s flow remains as smooth as possible.
 
 That’s why, at least in this first version of the feature, all the information is available at the same time and any time. Question, answers, connection information and even results of the vote, which are updated in real time, are all displayed on the same slide. Moreover, as I do think that QR codes are the best way to share links with the participants, the template also contains a deep link to point them directly to the answers on their phones.
 
@@ -47,7 +47,7 @@ Since day one we always kept a developer mindset. That’s why both the editor a
 
 ### An Unlimited Amount Of Possibilities
 
-Of course, the above goals have an impact on our technical decisions but we have designed our architecture to be relatively flexible and to be able to handle such scenarios. And that’s probably even the technical beauty of  DeckDeckGo. It is template based with the goal to make them self-contained. 
+Of course, the above goals have an impact on our technical decisions but we have designed our architecture to be relatively flexible and to be able to handle such scenarios. And that’s probably even the technical beauty of DeckDeckGo. It is template based with the goal to make them self-contained.
 
 Each template is an independent Web Component developed with [StencilJS](https://stenciljs.com), therefore each of them are basically the Web. And what could you do with the Web? Anything 🤯
 

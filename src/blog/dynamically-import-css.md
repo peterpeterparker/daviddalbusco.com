@@ -10,13 +10,13 @@ canonical: "https://medium.com/@david.dalbusco/dynamically-import-css-d8222423f1
 
 ![](https://cdn-images-1.medium.com/max/1600/1*01MP69dykx8YMQqMeRB2OQ.jpeg)
 
-*Photo by [Joshua Eckstein](https://unsplash.com/@dcemr_e?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/dynamic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Joshua Eckstein](https://unsplash.com/@dcemr_e?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/dynamic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 We recently [introduced](https://twitter.com/deckdeckgo/status/1266049044721340417) several theming options to showcase your code in your presentations made with our editor, [DeckDeckGo](https://deckdeckgo.com).
 
 If you sometimes read my posts, you might already be aware I do care about performances and that I tend to use the lazy loading concept as much as I can. That’s why, when [Akash Board](https://twitter.com/BoradAkash) provided a PR to add this nice set of themes, even if it already worked out like a charm, I was eager to try out the possibility to lazy load these new CSS values. Even if I would spare only a couple of bytes, I thought it was a good experiment and goal, which was of course achieved, otherwise I would not share this new blog post 😉.
 
-*****
+---
 
 ### Introduction
 
@@ -24,13 +24,13 @@ The goal of the solution is loading CSS on demand. To achieve such objective, we
 
 In brief, we inject CSS through JavaScript on the fly.
 
-*****
+---
 
 ### Dynamic Import
 
 Dynamic `import()` , which allow asynchronous load and execution of script modules, is part of the [official TC39](https://github.com/tc39/proposal-dynamic-importhttps://github.com/tc39/proposal-dynamic-import) proposal and has been standardized with [ECMAScript 2020](https://tc39.es/ecma262/2020/). Moreover, it is also already supported by transpiler like [Webpack](https://webpack.js.org/guides/lazy-loading/) or [Typescript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html).
 
-*****
+---
 
 ### Setup
 
@@ -60,50 +60,51 @@ As we are applying the property as class name, we should define the related CSS 
 
 ```css
 :host {
-  display: block;
+	display: block;
 }
 
 .red {
-  background: red;
+	background: red;
 }
 
 .green {
-  background: green;
+	background: green;
 }
 ```
 
 Finally, in addition to the component, we also add a `<select/>` field, which should allow us to switch between these colors, to the `./src/index.html` for test purpose.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+		/>
+		<title>Stencil Component Starter</title>
 
-  <script type="module" src="/build/lazy-css.esm.js"></script>
-  <script nomodule src="/build/lazy-css.js"></script>
+		<script type="module" src="/build/lazy-css.esm.js"></script>
+		<script nomodule src="/build/lazy-css.js"></script>
+	</head>
+	<body>
+		<my-component></my-component>
 
-</head>
-<body>
+		<select id="themeToggler" onchange="updateTheme()">
+			<option value="green" selected="selected">green</option>
+			<option value="red">red</option>
+		</select>
 
-  <my-component></my-component>
+		<script type="text/javascript">
+			function updateTheme() {
+				const toggler = document.getElementById("themeToggler");
+				const elem = document.querySelector("my-component");
 
-  <select id="themeToggler" onchange="updateTheme()">
-    <option value="green" selected="selected">green</option>
-    <option value="red">red</option>
-  </select>
-
-  <script type="text/javascript">
-    function updateTheme() {
-      const toggler = document.getElementById('themeToggler');
-      const elem = document.querySelector('my-component');
-
-      elem.theme  = toggler.value;
-    }
-  </script>
-</body>
+				elem.theme = toggler.value;
+			}
+		</script>
+	</body>
 </html>
 ```
 
@@ -115,13 +116,13 @@ More important, if we open our debugger, we should also that both our styles `.g
 
 ![](https://cdn-images-1.medium.com/max/1600/1*eeqg_F7tPnDQyIu4-sw2pw.png)
 
-*****
+---
 
 ### Solution
 
 Let’s have fun 😜.
 
-*****
+---
 
 #### Style
 
@@ -129,11 +130,11 @@ First thing first, we remove the style from `./src/components/my-component/my-co
 
 ```css
 :host {
-  display: block;
+	display: block;
 }
 ```
 
-*****
+---
 
 #### Functional Component
 
@@ -163,10 +164,10 @@ const ThemeStyle: FunctionalComponent<{style: string}> =
 export class MyComponent {
 
   @Prop() theme: 'green' | 'red' = 'green'
-  
+
   @State()
   private style: string;
-  
+
   // TODO: Dynamically import style
 
   render() {
@@ -178,7 +179,7 @@ export class MyComponent {
 }
 ```
 
-*****
+---
 
 #### Dynamic Import
 
@@ -216,7 +217,7 @@ private async importTheme(): Promise<{theme}> {
 
 Note that unfortunately it isn’t possible currently to use dynamic `import()` with a variable. The reason behind, as far as I understand, is that bundler like Webpack or [Rollup](https://rollupjs.org), even if scripts are going to be injected at runtime, have to know which code is use or not in order to optimize our bundles. That’s why for example `return import(`${this.theme}`);` would not be compliant.
 
-*****
+---
 
 #### Loading
 
@@ -287,7 +288,7 @@ Likewise, if we watch out the shadowed elements, we should notice that only the 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*nq32o3Us1mosIoFXuiZSmw.gif)
 
-*****
+---
 
 ### Summary
 

@@ -9,13 +9,13 @@ image: "https://cdn-images-1.medium.com/max/1600/1*TfrSMW1qpZb_6x0opEVNwQ.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*TfrSMW1qpZb_6x0opEVNwQ.jpeg)
 
-*Photo by [Tim Patch](https://unsplash.com/@tdpatch?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/highlight?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Tim Patch](https://unsplash.com/@tdpatch?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/highlight?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 We are currently developing many improvements for the upcoming new release of the remote control of [DeckDeckGo](https://deckdeckgo.com), our open source web editor for presentations. One of these will give our users the ability to write notes in our editor and to display them in the controller more conveniently. But more than that, it will also be possible to write these using Markdown 😃
 
 Earlier today, [Foad Sojoodi Farimani](https://twitter.com/fsfarimani) shared with us the excellent idea of going a step further with the goal to highlight the code blocks provided as Markdown notes.
 
-I found the idea absolutely awesome and I almost began directly to implement it (almost because I had to clean my flat first, weekend duties are the best 🤣). While commonly you would provide a library to the markdown parser you are using, in our case [Remarkable](https://github.com/jonschlinkert/remarkable) from [Jon Schlinkert](https://twitter.com/jonschlinkert), to highlight the code, I solved it instead by actually parsing it with the help of our  Web Component `<deckgo-highlight-code/>` 🤪.
+I found the idea absolutely awesome and I almost began directly to implement it (almost because I had to clean my flat first, weekend duties are the best 🤣). While commonly you would provide a library to the markdown parser you are using, in our case [Remarkable](https://github.com/jonschlinkert/remarkable) from [Jon Schlinkert](https://twitter.com/jonschlinkert), to highlight the code, I solved it instead by actually parsing it with the help of our Web Component `<deckgo-highlight-code/>` 🤪.
 
 This [component](https://docs.deckdeckgo.com/components/code) is a wrapper which under the hood use [PrismJS](https://prismjs.com), from [Lea Verou](https://lea.verou.me) and [James DiGioia](https://twitter.com/jamesdigioia). It has the advantage to fetch at runtime the definition of the language it has to interpret which is kind of handy if the provided code could be from any types.
 
@@ -34,14 +34,14 @@ npm install remarkable @deckdeckgo/highlight-code --save
 One installed, import the library and the component in your application:
 
 ```javascript
-import {Remarkable} from 'remarkable';
+import { Remarkable } from "remarkable";
 
-import '@deckdeckgo/highlight-code';
+import "@deckdeckgo/highlight-code";
 ```
 
 ### Solution
 
-Instead of providing a highlighter function when instantiating a new Remarkable object, as displayed in the documentation, we are going to define our own custom rule to parse the  code respectively we don’t provide any highlighter.
+Instead of providing a highlighter function when instantiating a new Remarkable object, as displayed in the documentation, we are going to define our own custom rule to parse the code respectively we don’t provide any highlighter.
 
 ```javascript
 const md: Remarkable = new Remarkable({
@@ -54,9 +54,9 @@ const md: Remarkable = new Remarkable({
 Our goal is to replace the automatically generated HTML code `<pre><code/><pre>` with our custom Web Component `<deckgo-highlight-code/>`. Therefore we create our own rule in a custom function. Moreover, as the code could be either inlined or provided as block, we add a variable to the function in order to handle both cases respectively both styles.
 
 ```javascript
-const codeRule = (inline: boolean) => 
+const codeRule = (inline: boolean) =>
   (tokens, idx, _options, _env) => {
-    return `<deckgo-highlight-code 
+    return `<deckgo-highlight-code
             ${inline ? 'class="inline"' : ''}
             language="${tokens[idx].params ?
                 tokens[idx].params : 'javascript'}">
@@ -97,7 +97,7 @@ We can finally try out our solution. For that purpose, we try to render a simple
 ```javascript
 const content: string = `# Title
 A line \`console.log('Inline code');\`
-    
+
 \`\`\`
 console.log('Block code');
 \`\`\`
@@ -111,17 +111,15 @@ If everything goes according plan, the output should be the following:
 ```html
 <h1>Title</h1>
 
-<p>A line <deckgo-highlight-code
-              class="inline" language="javascript">
-                  <code slot="code">console.log('Inline code');
-                  </code>
-          </deckgo-highlight-code>
+<p>
+	A line
+	<deckgo-highlight-code class="inline" language="javascript">
+		<code slot="code">console.log('Inline code'); </code>
+	</deckgo-highlight-code>
 </p>
 
-<deckgo-highlight-code 
-        language="javascript">
-              <code slot="code">console.log('Block code');
-              </code>
+<deckgo-highlight-code language="javascript">
+	<code slot="code">console.log('Block code'); </code>
 </deckgo-highlight-code>
 ```
 

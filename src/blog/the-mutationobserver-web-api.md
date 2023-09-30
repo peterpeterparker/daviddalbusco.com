@@ -10,11 +10,11 @@ canonical: "https://daviddalbusco.medium.com/the-mutationobserver-web-api-cf4692
 
 ![](https://cdn-images-1.medium.com/max/1600/1*uslRrEbuAeXmZvnKzhpPaQ.jpeg)
 
-*Source forum [resetera](https://www.resetera.com/threads/magneto-or-professor-x-who-do-you-side-with-more.291911/)*
+_Source forum [resetera](https://www.resetera.com/threads/magneto-or-professor-x-who-do-you-side-with-more.291911/)_
 
 I recently developed multiple features across projects with the help of the [MutationObserver Web API](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver). A bit to my surprise, I noticed that some colleagues never had used it or, even heard about it before. That’s why I got the idea for this blog post.
 
-*****
+---
 
 ### Introduction
 
@@ -22,7 +22,7 @@ The `MutationObserver` interface provides the ability to watch for changes being
 
 It is a web feature, natively implemented in all browsers (yes even Internet Explorer v11 according [Caniuse](https://caniuse.com/?search=mutationobserver)), which allows us to detect when changes are made to a document, to the web page.
 
-*****
+---
 
 ### In Other Words
 
@@ -32,7 +32,7 @@ Our web page follows the same idea.
 
 When we apply a modification to the DOM (1), such as modifying a tag or an attribute, with or without framework, it is interpreted and rendered by the browser (2). Even though the operation is really fast, if we query (3) the DOM elements touched by our changes right afterwards, we cannot be 100% sure that the modifications were already applied. Fortunately, thanks to the `MutationObserver`, we can detect the mutation (4) to get to know when and if it effectively worked out.
 
-*****
+---
 
 ### Walk-through
 
@@ -60,7 +60,7 @@ observer.disconnect();
 
 Last but, not least, it exposes a function `takeRecords()` which can be queried to remove all pending notifications.
 
-*****
+---
 
 ### Concrete Example
 
@@ -70,22 +70,22 @@ Summarized something like following:
 
 ```javascript
 class Cmp {
-      
+
       private range = window.getSelection()?.getRangeAt(0);
-      
+
       applyColor() {
         const selection = window.getSelection();
-        
+
         selection?.removeAllRanges();
         selection?.addRange(this.range);
-        
+
         const color = document.querySelector('input').value;
-        
+
         document.execCommand('foreColor', false, color);
-        
+
         this.range = selection?.getRangeAt(0);
       }
-      
+
     }
 ```
 
@@ -97,15 +97,15 @@ Fortunately, I was able to solve the issue with the `MutationObserver` .
 
 ```javascript
 class Cmp {
-      
+
       private range = window.getSelection()?.getRangeAt(0);
-      
+
       applyColor() {
         const selection = window.getSelection();
-        
+
         selection?.removeAllRanges();
         selection?.addRange(this.range);
-        
+
         const color = document.querySelector('input').value;
 
         // A. Create an observer
@@ -115,13 +115,13 @@ class Cmp {
             // E. Save the range as previously implemented
             this.range = selection?.getRangeAt(0);
         });
-        
+
         // B. Get the DOM element to observe
         const anchorNode = selection?.anchorNode;
-        
+
         // C. Observe 👀
         observer.observe(anchorNode, {childList: true});
-        
+
         document.execCommand('foreColor', false, color);
       }
     }
@@ -129,7 +129,7 @@ class Cmp {
 
 First (A) I created a new `MutationObserver`. I defined which node element, in my case a parent one, had to be observed (B) and, I configured the observer (C) to begin receiving notifications through its callback function when DOM changes occurred. In the callback, I first disconnected (D) it, as only one event was interesting for my use case and finally (E) was able to save the range as expected 🥳.
 
-*****
+---
 
 ### Go Further
 
@@ -137,11 +137,11 @@ If you liked this introduction about the `MutationObserver` , I can suggest you 
 
 The first one can for example be used to detect changes to the size of editable fields and, the second one to lazy load content.
 
-*****
+---
 
 ### Summary
 
-You might not use the observers every day but, they are extremely useful when it comes to detecting changes applied to the DOM. In addition, it is fun to develop features with these  🤙.
+You might not use the observers every day but, they are extremely useful when it comes to detecting changes applied to the DOM. In addition, it is fun to develop features with these 🤙.
 
 To infinity and beyond!
 

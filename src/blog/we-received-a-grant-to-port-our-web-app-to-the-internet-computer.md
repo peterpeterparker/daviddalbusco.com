@@ -10,15 +10,15 @@ canonical: "https://daviddalbusco.medium.com/we-received-a-grant-to-port-our-web
 
 ![](https://cdn-images-1.medium.com/max/1600/1*uMo-wgL0-asMeYajl6CSfQ.png)
 
-*Source: DFINITY press kit + DeckDeckGo logo*
+_Source: DFINITY press kit + DeckDeckGo logo_
 
-*****
+---
 
 Exciting news, we received a 25k USD grant from the [DFINITY](https://dfinity.org/) foundation to port our web editor for slides, [DeckDeckGo](https://deckdeckgo.com), to the [Internet Computer](https://dfinity.org/faq/what-is-the-internet-computer).
 
 In the coming weeks we will build a proof of concept to validate the feasibility of the project. Here are some insights about the scope, goal and milestones of this inspiring project.
 
-*****
+---
 
 ### DeckDeckGo
 
@@ -26,13 +26,13 @@ DeckDeckGo is a web [open source](https://github.com/deckgo/deckdeckgo/) editor 
 
 DeckDeckGo is a side project that my friend [Nicolas](https://www.nmattia.com) and [I](https://daviddalbusco.com/) - together with our community (2000+ registered users) and help of our contributors - have been working on for the last 2.5 years. Here are our values: open source, transparency and knowledge sharing.
 
-*****
+---
 
 ### DFINITY
 
 The DFINITY Foundation is a not-for-profit scientific research organization based in Zurich, Switzerland, that oversees research centers around the globe. The Foundation’s mission is to build, promote, and maintain the Internet Computer. Its team is committed to building advanced experimental technologies to improve the public internet ([source](https://dfinity.org/faq)).
 
-*****
+---
 
 ### Internet Computer
 
@@ -42,7 +42,7 @@ It seeks to address serious long-standing problems that bedevil IT, including sy
 
 The Internet Computer is formed by an advanced decentralized protocol called ICP (Internet Computer Protocol) that independent data centers around the world run to combine the power of individual computers into an unstoppable seamless universe where internet native software is hosted and run with the same security guarantees as smart contracts ([source](https://dfinity.org/faq)).
 
-*****
+---
 
 #### In Other Words
 
@@ -50,21 +50,21 @@ The description above is the official one but, let me try to synthesize my under
 
 The Internet Computer is a decentralized blockchain network on which you can run smart contracts that can host web applications. To my mum I would even say it is like bitcoin and cloud providers had a baby. In that way, you get best of both worlds and therefore open a new whole area of possibilities, what DFINITY calls the "Blockchain Singularity". In addition, they aim to try to challenge the monopolistic position of the [GAFAM](https://en.wikipedia.org/wiki/Big_Tech).
 
-*****
+---
 
 ### Goal
 
-At this stage, our one and only goal is to test the feasibility of the concept: can our platform run and interact** with the Internet Computer? Even if we are really optimistic and everything we read and tried so far seems to validate the hypothesis, the ICP and its infrastructure are still young, it has “only” been officially launched a few weeks ago, on May 7th.
+At this stage, our one and only goal is to test the feasibility of the concept: can our platform run and interact\*\* with the Internet Computer? Even if we are really optimistic and everything we read and tried so far seems to validate the hypothesis, the ICP and its infrastructure are still young, it has “only” been officially launched a few weeks ago, on May 7th.
 
-By run* I mean can we host our Progressive Web Apps, our editor, on the Internet Computer and by interact** I mean can it persist and read data, the decks and slides of the users.
+By run\* I mean can we host our Progressive Web Apps, our editor, on the Internet Computer and by interact\*\* I mean can it persist and read data, the decks and slides of the users.
 
-*****
+---
 
 ### Milestones
 
 To fulfill the proof of concept, and to get our grant 😜, we have defined the following three milestones which must be completed to be able to decide if yes, or no, DeckDeckGo can be migrated to the Internet Computer.
 
-*****
+---
 
 #### Milestone 1 — Offline First & Hosting
 
@@ -76,7 +76,7 @@ This also will have the advantage to let anyone use our editor in standalone mod
 
 Finally, in the same challenging milestone, we also aim to deploy our Progressive Web Apps as a static asset on the Internet Computer.
 
-*****
+---
 
 #### Milestone 2 — Authentication
 
@@ -88,7 +88,7 @@ That is something we are eager to try, because we're super curious about it and 
 
 Of course, from a project perspective, we do need an authentication workflow to persist the users’ data on the network. That’s the cherry on top of the fun 😉.
 
-*****
+---
 
 #### Milestone 3 — Data Persistence
 
@@ -100,13 +100,13 @@ Once deployed, end-users can interact with the software canister by accessing th
 
 Summarized: We will have to write some WebAssembly functions to get and set our data in the Internet Computer. From our editor developed with [StencilJS](https://stenciljs.com/), we will then interact with these through async callbacks.
 
-*****
+---
 
 ### Keep In Touch
 
-To follow our adventure, you can star  and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️, join our [newsletter](https://deckdeckgo.com/en/newsletter) or [Slack](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) channel. We will share some updates following our progress and, as we often do, some of our learning.
+To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️, join our [newsletter](https://deckdeckgo.com/en/newsletter) or [Slack](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) channel. We will share some updates following our progress and, as we often do, some of our learning.
 
-*****
+---
 
 ### Conclusion
 

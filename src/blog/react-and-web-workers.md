@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/react-and-web-workers-c9b60b4b6ae
 
 ![](https://cdn-images-1.medium.com/max/1600/1*zuX14URmAiO36mikljilOg.png)
 
-*Photo by [Tobias Tullius](https://unsplash.com/@tobiastu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Tobias Tullius](https://unsplash.com/@tobiastu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until (probably not) the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twelve** days left until hopefully better days.
 
-*****
+---
 
 I recently published [Tie Tracker](https://tietracker.app.link), a simple, open source and free time tracking app ⏱.
 
@@ -24,7 +24,7 @@ That’s why I had the idea to solve my problem with the help of the [Web Worker
 
 The app is developed with [Ionic](https://ionicframework.com) + [React](https://reactjs.org), therefore let me share with you my recipe 😉.
 
-*****
+---
 
 ### Simulate A Blocked User Interface
 
@@ -62,12 +62,12 @@ const Page: React.FC<RouteComponentProps<{ name: string; }>> = ({match}) => {
                 <IonLabel>Tomato: {countTomato} | Apple: {countApple}</IonLabel>
 
                 <div className="ion-padding-top">
-                    <IonButton 
+                    <IonButton
                      onClick={() => setCountTomato(countTomato + 1)}
                      color="primary">Tomato</IonButton>
-                    
-                    <IonButton 
-                     onClick={() => incApple()} 
+
+                    <IonButton
+                     onClick={() => incApple()}
                      color="secondary">Apple</IonButton>
                 </div>
             </IonContent>
@@ -82,13 +82,13 @@ As you can notice in the following animated Gif, as soon as I start the “Apple
 
 ![](https://cdn-images-1.medium.com/max/1600/1*UFSpBIR1gR1etkBkLdXRaA.gif)
 
-*****
+---
 
 ### Defer Work With Web Workers
 
 Having the above example in mind, let’s try out Web Workers in order to defer our “Apple counter” function.
 
-*****
+---
 
 #### Web Workers
 
@@ -106,21 +106,20 @@ The entry point of our web worker is `onmessage` which is basically a listener t
 
 ```javascript
 self.onmessage = async ($event) => {
-    if ($event && $event.data && $event.data.msg === 'incApple') {
-        const newCounter = incApple($event.data.countApple);
-        self.postMessage(newCounter);
-    }
+	if ($event && $event.data && $event.data.msg === "incApple") {
+		const newCounter = incApple($event.data.countApple);
+		self.postMessage(newCounter);
+	}
 };
 
 function incApple(countApple) {
-    const start = Date.now();
-    while (Date.now() < start + 5000) {
-    }
-    return countApple + 1;
+	const start = Date.now();
+	while (Date.now() < start + 5000) {}
+	return countApple + 1;
 }
 ```
 
-*****
+---
 
 #### Interacting With The Web Workers
 
@@ -146,8 +145,7 @@ Finally we update our function `incApple()` to call the web worker.
 
 ```javascript
 function incApple() {
-    appleWorker
-         .postMessage({msg: 'incApple', countApple: countApple});
+	appleWorker.postMessage({ msg: "incApple", countApple: countApple });
 }
 ```
 
@@ -195,12 +193,12 @@ const Page: React.FC<RouteComponentProps<{ name: string; }>> = ({match}) => {
                 <IonLabel>Tomato: {countTomato} | Apple: {countApple}</IonLabel>
 
                 <div className="ion-padding-top">
-                    <IonButton 
+                    <IonButton
                      onClick={() => setCountTomato(countTomato + 1)}
                      color="primary">Tomato</IonButton>
-                    
-                    <IonButton 
-                     onClick={() => incApple()} 
+
+                    <IonButton
+                     onClick={() => incApple()}
                      color="secondary">Apple</IonButton>
                 </div>
             </IonContent>
@@ -211,7 +209,7 @@ const Page: React.FC<RouteComponentProps<{ name: string; }>> = ({match}) => {
 export default Page;
 ```
 
-*****
+---
 
 ### Summary
 

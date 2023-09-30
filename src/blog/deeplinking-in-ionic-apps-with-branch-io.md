@@ -10,21 +10,21 @@ canonical: "https://medium.com/@david.dalbusco/deeplinking-in-ionic-apps-with-br
 
 ![](https://cdn-images-1.medium.com/max/1600/1*AbG39baPvtxSgOoSjWgHqg.png)
 
-*Photo by [Javier Allegue Barros](https://unsplash.com/@soymeraki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Javier Allegue Barros](https://unsplash.com/@soymeraki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the original scheduled date of the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Six** days left until this first milestone. Hopefully better days are ahead.
 
-*****
+---
 
 Last Friday I had to quickly implement the deeplinking support for an application that we were finalizing. Its goals was, and still is, to help isolated people to feel less alone to find out easily for help within their relatives, something really useful in normal times, specially for older people we think, but maybe even more when there is a crisis.
 
-Turns out the Apple  rejected it on Saturday as they think that our project is only COVID-19 focused and only accept related projects from certified organizations 😢. If interested, CNBC published an article about the [subject](https://www.cnbc.com/2020/03/05/apple-rejects-coronavirus-apps-that-arent-from-health-organizations.html).
+Turns out the Apple rejected it on Saturday as they think that our project is only COVID-19 focused and only accept related projects from certified organizations 😢. If interested, CNBC published an article about the [subject](https://www.cnbc.com/2020/03/05/apple-rejects-coronavirus-apps-that-arent-from-health-organizations.html).
 
 Anyway, not here to share my opinion on companies which became more powerful than states and their people but here to share technical tips and tricks 😉.
 
 That’s why here is how I implemented quickly such a concept including how to catch linked parameters.
 
-*****
+---
 
 ### What’s Deeplinking?
 
@@ -36,7 +36,7 @@ To me deeplinking solve miscellaneous problematics linked to mobile applications
 
 3. Finally, you might have to provide parameters to your application. What would happen if a user click a link, does not have the application, goes to the store, install the application and then start it? The parameters would be lost. That is also were deep linking can help to maintain and provide the parameters until the user effectively start the application.
 
-*****
+---
 
 ### Deeplinking Vs Custom URI Scheme
 
@@ -44,7 +44,7 @@ Deeplinking should not be confused with a custom URI scheme.
 
 A custom URI scheme, for example `myapp://` , is a scheme which can be handle on the mobile devices to call your application **but** this works only once the application has been installed. Before that point, the devices has no idea of such scheme.
 
-*****
+---
 
 ### Branch.io
 
@@ -54,7 +54,7 @@ There is a [Cordova Ionic plugin](https://github.com/ionic-team/ionic-plugin-dee
 
 Branch has a starter free plan.
 
-*****
+---
 
 ### Setup
 
@@ -64,7 +64,7 @@ Only important things worth to notice: your application **has to be available in
 
 But, worth to notice, that you don’t have to wait for publishing to already implement and test it.
 
-*****
+---
 
 ### That’s It
 
@@ -74,15 +74,15 @@ No need to install a plugin, regardless if you are using [Cordova](https://cordo
 
 For example, check out the source code of my app Tie Tracker on [GitHub](https://github.com/peterpeterparker/tietracker). As you notice, there isn’t any references to Branch but even though, I am able to provide a single link [https://tietracker.app.link/](https://tietracker.app.link/) which will guide you either to the installed app, the store or if none of these to the PWA.
 
-*****
+---
 
 ### Intercept Parameters
 
 That being setup, you may be interested to intercept parameters across the all process by keeping in mind of course that tracking is bad and only anonymous usage is acceptable.
 
-*****
+---
 
-#### Installation 
+#### Installation
 
 The related Cordova plugin finds place in [npm](https://www.npmjs.com/package/branch-cordova-sdk) and can be use as following:
 
@@ -90,7 +90,7 @@ The related Cordova plugin finds place in [npm](https://www.npmjs.com/package/br
 ionic cordova plugin add branch-cordova-sdk
 ```
 
-*****
+---
 
 #### Configuration
 
@@ -107,7 +107,7 @@ All Branch’s information are going to be provided by them when you set up your
 </branch-config>
 ```
 
-*****
+---
 
 ### Implementation
 
@@ -147,7 +147,7 @@ When it comes to the web, we can search for the parameters using the `platform`.
 
 ```javascript
 private async initDeepLinkingWeb(): Promise<void> {
-    const myparam: string = 
+    const myparam: string =
                    this.platform.getQueryParam('$myparam') ||
                    this.platform.getQueryParam('myparam') ||
                    this.platform.getQueryParam('%24myparam');
@@ -164,7 +164,7 @@ private async initDeepLinkingBranchio(): Promise<void> {
     try {
         const branchIo = window['Branch'];
         if (branchIo) {
-            const data: DeeplinkMatch = 
+            const data: DeeplinkMatch =
                         await branchIo.initSession();
 
             if (data.$myparam !== undefined) {
@@ -179,7 +179,7 @@ private async initDeepLinkingBranchio(): Promise<void> {
 
 And voilà 🥳, we are able to handle deep links with parameters. If for example we would provide an URL such as [https://myapp.app.link/?$myparam=yolo](https://myapp.app.link/?$myparam=yolo) to our users, we would be able to intercept “yolo” 😁.
 
-*****
+---
 
 #### Altogether
 
@@ -232,7 +232,7 @@ export class AppComponent implements AfterViewInit {
     }
 
     private async initDeepLinkingWeb(): Promise<void> {
-        const myparam: string = 
+        const myparam: string =
                        this.platform.getQueryParam('$myparam') ||
                        this.platform.getQueryParam('myparam') ||
                        this.platform.getQueryParam('%24myparam');
@@ -244,7 +244,7 @@ export class AppComponent implements AfterViewInit {
             const branchIo = window['Branch'];
 
             if (branchIo) {
-                const data: DeeplinkMatch = 
+                const data: DeeplinkMatch =
                             await branchIo.initSession();
 
                 if (data.$myparam !== undefined) {
@@ -258,11 +258,11 @@ export class AppComponent implements AfterViewInit {
 }
 ```
 
-*****
+---
 
 ### Summary
 
-It works out. To be honest with you, not the funniest part of the job, not that it is complicated or anything to set up or to be used, just, not really fun. 
+It works out. To be honest with you, not the funniest part of the job, not that it is complicated or anything to set up or to be used, just, not really fun.
 
 Stay home, stay safe!
 

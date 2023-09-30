@@ -10,11 +10,11 @@ canonical: "https://daviddalbusco.medium.com/sass-media-queries-mixins-1c5e5f605
 
 ![ELNÒS Shopping mall pattern](https://images.unsplash.com/photo-1486927181919-3ac1fc3a8082?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwyOHx8bGluZXxlbnwwfHx8fDE2NzE3MTI0MjM&ixlib=rb-4.0.3&q=80&w=1080)
 
-*Photo by [Luca Bravo](https://unsplash.com/@lucabravo?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Luca Bravo](https://unsplash.com/@lucabravo?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 There are few gems we have implemented in [NNS-dapp](https://nns.ic0.app/) that makes our devs life easier on daily basis. One of these has been implemented my colleague [Maskims Strasinskis](https://github.com/mstrasinskis): a [Sass](https://sass-lang.com/) media queries [mixins](https://sass-lang.com/documentation/at-rules/mixin) that makes us avoid duplicating CSS breakpoints all over the place.
 
-* * *
+---
 
 ## Foreword
 
@@ -22,7 +22,7 @@ There are few gems we have implemented in [NNS-dapp](https://nns.ic0.app/) that 
 
 ```scss
 @media (min-width: 300px) {
-    background: red;
+	background: red;
 }
 ```
 
@@ -30,7 +30,7 @@ Imagine having not one but, hundred of above breakpoints in your zillion of CSS 
 
 That's where my colleague tricks becomes handy.
 
-* * *
+---
 
 ## Mixins
 
@@ -52,35 +52,35 @@ Once the breakpoints defined, within the same file we can implement the effectiv
 
 ```scss
 @mixin min-width($breakpoint) {
-  @if ($breakpoint == xsmall) {
-    @media (min-width: $breakpoint-xsmall) {
-      @content;
-    }
-  } @else if ($breakpoint == small) {
-    @media (min-width: $breakpoint-small) {
-      @content;
-    }
-  } @else if ($breakpoint == medium) {
-    @media (min-width: $breakpoint-medium) {
-      @content;
-    }
-  } @else if ($breakpoint == large) {
-    @media (min-width: $breakpoint-large) {
-      @content;
-    }
-  } @else if ($breakpoint == xlarge) {
-    @media (min-width: $breakpoint-extra-large) {
-      @content;
-    }
-  } @else {
-    @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
-  }
+	@if ($breakpoint == xsmall) {
+		@media (min-width: $breakpoint-xsmall) {
+			@content;
+		}
+	} @else if ($breakpoint == small) {
+		@media (min-width: $breakpoint-small) {
+			@content;
+		}
+	} @else if ($breakpoint == medium) {
+		@media (min-width: $breakpoint-medium) {
+			@content;
+		}
+	} @else if ($breakpoint == large) {
+		@media (min-width: $breakpoint-large) {
+			@content;
+		}
+	} @else if ($breakpoint == xlarge) {
+		@media (min-width: $breakpoint-extra-large) {
+			@content;
+		}
+	} @else {
+		@error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
+	}
 }
 ```
 
 In addition to taking arguments, a mixin can take an entire block of styles, known as a content block ([source](https://sass-lang.com/documentation/at-rules/mixin#content-blocks)). Content which we can render or not according the matching conditions.
 
-* * *
+---
 
 ## Usage
 
@@ -104,7 +104,7 @@ Once the mixins set, it can be loaded with a [use](https://sass-lang.com/documen
 
 And voilà, it's ready to serve 👨‍🍳.
 
-* * *
+---
 
 ## Conclusion
 

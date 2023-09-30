@@ -10,25 +10,25 @@ canonical: "https://medium.com/@david.dalbusco/deploy-apps-and-functions-to-fire
 
 ![](https://cdn-images-1.medium.com/max/1600/1*-sJcIhzFM8ypB7ifPgYdow.png)
 
-*Photo by [张 嘴](https://unsplash.com/@zhangzui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [张 嘴](https://unsplash.com/@zhangzui?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twenty-seven** days left until hopefully better days.
 
-*****
+---
 
 I am a big fan of a [blog post](https://julienrenaux.fr/2019/11/25/building-deploying-stenciljs-apps-firebase-hosting-github-actions/) published by [Julien Renaux](https://twitter.com/julienrenaux) a couple of months ago in which he displays how to deploy an application using [GitHub Actions](https://github.com/features/actions) to [Firebase Hosting](https://firebase.google.com/docs/hosting).
 
-The article is super comprehensive and I even already have published a [following post](https://daviddalbusco.com/blog/how-to-keep-secret-your-font-awesome-pro-token-in-public-github-actions) about it once before 🤣. Nevertheless  I think that this challenge is the perfect excuse to publish again another follow-up 😉.
+The article is super comprehensive and I even already have published a [following post](https://daviddalbusco.com/blog/how-to-keep-secret-your-font-awesome-pro-token-in-public-github-actions) about it once before 🤣. Nevertheless I think that this challenge is the perfect excuse to publish again another follow-up 😉.
 
-*****
+---
 
 ### Mono Repo
 
 Our open source project [DeckDeckGo](https://deckdeckgo.com) contains many Progressive Web Apps and Cloud Functions, for which, obviously, I did set up GitHub actions as Julien displayed.
 
-In this blog post I share the enhancement I had to implement in order to make the integration supports  a mono repo.
+In this blog post I share the enhancement I had to implement in order to make the integration supports a mono repo.
 
-*****
+---
 
 ### To Firebase Hosting
 
@@ -53,7 +53,7 @@ on:
     branches:
       - master
     paths:
-      - 'docs/**'
+      - "docs/**"
 ```
 
 Because the Git checkout of our pipeline happens on the root level of our repo, when it goes to installing dependencies or running a build, we do have to observe our sub-folder too. For such purpose, GitHub Action provides a handy option `working-directory` for the `npm` steps.
@@ -132,7 +132,7 @@ on:
     branches:
       - master
     paths:
-      - 'docs/**'
+      - "docs/**"
 
 jobs:
   build:
@@ -174,7 +174,7 @@ jobs:
           PROJECT_PATH: "./docs"
 ```
 
-*****
+---
 
 ### To Firebase Cloud
 
@@ -192,7 +192,7 @@ on:
     branches:
       - master
     paths:
-      - 'cloud/**'
+      - "cloud/**"
 
 jobs:
   deploy:
@@ -214,7 +214,7 @@ jobs:
           PROJECT_PATH: "./cloud"
 ```
 
-*****
+---
 
 ### Summary
 

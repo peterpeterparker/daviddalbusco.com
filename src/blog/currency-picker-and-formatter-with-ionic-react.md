@@ -10,19 +10,19 @@ canonical: "https://medium.com/@david.dalbusco/currency-picker-and-formatter-wit
 
 ![](https://cdn-images-1.medium.com/max/1600/1*vNyq4W-5NQoeX5jo8TqBQw.png)
 
-*Photo by [Pawel Janiak](https://unsplash.com/@pawelj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Pawel Janiak](https://unsplash.com/@pawelj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the original scheduled date of the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **One** days left until this first milestone. Hopefully better days are ahead.
 
-*****
+---
 
-I was looking for a subject idea for today’s blog post and it came to my mind that I could maybe share something I  learned with [Tie Tracker](https://tietracker.app.link/) ⏱️, a simple, open source and free time tracking app I have developed with [Ionic](https://ionicframework.com/) and [React](https://reactjs.org/) again.
+I was looking for a subject idea for today’s blog post and it came to my mind that I could maybe share something I learned with [Tie Tracker](https://tietracker.app.link/) ⏱️, a simple, open source and free time tracking app I have developed with [Ionic](https://ionicframework.com/) and [React](https://reactjs.org/) again.
 
 That’s why I’m sharing with you my solution to develop a custom currency picker and formatter.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*YCPfr5rf-N4Tk9l9JusTXA.gif)
 
-*****
+---
 
 ### Start
 
@@ -34,11 +34,11 @@ ionic start
 
 When prompted, select “React”, your application name and for example the template “blank”.
 
-*****
+---
 
 ### List Of Currencies
 
-We intend to develop a custom currency picker, that’s why we need, a list of currencies. For such purpose, we can download the one provided on the [Xsolla](https://github.com/xsolla/currency-format) repo as it is  free and licensed under MIT license.
+We intend to develop a custom currency picker, that’s why we need, a list of currencies. For such purpose, we can download the one provided on the [Xsolla](https://github.com/xsolla/currency-format) repo as it is free and licensed under MIT license.
 
 ```bash
 curl https://raw.githubusercontent.com/xsolla/currency-format/master/currency-format.json -o public/assets/currencies.json
@@ -46,7 +46,7 @@ curl https://raw.githubusercontent.com/xsolla/currency-format/master/currency-fo
 
 I use `curl` because I am using a Macbook but what does matter is to save the list of currencies in the assets folder as it will have to be shipped with the app.
 
-*****
+---
 
 ### TypeScript Definitions
 
@@ -71,7 +71,7 @@ export interface Currencies {
 
 Note that I am not sure that using a subfolder `definitions` is really the best practice, it is just something I do. Do not think it matters that much, I just like to split my code in, kind of, packages.
 
-*****
+---
 
 ### Modal: Currency Picker
 
@@ -89,10 +89,9 @@ interface Props {
 It contains also two states. The list of currencies and a filtered one, which is, when component mounted, equals to the all list.
 
 ```javascript
-const [currencies, setCurrencies] = 
-      useState<Currencies | undefined>(undefined);
-const [filteredCurrencies, setFilteredCurrencies] = 
-      useState<Currencies | undefined>(undefined);
+const [currencies, setCurrencies] = (useState < Currencies) | (undefined > undefined);
+const [filteredCurrencies, setFilteredCurrencies] =
+	(useState < Currencies) | (undefined > undefined);
 ```
 
 To initiate these we use `useEffect` hooks and we read the JSON data we downloaded before.
@@ -109,7 +108,7 @@ useEffect(() => {
 
 async function initCurrencies() {
     try {
-        const res: Response = 
+        const res: Response =
                    await fetch('./assets/currencies.json');
 
         if (!res) {
@@ -139,7 +138,7 @@ async function onFilter($event: CustomEvent<KeyboardEvent>) {
     if (!input || input === undefined || input === '') {
         setFilteredCurrencies(currencies);
     } else {
-        const filtered: Currencies | undefined = 
+        const filtered: Currencies | undefined =
                         await filterCurrencies(input);
         setFilteredCurrencies(filtered);
     }
@@ -192,9 +191,9 @@ interface InputTargetEvent extends EventTarget {
 
 const CurrenciesModal: React.FC<Props> = (props: Props) => {
 
-    const [currencies, setCurrencies] = 
+    const [currencies, setCurrencies] =
           useState<Currencies | undefined>(undefined);
-    const [filteredCurrencies, setFilteredCurrencies] = 
+    const [filteredCurrencies, setFilteredCurrencies] =
           useState<Currencies | undefined>(undefined);
 
     useEffect(() => {
@@ -208,7 +207,7 @@ const CurrenciesModal: React.FC<Props> = (props: Props) => {
 
     async function initCurrencies() {
         try {
-            const res: Response = 
+            const res: Response =
                   await fetch('./assets/currencies.json');
 
             if (!res) {
@@ -229,19 +228,19 @@ const CurrenciesModal: React.FC<Props> = (props: Props) => {
             return;
         }
 
-        const input: string = 
+        const input: string =
               ($event.target as InputTargetEvent).value;
 
         if (!input || input === undefined || input === '') {
             setFilteredCurrencies(currencies);
         } else {
-            const filtered: Currencies | undefined = 
+            const filtered: Currencies | undefined =
                   await filterCurrencies(input);
             setFilteredCurrencies(filtered);
         }
     }
 
-    async function filterCurrencies(filter: string): 
+    async function filterCurrencies(filter: string):
                    Promise<Currencies | undefined> {
         if (!currencies) {
             return undefined;
@@ -266,9 +265,9 @@ const CurrenciesModal: React.FC<Props> = (props: Props) => {
                 <IonToolbar color="primary">
                     <IonTitle>Picker</IonTitle>
                     <IonButtons slot="start">
-                        <IonButton 
+                        <IonButton
                           onClick={() => props.closeAction()}>
-                          <IonIcon icon={close} slot="icon-only"> 
+                          <IonIcon icon={close} slot="icon-only">
                           </IonIcon>
                         </IonButton>
                     </IonButtons>
@@ -289,7 +288,7 @@ const CurrenciesModal: React.FC<Props> = (props: Props) => {
     );
 
     function renderCurrencies() {
-        if (!filteredCurrencies 
+        if (!filteredCurrencies
             || filteredCurrencies === undefined) {
             return undefined;
         }
@@ -310,7 +309,7 @@ const CurrenciesModal: React.FC<Props> = (props: Props) => {
 export default CurrenciesModal;
 ```
 
-*****
+---
 
 ### Page: Home
 
@@ -347,7 +346,7 @@ const Home: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonModal isOpen={showModal} 
+                <IonModal isOpen={showModal}
                  onDidDismiss={() => setShowModal(false)}>
                     <CurrenciesModal currency={currency}
                                      closeAction={updateCurrency}>
@@ -371,7 +370,7 @@ If you implemented the above code you should now be able to run the application 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*l7-IXroNBIyWj11Ho1h9gA.gif)
 
-*****
+---
 
 ### Format Currency
 
@@ -385,7 +384,7 @@ function formatCurrency(value: number): string {
         return new Intl.NumberFormat('fr').format(0);
     }
 
-    return new Intl.NumberFormat('fr', 
+    return new Intl.NumberFormat('fr',
            { style: 'currency', currency: currency }).format(value);
 }
 ```
@@ -400,7 +399,7 @@ function formatCurrency(value: number): string {
         return new Intl.NumberFormat(i18n.language).format(0);
     }
 
-    return new Intl.NumberFormat(i18n.language, 
+    return new Intl.NumberFormat(i18n.language,
            { style: 'currency', currency: currency }).format(value);
 }
 ```
@@ -439,7 +438,7 @@ const Home: React.FC = () => {
             return new Intl.NumberFormat('fr').format(0);
         }
 
-        return new Intl.NumberFormat('fr', 
+        return new Intl.NumberFormat('fr',
            { style: 'currency', currency: currency }).format(value);
     }
 
@@ -451,7 +450,7 @@ const Home: React.FC = () => {
                 </IonToolbar>
             </IonHeader>
             <IonContent>
-                <IonModal isOpen={showModal} 
+                <IonModal isOpen={showModal}
                           onDidDismiss={() => setShowModal(false)}>
                     <CurrenciesModal currency={currency}
                                      closeAction={updateCurrency}>
@@ -475,7 +474,7 @@ Voilà, both our currency picker and formatter are implemented in our Ionic Reac
 
 ![](https://cdn-images-1.medium.com/max/1600/1*6ugZ2Y2mcpHkmdS4gpNJ6w.gif)
 
-*****
+---
 
 ### Summary
 

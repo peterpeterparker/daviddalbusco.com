@@ -10,9 +10,9 @@ canonical: "https://medium.com/@david.dalbusco/firebase-cloud-functions-git-gith
 
 ![](https://cdn-images-1.medium.com/max/1600/1*CLLQh8vkxSkbYBCoXjU95A.png)
 
-*Background photo by [Lukas Blazek](https://unsplash.com/@goumbik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Background photo by [Lukas Blazek](https://unsplash.com/@goumbik?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-We recently released an exciting new unique feature at [DeckDeckGo](https://deckdeckgo.com). 
+We recently released an exciting new unique feature at [DeckDeckGo](https://deckdeckgo.com).
 
 In addition to being able to deploy online your presentations as Progressive Web Apps, our web open source editor can now push their source codes to [GitHub](https://github.com) too 🎉.
 
@@ -21,40 +21,40 @@ In addition to being able to deploy online your presentations as Progressive Web
 
 This new function runs in [Firebase Cloud Functions](https://firebase.google.com/docs/functions/). Because we like to share our discoveries, here are the key elements we learned while developing this integration.
 
-*****
+---
 
 ### Access Tokens
 
 To interact with GitHub we need a token.
 
-*****
+---
 
 #### Personal Token
 
-If you are looking to interact with GitHub with your account, your can use a  [personal access token](https://github.com/settings/tokens). Once created, you can set in the configuration of our Firebase functions. Doing so, it will be obfuscated from your code.
+If you are looking to interact with GitHub with your account, your can use a [personal access token](https://github.com/settings/tokens). Once created, you can set in the configuration of our Firebase functions. Doing so, it will be obfuscated from your code.
 
 ```bash
 #!/bin/sh
 firebase functions:config:set github.token="4a686......."
 ```
 
-*****
+---
 
 #### Firebase Auth And GitHub Token
 
 If you are rather interested to interact with GitHub in behave of your users, you might use [Firebase UI](https://github.com/firebase/FirebaseUI-Web) and the [Firebase Authentication](https://firebase.google.com/docs/auth/).
 
-As far as I discovered, with such combination, it is unfortunately not possible to get the user’s GitHub token in a Firebase Cloud Functions. I tried to hook on  the authentication [events](https://firebase.google.com/docs/functions/auth-events) but did not find any related information in the object triggered.
+As far as I discovered, with such combination, it is unfortunately not possible to get the user’s GitHub token in a Firebase Cloud Functions. I tried to hook on the authentication [events](https://firebase.google.com/docs/functions/auth-events) but did not find any related information in the object triggered.
 
 I might have missed something, in such a case please let me know as soon as possible (!), but if not, to get such information, you have to find it through the `signInSuccessWithAuthResult` callback of the Firebase UI configuration.
 
 ```javascript
 callbacks: {
-  signInSuccessWithAuthResult: 
+  signInSuccessWithAuthResult:
     (authResult: firebase.auth.UserCredential, _redirectUrl) => {
 
     const token: string =
-      (userCred.credential as 
+      (userCred.credential as
                firebase.auth.OAuthCredential).accessToken;
 
     return true;
@@ -62,9 +62,9 @@ callbacks: {
 },
 ```
 
-*Note that I opened an issue to ask how it was possible to access the token using TypeScript and the cast to *`OAuthCredential`* was provided as [answer](https://github.com/firebase/firebaseui-web/issues/743).*
+_Note that I opened an issue to ask how it was possible to access the token using TypeScript and the cast to _`OAuthCredential`_ was provided as [answer](https://github.com/firebase/firebaseui-web/issues/743)._
 
-*****
+---
 
 ### File System
 
@@ -77,7 +77,7 @@ In addition, temporary directories are not share across functions. It means for 
 The `tmp` order has not to be hardcoded. Instead of such, the [Node.js OS module](https://nodejs.org/api/os.html) can be used to retrieve the temporary folder. It can be more handy to it if for some reason it would change in the future, you never know 😉.
 
 ```javascript
-import * as os from 'os';
+import * as os from "os";
 
 console.log(os.tmpdir()); // -> /tmp
 ```
@@ -95,7 +95,7 @@ export function getFilePath(...files: string[]): string {
 console.log(getFilePath('yo', 'david.txt'); // -> /tmp/yo/david.txt
 ```
 
-*****
+---
 
 ### Git Commands
 
@@ -105,7 +105,7 @@ In order to clone a repo, or generally speaking to execute any Git commands such
 npm i simple-git --save
 ```
 
-*****
+---
 
 #### Clone
 
@@ -121,7 +121,7 @@ export async function clone(repoUrl: string, repoName: string) {
   const localPath: string = path.join(os.tmpdir(), repoName);
 
   await deleteDir(localPath);
-  
+
   const git: SimpleGit = simpleGit();
   await git.clone(repoUrl, localPath);
 }
@@ -129,7 +129,7 @@ export async function clone(repoUrl: string, repoName: string) {
 // Demo:
 
 (async () => {
- await clone('https://github.com/deckgo/deckdeckgo/', 'deckdeckgo'); 
+ await clone('https://github.com/deckgo/deckdeckgo/', 'deckdeckgo');
 })();
 ```
 
@@ -153,7 +153,7 @@ As you can notice, I use [rimraf](https://github.com/isaacs/rimraf) from [Isaac 
 npm i rimraf --save && npm i @types/rimraf --save-dev
 ```
 
-*****
+---
 
 #### Push
 
@@ -204,17 +204,17 @@ export async function push(project: string,
 // Demo:
 
 (async () => {
- await push('deckdeckgo', 'my-branch'); 
+ await push('deckdeckgo', 'my-branch');
 })();
 ```
 
-*****
+---
 
 ### GitHub GraphQL API
 
 The last, or new, depends on the point of view, version (v4) of the GitHub API can be use with GraphQL queries. Its [documentation](https://docs.github.com/en/graphql) makes it relatively easy to search for information but the [explorer](https://developer.github.com/v4/explorer/), and its auto-complete feature, is probably even more handy to compose quickly flexible queries.
 
-*****
+---
 
 #### Query
 
@@ -223,7 +223,7 @@ I did not use any GraphQL clients (as for example [Apollo](https://github.com/ap
 ```javascript
 import fetch, {Response} from 'node-fetch';
 
-async function queryGitHub(githubToken: string, 
+async function queryGitHub(githubToken: string,
                            query: string): Promise<Response> {
   const githubApiV4: string = 'https://api.github.com/graphql';
 
@@ -251,7 +251,7 @@ As `fetch` is not natively available in [Node.js](https://nodejs.org/en/), I use
 npm i node-fetch --save && npm i @types/node-fetch --save-dev
 ```
 
-*****
+---
 
 #### Query: User Information
 
@@ -275,7 +275,7 @@ export function getUser(githubToken: string): Promise<GitHubUser> {
         }
       `;
 
-      const response: Response = 
+      const response: Response =
             await queryGitHub(githubToken, query);
 
       const result = await response.json();
@@ -291,14 +291,14 @@ export function getUser(githubToken: string): Promise<GitHubUser> {
 
 (async () => {
  const token: string = functions.config().github.token;
- 
- const user = await getUser(token); 
+
+ const user = await getUser(token);
 
  console.log(user); // -> {login: 'peterpeterparker', id: '123'}
 })();
 ```
 
-*****
+---
 
 #### Mutation: Pull Request
 
@@ -314,7 +314,7 @@ export function createPR(githubToken: string,
     try {
       const title: string = 'feat: my title';
             const body: string = `# The Pull Request body.
-      
+
       It supports *Markdown*.`;
 
      // We want to provide a PR from a branch to master
@@ -329,12 +329,12 @@ export function createPR(githubToken: string,
              }
            `;
 
-      const response: Response = 
+      const response: Response =
             await queryGitHub(githubToken, query);
 
       const result = await response.json();
 
-      if (!result || !result.data || 
+      if (!result || !result.data ||
           !result.data.createPullRequest || result.errors) {
         resolve(undefined);
         return;
@@ -351,12 +351,12 @@ export function createPR(githubToken: string,
 
 (async () => {
  const token: string = functions.config().github.token;
- 
+
  await createPR(token, '6789', 'my-branch');
 })();
 ```
 
-*****
+---
 
 ### Summary
 

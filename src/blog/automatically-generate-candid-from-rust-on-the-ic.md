@@ -10,13 +10,13 @@ canonical: "https://medium.com/@daviddalbusco/automatically-generate-candid-from
 
 ![Follow my Instagram @karsten.wuerth](https://images.unsplash.com/photo-1466611653911-95081537e5b7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxOXx8d2luZG1pbGwlMjBvbiUyMGdyYXNzJTIwZmllbGR8ZW58MHx8fHwxNjc4NjUwMzQ1&ixlib=rb-4.0.3&q=80&w=1080)
 
-*[Karsten Würth](https://unsplash.com/fr/@karsten_wuerth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/0w-uTa0Xz7w?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_[Karsten Würth](https://unsplash.com/fr/@karsten_wuerth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/0w-uTa0Xz7w?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-* * *
+---
 
->  Update July 22nd, 2023: There is now a better way to automatically generate Candid from Rust. Check out my new [blog post](https://daviddalbusco.com/blog/automatic-candid-generation-in-rust-exploring-the-ic-cdk-v0-10-0-update/) about that subject!
+> Update July 22nd, 2023: There is now a better way to automatically generate Candid from Rust. Check out my new [blog post](https://daviddalbusco.com/blog/automatic-candid-generation-in-rust-exploring-the-ic-cdk-v0-10-0-update/) about that subject!
 
-* * *
+---
 
 The ability to auto-generate the Candid declaration from Rust code on the Internet Computer is expected to become available in the second quarter of 2023.
 
@@ -24,7 +24,7 @@ In the meantime, a workaround can be used to generate these types, which I notab
 
 Here’s how you can implement the workaround yourself.
 
-* * *
+---
 
 ## 1\. Annotate
 
@@ -49,7 +49,7 @@ fn world(name: String) -> String {
 }
 ```
 
-* * *
+---
 
 ## 2\. Collect and generate
 
@@ -65,7 +65,7 @@ fn export_candid() -> String {
 }
 ```
 
-* * *
+---
 
 ## 3\. Save to file system with a test
 
@@ -100,13 +100,13 @@ The above snippet is designed for a canister named `demo` and a file structure r
 That's all! 😁 Simply run `cargo test` and a `did` file should be automatically generated.
 
 ```rust
-service : { 
-  hello : (text) -> (text) query; 
-  world : (text) -> (text) 
+service : {
+  hello : (text) -> (text) query;
+  world : (text) -> (text)
 }
 ```
 
-* * *
+---
 
 ## Conclusion
 

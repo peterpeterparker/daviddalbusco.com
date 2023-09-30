@@ -16,7 +16,7 @@ Long story short, [James Turner](https://twitter.com/MrTurnerj) is clever and ha
 
 I thought that this discovery was really interesting, specially because I always assumed that this was a browser feature and not something which needed implementation, but also because I thought that this could be an interesting use case for a new [Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components) compatible with any modern frameworks, or even without, and that’s why I’m writing this article.
 
-*For the purpose of this tutorial, I selected *[StencilJS](https://stenciljs.com/)* as a compiler, mostly because I’m a bit more experienced with it, as I developed my pet project *[DeckDeckGo](https://deckdeckgo.com/)* with, but also, to be truly honest, just because I’m in *❤️* with Stencil *😉
+_For the purpose of this tutorial, I selected _[StencilJS](https://stenciljs.com/)_ as a compiler, mostly because I’m a bit more experienced with it, as I developed my pet project _[DeckDeckGo](https://deckdeckgo.com/)* with, but also, to be truly honest, just because I’m in *❤️* with Stencil *😉
 
 ### Let’s get started
 
@@ -39,13 +39,13 @@ That’s it, our new project is initialized. We could now jump into the newly cr
 ![](https://cdn-images-1.medium.com/max/1600/1*3shvGjyXaBw_9kXByxv5sg.png)
 <span class="figcaption_hack">access the component</span>
 
-*To continue this tutorial, I suggest you to keep the component running, Stencil will automatically pick the changes we are going to make to the code and will trigger a refresh of the browser on new build.*
+_To continue this tutorial, I suggest you to keep the component running, Stencil will automatically pick the changes we are going to make to the code and will trigger a refresh of the browser on new build._
 
 ### Let’s code
 
 We are now all set, we could begin to code our component 🚀 As we want to develop a clever `textarea`, I suggest that we begin first by removing the default demo code from the component with the goal to just render a dummy blank `textarea`. For that purpose, we are going to edit the file `src/components/my-component/my-component.tsx` as Stencil components are built using [JSX](https://reactjs.org/docs/introducing-jsx.html) and Typescript.
 
-*Per default, the component’s name and namespace are set to *`my-component`* respectively *`mycomponent`* . For simplicity reason, I’ll stick to these names for this article. If you would create a component you would use in a real project, I advise you to rename these informations *😉
+_Per default, the component’s name and namespace are set to _`my-component`_ respectively _`mycomponent`* . For simplicity reason, I’ll stick to these names for this article. If you would create a component you would use in a real project, I advise you to rename these informations *😉
 
 ```
 import {Component} from '@stencil/core';
@@ -73,7 +73,7 @@ As James Turner discovered, the trick consists of saving your inputs before the 
 
 Furthermore to this, in order to retrieve the current value of our `textarea`, we could use the Stencil’s reference `Element` to perform a query on the DOM elements of the host and save its value in the `sessionStorage`.
 
-*Per default, see your component definition *`@Component`* , the component is going to be shadowed, that’s why we are going to use the selector *`shadowRoot`* in our query.*
+_Per default, see your component definition _`@Component`_ , the component is going to be shadowed, that’s why we are going to use the selector _`shadowRoot`_ in our query._
 
 ```
 import {Component, Element} from '@stencil/core';
@@ -221,7 +221,7 @@ Once the code modified, we could now modify the HTML page we are using for test 
 </body>
 ```
 
-*As for the JSX code, you could safely remove the previous demo attributes “last” and “first” which comes with the Stencil starter component as we don’t use them in this tutorial.*
+_As for the JSX code, you could safely remove the previous demo attributes “last” and “first” which comes with the Stencil starter component as we don’t use them in this tutorial._
 
 If we go back to your browser you should now find two `textarea` respectively two components. You could now try to fill them and again try to refresh your browser.
 

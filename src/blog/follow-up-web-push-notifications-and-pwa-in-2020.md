@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/follow-up-web-push-notifications-
 
 ![](https://cdn-images-1.medium.com/max/1600/1*W6Eot89ZwJa994WQum55Sg.png)
 
-*Photo by [Javier Allegue Barros](https://unsplash.com/@soymeraki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Javier Allegue Barros](https://unsplash.com/@soymeraki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://medium.com/@david.dalbusco/one-trick-a-day-d-34-469a0336a07e) until the original scheduled date of the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Five** days left until this first milestone. Hopefully better days are ahead.
 
-*****
+---
 
 If you follow me on [Twitter](https://twitter.com/daviddalbusco), you may have read that an application I developed and recently submitted to the stores have been rejected by both Apple and Google because it was not aligned, according them, with their restrictive policy regarding the current COVID-19 pandemic.
 
@@ -22,7 +22,7 @@ I am not writing these lines to share my opinion on these companies, but to shar
 
 Indeed one core concept of the app which was rejected relies on Push Notifications. As it is developed with [Ionic](https://ionicframework.com) and [Angular](https://angular.io), we are able to unleash a Progressive Web Apps, but is such feature yet well supported?
 
-*****
+---
 
 ### Introduction
 
@@ -30,19 +30,19 @@ I am writing this article **Tuesday 14th April 2020**, that’s why it reflects 
 
 This afternoon I ran my tests on my Android phone, a OnePlus 6 running Android v10 and on my iPhone 6s running iOS 13.
 
-*****
+---
 
 ### Android
 
 It works like a charm, period. I tested Web Push Notifications with my phone in idle mode, awake and with the application open. In all cases, I received the notifications. Great work Google 👍.
 
-*****
+---
 
 ### iOS
 
 Web Push Notifications are still **not supported** on iOS. The status didn’t change since I published my tutorial in February 2019. As you can notice with the help of [Caniuse](https://caniuse.com/#search=notification), the Notifications API is not yet implemented by iOS Safari.
 
-*****
+---
 
 ### Setup
 
@@ -50,7 +50,7 @@ The [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging)
 
 An interesting thing to notice though, it the [comment](https://medium.com/@galilo7g/good-tutorial-just-mention-the-need-to-specify-the-firebase-version-in-the-service-worker-that-e90d3d8a2231) from [Galilo Galilo](https://medium.com/@galilo7g). According his/her experience, the Firebase dependencies used in the service worker had to be set as the exact same version number as the one used in `package.json` . I did not had this problem but it is something which might be worth to keep in mind.
 
-*****
+---
 
 ### Implementation
 
@@ -58,19 +58,19 @@ To the exception of the following deprecation, which can or not be improved, the
 
 That being said, I think that there might be an easier way, specially if you are using [AngularFire](https://github.com/angular/angularfire), to implement Web Push Notifications in a Progressive Web Apps. I did not check it out but before following my tutorial it maybe deserves a quick research, just in case you would be able to spare some time 😉.
 
-*****
+---
 
 #### Deprecation
 
 Not a big deal but while having a look at the code I noticed that `await messaging.requestPermission();` was marked as deprecated. It can be updated as following:
 
 ```javascript
-if (Notification.permission !== 'denied') {
-    await Notification.requestPermission();
+if (Notification.permission !== "denied") {
+	await Notification.requestPermission();
 }
 ```
 
-*****
+---
 
 #### Altogether
 
@@ -103,7 +103,7 @@ export class FirebaseNotificationsPwaService {
                  .usePublicVapidKey(environment.firebase.vapidKey);
 
             messaging.onMessage((payload) => {
-                // If we want to display 
+                // If we want to display
                 // a msg when the app is in foreground
                 console.log(payload);
             });
@@ -149,7 +149,7 @@ export class FirebaseNotificationsPwaService {
 }
 ```
 
-*****
+---
 
 ### Summary
 

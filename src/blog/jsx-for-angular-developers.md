@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/jsx-for-angular-developers-23f9d1
 
 ![](https://cdn-images-1.medium.com/max/1600/1*GcEjTmqI8Rq_tPJGMywfnw.png)
 
-*Photo by [Maël Renault](https://unsplash.com/@maelrenau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Maël Renault](https://unsplash.com/@maelrenau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Sixteen** days left until hopefully better days.
 
-*****
+---
 
 At first I wasn’t that much a fan of the [JSX](https://www.typescriptlang.org/docs/handbook/jsx.html) syntax when I discovered it while developing my first Web Components with [Stencil](https://stenciljs.com). I was missing the [Angular](https://angular.io) HTML templates.
 
@@ -22,23 +22,21 @@ Nowadays? I might change my mind in the future again, but after having developed
 
 That’s why I had this idea to write a really brief and I hope beginner friendly introduction to JSX as used in Stencil or React for Angular developers.
 
-*****
+---
 
 ### JSX vs HTML Templates
 
 If you write an Angular application, **commonly** you are going to separate your components in layers and even probably three separate files: the code (TypeScript), the style (CSS) and the template (HTML, the GUI).
 
 ```javascript
-import {Component} from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-my-component',
-  templateUrl: './my-component.component.html',
-  styleUrls: ['./my-component.component.scss']
+	selector: "app-my-component",
+	templateUrl: "./my-component.component.html",
+	styleUrls: ["./my-component.component.scss"]
 })
-export class MyComponentComponent {
-
-}
+export class MyComponentComponent {}
 ```
 
 And the related template:
@@ -52,18 +50,16 @@ With JSX, regardless if Stencil or React, you have this separation of concern to
 The separation of concern occurs on the code side. If you have a `class` , you will have to expose a method `render()` which returns what suppose to be, guess what, rendered. In short: “a method which renders your HTML code”.
 
 ```javascript
-import {Component, h} from '@stencil/core';
+import { Component, h } from "@stencil/core";
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css'
+	tag: "my-component",
+	styleUrl: "my-component.css"
 })
 export class MyComponent {
-
-  render() {
-    return <div>Hello, World!</div>;
-  }
-  
+	render() {
+		return <div>Hello, World!</div>;
+	}
 }
 ```
 
@@ -86,18 +82,18 @@ Both Stencil and React do support `class` or `function` . These last type became
 
 Note also that for the rest of this article, I will display the Stencil examples using `class` and the React one using `functions` .
 
-*****
+---
 
 ### Root Element
 
-One important difference is  the notion of root element. In Angular, you don’t really care about if. If your template contains a single root element or multiple ones, it compiles in any case.
+One important difference is the notion of root element. In Angular, you don’t really care about if. If your template contains a single root element or multiple ones, it compiles in any case.
 
 ```html
 <div>Hello, World!</div>
 
 <div>
-  <p>Salut</p>
-  <p>Hallo</p>
+	<p>Salut</p>
+	<p>Hallo</p>
 </div>
 ```
 
@@ -106,52 +102,52 @@ In JSX, to the contrary, it does matter. Your component should be developed to h
 Therefore, our first solution might be to group our children under a single HTML node.
 
 ```javascript
-import {Component, h} from '@stencil/core';
+import { Component, h } from "@stencil/core";
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css'
+	tag: "my-component",
+	styleUrl: "my-component.css"
 })
 export class MyComponent {
+	render() {
+		return (
+			<div>
+				<div>Hello, World!</div>
 
-  render() {
-    return <div>
-      <div>Hello, World!</div>
-
-      <div>
-        <p>Salut</p>
-        <p>Hallo</p>
-      </div>
-    </div>;
-  }
-
+				<div>
+					<p>Salut</p>
+					<p>Hallo</p>
+				</div>
+			</div>
+		);
+	}
 }
 ```
 
-That would work out but this would result  on adding a not needed `div` tag, the parent one, to our DOM. That’s why both Stencil and React have their respective similar solution to this problem.
+That would work out but this would result on adding a not needed `div` tag, the parent one, to our DOM. That’s why both Stencil and React have their respective similar solution to this problem.
 
 In Stencil you can use a `Host` element.
 
 ```javascript
-import {Component, h, Host} from '@stencil/core';
+import { Component, h, Host } from "@stencil/core";
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css'
+	tag: "my-component",
+	styleUrl: "my-component.css"
 })
 export class MyComponent {
+	render() {
+		return (
+			<Host>
+				<div>Hello, World!</div>
 
-  render() {
-    return <Host>
-      <div>Hello, World!</div>
-
-      <div>
-        <p>Salut</p>
-        <p>Hallo</p>
-      </div>
-    </Host>;
-  }
-
+				<div>
+					<p>Salut</p>
+					<p>Hallo</p>
+				</div>
+			</Host>
+		);
+	}
 }
 ```
 
@@ -180,28 +176,26 @@ export default MyComponent;
 Finally, in Stencil, if you rather like not to use such container, you can return an `array` of elements. But I feel like, mostly for styling reason, that I used the above solution more often so far.
 
 ```javascript
-import {Component, h} from '@stencil/core';
+import { Component, h } from "@stencil/core";
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css'
+	tag: "my-component",
+	styleUrl: "my-component.css"
 })
 export class MyComponent {
-
-  render() {
-    return [
-      <div>Hello, World!</div>,
-      <div>
-        <p>Salut</p>
-        <p>Hallo</p>
-      </div>
-    ];
-  }
-
+	render() {
+		return [
+			<div>Hello, World!</div>,
+			<div>
+				<p>Salut</p>
+				<p>Hallo</p>
+			</div>
+		];
+	}
 }
 ```
 
-*****
+---
 
 ### States And Properties
 
@@ -275,7 +269,7 @@ export class MyComponent {
     // Render again
     this.count++;
     this.odd = this.count % 2 === 1;
-    
+
     // Do not trigger a new render
     this.even = this.count % 2 === 0;
   }
@@ -325,7 +319,7 @@ export default MyComponent;
 
 I now, I said I won’t cover hooks in this article, therefore let just summarize these as asynchronous functions, which observe or apply a change to a variable and in case of the hook dedicated to states, `useState` , trigger a new rendering if a change is applied to the observed variable.
 
-*****
+---
 
 ### Conditional Rendering
 
@@ -359,11 +353,13 @@ Or with React:
 
 ```javascript
 return (
-    <>
-        {
-            odd ? <div>{odd} {props.count}</div> : undefined
-        }
-    </>
+	<>
+		{odd ? (
+			<div>
+				{odd} {props.count}
+			</div>
+		) : undefined}
+	</>
 );
 ```
 
@@ -386,18 +382,18 @@ private renderLabel() {
 Or again in this React one:
 
 ```javascript
-return (
-    <>
-        {renderLabel()}
-    </>
-);
+return <>{renderLabel()}</>;
 
 function renderLabel() {
-    return odd ? <div>{odd} {props.count}</div> : undefined;
+	return odd ? (
+		<div>
+			{odd} {props.count}
+		</div>
+	) : undefined;
 }
 ```
 
-*****
+---
 
 ### Summary
 

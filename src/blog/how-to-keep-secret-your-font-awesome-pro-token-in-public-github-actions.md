@@ -9,11 +9,11 @@ image: "https://cdn-images-1.medium.com/max/1600/1*oASKWYL2zJdXrSghTn92PA.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*oASKWYL2zJdXrSghTn92PA.jpeg)
 
-*Photo by [Serkan Turk](https://unsplash.com/@serkanturk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Serkan Turk](https://unsplash.com/@serkanturk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Yesterday [Julien Renaux](https://twitter.com/julienrenaux) published a [series](https://twitter.com/julienrenaux/status/1199322520815583233) of interesting new blog posts. In one of these he notably displayed, step by step, [how to deploy StencilJS apps with GitHub actions and Firebase hosting](https://julienrenaux.fr/2019/11/25/building-deploying-stenciljs-apps-firebase-hosting-github-actions/).
 
-This tutorial really caught my eye because all applications of our web open source project [DeckDeckGo](https://deckdeckgo.com)  are developed with [StencilJS](https://stenciljs.com) and hosted on [Firebase](https://firebase.google.com) 😁
+This tutorial really caught my eye because all applications of our web open source project [DeckDeckGo](https://deckdeckgo.com) are developed with [StencilJS](https://stenciljs.com) and hosted on [Firebase](https://firebase.google.com) 😁
 
 Of course I couldn’t wait that much and I had to give it a try. Because I’ll have to make changes to obfuscate production tokens differently if I use a CI to build our editor for presentations, I thought I could first try out his recipe in the current [Ionic React](https://ionicframework.com/docs/react) demo application I’m developing for our [Meetup](https://www.meetup.com/fr-FR/Ionic-Zurich/events/265767496/) next week.
 
@@ -27,8 +27,8 @@ X Download Artifact
   2 with:
   3    name: build
   4 Download artifact 'build' to: '/home/runner/work/daviddalbusco.com/daviddalbusco.com/build'
-  5 
-6 
+  5
+6
 ```
 
 At first, I didn’t understood the error. Of course I noticed that some artifacts couldn’t be downloaded but I didn’t knew what where these and what was the root cause. After a bit I finally remembered that I used to face a similar problem with another CI.
@@ -37,7 +37,7 @@ For my website I’m using [Font Awesome](https://fontawesome.com) and notably t
 
 ### Configure the NPM registry
 
-The Font Awesome NPM token could either be set up globally or per project. The method we need to build our project with a CI is the last one, “per project”. For that purpose, we create a new file `.npmrc` in the root of your project . To the contrary of the documentation, we only add one line in the file respectively we only add  the reference to the Font Awesome packet manager. We deliberately ignore to specify anything regarding our token.
+The Font Awesome NPM token could either be set up globally or per project. The method we need to build our project with a CI is the last one, “per project”. For that purpose, we create a new file `.npmrc` in the root of your project . To the contrary of the documentation, we only add one line in the file respectively we only add the reference to the Font Awesome packet manager. We deliberately ignore to specify anything regarding our token.
 
 ```javascript
 @fortawesome:registry=https://npm.fontawesome.com/
@@ -49,7 +49,7 @@ As we didn’t provided the token in the previous file, we will have to provide 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*NVoURzVa2jn6uuvAKvo12Q.png)
 
-*Set up a GitHub secret for the Font Awesome NPM token*
+_Set up a GitHub secret for the Font Awesome NPM token_
 
 ### Use the secret in our CI
 
@@ -75,7 +75,7 @@ And voilà, our CI should now be able to download the required dependency and th
 
 ![](https://cdn-images-1.medium.com/max/1600/1*B0QAOSrrjgtLV5zywnA8sg.png)
 
-*Successful CI, happy CI 😺*
+_Successful CI, happy CI 😺_
 
 ### Cherry on the cake 🍒🎂
 

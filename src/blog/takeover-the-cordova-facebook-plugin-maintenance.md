@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/takeover-the-cordova-facebook-plu
 
 ![](https://cdn-images-1.medium.com/max/1600/1*EPWjs7wN0Q2-8F2EeaiIqw.png)
 
-*Photo by [Thought Catalog](https://unsplash.com/@thoughtcatalog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/facebook?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Thought Catalog](https://unsplash.com/@thoughtcatalog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/facebook?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twenty-three** days left until hopefully better days.
 
-*****
+---
 
 It has been in my mind for a while now and I think that, even if this post is not really going to be trick, this series of article is the perfect time to announce that I am giving up being the active maintainer of the [Cordova Facebook Plugin](https://github.com/jeduan/cordova-plugin-facebook4).
 
@@ -24,7 +24,7 @@ But more **important**, I would rather like not to sunset my duties without anyo
 
 Therefore, if you are up to become the new active maintainer, **ping me** 🙏.
 
-*****
+---
 
 ### How Did I Become The Maintainer?
 
@@ -36,7 +36,7 @@ Three or four years ago (times fly), after a corporate career as junior and then
 
 This “startup” was [Fluster](https://fluster.io), a simple search for roommates and flats platform which I created because finding a new place to live in Zürich freaking sucks (excuse my french) and which, by the way, I am also about to sunset really soon.
 
-This platform was a mobile application developed with [Ionic](https://ionicframework.com) (early version 4) and [Cordova](https://cordova.apache.org) available in the [App Store](https://itunes.apple.com/app/id1187266720), [Google Play](https://play.google.com/store/apps/details?id=io.fluster.fluster) and as a [Progressive Web Apps](https://m.fluster.io). 
+This platform was a mobile application developed with [Ionic](https://ionicframework.com) (early version 4) and [Cordova](https://cordova.apache.org) available in the [App Store](https://itunes.apple.com/app/id1187266720), [Google Play](https://play.google.com/store/apps/details?id=io.fluster.fluster) and as a [Progressive Web Apps](https://m.fluster.io).
 
 To design its UX and develop it, I mostly decided to rely on the Facebook login and platform for two reasons:
 
@@ -49,7 +49,7 @@ Long story short, if I remember correctly, there was one day a bug in the Cordov
 
 Looking back at the history of the [CHANGELOG](https://github.com/jeduan/cordova-plugin-facebook4/blob/master/CHANGELOG.md) I notice that it actually all began around two years ago, somewhere around March 24th 2018. So I’ve been a maintainer for two years.
 
-*****
+---
 
 ### Why I Gave Up?
 
@@ -57,7 +57,7 @@ First of all, I gave up being a maintainer of this plugin because **I don’t us
 
 Furthermore, I don’t want to use it anymore. Since Fluster, I never ever implemented Facebook login again. I even don’t implement the option to share to this platform in all my personal recent work.
 
-*****
+---
 
 ### Facebook (The Company) Sucks
 
@@ -65,7 +65,7 @@ Excuse my french again 😅. Most probably, almost no one nowadays is going to s
 
 But, regarding my above point on view on Facebook, here are two things you might not know:
 
-*****
+---
 
 #### Worst Communication Ever
 
@@ -77,13 +77,13 @@ I will never forget one particular incident. Suddenly it was not possible anymor
 
 Since that day I always tell to my self, sort of my private joke, that the communication of Facebook should be taught in schools as an example of how to communicate badly with developers.
 
-*****
+---
 
 #### Facebook Do Not Delete Ads Profile
 
 As much as I criticize Facebook, I am also, even more strongly, criticize my self.
 
-When I developed Fluster I tried to reach my audience mostly with Facebook and Google ads. Probably because that’s what I learned in previous jobs. Concretely I invested of couple of thousand dollars of my private savings over several months to try to grow my business.  Even if I was believing in it, I kind of feel bad about it. I am really not proud of my self to have tried to use ads, I mean, it’s ads, it is not cool and money can be use so much more wisely.
+When I developed Fluster I tried to reach my audience mostly with Facebook and Google ads. Probably because that’s what I learned in previous jobs. Concretely I invested of couple of thousand dollars of my private savings over several months to try to grow my business. Even if I was believing in it, I kind of feel bad about it. I am really not proud of my self to have tried to use ads, I mean, it’s ads, it is not cool and money can be use so much more wisely.
 
 But at least the good point of this, is that I learned from what I consider as I a personal error and it probably helped me to become the person I’m today, or at least helped me to be more aware of what I want in life, what I want to achieve and more important, how.
 
@@ -91,7 +91,7 @@ That being said and here is my point. Even though my decision was bad, I should 
 
 Oh and by the way, Google is not better on that point, you cannot delete Google Ads profile neither.
 
-*****
+---
 
 ### Maintainer Duties
 
@@ -99,15 +99,15 @@ Bad or good, the Facebook login is still used by a lot of applications, more tha
 
 As such, I mostly did the following activities:
 
-* Taking care of maintaining a clear issues tracker. Most the time, issues were actually support request, therefore I kindly asked developers to use other platform to handle these as otherwise it would have made the real issues really not trackable and not noticeable
-* Updating the documentation according developer inputs
-* Merging important Pull Requests
-* Updating the Facebook SDK
-* Providing a sample repo to help with the testing but more important, to help reproduce submitted issues
+- Taking care of maintaining a clear issues tracker. Most the time, issues were actually support request, therefore I kindly asked developers to use other platform to handle these as otherwise it would have made the real issues really not trackable and not noticeable
+- Updating the documentation according developer inputs
+- Merging important Pull Requests
+- Updating the Facebook SDK
+- Providing a sample repo to help with the testing but more important, to help reproduce submitted issues
 
 Of course you will be able to organize yourself as you wish and I even now think that having a new active maintainer might bring some fresh ideas to the plugin.
 
-*****
+---
 
 ### Summary
 

@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/sometimes-you-just-need-a-dumb-li
 
 ![](https://cdn-images-1.medium.com/max/1600/1*3WQ_e2_-d02nvob2rlEJCA.png)
 
-*Photo by [Benjamin Davies](https://unsplash.com/@bendavisual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Benjamin Davies](https://unsplash.com/@bendavisual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I [challenged](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) my self to share a blog post very day until end of the current quarantine in Switzerland, the 19th April 2020. **Thirty-one** days left until hopefully better days.
 
-*****
+---
 
 One of my client week’s assignment was to track down a bug between libraries. After quite a bit of time, I finally figured out that some code had been duplicated and had also received, of course, an improvement which had not been spread 😒.
 
@@ -22,7 +22,7 @@ Such issues can be avoided by not duplicating code, for example, by sharing it a
 
 Because in [DeckDeckGo](https://deckdeckgo.com), our open source editor for presentations, we actually had already setup such utilities, I thought it would be not a bad thing to share our recipe.
 
-*****
+---
 
 ### Our Goal: A Utility To Get Valid Date Objects
 
@@ -51,7 +51,7 @@ export function toDateObject(myDate: any): Date | undefined {
 }
 ```
 
-*****
+---
 
 ### Create A Library
 
@@ -65,32 +65,29 @@ To develop and bundle our project we are going to use both [Rollup](https://roll
 
 ```json
 {
-  "name": "utils",
-  "version": "1.0.0",
-  "devDependencies": {
-    "@types/node": "^13.9.1",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.1.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-typescript": "^1.0.1",
-    "tslib": "^1.11.1",
-    "typescript": "^3.8.3"
-  },
-  "main": "lib/index.cjs.js",
-  "module": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "prepare": "npm run build",
-    "build": "rimraf lib && rollup -c && tsc"
-  },
-  "files": [
-    "lib",
-    "README.md"
-  ]
+	"name": "utils",
+	"version": "1.0.0",
+	"devDependencies": {
+		"@types/node": "^13.9.1",
+		"rimraf": "^3.0.2",
+		"rollup": "^2.1.0",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-typescript": "^1.0.1",
+		"tslib": "^1.11.1",
+		"typescript": "^3.8.3"
+	},
+	"main": "lib/index.cjs.js",
+	"module": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"scripts": {
+		"prepare": "npm run build",
+		"build": "rimraf lib && rollup -c && tsc"
+	},
+	"files": ["lib", "README.md"]
 }
 ```
 
-*****
+---
 
 #### Typescript
 
@@ -98,22 +95,20 @@ Before installing anything, we are going now to configure Typescript for example
 
 ```json
 {
-  "compilerOptions": {
-    "target": "ES2017",
-    "module": "esnext",
-    "declaration": true,
-    "outDir": "lib",
-    "strict": true,
-    "removeComments": true
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"target": "ES2017",
+		"module": "esnext",
+		"declaration": true,
+		"outDir": "lib",
+		"strict": true,
+		"removeComments": true
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules"]
 }
 ```
 
-*****
+---
 
 ### Rollup
 
@@ -126,25 +121,22 @@ Note that you find also the references I used to create this bundle as commentar
 // https://buzut.net/configurer-rollup-bundles-esm-cjs/
 // https://dev.to/proticm/how-to-setup-rollup-config-45mk
 
-import typescript from 'rollup-plugin-typescript';
-import commonjs from 'rollup-plugin-commonjs';
+import typescript from "rollup-plugin-typescript";
+import commonjs from "rollup-plugin-commonjs";
 
-import pkg from './package.json';
+import pkg from "./package.json";
 
 export default {
-    input: './src/index.ts',
-    plugins: [
-        commonjs(),
-        typescript()
-    ],
-    output: {
-        format: 'cjs',
-        file: pkg.main
-    }
-}
+	input: "./src/index.ts",
+	plugins: [commonjs(), typescript()],
+	output: {
+		format: "cjs",
+		file: pkg.main
+	}
+};
 ```
 
-*****
+---
 
 #### Installation Of The Dependencies
 
@@ -155,7 +147,7 @@ mkdir src && touch src/index.ts
 npm install
 ```
 
-*****
+---
 
 #### Coding
 
@@ -167,7 +159,7 @@ npm run build
 
 And voilà, that’s it, we have a "dumb" library which can be use in all our projects 🎉.
 
-*****
+---
 
 ### Summary
 

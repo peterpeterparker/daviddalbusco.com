@@ -10,7 +10,7 @@ canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/poll-canister-on-t
 
 ![Blue clock on a pastel background](https://images.unsplash.com/photo-1524678714210-9917a6c619c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxMHx8dGltZXJ8ZW58MHx8fHwxNjY1MjIzNjYx&ixlib=rb-1.2.1&q=80&w=1080)
 
-*Photo by [Icons8 Team](https://unsplash.com/@icons8?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Icons8 Team](https://unsplash.com/@icons8?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Some use cases require frontend dapp to repeatedly calls a function deployed on the [Internet Computer](https://internetcomputer.org/) with a fixed time delay between each call. e.g. in [Papyrs](https://papy.rs) - a web3 blogging platform - there is no save button. Each edit users are making is automatically saved in the backend.
 
@@ -22,7 +22,7 @@ While not all such functions might decrease the performance of the UI, I like to
 
 In this article, I will show you how you can implement such a solution too.
 
-* * *
+---
 
 ## Web workers?
 
@@ -30,7 +30,7 @@ If you are not familiar with web workers you might ask yourself what it is. I ad
 
 They can run JavaScript and perform HTTP calls but, they cannot access the localstorage nor modify the DOM directly. e.g. you cannot modify a state in a web worker and expect the UI to be re-rendered automatically. UI (window) and workers are separated. You can picture this a bit like the separation caused by embedding an iframe.
 
-* * *
+---
 
 ## Introduction
 
@@ -45,7 +45,7 @@ The tutorial covers therefore following steps:
 3.  Call the IC
 4.  Transfer the results to the UI
 
-* * *
+---
 
 ## 1. Set up a web worker
 
@@ -53,17 +53,17 @@ For this tutorial I will use vanilla JavaScript because when you create a new sa
 
 But, I have got your back 😄. I am a HUGE fan of web workers and I published various tutorials that show how to set up these for various frameworks.
 
-*   [SvelteKit](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/sveltekit-web-worker)
-*   [Angular](https://daviddalbusco.com/blog/angular-and-web-workers/)
-*   [Stencil](https://daviddalbusco.com/blog/stenciljs-and-web-worker-a-fairy-tale/)
+- [SvelteKit](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/sveltekit-web-worker)
+- [Angular](https://daviddalbusco.com/blog/angular-and-web-workers/)
+- [Stencil](https://daviddalbusco.com/blog/stenciljs-and-web-worker-a-fairy-tale/)
 
-*I also got a post about the integration in [React](https://daviddalbusco.com/blog/react-and-web-workers/) but, it is a bit outdated. If you use Webpack, better follow this article.*
+_I also got a post about the integration in [React](https://daviddalbusco.com/blog/react-and-web-workers/) but, it is a bit outdated. If you use Webpack, better follow this article._
 
 So, assuming you have also initialized a sample application to follow this tutorial, we can start by creating the worker in a new file. e.g. `src/myapp\_frontend/src/worker.js`.
 
 ```javascript
 self.onmessage = async ($event) => {
-    console.log("Worker message", $event);
+	console.log("Worker message", $event);
 };
 ```
 
@@ -73,9 +73,9 @@ On the UI side, we declare two elements. A `button` to sign in with [Internet Id
 
 ```html
 <main>
-    <button type="button">Sign in</button>
+	<button type="button">Sign in</button>
 
-    <textarea />
+	<textarea />
 </main>
 ```
 
@@ -87,21 +87,21 @@ Once the HTML document has been completely parsed, we attach a `click` event to 
 import { AuthClient } from "@dfinity/auth-client";
 
 const signIn = async () => {
-  const authClient = await AuthClient.create();
-  await authClient.login({
-    onSuccess: async () => console.log(await authClient.isAuthenticated()),
-    onError: (err) => console.log(err),
-    identityProvider: `http://r7inp-6aaaa-aaaaa-aaabq-cai.localhost:8000?#authorize`,
-  });
+	const authClient = await AuthClient.create();
+	await authClient.login({
+		onSuccess: async () => console.log(await authClient.isAuthenticated()),
+		onError: (err) => console.log(err),
+		identityProvider: `http://r7inp-6aaaa-aaaaa-aaabq-cai.localhost:8000?#authorize`
+	});
 };
 
 const initSignInButton = () => {
-  const button = document.querySelector("button");
-  button.addEventListener("click", signIn, { passive: true });
+	const button = document.querySelector("button");
+	button.addEventListener("click", signIn, { passive: true });
 };
 
 const init = () => {
-  initSignInButton();
+	initSignInButton();
 };
 
 document.addEventListener("DOMContentLoaded", init);
@@ -111,19 +111,18 @@ To set up and start the worker, we add an additional function that creates a `Wo
 
 ```javascript
 const startWorker = () => {
-  const worker = 
-    new Worker(new URL('./worker.js', import.meta.url));
+	const worker = new Worker(new URL("./worker.js", import.meta.url));
 
-  worker.onmessage = ($event) => {
-    console.log("Window message", $event);
-  };
+	worker.onmessage = ($event) => {
+		console.log("Window message", $event);
+	};
 
-  worker.postMessage({msg: 'start'});
+	worker.postMessage({ msg: "start" });
 };
 
 const init = () => {
-  startWorker();
-  initSignInButton();
+	startWorker();
+	initSignInButton();
 };
 ```
 
@@ -131,7 +130,7 @@ If we deploy the solution to a local simulated network, we should be able to sig
 
 ![capture-d%E2%80%99e%CC%81cran-2022-10-08-a%CC%80-13.29.22.png](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/capture-d%E2%80%99e%CC%81cran-2022-10-08-a%CC%80-13.29.22.png?token=PDzwmLoijNmdCbHsGBhHk)
 
-* * *
+---
 
 ## 2. Use agent-js in the worker to get the identity
 
@@ -141,15 +140,15 @@ I like to provide both a "start" and "stop" options when I implement this type o
 let timer;
 
 self.onmessage = async ({ data }) => {
-  const { msg } = data;
+	const { msg } = data;
 
-  switch (msg) {
-    case "start":
-      start();
-      break;
-    case stop:
-      stop();
-  }
+	switch (msg) {
+		case "start":
+			start();
+			break;
+		case stop:
+			stop();
+	}
 };
 
 const stop = () => clearInterval(timer);
@@ -157,8 +156,8 @@ const stop = () => clearInterval(timer);
 const start = () => (timer = setInterval(call, 2000));
 
 const call = async () => {
-  // TODO: call the IC
-}
+	// TODO: call the IC
+};
 ```
 
 The "start" method instantiates a `setInterval` which will repeatedly call the function that queries the IC. In this particular function, we create an authentication client with agent-js to retrieve the identity of the user if signed in.
@@ -167,28 +166,28 @@ While the initialization look similar to what we commonly do on the UI side (kud
 
 ```javascript
 const call = async () => {
-  // Disable idle manager because web worker cannot access the window object of the UI
-  const authClient = await AuthClient.create({
-    idleOptions: {
-      disableIdle: true,
-      disableDefaultIdleCallback: true,
-    },
-  });
+	// Disable idle manager because web worker cannot access the window object of the UI
+	const authClient = await AuthClient.create({
+		idleOptions: {
+			disableIdle: true,
+			disableDefaultIdleCallback: true
+		}
+	});
 
-  const isAuthenticated = await authClient.isAuthenticated();
+	const isAuthenticated = await authClient.isAuthenticated();
 
-  if (!isAuthenticated) {
-    // User is not authenticated
-    return;
-  }
+	if (!isAuthenticated) {
+		// User is not authenticated
+		return;
+	}
 
-  const identity = authClient.getIdentity();
+	const identity = authClient.getIdentity();
 
-  // TODO: call the IC
+	// TODO: call the IC
 };
 ```
 
-* * *
+---
 
 ## 3. Call the IC
 
@@ -200,24 +199,22 @@ Because of the same limitation as in previous chapter, we have to provide a `hos
 const canisterId = process.env.ICWEBWORKER_BACKEND_CANISTER_ID;
 
 export const createActor = (canisterId, options) => {
-  const agent = new HttpAgent(options ? { ...options.agentOptions } : {});
+	const agent = new HttpAgent(options ? { ...options.agentOptions } : {});
 
-  // Fetch root key for certificate validation during development
-  if (process.env.NODE_ENV !== "production") {
-    agent.fetchRootKey().catch((err) => {
-      console.warn(
-        "Unable to fetch root key. Check to ensure that your local replica is running"
-      );
-      console.error(err);
-    });
-  }
+	// Fetch root key for certificate validation during development
+	if (process.env.NODE_ENV !== "production") {
+		agent.fetchRootKey().catch((err) => {
+			console.warn("Unable to fetch root key. Check to ensure that your local replica is running");
+			console.error(err);
+		});
+	}
 
-  // Creates an actor with using the candid interface and the HttpAgent
-  return Actor.createActor(idlFactory, {
-    agent,
-    canisterId,
-    ...(options ? options.actorOptions : {}),
-  });
+	// Creates an actor with using the candid interface and the HttpAgent
+	return Actor.createActor(idlFactory, {
+		agent,
+		canisterId,
+		...(options ? options.actorOptions : {})
+	});
 };
 ```
 
@@ -225,14 +222,12 @@ Once copied, we instantiate the actor and effectively perform the call.
 
 ```javascript
 const query = async ({ identity }) => {
-  const actor = createActor(canisterId, {
-    agentOptions: { identity, 
-      host: `http://${canisterId}.localhost:8000/` 
-    },
-  });
-  const greeting = await actor.greet();
+	const actor = createActor(canisterId, {
+		agentOptions: { identity, host: `http://${canisterId}.localhost:8000/` }
+	});
+	const greeting = await actor.greet();
 
-  // TODO: transfer results to UI
+	// TODO: transfer results to UI
 };
 ```
 
@@ -260,7 +255,7 @@ actor {
 
 It is a simple update method that increments a counter and returns "Hello", the caller principal ID as text and the incremented value.
 
-* * *
+---
 
 ## 4. Transfer the results to the UI
 
@@ -268,14 +263,13 @@ Now that we have obtained data from the IC, we can apply these to re-render the 
 
 ```javascript
 const query = async ({ identity }) => {
-  const actor = createActor(canisterId, {
-    agentOptions: { identity, 
-      host: `http://${canisterId}.localhost:8000/` },
-  });
-  const greeting = await actor.greet();
+	const actor = createActor(canisterId, {
+		agentOptions: { identity, host: `http://${canisterId}.localhost:8000/` }
+	});
+	const greeting = await actor.greet();
 
-  // Transfer data worker -> window / UI
-  postMessage({ msg: "result", greeting });
+	// Transfer data worker -> window / UI
+	postMessage({ msg: "result", greeting });
 };
 ```
 
@@ -283,15 +277,13 @@ In the first chapter we have already declared a listener for the messages receiv
 
 ```javascript
 // In index.js - in the view
-worker.onmessage = ({data}) => {
-    const {msg, greeting} = data;
+worker.onmessage = ({ data }) => {
+	const { msg, greeting } = data;
 
-    switch (msg) {
-        case 'result':
-        document
-          .querySelector("textarea").value 
-            += `${greeting}\n`;
-    }
+	switch (msg) {
+		case "result":
+			document.querySelector("textarea").value += `${greeting}\n`;
+	}
 };
 ```
 
@@ -299,7 +291,7 @@ Above code snippet appends the data - the results provided by the worker, the da
 
 ![icwebworker.gif](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/icwebworker.gif?token=ydvGykqt737dhu_kPIuQV)
 
-* * *
+---
 
 ## Summary
 

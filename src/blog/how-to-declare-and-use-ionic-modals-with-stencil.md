@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/how-to-declare-and-use-ionic-moda
 
 ![](https://cdn-images-1.medium.com/max/1600/1*MUxo-oCL6aB0QEjOH8AU3A.png)
 
-*Photo by [Tirza van Dijk](https://unsplash.com/@tirzavandijk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Tirza van Dijk](https://unsplash.com/@tirzavandijk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I am sharing [one trick a day](https://medium.com/@david.dalbusco/one-trick-a-day-d-34-469a0336a07e) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twenty-nine** days left until hopefully better days.
 
-*****
+---
 
 This week on Slack, we discussed the usage of [Ionic](https://ionicframework.com) modals in [Stencil](https://stenciljs.com) apps. I shared the solution we have implemented in all applications of [DeckDeckGo](https://deckdeckgo.com), our open source editor for presentations, and it seemed to do the trick.
 
@@ -22,7 +22,7 @@ Even though the related Ionic Modal documentation is self explanatory and really
 
 That’s why, all in all, I thought I can share an article about this particular subject.
 
-*****
+---
 
 ### Controllers
 
@@ -30,7 +30,7 @@ Probably the major difference in terms of usage, if you compare to Ionic for Rea
 
 For having tested all flavors (except Vue) of Ionic, this is still my favorite solution because I feel more comfortable with, but I’m not sure it will remains like this in the future as, if I understand correctly, many developers including some of the team itself rather like the other solution, without controllers. Therefore, if you read this article in a late future, check first if these still exists or not 😉.
 
-*****
+---
 
 ### Create A Modal
 
@@ -54,7 +54,7 @@ export class AppRemoteConnect {
 }
 ```
 
-*****
+---
 
 ### Open A Modal
 
@@ -97,7 +97,7 @@ If everything went according plan, once started and opened, it should looks like
 
 ![](https://cdn-images-1.medium.com/max/1600/1*oi7_UdlrP21Wuwm5UyB4mw.png)
 
-*****
+---
 
 ### Close A Modal
 
@@ -117,7 +117,7 @@ export class AppRemoteConnect {
   @Element() el: HTMLElement;
 
   async closeModal() {
-    await (this.el.closest('ion-modal') as 
+    await (this.el.closest('ion-modal') as
            HTMLIonModalElement).dismiss();
   }
 
@@ -144,7 +144,7 @@ Again, if everything went fine, a close button in the header should now be displ
 
 ![](https://cdn-images-1.medium.com/max/1600/1*ZV2OKs1bzf6eqI0SJnR9jg.png)
 
-*****
+---
 
 #### Hardware Back Button Support
 
@@ -163,7 +163,7 @@ async handleHardwareBackButton(_e: PopStateEvent) {
 }
 ```
 
-*****
+---
 
 #### Backdrop Dismiss
 
@@ -176,7 +176,7 @@ const modal: HTMLIonModalElement = await modalController.create({
 });
 ```
 
-*****
+---
 
 ### Passing Parameters
 
@@ -196,7 +196,7 @@ import {Component, Element, h, Listen, Prop} from '@stencil/core';
 })
 export class AppRemoteConnect {
   @Element() el: HTMLElement;
-  
+
   @Prop()
   greetings: string;
 
@@ -251,7 +251,7 @@ Nothing more, nothing left, really easy. I like such solution.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*t5Ri1zehrQLJSVRHnt529w.png)
 
-*****
+---
 
 #### Modal To Page
 
@@ -309,7 +309,7 @@ export class AppHome {
   render() {
     return (
       <ion-content>
-        <ion-button onClick={() => this.openModal()} 
+        <ion-button onClick={() => this.openModal()}
                     color="primary">
           <ion-label>Open Modal</ion-label>
         </ion-button>
@@ -327,13 +327,13 @@ I used a state as demonstration purpose in order to render the results.
 
 Note that you can use both primitives types, complex objects, callbacks or events as parameters.
 
-*****
+---
 
 ### Cherry On The Cake
 
 It works exactly the same with `popovers.`
 
-*****
+---
 
 ### See It In Action
 

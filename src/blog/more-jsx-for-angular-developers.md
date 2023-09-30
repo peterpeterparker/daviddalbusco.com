@@ -10,17 +10,17 @@ canonical: "https://medium.com/@david.dalbusco/more-jsx-for-angular-developers-9
 
 ![](https://cdn-images-1.medium.com/max/1600/1*3SoWAzehzRTddHWjP-apUg.png)
 
-*Photo by [Luyi Yang](https://unsplash.com/@louieomelet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Luyi Yang](https://unsplash.com/@louieomelet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Fifteen** days left until hopefully better days.
 
-*****
+---
 
 It is Saturday, I cleaned my flat, I could begin the writing of my today’s challenge blog post 😉.
 
 Yesterday I published a brief introduction to [JSX for Angular Developers](https://daviddalbusco.com/blog/jjsx-for-angular-developers). When I was about to finish writing, I noticed that there were still some materials which can be presented, that’s why I follow up with some more information regarding [JSX](https://reactjs.org/docs/glossary.html#jsx), the syntax extension to JavaScript.
 
-*****
+---
 
 ### Data Binding
 
@@ -50,25 +50,25 @@ render() {
 }
 ```
 
-Funny thing, you will not use `class` to define such in [React](https://reactjs.org) but rather `className` . 
+Funny thing, you will not use `class` to define such in [React](https://reactjs.org) but rather `className` .
 
 ```javascript
 return (
-    <>
-        {renderLabel()}
+	<>
+		{renderLabel()}
 
-        <MyComponent count={props.count}></MyComponent>
-    </>
+		<MyComponent count={props.count}></MyComponent>
+	</>
 );
 
 function renderLabel() {
-    const myClass = props.count > 1 ? 'danger' : undefined;
+	const myClass = props.count > 1 ? "danger" : undefined;
 
-    return <div className={myClass}>{props.count}</div>
+	return <div className={myClass}>{props.count}</div>;
 }
 ```
 
-*****
+---
 
 ### Loops
 
@@ -92,7 +92,7 @@ render() {
 }
 ```
 
-*****
+---
 
 ### Content Projection
 
@@ -108,8 +108,8 @@ Doing so, the component becomes more reusable as it is possible to use it with s
 
 ```html
 <app-my-component>
-  <h1 start>Hello</h1>
-  <h2 end>World</h2>
+	<h1 start>Hello</h1>
+	<h2 end>World</h2>
 </app-my-component>
 ```
 
@@ -128,8 +128,8 @@ They can be use “anywhere”, with or without any modern frontend framework. T
 
 ```javascript
 <my-component>
-  <h1 slot="start">Hello</h1>
-  <h2 slot="end">World</h2>
+	<h1 slot="start">Hello</h1>
+	<h2 slot="end">World</h2>
 </my-component>
 ```
 
@@ -152,7 +152,7 @@ const MyComponent: React.FC<MyProps> = (props: MyProps) => {
 export default MyComponent;
 ```
 
-*****
+---
 
 ### Events
 
@@ -170,7 +170,7 @@ render() {
 }
 ```
 
-*****
+---
 
 ### Summary
 
@@ -178,4 +178,4 @@ My two blog posts were really light introductions to JSX and I am pretty sure th
 
 Stay home, stay safe!
 
-David 
+David

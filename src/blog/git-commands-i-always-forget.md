@@ -10,22 +10,21 @@ canonical: "https://medium.com/@david.dalbusco/git-commands-i-always-forget-24cb
 
 ![](https://cdn-images-1.medium.com/max/1600/1*9xilCpCgG-BqhOICl-zNCg.png)
 
-*Photo by [Jonatan Lewczuk](https://unsplash.com/@jonny_lew?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Jonatan Lewczuk](https://unsplash.com/@jonny_lew?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the original scheduled date of the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Three** days left until this first milestone. Hopefully better days are ahead.
 
-*****
+---
 
 When it comes to [Git](https://git-scm.com/), I probably rely too much on its really well-made integration of my editor, [WebStorm](https://www.jetbrains.com/webstorm/). This has for consequence, that I sometimes forget useful commands, even simple ones, which I only have rarely to run in my terminal.
 
 That’s why I am sharing this blog post mostly for my future self 😅.
 
-*****
+---
 
 ### Revert Last Commit
 
 To revert your last commit if it has not been pushed yet, you can rewind the history from a step back with the help of the `reset` command.
-
 
 However, if your commit has already been pushed, you can preserve your history and run a `revert` command (where `eec47301` is the revision number of the commit to revert which can be found for example with the help of the `git log` command) followed by a commit and push.
 
@@ -41,7 +40,7 @@ git reset --hard eec47301
 
 Needless to say, it has to be use wisely.
 
-*****
+---
 
 ### Change Last Commit Message
 
@@ -57,7 +56,7 @@ If your commit has not been pushed yet, nothing else to do. To the contrary, if 
 git push --force
 ```
 
-*****
+---
 
 ### Change Multiple Commit Messages
 
@@ -123,17 +122,17 @@ At this point our history is locally rewritten but not yet updated in our repo, 
 git push --force
 ```
 
-*****
+---
 
 ### Abort Rebase
 
-If you would face problems while running the above process, you would  be able to cancel the rebase operation using `--abort`.
+If you would face problems while running the above process, you would be able to cancel the rebase operation using `--abort`.
 
 ```bash
 git rebase --abort
 ```
 
-*****
+---
 
 ### Abort Merge
 
@@ -143,7 +142,7 @@ Speaking of abort, it is also possible to quit a merge while using the same opti
 git merge --abort
 ```
 
-*****
+---
 
 ### Delete A Tag
 
@@ -157,7 +156,7 @@ If you would like to remove such tags, you can do so with the help of a Git push
 git push --delete origin v0.0.1
 ```
 
-*****
+---
 
 ### Summary
 

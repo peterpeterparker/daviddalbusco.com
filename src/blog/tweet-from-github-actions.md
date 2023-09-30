@@ -10,7 +10,7 @@ canonical: "https://daviddalbusco.medium.com/tweet-from-github-actions-e289de589
 
 ![](https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg)
 
-*Photo by [Ravi Sharma](https://unsplash.com/@ravinepz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Ravi Sharma](https://unsplash.com/@ravinepz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I launched recently [DiscoverWeekly.dev](https://discoverweekly.dev/) a website that shares each Wednesday the new music playlists made by the developers.
 
@@ -18,7 +18,7 @@ To spread the information and let people subscribe, in addition to a RSS feed, I
 
 Here is how you can also create a Twitter Bot that runs periodically in GitHub Actions.
 
-*****
+---
 
 ### Twitter API
 
@@ -40,7 +40,7 @@ Finally, under “Keys and Tokens”, generate all “Access token & secret”.
 
 Note that if you have generated your secrets before requesting the "read & write" permission, you have to regenerate your secrets.
 
-*****
+---
 
 ### Library
 
@@ -52,7 +52,7 @@ That is why we are adding the [twitter-api-client](https://github.com/FeedHive/t
 npm i twitter-api-client --save-dev
 ```
 
-*****
+---
 
 ### Twitter Bot
 
@@ -63,28 +63,27 @@ In order to not expose publicly the tokens we have created previously, we are ac
 Finally, in following example, the tweet is a constant message. As any tweet, should be maximal 280 characters long, can tag usernames and point to Url.
 
 ```javascript
-const {TwitterClient} = require('twitter-api-client');
+const { TwitterClient } = require("twitter-api-client");
 
 const tweet = async (status) => {
-  const twitterClient = new TwitterClient({
-    apiKey: process.env.TWITTER_API_KEY,
-    apiSecret: process.env.TWITTER_API_SECRET,
-    accessToken: process.env.TWITTER_API_ACCESS_TOKEN,
-    accessTokenSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
-  });
+	const twitterClient = new TwitterClient({
+		apiKey: process.env.TWITTER_API_KEY,
+		apiSecret: process.env.TWITTER_API_SECRET,
+		accessToken: process.env.TWITTER_API_ACCESS_TOKEN,
+		accessTokenSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+	});
 
-  await twitterClient.tweets.statusesUpdate({status});
+	await twitterClient.tweets.statusesUpdate({ status });
 };
 
 (async () => {
-  try {
-    const myTweet = 
-          `Checkout @discoverweekly_ https://discoverweekly.dev`;
+	try {
+		const myTweet = `Checkout @discoverweekly_ https://discoverweekly.dev`;
 
-    await tweet(myTweet);
-  } catch (err) {
-    console.error(err);
-  }
+		await tweet(myTweet);
+	} catch (err) {
+		console.error(err);
+	}
 })();
 ```
 
@@ -96,7 +95,7 @@ To run the Bot, we add a related `scripts` target in our `package.json` .
 },
 ```
 
-*****
+---
 
 ### Environment Variables
 
@@ -104,7 +103,7 @@ To make our tokens and secrets, we are handling through environment variables, a
 
 ![](https://cdn-images-1.medium.com/max/1600/1*p_SW7X4ifZ0tiONf0PsEDA.png)
 
-*****
+---
 
 ### GitHub Actions
 
@@ -129,7 +128,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: "14.x"
       - name: Install Dependencies
         run: npm ci
       - name: Run Twitter bot
@@ -141,7 +140,7 @@ jobs:
           TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
 ```
 
-*****
+---
 
 ### Summary
 

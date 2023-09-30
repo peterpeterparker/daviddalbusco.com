@@ -35,7 +35,7 @@ const Tab1: React.FC = () => {
 
   const [items, setItems] = useState<string[]>([]);
 
-  const [disableInfiniteScroll, setDisableInfiniteScroll] = 
+  const [disableInfiniteScroll, setDisableInfiniteScroll] =
         useState<boolean>(false);
 
   return (
@@ -59,7 +59,7 @@ const Tab1: React.FC = () => {
 
 ### Fetch API
 
-A list of items also means  list of data. In our particular example, we are going to use the [Dog API](https://dog.ceo/dog-api/), which had become my favorite API for tutorial purpose, to fetch such information. This API is free, open source, don’t need any token and support CORS requests.
+A list of items also means list of data. In our particular example, we are going to use the [Dog API](https://dog.ceo/dog-api/), which had become my favorite API for tutorial purpose, to fetch such information. This API is free, open source, don’t need any token and support CORS requests.
 
 ```javascript
 async function fetchData() {
@@ -80,7 +80,7 @@ async function fetchData() {
 }
 ```
 
-*Note that this example doesn’t contain any pagination, as your real solution would. It just fetch 10 random dogs. Of course for that reason we might have duplicates in our list.*
+_Note that this example doesn’t contain any pagination, as your real solution would. It just fetch 10 random dogs. Of course for that reason we might have duplicates in our list._
 
 ### Loading Initial Data
 
@@ -113,10 +113,10 @@ async function searchNext($event: CustomEvent<void>) {
 Finally we are importing the Ionic Infinite Scroll components.
 
 ```javascript
-import {IonInfiniteScroll, IonInfiniteScrollContent} from '@ionic/react';
+import { IonInfiniteScroll, IonInfiniteScrollContent } from "@ionic/react";
 ```
 
-And rendering  these in our content as the following:
+And rendering these in our content as the following:
 
 ```html
 <IonInfiniteScroll threshold="100px"
@@ -138,7 +138,7 @@ If everything went according plan, once you run our application with the command
 
 ![](https://cdn-images-1.medium.com/max/1600/1*zOAnHKLkcqo0M7NMtVioQQ.gif)
 
-*So much doggos*
+_So much doggos_
 
 ### Filtering
 
@@ -149,7 +149,7 @@ const [filter, setFilter] = useState<string | undefined>(undefined);
 async function fetchData(reset?: boolean) {
   const dogs: string[] = reset ? [] : items;
   const url: string = filter ?
-        `https://dog.ceo/api/breed/${filter}/images/random/10` : 
+        `https://dog.ceo/api/breed/${filter}/images/random/10` :
         'https://dog.ceo/api/breeds/image/random/10';
 
   const res: Response = await fetch(url);
@@ -158,7 +158,7 @@ async function fetchData(reset?: boolean) {
       .then(async (res) => {
         if (res && res.message && res.message.length > 0) {
           setItems([...dogs, ...res.message]);
-  
+
           setDisableInfiniteScroll(res.message.length < 10);
         } else {
           setDisableInfiniteScroll(true);
@@ -187,15 +187,16 @@ const Tab1: React.FC = () => {
 We import the Ionic buttons and labels.
 
 ```javascript
-import {IonButton, IonLabel} from '@ionic/react';
+import { IonButton, IonLabel } from "@ionic/react";
 ```
 
 And are finally using these components to trigger the filtering of the list of
 dogs with only dachshund.
 
 ```html
-<IonButton onClick={() => setFilter('dachshund')}>
-    <IonLabel>Filter</IonLabel>
+<IonButton onClick="{()" ="">
+	setFilter('dachshund')}>
+	<IonLabel>Filter</IonLabel>
 </IonButton>
 ```
 
@@ -209,7 +210,7 @@ If you run the application again, you should now be able to filter the list with
 
 ![](https://cdn-images-1.medium.com/max/1600/1*dCTUxVxI8yfkxGsqtV0baA.gif)
 
-*So much dachshund*
+_So much dachshund_
 
 ### Cherry on the cake 🍒🎂
 

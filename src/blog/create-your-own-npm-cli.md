@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/create-your-own-npm-cli-fbe9e3d4f
 
 ![](https://cdn-images-1.medium.com/max/1600/1*QchuRONVGccKfb0imrxMig.png)
 
-*Photo by [Michele Feola](https://unsplash.com/@smikefeola?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Michele Feola](https://unsplash.com/@smikefeola?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until (probably not) the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Fourteen** days left until hopefully better days.
 
-*****
+---
 
 If you rather like to develop your slides with our developer kit rather than with our [online editor](https://deckdeckgo.com) for presentations, there is a good change that you are going to begin your journey by running the command `npm init deckdeckgo` in your terminal.
 
@@ -22,7 +22,7 @@ In this article I share how to create a [npm](https://www.npmjs.com) CLI command
 
 Note that this article as our Cli is more than inspired by the amazing [Stencil’s Cli](https://github.com/ionic-team/create-stencil).
 
-*****
+---
 
 ### NPM Init
 
@@ -34,7 +34,7 @@ In order to create such tool, we have to create and publish a project, our Cli i
 
 For example, our project’s name is `DeckDeckGo`, therefore the related Cli project’s name is `create-deckdeckgo` . Doing so, each time someone runs `npm init deckdeckgo` in his/her terminal, npm performs a lookup for a related `create-` project and if found, download it locally and runs the main function.
 
-*****
+---
 
 ### Create A New Cli Project
 
@@ -50,36 +50,34 @@ We then define a `package.json` which, furthermore than defining the entry point
 
 ```json
 {
-  "name": "create-hello",
-  "version": "1.0.0",
-  "main": "dist/index.js",
-  "scripts": {
-    "start": "node dist/index.js",
-    "build.tsc": "tsc",
-    "build.bundle": "rollup -c",
-    "minify": "terser --compress --mangle --toplevel --output dist/index.js -- dist/index.js",
-    "build": "npm run build.tsc && npm run build.bundle && npm run minify",
-    "build.dev": "npm run build.tsc && npm run build.bundle",
-    "dev": "npm run build.dev && npm start",
-    "version": "npm build"
-  },
-  "files": [
-    "dist/index.js"
-  ],
-  "bin": {
-    "create-hello": "dist/index.js"
-  },
-  "devDependencies": {
-    "rollup": "^2.3.3",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "terser": "^4.6.10",
-    "tslint": "^6.1.1",
-    "tslint-ionic-rules": "0.0.21",
-    "typescript": "^3.8.3"
-  },
-  "dependencies": {}
+	"name": "create-hello",
+	"version": "1.0.0",
+	"main": "dist/index.js",
+	"scripts": {
+		"start": "node dist/index.js",
+		"build.tsc": "tsc",
+		"build.bundle": "rollup -c",
+		"minify": "terser --compress --mangle --toplevel --output dist/index.js -- dist/index.js",
+		"build": "npm run build.tsc && npm run build.bundle && npm run minify",
+		"build.dev": "npm run build.tsc && npm run build.bundle",
+		"dev": "npm run build.dev && npm start",
+		"version": "npm build"
+	},
+	"files": ["dist/index.js"],
+	"bin": {
+		"create-hello": "dist/index.js"
+	},
+	"devDependencies": {
+		"rollup": "^2.3.3",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-json": "^4.0.0",
+		"rollup-plugin-node-resolve": "^5.2.0",
+		"terser": "^4.6.10",
+		"tslint": "^6.1.1",
+		"tslint-ionic-rules": "0.0.21",
+		"typescript": "^3.8.3"
+	},
+	"dependencies": {}
 }
 ```
 
@@ -87,25 +85,23 @@ Using TypeScript means defining a `tsconfig.json` :
 
 ```json
 {
-  "compilerOptions": {
-    "moduleResolution": "node",
-    "target": "es2015",
-    "allowJs": true,
-    "module": "es2015",
-    "lib": ["es2015"],
-    "strict": true,
-    "noEmitOnError": false,
-    "sourceMap": false,
-    "declaration": false,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "outDir": "dist/src",
-    "strictNullChecks": false
-  },
-  "files": [
-    "src/index.ts"
-  ]
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"target": "es2015",
+		"allowJs": true,
+		"module": "es2015",
+		"lib": ["es2015"],
+		"strict": true,
+		"noEmitOnError": false,
+		"sourceMap": false,
+		"declaration": false,
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"outDir": "dist/src",
+		"strictNullChecks": false
+	},
+	"files": ["src/index.ts"]
 }
 ```
 
@@ -113,54 +109,56 @@ And some linter rules:
 
 ```json
 {
-  "extends": "tslint-ionic-rules",
-  "rules": {
-    "no-conditional-assignment": false,
-    "no-non-null-assertion": false,
-    "no-unnecessary-type-assertion": false,
-    "prefer-for-of": false,
-    "no-import-side-effect": false,
-    "ordered-imports": [true, {
-      "named-imports-order": "lowercase-last"
-    }]
-  }
+	"extends": "tslint-ionic-rules",
+	"rules": {
+		"no-conditional-assignment": false,
+		"no-non-null-assertion": false,
+		"no-unnecessary-type-assertion": false,
+		"prefer-for-of": false,
+		"no-import-side-effect": false,
+		"ordered-imports": [
+			true,
+			{
+				"named-imports-order": "lowercase-last"
+			}
+		]
+	}
 }
 ```
 
 Finally we also need to setup our Rollup build, notably in order to be able to run commands which interact with the file system. Not the goal from this article but might be useful if we would like to create a real Cli which has for goal to create new fresh local projects.
 
 ```javascript
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import json from 'rollup-plugin-json';
+import resolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs";
+import json from "rollup-plugin-json";
 
 export default {
-    input: 'dist/src/index.js',
-    output: {
-        file: 'dist/index.js',
-        format: 'cjs',
-        strict: false,
-        banner: '#! /usr/bin/env node\n',
-    },
-    plugins: [resolve(), json(),
-              commonjs({include: 'node_modules/**'})],
-    external: [
-        'child_process',
-        'fs',
-        'path',
-        'os',
-        'https',
-        'readline',
-        'zlib',
-        'events',
-        'stream',
-        'util',
-        'buffer'
-    ]
+	input: "dist/src/index.js",
+	output: {
+		file: "dist/index.js",
+		format: "cjs",
+		strict: false,
+		banner: "#! /usr/bin/env node\n"
+	},
+	plugins: [resolve(), json(), commonjs({ include: "node_modules/**" })],
+	external: [
+		"child_process",
+		"fs",
+		"path",
+		"os",
+		"https",
+		"readline",
+		"zlib",
+		"events",
+		"stream",
+		"util",
+		"buffer"
+	]
 };
 ```
 
-*****
+---
 
 ### Code Your Cli
 
@@ -168,7 +166,7 @@ Everything is in place we can now develop our Cli. As staten above, nothing more
 
 ```javascript
 async function run() {
-    console.log('Hello World');
+	console.log("Hello World");
 }
 
 run();
@@ -184,19 +182,19 @@ If everything works as expected, you should notice a “Hello World” printed o
 
 ![](https://cdn-images-1.medium.com/max/1600/1*YvNBHjvEjfv0dzCuZKE_Cw.png)
 
-*****
+---
 
 ### Publish Your Cli
 
 Even if it does nothing much yet, we are actually already able to publish our Cli to npm ( `npm publish` ). If we would do so and once successfully published, everyone everywhere running `npm init hello` would then be able to print out “Hello World” in his/her terminal 😉.
 
-*****
+---
 
 ### Going Further
 
 Here’s a couple of things you might found interesting if you plan to develop your own Cli “for real”.
 
-*****
+---
 
 #### Arguments
 
@@ -204,17 +202,16 @@ We might want to listen to some arguments ( `args` ). Commonly, we might be look
 
 ```javascript
 function run() {
-    const args = process.argv.slice(2);
+	const args = process.argv.slice(2);
 
-    const help = args.indexOf('--help') >= 0 || 
-                 args.indexOf('-h') >= 0;
+	const help = args.indexOf("--help") >= 0 || args.indexOf("-h") >= 0;
 
-    if (help) {
-        console.log('Run your command without arguments.');
-        return;
-    }
+	if (help) {
+		console.log("Run your command without arguments.");
+		return;
+	}
 
-    console.log('Hello World');
+	console.log("Hello World");
 }
 
 run();
@@ -224,17 +221,17 @@ We can test the above while running the command line `npm run build && npm run s
 
 ![](https://cdn-images-1.medium.com/max/1600/1*pW72fAU534R3ujl3fusJfg.png)
 
-*****
+---
 
 #### Colors
 
 Life without colors is sad 😥. Let’s use [Colorette](https://github.com/jorgebucaran/colorette) ( `npm install colorette --save` ) to brighten our “Hello World”.
 
 ```javascript
-import {magenta} from 'colorette';
+import { magenta } from "colorette";
 
 function run() {
-    console.log(magenta('Hello World'));
+	console.log(magenta("Hello World"));
 }
 
 run();
@@ -244,7 +241,7 @@ Have a look to this beautiful magenta color, isn’t that more user friendly hap
 
 ![](https://cdn-images-1.medium.com/max/1600/1*C1WKqoLBbBty0UbOvf7vqQ.png)
 
-*****
+---
 
 #### Interactive Command Line
 
@@ -280,7 +277,7 @@ Obviously if I run the above I will answer yes 😁.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*1YsJnUuPSaca7PFp3wHhlQ.png)
 
-*****
+---
 
 #### Effectively Creating A Project
 
@@ -288,11 +285,11 @@ If you are looking to create your own Cli there is a chance that your goal is to
 
 ```javascript
 function createProject() {
-    downloadFromGitHub();
+	downloadFromGitHub();
 
-    installDependencies();
+	installDependencies();
 
-    updateLocalValues();
+	updateLocalValues();
 }
 ```
 
@@ -304,7 +301,7 @@ Finally, as we copy or clone a projects, we might want to update some variables 
 
 To process all these steps, checkout or clone our [repo](https://github.com/deckgo/deckdeckgo/tree/master/cli).
 
-*****
+---
 
 ### Summary
 

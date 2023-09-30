@@ -9,7 +9,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*lTN15RS0mfGtXUAQF5RVJQ.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*lTN15RS0mfGtXUAQF5RVJQ.jpeg)
 
-*Photo by [timJ](https://unsplash.com/@the_roaming_platypus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/dialog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [timJ](https://unsplash.com/@the_roaming_platypus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/dialog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I’m having fun with [Ionic React](https://ionicframework.com/docs/react) these days and therefore experimenting different components. One of these, which I use almost without exceptions in any applications, is the modal. Although its dedicated [documentation](https://ionicframework.com/docs/api/modal) is pretty neat, I went a bit further, as I like to declare them in their own separate components. That’s why I’m writing this new blog post.
 
@@ -44,31 +44,31 @@ export const Tab1: React.FC = () => {
 export default Tab1;
 ```
 
-*Note that I have used the *`tab`* starter kit to develop this article, that’s why the above page’s name is *`Tab1`* .*
+_Note that I have used the _`tab`_ starter kit to develop this article, that’s why the above page’s name is _`Tab1`_ ._
 
 ### Create A Component
 
 Modals could quickly become as complicated as pages, that’s why, I am used to declare them in their own components. Let’s then try to create a new one in a separate new file, called for example `MyModal.tsx` .
 
 ```javascript
-import React from 'react';
-import {IonHeader, IonContent, IonToolbar, IonTitle} from '@ionic/react';
+import React from "react";
+import { IonHeader, IonContent, IonToolbar, IonTitle } from "@ionic/react";
 
 class MyModal extends React.Component {
-
-  render() {
-    return <>
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle>My Modal</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding">
-        <p>This is the modal content.</p>
-      </IonContent>
-    </>
-  };
-
+	render() {
+		return (
+			<>
+				<IonHeader>
+					<IonToolbar color="primary">
+						<IonTitle>My Modal</IonTitle>
+					</IonToolbar>
+				</IonHeader>
+				<IonContent className="ion-padding">
+					<p>This is the modal content.</p>
+				</IonContent>
+			</>
+		);
+	}
 }
 
 export default MyModal;
@@ -109,7 +109,7 @@ export default Tab1;
 
 Super, we achieved the first step, we have now a modal declared in a separate component. But, in our above example, the action to close the modal, respectively the `IonButton` button which sets the display state to `false`, is still rendered outside of our component which is a bit unfortunate in term of design, as, I think, it’s quite common to render such an action in the header of the modal itself.
 
-In order to move this button into the modal, I actually found two possible solutions. One with the use of a `callback` , probably the cleanest one, and another one using `references`. 
+In order to move this button into the modal, I actually found two possible solutions. One with the use of a `callback` , probably the cleanest one, and another one using `references`.
 
 There might be more and I would be really happy to hear about them. Therefore please, ping me with your comments and thank you in advance for your shares 👋
 
@@ -153,7 +153,7 @@ export default ({closeAction}: { closeAction: Function }) => (
 )
 ```
 
-Once the component modified, we  could create a new function (in our page) to set the display state to `false` and pass it as callback to our component. 
+Once the component modified, we could create a new function (in our page) to set the display state to `false` and pass it as callback to our component.
 
 ```javascript
 import React, {useState} from 'react';
@@ -200,7 +200,7 @@ class MyModal extends React.Component {
     if (!this.headerRef || !this.headerRef.current) {
       return;
     }
-    await (this.headerRef.current.closest('ion-modal') as 
+    await (this.headerRef.current.closest('ion-modal') as
                 HTMLIonModalElement).dismiss();
   }
 
@@ -227,7 +227,7 @@ class MyModal extends React.Component {
 export default MyModal;
 ```
 
-The above method has for effect that our  `state` , used in our page for the display purpose, might end up not being synced anymore with the effective state of the modal, as we closed it using the DOM. To overcome this situation, we could sync the information after the dialog has been dismissed.
+The above method has for effect that our `state` , used in our page for the display purpose, might end up not being synced anymore with the effective state of the modal, as we closed it using the DOM. To overcome this situation, we could sync the information after the dialog has been dismissed.
 
 ```javascript
 import React, {useState} from 'react';
@@ -258,7 +258,7 @@ export default Tab1;
 
 But unfortunately this method has a drawback. As we are modifying the state to synchronize it, our component is going to be “rerendered”. Therefore it is a bit less performant than the solution with `callback` and that’s why I found this first solution cleaner.
 
-*Side note: I spent several hours yesterday evening trying without success to wrap `shouldComponentUpdate` respectively `React.Memo` around the modal component in order to not render the page again when the state is modified after the modal is dismissed. It is probably possible and again I’ll be happy to hear any tips about this too 😉*
+_Side note: I spent several hours yesterday evening trying without success to wrap `shouldComponentUpdate` respectively `React.Memo` around the modal component in order to not render the page again when the state is modified after the modal is dismissed. It is probably possible and again I’ll be happy to hear any tips about this too 😉_
 
 #### Post Publication Update
 

@@ -11,7 +11,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*MTFh-iQIpiz6mfzB93SWkA.jpeg"
 
 Last week I wanted to add a blog to my [Angular](https://angular.io/) Universal website, but I didn’t wanted to implement a complex solution and spend to much time on it. Neither did I wanted to add a CMS or even store the articles in a database. That’s why I came up, I think, with a pretty handy, for not saying dumb simple, solution with the implementation of a blog based on [markdown](https://en.wikipedia.org/wiki/Markdown) files 🚀
 
-*Before going further: If you are looking to implement a blog, you are looking to share your stories but you are also most probably looking to make your website more SEO friendly. Therefore, I assume that you already have implemented an [Angular SSR](https://github.com/angular/universal-starter) website. If not, I would really advise you to have a look to that particular topic and if you do have, don’t miss the very last chapter of this article, a kind of hack is needed in order to load the resources correctly on the backend side*
+_Before going further: If you are looking to implement a blog, you are looking to share your stories but you are also most probably looking to make your website more SEO friendly. Therefore, I assume that you already have implemented an [Angular SSR](https://github.com/angular/universal-starter) website. If not, I would really advise you to have a look to that particular topic and if you do have, don’t miss the very last chapter of this article, a kind of hack is needed in order to load the resources correctly on the backend side_
 
 ### Installation
 
@@ -25,15 +25,15 @@ npm install ngx-markdown --save
 
 As I said above, the idea is to use markdown files as sources for the blog. In this solution I ship the files within the app, placing them under the `assets` folder
 
-* assets > blog > blog.md: the list of blog entries
-* assets > blog > post > *.md: the articles (= blog posts) themselves
+- assets > blog > blog.md: the list of blog entries
+- assets > blog > post > \*.md: the articles (= blog posts) themselves
 
 ### Routes
 
 For this solution we will need to add two routes to our website
 
-* A route “/blog” which will display a list of all articles
-* A route “/blog/post/name-of-the-article” which will display a particular blog post. In this route example the blog post name is “name-of-the-article”
+- A route “/blog” which will display a list of all articles
+- A route “/blog/post/name-of-the-article” which will display a particular blog post. In this route example the blog post name is “name-of-the-article”
 
 I did group all routes under the same “blog” path, therefore the structure will look like the following once implemented
 
@@ -50,7 +50,7 @@ First of all, we create a main `blog.module.ts` which will route the submodules 
     RouterModule.forChild([
       {path: '', pathMatch: 'full',
                loadChildren: './blog/blog-view.module#BlogViewModule'},
-      {path: 'post', 
+      {path: 'post',
                loadChildren: './post/blog-post-view.module#BlogPostViewModule'},
     ]),
     MarkdownModule.forRoot()

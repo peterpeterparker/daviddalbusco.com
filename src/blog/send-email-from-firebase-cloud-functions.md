@@ -10,7 +10,7 @@ canonical: "https://medium.com/@david.dalbusco/send-email-from-firebase-cloud-fu
 
 ![](https://cdn-images-1.medium.com/max/1600/1*dsCLua-wdb1qDvvAfz8MmA.jpeg)
 
-*Photo by [Volodymyr Hryshchenko](https://unsplash.com/@lunarts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Volodymyr Hryshchenko](https://unsplash.com/@lunarts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 As you can probably imagine, at [DeckDeckGo](https://deckdeckgo.com), we do not have any collaborator who check that the publicly, published, slides have descent content. Neither do we have implemented a machine learning robot which would do so, yet.
 
@@ -18,7 +18,7 @@ I am taking care of such a task manually. I have to add, it makes me happy to do
 
 Nevertheless, I have to be informed, when such decks are published. That’s why I have implemented a [Firebase Cloud Functions](https://firebase.google.com/docs/functions) to send my self an email with all the information I need to quickly review the new content.
 
-*****
+---
 
 ### Setup A New Cloud Function
 
@@ -26,19 +26,18 @@ I assume you already have a Firebase project and, also have already created some
 
 Moreover, note that I am using [TypeScript](https://www.typescriptlang.org/).
 
-*****
+---
 
 ### Let’s Get Started
 
 A function needs a trigger, that’s why we are registering a function in `index.ts` on a collection called, for example, `demo` (of course your collection can have a different name).
 
 ```javascript
-import * as functions from 'firebase-functions';
+import * as functions from "firebase-functions";
 
-export const watchCreate =
-       functions.
-       firestore.
-       document('demo/{demoId}').onCreate(onCreateSendEmail);
+export const watchCreate = functions.firestore
+	.document("demo/{demoId}")
+	.onCreate(onCreateSendEmail);
 ```
 
 We can use any other triggers or lifecycle, not necessary the `create` one.
@@ -54,7 +53,7 @@ interface Demo {
 }
 
 async function onCreateSendEmail(
-                 snap: DocumentSnapshot, 
+                 snap: DocumentSnapshot,
                  _context: EventContext) {
   const demo: Demo = snap.data() as Demo;
 
@@ -66,7 +65,7 @@ async function onCreateSendEmail(
 }
 ```
 
-*****
+---
 
 ### Nodemailer
 
@@ -90,7 +89,7 @@ Furthermore, we also install its typings definition.
 npm install @types/nodemailer --save-dev
 ```
 
-*****
+---
 
 #### SMTP Transport
 
@@ -98,7 +97,7 @@ Nodemailer uses SMTP as the main transport to deliver messages. Therefore, your 
 
 You can find all options in the library [documentation](https://nodemailer.com/smtp/).
 
-*****
+---
 
 ### Configuration
 
@@ -108,7 +107,7 @@ Firebase offers such ability. We can create a script to `set` these.
 
 ```bash
 #!/bin/sh
-    
+
 firebase functions:config:set mail.from="hello@domain.com" mail.pwd="password" mail.to="david@domain.com" mail.host="mail.provider.com"
 ```
 
@@ -121,7 +120,7 @@ const mailTo: string = functions.config().mail.to;
 const mailHost: string = functions.config().mail.host;
 ```
 
-*****
+---
 
 ### Send Email
 
@@ -132,10 +131,10 @@ content, that’s why here too, we are using such a format.
 
 ```javascript
 const mailOptions = {
-  from: mailFrom,
-  to: mailTo,
-  subject: 'Hello World',
-  html: `<p>${demo.content}</p>`
+	from: mailFrom,
+	to: mailTo,
+	subject: "Hello World",
+	html: `<p>${demo.content}</p>`
 };
 ```
 
@@ -156,7 +155,7 @@ const transporter: Mail = nodemailer.createTransport({
 await transporter.sendMail(mailOptions);
 ```
 
-*****
+---
 
 ### Altogether
 
@@ -181,7 +180,7 @@ interface Demo {
 }
 
 async function onCreateSendEmail(
-                 snap: DocumentSnapshot, 
+                 snap: DocumentSnapshot,
                  _context: EventContext) {
   const demo: Demo = snap.data() as Demo;
 
@@ -216,7 +215,7 @@ async function onCreateSendEmail(
 }
 ```
 
-*****
+---
 
 ### Summary
 

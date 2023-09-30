@@ -14,13 +14,13 @@ It’s official, we are porting our web editor for slides, [DeckDeckGo](https://
 
 Thanks to the help of a second 25k USD grant from the DFINITY foundation, we will wrap up the work needed for running a beta version of DeckDeckGo on the Internet Computer ([sign up](https://eepurl.com/hKeMLD) to help us test it!).
 
-*****
+---
 
 ### Why?
 
 Of course getting grants is a strong motivation to use a new technology, but there are other reasons why we think this is the right move.
 
-*****
+---
 
 #### Decentralization
 
@@ -38,7 +38,7 @@ In addition, two days ago, Monday Oct. 4, Facebook suffered a massive blackout o
 
 Decentralization is no silver bullet, but these two recent incidents of major platforms showed me once again that the current model has its limits and comforts me in our decision.
 
-*****
+---
 
 #### Governance
 
@@ -48,7 +48,7 @@ According to certain criteria (see “neurons” in the linked source), it is po
 
 In other words, it is possible to become an actor and to get involved in the development of the network.
 
-*****
+---
 
 #### Open Source
 
@@ -56,13 +56,13 @@ We share our learnings through blog posts and our project’s **open source** co
 
 Using a technology and providers that share and live by the same values goes without saying.
 
-*****
+---
 
 #### GAFAM
 
 I originally intended to hit quite hard on the big tech in this chapter because I am convinced there is something viscerally rotten in their monopolistic influences on our life. Instead I will leave you with one simple question: do you really want to pay for services that send Jeff Bezos to space?
 
-*****
+---
 
 ### When?
 
@@ -72,7 +72,7 @@ Meanwhile, we are also planning to unleash in production a transitional version 
 
 Because we are planning no migration of the data, it will allow users to save their content to static files. The new version of the editor can open and save presentations to files as you would do with any desktop applications.
 
-*****
+---
 
 ### How?
 
@@ -80,7 +80,7 @@ To complete the proof of concept of porting DeckDeckGo on DFINITY's Internet Com
 
 In order to achieve our short-term goal, and to get our second grant 😜, we have defined the following two new milestones:
 
-*****
+---
 
 #### Milestone 4 — Assets
 
@@ -90,7 +90,7 @@ To create slides, users must be able to upload their assets (images and csv file
 
 This milestone is the re-implementation of a similar system on the Internet Computer using one or multiple canisters. As for the data, we aim to empower the ownership and privacy of the users’ content with a decentralized architecture.
 
-*****
+---
 
 #### Milestone 5 — Functions
 
@@ -98,7 +98,7 @@ Various features that interact with the Internet Computer through async canister
 
 In other words: our overall goal is to transform our editor in a way that user should not even notice that it is powered by a blockchain network, its usage should feel like using any other slick modern web application.
 
-*****
+---
 
 ### Future?
 
@@ -106,25 +106,25 @@ From day one and until today, DeckDeckGo has always been a side project. Even th
 
 However, as we are about to transition to a new network model that requires [cycles](https://sdk.dfinity.org/docs/developers-guide/concepts/tokens-cycles.html), which are used to pay for resource consumption, and have for goal to release kind of a unique tool, we do know have monetization in mind with nothing less than tokenization.
 
-*****
+---
 
 ### Further Reading?
 
 “Sharing is caring”, here is the list of blog posts I published since we started the project with the Internet Computer:
 
-* [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)
-* [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
-* [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
-* [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
-* [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
+- [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)
+- [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
+- [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
+- [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
+- [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
 
-*****
+---
 
 ### Keep In Touch
 
 To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️ and [sign up](https://eepurl.com/hKeMLD) to join the list of beta tester.
 
-*****
+---
 
 ### Conclusion
 

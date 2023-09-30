@@ -25,7 +25,7 @@ That’s why, I created [DiscoverWeekly.dev](https://discoverweekly.dev/), a pla
 <iframe width="280" height="158" src="https://www.youtube.com/embed/uohpcHeR_E8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 
-*****
+---
 
 ### Contributing
 
@@ -50,14 +50,14 @@ All details regarding these information and formatting are described in the [CON
 
 ```markdown
 ---
-date: '2021-02-23'
-name: 'David Dal Busco'
+date: "2021-02-23"
+name: "David Dal Busco"
 description: "Hello, I'm David, a freelance web developer 🤓"
-profile: 'https://pbs.twimg.com/profile_images/..._400x400.jpg'
-twitter: 'daviddalbusco'
-github: 'peterpeterparker'
-website: 'https://daviddalbusco.com/'
-tags: '#postmetal #electro'
+profile: "https://pbs.twimg.com/profile_images/..._400x400.jpg"
+twitter: "daviddalbusco"
+github: "peterpeterparker"
+website: "https://daviddalbusco.com/"
+tags: "#postmetal #electro"
 ---
 
 # Deafheaven
@@ -75,17 +75,17 @@ A playlist with my favorite electronic tracks made in France🇫🇷.
 {% spotify playlist 3D6BESfLFj08osOqclOhFl %}
 ```
 
-*****
+---
 
 ### Following
 
 You are obviously most welcome to check out a weekly basis the website (😇) but, you can also follow one of these channels if you want to stay up-to-date with the new shared playlists:
 
-* [Twitter](https://twitter.com/discoverweekly_)
-* [RSS feed](https://discoverweekly.dev/rss.xml)
-* [Spotify](https://open.spotify.com/playlist/1psyoVD1j3KOBBKADkJNat?si=a7ca738f5f42441d&nd=1)
+- [Twitter](https://twitter.com/discoverweekly_)
+- [RSS feed](https://discoverweekly.dev/rss.xml)
+- [Spotify](https://open.spotify.com/playlist/1psyoVD1j3KOBBKADkJNat?si=a7ca738f5f42441d&nd=1)
 
-*****
+---
 
 ### Summary
 

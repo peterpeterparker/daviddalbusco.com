@@ -9,9 +9,9 @@ image: "https://cdn-images-1.medium.com/max/1600/1*tQGx3mWFA0Oq3rGLA4Ypgg.gif"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*tQGx3mWFA0Oq3rGLA4Ypgg.gif)
 
-*Wow — Owen Wilson*
+_Wow — Owen Wilson_
 
-Last week we published our [first call](https://daviddalbusco.com/blog/contribute-to-our-open-source-project) for contributors for our open source project [DeckDeckGo](https://deckdeckgo.com) and the outcomes  are just mesmerizing 🤩 Therefore, before going further, we would like first to thanks each and every persons who read the article, interacted with or  volunteered to resolve issues and even sent us Pull Requests. You are truly awesome and your reactions cheered up all up, **THANK YOU** ❤️❤️❤️
+Last week we published our [first call](https://daviddalbusco.com/blog/contribute-to-our-open-source-project) for contributors for our open source project [DeckDeckGo](https://deckdeckgo.com) and the outcomes are just mesmerizing 🤩 Therefore, before going further, we would like first to thanks each and every persons who read the article, interacted with or volunteered to resolve issues and even sent us Pull Requests. You are truly awesome and your reactions cheered up all up, **THANK YOU** ❤️❤️❤️
 
 ### Pull requests
 
@@ -19,7 +19,7 @@ Following our blog post, many persons contacted us to take over the issues we li
 
 ### Before we start
 
-Something I personally really like in our project is its modularity. All our web components could be use as standalone components in any applications (“with or without any modern frameworks”),  or could be use in our starter kit if you are developing your presentation using HTML or Markdown (`npm init deckdeckgo` ) and are also used in our upcoming web editor for presentations.
+Something I personally really like in our project is its modularity. All our web components could be use as standalone components in any applications (“with or without any modern frameworks”), or could be use in our starter kit if you are developing your presentation using HTML or Markdown (`npm init deckdeckgo` ) and are also used in our upcoming web editor for presentations.
 
 It’s kind of cool to think, that if you are improving or fixing a component, this improvement could be use in so many constructs.
 
@@ -31,7 +31,7 @@ This feature was developed by Stefan Nieuwenhuis ([Twitter](https://twitter.com/
 
 ![](https://cdn-images-1.medium.com/max/1600/1*nuVLuov6bXRr6SpREDzzxA.gif)
 
-*Automatically display line numbers at the begin of the code you want to showcase*
+_Automatically display line numbers at the begin of the code you want to showcase_
 
 ### Youtube short Url
 
@@ -41,7 +41,7 @@ This fix was developed by Rohit Bokade ([GitHub](https://github.com/bokaderohit9
 
 ![](https://cdn-images-1.medium.com/max/1600/1*GpJzea6l2X946tufjgb5kw.gif)
 
-*Integrate easily a YouTube video to your presentation*
+_Integrate easily a YouTube video to your presentation_
 
 ### Cherry on the cake 🍒🎂
 

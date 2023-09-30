@@ -10,13 +10,13 @@ canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/deploy-internet-id
 
 ![social-image.png](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/social-image.png?token=_XQlT4y9g-gN2mZh9g8Iz)
 
-*Image source: [DFINITY foundation](https://dfinity.org/)*
+_Image source: [DFINITY foundation](https://dfinity.org/)_
 
 So, you are looking to deploy [Internet Identity](https://identity.ic0.app/) (II) locally?
 
 Here are my four easiest solution to do so!
 
-* * *
+---
 
 ## Introduction
 
@@ -26,7 +26,7 @@ As I really dislike doing anything Devops related myself and, also because the g
 
 The first two options are applicable for any dapps, the last two are more useful if you start a new project.
 
-* * *
+---
 
 ## 1. Automatic Installation
 
@@ -91,11 +91,11 @@ As we only want to deploy II locally, it is worth to note that above config cont
 You might also want to skip committing the `.did` and `.wasm.gz` files - that are going to be automatically downloaded - by omitting these in your `.gitignore`.
 
 ```javascript
-internet_identity.wasm.gz
-internet_identity.did
+internet_identity.wasm.gz;
+internet_identity.did;
 ```
 
-* * *
+---
 
 ## 2. Manual Installation
 
@@ -110,7 +110,7 @@ npm ci
 dfx deploy --no-wallet --argument '(null)'
 ```
 
-* * *
+---
 
 ## 3. New dapp
 
@@ -120,7 +120,7 @@ If you start from scratch or looking to create a sample dapp, instead of initial
 npm init ic
 ```
 
-* * *
+---
 
 ## 4. Game Changer
 

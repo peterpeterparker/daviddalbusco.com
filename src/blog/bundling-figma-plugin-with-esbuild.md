@@ -10,7 +10,7 @@ canonical: "https://daviddalbusco.medium.com/bundling-figma-plugin-with-esbuild-
 
 ![](https://cdn-images-1.medium.com/max/1600/1*NNXUKFJSiPegQbuWq0f47g.jpeg)
 
-*Photo by [Uillian Vargas](https://unsplash.com/@vargasuillian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/fast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Uillian Vargas](https://unsplash.com/@vargasuillian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/fast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I recently published a new open source [plugin](https://www.figma.com/community/plugin/950777256486678678/Figma-to-DeckDeckGo) to export [Figma](https://www.figma.com/) frames to [DeckDeckGo](https://deckdeckgo.com) slides.
 
@@ -18,7 +18,7 @@ As I like to benefit from my experiences to learn and try new concept, instead o
 
 The least I can say, I loved it ❤️.
 
-*****
+---
 
 ### Foreword
 
@@ -26,11 +26,11 @@ Following solution is the one I set up for my [plugin](https://github.com/deckgo
 
 Contributions to my plugin and PR are also welcomed 😉.
 
-*****
+---
 
 ### Setup
 
-In a  Figma plugin, install both `esbuild` and `rimraf` .
+In a Figma plugin, install both `esbuild` and `rimraf` .
 
 ```bash
 npm i esbuild rimraf --save-dev
@@ -55,10 +55,10 @@ touch esbuild.js
 Finally, in this newly created file, import `esbuild` .
 
 ```javascript
-const esbuild = require('esbuild');
+const esbuild = require("esbuild");
 ```
 
-*****
+---
 
 ### Sandbox
 
@@ -68,40 +68,40 @@ A Figma plugin run (see [documentation](https://www.figma.com/plugin-docs/how-pl
 // sandbox
 
 esbuild
-  .build({
-    entryPoints: ['src/plugin.ts'],
-    bundle: true,
-    platform: 'node',
-    target: ['node10.4'],
-    outfile: 'dist/plugin.js'
-  })
-  .catch(() => process.exit(1));
+	.build({
+		entryPoints: ["src/plugin.ts"],
+		bundle: true,
+		platform: "node",
+		target: ["node10.4"],
+		outfile: "dist/plugin.js"
+	})
+	.catch(() => process.exit(1));
 ```
 
 In the above script, we bundle the `plugin.ts`, the sandbox’s code, to its JavaScript counterpart `plugin.js` . As configuration, we tell `esbuild` to treat it as a NodeJS [platform](https://esbuild.github.io/api/#platform) and we [target](https://esbuild.github.io/api/#target) the version 10.4.
 
 > I configured my plugin to handle sources from a folder `src`. I also bundle the outcome to another one called `dist`. If you do not have the same structure, modify the solution accordingly.
 
-*****
+---
 
 ### UI
 
 In comparison to the previous chapter, we are going to gather the results of the build instead of telling `esbuild` to write directly to a file. For such reason, we import NodeJS `fs` to interact with the file system.
 
 ```javascript
-const {readFile, writeFile} = require('fs').promises;
+const { readFile, writeFile } = require("fs").promises;
 ```
 
 We also install `html-minifier-terser` to minify the resulting HTML code.
 
 ```bash
 npm i html-minifier-terser --save-dev
-``` 
+```
 
 Once installed, we add a related import to our build script too.
 
 ```javascript
-const minify = require('html-minifier-terser').minify;
+const minify = require("html-minifier-terser").minify;
 ```
 
 These imports set, we implement the bundling.
@@ -110,31 +110,31 @@ These imports set, we implement the bundling.
 // iframe UI
 
 (async () => {
-  const script = esbuild.buildSync({
-    entryPoints: ['src/ui.ts'],
-    bundle: true,
-    minify: true,
-    write: false,
-    target: ['chrome58', 'firefox57', 'safari11', 'edge16']
-  });
+	const script = esbuild.buildSync({
+		entryPoints: ["src/ui.ts"],
+		bundle: true,
+		minify: true,
+		write: false,
+		target: ["chrome58", "firefox57", "safari11", "edge16"]
+	});
 
-  const html = await readFile('src/ui.html', 'utf8');
+	const html = await readFile("src/ui.html", "utf8");
 
-  const minifyOptions = {
-    collapseWhitespace: true,
-    keepClosingSlash: true,
-    removeComments: true,
-    removeRedundantAttributes: true,
-    removeScriptTypeAttributes: true,
-    removeStyleLinkTypeAttributes: true,
-    useShortDoctype: true,
-    minifyCSS: true
-  };
+	const minifyOptions = {
+		collapseWhitespace: true,
+		keepClosingSlash: true,
+		removeComments: true,
+		removeRedundantAttributes: true,
+		removeScriptTypeAttributes: true,
+		removeStyleLinkTypeAttributes: true,
+		useShortDoctype: true,
+		minifyCSS: true
+	};
 
-  await writeFile(
-    'dist/ui.html',
-    `<script>${script.outputFiles[0].text}</script>${await minify(html, minifyOptions)}`
-  );
+	await writeFile(
+		"dist/ui.html",
+		`<script>${script.outputFiles[0].text}</script>${await minify(html, minifyOptions)}`
+	);
 })();
 ```
 
@@ -142,7 +142,7 @@ In the above script, we compile the `ui.ts` , our TypeScript code related to the
 
 We read the `ui.html` source file, define some options for the HTML minification and, finally, write both compiled code and HTML to the output (`dist/ui.html` in this example).
 
-*****
+---
 
 ### Web Components
 
@@ -150,33 +150,38 @@ Of course, I had to create some Web Components for my projects 😉. Integrating
 
 ```javascript
 const buildWebComponents = (entryPoints) =>
-  entryPoints
-    .map((entryPoint) =>
-      esbuild.buildSync({
-        entryPoints: [entryPoint],
-        bundle: true,
-        minify: true,
-        write: false,
-        target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
-        format: 'esm'
-      })
-    )
-    .map((componentScript) => componentScript.outputFiles[0].text)
-    .join('');
+	entryPoints
+		.map((entryPoint) =>
+			esbuild.buildSync({
+				entryPoints: [entryPoint],
+				bundle: true,
+				minify: true,
+				write: false,
+				target: ["chrome58", "firefox57", "safari11", "edge16"],
+				format: "esm"
+			})
+		)
+		.map((componentScript) => componentScript.outputFiles[0].text)
+		.join("");
 (async () => {
-  const componentsScript = buildWebComponents([
-    'src/components/checkbox.ts',
-    'src/components/button.ts',
-    'src/components/spinner.ts',
-    'src/components/fonts.ts'
-  ]);
+	const componentsScript = buildWebComponents([
+		"src/components/checkbox.ts",
+		"src/components/button.ts",
+		"src/components/spinner.ts",
+		"src/components/fonts.ts"
+	]);
 
-  // Same as previous chapter
+	// Same as previous chapter
 
-  await writeFile(
-    'dist/ui.html',
-    `<script>${script.outputFiles[0].text}</script><script type="module">${componentsScript}</script>${await minify(html, minifyOptions)}`
-  );
+	await writeFile(
+		"dist/ui.html",
+		`<script>${
+			script.outputFiles[0].text
+		}</script><script type="module">${componentsScript}</script>${await minify(
+			html,
+			minifyOptions
+		)}`
+	);
 })();
 ```
 
@@ -184,13 +189,13 @@ I created more than one Web Component (`checkbox.ts`, `button.ts`, etc.), that�
 
 And...that’s it 😃. Sandbox, UI and Web Components are bundled faster than ever ⚡️.
 
-*****
+---
 
 ### Repo
 
 You can find above solution and, other fun stuff in the open source repo of my plugin: [https://github.com/deckgo/figma-deckdeckgo-plugin](https://github.com/deckgo/figma-deckdeckgo-plugin)
 
-*****
+---
 
 ### Summary
 

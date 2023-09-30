@@ -35,7 +35,7 @@ Our goal is to render an `ion-menu-button` or an `ion-back-button` according the
 canGoBack: boolean = false;
 ```
 
-*Note: in this blog post I display an [Angular](https://angular.io) implementation*
+_Note: in this blog post I display an [Angular](https://angular.io) implementation_
 
 Once added, we could modify the `ion-header` of our page and add the two conditional buttons:
 
@@ -46,7 +46,7 @@ Once added, we could modify the `ion-header` of our page and add the two conditi
       <ion-back-button *ngIf="canGoBack"></ion-back-button>
       <ion-menu-button *ngIf="!canGoBack"></ion-menu-button>
     </ion-buttons>
-    
+
     <ion-title>
       Nothing
     </ion-title>
@@ -91,7 +91,7 @@ That’s it, we have implemented a conditional back or menu button and action �
 I like to always end my articles with a last paragraph “Cherry on the cake” where I give another hint or trick related to the content I displayed but in this particular article I don’t have specific in mind. Therefore, instead of something related to the above solution, here’s my dead simple recipe to cook your own Rösti:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*bRHfgb21RXhVuUnEEj1nUQ.jpeg)
-*These kind of Rösti but with, optionally, smaller pieces of bacon*
+_These kind of Rösti but with, optionally, smaller pieces of bacon_
 
 1. Boil 500 grams to 1 kilo of potatoes (for two) and once ready, let them cool down. Note: that step is optional, if you don’t have time you could cook the meal with raw potatoes but it’s more yummy with boiled ones.
 2. Chop an onion.
@@ -104,8 +104,8 @@ I like to always end my articles with a last paragraph “Cherry on the cake” 
 9. Now, bring the heat of the stove down (“medium power”) and shape the potatoes like a cake (“a circle of 20–30 cm diameter and 5 cm height”) with a spatula centered in your stove and **DON’T TOUCH THEM** for the next 15 minutes, let them cook like this.
 10. After that time, gonna be a bit tricky, put a flat dinner plate on the top of your potatoes and get them out of the fire **REVERSED** on your plate.
 11. If you feel that your stove is now not enough oily, add a bit of oil in it.
-11. Once done, add back the potatoes we reserved on the plate back on the side which is not yet cooked (get it, that’s why we reversed them)and cook them for another 15 minutes. **IMPORTANT**: don’t break the cake, the potatoes should remain together, so be gentle in your moves.
-12. 5 minutes before the end of the cooking, if you wish, you could cook one or two fried eggs in another stove which you could later add on the top of the Rösti. I sometimes do that extract step because the yellow part of the egg will work as a nice “binder” to make things a bit less dry and gives a bit of extra calories and fat, in case that would not be enough yet 🤣
+12. Once done, add back the potatoes we reserved on the plate back on the side which is not yet cooked (get it, that’s why we reversed them)and cook them for another 15 minutes. **IMPORTANT**: don’t break the cake, the potatoes should remain together, so be gentle in your moves.
+13. 5 minutes before the end of the cooking, if you wish, you could cook one or two fried eggs in another stove which you could later add on the top of the Rösti. I sometimes do that extract step because the yellow part of the egg will work as a nice “binder” to make things a bit less dry and gives a bit of extra calories and fat, in case that would not be enough yet 🤣
 
 That’s it, once the cooking is over, your Rösti are ready to be eat 🤗
 

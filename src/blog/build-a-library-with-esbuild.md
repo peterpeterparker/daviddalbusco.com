@@ -10,13 +10,13 @@ canonical: "https://daviddalbusco.medium.com/build-a-library-with-esbuild-232357
 
 ![](https://cdn-images-1.medium.com/max/1600/1*6sA4hPVV9wO_jo8l205Aig.jpeg)
 
-*Photo by [Colin Watts](https://unsplash.com/@imagefactory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Colin Watts](https://unsplash.com/@imagefactory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I recently developed plugins and, migrated all the utilities of [DeckDeckGo](https://deckdeckgo.com) to build these with [esbuild](https://esbuild.github.io/).
 
 If you are looking to do the same, hope this tutorial helps you get started!
 
-*****
+---
 
 ### Introduction
 
@@ -26,7 +26,7 @@ Sometimes while migrating my libraries, I even found myself waiting for the end 
 
 In addition, other things which make me really like this new bundler are its clean, flexible API and, its documentation. It is easy to follow and, clear.
 
-*****
+---
 
 ### Setup
 
@@ -46,16 +46,16 @@ At the root of our project, we create a `./tsconfig.json` file to indicates that
 
 ```json
 {
-  "compilerOptions": {
-    "declaration": true,
-    "target": "esnext",
-    "lib": ["esnext", "dom"],
-    "strict": true,
-    "noImplicitAny": false,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "outDir": "lib"
-  }
+	"compilerOptions": {
+		"declaration": true,
+		"target": "esnext",
+		"lib": ["esnext", "dom"],
+		"strict": true,
+		"noImplicitAny": false,
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"outDir": "lib"
+	}
 }
 ```
 
@@ -65,22 +65,22 @@ We update our `./package.json` with a script to `build` our library and, we defi
 
 ```json
 {
-  "name": "mylib",
-  "version": "1.0.0",
-  "description": "",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "ts-types": " tsc --emitDeclarationOnly --outDir lib",
-    "build": "rimraf lib && node ./esbuild.js && npm run ts-types"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "esbuild": "^0.12.1",
-    "typescript": "^4.2.4"
-  }
+	"name": "mylib",
+	"version": "1.0.0",
+	"description": "",
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"scripts": {
+		"ts-types": " tsc --emitDeclarationOnly --outDir lib",
+		"build": "rimraf lib && node ./esbuild.js && npm run ts-types"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"esbuild": "^0.12.1",
+		"typescript": "^4.2.4"
+	}
 }
 ```
 
@@ -94,13 +94,13 @@ It is worth to notice that the esbuild commands can be inlined inside the `scrip
 
 That’s useful when the scripts evolve or, when multiple miscellaneous builds and, steps are performed.
 
-Finally, we add some source code to be compiled, such as following sample function, in a main new entry point file  `./src/index.ts` .
+Finally, we add some source code to be compiled, such as following sample function, in a main new entry point file `./src/index.ts` .
 
 ```typescript
 export const add = (a: number, b: number): number => a + b;
 ```
 
-*****
+---
 
 ### ECMAScript module
 
@@ -109,20 +109,20 @@ The `esm` format stands for "ECMAScript module". It assumes the environment supp
 To bundle such a modern library, we can add the following configuration to our `./esbuild.js` :
 
 ```javascript
-const esbuild = require('esbuild');
+const esbuild = require("esbuild");
 
 esbuild
-    .build({
-        entryPoints: ['src/index.ts'],
-        outdir: 'lib',
-        bundle: true,
-        sourcemap: true,
-        minify: true,
-        splitting: true,
-        format: 'esm',
-        target: ['esnext']
-    })
-    .catch(() => process.exit(1));
+	.build({
+		entryPoints: ["src/index.ts"],
+		outdir: "lib",
+		bundle: true,
+		sourcemap: true,
+		minify: true,
+		splitting: true,
+		format: "esm",
+		target: ["esnext"]
+	})
+	.catch(() => process.exit(1));
 ```
 
 That’s already it 🥳.
@@ -135,15 +135,15 @@ In the script we first require `esbuild` and, with the help of the method `.buil
 
 To perform the operation, we set following options:
 
-* `entryPoints` and `ourdir` defines which files need to be bundled to which output
-* `bundle` means to inline any imported dependencies into the file itself. This process is recursive so dependencies of dependencies (and so on) will also be inlined ([documentation](https://esbuild.github.io/api/#bundle)). In other words, if you have got `import` in your `entryPoints` , bundle will resolve these to add their code in the results.
-* `sourcemap` if set to `true` , generates source map files next to your JavaScript outcome
-* `minify` makes the code smaller ([documentation](https://esbuild.github.io/api/#minify))
-* `splitting` is a work in progress (at the time I write these lines) which improves the code sharing between multiple endpoints (see [documentation](https://esbuild.github.io/api/#splitting))
-* `format` is set to `esm` as it is the goal in this chapter ([documentation](https://esbuild.github.io/api/#format-commonjs))
-* `target` defines which types of JavaScript we want to output. In our case, only the most recent version ([documentation](https://esbuild.github.io/api/#target))
+- `entryPoints` and `ourdir` defines which files need to be bundled to which output
+- `bundle` means to inline any imported dependencies into the file itself. This process is recursive so dependencies of dependencies (and so on) will also be inlined ([documentation](https://esbuild.github.io/api/#bundle)). In other words, if you have got `import` in your `entryPoints` , bundle will resolve these to add their code in the results.
+- `sourcemap` if set to `true` , generates source map files next to your JavaScript outcome
+- `minify` makes the code smaller ([documentation](https://esbuild.github.io/api/#minify))
+- `splitting` is a work in progress (at the time I write these lines) which improves the code sharing between multiple endpoints (see [documentation](https://esbuild.github.io/api/#splitting))
+- `format` is set to `esm` as it is the goal in this chapter ([documentation](https://esbuild.github.io/api/#format-commonjs))
+- `target` defines which types of JavaScript we want to output. In our case, only the most recent version ([documentation](https://esbuild.github.io/api/#target))
 
-*****
+---
 
 #### Module Field
 
@@ -155,7 +155,7 @@ In above chapter we are generating an `esm` library. If you aim to use this tuto
 "types": "lib/index.d.ts",
 ```
 
-*****
+---
 
 ### IIFE
 
@@ -166,21 +166,21 @@ If you rather like or, are in need to create library which is immediately availa
 The `iife` format is the default format unless we set `platform` to node (as in next chapter). `splitting` is only available for `esm` modules.
 
 ```javascript
-const esbuild = require('esbuild');
+const esbuild = require("esbuild");
 
 esbuild
-    .build({
-        entryPoints: ['src/index.ts'],
-        outdir: 'lib',
-        bundle: true,
-        sourcemap: true,
-        minify: true,
-        target: ['esnext']
-    })
-    .catch(() => process.exit(1));
+	.build({
+		entryPoints: ["src/index.ts"],
+		outdir: "lib",
+		bundle: true,
+		sourcemap: true,
+		minify: true,
+		target: ["esnext"]
+	})
+	.catch(() => process.exit(1));
 ```
 
-*****
+---
 
 ### CommonJS — Node
 
@@ -189,24 +189,24 @@ The `cjs` format stands for "CommonJS" and is intended to be run in node ([docum
 If your library aims to be used in a Node or, in a non-browser environment, it can be bundled for such purpose with a related `platform` option.
 
 ```javascript
-const esbuild = require('esbuild');
+const esbuild = require("esbuild");
 
 esbuild
-    .build({
-        entryPoints: ['src/index.ts'],
-        outdir: 'lib',
-        bundle: true,
-        sourcemap: true,
-        minify: true,
-        platform: 'node',
-        target: ['node10.4'],
-    })
-    .catch(() => process.exit(1));
+	.build({
+		entryPoints: ["src/index.ts"],
+		outdir: "lib",
+		bundle: true,
+		sourcemap: true,
+		minify: true,
+		platform: "node",
+		target: ["node10.4"]
+	})
+	.catch(() => process.exit(1));
 ```
 
 In this configuration we define `node` as `platform` and, set `target` to Node version 10 ([documentation](https://esbuild.github.io/api/#target)).
 
-*****
+---
 
 ### Synchronous Build
 
@@ -214,26 +214,25 @@ Above builds are asynchronous. You might want to run a synchronous builds to eit
 
 This can be achieved by replacing the method `.build` with `.buildSync` .
 
-*****
+---
 
 #### Information
 
 To get to know if there were errors, or warnings, we can call `buildSync` . It will return an object which contains such information.
 
 ```javascript
-const esbuild = require('esbuild');
+const esbuild = require("esbuild");
 
-const results = esbuild
-    .buildSync({
-        entryPoints: ['src/index.ts'],
-        outdir: 'lib',
-        bundle: true,
-        sourcemap: true,
-        minify: true,
-        splitting: true,
-        format: 'esm',
-        target: ['esnext']
-    });
+const results = esbuild.buildSync({
+	entryPoints: ["src/index.ts"],
+	outdir: "lib",
+	bundle: true,
+	sourcemap: true,
+	minify: true,
+	splitting: true,
+	format: "esm",
+	target: ["esnext"]
+});
 
 console.log(results);
 
@@ -241,7 +240,7 @@ console.log(results);
 // { errors: [], warnings: [] }
 ```
 
-*****
+---
 
 #### In Memory Results
 
@@ -250,28 +249,27 @@ To get the files that would have been written as in-memory buffers, we can lever
 For example, if we would like to inline our script in an HTML file, we would be able to get these results and, parse it manually to the output of our choice.
 
 ```javascript
-const esbuild = require('esbuild');
+const esbuild = require("esbuild");
 
-const {readFile, writeFile, mkdir} = require('fs').promises;
+const { readFile, writeFile, mkdir } = require("fs").promises;
 (async () => {
-    await mkdir('./lib');
-    
-    const script = esbuild
-        .buildSync({
-            entryPoints: ['src/index.ts'],
-            bundle: true,
-            minify: true,
-            format: 'esm',
-            target: ['esnext'],
-            write: false
-        });
-    
-    const html = await readFile('src/index.html', 'utf8');
-    
-    await writeFile(
-        'lib/index.html',
-        `<script type="module">${script.outputFiles[0].text}</script>${html}`
-    );
+	await mkdir("./lib");
+
+	const script = esbuild.buildSync({
+		entryPoints: ["src/index.ts"],
+		bundle: true,
+		minify: true,
+		format: "esm",
+		target: ["esnext"],
+		write: false
+	});
+
+	const html = await readFile("src/index.html", "utf8");
+
+	await writeFile(
+		"lib/index.html",
+		`<script type="module">${script.outputFiles[0].text}</script>${html}`
+	);
 })();
 ```
 
@@ -290,7 +288,7 @@ const minify = require('html-minifier-terser').minify;
 
 (async () => {
     await mkdir('./lib');
-    
+
     const script = esbuild
         .buildSync({
             entryPoints: ['src/index.ts'],
@@ -300,9 +298,9 @@ const minify = require('html-minifier-terser').minify;
             target: ['esnext'],
             write: false
         });
-    
+
     const html = await readFile('src/index.html', 'utf8');¨
-  
+
     const minifyOptions = {
         collapseWhitespace: true,
         keepClosingSlash: true,
@@ -313,7 +311,7 @@ const minify = require('html-minifier-terser').minify;
         useShortDoctype: true,
         minifyCSS: true
     };
-    
+
     await writeFile(
         'lib/index.html',
         `<script>${script.outputFiles[0].text}</script>${await minify(html, minifyOptions)}`
@@ -321,7 +319,7 @@ const minify = require('html-minifier-terser').minify;
 })();
 ```
 
-*****
+---
 
 ### Summary
 

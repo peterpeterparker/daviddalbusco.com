@@ -9,7 +9,7 @@ canonical: "https://medium.com/@david.dalbusco/deckdeckgo-kick-starting-2020-wit
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Y4bkN-RtF1ROgb9jnGaE4g.png)
-*Background photo by [SpaceX](https://unsplash.com/@spacex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Background photo by [SpaceX](https://unsplash.com/@spacex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 We have been relatively quiet since begin of last December, not on purpose, you know, just life, but recently, we increased our efforts and were even able to put together our biggest release so far! What a way of starting 2020.
 
@@ -19,7 +19,7 @@ It contains many improvements, fixes and notably the following features, which w
 
 ### Google Fonts
 
-Even if it was, and still is,  already included our [developer starter kit](https://docs.deckdeckgo.com), we never took the time to add the option to let our users customize easily the font of their decks. As of now, you will be able to use [Google Fonts](https://fonts.google.com) for your presentation.
+Even if it was, and still is, already included our [developer starter kit](https://docs.deckdeckgo.com), we never took the time to add the option to let our users customize easily the font of their decks. As of now, you will be able to use [Google Fonts](https://fonts.google.com) for your presentation.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*U4Uc7u26qI7Seutz1ITlqQ.gif)
 
@@ -29,7 +29,7 @@ Even though it was actually already the case, we are also really happy to commun
 
 These are becoming public only once you would share your presentations online.
 
-It might sounds silly to highlight this fact but we invested  some times in this particular subject as we worship the principle of “privacy per default”.
+It might sounds silly to highlight this fact but we invested some times in this particular subject as we worship the principle of “privacy per default”.
 
 ### Clone Presentations
 
@@ -39,7 +39,7 @@ When you develop a platform you often have to develop more than “just” its c
 
 ### Landing Page
 
-I’m agree that is maybe not the most meaningful feature for our existing users but without “landing page”, we guess that it was probably difficult for anyone landing on DeckDeckGo to actually understand quickly what’s all about, even if it is possible to create a couple of slides without having to register. Something which, by the way, doesn’t seems to be the norm nowadays on the internet and which is  really important to us.
+I’m agree that is maybe not the most meaningful feature for our existing users but without “landing page”, we guess that it was probably difficult for anyone landing on DeckDeckGo to actually understand quickly what’s all about, even if it is possible to create a couple of slides without having to register. Something which, by the way, doesn’t seems to be the norm nowadays on the internet and which is really important to us.
 
 It is worth to notice, notably as DeckDeckGo is a Progressive Web Apps and could be used in any mobile devices, that once registered, the “landing page” doesn’t appear anymore and our feed of recently shared presentations becomes again the welcoming screen.
 
@@ -73,7 +73,7 @@ In this release, we have improved its layout, have added some options to the edi
 
 ![](https://cdn-images-1.medium.com/max/1600/1*OS2ouBoXzZOFOQzWCRUYkw.gif)
 
-We hope these features are quite intriguing and slick to you.  If you have any feedback, don’t hesitate to reach us on [Slack](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) or found me on [Twitter](https://twitter.com/daviddalbusco).
+We hope these features are quite intriguing and slick to you. If you have any feedback, don’t hesitate to reach us on [Slack](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) or found me on [Twitter](https://twitter.com/daviddalbusco).
 
 And of course, the more important, if you have to create a presentation soon, go give a try to [DeckDeckGo](https://deckdeckgo.com)!
 

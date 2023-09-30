@@ -11,7 +11,7 @@ image: "https://cdn-images-1.medium.com/max/2400/1*TmZb15Yzu3mGVG7uMkHvHw.png"
 
 We are very happy and excited to share with you today our web open source editor for presentations: [DeckDeckGo](https://beta.deckdeckgo.com)
 
-I still almost not believe that we managed to reach such a milestone. It took us a couple of months this year to develop it just for fun at nights and on weekends,  but yes, we did it  🎉
+I still almost not believe that we managed to reach such a milestone. It took us a couple of months this year to develop it just for fun at nights and on weekends, but yes, we did it 🎉
 
 Before going further we would like first to thank all our off- and online friends, communities, contributors and early testers which always gave us plenty of motivation to develop our, as I like to call it, “pet” project. You are truly awesome ❤️
 
@@ -19,9 +19,9 @@ Before going further we would like first to thank all our off- and online friend
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Ireg4JWSR6Se4c_UP8iJ6w.gif)
 
-*Sure why? Seriously why?*
+_Sure why? Seriously why?_
 
-We are fully aware that no one, absolutely no one, asked for yet again another editor for presentations and that even probably there is no such need. But you know what? We are fine with that. Of course we would love and hope that our editor and concept will be useful to some persons, but even if we might cry a bit if no one will use it, we are (kind of) ok with that. 
+We are fully aware that no one, absolutely no one, asked for yet again another editor for presentations and that even probably there is no such need. But you know what? We are fine with that. Of course we would love and hope that our editor and concept will be useful to some persons, but even if we might cry a bit if no one will use it, we are (kind of) ok with that.
 
 We develop our project because we are, well, nerds and because we use this experience to improve our skills. Furthermore, we are engineers you know, we like to implement products from scratch until launch 😉
 
@@ -29,17 +29,17 @@ We develop our project because we are, well, nerds and because we use this exper
 
 ![](https://cdn-images-1.medium.com/max/1600/1*MNW_kIkOJqNvRGBRFNIbfg.gif)
 
-*Everything.*
+_Everything._
 
 Of course I’m joking, not everything is different, it’s even became a private joke between us. As soon as something is a bit new we say to each other “Mais mec, c’est le future” 😹
 
-That being said and as I briefly introduced it above, we had some, I hope you will find too, interesting ideas. 
+That being said and as I briefly introduced it above, we had some, I hope you will find too, interesting ideas.
 
 #### Cloud solution
 
 ![](https://cdn-images-1.medium.com/max/1600/1*9odqQrlsXeP0zykRe3lyaQ.gif)
 
-*My mum better understood “a cloud solution” than “we developed it with the web”*
+_My mum better understood “a cloud solution” than “we developed it with the web”_
 
 DeckDeckGo is a cloud solution. It works everywhere on any devices, **projectors**, **desktops**, **mobiles** or **tablets** without any prior installation and without data save locally 🎥🖥️💻📱☁️
 
@@ -49,7 +49,7 @@ There is by the way even no “Save” button in our editor, it does the job for
 
 ![](https://cdn-images-1.medium.com/max/1600/1*4sMOauhgBsqV4wZzJ3fZqA.gif)
 
-*Use an app to share other apps*
+_Use an app to share other apps_
 
 No export to PDF (at least not yet), therefore you may ask your self: How my gosh David, how I’m going to share my presentation then?
 
@@ -59,7 +59,7 @@ Well, here’s a cool thing: DeckDeckGo package and publish every single present
 
 ![](https://cdn-images-1.medium.com/max/1600/1*QyNE4kixGi60FyZ8Y0we2Q.gif)
 
-*Discover and share presentations*
+_Discover and share presentations_
 
 DeckDeckGo isn’t “just” an editor. It was actually developed to be also an **online feed**. A place where presentations can be discovered, shared and ultimately, if we let our selves dream a bit about the future, are indexed according your interests and maybe even can be discussed.
 
@@ -73,14 +73,14 @@ Are you constantly switching between full screen and normal mode while editing y
 
 ![](https://cdn-images-1.medium.com/max/1600/1*QM9ylLr7Tzj8ZYE-ZJUXoA.gif)
 
-*More than edition, per design all features are available in full screen mode too*
+_More than edition, per design all features are available in full screen mode too_
 
 #### Unsplash
 
 We have integrated [Unsplash](https://unsplash.com/) to our tool to let your find and use stock photos easily. The editor keeps also track of the last 10 media you would have used for even a quicker access.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*_rEqbFfwTocrElky3mLJQA.gif)
-*Unsplash is integrated*
+_Unsplash is integrated_
 
 #### Tenor
 
@@ -88,7 +88,7 @@ Gifs are life (probably). Same as the stock photo, [Tenor](https://tenor.com/) i
 
 ![](https://cdn-images-1.medium.com/max/1600/1*bsyb3eakx7dcvI2CftHEzw.gif)
 
-*Gifs are life*
+_Gifs are life_
 
 #### Youtube
 
@@ -96,7 +96,7 @@ I was a bit more lazy on the integration of [Youtube](https://www.youtube.com) v
 
 ![](https://cdn-images-1.medium.com/max/1600/1*lyVzJnkv2MzOKCCRaSfkMg.gif)
 
-*Drop Youtube videos in your presentation*
+_Drop Youtube videos in your presentation_
 
 #### Remote control
 
@@ -105,7 +105,7 @@ Out of the box, without any special hardware, any presentations could be remote 
 <iframe width="280" height="158" src="https://www.youtube.com/embed/3o3oGBTTRSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
 <br/>
 
-*Hey, it’s me, David 👋*
+_Hey, it’s me, David 👋_
 
 ### Technical fun facts
 

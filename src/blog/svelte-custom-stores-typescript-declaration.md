@@ -10,14 +10,14 @@ canonical: "https://medium.com/@daviddalbusco/svelte-custom-stores-typescript-de
 
 ![https://unsplash.com/photos/azCTGObXR14](https://images.unsplash.com/photo-1537237858032-3ad1b513cbcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwzM3x8YWJzdHJhY3R8ZW58MHx8fHwxNjc0MjAyMzA5&ixlib=rb-4.0.3&q=80&w=1080)
 
-*Photo by [JJ Ying](https://unsplash.com/@jjying?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [JJ Ying](https://unsplash.com/@jjying?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Svelte offers some nice easy-to-use store concepts. One of those is "[custom stores](https://svelte.dev/tutorial/custom-stores)" which makes handy the obfuscation of the reactive stored data and its access through a set of custom defined functions.
 
 e.g. for a counter that counts apples and bananas, I can create a custom store that does not expose directly my data. Within a function, I can "hide" the store and expose only the functions I want to use in my apps instead of exposing publicly `set` and `update`. This to avoid misbehavior and unexpected changes, what can be really useful as the code base grows.
 
 ```typescript
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
 
 export interface Counter {
 	apples: number;
@@ -30,8 +30,7 @@ const initStore = () => {
 		bananas: 0
 	};
 
-	const { subscribe, set, update } =
-		writable(initialCounter);
+	const { subscribe, set, update } = writable(initialCounter);
 
 	return {
 		subscribe,
@@ -54,7 +53,7 @@ export const counter = initStore();
 
 Above code snippet follows Svelte's documentation example with the addition of a type - `Counter` - for the object saved in my store and few custom functions - `incBanana`, `decBanana` and `reset`.
 
-*Note that I just did not implement the "apples" related functions to keep the snippet small. In a real use case I might have even extracted the `update()` part to a function to avoid double code but, I also skipped this part because it would have not much value in this blog post context.*
+_Note that I just did not implement the "apples" related functions to keep the snippet small. In a real use case I might have even extracted the `update()` part to a function to avoid double code but, I also skipped this part because it would have not much value in this blog post context._
 
 When bind in a component, it works as expected.
 
@@ -71,7 +70,7 @@ Because my custom store exposes my home made functions but, also the root `subsc
 Therefore the most easy way in my opinion is to inherits the existing `Readable` type of Svelte.
 
 ```typescript
-import {type Readable} from 'svelte/store';
+import { type Readable } from "svelte/store";
 
 export interface AuthStore extends Readable<Counter> {
 	incBanana: () => void;
@@ -85,7 +84,7 @@ By setting the generic types to my custom data type - `Counter` - I can instruct
 I can use this new interface to set the return type of the initialization function - `initStore` - and that's already it.
 
 ```typescript
-import { type Readable, writable } from 'svelte/store';
+import { writable, type Readable } from "svelte/store";
 
 export interface Counter {
 	apples: number;
@@ -104,8 +103,7 @@ const initStore = (): AuthStore => {
 		bananas: 0
 	};
 
-	const { subscribe, set, update } =
-		writable(initialCounter);
+	const { subscribe, set, update } = writable(initialCounter);
 
 	return {
 		subscribe,

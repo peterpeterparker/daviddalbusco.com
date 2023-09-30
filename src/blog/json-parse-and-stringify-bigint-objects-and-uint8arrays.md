@@ -12,7 +12,7 @@ canonical: "https://daviddalbusco.medium.com/json-parse-and-stringify-bigint-obj
 
 Photo by [Aron Visuals](https://unsplash.com/fr/@aronvisuals?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/bZZp1PmHI0E?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-***
+---
 
 As I’ve been doing in various recent projects, you might find yourself needing to [stringify](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) and [parse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) bigints, objects, or Uint8Arrays, which aren’t supported natively by these two functions.
 
@@ -100,71 +100,57 @@ const JSON_KEY_MyObject = "__MyObject__";
 const JSON_KEY_UINT8ARRAY = "__uint8array__";
 
 // An inlined utilise to check for null and undefined
-export const nonNullish = <T>(
-  argument: T | undefined | null,
-): argument is NonNullable<T> => argument !== null && argument !== undefined;
+export const nonNullish = <T>(argument: T | undefined | null): argument is NonNullable<T> =>
+	argument !== null && argument !== undefined;
 
 // An object for showcase purpose
 export class MyObject {
-  constructor(public value: string) {
-  }
-  
-  toText(): string {
-    return this.value
-  }
-  
-  static fromText(value: string): MyObject {
-    // This is used to recreate the object from its textual representation.
-    return new MyObject(value)
-  }
+	constructor(public value: string) {}
+
+	toText(): string {
+		return this.value;
+	}
+
+	static fromText(value: string): MyObject {
+		// This is used to recreate the object from its textual representation.
+		return new MyObject(value);
+	}
 }
 
 // The parser that interprets revived BigInt, MyObject, and Uint8Array when constructing JavaScript values or objects.
 export const jsonReplacer = (_key: string, value: unknown): unknown => {
-  if (typeof value === "bigint") {
-    return { [JSON_KEY_BIGINT]: `${value}` };
-  }
+	if (typeof value === "bigint") {
+		return { [JSON_KEY_BIGINT]: `${value}` };
+	}
 
-  if (nonNullish(value) && value instanceof MyObject) {
-    return { [JSON_KEY_MyObject]: value.toText() };
-  }
+	if (nonNullish(value) && value instanceof MyObject) {
+		return { [JSON_KEY_MyObject]: value.toText() };
+	}
 
-  if (nonNullish(value) && value instanceof Uint8Array) {
-    return { [JSON_KEY_UINT8ARRAY]: Array.from(value) };
-  }
+	if (nonNullish(value) && value instanceof Uint8Array) {
+		return { [JSON_KEY_UINT8ARRAY]: Array.from(value) };
+	}
 
-  return value;
+	return value;
 };
 
 // A function that alters the behavior of the stringification process for BigInt, MyObject and Uint8Array.
 export const jsonReviver = (_key: string, value: unknown): unknown => {
-  const mapValue = <T>(key: string): T => (value as Record<string, T>)[key];
+	const mapValue = <T>(key: string): T => (value as Record<string, T>)[key];
 
-  if (
-    nonNullish(value) &&
-    typeof value === "object" &&
-    JSON_KEY_BIGINT in value
-  ) {
-    return BigInt(mapValue(JSON_KEY_BIGINT));
-  }
+	if (nonNullish(value) && typeof value === "object" && JSON_KEY_BIGINT in value) {
+		return BigInt(mapValue(JSON_KEY_BIGINT));
+	}
 
-  if (
-    nonNullish(value) &&
-    typeof value === "object" &&
-    JSON_KEY_MyObject in value
-  ) {
-    return MyObject.fromText(mapValue(JSON_KEY_MyObject));
-  }
+	if (nonNullish(value) && typeof value === "object" && JSON_KEY_MyObject in value) {
+		return MyObject.fromText(mapValue(JSON_KEY_MyObject));
+	}
 
-  if (
-    nonNullish(value) &&
-    typeof value === "object" &&
-    JSON_KEY_UINT8ARRAY in value
-  ) {
-    return Uint8Array.from(mapValue(JSON_KEY_UINT8ARRAY));
-  }
+	if (nonNullish(value) && typeof value === "object" && JSON_KEY_UINT8ARRAY in value) {
+		return Uint8Array.from(mapValue(JSON_KEY_UINT8ARRAY));
+	}
 
-  return value;
+	return value;
 };
 ```
 
@@ -183,76 +169,55 @@ For additional examples and to maintain the solution, presented below are a few 
 import { jsonReplacer, jsonReviver, MyObject } from "./json.utils";
 
 describe("json-utils", () => {
-  describe("stringify", () => {
-    it("should stringify bigint with a custom representation", () => {
-      expect(JSON.stringify(123n, jsonReplacer)).toEqual(
-        '{"__bigint__":"123"}',
-      );
-      expect(JSON.stringify({ value: 123n }, jsonReplacer)).toEqual(
-        '{"value":{"__bigint__":"123"}}',
-      );
-    });
+	describe("stringify", () => {
+		it("should stringify bigint with a custom representation", () => {
+			expect(JSON.stringify(123n, jsonReplacer)).toEqual('{"__bigint__":"123"}');
+			expect(JSON.stringify({ value: 123n }, jsonReplacer)).toEqual(
+				'{"value":{"__bigint__":"123"}}'
+			);
+		});
 
-    it("should stringify MyObject with a custom representation", () => {
-      const obj = new MyObject("hello");
+		it("should stringify MyObject with a custom representation", () => {
+			const obj = new MyObject("hello");
 
-      expect(JSON.stringify(obj, jsonReplacer)).toEqual(
-        '{"__MyObject__":"hello"}',
-      );
-      expect(JSON.stringify({ obj }, jsonReplacer)).toEqual(
-        '{"obj":{"__MyObject__":"hello"}}',
-      );
-    });
+			expect(JSON.stringify(obj, jsonReplacer)).toEqual('{"__MyObject__":"hello"}');
+			expect(JSON.stringify({ obj }, jsonReplacer)).toEqual('{"obj":{"__MyObject__":"hello"}}');
+		});
 
-    it("should stringify Uint8Array with a custom representation", () => {
-      const arr = Uint8Array.from([1, 2, 3]);
+		it("should stringify Uint8Array with a custom representation", () => {
+			const arr = Uint8Array.from([1, 2, 3]);
 
-      expect(JSON.stringify(arr, jsonReplacer)).toEqual(
-        '{"__uint8array__":[1,2,3]}',
-      );
-      expect(JSON.stringify({ arr }, jsonReplacer)).toEqual(
-        '{"arr":{"__uint8array__":[1,2,3]}}',
-      );
-    });
-  });
+			expect(JSON.stringify(arr, jsonReplacer)).toEqual('{"__uint8array__":[1,2,3]}');
+			expect(JSON.stringify({ arr }, jsonReplacer)).toEqual('{"arr":{"__uint8array__":[1,2,3]}}');
+		});
+	});
 
-  describe("parse", () => {
-    it("should parse bigint from a custom representation", () => {
-      expect(JSON.parse('{"__bigint__":"123"}', jsonReviver)).toEqual(123n);
-      expect(JSON.parse('{"value":{"__bigint__":"123"}}', jsonReviver)).toEqual(
-        { value: 123n },
-      );
-    });
+	describe("parse", () => {
+		it("should parse bigint from a custom representation", () => {
+			expect(JSON.parse('{"__bigint__":"123"}', jsonReviver)).toEqual(123n);
+			expect(JSON.parse('{"value":{"__bigint__":"123"}}', jsonReviver)).toEqual({ value: 123n });
+		});
 
-    it("should parse principal from a custom representation", () => {
-      const obj = new MyObject("hello");
+		it("should parse principal from a custom representation", () => {
+			const obj = new MyObject("hello");
 
-      expect(JSON.parse('{"__MyObject__":"hello"}', jsonReviver)).toEqual(obj);
-      expect(
-        JSON.parse('{"obj":{"__MyObject__":"hello"}}', jsonReviver),
-      ).toEqual({ obj });
-    });
+			expect(JSON.parse('{"__MyObject__":"hello"}', jsonReviver)).toEqual(obj);
+			expect(JSON.parse('{"obj":{"__MyObject__":"hello"}}', jsonReviver)).toEqual({ obj });
+		});
 
-    it("should parse principal to object", () => {
-      const obj = JSON.parse(
-        '{"__MyObject__":"tmxop-wyaaa-aaaaa-aaapa-cai"}',
-        jsonReviver,
-      );
-      expect(obj instanceof MyObject).toBeTruthy();
-      expect((obj as MyObject).toText()).toEqual("tmxop-wyaaa-aaaaa-aaapa-cai");
-    });
+		it("should parse principal to object", () => {
+			const obj = JSON.parse('{"__MyObject__":"tmxop-wyaaa-aaaaa-aaapa-cai"}', jsonReviver);
+			expect(obj instanceof MyObject).toBeTruthy();
+			expect((obj as MyObject).toText()).toEqual("tmxop-wyaaa-aaaaa-aaapa-cai");
+		});
 
-    it("should parse Uint8Array from a custom representation", () => {
-      const arr = Uint8Array.from([1, 2, 3]);
+		it("should parse Uint8Array from a custom representation", () => {
+			const arr = Uint8Array.from([1, 2, 3]);
 
-      expect(JSON.parse('{"__uint8array__":[1,2,3]}', jsonReviver)).toEqual(
-        arr,
-      );
-      expect(
-        JSON.parse('{"arr":{"__uint8array__":[1,2,3]}}', jsonReviver),
-      ).toEqual({ arr });
-    });
-  });
+			expect(JSON.parse('{"__uint8array__":[1,2,3]}', jsonReviver)).toEqual(arr);
+			expect(JSON.parse('{"arr":{"__uint8array__":[1,2,3]}}', jsonReviver)).toEqual({ arr });
+		});
+	});
 });
 ```
 

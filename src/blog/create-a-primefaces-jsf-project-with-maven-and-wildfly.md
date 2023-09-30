@@ -11,13 +11,13 @@ image: "https://cdn-images-1.medium.com/max/1600/1*w93lFGpSosbY9UblQNqUCA.jpeg"
 
 I'm currently on my way to Fuerteventura to enjoy a week of holidays ☀️ Earlier this year, I found out that writing blog posts was a great way to use wisely my time spent traveling, that's why I'm repeating the experience.
 
-When I thought about which subject I should write about earlier this morning (I don't generally have any plan in advance when it comes to writing) I came to the idea that it would be maybe interesting to share my favorite JSF trick (or hack, depends if you see the glass half empty or full). But before doing so, I had to initialize a clean blank project, that's why I've decided to first write this tutorial 😋   
+When I thought about which subject I should write about earlier this morning (I don't generally have any plan in advance when it comes to writing) I came to the idea that it would be maybe interesting to share my favorite JSF trick (or hack, depends if you see the glass half empty or full). But before doing so, I had to initialize a clean blank project, that's why I've decided to first write this tutorial 😋
 
 ### But why a JSF project?
 
 ![](https://cdn-images-1.medium.com/max/1600/1*evsRlXzetp7FdEOK2ynL1Q.gif)
 
-*But why a JSF project?*
+_But why a JSF project?_
 
 Honestly, I don't know exactly why anyone would be still interested to create a brand new JavaServer Faces API (JSF) project in 2019 or why would anyone even read this article 🤣. Not that I don't like Java, I still do and I still think it's a good match for certain types of projects, notably when it goes to the back- and middle-end layers but I would personally not use or advise it for the frontend part of any **new** projects.
 
@@ -71,7 +71,7 @@ To add it to our project, we are going now to edit our `pom.xml`. We add a new `
 </plugin>
 ```
 
-Once the configuration saved, we could build and install our project and run the application to test our setup with our browser respectively [http://localhost:8080/](http://localhost:8080/) should gives us access to its administration console and [http://localhost:8080/jsf-demo](http://localhost:8080/jsf-demo) to a default "Hello World" page. 
+Once the configuration saved, we could build and install our project and run the application to test our setup with our browser respectively [http://localhost:8080/](http://localhost:8080/) should gives us access to its administration console and [http://localhost:8080/jsf-demo](http://localhost:8080/jsf-demo) to a default "Hello World" page.
 
 ```bash
 mvn clean install && mvn wildfly:run
@@ -79,11 +79,11 @@ mvn clean install && mvn wildfly:run
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Bj1lhJuKOuWch0DICh7npA.png)
 
-*Administration console*
+_Administration console_
 
 ![](https://cdn-images-1.medium.com/max/1600/1*nWVepJkORKK6_wp4w2EB3Q.png)
 
-*"Hello World" page*
+_"Hello World" page_
 
 #### Note
 
@@ -99,7 +99,7 @@ There are different implementations of the JavaServer Faces API (JSF). For the p
     <artifactId>jsf-api</artifactId>
     <version>2.2.20</version>
 </dependency>
-```  
+```
 
 Beside the dependency, we also have to configure our application server to make it able to resolve `jsf` and `xhtml` target pages and to make these able to communicate with our beans. This configuration find place and in `src/main/webapp/WEB-INF/web.xml`:
 
@@ -155,15 +155,14 @@ public class HelloWorldBean implements Serializable {
 Finally, to present this message, we add a new servlet, `hello.xhtml`, in `src/main/webapp` which uses our above bean.
 
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<title>#{helloworld.message}</title>
-</head>
-<body>
-#{helloworld.message}
-</body>
+	<head>
+		<title>#{helloworld.message}</title>
+	</head>
+	<body>
+		#{helloworld.message}
+	</body>
 </html>
 ```
 
@@ -173,13 +172,13 @@ As before, to try out our code, we build our project and run the server again.
 mvn clean install && mvn wildfly:run
 ```
 
-If we access [http://localhost:8080/jsf-demo/hello.xhtml](http://localhost:8080/jsf-demo/hello.xhtml) with our browser, we should now see the friendly message as title and content of the page.  
+If we access [http://localhost:8080/jsf-demo/hello.xhtml](http://localhost:8080/jsf-demo/hello.xhtml) with our browser, we should now see the friendly message as title and content of the page.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*c6cxLyLRRScp0nTWgya9zQ.png)
 
-*"Hello World form Fuerteventura"*
+_"Hello World form Fuerteventura"_
 
-###  4. Implement Primefaces
+### 4. Implement Primefaces
 
 [Primefaces](https://www.primefaces.org) is an UI toolkit build at the top of JSF. It add multiple components like table, panel, dialog, etc. You might not need it but I do need it for my next blog post, therefore, let's add it to our project too 😇
 
@@ -196,26 +195,32 @@ We proceed as the pasts steps by adding a new `<dependency/>` to our `pom.xml`:
 No special configuration is needed and out of the box we should already be able to use their components. We could for example extend our `hello.xhtml` with an horizontal panel.
 
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:p="http://primefaces.org/ui">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+>
+	<h:head>
+		<title>#{helloworld.message}</title>
+	</h:head>
 
-<h:head>
-	<title>#{helloworld.message}</title>
-</h:head>
+	<h:body>
+		<p:panel
+			id="horizontal"
+			header="Horizontal Toggle"
+			toggleable="true"
+			toggleOrientation="horizontal"
+		>
+			<h:panelGrid columns="2" cellpadding="10">
+				<img
+					src="https://images.unsplash.com/photo-1545289415-50dff9405935?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=80"
+				/>
 
-<h:body>
-	<p:panel id="horizontal" header="Horizontal Toggle" toggleable="true" toggleOrientation="horizontal">
-		<h:panelGrid columns="2" cellpadding="10">
-			<img src="https://images.unsplash.com/photo-1545289415-50dff9405935?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=250&amp;q=80"/>
-
-			<h:outputText value="#{helloworld.message}" />
-		</h:panelGrid>
-	</p:panel>
-
-</h:body>
+				<h:outputText value="#{helloworld.message}" />
+			</h:panelGrid>
+		</p:panel>
+	</h:body>
 </html>
 ```
 
@@ -225,10 +230,10 @@ We could again build and start our application server to try out our implementat
 mvn clean install && mvn wildfly:run
 ```
 
-Finally we could check [http://localhost:8080/jsf-demo/hello.xhtml](http://localhost:8080/jsf-demo/hello.xhtml) in our browser to check if everything is correctly running.  
+Finally we could check [http://localhost:8080/jsf-demo/hello.xhtml](http://localhost:8080/jsf-demo/hello.xhtml) in our browser to check if everything is correctly running.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*hBnP4yj5wIgn9fE-NJc-bA.png)
-*“Hello World from Fuerteventura” presented in a Primefaces’ panel*
+_“Hello World from Fuerteventura” presented in a Primefaces’ panel_
 
 Voilà, we did it! We created a Primefaces JSF project with Maven and Widfly and are now able to make some testing 🎉 Moreover, even if I'm not looking forward to going home, I will be able to use this blank new project as a starter kit for my next article 😆
 

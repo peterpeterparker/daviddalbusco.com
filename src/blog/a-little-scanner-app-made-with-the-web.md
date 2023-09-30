@@ -10,31 +10,31 @@ canonical: "https://daviddalbusco.medium.com/a-little-scanner-app-made-with-the-
 
 ![](https://cdn-images-1.medium.com/max/1600/1*107_wVVJ8y3BVpo4SQKEkA.png)
 
-*****
+---
 
 This last Christmas holidays, except visiting my parents for a couple of days, after having forced myself in a sort of auto-lockdown period first, I did not have any big plans. That’s why, I took the opportunity to improve my software development knowledge.
 
-As I better learn concept by applying them to real application rather than writing examples, I decided to create a little scanner  Progressive Web Apps entirely made with the web.
+As I better learn concept by applying them to real application rather than writing examples, I decided to create a little scanner Progressive Web Apps entirely made with the web.
 
 I called it [Rebel Scan](https://rebelscan.com) because, it is just a little scanner app, you rebel scum!
 
 <iframe width="280" height="158" src="https://www.youtube.com/embed/D3gfjqAo_Qs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 
-*A potato demo video of [Rebel Scan](https://rebelscan.com)*
+_A potato demo video of [Rebel Scan](https://rebelscan.com)_
 
-*****
+---
 
 ### Introduction
 
-It is important to note that this little scanner does not aim to be the most perfect scanner the world has ever seen. I am not even sure I will use it in the future. The image processing is not the best, there is no text extraction and on mobile it “only” shares PNG (see last chapter about it). It had absolutely no other goal that helping  me learn new skills.
+It is important to note that this little scanner does not aim to be the most perfect scanner the world has ever seen. I am not even sure I will use it in the future. The image processing is not the best, there is no text extraction and on mobile it “only” shares PNG (see last chapter about it). It had absolutely no other goal that helping me learn new skills.
 
 Therefore, before development begins, I defined the following objectives I never had tried before and, which I was eager to test:
 
-* Give a try to [Next.js](https://nextjs.org/)
-* Capture and crop a video stream using the [MediaDevices.getUserMedia()](https://developer.mozilla.org/fr/docs/Web/API/MediaDevices/getUserMedia) API
-* Generate [React](https://reactjs.org/) bindings for a Web Component developed with [Stencil](https://stenciljs.com/)
-* Share files using strictly only the [Web Share API](https://developer.mozilla.org/fr/docs/Web/API/Navigator/share)
+- Give a try to [Next.js](https://nextjs.org/)
+- Capture and crop a video stream using the [MediaDevices.getUserMedia()](https://developer.mozilla.org/fr/docs/Web/API/MediaDevices/getUserMedia) API
+- Generate [React](https://reactjs.org/) bindings for a Web Component developed with [Stencil](https://stenciljs.com/)
+- Share files using strictly only the [Web Share API](https://developer.mozilla.org/fr/docs/Web/API/Navigator/share)
 
 Without revealing the ending, I can confirm it was a success and, I was able to develop my little application. However, there was a couple of surprises along the way. Let’s tackle these, step by step.
 
@@ -42,13 +42,13 @@ Without revealing the ending, I can confirm it was a success and, I was able to 
 
 The Progressive Web App, the result of this post and my experiment, is available online at [rebelscan.com](https://rebelscan.com) and its source code is available on [GitHub](https://github.com/peterpeterparker/rebelscan).
 
-*****
+---
 
 ### Next.js
 
 Prior to this experiment and, thus since around a year, my favorite tech stack to implement websites was: [Gatsby](https://gatsbyjs.com/) for the development, [GitHub actions](https://github.com/features/actions) for deployment purpose and [Firebase](https://firebase.google.com/) as hosting.
 
-Next.js by [Vercel](https://vercel.com), without any surprise, was an excellent  experience. I only scratched its surface and, I only used it to deploy a pre-rendered app but, it confirmed all the positive tweets and blogs I read about it.
+Next.js by [Vercel](https://vercel.com), without any surprise, was an excellent experience. I only scratched its surface and, I only used it to deploy a pre-rendered app but, it confirmed all the positive tweets and blogs I read about it.
 
 It is really well [documented](https://nextjs.org/docs/getting-started) and getting started is straight forward. In comparison to Gatsby, I really liked that it took me absolutely no time to discover how to set up [TypeScript](https://nextjs.org/docs/basic-features/typescript) and, that the configuration seemed closer to a bare-bones dependency setup.
 
@@ -60,7 +60,7 @@ That being said, I am talking about peanuts. Both stacks are amazing and let me 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*vSF3L96OuojzBPiExnpevg.gif)
 
-*****
+---
 
 ### MediaDevices.getUserMedia()
 
@@ -76,7 +76,7 @@ It ain’t probably rocket science for some but, to me, it was a bit challenging
 2. The video size is unpredictable
 3. Finding the proper ratio and method took many iterations
 
-*****
+---
 
 #### HTTPS
 
@@ -88,7 +88,7 @@ I let you check my commit history of the 2nd January 2020 to guess which method 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*-B8CROTQuPCbhZAR3IjTwg.png)
 
-*****
+---
 
 #### The Video Size Is Unpredictable
 
@@ -98,12 +98,12 @@ Basically, you Android phone is like one of my best friend: he does what he want
 
 ```javascript
 const stream = await navigator.mediaDevices.getUserMedia({
-  audio: false,
-  video: {
-    width: {ideal: 1920},
-    height: {ideal: 1080},
-    facingMode: 'environment',
-  },
+	audio: false,
+	video: {
+		width: { ideal: 1920 },
+		height: { ideal: 1080 },
+		facingMode: "environment"
+	}
 });
 
 const [track] = stream.getVideoTracks();
@@ -116,7 +116,7 @@ videoRef.current.height = settings.height;
 // Android (portrait): <video width="1080" height="1920"/>
 ```
 
-*****
+---
 
 #### Ratio
 
@@ -134,32 +134,30 @@ let x = (y * 210) / 297;
 const maxWidth = videoSize.width - canvasPadding;
 
 if (x > maxWidth) {
-  x = maxWidth;
-  y = (x * 297) / 210;
+	x = maxWidth;
+	y = (x * 297) / 210;
 }
 
 const deltaX = (videoSize.width - x) / 2;
 const deltaY = (videoSize.height - y) / 2;
 
-const context = scanRef.current.getContext('2d');
-context.drawImage(videoRef.current, 
-                  deltaX, deltaY, x, y,
-                  0, 0, 2100, 2970);
+const context = scanRef.current.getContext("2d");
+context.drawImage(videoRef.current, deltaX, deltaY, x, y, 0, 0, 2100, 2970);
 ```
 
 In above snippet, I calculate the section of the image, using a format A4, and I am looking to crop it while ensuring that the results won’t be larger than the video (remember, the size is unpredictable). If so, I do the contrary and take the width as maximum value. Finally, I draw my section in a 2D canvas with my expected ratio.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*eacFy349YzXyGycPboGkkw.jpeg)
 
-*Source: MDN Web Docs [CanvasRenderingContext2D.drawImage()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)*
+_Source: MDN Web Docs [CanvasRenderingContext2D.drawImage()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)_
 
-*****
+---
 
 #### Takeaway
 
 It felt a bit like roller coaster of emotion developing this video conversion until I was finally able to implement my original idea but, I am happy with the results and, I will for sure reuse this technology in the future in news apps. The web is pretty slick (once in place 😉).
 
-*****
+---
 
 #### One more thing
 
@@ -175,7 +173,7 @@ As I did not find any solution, in last resort, I decided to play my last card: 
 
 To my surprise, it dit work out! Therefore, I came to the conclusion the iPhone with low memory cannot stream a video to canvas.
 
-*****
+---
 
 ### React bindings with Stencil
 
@@ -197,7 +195,7 @@ Meantime, since I was already there, I also developed some improvements and brea
 
 Checkout its [showcase](https://webphotofilter.com/).
 
-*****
+---
 
 ### Share Files With Web Share API
 
@@ -216,17 +214,16 @@ Well, since I could not share PDF, at least for now, I used PNG and, it worked o
 
 ```javascript
 export const shareImage = async (src) => {
-  const res = await fetch(src);
-  const blob = await res.blob();
-  const file = new File([blob], 'rebelscan.png', 
-                   {type: 'image/png', lastModified: Date.now()});
+	const res = await fetch(src);
+	const blob = await res.blob();
+	const file = new File([blob], "rebelscan.png", { type: "image/png", lastModified: Date.now() });
 
-  await navigator.share({
-    // @ts-ignore
-    files: [file],
-    title: 'Rebel Scan',
-    url: 'https://rebelscan.com',
-  });
+	await navigator.share({
+		// @ts-ignore
+		files: [file],
+		title: "Rebel Scan",
+		url: "https://rebelscan.com"
+	});
 };
 ```
 
@@ -236,64 +233,64 @@ In addition, my mum discovered that the files seems to not be yet implemented on
 
 ```javascript
 export const savePdf = async (src) => {
-  const blob = convertToPdfBlob(src);
+	const blob = convertToPdfBlob(src);
 
-  if ('showSaveFilePicker' in window) {
-    await saveFilesystem(blob);
-    return;
-  }
+	if ("showSaveFilePicker" in window) {
+		await saveFilesystem(blob);
+		return;
+	}
 
-  download('rebelscan.pdf', blob);
+	download("rebelscan.pdf", blob);
 };
 /* File System API */
 const saveFilesystem = async (content) => {
-  const fileHandle = await getNewFileHandle();
+	const fileHandle = await getNewFileHandle();
 
-  await writeFile(fileHandle, content);
+	await writeFile(fileHandle, content);
 };
 
 function getNewFileHandle() {
-  const opts = {
-    types: [
-      {
-        description: 'PDF',
-        accept: {
-          'application/pdf': ['.pdf'],
-        },
-      },
-    ],
-  };
+	const opts = {
+		types: [
+			{
+				description: "PDF",
+				accept: {
+					"application/pdf": [".pdf"]
+				}
+			}
+		]
+	};
 
-  return showSaveFilePicker(opts);
+	return showSaveFilePicker(opts);
 }
 
 async function writeFile(fileHandle, content) {
-  const writer = await fileHandle.createWritable();
-  await writer.write(content);
-  await writer.close();
+	const writer = await fileHandle.createWritable();
+	await writer.write(content);
+	await writer.close();
 }
 /* Old school is the new school (download) */
 const download = (filename, blob) => {
-  const a = document.createElement('a');
-  a.style.display = 'none';
-  document.body.appendChild(a);
+	const a = document.createElement("a");
+	a.style.display = "none";
+	document.body.appendChild(a);
 
-  const url = window.URL.createObjectURL(blob);
+	const url = window.URL.createObjectURL(blob);
 
-  a.href = url;
-  a.download = filename;
+	a.href = url;
+	a.download = filename;
 
-  a.click();
+	a.click();
 
-  window.URL.revokeObjectURL(url);
+	window.URL.revokeObjectURL(url);
 
-  if (a && a.parentElement) {
-    a.parentElement.removeChild(a);
-  }
+	if (a && a.parentElement) {
+		a.parentElement.removeChild(a);
+	}
 };
 ```
 
-*****
+---
 
 ### Takeaway
 

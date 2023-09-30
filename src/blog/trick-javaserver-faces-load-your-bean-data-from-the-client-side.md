@@ -9,7 +9,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*QSKH-4KVY9VB1ssOElKYhQ.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*QSKH-4KVY9VB1ssOElKYhQ.jpeg)
 
-*Photo by [Shawn Pang](https://unsplash.com/@shawnpangg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Shawn Pang](https://unsplash.com/@shawnpangg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Commonly we are using JavaServer Faces (JSF) to access to server-side data and logic but it might happen, that we would actually have to fetch data on the client side and would then have to inject these in our server managed beans.
 
@@ -44,39 +44,35 @@ To begin our implementation we are firstly creating a new page `src/main/webapp/
 Moreover we also add the actual implementation of the 3rd party API data fetching. For that purpose, we use the Javascript [Fetch API](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API/Using_Fetch).
 
 ```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-     xmlns:h="http://java.sun.com/jsf/html"
-     xmlns:p="http://primefaces.org/ui">
-<h:head>
-   <title>Random dog</title>
-</h:head>
-<h:body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+>
+	<h:head>
+		<title>Random dog</title>
+	</h:head>
+	<h:body>
+		<script type="text/javascript">
+			const randomDog = async () => {
+				const rawResponse = await fetch("https://dog.ceo/api/breeds/image/random");
+				if (!rawResponse || !rawResponse.ok) {
+					console.error(rawResponse);
+					return;
+				}
+				const result = await rawResponse.text();
+			};
+		</script>
 
-   <script type="text/javascript">
-      const randomDog = async () => {
-        const rawResponse =
-          await fetch('https://dog.ceo/api/breeds/image/random');
-        if (!rawResponse || !rawResponse.ok) {
-           console.error(rawResponse);
-          return;
-        }
-        const result = await rawResponse.text();
-      };
-  </script>
+		<h:form>
+			<p:remoteCommand name="loadResult" />
 
-  <h:form>
-     <p:remoteCommand name="loadResult"/>
-
-     <p:commandButton value="Load a random dog"
-                      onclick="randomDog();">
-         <f:ajax execute="@form" render="@none" />
-     </p:commandButton>
-  </h:form>
-
-</h:body>
-
+			<p:commandButton value="Load a random dog" onclick="randomDog();">
+				<f:ajax execute="@form" render="@none" />
+			</p:commandButton>
+		</h:form>
+	</h:body>
 </html>
 ```
 
@@ -102,9 +98,7 @@ Our bean being ready, we could now improve our servlet respectively we link the 
 
 ```html
 <h:form>
-     <p:remoteCommand name="loadResult"
-                      action="#{dogs.load()}"
-                      process="@this" update="@form"/>
+	<p:remoteCommand name="loadResult" action="#{dogs.load()}" process="@this" update="@form" />
 </h:form>
 ```
 
@@ -112,15 +106,15 @@ We complete the chain by calling the remote command with the result of the Javas
 
 ```html
 <script type="text/javascript">
-      // same code as above
+	  // same code as above
 
-      const result = await rawResponse.text();
+	  const result = await rawResponse.text();
 
-      loadResult([{
-        name: 'dog',
-        value: result
-      }]);
-    };
+	  loadResult([{
+	    name: 'dog',
+	    value: result
+	  }]);
+	};
 </script>
 ```
 
@@ -194,7 +188,7 @@ import com.google.gson.GsonBuilder;
 @Named("dogs")
 @ViewScoped
 public class DogsBean implements Serializable {
-   
+
    private DogDTO dog;
 
    public void load() {
@@ -218,9 +212,9 @@ We have now fetched data on the client side, sent these to the server but the us
 
 ```html
 <h:form>
-     <p:outputPanel layout="block" rendered="#{dogs.dog != null}">
-        <img src="#{dogs.dog.message}" alt="A random dog"/>
-     </p:outputPanel>
+	<p:outputPanel layout="block" rendered="#{dogs.dog != null}">
+		<img src="#{dogs.dog.message}" alt="A random dog" />
+	</p:outputPanel>
 </h:form>
 ```
 
@@ -230,15 +224,15 @@ That’s it, our implementation is ready. We could start our application server 
 mvn clean install && mvn wildfly:run
 ```
 
-If everything goes according plan, we could open  our application in our favorite browser at the address [http://localhost:8080/jsf-dogs/dogs.xhtml](http://localhost:8080/jsf-dogs/dogs.xhtml) and should now be able to fetch a random dog each time we call our action 😊
+If everything goes according plan, we could open our application in our favorite browser at the address [http://localhost:8080/jsf-dogs/dogs.xhtml](http://localhost:8080/jsf-dogs/dogs.xhtml) and should now be able to fetch a random dog each time we call our action 😊
 
 ![](https://cdn-images-1.medium.com/max/1600/1*lolMm4r-XdSiapWohK4pLg.gif)
 
-*So much doggy 😍*
+_So much doggy 😍_
 
 ### 5. Init the page with a data
 
-This step isn’t mandatory but I think it’s interesting to notice that it is also possible to load data from the client side when the page is accessed. Basically, from the sever side, in our bean, we execute  a Javascript function on the client side, once everything is loaded from the lifecycle `PostContruct` .
+This step isn’t mandatory but I think it’s interesting to notice that it is also possible to load data from the client side when the page is accessed. Basically, from the sever side, in our bean, we execute a Javascript function on the client side, once everything is loaded from the lifecycle `PostContruct` .
 
 ```java
 @PostConstruct
@@ -251,7 +245,7 @@ That’s it, we dit it! We could restart our server and test our final implement
 
 ![](https://cdn-images-1.medium.com/max/1600/1*jjw6lTngEY7xlODjsbKYjQ.gif)
 
-*An initial doggy and so much other doggy 😍*
+_An initial doggy and so much other doggy 😍_
 
 ### Cherry on the cake 🍒🎂
 

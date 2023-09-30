@@ -13,7 +13,7 @@ I am thrilled to unveil a new way to turn your Figma designs into animated slide
 <iframe width="280" height="158" src="https://www.youtube.com/embed/arabVqr-1Do" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 
-*****
+---
 
 ### But... Why?
 
@@ -21,7 +21,7 @@ You may ask yourself why would you export your content from [Figma](https://www.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*-rC78uti7YtY_5rnCh7D7g.gif)
 
-*****
+---
 
 #### Animate, edit and share
 
@@ -31,7 +31,7 @@ You can also decide if you want or not extract the text components of your frame
 
 Instead of sharing a PDF, you are going to transform your presentation to a standalone Progressive Web Apps, which can be share with your attendees easily. Beside the fact that doing so your deck remains dynamic, I do see also value here as you do not have to share a file of X megabytes but, only share a link to your optimized content.
 
-*****
+---
 
 #### Reuse your design
 
@@ -41,7 +41,7 @@ These images, once imported in DeckDeckGo, are added to your collection of asset
 
 ![](https://cdn-images-1.medium.com/max/1600/1*OFXb-3GA8T3ZqqDZQcwIcQ.gif)
 
-*****
+---
 
 #### Add slides and live polls
 
@@ -52,7 +52,7 @@ You can even engage your audience or class in real time by adding built-in live 
 <iframe width="280" height="158" src="https://www.youtube.com/embed/nx4N07_6-x4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 
-*****
+---
 
 #### Remote control
 
@@ -61,7 +61,7 @@ Finally, out of the box, there is a remote application, also open source, to con
 <iframe width="280" height="158" src="https://www.youtube.com/embed/tcO94-txZ2E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 
-*****
+---
 
 ### Open Source
 
@@ -71,13 +71,13 @@ The good thing is that you are not going to be blocked in case this process woul
 
 For the rest, I count on you to help us shape and improve the plugin. Like any other parts of our platforms, it is open source! Ping me with your issues and best ideas in its related [GitHub repo](https://github.com/deckgo/figma-deckdeckgo-plugin).
 
-*****
+---
 
 ### Code
 
 From a technical point of view, the plugin is developed with JavaScript, nothing fancy new here. Even though, it might be interesting because it is bundled with [esbuild](https://esbuild.github.io/) (which is not something documented by Figma) and contains some vanilla Web Components I created for its design (button, checkbox etc.). If those particular subjects are interesting to you, let me know, I would be happy to blog about it.
 
-*****
+---
 
 ### Summary
 

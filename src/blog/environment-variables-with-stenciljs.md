@@ -15,19 +15,19 @@ As I have implemented a solution to handle such parameters in the [remote contro
 
 ### Credits
 
-The following solution was inspired by the one developed in the Ionic core project. One of the entry point for me was discovering the  method [setupConfig](https://github.com/ionic-team/ionic/blob/39fbc323480207417b41ff20d22badd91798ee2d/core/src/utils/config.ts#L182) in their source code. Therefore kudos to the awesome Ionic team ❤️
+The following solution was inspired by the one developed in the Ionic core project. One of the entry point for me was discovering the method [setupConfig](https://github.com/ionic-team/ionic/blob/39fbc323480207417b41ff20d22badd91798ee2d/core/src/utils/config.ts#L182) in their source code. Therefore kudos to the awesome Ionic team ❤️
 
 ### Getting started
 
 The solution described in this tutorial as for goal to handle two environments, a `development` and a `production` environments. In each of these we are going to define a variable which points to a different end point url.
 
-*Note that the example below was developed with the Ionic PWA toolkit.*
+_Note that the example below was developed with the Ionic PWA toolkit._
 
 ### Configuring the environments
 
 To begin our implementation, we are going to define an interface which should contains our variable(s) and a setup method which aims to “push” its value in the `window` object. This means that when our application will start, we are going to call this method in order to define the environment variables which should be use at runtime for the all application.
 
-*As I display the code of my own project, you might find references to the names `DeckDeckGo` or its short form `DeckGo`. Just replace these with the name of your project in your implementation.*
+_As I display the code of my own project, you might find references to the names `DeckDeckGo` or its short form `DeckGo`. Just replace these with the name of your project in your implementation._
 
 To implement the interface and function you could for example create a new file called `environment-config.tsx` :
 
@@ -45,7 +45,7 @@ export function setupConfig(config: EnvironmentConfig) {
     const win = window as any;
     const DeckGo = win.DeckGo;
 
-    if (DeckGo && DeckGo.config && 
+    if (DeckGo && DeckGo.config &&
         DeckGo.config.constructor.name !== 'Object') {
         console.error('DeckDeckGo config was already initialized');
         return;
@@ -64,7 +64,7 @@ export function setupConfig(config: EnvironmentConfig) {
 Now that we have created a setup function, we will need to use it when the application start. As our goal is two have two different environments, we are first going to modify the main application class `app.ts` to be the one which define and use the `production` environment. We are going to consume the above method we have created and define our url for the production.
 
 ```
-import {setupConfig} from 
+import {setupConfig} from
                 '../app/services/environment/environment-config';
 
 setupConfig({
@@ -75,7 +75,7 @@ setupConfig({
 Then we are going to create a second bootstraping class beside it to be the one which are going to load the `development` configuration. For that purpose let’s create in addition to the main class a file called `app-dev.ts` which will contains the following:
 
 ```
-import {setupConfig} from 
+import {setupConfig} from
                 '../app/services/environment/environment-config';
 // When serve locally: http://localhost:3002
 setupConfig({
@@ -90,7 +90,7 @@ Now that we have two different entry points to start our application, we should 
 ```
 let globalScript: string = 'src/global/app.ts';
 
-const dev: boolean = 
+const dev: boolean =
            process.argv && process.argv.indexOf('--dev') > -1;
 if (dev) {
     globalScript = 'src/global/app-dev.ts';
@@ -165,7 +165,7 @@ That’s it, that was the last piece needed to implement environment variables i
 To get a variable, you could now simply call anywhere in your code your service and ask for the value of a parameter, like in the following example:
 
 ```
-const url: string = 
+const url: string =
                 EnvironmentConfigService.getInstance().get('url');
 console.log('My environment variable value:', url);
 ```

@@ -10,9 +10,9 @@ canonical: "https://daviddalbusco.medium.com/create-a-popover-in-svelte-fe7dd2ee
 
 ![Street art, using the word create.](https://images.unsplash.com/photo-1620545628446-6319bce6b95c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwzMHx8Y3JlYXRlfGVufDB8fHx8MTY1NTk2MjEzMw&ixlib=rb-1.2.1&q=80&w=1080)
 
-*Photo by [Nick Fewings](https://unsplash.com/@jannerboy62?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Nick Fewings](https://unsplash.com/@jannerboy62?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-* * *
+---
 
 I have implemented the UI components of my last project [Papyrs](https://papy.rs/) without any third party design system libraries - i.e. I created all the components from scratch. I did so to get full control and flexibility over the miscellaneous bricks of my opinionated layout 😁.
 
@@ -20,7 +20,7 @@ In this blog post, I share how you can develop a popover component in [Svelte](h
 
 ![popover.gif](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/popover.gif?token=zSiVJ0hkcizwlQaBH2mc3)
 
-* * *
+---
 
 ## Skeleton
 
@@ -34,19 +34,19 @@ We can start the implementation by replicating above skeleton in a component nam
 <button>Open</button>
 
 <div
-    role="dialog"
-    aria-labelledby="Title"
-    aria-describedby="Description"
-    aria-orientation="vertical"
+	role="dialog"
+	aria-labelledby="Title"
+	aria-describedby="Description"
+	aria-orientation="vertical"
 >
-    <div>Backdrop</div>
-    <div>Content</div>
+	<div>Backdrop</div>
+	<div>Content</div>
 </div>
 ```
 
 To improve the accessibility we can set the `dialog` role and provide some `aria` information (see [MDN docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) for more details).
 
-* * *
+---
 
 ## Animation
 
@@ -86,7 +86,7 @@ We can also make the overlay appearing and disappearing gracefully thanks to the
 {/if}
 ```
 
-* * *
+---
 
 ## Position over the content
 
@@ -162,7 +162,7 @@ The rest of the CSS code we add to our solution are minimal styling settings for
 
 ```
 
-* * *
+---
 
 ## Position next to the anchor
 
@@ -175,7 +175,7 @@ We ultimately translate these JavaScript information to CSS variables to render 
 ```javascript
 <script lang="ts">
   // ...
-  
+
   let anchor: HTMLButtonElement | undefined = undefined;
 
   let bottom: number;
@@ -307,7 +307,7 @@ Above code snippet was trimmed to showcase only what is related to this chapter.
 
 And...that's it! We have implemented a bare minimum custom popover that can be used in any Svelte applications without any dependency.
 
-* * *
+---
 
 ## Conclusion
 

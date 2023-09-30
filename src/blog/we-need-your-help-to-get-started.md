@@ -8,25 +8,25 @@ image: "https://cdn-images-1.medium.com/max/1600/1*rKupQcNGK0DIGsSwjPxVsQ.jpeg"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*rKupQcNGK0DIGsSwjPxVsQ.jpeg)
-*Photo by [Jonny Caspari](https://unsplash.com/@jonnysplsh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Jonny Caspari](https://unsplash.com/@jonnysplsh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-I'm currently sitting in a bus between Zürich and Munich on my way for a weekend trip where I plan to not work and nerd that much. Ok I admit it, that plan doesn't begin exactly as I just told and I may have to work for a client tomorrow morning, but, I've got an awesome news to share: 
+I'm currently sitting in a bus between Zürich and Munich on my way for a weekend trip where I plan to not work and nerd that much. Ok I admit it, that plan doesn't begin exactly as I just told and I may have to work for a client tomorrow morning, but, I've got an awesome news to share:
 
 We are about to launch [DeckDeckGo](https://deckdeckgo.com), our upcoming [open source](https://github.com/deckgo/deckdeckgo) web editor for presentations, next month (Mid to late September 2019) 🎉
 
 ![](https://cdn-images-1.medium.com/max/1600/1*H0grMl4nUD8LuzAl3QX8Dg.gif)
 
-*A quick overview of some of the features of our upcoming editor*
+_A quick overview of some of the features of our upcoming editor_
 
 # Launch without content sucks
 
 ![](https://cdn-images-1.medium.com/max/1600/1*JMCskumAuEW6DcSDl02Z2w.gif)
 
-*The feels when they left the house, miss you Uncle Phil*
+_The feels when they left the house, miss you Uncle Phil_
 
 It turns out that our solution is not "just" an editor but we are hopping that it would become someday an online community for sharing presentations, slides and talks about your interests and ideas (🤞). That's kind of our dream.
 
-*Oopsie I just felt asleep the last 30 minutes even if I'm listening to the loudest Australian's punk rock  band in my headphones ([Violent Soho](https://www.youtube.com/watch?v=RN9NC4iQcsA)). I guess I could thank the EU for not being what it used to be anymore and for having gently walked me up to control my ID*
+_Oopsie I just felt asleep the last 30 minutes even if I'm listening to the loudest Australian's punk rock band in my headphones ([Violent Soho](https://www.youtube.com/watch?v=RN9NC4iQcsA)). I guess I could thank the EU for not being what it used to be anymore and for having gently walked me up to control my ID_
 
 We are far, far away of such an application and community but it does not mean that we can't dream a bit and that we could not implement the first piece of this idea in our beta, what we actually did. Its main screen, which I call the "feed", will present all the decks which are going to be edited and published (as standalone Progressive Web Apps…but that's another story 😉) with our tool.
 
@@ -38,7 +38,7 @@ That's why **we need your help to get started** and are hoping that you would be
 
 ![](https://cdn-images-1.medium.com/max/1600/1*nevdIt2eQwdLfv6fOlnFcA.gif)
 
-*What a strange choice of Gifs for this article, I miss Frank Drebin too*
+_What a strange choice of Gifs for this article, I miss Frank Drebin too_
 
 Whenever you have to create a new presentation in the next weeks, are just interested to try out our editor before anyone else or are maybe interested to replicate one of your favorite previous presentations, we would really appreciate your help.
 
@@ -50,7 +50,7 @@ Furthermore, if you would visit Zürich someday, I'll be happy to guide you thro
 
 ![](https://cdn-images-1.medium.com/max/1600/1*5ay_HPHArSh83KMlHDhKnw.gif)
 
-*Join the dark side of the force - Gandalf*
+_Join the dark side of the force - Gandalf_
 
 If you are still here and are up to give us hand, here's how you could participate and what's the plan:
 
@@ -64,10 +64,10 @@ If you are still here and are up to give us hand, here's how you could participa
 
 5. Mid to late September 2019 we start our platform with plenty of content thanks to your help and we spend the all day wearing our biggest smiles because we are just lucky bastards who could count on awesome people like you 😃
 
-*It’s the end of this article and I have still one hour and half of travel. I was about to develop the small [improvements](https://github.com/deckgo/deckdeckgo/issues/234) I just discovered before I began to write this article but I might just take a bit of time to read some pages of “[Console Wars](https://www.amazon.com/Console-Wars-Nintendo-Defined-Generation-ebook/dp/B00FJ379XE/ref=pd_rhf_ee_p_img_1?_encoding=UTF8&psc=1&refRID=HCRGEEK0Q4E9V99715ZD)” a recent book I bought about the story of Nintendo and Sega, will see.*
+_It’s the end of this article and I have still one hour and half of travel. I was about to develop the small [improvements](https://github.com/deckgo/deckdeckgo/issues/234) I just discovered before I began to write this article but I might just take a bit of time to read some pages of “[Console Wars](https://www.amazon.com/Console-Wars-Nintendo-Defined-Generation-ebook/dp/B00FJ379XE/ref=pd_rhf_ee_p_img_1?_encoding=UTF8&psc=1&refRID=HCRGEEK0Q4E9V99715ZD)” a recent book I bought about the story of Nintendo and Sega, will see._
 
 To infinity and beyond 🚀
- 
+
 David
 
-*P.S. Funny story, it was actually only 30 remaining minutes, I totally misunderstand my ticket. It was a good surprise, kind of feel I've used a time travel machine* 🤣 *Cheers from Munich*
+_P.S. Funny story, it was actually only 30 remaining minutes, I totally misunderstand my ticket. It was a good surprise, kind of feel I've used a time travel machine_ 🤣 _Cheers from Munich_

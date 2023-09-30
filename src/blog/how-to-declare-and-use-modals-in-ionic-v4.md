@@ -53,11 +53,11 @@ export class DatePickerModalModule {}
 
 #### Lazy loading
 
-You might ask yourself, are these modals lazy loaded? The answer to this is one of my favorite german word: **jein**, which is a contraction of *ja* (= yes) and *nein* (= no).
+You might ask yourself, are these modals lazy loaded? The answer to this is one of my favorite german word: **jein**, which is a contraction of _ja_ (= yes) and _nein_ (= no).
 
 The modal is lazy loaded, BUT, it will not be loaded when you open it, as you probably would except, but rather when the module, where the modal’s module is use, will be loaded.
 
-For more information about this particular subject you could visit and participate to the following Ionic forum topic (btw. there I’m *reedrichards*):
+For more information about this particular subject you could visit and participate to the following Ionic forum topic (btw. there I’m _reedrichards_):
 [https://forum.ionicframework.com/t/ionic-4-lazy-loading-and-modals](https://forum.ionicframework.com/t/ionic-4-lazy-loading-and-modals)
 
 ### Using the modal
@@ -86,7 +86,7 @@ import {DatePickerModalModule} from '../../../../modals/core/date-picker/date-pi
 export class NewAdStepAvailabilityModule {}
 ```
 
-*Note: About lazy loading and this particular example, the modal is loaded in the same time as the module *`NewAdStepAvailabilityModule`* respectively, in our browser, we would be able to observe that the javascript code of the modal is  loaded in the same time as the javascript code of this particular module.*
+_Note: About lazy loading and this particular example, the modal is loaded in the same time as the module _`NewAdStepAvailabilityModule`_ respectively, in our browser, we would be able to observe that the javascript code of the modal is loaded in the same time as the javascript code of this particular module._
 
 #### Calling the modal and passing parameters
 
@@ -104,13 +104,13 @@ async openModal() {
              otherParameter: new Date()
           }
     });
-     
+
     modal.onDidDismiss().then((detail: OverlayEventDetail) => {
        if (detail !== null) {
          console.log('The result:', detail.data);
        }
     });
-    
+
     await modal.present();
 }
 ```
@@ -130,7 +130,7 @@ import {ModalController, NavParams} from '@ionic/angular';
     selector: 'app-date-picker'
 })
 export class DatePickerModal {
-    
+
     myParameter: boolean;
     myOtherParameter: Date;
     constructor(private modalController: ModalController,
@@ -142,13 +142,13 @@ export class DatePickerModal {
     }
     async myDismiss() {
       const result: Date = new Date();
-      
+
       await this.modalController.dismiss(result);
     }
 }
 ```
 
-*Note: In this example I used boolean and dates for the parameters and result, but these could also be any other types or even a custom object.*
+_Note: In this example I used boolean and dates for the parameters and result, but these could also be any other types or even a custom object._
 
 ### Cherry on the cake 🍒🎂
 

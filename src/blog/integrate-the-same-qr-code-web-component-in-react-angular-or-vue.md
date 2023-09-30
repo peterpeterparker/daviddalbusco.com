@@ -8,7 +8,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*fqN7UAsguHXdG2ojvxgvJA.jpeg"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*fqN7UAsguHXdG2ojvxgvJA.jpeg)
-*Photo by [Mitya Ivanov](https://unsplash.com/@aka_opex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/qr-codes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Mitya Ivanov](https://unsplash.com/@aka_opex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/qr-codes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 One of the cool asset of Web Components is the fact that they could be integrated in any modern web applications, regardless if these are using a framework or not. As I had to implement some improvements in the QR code Web Component we are using in [DeckDeckGo](https://deckdeckgo.com), as thought it would be interesting to display how it could be used across frameworks. Furthermore, as I’m not yet that experienced with React and Vue, it’s also a fun way for me to improve a bit my skills.
 
@@ -64,22 +64,21 @@ In all examples of this blog post, we are going to import the component in the m
 In the particular case of React, we are going to import the component in `src/index.js` and proceed as displayed in the [documentation](https://stenciljs.com/docs/react) respectively importing it with a loader and defining it as a custom element.
 
 ```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
 // A. We import our loader
-import { applyPolyfills, defineCustomElements }
-  from '@deckdeckgo/qrcode/dist/loader';
+import { applyPolyfills, defineCustomElements } from "@deckdeckgo/qrcode/dist/loader";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 serviceWorker.unregister();
 
 // B. We load our component
 applyPolyfills().then(() => {
-  defineCustomElements(window);
+	defineCustomElements(window);
 });
 ```
 
@@ -88,20 +87,17 @@ applyPolyfills().then(() => {
 Our configuration is all set, we could now have a bit of fun and strictly speaking implement the component in our application. For that purpose we are going to add it to the main `src/App.js` .
 
 ```javascript
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-        <deckgo-qrcode content="https://reactjs.org">
-        </deckgo-qrcode>
-
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<header className="App-header">
+				<deckgo-qrcode content="https://reactjs.org"></deckgo-qrcode>
+			</header>
+		</div>
+	);
 }
 
 export default App;
@@ -121,7 +117,7 @@ If everything works according plan, our application and QR code should be deploy
 
 ![](https://cdn-images-1.medium.com/max/1600/1*e_xIvjI2ZdELhj36u1LlfA.png)
 
-*The result of our test with React*
+_The result of our test with React_
 
 ### Angular
 
@@ -160,18 +156,18 @@ npm install @deckdeckgo/qrcode --save
 When it comes to Angular, I’m not sure if it is still mandatory, but before stricto sensu importing it, we first have to tell Angular to allow the use of custom elements schema. To achieve that goal, we modify `src/app/app.module.ts`.
 
 ```javascript
-import { BrowserModule } from '@angular/platform-browser';
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { BrowserModule } from "@angular/platform-browser";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+import { AppComponent } from "./app.component";
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
-  providers: [],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+	declarations: [AppComponent],
+	imports: [BrowserModule],
+	providers: [],
+	bootstrap: [AppComponent],
+	schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 Note that `CUSTOM_ELEMENTS_SCHEEMA` needs to be included in any module that uses custom elements.
@@ -179,25 +175,26 @@ Note that `CUSTOM_ELEMENTS_SCHEEMA` needs to be included in any module that uses
 Finally we are going to import our component as displayed on the [documentation](https://stenciljs.com/docs/angular), by using the loader and by defining our element in the `src/main.ts` application.
 
 ```javascript
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import { AppModule } from "./app/app.module";
+import { environment } from "./environments/environment";
 
 // A. We import our loader
-import { applyPolyfills, defineCustomElements }
-  from '@deckdeckgo/qrcode/dist/loader';
+import { applyPolyfills, defineCustomElements } from "@deckdeckgo/qrcode/dist/loader";
 
 if (environment.production) {
-  enableProdMode();
+	enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule).catch(err => console.error(err));
+platformBrowserDynamic()
+	.bootstrapModule(AppModule)
+	.catch((err) => console.error(err));
 
 // B. We load our component
 applyPolyfills().then(() => {
-  defineCustomElements(window);
+	defineCustomElements(window);
 });
 ```
 
@@ -207,7 +204,7 @@ We can now implement the component in our application. Angular being based on HT
 
 ```html
 <div class="content" role="main">
-    <deckgo-qrcode content="https://angular.io"></deckgo-qrcode>
+	<deckgo-qrcode content="https://angular.io"></deckgo-qrcode>
 </div>
 ```
 
@@ -225,7 +222,7 @@ Our application and QR code should now be deployed and accessible in our browser
 
 ![](https://cdn-images-1.medium.com/max/1600/1*_Vbu1yVm5naiR7QQtAom-g.png)
 
-*The result of our test with Angular*
+_The result of our test with Angular_
 
 ### Vue
 
@@ -243,7 +240,7 @@ We proceed then with the creation of our application (“demo-qrcode-vue” bein
 
 ```bash
 vue create demo-qrcode-vue
-```    
+```
 
 It might take a bit time (but a bit less time than before as only around 1'300 dependencies have to fetched). Once everything installed, we jump into our newly created project.
 
@@ -264,25 +261,24 @@ npm install @deckdeckgo/qrcode --save
 In addition to importing and defining our component using the loader as we did before, we also have to instruct the Vue compiler to ignore our custom element tag. For that purpose we should modify `src/main.js` as displayed in the [documentation](https://stenciljs.com/docs/vue).
 
 ```javascript
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
 
 // A. We import our loader
-import { applyPolyfills, defineCustomElements }
-  from '@deckdeckgo/qrcode/dist/loader';
+import { applyPolyfills, defineCustomElements } from "@deckdeckgo/qrcode/dist/loader";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 // C. Tell  the compiler to ignore our custom element tag
 Vue.config.ignoredElements = [/deckgo-\w*/];
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+	render: (h) => h(App)
+}).$mount("#app");
 
 // B. We load our component
 applyPolyfills().then(() => {
-  defineCustomElements(window);
+	defineCustomElements(window);
 });
 ```
 
@@ -292,9 +288,9 @@ We would now be able to add our component to the main `src/App.vue` template in 
 
 ```html
 <template>
-  <div class="hello">
-    <deckgo-qrcode content="https://vuejs.org"></deckgo-qrcode>
-  </div>
+	<div class="hello">
+		<deckgo-qrcode content="https://vuejs.org"></deckgo-qrcode>
+	</div>
 </template>
 ```
 
@@ -312,7 +308,7 @@ All right, final test 🎉 Our application and QR code should now be deployed an
 
 ![](https://cdn-images-1.medium.com/max/1600/1*mvCWPtw9p-Da-doxk6Cedw.png)
 
-*The result of our test with Vue*
+_The result of our test with Vue_
 
 ### Conclusion
 

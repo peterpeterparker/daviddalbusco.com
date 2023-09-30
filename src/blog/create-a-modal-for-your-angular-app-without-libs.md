@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/create-a-modal-for-your-angular-a
 
 ![](https://cdn-images-1.medium.com/max/1600/1*xNE1YF5sWgrqysu1GqwUNA.png)
 
-*Photo by [Roger Burkhard](https://unsplash.com/@roger_burkhard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Roger Burkhard](https://unsplash.com/@roger_burkhard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twenty** days left until hopefully better days.
 
-*****
+---
 
 The other day we were building a quick proof of [Angular](https://angular.io) concept with one of my client’s teammate for which we had to display something in a modal. Instead of installing and using some design libraries to solve this requirement, I estimated that it would need almost the same effort to create quickly one (I was not wrong on that one).
 
@@ -22,7 +22,7 @@ Yesterday I [shared another solution](https://daviddalbusco.com/blog/create-a-me
 
 ![](https://cdn-images-1.medium.com/max/1600/1*s0eN_t22IJLbosGLHblfiw.gif)
 
-*****
+---
 
 ### Service
 
@@ -37,7 +37,7 @@ import {BehaviorSubject, Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ModalService {
-  private display: BehaviorSubject<'open' | 'close'> = 
+  private display: BehaviorSubject<'open' | 'close'> =
                    new BehaviorSubject('close');
 
   watch(): Observable<'open' | 'close'> {
@@ -56,13 +56,13 @@ export class ModalService {
 
 Note that at the end of the day, you can use a `boolean` or an `enum` if you rather like, or a `Subject` instead of `BehaviorSubject` . What does matter is to be able to maintain the two states of the modal.
 
-*****
+---
 
 ### Modal
 
 We create a new component for our modal using the Angular CLI (`ng c component modal` ).
 
-*****
+---
 
 #### Code
 
@@ -98,7 +98,7 @@ export class ModalComponent implements OnInit {
 }
 ```
 
-*****
+---
 
 #### Template
 
@@ -108,20 +108,17 @@ Note that I stop the event propagation on the container just in case you would l
 
 ```html
 <ng-container *ngIf="display$ | async as display">
-  <section [class.open]="display === 'open'"
-           (click)="close()">
-    <div (click)="$event.stopPropagation()">
-      <button class="close"
-              type="button" 
-              (click)="close()">X</button>
+	<section [class.open]="display === 'open'" (click)="close()">
+		<div (click)="$event.stopPropagation()">
+			<button class="close" type="button" (click)="close()">X</button>
 
-      <h1>Hello World</h1>
-    </div>
-  </section>
+			<h1>Hello World</h1>
+		</div>
+	</section>
 </ng-container>
 ```
 
-*****
+---
 
 #### Style
 
@@ -182,11 +179,11 @@ section {
 }
 ```
 
-*****
+---
 
 #### Declaration
 
-For simplicity reason I didn’t created a module to load the modal but if you would follow this tutorial for a real life application, I would advise you to do so in order to lazy load it. Meanwhile, in this blog post, we add our component to the `declarations` of our main module `app.module.ts.` 
+For simplicity reason I didn’t created a module to load the modal but if you would follow this tutorial for a real life application, I would advise you to do so in order to lazy load it. Meanwhile, in this blog post, we add our component to the `declarations` of our main module `app.module.ts.`
 
 ```javascript
 @NgModule({
@@ -203,7 +200,6 @@ Additionally, we also use our component in our template only once for our all ap
 
 <app-modal></app-modal>
 ```
-
 
 ### Usage
 
@@ -238,13 +234,13 @@ And link the method in the related template.
 
 ```html
 <button (click)="open()">
-  <h2>Open</h2>
+	<h2>Open</h2>
 </button>
 ```
 
 That’s it, nothing more, nothing less, we have developed a custom modal for our application without any JavaScript dependencies 😁.
 
-*****
+---
 
 ### Summary
 

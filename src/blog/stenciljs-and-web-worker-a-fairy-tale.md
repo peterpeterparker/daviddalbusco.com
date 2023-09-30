@@ -10,7 +10,7 @@ canonical: "https://daviddalbusco.medium.com/stenciljs-web-worker-a-fairy-tale-e
 
 ![](https://cdn-images-1.medium.com/max/1600/1*WXwuHYRWLLamBbB5zg6gtg.png)
 
-*****
+---
 
 Once upon a time, there was a compiler that generates Web Components and builds high performance web apps called [StencilJS](https://stenciljs.com). Among all the build-time tool ever created, it had for goal to build faster, more capable components that worked across all major frameworks.
 
@@ -20,7 +20,7 @@ One day, as he was developing something new in his beloved project [DeckDeckGo](
 
 He was so blew away by the results, that he had to share that magical encounter.
 
-*****
+---
 
 ### Chapter One: Abracadabra
 
@@ -30,7 +30,7 @@ Fortunately, the compiler has shared its sorcery to anyone publicly in a very we
 
 Valiant knights seeking to technically defeat such implementation, let me suggest you to have a look to these spells but, if to the contrary you are here to find a quest, stay with me and let me tell you the rest of the story.
 
-*****
+---
 
 ### Chapter Two: Init Camelot
 
@@ -94,7 +94,7 @@ Some who might fear nothing and who might run the above code on their local comp
 
 ![](https://cdn-images-1.medium.com/max/1600/1*ube4TfnIPeJrXX0vD0wRDA.png)
 
-*****
+---
 
 ### Chapter Three: Spell Calling
 
@@ -108,7 +108,7 @@ Indeed, as you can notice in following screenshot, any TypeScript file within th
 
 ![](https://cdn-images-1.medium.com/max/1600/1*WjLbi1ajmi4H0rlACo4dPA.png)
 
-*****
+---
 
 ### Epilogue
 

@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/firebase-storage-gotchas-63a7cfef
 
 ![](https://cdn-images-1.medium.com/max/1600/1*58twqItpOjtMRuQquE2l5w.jpeg)
 
-*Photo by [Element5 Digital](https://unsplash.com/@element5digital?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Element5 Digital](https://unsplash.com/@element5digital?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 When was the last time you reverted several working days?
 
-I recently took some time to make the assets, moreover than the content, private for every users  of our web editor for presentations, [DeckDeckGo](https://deckdeckgo.com).
+I recently took some time to make the assets, moreover than the content, private for every users of our web editor for presentations, [DeckDeckGo](https://deckdeckgo.com).
 
 After two working days, I finally noticed that I misinterpreted one fundamental point of the [Google Cloud Storage](https://firebase.google.com/docs/storage) and I figured out that I had to revert my new implementation, because our assets were actually, already private 😅. That’s why I’m writing this new blog post, hoping that my “unlucky” experience might help someone else in the future.
 
@@ -80,7 +80,7 @@ If we define the above rules or any other rules which grant access to the storag
 
 ```javascript
 try {
-    const imgSrc: string = 
+    const imgSrc: string =
       'https://firebasestorage.googleapis.com/.../photo.jpg';
     const rawResponse: Response = await fetch(imgSrc, {
         method: 'GET',
@@ -115,7 +115,7 @@ Here’s for example `downloadUrl` where the token is use as parameter to grant 
 
 This was a turning point to me in the process and I have to thank [Doug Stevenson](https://twitter.com/CodingDoug) for having answered my question about it on [StackOverflow](https://stackoverflow.com/questions/59782590/firebase-storage-never-fully-private).
 
-*Note that, without being absolutely sure, I think it might be possible if you are using the Cloud Solution from the server side to instruct Firebase to not generate such urls but it is definitely not possible from the Web/Client side.*
+_Note that, without being absolutely sure, I think it might be possible if you are using the Cloud Solution from the server side to instruct Firebase to not generate such urls but it is definitely not possible from the Web/Client side._
 
 ### downloadUrl: Lifecycle
 

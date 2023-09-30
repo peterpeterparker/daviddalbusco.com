@@ -7,9 +7,10 @@ tags: "#blockchain #programming #web3 #internetcomputer"
 image: "https://miro.medium.com/max/1400/1*0aVC6yVZLehL990fUJDazw.png"
 canonical: "https://medium.com/dfinity/dynamically-create-canister-smart-contracts-in-motoko-d3b38a748c07"
 ---
+
 ![](https://miro.medium.com/max/1400/1*0aVC6yVZLehL990fUJDazw.png)
 
-* * *
+---
 
 In one of my last [blog posts](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/call-internet-computer-canister-smart-contracts-in-nodejs), I shared a solution to query smart contracts on [Internet Computer](https://smartcontracts.org/) in a NodeJS context.
 
@@ -17,7 +18,7 @@ That article was the first of a series that will display the various scripts I h
 
 I plan to share how I query remaining cycles and update the code of my users’ canisters. But first I’m going to share the basis of the architecture — i.e., to demonstrate the code that allows a program to dynamically create canisters.
 
-* * *
+---
 
 ## Architecture
 
@@ -27,13 +28,11 @@ A main actor acts as a a manager that — on the fly, upon object creation — g
 
 ![](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/manager-buckets.png?token=CS-cusHrUKnmwvP6TDNpy)
 
-
-
 In following chapters I introduce such a solution with a sample project developed in [Motoko](https://github.com/dfinity/motoko).
 
-*For more details about this architecture, you can read an article I wrote about it: [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture).*
+_For more details about this architecture, you can read an article I wrote about it: [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)._
 
-* * *
+---
 
 ## Bucket
 
@@ -58,7 +57,7 @@ actor class Bucket(user: Text) = this {
 
 ```
 
-* * *
+---
 
 ## Manager
 
@@ -79,12 +78,12 @@ actor Main {
 
 ```
 
-* * *
+---
 
 To create a new canister we mainly need two things:
 
-*   the bucket - i.e., the actor of previous chapter
-*   the cycles [library](https://smartcontracts.org/docs/current/references/motoko-ref/experimentalcycles)
+- the bucket - i.e., the actor of previous chapter
+- the cycles [library](https://smartcontracts.org/docs/current/references/motoko-ref/experimentalcycles)
 
 Because we implement the code of the bucket in the same project, we can include it with a relative import path. Each call to `Bucket.Bucket(param)` instantiates a new bucket — i.e., dynamically creates a new canister smart contract.
 
@@ -123,7 +122,7 @@ actor Main {
 };
 ```
 
-* * *
+---
 
 While this might be the end of the story, I would like to add another piece to the puzzle.
 
@@ -181,7 +180,7 @@ actor Main {
 
 ```
 
-* * *
+---
 
 ## Web Application
 
@@ -189,46 +188,45 @@ With the two canister smart contracts being implemented, we can develop a dummy 
 
 ```html
 <html lang="en">
-  <body>
-    <main>
-      <button id="init">Init</button>
+	<body>
+		<main>
+			<button id="init">Init</button>
 
-      <button id="say">Say</button>
-    </main>
-  </body>
+			<button id="say">Say</button>
+		</main>
+	</body>
 </html>
 ```
 
-* * *
+---
 
 If you ever created a sample project with the [dfx](https://smartcontracts.org/docs/current/references/cli-reference/dfx-parent/) command line, following will feel familiar.
 
 I created a project named `buckets\_sample`. Dfx automatically installs the dependencies and a function that exposes the `main` actor. Therefore the JavaScript function that calls the manager to instantiate a new canister uses these pre-made methods. I also save the bucket — the principal ID of the last canister that is created — in a global variable for reuse purpose.
 
 ```javascript
-import { buckets_sample } from '../../declarations/buckets_sample';
+import { buckets_sample } from "../../declarations/buckets_sample";
 
 let bucket;
 
 const initCanister = async () => {
-  try {
-    bucket = await buckets_sample.init();
-    console.log('New bucket:', bucket.toText());
-  } catch (err) {
-    console.error(err);
-  }
+	try {
+		bucket = await buckets_sample.init();
+		console.log("New bucket:", bucket.toText());
+	} catch (err) {
+		console.error(err);
+	}
 };
 
 const init = () => {
-  const btnInit = document.querySelector('button#init');
-  btnInit.addEventListener('click', initCanister);
+	const btnInit = document.querySelector("button#init");
+	btnInit.addEventListener("click", initCanister);
 };
 
-document.addEventListener('DOMContentLoaded', init);
-
+document.addEventListener("DOMContentLoaded", init);
 ```
 
-* * *
+---
 
 On the contrary, the process that creates a new sample project is not aware that we want to dynamically create canisters. That is why we have to generate the candid interfaces and related JavaScript code for the bucket we have coded previously.
 
@@ -263,20 +261,20 @@ A bit of mumbo jumbo but that does the trick 😁.
 Thanks the newly generated declaration files, we can create a custom function that instantiate an actor for the bucket — canister ID — we generate on the fly.
 
 ```javascript
-import { Actor, HttpAgent } from '@dfinity/agent';
-import { idlFactory } from '../../declarations/bucket';
+import { Actor, HttpAgent } from "@dfinity/agent";
+import { idlFactory } from "../../declarations/bucket";
 
 export const createBucketActor = async ({ canisterId }) => {
-  const agent = new HttpAgent();
+	const agent = new HttpAgent();
 
-  if (process.env.NODE_ENV !== 'production') {
-    await agent.fetchRootKey();
-  }
+	if (process.env.NODE_ENV !== "production") {
+		await agent.fetchRootKey();
+	}
 
-  return Actor.createActor(idlFactory, {
-    agent,
-    canisterId
-  });
+	return Actor.createActor(idlFactory, {
+		agent,
+		canisterId
+	});
 };
 ```
 
@@ -285,58 +283,57 @@ Note in above snippet how I explicitly `import` another `idlFactory`, the one th
 We can ultimately implement the code that calls the `say` function, which also ends the development of the demo application.
 
 ```javascript
-import { Actor, HttpAgent } from '@dfinity/agent';
-import { buckets_sample } from '../../declarations/buckets_sample';
-import { idlFactory } from '../../declarations/bucket';
+import { Actor, HttpAgent } from "@dfinity/agent";
+import { buckets_sample } from "../../declarations/buckets_sample";
+import { idlFactory } from "../../declarations/bucket";
 
 export const createBucketActor = async ({ canisterId }) => {
-  const agent = new HttpAgent();
+	const agent = new HttpAgent();
 
-  if (process.env.NODE_ENV !== 'production') {
-    await agent.fetchRootKey();
-  }
+	if (process.env.NODE_ENV !== "production") {
+		await agent.fetchRootKey();
+	}
 
-  return Actor.createActor(idlFactory, {
-    agent,
-    canisterId
-  });
+	return Actor.createActor(idlFactory, {
+		agent,
+		canisterId
+	});
 };
 
 let bucket;
 
 const initCanister = async () => {
-  try {
-    bucket = await buckets_sample.init();
-    console.log('New bucket:', bucket.toText());
-  } catch (err) {
-    console.error(err);
-  }
+	try {
+		bucket = await buckets_sample.init();
+		console.log("New bucket:", bucket.toText());
+	} catch (err) {
+		console.error(err);
+	}
 };
 
 const sayHello = async () => {
-  try {
-    const actor = await createBucketActor({
-      canisterId: bucket
-    });
-    console.log(await actor.say());
-  } catch (err) {
-    console.error(err);
-  }
+	try {
+		const actor = await createBucketActor({
+			canisterId: bucket
+		});
+		console.log(await actor.say());
+	} catch (err) {
+		console.error(err);
+	}
 };
 
 const init = () => {
-  const btnInit = document.querySelector('button#init');
-  btnInit.addEventListener('click', initCanister);
+	const btnInit = document.querySelector("button#init");
+	btnInit.addEventListener("click", initCanister);
 
-  const btnSay = document.querySelector('button#say');
-  btnSay.addEventListener('click', sayHello);
+	const btnSay = document.querySelector("button#say");
+	btnSay.addEventListener("click", sayHello);
 };
 
-document.addEventListener('DOMContentLoaded', init);
-
+document.addEventListener("DOMContentLoaded", init);
 ```
 
-* * *
+---
 
 ## Demo
 
@@ -344,9 +341,9 @@ Everything comes to an end, the sample project can finally be tested 😉.
 
 The `init` button dynamically creates a new canister, parse its ID in the console and the `say` button calls the function of the new bucket.
 
-![ezgif.com-gif-maker(1).gif](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/ezgif.com-gif-maker(1).gif?token=KxVe2t40yk3ZCguV3_-B1)
+![ezgif.com-gif-maker(1).gif](<https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/ezgif.com-gif-maker(1).gif?token=KxVe2t40yk3ZCguV3_-B1>)
 
-* * *
+---
 
 ## Conclusion
 

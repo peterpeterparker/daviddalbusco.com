@@ -24,7 +24,7 @@ A couple of months ago, when we were brainstorming new ideas, [Nicolas](https://
 
 While it may look easy to develop at first glance, during development we discovered that the required maths were actually more challenging than expected and therefore obviously even more fun 😉.
 
-*Nicolas published today a post in which he details the mathematical problems and solutions. [Check it out on his blog](https://nmattia.com/posts/2020-03-03-drag-resize-rotate.html).*
+_Nicolas published today a post in which he details the mathematical problems and solutions. [Check it out on his blog](https://nmattia.com/posts/2020-03-03-drag-resize-rotate.html)._
 
 ### Getting Started
 
@@ -32,13 +32,18 @@ The easiest way to try out our component is to use it, with the help of [Unpkg](
 
 ```html
 <html>
-<head>
-  <script type="module" src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize-rotate/deckdeckgo-drag-resize-rotate.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize-rotate/deckdeckgo-drag-resize-rotate.js"></script>
-</head>
+	<head>
+		<script
+			type="module"
+			src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize-rotate/deckdeckgo-drag-resize-rotate.esm.js"
+		></script>
+		<script
+			nomodule=""
+			src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize-rotate/deckdeckgo-drag-resize-rotate.js"
+		></script>
+	</head>
 
-<body>
-</body>
+	<body></body>
 </html>
 ```
 
@@ -51,9 +56,8 @@ Once the imported, the component can be used to drag, resize or rotate any eleme
 If we want to make it movable, draggable and resizable, we wrap it in our Web Component `<deckgo-drr/>`, we specify its default size and position with CSS4 variables and … that’s it 🎉.
 
 ```html
-<deckgo-drr
-  style="--width: 10%; --height: 19%; --top: 15%; --left: 12.5%;">
-  <div style="background: purple;"></div>
+<deckgo-drr style="--width: 10%; --height: 19%; --top: 15%; --left: 12.5%;">
+	<div style="background: purple;"></div>
 </deckgo-drr>
 ```
 

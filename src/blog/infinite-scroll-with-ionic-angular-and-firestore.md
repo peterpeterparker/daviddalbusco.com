@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/infinite-scroll-with-ionic-angula
 
 ![](https://cdn-images-1.medium.com/max/1600/1*yJGFgDFrXEnvCT3cEm_kOg.jpeg)
 
-*Photo by [Dan Schiumarini](https://unsplash.com/@dan_schiumarini?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Dan Schiumarini](https://unsplash.com/@dan_schiumarini?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Once again I find myself having to find a new place to live in Zürich City and therefore once again I have to use search engines and platforms to browse flats, that were never upgraded, in terms of UX and even sometimes design, since the ’90s 🙈.
 
-Yesterday morning, while I was about to visit such websites, I realize that there are no ways to me to undergo the frustration of using these for weeks or months, again 😤. That’s why I spent my Sunday writing a personal crawler with [Puppeteer](https://github.com/puppeteer/puppeteer) and  [Google Firebase](https://firebase.google.com/) and why I developed quickly today, an [Ionic](https://ionicframework.com) and [Angular](https://angular.io) app to browse the outcome. Because it is not the first time I program an [Infinite Scroll](https://ionicframework.com/docs/api/infinite-scroll) with such a technology stack, I finally came to the idea to share my implementation in this new blog post.
+Yesterday morning, while I was about to visit such websites, I realize that there are no ways to me to undergo the frustration of using these for weeks or months, again 😤. That’s why I spent my Sunday writing a personal crawler with [Puppeteer](https://github.com/puppeteer/puppeteer) and [Google Firebase](https://firebase.google.com/) and why I developed quickly today, an [Ionic](https://ionicframework.com) and [Angular](https://angular.io) app to browse the outcome. Because it is not the first time I program an [Infinite Scroll](https://ionicframework.com/docs/api/infinite-scroll) with such a technology stack, I finally came to the idea to share my implementation in this new blog post.
 
 ### Prerequisites
 
@@ -49,15 +49,15 @@ In our newly created service, we declare the following variables:
 
 1. `itemsSubject` : a state container for our items
 2. `lastPageReached` : another state, a `boolean` , to notice if we have or not yet fetched all the data
-3.  `nextQueryAfter` : a reference to the last Firestore document fetched to index our database queries
-4.  `paginationSub` and `findSub` : two subscriptions to stop observing the changes and to clean the memory when needed
+3. `nextQueryAfter` : a reference to the last Firestore document fetched to index our database queries
+4. `paginationSub` and `findSub` : two subscriptions to stop observing the changes and to clean the memory when needed
 
 Moreover, we also declare a service to interact with Firestore, a method `destroy` to unsubscribe the observers and we expose two functions to return our subjects as observables.
 
 ```javascript
 import {Injectable} from '@angular/core';
 
-import {AngularFirestore, DocumentReference, QueryDocumentSnapshot} 
+import {AngularFirestore, DocumentReference, QueryDocumentSnapshot}
   from '@angular/fire/firestore';
 import {BehaviorSubject, Subscription} from 'rxjs';
 
@@ -65,10 +65,10 @@ import {BehaviorSubject, Subscription} from 'rxjs';
   providedIn: 'root'
 })
 export class FeedService {
-  private itemsSubject: BehaviorSubject<Item[] | undefined> = 
+  private itemsSubject: BehaviorSubject<Item[] | undefined> =
                         new BehaviorSubject(undefined);
 
-  private lastPageReached: BehaviorSubject<boolean> = 
+  private lastPageReached: BehaviorSubject<boolean> =
                            new BehaviorSubject(false);
 
   private nextQueryAfter: QueryDocumentSnapshot<ItemData>;
@@ -108,14 +108,14 @@ We have to query the data in Firestore step by step respectively using a paginat
 ```javascript
 find() {
   try {
-    const collection: AngularFirestoreCollection<ItemData> = 
+    const collection: AngularFirestoreCollection<ItemData> =
                       this.getCollectionQuery();
 
     this.unsubscribe();
 
     this.paginationSub = collection.get()
                          .subscribe(async (first) => {
-      this.nextQueryAfter = first.docs[first.docs.length - 1] as          
+      this.nextQueryAfter = first.docs[first.docs.length - 1] as
                             QueryDocumentSnapshot<ItemData>;
 
       await this.query(collection);
@@ -148,7 +148,7 @@ private query(collection: AngularFirestoreCollection<ItemData>): Promise<void> {
       this.findSubscription = collection.snapshotChanges().pipe(
         map(actions => {
           return actions.map(a => {
-            const data: ItemData = 
+            const data: ItemData =
                         a.payload.doc.data() as ItemData;
             const id = a.payload.doc.id;
             const ref = a.payload.doc.ref;
@@ -182,7 +182,7 @@ private addItems(items: Item[]): Promise<void> {
 
     this.itemsSubject.asObservable().pipe(take(1))
                      .subscribe((currentItems: Item[]) => {
-      this.itemsSubject.next(currentItems !== undefined ? 
+      this.itemsSubject.next(currentItems !== undefined ?
             [...currentItems, ...items] : [...items]);
 
       resolve();
@@ -204,7 +204,7 @@ In this newly created component, we declare the following variables:
 1. `infiniteScroll` : a reference to the component scroller to disable it when there will be nothing left to query
 2. `items$` : an observable which will point to our state of data respectively the data we are looking to display
 3. `loaded` : a boolean to display a message when our application is performing the very first query
-4.  `lastPageReachedSub` : a subscription to free the observer when we are done
+4. `lastPageReachedSub` : a subscription to free the observer when we are done
 
 Moreover, we are also referencing the service we created previously and we are implementing `OnInit` , which we are going to implement afterwards, and `OnDestroy` to unsubscribe our observer.
 
@@ -223,7 +223,7 @@ import {FeedService, Item} from './feed.service';
 })
 export class FeedComponent implements OnInit, OnDestroy {
 
-  @ViewChild(IonInfiniteScroll, {static: false}) 
+  @ViewChild(IonInfiniteScroll, {static: false})
              infiniteScroll: IonInfiniteScroll;
 
   items$: Observable<Item[]>;
@@ -254,7 +254,7 @@ To complete our component, we add the following `ngOnInit` function which will t
 async ngOnInit() {
   this.items$ = this.feedService.watchItems();
 
-  this.lastPageReachedSub = 
+  this.lastPageReachedSub =
       this.feedService.watchLastPageReached()
                       .subscribe((reached: boolean) => {
      if (reached && this.infiniteScroll) {
@@ -288,26 +288,23 @@ Our JavaScript code is ready, we can add the HTML implementation of our componen
 
 ```html
 <ng-container *ngIf="loaded; else feedLoading;">
-  <ion-card *ngFor="let item of (items$ | async);">
-    <ion-card-header>
-      <ion-card-title>{{item.data.title}}</ion-card-title>
-    </ion-card-header>
+	<ion-card *ngFor="let item of (items$ | async);">
+		<ion-card-header>
+			<ion-card-title>{{item.data.title}}</ion-card-title>
+		</ion-card-header>
 
-    <ion-card-content>
-      <p>{{item.data.content}}</p>
-    </ion-card-content>
-  </ion-card>
+		<ion-card-content>
+			<p>{{item.data.content}}</p>
+		</ion-card-content>
+	</ion-card>
 
-  <ion-infinite-scroll (ionInfinite)="findNext($event)">
-    <ion-infinite-scroll-content>
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+	<ion-infinite-scroll (ionInfinite)="findNext($event)">
+		<ion-infinite-scroll-content> </ion-infinite-scroll-content>
+	</ion-infinite-scroll>
 </ng-container>
 
 <ng-template #feedLoading>
-  <main>
-    Initializing your feed...
-  </main>
+	<main>Initializing your feed...</main>
 </ng-template>
 ```
 
@@ -315,7 +312,7 @@ Finally, we define a minimal height for our cards in the related SCSS file. With
 
 ```css
 ion-card {
-  min-height: 1080px;
+	min-height: 1080px;
 }
 ```
 

@@ -7,6 +7,7 @@ tags: "#webdev #serverless #database #blockchain"
 image: "https://cdn-images-1.medium.com/max/2600/1*eyGnrhxXL92xcbpJv4DqAA.jpeg"
 canonical: "https://daviddalbusco.medium.com/internet-computer-web-app-decentralized-database-architecture-8647d1a437b8"
 ---
+
 ![](https://cdn-images-1.medium.com/max/2600/1*eyGnrhxXL92xcbpJv4DqAA.jpeg)
 
 We are developing a proof of concept to port our web app, [DeckDeckGo](https://deckdeckgo.com/), to [DFINITY's Internet Computer](https://dfinity.org).
@@ -15,12 +16,12 @@ After having validated the hosting and password-less authentication integration,
 
 Along the way, we tried out two concepts:
 
-* a “conservative” one:  a data persistence in a single database-like storage
-* a “futuristic 🤯” one: generate a database-like smart contract on the fly for each deck created by a user.
+- a “conservative” one: a data persistence in a single database-like storage
+- a “futuristic 🤯” one: generate a database-like smart contract on the fly for each deck created by a user.
 
 In this article I present these two approaches.
 
-*****
+---
 
 ### Introduction
 
@@ -30,7 +31,7 @@ I do not know if anyone has already implemented heavier concepts with the IC (In
 
 You can of course challenge these by commenting on the blog post or by reaching out 😃.
 
-*****
+---
 
 ### The “Nowadays”
 
@@ -42,7 +43,7 @@ Nowadays, server-less or not, the data persistence is often solve with one datab
 
 Users use the (web) application. It calls endpoint(s) to persist and read data and, it returns the results to the users.
 
-In a microservice architecture,  the application(s) is split as a collection of services but, to some extension, the outcome is based on the same concept.
+In a microservice architecture, the application(s) is split as a collection of services but, to some extension, the outcome is based on the same concept.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*3mAmSM4_l4QDF0aK2I_esA.png)
 
@@ -50,7 +51,7 @@ Users use the (web) application. It calls a dedicated service which in turn call
 
 Regardless of these architectures, mono- or micro-services, the data is stored in a monolithic database.
 
-*****
+---
 
 #### Code Snippet
 
@@ -63,34 +64,33 @@ If we develop, for example, an application that lists the kind of animals our us
 To query and persist the data, we would then implement getter (`get` ) and setter (`add` ) functions in our web application that would call the cloud database.
 
 ```javascript
-import firebase from 'firebase/app';
-import 'firebase/firestore';
+import firebase from "firebase/app";
+import "firebase/firestore";
 
 const firestore = firebase.firestore();
 
 const get = async (entryId) => {
-  const snapshot = 
-            await firestore.collection('pets').doc(entryId).get();
+	const snapshot = await firestore.collection("pets").doc(entryId).get();
 
-  if (snapshot.exists) {
-    console.log(snapshot.data());
-  }
+	if (snapshot.exists) {
+		console.log(snapshot.data());
+	}
 };
 
 const add = async (userId, dog, cat) => {
-  const {id: entryId} = await firestore.collection('pets').add({
-    userId,
-    dog,
-    cat
-  });
+	const { id: entryId } = await firestore.collection("pets").add({
+		userId,
+		dog,
+		cat
+	});
 
-  console.log(entryId);
+	console.log(entryId);
 };
 ```
 
 All users would use the same entry point and their data would also be saved in the same collection (`firestore.collection('pets')` ).
 
-*****
+---
 
 ### The “Conservative”
 
@@ -100,7 +100,7 @@ It is up to the makers to build features on top of it. They can implement featur
 
 I picture a "canister" as a container that runs a set of functions in the cloud, except that it is actually a decentralized blockchain network 😉. It can basically do anything that can be implemented, from computing to data persistence.
 
-After studying the [documentation](https://sdk.dfinity.org/docs/introduction/welcome.html) of the SDK, [examples](https://github.com/dfinity/examples) and the “[linkedup](https://github.com/dfinity/linkedup/)” demo,  our first approach had then for goal to replicate the approach we are familiar with, i.e. the “Nowadays" or "monolithic" database approach.
+After studying the [documentation](https://sdk.dfinity.org/docs/introduction/welcome.html) of the SDK, [examples](https://github.com/dfinity/examples) and the “[linkedup](https://github.com/dfinity/linkedup/)” demo, our first approach had then for goal to replicate the approach we are familiar with, i.e. the “Nowadays" or "monolithic" database approach.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*GK30d2fOgC-7UVWdAnrQFA.png)
 
@@ -110,7 +110,7 @@ However, given the blockchain nature of the Internet Computer, it may be good to
 
 If we omit the blockchain aspect (and the decentralization), it basically works the same as what I am familiar with, doesn't it?
 
-*****
+---
 
 #### Code Snippet
 
@@ -122,9 +122,9 @@ Instead of a key-value database collection -- as there are no built-in databases
 
 That attribute can for example be a [Trie](https://sdk.dfinity.org/docs/base-libraries/trie), a functional map (and set) whose representation is “canonical”, and independent of operation history.
 
-To query (`get` ) and persist (`add` ) the data,  we would be able to implement an actor, a canister, as following:
+To query (`get` ) and persist (`add` ) the data, we would be able to implement an actor, a canister, as following:
 
-*Canisters and features unleashed in the Internet Computer can commonly either be written in [Motoko](https://sdk.dfinity.org/docs/language-guide/motoko.html) or [Rust](https://www.rust-lang.org). Motoko is published and maintained by the DFINITY foundation and most of the documentation’s examples are provided in that particular programming language. That is mostly why we developed our proof of concept with Motoko.*
+_Canisters and features unleashed in the Internet Computer can commonly either be written in [Motoko](https://sdk.dfinity.org/docs/language-guide/motoko.html) or [Rust](https://www.rust-lang.org). Motoko is published and maintained by the DFINITY foundation and most of the documentation’s examples are provided in that particular programming language. That is mostly why we developed our proof of concept with Motoko._
 
 ```
 import Trie "mo:base/Trie";
@@ -175,9 +175,9 @@ actor {
 
 The data would be saved in the canister smart-contract, replicated and decentralized, while using an approach we are familiar with.
 
-*Note: [Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=1638333901) to related Motoko Playground to try and play with above example.*
+_Note: [Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=1638333901) to related Motoko Playground to try and play with above example._
 
-*****
+---
 
 ### The “Futuristic 🤯”
 
@@ -195,9 +195,9 @@ It resulted in an architecture in which a main actor acts as a a manager that --
 
 In the above diagram I displayed only two users and, did not reflect the blockchain nature of the network but, hopefully, it pictures well the idea.
 
-A user, through the web app, requests  the manager to get him/her a personal decentralized secure simple key-value data persistence canister. Once obtained, he/she uses this dedicated private space to query and persist his/her data.
+A user, through the web app, requests the manager to get him/her a personal decentralized secure simple key-value data persistence canister. Once obtained, he/she uses this dedicated private space to query and persist his/her data.
 
-*****
+---
 
 #### Code Snippet
 
@@ -223,14 +223,14 @@ actor {
   type UserId = Principal;
 
   private func isPrincipalEqual(x: Principal, y: Principal): Bool {
-    x == y 
+    x == y
   };
 
-  private var canisters: HashMap.HashMap<UserId, CanisterId> = 
-    HashMap.HashMap<UserId, CanisterId>(10, isPrincipalEqual,  
+  private var canisters: HashMap.HashMap<UserId, CanisterId> =
+    HashMap.HashMap<UserId, CanisterId>(10, isPrincipalEqual,
                                         Principal.hash);
 
-  private stable var upgradeCanisters: [(Principal, CanisterId)] = 
+  private stable var upgradeCanisters: [(Principal, CanisterId)] =
     [];
 
   public shared({caller}) func create(): async (CanisterId) {
@@ -252,8 +252,8 @@ actor {
   };
 
   system func postupgrade() {
-    canisters := HashMap.fromIter<UserId, CanisterId>     
-                  (upgradeCanisters.vals(), 10, 
+    canisters := HashMap.fromIter<UserId, CanisterId>
+                  (upgradeCanisters.vals(), 10,
                   isPrincipalEqual, Principal.hash);
                   upgradeCanisters := [];
   };
@@ -306,9 +306,9 @@ It is the user's kingdom, it contains only the personal data of that particular 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*LfdwUX1sVqLI9zp0WSWO_w.png)
 
-*Note: [Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=4031577968) to related Motoko Playground to check out above example.*
+_Note: [Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=4031577968) to related Motoko Playground to check out above example._
 
-*****
+---
 
 ### Pros And Cons
 
@@ -320,7 +320,7 @@ Nevertheless, we are big fans of this architecture and think that the advantages
 
 After all, great power comes with great responsibility!
 
-*****
+---
 
 ### Summary
 
@@ -330,7 +330,7 @@ To infinity and beyond!
 
 David
 
-*****
+---
 
 ### Grant Program
 
@@ -338,6 +338,6 @@ We are incredibly lucky to have been selected for DFINITY [Developer Grant Progr
 
 I cannot stress enough the fact that if you have a great project you should definitely apply. It has been so far nothing less than an amazing experience and, just give the feeling to take part to something that is ahead of its time.
 
-*****
+---
 
 All figures of this article have been developed with [Excalidraw](https://excalidraw.com/), what a slick drawing tool.

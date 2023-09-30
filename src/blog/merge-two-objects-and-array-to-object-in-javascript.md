@@ -10,17 +10,17 @@ canonical: "https://medium.com/@david.dalbusco/merge-two-objects-and-array-to-ob
 
 ![](https://cdn-images-1.medium.com/max/1600/1*RqxfxRKtnHkUdmbpCFhxSA.png)
 
-*Photo by [Ludovic Migneault](https://unsplash.com/@dargonesti?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Ludovic Migneault](https://unsplash.com/@dargonesti?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Seventeen** days left until hopefully better days.
 
-*****
+---
 
 To be really honest with you, I did not had that much idea for today’s blog post. For my defense, this is the eighteenth blog post I write every day in a row, it might explains my lack of today’s inspiration 😅.
 
 That being said, I will share with you the following two tricks which I find useful.
 
-*****
+---
 
 ### Merge Two Objects
 
@@ -30,23 +30,23 @@ It is also worth to notice that in case both objects would contain the same key,
 
 ```javascript
 const bruno = {
-  sing: true,
-  song: 'Treasure'
+	sing: true,
+	song: "Treasure"
 };
 
 const ratm = {
-  type: 'band',
-  song: 'Bombtrack'
+	type: "band",
+	song: "Bombtrack"
 };
 
-const result = {...bruno, ...ratm};
+const result = { ...bruno, ...ratm };
 
 console.log(result);
 
 // -> {sing: true, song: "Bombtrack", type: "band"}
 ```
 
-*****
+---
 
 ### Array To Object
 
@@ -57,30 +57,28 @@ Meanwhile, I use the [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaS
 ```javascript
 // {name: string, genre: string}[]
 const bands = [
-  {
-    name: 'Ratm',
-    genre: 'rock'
-  },
-  {
-    name: 'Bruno',
-    genre: 'Pop'
-  }
+	{
+		name: "Ratm",
+		genre: "rock"
+	},
+	{
+		name: "Bruno",
+		genre: "Pop"
+	}
 ];
 
 // {ratm: string, bruno: string}
-const artists = bands.reduce(
-  (obj, item) => {
-    obj[item.name] = item.genre;
-    return obj;
-  },
-  {});
+const artists = bands.reduce((obj, item) => {
+	obj[item.name] = item.genre;
+	return obj;
+}, {});
 
 console.log(artists);
 
 // {Ratm: "rock", Bruno: "Pop"}
 ```
 
-*****
+---
 
 ### Summary
 

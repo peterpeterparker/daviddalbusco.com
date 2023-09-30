@@ -13,7 +13,7 @@ One of the many improvements introduced in the version [12.1](https://webkit.org
 
 As Web Components could be use in any frameworks or even without, respectively could be use everywhere too, I thought it would be cool to display how to create such a component in order to lazy load images with the help of the Intersection Observer API.
 
-*When it comes to Web Components, I have a bit more experience with the [StencilJS](https://stenciljs.com/) compiler as I’m currently using it to develop our upcoming o en source editor for PWA presentations, [DeckDeckGo](https://deckdeckgo.com/). That’s why I will use it for the purpose of this tutorial. If you never used Stencil yet, no worries, this tutorial is a step by step, you don’t need to know it to go thru the post and I even hope you will like to discover it. I personally think it’s a lot of fun to play with StencilJS*
+_When it comes to Web Components, I have a bit more experience with the [StencilJS](https://stenciljs.com/) compiler as I’m currently using it to develop our upcoming o en source editor for PWA presentations, [DeckDeckGo](https://deckdeckgo.com/). That’s why I will use it for the purpose of this tutorial. If you never used Stencil yet, no worries, this tutorial is a step by step, you don’t need to know it to go thru the post and I even hope you will like to discover it. I personally think it’s a lot of fun to play with StencilJS_
 
 ### Getting started
 
@@ -28,7 +28,7 @@ To begin our (short) journey, we are going to create a new Web Component using S
 ![](https://cdn-images-1.medium.com/max/1600/1*OrBL_5unZ5Ll8F3adWlBcA.png)
 <span class="figcaption_hack">Give a name to the component and project, like “lazy-load-img”</span>
 
-*Note: To shorten the tutorial I won’t cover here how you could rename the default namespace and component’s names, just ping me if you would have specific questions about it.*
+_Note: To shorten the tutorial I won’t cover here how you could rename the default namespace and component’s names, just ping me if you would have specific questions about it._
 
 ### Coding
 
@@ -76,7 +76,7 @@ At this point, our component is able to render an image (tag at least), we shoul
 
 To bind our observer, we gonna use the event `componentDidLoad` which, well, is triggered when the component is loaded. In that particular function we will then search for our image and bind the Intersection Observer.
 
-*Note: our component is shadowed, that’s why we are querying the element on its shadow root respectively `this.el.shadowRoot.querySelector` and not `this.el.querySelector` as it would be the case if the the component would not be shadowed.*
+_Note: our component is shadowed, that’s why we are querying the element on its shadow root respectively `this.el.shadowRoot.querySelector` and not `this.el.querySelector` as it would be the case if the the component would not be shadowed._
 
 ```
 @Element() el: HTMLElement;
@@ -84,7 +84,7 @@ To bind our observer, we gonna use the event `componentDidLoad` which, well, is 
 private observer: IntersectionObserver;
 
 componentDidLoad() {
-  const img: HTMLImageElement = 
+  const img: HTMLImageElement =
                  this.el.shadowRoot.querySelector('img');
 
   if (img) {
@@ -121,9 +121,9 @@ private onIntersection = async (entries) => {
 
 Summarized, the all code of our component contains:
 
-* A `render` method to well, render our image but first without `src` to “block” the automatic loading of the image
-* A `componentDidLoad` method where we hook on the component state to initialize the Intersection Observer for our image
-* A custom function `onIntersection` to detect when the component, respectively, the image would become visible in the viewport and to effectively trigger/start displaying it
+- A `render` method to well, render our image but first without `src` to “block” the automatic loading of the image
+- A `componentDidLoad` method where we hook on the component state to initialize the Intersection Observer for our image
+- A custom function `onIntersection` to detect when the component, respectively, the image would become visible in the viewport and to effectively trigger/start displaying it
 
 All together our component’s code should look like the following:
 
@@ -159,7 +159,7 @@ export class MyComponent {
          if (this.observer) {
              this.observer.disconnect();
          }
-    
+
          if (entry.target.getAttribute('data-src')) {
              entry.target.setAttribute('src',
                         entry.target.getAttribute('data-src'));
@@ -223,7 +223,7 @@ As you could notice in this animated gif above, I added a console output to disp
 
 Our component is pretty neat but you may want to improve it with some Intersection Observer options and also with some more properties or CSS4 variables for the shadowed image of the component, like the `alt` , `width` and `height` attributes.
 
-*If you have specific questions regarding that particular subject or maybe even want me to write a follow-up blog post to describe these steps, let me now!*
+_If you have specific questions regarding that particular subject or maybe even want me to write a follow-up blog post to describe these steps, let me now!_
 
 ### Cherry on the cake 🍒🎂
 

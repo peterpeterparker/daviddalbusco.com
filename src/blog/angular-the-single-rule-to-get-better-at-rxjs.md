@@ -10,21 +10,21 @@ canonical: "https://daviddalbusco.medium.com/angular-the-single-rule-to-get-bett
 
 ![](https://cdn-images-1.medium.com/max/1600/0*nigHuCYvLjp9d92D.jpg)
 
-*****
+---
 
 Even though there is no strict rule, combining imperative and declarative programming concepts with [RxJS](https://rxjs.dev/) might be making the development harder and the code less clean.
 
 Shifting mind from a (often) default way of programming (i.e. imperative) to a reactive (i.e. declarative) approach, takes time.
 
-However, there is a single rule that can help  you make the switch:
+However, there is a single rule that can help you make the switch:
 
 ⚠️ Do **not** subscribe, period ⚠️
 
-*****
+---
 
 > Confused about the difference between imperative and declarative? Have a look to the excellent [article](https://eliteionic.com/tutorials/imperative-vs-declarative-programming-with-rxjs-search-filter/) of [Josh Morony](https://twitter.com/joshuamorony) that compares both.
 
-*****
+---
 
 ### Why?
 
@@ -38,7 +38,7 @@ Concretely, while developing features in components, trying to use mostly the [A
 
 To explore such modus operandi, let’s refactor an Angular application that mix imperative and declarative programming concepts.
 
-*****
+---
 
 ### Starting Point
 
@@ -50,7 +50,7 @@ The code source is available on [GitHub](https://github.com/peterpeterparker/rxj
 
 It defers the HTTP queries to a `coins.service` and presents the results in a `coins.component`.
 
-*****
+---
 
 #### Service
 
@@ -102,7 +102,7 @@ export class CoinsService implements OnDestroy {
 }
 ```
 
-*****
+---
 
 #### Component
 
@@ -130,7 +130,7 @@ export class CoinsComponent implements OnInit {
 }
 ```
 
-*****
+---
 
 #### Template
 
@@ -138,20 +138,20 @@ The HTML list the coins.
 
 ```html
 <article *ngFor="let coin of coins">
-  <h1>{{ coin.name }}</h1>
-  <p>Symbol: {{ coin.symbol }}</p>
-  <p>Rank: {{ coin.rank }}</p>
-  <hr />
+	<h1>{{ coin.name }}</h1>
+	<p>Symbol: {{ coin.symbol }}</p>
+	<p>Rank: {{ coin.rank }}</p>
+	<hr />
 </article>
 ```
 
-*****
+---
 
 ### Step 1: (More) Declarative
 
 Even though I said above that the rule is actually a guideline, I would suggest anyway to **never** subscribe in services, respectively to be more strict about memory leaks.
 
-*****
+---
 
 As we do not want to subscribe, we have first to transform the method that is called by the component to return an `Observable` .
 
@@ -243,7 +243,7 @@ list(): Observable<Coin[]> {
 
 The imperative `if` has become a reactive `filter` and the `array.filter` has been moved to a `map` transformer. Thanks to these last modifications the data sources flow through the stream that describe what we want as a results.
 
-*****
+---
 
 ### Step 2: Subscribe In Component
 
@@ -291,7 +291,7 @@ I know, I said “never subscribe”, this ain’t the end 😉. Nevertheless, w
 
 ![](https://cdn-images-1.medium.com/max/1600/1*HB1cJ9j7em8iz4QodbUvHg.png)
 
-*****
+---
 
 ### Step 3: Async Pipe
 
@@ -379,7 +379,7 @@ Finally, we introduce the famous `async` pipe.
 <article *ngFor="let coin of coins$ | async">
 ```
 
-*****
+---
 
 ### Step 4: No Subscribe And Reactive
 
@@ -503,7 +503,7 @@ A last check to the GUI.
 
 All cryptos are still listed, the code is reactive and, we are not using any “subscribe” anymore 🥳.
 
-*****
+---
 
 ### Summary
 

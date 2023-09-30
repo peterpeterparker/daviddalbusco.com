@@ -10,13 +10,13 @@ canonical: "https://daviddalbusco.medium.com/stencil-component-translations-4efc
 
 ![](https://cdn-images-1.medium.com/max/1600/1*NXe3RbssR10n4RGMVGoZVg.jpeg)
 
-*Photo by [Lucas George Wendt](https://unsplash.com/@lucasgwendt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/internationalization?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Lucas George Wendt](https://unsplash.com/@lucasgwendt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/internationalization?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I have been using the same strategy to internationalize quickly [Stencil](https://stenciljs.com/) components without dependencies in various projects. Among others for the project [Owlly](https://owlly.ch/) or the [Bonjour foundation](https://bonjour.help/).
 
 As all these projects are open source, I will share with you my recipe 🧑‍🍳.
 
-*****
+---
 
 ### Goal
 
@@ -24,7 +24,7 @@ This blog post has not for goal to set up i18n for an application, design system
 
 I use this solution when I create components which contain some `slot `with default values and which have has primary market our lovely “four languages + english per default” Switzerland 🇨🇭.
 
-*****
+---
 
 ### Setup
 
@@ -74,7 +74,7 @@ In this solution, as my goal is to keep it quick and easy, I code the translatio
 
 It is possible to handle these in separate `json` files and `import` these dynamically at runtime. That’s two features I have developed for my more complex use case. After all I maybe really need to blog about this? Ping me if you think that would be an interesting subject!
 
-*****
+---
 
 ### Detect Languages
 
@@ -84,16 +84,16 @@ In the same file, add the following function and initialization of the default l
 
 ```javascript
 const initBrowserLang = (): string | undefined => {
-  if (typeof window === 'undefined' 
+  if (typeof window === 'undefined'
       || typeof window.navigator === 'undefined') {
     return undefined;
   }
 
   let browserLang: string | null =
-    window.navigator.languages 
-    && window.navigator.languages.length > 0 ? 
+    window.navigator.languages
+    && window.navigator.languages.length > 0 ?
               window.navigator.languages[0] : null;
-  
+
   // @ts-ignore
   browserLang = browserLang || window.navigator.language || window.navigator.browserLanguage || window.navigator.userLanguage;
 
@@ -115,52 +115,54 @@ const initBrowserLang = (): string | undefined => {
 const browserLang: string | undefined = initBrowserLang();
 ```
 
-*****
+---
 
 ### Function
 
 The setup and detection are ready, we need a function to render the translations.
 
 ```javascript
-export const translate = 
+export const translate =
              (key: string, customLang?: 'de' | 'en'): string => {
   const lang: string | undefined = customLang || browserLang;
-  return TRANSLATIONS[lang !== undefined 
-                      && SUPPORTED_LANGUAGES.includes(lang) ? 
+  return TRANSLATIONS[lang !== undefined
+                      && SUPPORTED_LANGUAGES.includes(lang) ?
                          lang : DEFAULT_LANGUAGE][key];
 };
 ```
 
 It either uses the browser or a parameter language, check it against the list of supported languages or fallback to the default language, and returns the related translations.
 
-*****
+---
 
 ### Usage
 
 In our component, the above function can be used to render a translation.
 
 ```javascript
-import {Component, h, Host} from '@stencil/core';
+import { Component, h, Host } from "@stencil/core";
 
-import {translate} from './translations.utils';
+import { translate } from "./translations.utils";
 
 @Component({
-  tag: 'question',
-  shadow: true
+	tag: "question",
+	shadow: true
 })
 export class Question {
-  render() {
-    return <Host>
-      <p>{translate('question')}</p>
-      <slot name="answer">{translate('super', 'de')}</slot>
-    </Host>;
-  }
+	render() {
+		return (
+			<Host>
+				<p>{translate("question")}</p>
+				<slot name="answer">{translate("super", "de")}</slot>
+			</Host>
+		);
+	}
 }
 ```
 
 It renders text, with or without specifying a language, and can be used with `slot` too.
 
-*****
+---
 
 ### Summary
 

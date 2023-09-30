@@ -10,21 +10,21 @@ canonical: "https://daviddalbusco.medium.com/build-gatsby-websites-using-firesto
 
 ![](https://cdn-images-1.medium.com/max/1600/1*dFqYiAhtL5Z9RR-b2JArVQ.png)
 
-*Photo by [Melanie Magdalena](https://unsplash.com/@m2creates?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Melanie Magdalena](https://unsplash.com/@m2creates?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 It is possible to populate [Gatsby](https://www.gatsbyjs.com/) websites using [Cloud Firestore](https://firebase.google.com/docs/firestore/) with existing plugins and CMS but, you might be looking to implement such solution by yourself, without dependencies, to get the full control on the process.
 
 This was my goal when I recently developed the new website of [DeckDeckGo](https://deckdeckgo.com), more precisely when I was looking to present users’ published decks in the dedicated page “[Discover](https://deckdeckgo.com/en/discover)”.
 
-In this article I will show you, step by step, how to collect Firestore data to build Gatsby static websites. In addition, as your data might content link to image, I will also show you  how to optimize these.
+In this article I will show you, step by step, how to collect Firestore data to build Gatsby static websites. In addition, as your data might content link to image, I will also show you how to optimize these.
 
-*****
+---
 
 ### Meta
 
 The current post was originally published in January 2021. It was developed using Gatsby v2 and, its source code is available on [GitHub](https://github.com/peterpeterparker/firestore-gatsby).
 
-*****
+---
 
 ### Introduction
 
@@ -35,7 +35,7 @@ The feature we are about to develop, takes place at **build time**. We are going
 3. Optimize the images
 4. Use the information to generate the site
 
-*****
+---
 
 ### Sample Data
 
@@ -47,17 +47,16 @@ These are going to be fetched from a Firestore collection called `dogs`.
 
 ```json
 [
-  {
-    "breed": "Beagle",
-    "img_url": 
-         "https://images.dog.ceo/breeds/beagle/n02088364_16065.jpg"
-  }
+	{
+		"breed": "Beagle",
+		"img_url": "https://images.dog.ceo/breeds/beagle/n02088364_16065.jpg"
+	}
 ]
 ```
 
 Data and images are provided by the free and wonderful [Dog API](https://dog.ceo/dog-api/).
 
-*****
+---
 
 ### Firestore
 
@@ -71,9 +70,9 @@ That being said, at this point you may ask yourself: “But, David, if we do so,
 
 To which I would answer: “Yes but, I’ve got your back”. Indeed, in a [previous article](https://medium.com/better-programming/protect-your-http-firebase-cloud-functions-adf23c45765e), I shared a simple solution to protect HTTP functions with an authorization bearer.
 
-*For simplicity reason, I will not include such verification in following code snippets but, the related [GitHub](https://github.com/peterpeterparker/firestore-gatsby) repo does include it.*
+_For simplicity reason, I will not include such verification in following code snippets but, the related [GitHub](https://github.com/peterpeterparker/firestore-gatsby) repo does include it._
 
-*****
+---
 
 #### Function
 
@@ -111,7 +110,7 @@ const findDogs = async () => {
   });
 };
 
-export const dogs = 
+export const dogs =
          functions.https.onRequest(async (request, response) => {
   try {
     const dogs: Dog[] = await findDogs();
@@ -132,7 +131,7 @@ Once deployed to Firebase (`firebase deploy --only functions:dogs` ), we can tes
 curl -i -H "Accept: application/json" -X GET https://us-central1-yourproject.cloudfunctions.net/dogs
 ```
 
-*****
+---
 
 ### Gatsby
 
@@ -140,7 +139,7 @@ To gather data from an API and optimize remote images we, basically, are going t
 
 To integrate our feature, which should run once in the process of building our site, we code it in `gatsby-node.js` to take control on the data in the [GraphQL data layer](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/).
 
-*****
+---
 
 #### Environment
 
@@ -152,7 +151,7 @@ API_URL=https://us-central1-yourproject.cloudfunctions.net/dogs
 
 Such project environment variable is [not](https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/) immediately available in your Node.js scripts. That’s why we have first to add the following snippet to `gatsby-node.js` to load it.
 
-*****
+---
 
 #### Fetch
 
@@ -165,29 +164,28 @@ npm i node-fetch --save-dev
 We use the extension point [sourceNodes](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#sourceNodes) to add our code as we are looking to create nodes to build our site.
 
 ```javascript
-const fetch = require('node-fetch');
-exports.sourceNodes = 
-  async ({actions, createNodeId, createContentDigest}) => {
-    try {
-        const response = await fetch(`${process.env.API_URL}`, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-        });
+const fetch = require("node-fetch");
+exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => {
+	try {
+		const response = await fetch(`${process.env.API_URL}`, {
+			method: "POST",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json"
+			}
+		});
 
-        if (!response?.ok) {
-            console.error('Cannot fetch dogs data.');
-            return;
-        }
+		if (!response?.ok) {
+			console.error("Cannot fetch dogs data.");
+			return;
+		}
 
-        const dogs = await response.json();
+		const dogs = await response.json();
 
-        console.log(dogs);
-    } catch (err) {
-        console.error(err);
-    }
+		console.log(dogs);
+	} catch (err) {
+		console.error(err);
+	}
 };
 ```
 
@@ -195,7 +193,7 @@ At this point, if we build (`npm run build` ) our site, we should notice our dat
 
 ![](https://cdn-images-1.medium.com/max/1600/1*lEJgBAxrFRBuzyfj9LpXOg.png)
 
-*****
+---
 
 #### Create Nodes
 
@@ -204,25 +202,25 @@ To create Gatsby nodes that are queryable in our site, we iterate on the data, t
 In addition, we define a constant for the node type which we are using to identify the data and which, we will also later on use to optimize the images.
 
 ```javascript
-const DOG_NODE_TYPE = 'Dog';
+const DOG_NODE_TYPE = "Dog";
 
 const createNodes = (actions, createNodeId, createContentDigest, dogs) => {
-  const {createNode} = actions;
+	const { createNode } = actions;
 
-  dogs.forEach((entry) =>
-      createNode({
-        ...entry,
-        id: createNodeId(`${DOG_NODE_TYPE}-${entry.id}`),
-        parent: null,
-        children: [],
-        internal: {
-          type: `${DOG_NODE_TYPE}`,
-          content: JSON.stringify(entry),
-          contentDigest: createContentDigest(entry),
-        },
-      })
-  );
-}
+	dogs.forEach((entry) =>
+		createNode({
+			...entry,
+			id: createNodeId(`${DOG_NODE_TYPE}-${entry.id}`),
+			parent: null,
+			children: [],
+			internal: {
+				type: `${DOG_NODE_TYPE}`,
+				content: JSON.stringify(entry),
+				contentDigest: createContentDigest(entry)
+			}
+		})
+	);
+};
 ```
 
 If we now run our site in development (`npm run start` ), we can open up `http://localhost:8000/___graphql` and query your data.
@@ -245,7 +243,7 @@ If successful, we should find all the results delivered by the API.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*3ut-xNScba3910Ky2OIxiA.png)
 
-*****
+---
 
 #### Query And Display
 
@@ -253,29 +251,29 @@ To query with GraphQL at build time, we use the [hook](https://www.gatsbyjs.com/
 
 ```javascript
 import * as React from "react";
-import {graphql, useStaticQuery} from 'gatsby';
+import { graphql, useStaticQuery } from "gatsby";
 
 const IndexPage = () => {
-  const dogs = useStaticQuery(graphql`
-    query DogQuery {
-      allDog {
-        nodes {
-          id
-          breed
-        }
-      }
-    }
-  `);
+	const dogs = useStaticQuery(graphql`
+		query DogQuery {
+			allDog {
+				nodes {
+					id
+					breed
+				}
+			}
+		}
+	`);
 
-  return (
-    <main>
-      <h1>Doggos</h1>
+	return (
+		<main>
+			<h1>Doggos</h1>
 
-      {dogs.allDog.nodes.map((dog) => (
-          <h2 key={dog.id}>{dog.breed}</h2>
-      ))}
-    </main>
-  );
+			{dogs.allDog.nodes.map((dog) => (
+				<h2 key={dog.id}>{dog.breed}</h2>
+			))}
+		</main>
+	);
 };
 
 export default IndexPage;
@@ -285,7 +283,7 @@ Such minimalistic component produce the following output which, however, confirm
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Ne96f5Ue7Mt40MPJRk_JtA.png)
 
-*****
+---
 
 #### Optimize Images
 
@@ -294,22 +292,21 @@ Our data are link to images stored remotely. To download these in order to be ab
 To integrate it in our feature, we add a function `onCreateNode` which will be called each time a node is created. That’s why we introduced a constant for the node type so that we only download those images we are interested in.
 
 ```javascript
-const {createRemoteFileNode} = require(`gatsby-source-filesystem`);
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`);
 
-exports.onCreateNode = 
- async ({node, actions: {createNode}, createNodeId, getCache}) => {
-  if (node.internal.type === DOG_NODE_TYPE) {
-    const fileNode = await createRemoteFileNode({
-      url: node.img_url,
-      parentNodeId: node.id,
-      createNode,
-      createNodeId,
-      getCache,
-    });
-    if (fileNode) {
-      node.remoteImage___NODE = fileNode.id;
-    }
-  }
+exports.onCreateNode = async ({ node, actions: { createNode }, createNodeId, getCache }) => {
+	if (node.internal.type === DOG_NODE_TYPE) {
+		const fileNode = await createRemoteFileNode({
+			url: node.img_url,
+			parentNodeId: node.id,
+			createNode,
+			createNodeId,
+			getCache
+		});
+		if (fileNode) {
+			node.remoteImage___NODE = fileNode.id;
+		}
+	}
 };
 ```
 
@@ -333,7 +330,7 @@ query MyQuery {
 
 To make the optimization of images possible at build time, we double check that the default [gatsby-plugin-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) and [gatsby-transformer-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-sharp) plugins are installed in our project.
 
-*If not, install these and, add them to your `gatsby-config.js`.*
+_If not, install these and, add them to your `gatsby-config.js`._
 
 We also modify our query to verify that, indeed, images have been optimized by finding related `childImageSharp` nodes.
 
@@ -361,43 +358,45 @@ Finally, we reflect the improvements to the GraphQL query in our component and, 
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
-import Img from 'gatsby-image';
+import Img from "gatsby-image";
 
 const IndexPage = () => {
-  const dogs = useStaticQuery(graphql`
-    query DogQuery {
-      allDog {
-        nodes {
-          id
-          breed
-          remoteImage {
-            childImageSharp {
-              id
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+	const dogs = useStaticQuery(graphql`
+		query DogQuery {
+			allDog {
+				nodes {
+					id
+					breed
+					remoteImage {
+						childImageSharp {
+							id
+							fluid {
+								...GatsbyImageSharpFluid
+							}
+						}
+					}
+				}
+			}
+		}
+	`);
 
-  return (
-    <main>
-      <h1>Doggos</h1>
+	return (
+		<main>
+			<h1>Doggos</h1>
 
-      {dogs.allDog.nodes.map((dog) => (
-        <article key={dog.id}>
-          <h2>{dog.breed}</h2>
+			{dogs.allDog.nodes.map((dog) => (
+				<article key={dog.id}>
+					<h2>{dog.breed}</h2>
 
-          <Img fluid={dog.remoteImage.childImageSharp.fluid} 
-               alt={dog.breed} 
-               style={{width: '100px'}}/>
-        </article>
-      ))}
-    </main>
-  );
+					<Img
+						fluid={dog.remoteImage.childImageSharp.fluid}
+						alt={dog.breed}
+						style={{ width: "100px" }}
+					/>
+				</article>
+			))}
+		</main>
+	);
 };
 
 export default IndexPage;
@@ -407,9 +406,9 @@ In addition to being displayed, our images should now appear with a “blur-up�
 
 ![](https://cdn-images-1.medium.com/max/1600/1*HcgSjYGHybfb6-IOe79B-Q.gif)
 
-*Gif slowed down to 0.25% of its original speed.*
+_Gif slowed down to 0.25% of its original speed._
 
-*****
+---
 
 #### Development
 
@@ -419,11 +418,11 @@ That’s why, I suggest to create a sample data at the root of the project. A fi
 
 ```json
 [
-  {
-    "id": "HpW0clxI9uKLlhhk3q9E",
-    "img_url": "https://images.dog.ceo/breeds/eskimo/n02109961_17033.jpg",
-    "breed": "Eskimo"
-  }
+	{
+		"id": "HpW0clxI9uKLlhhk3q9E",
+		"img_url": "https://images.dog.ceo/breeds/eskimo/n02109961_17033.jpg",
+		"breed": "Eskimo"
+	}
 ]
 ```
 
@@ -431,49 +430,42 @@ Finally, we can enhance our `createNodes` function to intercept the `development
 
 ```javascript
 const fetch = require("node-fetch");
-const fs = require('fs');
+const fs = require("fs");
 
-exports.sourceNodes = async ({
-  actions,
-  createNodeId,
-  createContentDigest,
-}) => {
-  try {
-    const activeEnv = process.env.GATSBY_ACTIVE_ENV || 
-                      process.env.NODE_ENV || 
-                      'development';
+exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => {
+	try {
+		const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development";
 
-    if (activeEnv !== 'production') {
-      const feed = 
-            JSON.parse(fs.readFileSync('./dogs.sample.json'));
-      createNodes(actions, createNodeId, createContentDigest, feed);
+		if (activeEnv !== "production") {
+			const feed = JSON.parse(fs.readFileSync("./dogs.sample.json"));
+			createNodes(actions, createNodeId, createContentDigest, feed);
 
-      return;
-    }
+			return;
+		}
 
-    const response = await fetch(`${process.env.API_URL}`, {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
+		const response = await fetch(`${process.env.API_URL}`, {
+			method: "POST",
+			headers: {
+				Accept: "application/json",
+				"Content-Type": "application/json"
+			}
+		});
 
-    if (!response?.ok) {
-      console.error("Cannot fetch dogs data.");
-      return;
-    }
+		if (!response?.ok) {
+			console.error("Cannot fetch dogs data.");
+			return;
+		}
 
-    const dogs = await response.json();
+		const dogs = await response.json();
 
-    createNodes(actions, createNodeId, createContentDigest, dogs);
-  } catch (err) {
-    console.error(err);
-  }
+		createNodes(actions, createNodeId, createContentDigest, dogs);
+	} catch (err) {
+		console.error(err);
+	}
 };
 ```
 
-*****
+---
 
 ### Take Away
 

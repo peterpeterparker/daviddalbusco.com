@@ -8,7 +8,6 @@ image: "https://images.unsplash.com/photo-1496715976403-7e36dc43f17b?ixlib=rb-4.
 canonical: "https://juno.build/blog/build-a-web3-app-with-vuejs"
 ---
 
-
 ## Introduction
 
 As a frontend JavaScript developer stepping into the decentralized web, you may have encountered numerous solutions for Web3 development. However, these solutions often focus on wallet integration and transaction execution, creating a learning curve and deviating from the familiar Web2 development experience.
@@ -59,19 +58,19 @@ After completing both of these steps, you can initialize Juno with your satellit
 
 ```html
 <script setup lang="ts">
-  import { onMounted } from "vue";
-  import { initJuno } from "@junobuild/core";
+	import { onMounted } from "vue";
+	import { initJuno } from "@junobuild/core";
 
-  onMounted(
-    async () =>
-      await initJuno({
-        satelliteId: "pycrs-xiaaa-aaaal-ab6la-cai",
-      })
-  );
+	onMounted(
+		async () =>
+			await initJuno({
+				satelliteId: "pycrs-xiaaa-aaaal-ab6la-cai"
+			})
+	);
 </script>
 
 <template>
-  <h1>Hello World</h1>
+	<h1>Hello World</h1>
 </template>
 ```
 
@@ -85,7 +84,7 @@ In order to ensure secure and anonymous user identification, it is necessary for
 
 ```html
 <script setup lang="ts">
-  import { signIn, signOut } from "@junobuild/core";
+	import { signIn, signOut } from "@junobuild/core";
 </script>
 
 <button @click="signIn">Sign-in</button>
@@ -97,16 +96,16 @@ In order to establish seamless integration with other services, the library and 
 To monitor and gain insights into this entry, and consequently access information about the user's state, Juno offers an observable function called `authSubscribe()`. You have the flexibility to utilize this function as many times as necessary. However, you can also create a store that effectively propagates the user information throughout your app.
 
 ```typescript
-import { ref, type Ref } from "vue";
-import { defineStore } from "pinia";
 import { authSubscribe, type User } from "@junobuild/core";
+import { defineStore } from "pinia";
+import { ref, type Ref } from "vue";
 
 export const useAuthStore = defineStore("auth", () => {
-  const user: Ref<User | null | undefined> = ref(undefined);
+	const user: Ref<User | null | undefined> = ref(undefined);
 
-  const unsubscribe = authSubscribe((u) => (user.value = u));
+	const unsubscribe = authSubscribe((u) => (user.value = u));
 
-  return { user, unsubscribe };
+	return { user, unsubscribe };
 });
 ```
 
@@ -114,21 +113,21 @@ By doing so, it becomes convenient to subscribe to it at the top level of your a
 
 ```html
 <script setup lang="ts">
-  import { useAuthStore } from "../stores/auth.store";
-  import { storeToRefs } from "pinia";
+	import { useAuthStore } from "../stores/auth.store";
+	import { storeToRefs } from "pinia";
 
-  const store = useAuthStore();
-  const { user } = storeToRefs(store);
+	const store = useAuthStore();
+	const { user } = storeToRefs(store);
 </script>
 
 <template>
-  <template v-if="user !== undefined && user !== null">
-    <slot />
-  </template>
+	<template v-if="user !== undefined && user !== null">
+		<slot />
+	</template>
 
-  <template v-else>
-    <p>Not signed in.</p>
-  </template>
+	<template v-else>
+		<p>Not signed in.</p>
+	</template>
 </template>
 ```
 
@@ -147,11 +146,11 @@ import { setDoc } from "@junobuild/core";
 
 // TypeScript example from the documentation
 await setDoc<Example>({
-  collection: "my_collection_key",
-  doc: {
-    key: "my_document_key",
-    data: myExample,
-  },
+	collection: "my_collection_key",
+	doc: {
+		key: "my_document_key",
+		data: myExample
+	}
 });
 ```
 
@@ -159,35 +158,31 @@ Since the documents in the collection are identified by a unique key, we create 
 
 ```html
 <script lang="ts" setup>
-  import { ref } from "vue";
-  import { setDoc } from "@junobuild/core";
-  import { nanoid } from "nanoid";
+	import { ref } from "vue";
+	import { setDoc } from "@junobuild/core";
+	import { nanoid } from "nanoid";
 
-  const inputText = ref("");
+	const inputText = ref("");
 
-  const add = async () => {
-    const key = nanoid();
+	const add = async () => {
+		const key = nanoid();
 
-    await setDoc({
-      collection: "notes",
-      doc: {
-        key,
-        data: {
-          text: inputText.value,
-        },
-      },
-    });
-  };
+		await setDoc({
+			collection: "notes",
+			doc: {
+				key,
+				data: {
+					text: inputText.value
+				}
+			}
+		});
+	};
 </script>
 
 <template>
-  <textarea
-    rows="5"
-    placeholder="Your diary entry"
-    v-model="inputText"
-  ></textarea>
+	<textarea rows="5" placeholder="Your diary entry" v-model="inputText"></textarea>
 
-  <button @click="add">Add</button>
+	<button @click="add">Add</button>
 </template>
 ```
 
@@ -203,27 +198,27 @@ For the purpose of this tutorial, we will keep the example minimalistic. Our obj
 
 ```html
 <script lang="ts" setup>
-  import { listDocs } from "@junobuild/core";
-  import { onMounted, ref } from "vue";
+	import { listDocs } from "@junobuild/core";
+	import { onMounted, ref } from "vue";
 
-  const items = ref([]);
+	const items = ref([]);
 
-  const list = async () => {
-    const { items: data } = await listDocs({
-      collection: "notes",
-    });
+	const list = async () => {
+		const { items: data } = await listDocs({
+			collection: "notes"
+		});
 
-    items.value = data;
-  };
+		items.value = data;
+	};
 
-  onMounted(async () => await list());
+	onMounted(async () => await list());
 </script>
 
 <template>
-  <p v-for="(item, index) in items">
-    <span> {{ index + 1 }} </span>
-    <span>{{ item.data.text }}</span>
-  </p>
+	<p v-for="(item, index) in items">
+		<span> {{ index + 1 }} </span>
+		<span>{{ item.data.text }}</span>
+	</p>
 </template>
 ```
 
@@ -241,40 +236,40 @@ To accomplish this, we can create a key using a combination of the user's unique
 
 ```html
 <script lang="ts" setup>
-  import { ref } from "vue";
-  import { useAuthStore } from "@/stores/auth.store";
-  import { storeToRefs } from "pinia";
-  import { uploadFile } from "@junobuild/core";
+	import { ref } from "vue";
+	import { useAuthStore } from "@/stores/auth.store";
+	import { storeToRefs } from "pinia";
+	import { uploadFile } from "@junobuild/core";
 
-  const file = ref(undefined);
+	const file = ref(undefined);
 
-  const store = useAuthStore();
-  const { user } = storeToRefs(store);
+	const store = useAuthStore();
+	const { user } = storeToRefs(store);
 
-  const setFile = (f) => (file.value = f);
+	const setFile = (f) => (file.value = f);
 
-  const upload = async () => {
-    // Demo purpose therefore edge case not properly handled
-    if ([null, undefined].includes(user.value)) {
-      return;
-    }
+	const upload = async () => {
+		// Demo purpose therefore edge case not properly handled
+		if ([null, undefined].includes(user.value)) {
+			return;
+		}
 
-    const filename = `${user.value.key}-${file.value.name}`;
+		const filename = `${user.value.key}-${file.value.name}`;
 
-    const { downloadUrl } = await uploadFile({
-      collection: "images",
-      data: file.value,
-      filename,
-    });
+		const { downloadUrl } = await uploadFile({
+			collection: "images",
+			data: file.value,
+			filename
+		});
 
-    console.log("Uploaded", downloadUrl);
-  };
+		console.log("Uploaded", downloadUrl);
+	};
 </script>
 
 <template>
-  <input type="file" @change="(event) => setFile(event.target.files?.[0])" />
+	<input type="file" @change="(event) => setFile(event.target.files?.[0])" />
 
-  <button @click="upload">Upload</button>
+	<button @click="upload">Upload</button>
 </template>
 ```
 
@@ -290,24 +285,24 @@ Similar to the previous example with documents, we will keep this example minima
 
 ```html
 <script lang="ts" setup>
-  import { listAssets } from "@junobuild/core";
-  import { onMounted, ref } from "vue";
+	import { listAssets } from "@junobuild/core";
+	import { onMounted, ref } from "vue";
 
-  const assets = ref([]);
+	const assets = ref([]);
 
-  const list = async () => {
-    const { assets: images } = await listAssets({
-      collection: "images",
-    });
+	const list = async () => {
+		const { assets: images } = await listAssets({
+			collection: "images"
+		});
 
-    assets.value = images;
-  };
+		assets.value = images;
+	};
 
-  onMounted(async () => await list());
+	onMounted(async () => await list());
 </script>
 
 <template>
-  <img loading="lazy" :src="asset.downloadUrl" v-for="asset in assets" />
+	<img loading="lazy" :src="asset.downloadUrl" v-for="asset in assets" />
 </template>
 ```
 

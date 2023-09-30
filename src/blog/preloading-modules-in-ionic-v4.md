@@ -81,9 +81,9 @@ export class AppRoutingPreloaderService implements PreloadingStrategy {
 
     preloadRoute(path: string): Promise<void> {
         return new Promise<void>((resolve) => {
-            if (this.routesToPreload && 
+            if (this.routesToPreload &&
                 this.routesToPreload.length > 0) {
-                const routeToPreload: RouteToPreload = 
+                const routeToPreload: RouteToPreload =
                     this.routesToPreload.find(
                        (filterRouteToPreload: RouteToPreload) =>
                        filterRouteToPreload.routePath === path);
@@ -99,14 +99,14 @@ export class AppRoutingPreloaderService implements PreloadingStrategy {
 }
 ```
 
-*Note: currently the provider may be loaded twice and therefore collect twice the routes. This isn’t such a problem here because we don’t preload anything per default and because the effective preload will take care of only loading the first route which have been collected*
+_Note: currently the provider may be loaded twice and therefore collect twice the routes. This isn’t such a problem here because we don’t preload anything per default and because the effective preload will take care of only loading the first route which have been collected_
 
 Then, as described in other articles, we could modify our `app-routing.module.ts` in order to provide our custom preloading strategy and to specify which routes are candidates for the preloading
 
 ```
 const routes: Routes = [
      {
-      path: 'main', 
+      path: 'main',
       loadChildren: './pages/main.module#MainPageModule'
     },
     {
@@ -117,7 +117,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, 
+    imports: [RouterModule.forRoot(routes,
                  {preloadingStrategy: AppRoutingPreloaderService}
              )],
     exports: [RouterModule]
@@ -135,7 +135,7 @@ Finally, let the magic happens ✨, we could use the provider in our selected pa
     styleUrls: ['./main.page.scss'],
 })
 export class ItemsPage {
-    
+
   constructor(private routingService: AppRoutingPreloaderService) {}
   async ionViewDidEnter() {
     await this.routingService.preloadRoute('details');

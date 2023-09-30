@@ -8,7 +8,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*5Fjoye88JFo3hqnenly5UQ.jpeg"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*5Fjoye88JFo3hqnenly5UQ.jpeg)
-*Photo by [Álvaro Serrano](https://unsplash.com/@alvaroserrano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Álvaro Serrano](https://unsplash.com/@alvaroserrano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Are you looking to contribute to a new open source project? Or want to get started with technologies like Web Components and [StencilJS](https://stenciljs.com) ?
 
@@ -30,7 +30,7 @@ A couple of months ago, I went to a meetup where the organizer kept telling “w
 
 ![](https://cdn-images-1.medium.com/max/1600/1*voVxknfmRH_le-JkDvJD2Q.png)
 
-*Our remote control has a “timer” feature, maybe its design could be use as inspiration*
+_Our remote control has a “timer” feature, maybe its design could be use as inspiration_
 
 Interested? 👉 [Issue #45: [core] the countdown slide template](https://github.com/deckgo/deckdeckgo/issues/45)
 
@@ -40,9 +40,9 @@ The “only” transition effect currently happening when swiping between slides
 
 ![](https://cdn-images-1.medium.com/max/1600/1*kEdSJGj91MbKjl3as1w7FA.gif)
 
-*Current “slide” effect*
+_Current “slide” effect_
 
-I thought it would be neat to have an option to select another type of animation beginning with the implementation of a  “fade effect” transition.
+I thought it would be neat to have an option to select another type of animation beginning with the implementation of a “fade effect” transition.
 
 Interested? 👉 [Issue #70: [core] Transition animation with “fade effect”](https://github.com/deckgo/deckdeckgo/issues/70)
 
@@ -53,7 +53,7 @@ Among all the templates, there is a [YouTube template](https://docs.deckdeckgo.c
 <iframe width="280" height="158" src="https://www.youtube.com/embed/3o3oGBTTRSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
 <br/>
 
-*A video I recorded when I released the remote control*
+_A video I recorded when I released the remote control_
 
 In order to be able to embed a YouTube video, its Url has to follow a specific format which isn’t the same as the one of the short Url exported by the social share component used by Youtube. That’s why, if such Url would be detected, the id of the video would have to be extracted in order to be formatted in a correct link.
 
@@ -67,7 +67,7 @@ With our Web Component to format and highlight code, which use [Prism.js](https:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*fv8n52dHip5HUJABheKN2w.png)
 
-*A sneak peek of this component in our upcoming editor for presentations*
+_A sneak peek of this component in our upcoming editor for presentations_
 
 Interested? 👉 [Issue #115: [highlight-code] display optionally line numbers](https://github.com/deckgo/deckdeckgo/issues/115)
 

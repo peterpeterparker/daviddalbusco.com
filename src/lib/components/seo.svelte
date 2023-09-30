@@ -2,7 +2,7 @@
   let defaultUrl = 'https://daviddalbusco.com';
   let defaultImage = `${defaultUrl}/images/daviddalbusco.jpg`;
   let defaultTitle = 'David Dal Busco';
-  let defaultDescription = 'Freelance Web Developer - Web, Progressive Web Apps and Mobile';
+  let defaultDescription = 'Freelance Web Developer';
 
   export let url: string = defaultUrl;
   export let canonical: string | undefined = undefined;

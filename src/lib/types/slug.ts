@@ -1,3 +1,3 @@
 export interface Slug {
-  slug: string;
+	slug: string;
 }

@@ -4,7 +4,7 @@ date: "2023-09-30"
 title: "A Sass Mixin to Build Your Own CSS Framework à la Tailwind"
 description: "Ready to craft a Sass mixin to generate your own class-based CSS approach for your app?"
 tags: "#css #sass #programming #webdev"
-image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*V4hY8EjtJ0jlbJw4l9R4tg.jpeg"
+image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KYkxKsaCqV1uq8Sxfmyykw.jpeg"
 canonical: "https://daviddalbusco.medium.com/a-sass-mixin-to-build-your-own-css-framework-%C3%A0-la-tailwind-530f72e4ed97"
 ---
 

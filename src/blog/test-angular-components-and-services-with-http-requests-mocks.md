@@ -10,21 +10,21 @@ canonical: "https://medium.com/@david.dalbusco/test-angular-components-and-servi
 
 ![](https://cdn-images-1.medium.com/max/1600/1*ARj7jYIrVb-eR7B0OOD2Zg.png)
 
-*Photo by [Josue Isai Ramos Figueroa](https://unsplash.com/@jramos10?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Josue Isai Ramos Figueroa](https://unsplash.com/@jramos10?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Eighteen** days left until hopefully better days.
 
-*****
+---
 
 The other day I was writing some [Angular](https://angular.io) tests for a new project of one my client and I was about to mock my service function when suddenly the idea hit me: what if instead of mocking my service functions, I would mock the HTTP requests globally for all my tests with the goal to test also my services logic at the same time as I would test my components 🤔
 
 I was able to achieve this goal and that’s why I’m sharing this learning in this new blog post.
 
-*****
+---
 
 ### Setup
 
-Let’s define a simple setup as example. 
+Let’s define a simple setup as example.
 
 We have a `service` which exposes a single HTTP request. For the purpose of this tutorial, we can use the amazing free and open source API provided by the [Dog API](https://dog.ceo/dog-api/).
 
@@ -65,7 +65,7 @@ import {Dog, DogService} from '../dog.service';
 
 @Component({
   selector: 'app-dog',
-  template: `<img *ngIf="doggo$ | async as doggo" 
+  template: `<img *ngIf="doggo$ | async as doggo"
                   [src]="doggo.message">`
 })
 export class DogComponent {
@@ -75,7 +75,7 @@ export class DogComponent {
   constructor(private dogService: DogService) {
     this.doggo$ = dogService.randomDog();
   }
-  
+
 }
 ```
 
@@ -83,11 +83,11 @@ If you test this component, rendered in your browser you should discover a good 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*nEw8NxG6y8xwPwOe9YXf4g.png)
 
-*****
+---
 
 ### Test Services With HTTP Requests
 
-As we are going to develop a mock for our HTTP requests, we can begin first by testing our service. 
+As we are going to develop a mock for our HTTP requests, we can begin first by testing our service.
 
 To test our service we are going to take advantages of the [HttpClientTestingModule](https://angular.io/api/common/http/testing/HttpClientTestingModule) provided by Angular as [Josué Estévez Fernández](https://medium.com/@Jestfer?source=post_page-----3880ceac74cf----------------------) described in his brillant article about [Angular Testing](https://medium.com/better-programming/testing-http-requests-in-angular-with-httpclienttestingmodule-3880ceac74cf).
 
@@ -95,13 +95,13 @@ Basically, what we do is subscribing to our service exposed function `randomDog(
 
 ```javascript
 import { TestBed } from '@angular/core/testing';
-import {HttpClientTestingModule, HttpTestingController} 
+import {HttpClientTestingModule, HttpTestingController}
        from '@angular/common/http/testing';
 
 import {Dog, DogService} from './dog.service';
 
 export const mockDog: Dog = {
-    message: 
+    message:
     'https://images.dog.ceo/breeds/hound-basset/n02088238_9815.jpg',
     status: 'success'
 };
@@ -146,7 +146,7 @@ If you run the tests (`npm run test` ) these should be successfull.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Ko-H8QOYgTlx4xuB9hhhSQ.png)
 
-*****
+---
 
 ### Test Components With HTTP Requests Mock
 
@@ -166,7 +166,7 @@ import {mockDog} from './dog.service.spec';
 export class HttpRequestInterceptorMock implements HttpInterceptor {
     constructor(private injector: Injector) {}
 
-    intercept(request: HttpRequest<any>, next: HttpHandler): 
+    intercept(request: HttpRequest<any>, next: HttpHandler):
               Observable<HttpEvent<any>> {
         if (request.url && request.url
          .indexOf(`https://dog.ceo/api/breeds/image/random`) > -1) {
@@ -212,7 +212,7 @@ import {HttpClientTestingModule}
        from '@angular/common/http/testing';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
-import {HttpRequestInterceptorMock} 
+import {HttpRequestInterceptorMock}
        from '../http-request-interceptor.mock';
 
 import {mockDog} from '../dog.service.spec';
@@ -250,7 +250,7 @@ describe('DogComponent', () => {
   });
 
   it('should render image', async () => {
-    const img: HTMLImageElement = 
+    const img: HTMLImageElement =
           fixture.debugElement.nativeElement.querySelector('img');
 
     expect(img).not.toBe(null);
@@ -263,7 +263,7 @@ That’s it, it is super, furthermore than being able to test our component we a
 
 ![](https://cdn-images-1.medium.com/max/1600/1*S9NnYvTRXnX0ztI0WZkkag.png)
 
-*****
+---
 
 ### Summary
 

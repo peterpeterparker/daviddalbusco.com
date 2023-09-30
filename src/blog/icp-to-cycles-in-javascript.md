@@ -7,13 +7,14 @@ tags: "#javascript #nodejs #web3 #internetcomputer"
 image: "https://images.unsplash.com/photo-1613905780946-26b73b6f6e11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwyMHx8bWF0aHxlbnwwfHx8fDE2NTc4MDgxNTQ&ixlib=rb-1.2.1&q=80&w=1080"
 canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/icp-to-cycles-in-javascript"
 ---
+
 ![https://unsplash.com/photos/4ApmfdVo32Q](https://images.unsplash.com/photo-1613905780946-26b73b6f6e11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwyMHx8bWF0aHxlbnwwfHx8fDE2NTc4MDgxNTQ&ixlib=rb-1.2.1&q=80&w=1080)
 
-*Photo by [Michal Matlon](https://unsplash.com/@michalmatlon?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Michal Matlon](https://unsplash.com/@michalmatlon?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Until there is a library (e.g. [cmc-js](https://github.com/dfinity/ic-js) 👀) that facilitates the conversion of ICP to cycles in JavaScript, the following tutorial may help you implement such a transformation.
 
-* * *
+---
 
 ## Introduction
 
@@ -22,7 +23,7 @@ Long story short, to convert ICP to cycles you need two things:
 1.  the exchange rate to transform the values which is returned by the cycles-minting canister (CMC) through the function `get_icp_xdr_conversion_rate`
 2.  a function that, well, does the conversion
 
-* * *
+---
 
 ## Dependencies
 
@@ -32,7 +33,7 @@ To query the CMC in JavaScript easily you need [agent-js](https://github.com/dfi
 npm i node-fetch @dfinity/agent @dfinity/candid @dfinity/principal
 ```
 
-* * *
+---
 
 ## Candid
 
@@ -42,7 +43,7 @@ The CMC candid file can be downloaded on the Internet Computer [repo](https://gi
 
 In following code snippets I use these particular bindings.
 
-* * *
+---
 
 ## XDR conversion rate
 
@@ -58,25 +59,25 @@ import { idlFactory } from "./cmc/cmc.utils.did.mjs";
 const { HttpAgent, Actor } = pkgAgent;
 
 const icpXdrConversionRate = async () => {
-  const agent = new HttpAgent({ fetch, host: "https://ic0.app" });
+	const agent = new HttpAgent({ fetch, host: "https://ic0.app" });
 
-  const actor = Actor.createActor(idlFactory, {
-    agent,
-    canisterId: "rkp4c-7iaaa-aaaaa-aaaca-cai",
-  });
+	const actor = Actor.createActor(idlFactory, {
+		agent,
+		canisterId: "rkp4c-7iaaa-aaaaa-aaaca-cai"
+	});
 
-  const {
-    data: { xdr_permyriad_per_icp },
-  } = await actor.get_icp_xdr_conversion_rate();
+	const {
+		data: { xdr_permyriad_per_icp }
+	} = await actor.get_icp_xdr_conversion_rate();
 
-  const CYCLES_PER_XDR = BigInt(1_000_000_000_000);
+	const CYCLES_PER_XDR = BigInt(1_000_000_000_000);
 
-  // Return conversion rate in trillion ratio
-  return (xdr_permyriad_per_icp * CYCLES_PER_XDR) / BigInt(10_000);
+	// Return conversion rate in trillion ratio
+	return (xdr_permyriad_per_icp * CYCLES_PER_XDR) / BigInt(10_000);
 };
 ```
 
-* * *
+---
 
 ## Conversion ICP to cycles
 
@@ -86,37 +87,34 @@ We aim to convert readable numbers. That is why, we first need a small utility t
 const E8S_PER_ICP = BigInt(100000000);
 
 const toBigint = (amount) => {
-  const [integral, fractional] = `${amount}`.split(".");
+	const [integral, fractional] = `${amount}`.split(".");
 
-  if ((fractional ?? "0").length > 8) {
-    throw new Error("More than 8 decimals not supported.");
-  }
+	if ((fractional ?? "0").length > 8) {
+		throw new Error("More than 8 decimals not supported.");
+	}
 
-  return (
-    BigInt(integral ?? 0) * E8S_PER_ICP +
-    BigInt((fractional ?? "0").padEnd(8, "0"))
-  );
+	return BigInt(integral ?? 0) * E8S_PER_ICP + BigInt((fractional ?? "0").padEnd(8, "0"));
 };
 ```
 
 A few samples of above function result (number -> bigint):
 
-*   `1` -> `100000000n`
-*   `1.2` -> `120000000n`
-*   `34.456` -> `3445600000n`
+- `1` -> `100000000n`
+- `1.2` -> `120000000n`
+- `34.456` -> `3445600000n`
 
-* * *
+---
 
 Finally, to effectively convert the ICP to cycles, we can implement a cross-multiplication with the conversion rate.
 
 ```javascript
-const icpToCycles = async ({icp, conversionRate}) => {
-  const e8ToCycleRatio = conversionRate / E8S_PER_ICP;
-  return toBigint(icp) * e8ToCycleRatio;
+const icpToCycles = async ({ icp, conversionRate }) => {
+	const e8ToCycleRatio = conversionRate / E8S_PER_ICP;
+	return toBigint(icp) * e8ToCycleRatio;
 };
 ```
 
-* * *
+---
 
 ## Demo
 
@@ -124,17 +122,13 @@ Put together in a small demo, e.g. above functions can be chained to log the res
 
 ```javascript
 const convertICPToCycles = async (icp) => {
-  const conversionRate = await icpXdrConversionRate();
-  const cycles = await icpToCycles({icp, conversionRate});
+	const conversionRate = await icpXdrConversionRate();
+	const cycles = await icpToCycles({ icp, conversionRate });
 
-  const ONE_TRILLION = BigInt(1000000) * BigInt(1000000);
+	const ONE_TRILLION = BigInt(1000000) * BigInt(1000000);
 
-  console.log(
-      `${icp} ICP equals ${
-          Number(cycles) / Number(ONE_TRILLION)
-      } (${cycles}) cycles`
-  );
-}
+	console.log(`${icp} ICP equals ${Number(cycles) / Number(ONE_TRILLION)} (${cycles}) cycles`);
+};
 
 await convertICPToCycles(123.56);
 ```
@@ -146,7 +140,7 @@ If run in a command line, the sample should output such a result:
 123.56 ICP equals 652.0879 (652087900000000) cycles
 ```
 
-* * *
+---
 
 ## Conclusion
 

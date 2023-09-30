@@ -51,20 +51,20 @@ npm i @junobuild/core
 After completing both of these steps, you can initialize Juno with your satellite ID in the main component of your Angular app. This will configure the library to communicate with your smart contract.
 
 ```typescript
-import {Component, OnInit} from "@angular/core";
-import {initJuno} from "@junobuild/core";
+import { Component, OnInit } from "@angular/core";
+import { initJuno } from "@junobuild/core";
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
-  styleUrls: ["./app.component.scss"]
+	selector: "app-root",
+	templateUrl: "./app.component.html",
+	styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-  async ngOnInit() {
-    await initJuno({
-      satelliteId: "pycrs-xiaaa-aaaal-ab6la-cai"
-    });
-  }
+	async ngOnInit() {
+		await initJuno({
+			satelliteId: "pycrs-xiaaa-aaaal-ab6la-cai"
+		});
+	}
 }
 ```
 
@@ -77,17 +77,18 @@ That’s it for the configuration! Your app is now ready for Web3! 😎
 To enable secure and **anonymous** user identification, users will need to sign in and sign out. You can bind the corresponding functions to call-to-action buttons anywhere in your app.
 
 ```typescript
-import {Component} from "@angular/core";
-import {signIn, signOut} from "@junobuild/core";
+import { Component } from "@angular/core";
+import { signIn, signOut } from "@junobuild/core";
 
 @Component({
-  selector: "app-demo",
-  template: `<button (click)="signIn()">Sign-in</button> <button (click)="signOut()">Sign-out</button>`,
-  standalone: true
+	selector: "app-demo",
+	template: `<button (click)="signIn()">Sign-in</button>
+		<button (click)="signOut()">Sign-out</button>`,
+	standalone: true
 })
 export class DemoComponent {
-  readonly signOut = signOut;
-  readonly signIn = signIn;
+	readonly signOut = signOut;
+	readonly signIn = signIn;
 }
 ```
 
@@ -96,17 +97,19 @@ To integrate tightly with other services, the library and satellite automaticall
 To observe this entry and, consequently, understand the user’s state, Juno offers an observable function called `authSubscribe()`. You can use this function as many times as needed, but it’s convenient to create a service that provides the information. This way, you can derive RxJS `Observable` to propagate the user.
 
 ```typescript
-import {Injectable} from "@angular/core";
-import {authSubscribe, User} from "@junobuild/core";
-import {map, Observable} from "rxjs";
+import { Injectable } from "@angular/core";
+import { authSubscribe, User } from "@junobuild/core";
+import { map, Observable } from "rxjs";
 
 @Injectable({
-  providedIn: "root"
+	providedIn: "root"
 })
 export class AuthService {
-  readonly user$: Observable<User | null> = new Observable((observer) => authSubscribe((user) => observer.next(user)));
+	readonly user$: Observable<User | null> = new Observable((observer) =>
+		authSubscribe((user) => observer.next(user))
+	);
 
-  readonly signedIn$: Observable<boolean> = this.user$.pipe(map((user) => user !== null));
+	readonly signedIn$: Observable<boolean> = this.user$.pipe(map((user) => user !== null));
 }
 ```
 
@@ -123,61 +126,61 @@ In this tutorial, we aim to store notes, so you’ll need to create a collection
 After setting up your app and creating the collection, you can use the `setDoc` function provided by the library to persist data on the blockchain.
 
 ```typescript
-import {setDoc} from "@junobuild/core";
+import { setDoc } from "@junobuild/core";
 
 // TypeScript example from the documentation
 await setDoc<Example>({
-  collection: "my_collection_key",
-  doc: {
-    key: "my_document_key",
-    data: myExample
-  }
+	collection: "my_collection_key",
+	doc: {
+		key: "my_document_key",
+		data: myExample
+	}
 });
 ```
 
 Since the documents in the collection are identified by a unique key, we create keys using [nanoid](https://github.com/ai/nanoid) — a tiny string ID generator for JavaScript.
 
 ```typescript
-import {Component} from "@angular/core";
-import {FormBuilder, ReactiveFormsModule} from "@angular/forms";
-import {setDoc} from "@junobuild/core";
-import {nanoid} from "nanoid";
-import {Entry} from "../../types/entry";
+import { Component } from "@angular/core";
+import { FormBuilder, ReactiveFormsModule } from "@angular/forms";
+import { setDoc } from "@junobuild/core";
+import { nanoid } from "nanoid";
+import { Entry } from "../../types/entry";
 
 @Component({
-  selector: "app-input",
-  template: ` <form (ngSubmit)="onSubmit()" [formGroup]="entryForm">
-    <textarea formControlName="entry"></textarea>
+	selector: "app-input",
+	template: ` <form (ngSubmit)="onSubmit()" [formGroup]="entryForm">
+		<textarea formControlName="entry"></textarea>
 
-    <button [disabled]="entryForm.disabled">Submit</button>
-  </form>`,
-  standalone: true,
-  imports: [ReactiveFormsModule]
+		<button [disabled]="entryForm.disabled">Submit</button>
+	</form>`,
+	standalone: true,
+	imports: [ReactiveFormsModule]
 })
 export class InputComponent {
-  entryForm = this.formBuilder.group({
-    entry: ""
-  });
+	entryForm = this.formBuilder.group({
+		entry: ""
+	});
 
-  constructor(private formBuilder: FormBuilder) {}
+	constructor(private formBuilder: FormBuilder) {}
 
-  async onSubmit() {
-    await this.save();
-  }
+	async onSubmit() {
+		await this.save();
+	}
 
-  private async save() {
-    const key = nanoid();
+	private async save() {
+		const key = nanoid();
 
-    await setDoc<Entry>({
-      collection: "notes",
-      doc: {
-        key,
-        data: {
-          text: this.entryForm.value.entry
-        }
-      }
-    });
-  }
+		await setDoc<Entry>({
+			collection: "notes",
+			doc: {
+				key,
+				data: {
+					text: this.entryForm.value.entry
+				}
+			}
+		});
+	}
 }
 ```
 
@@ -187,8 +190,8 @@ In the above code snippet, we are persisting an object called “entries” to t
 
 ```typescript
 export interface Entry {
-  text: string;
-  url?: string;
+	text: string;
+	url?: string;
 }
 ```
 
@@ -203,68 +206,68 @@ In this tutorial, we simply list all data of the users while observing the authe
 In addition, we create also a dedicated service to keep the data in memory for reusability purposes. This service includes a reload function, which can be useful to reload the data as needed.
 
 ```typescript
-import {Inject, Injectable} from "@angular/core";
-import type {Doc} from "@junobuild/core";
-import {listDocs} from "@junobuild/core";
-import type {Observable} from "rxjs";
-import {combineLatest, from, map, of, shareReplay, startWith, Subject, switchMap} from "rxjs";
-import type {Entry} from "../types/entry";
-import {AuthService} from "./auth.service";
+import { Inject, Injectable } from "@angular/core";
+import type { Doc } from "@junobuild/core";
+import { listDocs } from "@junobuild/core";
+import type { Observable } from "rxjs";
+import { Subject, combineLatest, from, map, of, shareReplay, startWith, switchMap } from "rxjs";
+import type { Entry } from "../types/entry";
+import { AuthService } from "./auth.service";
 
 @Injectable({
-  providedIn: "root"
+	providedIn: "root"
 })
 export class DocsService {
-  private reloadSubject = new Subject<void>();
+	private reloadSubject = new Subject<void>();
 
-  docs$: Observable<Doc<Entry>[]> = combineLatest([
-    this.authService.user$,
-    this.reloadSubject.pipe(startWith(undefined))
-  ]).pipe(
-    switchMap(([user, _]) => {
-      if (user === null) {
-        return of([]);
-      }
+	docs$: Observable<Doc<Entry>[]> = combineLatest([
+		this.authService.user$,
+		this.reloadSubject.pipe(startWith(undefined))
+	]).pipe(
+		switchMap(([user, _]) => {
+			if (user === null) {
+				return of([]);
+			}
 
-      return from(
-        listDocs<Entry>({
-          collection: "notes",
-          filter: {}
-        })
-      ).pipe(map(({items}) => items));
-    }),
-    startWith([]),
-    shareReplay({bufferSize: 1, refCount: true})
-  );
+			return from(
+				listDocs<Entry>({
+					collection: "notes",
+					filter: {}
+				})
+			).pipe(map(({ items }) => items));
+		}),
+		startWith([]),
+		shareReplay({ bufferSize: 1, refCount: true })
+	);
 
-  constructor(@Inject(AuthService) private readonly authService: AuthService) {}
+	constructor(@Inject(AuthService) private readonly authService: AuthService) {}
 
-  reload() {
-    this.reloadSubject.next();
-  }
+	reload() {
+		this.reloadSubject.next();
+	}
 }
 ```
 
 For display purposes, we can subscribe to the asynchronous stream as we would with any observable.
 
 ```typescript
-import {Component, Inject} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {type Doc} from "@junobuild/core";
-import {Observable} from "rxjs";
-import {DocsService} from "../../services/docs.service";
-import type {Entry} from "../../types/entry";
+import { Component, Inject } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { type Doc } from "@junobuild/core";
+import { Observable } from "rxjs";
+import { DocsService } from "../../services/docs.service";
+import type { Entry } from "../../types/entry";
 
 @Component({
-  selector: "app-list",
-  template: `<p *ngFor="let doc of docs$ | async">{{ doc.key }}: {{ doc.data.text }}</p>`,
-  imports: [BrowserModule],
-  standalone: true
+	selector: "app-list",
+	template: `<p *ngFor="let doc of docs$ | async">{{ doc.key }}: {{ doc.data.text }}</p>`,
+	imports: [BrowserModule],
+	standalone: true
 })
 export class ListComponent {
-  readonly docs$: Observable<Doc<Entry>[]> = this.docsService.docs$;
+	readonly docs$: Observable<Doc<Entry>[]> = this.docsService.docs$;
 
-  constructor(@Inject(DocsService) private readonly docsService: DocsService) {}
+	constructor(@Inject(DocsService) private readonly docsService: DocsService) {}
 }
 ```
 
@@ -279,57 +282,57 @@ To upload files, you’ll need to create a collection by following the instructi
 Each file stored on the blockchain is identified by a unique filename and path that corresponds to a unique URL. To accomplish this, we create a key using a combination of the user’s unique ID in text form and a timestamp for each uploaded file. We can retrieve the corresponding user’s key by accessing the observable of the authentication service we declared in previous chapter.
 
 ```typescript
-import {Component, Inject} from "@angular/core";
-import {AssetKey, uploadFile, User} from "@junobuild/core";
-import {filter, from, switchMap, take} from "rxjs";
-import {AuthService} from "../../services/auth.service";
-import {BrowserModule} from "@angular/platform-browser";
+import { Component, Inject } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AssetKey, User, uploadFile } from "@junobuild/core";
+import { filter, from, switchMap, take } from "rxjs";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
-  selector: "app-upload",
-  template: `
-    <input type="file" accept="image/png, image/gif, image/jpeg" (change)="onFileChanged($event)" />
+	selector: "app-upload",
+	template: `
+		<input type="file" accept="image/png, image/gif, image/jpeg" (change)="onFileChanged($event)" />
 
-    <img *ngIf="downloadUrl !== undefined" [src]="downloadUrl" loading="lazy" />
+		<img *ngIf="downloadUrl !== undefined" [src]="downloadUrl" loading="lazy" />
 
-    <button (click)="add()">Upload</button>
-  `,
-  standalone: true,
-  imports: [BrowserModule]
+		<button (click)="add()">Upload</button>
+	`,
+	standalone: true,
+	imports: [BrowserModule]
 })
 export class UploadComponent {
-  private file: File | undefined;
+	private file: File | undefined;
 
-  downloadUrl: string | undefined;
+	downloadUrl: string | undefined;
 
-  constructor(@Inject(AuthService) private readonly authService: AuthService) {}
+	constructor(@Inject(AuthService) private readonly authService: AuthService) {}
 
-  add() {
-    this.authService.user$
-      .pipe(
-        filter((user) => user !== null),
-        switchMap((user) => from(this.upload(user as User))),
-        take(1)
-      )
-      .subscribe(({downloadUrl}) => {
-        this.downloadUrl = downloadUrl;
-      });
-  }
+	add() {
+		this.authService.user$
+			.pipe(
+				filter((user) => user !== null),
+				switchMap((user) => from(this.upload(user as User))),
+				take(1)
+			)
+			.subscribe(({ downloadUrl }) => {
+				this.downloadUrl = downloadUrl;
+			});
+	}
 
-  onFileChanged($event: Event) {
-    const target = $event.target as HTMLInputElement;
-    this.file = target.files?.[0];
-  }
+	onFileChanged($event: Event) {
+		const target = $event.target as HTMLInputElement;
+		this.file = target.files?.[0];
+	}
 
-  private async upload(user: User): Promise<AssetKey> {
-    const filename = `${user.key}-${this.file.name}`;
+	private async upload(user: User): Promise<AssetKey> {
+		const filename = `${user.key}-${this.file.name}`;
 
-    return uploadFile({
-      collection: "images",
-      data: this.file,
-      filename
-    });
-  }
+		return uploadFile({
+			collection: "images",
+			data: this.file,
+			filename
+		});
+	}
 }
 ```
 
@@ -344,66 +347,70 @@ To fetch the list of assets saved on the blockchain, we can use the `listAssets`
 Similar to the documents, we can create a service that converts the list into an observable.
 
 ```typescript
-import {Inject, Injectable} from "@angular/core";
-import type {Assets} from "@junobuild/core";
-import {listAssets} from "@junobuild/core";
-import type {Observable} from "rxjs";
-import {combineLatest, from, map, of, shareReplay, startWith, Subject, switchMap} from "rxjs";
-import {AuthService} from "./auth.service";
+import { Inject, Injectable } from "@angular/core";
+import type { Assets } from "@junobuild/core";
+import { listAssets } from "@junobuild/core";
+import type { Observable } from "rxjs";
+import { Subject, combineLatest, from, map, of, shareReplay, startWith, switchMap } from "rxjs";
+import { AuthService } from "./auth.service";
 
 @Injectable({
-  providedIn: "root"
+	providedIn: "root"
 })
 export class AssetsService {
-  private reloadSubject = new Subject<void>();
+	private reloadSubject = new Subject<void>();
 
-  assets$: Observable<Assets[]> = combineLatest([
-    this.authService.user$,
-    this.reloadSubject.pipe(startWith(undefined))
-  ]).pipe(
-    switchMap(([user, _]) => {
-      if (user === null) {
-        return of([]);
-      }
+	assets$: Observable<Assets[]> = combineLatest([
+		this.authService.user$,
+		this.reloadSubject.pipe(startWith(undefined))
+	]).pipe(
+		switchMap(([user, _]) => {
+			if (user === null) {
+				return of([]);
+			}
 
-      return from(
-        listAssets({
-          collection: "images",
-          filter: {}
-        })
-      ).pipe(map(({assets}) => assets));
-    }),
-    startWith([]),
-    shareReplay({bufferSize: 1, refCount: true})
-  );
+			return from(
+				listAssets({
+					collection: "images",
+					filter: {}
+				})
+			).pipe(map(({ assets }) => assets));
+		}),
+		startWith([]),
+		shareReplay({ bufferSize: 1, refCount: true })
+	);
 
-  constructor(@Inject(AuthService) private readonly authService: AuthService) {}
+	constructor(@Inject(AuthService) private readonly authService: AuthService) {}
 
-  reload() {
-    this.reloadSubject.next();
-  }
+	reload() {
+		this.reloadSubject.next();
+	}
 }
 ```
 
 For display purposes, we also subscribe to the asynchronous stream as we would with any observable.
 
 ```typescript
-import {Component, Inject} from "@angular/core";
-import {BrowserModule} from "@angular/platform-browser";
-import {Asset} from "@junobuild/core";
-import {Observable} from "rxjs";
-import {AssetsService} from "../../services/assets.service";
+import { Component, Inject } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { Asset } from "@junobuild/core";
+import { Observable } from "rxjs";
+import { AssetsService } from "../../services/assets.service";
 
 @Component({
-  selector: "app-assets",
-  template: `<img *ngFor="let asset of assets$ | async" [src]="asset.downloadUrl" loading="lazy" />`,
-  imports: [BrowserModule],
-  standalone: true
+	selector: "app-assets",
+	template: `<img
+		*ngFor="let asset of assets$ | async"
+		[src]="asset.downloadUrl"
+		loading="lazy"
+	/>`,
+	imports: [BrowserModule],
+	standalone: true
 })
 export class AssetsComponent {
-  readonly assets$: Observable<Asset[]> = this.assetsService.assets$;
+	readonly assets$: Observable<Asset[]> = this.assetsService.assets$;
 
-  constructor(@Inject(AssetsService) private readonly assetsService: AssetsService) {}
+	constructor(@Inject(AssetsService) private readonly assetsService: AssetsService) {}
 }
 ```
 

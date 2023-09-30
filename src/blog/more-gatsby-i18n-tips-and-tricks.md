@@ -10,7 +10,7 @@ canonical: "https://daviddalbusco.medium.com/more-gatsby-i18n-tips-and-tricks-4b
 
 ![](https://cdn-images-1.medium.com/max/1600/1*pWteHjwMcqePrFNKqgq2ug.jpeg)
 
-*Photo by [pure julia](https://unsplash.com/@purejulia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/world-map?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [pure julia](https://unsplash.com/@purejulia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/world-map?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Earlier this year (2020), when I was publishing a blog post every day during the lockdown, I shared [my solution](https://daviddalbusco.com/blog/internationalization-with-gatsby) to internationalize website build with [Gatsby](https://www.gatsbyjs.com/).
 
@@ -20,7 +20,7 @@ At first, I was looking to experiment a new method but, did not find any which w
 
 Doing so, I learned a couple of new tricks and also improved, I hope, the solution.
 
-*****
+---
 
 ### Meta
 
@@ -30,7 +30,7 @@ The current post was written in December 2020 using Gatsby v2, [gatsby-plugin-i1
 
 Its code snippets are taken from our open source website on [GitHub](https://github.com/deckgo/deckdeckgo/tree/master/site).
 
-*****
+---
 
 ### JSON Translation Files
 
@@ -38,78 +38,73 @@ In the previous article, I was relying on JavaScript files to handle translation
 
 ```javascript
 module.exports = {
-  hello: "Hello world",
-}
+	hello: "Hello world"
+};
 ```
 
 Needless to say, I was never a big fan of such method. That’s why in our new website, I replaced these by JSON data (`i18n/en.json`).
 
 ```json
 {
-  "hello": "Hello world"
+	"hello": "Hello world"
 }
 ```
 
 These JSON files can then be imported in their respective language `Layout` component as I used to do with JS import (`layout/en.js` ).
 
 ```javascript
-import React from 'react';
-import Layout from './layout';
+import React from "react";
+import Layout from "./layout";
 
 // Previously with JS
 // import messages from '../../i18n/en';
 
 // New with JSON
-import messages from '../../i18n/en.json';
+import messages from "../../i18n/en.json";
 
-import '@formatjs/intl-pluralrules/locale-data/en';
+import "@formatjs/intl-pluralrules/locale-data/en";
 
-export default (props) => (
-  <Layout
-    {...props}
-    messages={messages}
-  />
-);
+export default (props) => <Layout {...props} messages={messages} />;
 ```
 
 I did not make any changes in the common `Layout` component itself. It still declares the layout and wrap the children in a `IntlProvider` .
 
 ```javascript
-import React from 'react';
-import {useStaticQuery, graphql} from 'gatsby';
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 
-import {IntlProvider} from 'react-intl';
-import '@formatjs/intl-pluralrules/polyfill';
+import { IntlProvider } from "react-intl";
+import "@formatjs/intl-pluralrules/polyfill";
 
-import {getCurrentLangKey} from 'ptz-i18n';
+import { getCurrentLangKey } from "ptz-i18n";
 
-export default ({children, location, messages}) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          languages {
-            defaultLangKey
-            langs
-          }
-        }
-      }
-    }
-  `);
+export default ({ children, location, messages }) => {
+	const data = useStaticQuery(graphql`
+		query SiteTitleQuery {
+			site {
+				siteMetadata {
+					title
+					languages {
+						defaultLangKey
+						langs
+					}
+				}
+			}
+		}
+	`);
 
-  const {langs, defaultLangKey} = data.site.siteMetadata.languages;
-  const langKey = getCurrentLangKey(langs, defaultLangKey, location.pathname);
+	const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+	const langKey = getCurrentLangKey(langs, defaultLangKey, location.pathname);
 
-  return (
-    <IntlProvider locale={langKey} messages={messages}>
-      {children}
-    </IntlProvider>
-  );
+	return (
+		<IntlProvider locale={langKey} messages={messages}>
+			{children}
+		</IntlProvider>
+	);
 };
 ```
 
-*****
+---
 
 ### Multiple JSON Data
 
@@ -118,7 +113,6 @@ Don’t know if this idiom exists in English but, in French, with can say someth
 Thanks to JSON, I was able to resolve this need quite easily. For example, I created two separate files `i18n/index.json` and `i18n/common.json` .
 
 Important to notice, I prefixed the translations’ keys with keywords, such as `index` or `common`, to avoid duplicate keys.
-
 
 ```json
 // A new file i18n/index.json
@@ -135,55 +129,51 @@ Important to notice, I prefixed the translations’ keys with keywords, such as 
 Each files can finally be imported and concatenated, thanks to destructing objects, to the list of translations in their related language layout (`layout/en.js` in this example).
 
 ```javascript
-import React from 'react';
-import Layout from './layout';
+import React from "react";
+import Layout from "./layout";
 
-import index from '../../i18n/index.json';
-import common from '../../i18n/common.json';
+import index from "../../i18n/index.json";
+import common from "../../i18n/common.json";
 
-import '@formatjs/intl-pluralrules/locale-data/en';
+import "@formatjs/intl-pluralrules/locale-data/en";
 
 export default (props) => (
-  <Layout
-    {...props}
-    messages={{
-      ...index,
-      ...common,
-    }}
-  />
+	<Layout
+		{...props}
+		messages={{
+			...index,
+			...common
+		}}
+	/>
 );
 ```
 
 Using this method, we can split our translations in as much separate files as we would like, we “just” have to import and concatenate each new file we would create.
 
-*****
+---
 
 ### Placeholder, alt, aria-label and title
 
 In an [article](https://medium.com/@Yuschick/translating-placeholder-alt-title-text-with-react-intl-a99d31f4194c) of [Daniel Yuschick](https://twitter.com/Yuschick) I discovered that react-intl now exposes a `useIntl` hook which turns out to be kind handy to translate placeholder, alt, aria-label and title.
 
 ```javascript
-import React from 'react';
+import React from "react";
 
-import {useIntl} from 'react-intl';
+import { useIntl } from "react-intl";
 
 export const Contact = () => {
-  const intl = useIntl();
+	const intl = useIntl();
 
-  return (
-    <section>
-      <textarea 
-           placeholder={intl.formatMessage({id: 'hello.world'})}
-           name="message"
-           rows={4} />
-      <img alt={intl.formatMessage({id: 'hello.yolo'})}
-           src="./yolo.png"/>
-    </section>
-  );
+	return (
+		<section>
+			<textarea placeholder={intl.formatMessage({ id: "hello.world" })} name="message" rows={4} />
+			<img alt={intl.formatMessage({ id: "hello.yolo" })} src="./yolo.png" />
+		</section>
+	);
 };
 ```
 
-*****
+---
 
 ### Links
 
@@ -193,7 +183,7 @@ The trick can be done by introducing a “placeholder” for the link in the tra
 
 ```json
 {
-  "source.code": "The source code is available on {githubLink}."
+	"source.code": "The source code is available on {githubLink}."
 }
 ```
 
@@ -201,18 +191,14 @@ When using the `FormattedMessage` component provided by react-intl, we can then 
 
 ```javascript
 <FormattedMessage
-  id="source.code"
-  values={{
-    githubLink: (
-      <a href="https://github.com/deckgo/deckdeckgo">
-        GitHub
-      </a>
-    ),
-  }}
+	id="source.code"
+	values={{
+		githubLink: <a href="https://github.com/deckgo/deckdeckgo">GitHub</a>
+	}}
 />
 ```
 
-*****
+---
 
 ### Overwrite Main Index.js
 
@@ -221,9 +207,9 @@ Even though, as displayed in my previous article, I configured the website to ro
 ```javascript
 // ./gatsby-browser.js
 exports.onClientEntry = () => {
-  if (window.location.pathname === '/') {
-    window.location.pathname = `/en`;
-  }
+	if (window.location.pathname === "/") {
+		window.location.pathname = `/en`;
+	}
 };
 ```
 
@@ -234,20 +220,21 @@ In addition, the script also adds a comment at the start of the target file, so 
 ```javascript
 // copy-index.js
 
-const fs = require('fs');
+const fs = require("fs");
 
 try {
-  fs.copyFileSync('./src/pages/index.en.js', './src/pages/index.js');
+	fs.copyFileSync("./src/pages/index.en.js", "./src/pages/index.js");
 
-  const content = fs.readFileSync('./src/pages/index.js');
+	const content = fs.readFileSync("./src/pages/index.js");
 
-  const comment = '/**\n * Do not modify! This file is overwritten by index.en.js at build time.\n */\n';
+	const comment =
+		"/**\n * Do not modify! This file is overwritten by index.en.js at build time.\n */\n";
 
-  fs.writeFileSync('./src/pages/index.js', comment + content);
+	fs.writeFileSync("./src/pages/index.js", comment + content);
 
-  console.log(`index.en.js copied to index.js!`);
+	console.log(`index.en.js copied to index.js!`);
 } catch (err) {
-  console.error(`Cannot copy index.en.js`);
+	console.error(`Cannot copy index.en.js`);
 }
 ```
 
@@ -264,7 +251,7 @@ I set up this script by adding a `prebuild` target to my `package.json` .
 },
 ```
 
-*****
+---
 
 ### Summary
 

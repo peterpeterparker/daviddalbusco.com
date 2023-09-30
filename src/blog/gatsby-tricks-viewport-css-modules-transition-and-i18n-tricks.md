@@ -10,15 +10,15 @@ canonical: "https://medium.com/@david.dalbusco/gatsby-tricks-viewport-css-module
 
 ![](https://cdn-images-1.medium.com/max/1600/1*ytcX2rE89fOxjHjKfEAJng.png)
 
-*Photo by [Ronald Ladines](https://unsplash.com/@massrecall?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Ronald Ladines](https://unsplash.com/@massrecall?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twenty-four** days left until hopefully better days.
 
-*****
+---
 
-Today  I developed further the new website I’m currently building with [Gatsby](https://www.gatsbyjs.org) for a new side project we have with two friends. I discovered some new tricks, that’s why there are the inspiration for my today’s diary entry.
+Today I developed further the new website I’m currently building with [Gatsby](https://www.gatsbyjs.org) for a new side project we have with two friends. I discovered some new tricks, that’s why there are the inspiration for my today’s diary entry.
 
-*****
+---
 
 ### Overriding Viewport
 
@@ -30,7 +30,7 @@ Concretely the following was happening.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*t7rBjEcQRqcbuy183JaSSw.gif)
 
-*Browser left ok vs iPad right not ok*
+_Browser left ok vs iPad right not ok_
 
 It took me a bit to finally figure out what was the problem but finally my spider-sense kicked in and I had the feeling that the problem was linked to the specification of the `viewport` in the `head` of the page.
 
@@ -38,12 +38,12 @@ At first, I tried to solve the issue while injecting the meta information in the
 
 ```html
 <meta
-  name="viewport"
-  content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+	name="viewport"
+	content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
 />
 ```
 
-*****
+---
 
 ### CSS Modules Transition
 
@@ -53,15 +53,15 @@ In this project I’m using [CSS modules](https://github.com/css-modules/css-mod
 
 ```css
 h1 {
-  opacity: 0;
-  visibility: hidden;
+	opacity: 0;
+	visibility: hidden;
 
-  transition: opacity 0.25s 0.8s ease-in;
+	transition: opacity 0.25s 0.8s ease-in;
 
-  &.animate {
-    opacity: 1;
-    visibility: inherit;
-  }
+	&.animate {
+		opacity: 1;
+		visibility: inherit;
+	}
 }
 ```
 
@@ -69,13 +69,13 @@ To my surprise, again, what a day, `transition` didn’t worked out at all. I qu
 
 ```css
 :global {
-  transition: opacity 0.25s 0.8s ease-in;
+	transition: opacity 0.25s 0.8s ease-in;
 }
 ```
 
 And speaking of this `transition` , did you now that second time parameter is the delay after which the transition should happens? The above can be read as: After 0.8 seconds, start a transition on the opacity property for 0.25s and do that slowly at the begin. Pretty cool 😁.
 
-*****
+---
 
 ### i18n formatting
 
@@ -85,24 +85,24 @@ I notably learned how to style a text. For example, let’s say we want to displ
 
 ```javascript
 module.exports = {
-  "intro": "hello <strong>world</strong>",
-}
+	intro: "hello <strong>world</strong>"
+};
 ```
 
 We can either split it in two different translations or take advantages of the React-intl `FormattedMessage` component to style our text.
 
 ```javascript
 <h1>
-  <FormattedMessage
-    id="intro"
-    values={{
-      strong: (...chunks) => <strong>{chunks}</strong>,
-    }}
-  />
+	<FormattedMessage
+		id="intro"
+		values={{
+			strong: (...chunks) => <strong>{chunks}</strong>
+		}}
+	/>
 </h1>
 ```
 
-*****
+---
 
 ### Summary
 

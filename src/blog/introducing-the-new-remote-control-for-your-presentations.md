@@ -21,11 +21,11 @@ Finally came the time to ask ourselves: **And now, what’s next?**
 
 We quickly identified two new cool ideas, which would be fun to implement, unique and useful for our users. But you know what? These aren’t the ones we are publishing today 🤣 We thought that before chasing these, we should first resolve one of the most users’ requested feature (“speaker notes”) and improve a long time known weakness, at least in my eyes, the UX of our controller.
 
-That’s why we are happy to launch today our brand new [remote control](https://deckdeckgo.app)  🎉
+That’s why we are happy to launch today our brand new [remote control](https://deckdeckgo.app) 🎉
 
 <iframe width="280" height="158" src="https://www.youtube.com/embed/PnSNT5WpauE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-*A demo of our brand new remote control*
+_A demo of our brand new remote control_
 
 ### So, what’s new?
 
@@ -37,7 +37,7 @@ Through our [Slack](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0Nj
 
 ![](https://cdn-images-1.medium.com/max/1600/1*uKHylyasNOXQu3W3Uc7uhw.png)
 
-*Edit your speaker notes with Markdown in our web open source editor*
+_Edit your speaker notes with Markdown in our web open source editor_
 
 ### Synchronized content
 
@@ -45,11 +45,11 @@ Ever since I implemented the very first version of our remote control, we always
 
 It’s worth to notice that the presentation don’t have to be published on internet in order to be synchronized. As for the connection and commands, it is performed through WebRTC and therefore work even if you run your presentation locally 😁
 
-*Note: this new solution is a **breaking change**. It is automatically rolled out in our web editor but if you have already published a deck, you just would have to publish it again in order to upgrade it.*
+_Note: this new solution is a **breaking change**. It is automatically rolled out in our web editor but if you have already published a deck, you just would have to publish it again in order to upgrade it._
 
 ![](https://cdn-images-1.medium.com/max/1600/1*NfYAdoMvNHAuaMOf809-iA.png)
 
-*Synchronized content*
+_Synchronized content_
 
 ### New user experience
 
@@ -59,7 +59,7 @@ Moreover, the speaker notes weren’t really cleverly displayed. That’s why we
 
 ![](https://cdn-images-1.medium.com/max/1600/1*pQx-i5jfIdweWYTIu_9KzQ.gif)
 
-*New user experience*
+_New user experience_
 
 ### Responsive design for tablets
 
@@ -67,17 +67,17 @@ Earlier October I attended the [DINAcon](https://dinacon.ch) 2019 conference in 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*iXSRsFNZUOItDFyevXYsqQ.png)
 
-*[Katariina Kari](https://twitter.com/katsi111) speaking about “Knowledge Graph” and having a quick look at her laptop at DINACon 2019 (source [Flickr](https://www.flickr.com/photos/140845441@N04/48947571397/in/album-72157711466719708))*
+_[Katariina Kari](https://twitter.com/katsi111) speaking about “Knowledge Graph” and having a quick look at her laptop at DINACon 2019 (source [Flickr](https://www.flickr.com/photos/140845441@N04/48947571397/in/album-72157711466719708))_
 
 Suddenly it hit me: why not having a discrete **dashboard** displayed on a **tablet** instead of a laptop? I started to think about it and imagined that delivering a talk could be like being on the USS Enterprise bridge with all its commands to make it fly 🤣
 
-*If you read these lines I’m guessing that now you know why the cover photo is a bit inspired by Star Trek.*
+_If you read these lines I’m guessing that now you know why the cover photo is a bit inspired by Star Trek._
 
 Moreover of the user experience, this new version of our remote control introduces a new responsive design which aims to implement this vision and aims to deliver all the information and commands needed to perform your talk with tablet devices or any browsers in landscape mode as support.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Nhax5Zz-ReP2Qq0E3mOjqQ.gif)
 
-*Inspired from the USS Enterprise bridge*
+_Inspired from the USS Enterprise bridge_
 
 ### Hello darkness my old friend
 
@@ -85,7 +85,7 @@ Last goodies, as we already did with our [documentation](https://docs.deckdeckgo
 
 ![](https://cdn-images-1.medium.com/max/1600/1*k_xss5uP7Jeb5zAK7hAwmQ.gif)
 
-*Switch between light and dark theme*
+_Switch between light and dark theme_
 
 ### Get Started Now
 

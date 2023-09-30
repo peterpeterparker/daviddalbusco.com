@@ -9,7 +9,7 @@ canonical: "https://medium.com/@david.dalbusco/syntax-highlighting-displayed-in-
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*sJQnreNU9DZ0ARLHDil8gg.png)
-*Background photo by [MUNMUN SINGH](https://unsplash.com/@munmuns?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Background photo by [MUNMUN SINGH](https://unsplash.com/@munmuns?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 A couple of days ago, [Cody Pearce](https://twitter.com/codyapearce) published an [article](https://dev.to/codypearce/ubuntu-terminal-in-css-1aeo) which picked my curiosity. In his post he was displaying how the unique and immediately recognizable design of the Ubuntu terminal can be reproduced with CSS.
 
@@ -25,19 +25,25 @@ Regarding the code to highlight, it should be provided to match the slot name `c
 
 ```html
 <html>
-<head>
-  <script type="module" src="https://unpkg.com/@deckdeckgo/highlight-code@latest/dist/deckdeckgo-highlight-code/deckdeckgo-highlight-code.esm.js"></script>
-  <script nomodule="" src="https://unpkg.com/@deckdeckgo/highlight-code@latest/dist/deckdeckgo-highlight-code/deckdeckgo-highlight-code.js"></script>
-</head>
-<body>
-  <deckgo-highlight-code>
-    <code slot="code">console.log('Hello World');</code>
-  </deckgo-highlight-code>
-</body>
+	<head>
+		<script
+			type="module"
+			src="https://unpkg.com/@deckdeckgo/highlight-code@latest/dist/deckdeckgo-highlight-code/deckdeckgo-highlight-code.esm.js"
+		></script>
+		<script
+			nomodule=""
+			src="https://unpkg.com/@deckdeckgo/highlight-code@latest/dist/deckdeckgo-highlight-code/deckdeckgo-highlight-code.js"
+		></script>
+	</head>
+	<body>
+		<deckgo-highlight-code>
+			<code slot="code">console.log('Hello World');</code>
+		</deckgo-highlight-code>
+	</body>
 </html>
 ```
 
-Rendered in a browser, the  above code looks like the following:
+Rendered in a browser, the above code looks like the following:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*EQdSlwuhodPaVtTKzJ2JwQ.png)
 
@@ -45,7 +51,7 @@ As you may notice, it isn’t yet rendered in a stylish Ubuntu terminal like but
 
 ```html
 <deckgo-highlight-code terminal="ubuntu">
-  <code slot="code">console.log('Hello World');</code>
+	<code slot="code">console.log('Hello World');</code>
 </deckgo-highlight-code>
 ```
 
@@ -62,20 +68,20 @@ As briefly mentioned above, we also do provide a [plugin](https://www.gatsbyjs.o
 ```javascript
 // In your gatsby-config.js
 plugins: [
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        {
-          resolve: `gatsby-remark-highlight-code`,
-          options: {
-            terminal: 'ubuntu'
-          }
-        },
-      ],
-    },
-  },
-]
+	{
+		resolve: `gatsby-transformer-remark`,
+		options: {
+			plugins: [
+				{
+					resolve: `gatsby-remark-highlight-code`,
+					options: {
+						terminal: "ubuntu"
+					}
+				}
+			]
+		}
+	}
+];
 ```
 
 If I would apply the above configuration to my personal website then, after rebuild, automatically all of its blocks of code would be encapsulated in Ubuntu terminal like.

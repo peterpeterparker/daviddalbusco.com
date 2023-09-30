@@ -10,7 +10,7 @@ canonical: "https://medium.com/@david.dalbusco/inject-javascript-or-css-at-runti
 
 ![](https://cdn-images-1.medium.com/max/1600/1*NFVyLIxNmR6l8QJjFmzIpg.png)
 
-*Photo by [Aditya Saxena](https://unsplash.com/@adityaries?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Aditya Saxena](https://unsplash.com/@adityaries?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I [challenged](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) my self to share a blog post each and every single day until end of the current quarantine in Switzerland, the 19th April 2020. Thirty-two days left until hopefully better days.
 
@@ -35,65 +35,63 @@ npm install
 Once the project created, we edit the component and add a first test in order to verify if our script has not been added to the DOM before, because our component can be use multiple times in a page and we want to load our script only once.
 
 ```javascript
-import { Component, h } from '@stencil/core';
+import { Component, h } from "@stencil/core";
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css',
-  shadow: true
+	tag: "my-component",
+	styleUrl: "my-component.css",
+	shadow: true
 })
 export class MyComponent {
-  
-  async componentDidLoad() {
-    const scripts = document.querySelector('[myscript-loaded]');
+	async componentDidLoad() {
+		const scripts = document.querySelector("[myscript-loaded]");
 
-    if (!scripts) {
-      // TODO: load script
-    }
-  }
+		if (!scripts) {
+			// TODO: load script
+		}
+	}
 
-  render() {
-    return <div>Hello, World!</div>;
-  }
+	render() {
+		return <div>Hello, World!</div>;
+	}
 }
 ```
 
 Finally we can add our effective implementation which summarized works like the following: we create a new deferred `<script/>` which references the library or component we would like to load. Before adding it to the `header` of our page, we attach two events to handle both `success` or `error` .
 
 ```javascript
-import { Component, h } from '@stencil/core';
+import { Component, h } from "@stencil/core";
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css',
-  shadow: true
+	tag: "my-component",
+	styleUrl: "my-component.css",
+	shadow: true
 })
 export class MyComponent {
+	async componentDidLoad() {
+		const scripts = document.querySelector("[myscript-loaded]");
 
-  async componentDidLoad() {
-    const scripts = document.querySelector('[myscript-loaded]');
+		if (!scripts) {
+			const script = document.createElement("script");
 
-    if (!scripts) {
-      const script = document.createElement('script');
+			script.onload = async () => {
+				script.setAttribute("myscript-loaded", "true");
+			};
 
-      script.onload = async () => {
-        script.setAttribute('myscript-loaded', 'true');
-      };
+			script.onerror = async ($err) => {
+				console.error($err);
+			};
 
-      script.onerror = async ($err) => {
-        console.error($err);
-      };
+			script.src = "https://unpkg.com/myscript.js";
+			script.defer = true;
 
-      script.src = 'https://unpkg.com/myscript.js';
-      script.defer = true;
+			document.head.appendChild(script);
+		}
+	}
 
-      document.head.appendChild(script);
-    }
-  }
-
-  render() {
-    return <div>Hello, World!</div>;
-  }
+	render() {
+		return <div>Hello, World!</div>;
+	}
 }
 ```
 
@@ -161,8 +159,11 @@ function injectCSS(id: string, src: string): Promise<string> {
 Such utilities can notably use to load Firebase UI only when needed:
 
 ```javascript
-await injectJS('firebase-ui-script', 'https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js');
-await injectCSS('firebase-ui-css', 'https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.css');
+await injectJS(
+	"firebase-ui-script",
+	"https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.js"
+);
+await injectCSS("firebase-ui-css", "https://cdn.firebase.com/libs/firebaseui/4.0.0/firebaseui.css");
 ```
 
 ### Summary

@@ -34,7 +34,7 @@ This plugin will allow us to replace values at bundle time.
 Once the plugin installed, we could edit our configuration in our bootstrap classes respectively we could edit our `app.ts` file in order to replace the values we want to hide. In this specific post we are going to hide the url of the API. To do so, we are going to replace the values with a unique selector (which will be automatically replaced with the real values at bundling time once we have implemented the all solution):
 
 ```
-import {setupConfig} from 
+import {setupConfig} from
                 '../app/services/environment/environment-config';
 
 setupConfig({
@@ -48,7 +48,7 @@ In my previous article we defined two different environments and therefore I wil
 Identically we are then going to replace the API url with our selector in the development configuration, respectively in the `app-dev.ts` file:
 
 ```
-import {setupConfig} from 
+import {setupConfig} from
                 '../app/services/environment/environment-config';
 
 setupConfig({
@@ -57,7 +57,7 @@ setupConfig({
 });
 ```
 
-*Note that we are using `<@` and `@>` to make our selector really unique. These attributes aren’t static, if you rather like to use others it’s absolutely up-to you, no problem. You should then just reflect later in this tutorial your modifications when you will configure the plugin.*
+_Note that we are using `<@` and `@>` to make our selector really unique. These attributes aren’t static, if you rather like to use others it’s absolutely up-to you, no problem. You should then just reflect later in this tutorial your modifications when you will configure the plugin._
 
 #### Defining the selectors’ values
 

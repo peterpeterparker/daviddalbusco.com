@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/internationalization-with-gatsby-
 
 ![](https://cdn-images-1.medium.com/max/1600/1*tuOyAQ0r1d4nnAcA1xccyQ.png)
 
-*Photo by [Nicola Nuttall](https://unsplash.com/@nicnut?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Nicola Nuttall](https://unsplash.com/@nicnut?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I [challenged](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) my self to share a blog post every day until the end of the COVID-19 quarantine in Switzerland, the 19th April 2020. **Thirty** days left until hopefully better days.
 
-*****
+---
 
 We are starting a new project with two friends, can’t tell much yet about it at this point, but let’s just say for the moment that it aligns our values. For its purpose we need a website which, obviously, is going to be open source and which I’m going to develop with [Gatsby](https://www.gatsbyjs.org).
 
@@ -24,7 +24,7 @@ I expected such implementation to be fairly straight forward but between light d
 
 That’s why I thought that sharing the outcome in this new tutorial might be a good idea.
 
-*****
+---
 
 ### SEO Friendly Plugin
 
@@ -65,13 +65,13 @@ Because we are using a prefix in any case, without any other change, accessing t
 
 ```javascript
 exports.onClientEntry = () => {
-  if (window.location.pathname === '/') {
-    window.location.pathname = `/en`
-  }
-}
+	if (window.location.pathname === "/") {
+		window.location.pathname = `/en`;
+	}
+};
 ```
 
-*****
+---
 
 ### Internationalization Library
 
@@ -81,7 +81,7 @@ Gatsby and the above plugin are either compatible with [react-i18next](https://r
 npm install react-intl @formatjs/intl-pluralrules --save
 ```
 
-*****
+---
 
 ### Hands-on Coding
 
@@ -92,82 +92,74 @@ What happens here you may ask? Summarized, we are adding two new required proper
 I’m also using the `<FormattedMessage/>` component to print out an `Hello World` to ensure that our implementation works out.
 
 ```javascript
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 
-import Header from "../header"
-import "./layout.css"
+import Header from "../header";
+import "./layout.css";
 
-import { FormattedMessage, IntlProvider } from "react-intl"
-import "@formatjs/intl-pluralrules/polyfill"
+import { FormattedMessage, IntlProvider } from "react-intl";
+import "@formatjs/intl-pluralrules/polyfill";
 
-import { getCurrentLangKey } from 'ptz-i18n';
+import { getCurrentLangKey } from "ptz-i18n";
 
 const Layout = ({ children, location, messages }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          languages {
-            defaultLangKey
-            langs
-          }
-        }
-      }
-    }
-  `)
+	const data = useStaticQuery(graphql`
+		query SiteTitleQuery {
+			site {
+				siteMetadata {
+					title
+					languages {
+						defaultLangKey
+						langs
+					}
+				}
+			}
+		}
+	`);
 
-  const { langs, defaultLangKey } = 
-                                data.site.siteMetadata.languages;
-  const langKey = 
-     getCurrentLangKey(langs, defaultLangKey, location.pathname);
+	const { langs, defaultLangKey } = data.site.siteMetadata.languages;
+	const langKey = getCurrentLangKey(langs, defaultLangKey, location.pathname);
 
-  return (
-    <IntlProvider locale={langKey} messages={messages}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+	return (
+		<IntlProvider locale={langKey} messages={messages}>
+			<Header siteTitle={data.site.siteMetadata.title} />
 
-      <p>
-        <FormattedMessage id="hello" />
-      </p>
-
-    </IntlProvider>
-  )
-}
+			<p>
+				<FormattedMessage id="hello" />
+			</p>
+		</IntlProvider>
+	);
+};
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  location: PropTypes.any.isRequired,
-  messages: PropTypes.any.isRequired,
-}
+	children: PropTypes.node.isRequired,
+	location: PropTypes.any.isRequired,
+	messages: PropTypes.any.isRequired
+};
 
-export default Layout
+export default Layout;
 ```
 
 To “extend” the layout for each language and locale, we create a new file per supported languages. For example, in English, we create `layout/en.js` in which we import both our custom messages and the specific polyfill.
 
 ```javascript
-import React from 'react';
-import Layout from "./layout"
+import React from "react";
+import Layout from "./layout";
 
-import messages from '../../i18n/en';
-import "@formatjs/intl-pluralrules/dist/locale-data/en"
+import messages from "../../i18n/en";
+import "@formatjs/intl-pluralrules/dist/locale-data/en";
 
-export default (props) => (
-  <Layout
-    {...props}
-    messages={messages}
-  />
-);
+export default (props) => <Layout {...props} messages={messages} />;
 ```
 
 At this point, our code won’t compile because these languages, these messages are missing. That’s why we also create the file for these, for example `i18n/en.js` .
 
 ```javascript
 module.exports = {
-  hello: "Hello world",
-}
+	hello: "Hello world"
+};
 ```
 
 As I briefly staten in my introduction, each page is going to be duplicated. That’s why we create the corresponding index page. In case of the default, English, we rename `index.js` to `index.en.js` . Moreover, because the layout now expect a location property, we pass it from every pages too.
@@ -175,71 +167,71 @@ As I briefly staten in my introduction, each page is going to be duplicated. Tha
 Note also that, because I have decided to prefix all route, I also modifed the link routing from `/page-2/` to `/en/page-2` .
 
 ```javascript
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import Layout from "../components/layout/en"
-import SEO from "../components/seo/seo"
+import Layout from "../components/layout/en";
+import SEO from "../components/seo/seo";
 
 const IndexPage = (props) => (
-  <Layout location={props.location}>
-    <SEO />
-    <h1>Hi people</h1>
-    
-    <Link to="/en/page-2/">Go to page 2</Link>
-  </Layout>
-)
+	<Layout location={props.location}>
+		<SEO />
+		<h1>Hi people</h1>
 
-export default IndexPage
+		<Link to="/en/page-2/">Go to page 2</Link>
+	</Layout>
+);
+
+export default IndexPage;
 ```
 
 The same modifications we have implemented for `index` should be propagated to every pages, in this example, I also rename `page-2.js` in `page-2.en.js` and apply the same modifications as above.
 
 ```javascript
-import React from "react"
-import { Link } from "gatsby"
+import React from "react";
+import { Link } from "gatsby";
 
-import Layout from "../components/layout/en"
-import SEO from "../components/seo/seo"
+import Layout from "../components/layout/en";
+import SEO from "../components/seo/seo";
 
 const SecondPage = (props) => (
-  <Layout location={props.location}>
-    <SEO title="Page two" />
-    <p>Welcome to page 2</p>
-    <Link to="/en/">Go back to the homepage</Link>
-  </Layout>
-)
+	<Layout location={props.location}>
+		<SEO title="Page two" />
+		<p>Welcome to page 2</p>
+		<Link to="/en/">Go back to the homepage</Link>
+	</Layout>
+);
 
-export default SecondPage
+export default SecondPage;
 ```
 
 Identically, the usage of the `<Layout/>` component has to be enhanced with the location object in our `404.js` page.
 
 ```javascript
-import React from "react"
+import React from "react";
 
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo/seo"
+import Layout from "../components/layout/layout";
+import SEO from "../components/seo/seo";
 
 const NotFoundPage = (props) => (
-  <Layout location={props.location}>
-    <SEO />
-    <h1>NOT FOUND</h1>
-  </Layout>
-)
+	<Layout location={props.location}>
+		<SEO />
+		<h1>NOT FOUND</h1>
+	</Layout>
+);
 
-export default NotFoundPage
+export default NotFoundPage;
 ```
 
 And voilà, that’s it, our Gastby site is internationalized 🎉. Of course you might want to add some other languages, to do so, repeat the above English steps and again, duplicate pages.
 
-*****
+---
 
 ### More Tips And Tricks
 
 I have later on published a follow-up article, [More Gatsby i18n Tips And Tricks](https://daviddalbusco.com/blog/more-gatsby-i18n-tips-and-tricks), about the internalization of Gatsby website. Check it out if you are eager to read more tips and tricks 😉.
 
-*****
+---
 
 ### Summary
 

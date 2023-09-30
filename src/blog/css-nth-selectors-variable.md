@@ -9,7 +9,7 @@ canonical: "https://daviddalbusco.medium.com/css-nth-selectors-variable-502eccae
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*bCYvMc19HUEZEmZylGOoGg.jpeg)
-*Photo by [Mario Gogh](https://unsplash.com/@mariogogh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Mario Gogh](https://unsplash.com/@mariogogh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Using CSS variables, at least when I’m writing these lines in June 2021, is not supported in media queries or selector, e.g. `:nth-child(var(--my-variable))` does not work.
 
@@ -18,7 +18,7 @@ This is a bit unfortunate but, not unsolvable. In some recent development I bypa
 <iframe width="280" height="158" src="https://www.youtube.com/embed/nast1X6dKo8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br/>
 
-*****
+---
 
 ### Introduction
 
@@ -26,7 +26,7 @@ Stricto sensu the following trick is not reserve to Web Components and, probably
 
 I will first display the idea with the help a vanilla component and, end the article with the same approach but, implemented with a [StencilJS](https://stenciljs.com/) functional component.
 
-*****
+---
 
 ### Goal Of The Tutorial
 
@@ -36,7 +36,7 @@ We are going to develop a Web Component which renders a `<ul/>` list and, which 
 
 No semantic elements are going to be added or removed from the DOM once the component is load. The animation will happen by modifying the `style` , more precisely by applying a different style on the selected `li:nth-child(n)` .
 
-*****
+---
 
 ### Vanilla JS
 
@@ -44,54 +44,49 @@ To display the idea without anything else than the web, we create an `index.html
 
 ```html
 <html>
-    <head>
-        <script type="module" src="./my-component.js"></script>
-    </head>
-    <body>
-        <my-component></my-component>
-        <button>Next</button>
-        <script>
-            document
-              .querySelector('button')
-              .addEventListener(
-                 'click', 
-                 () => document.querySelector('my-component').next()
-              );
-        </script>
-    </body>
+	<head>
+		<script type="module" src="./my-component.js"></script>
+	</head>
+	<body>
+		<my-component></my-component>
+		<button>Next</button>
+		<script>
+			document
+				.querySelector("button")
+				.addEventListener("click", () => document.querySelector("my-component").next());
+		</script>
+	</body>
 </html>
-
 ```
 
-In a separate file, called `my-component.js` , we create the Web Component. At this point without any animation.  We declare it [open](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to be able to access the shadow DOM (through `shadowRoot` ), we create a style to hide all `li` and define the `transition` . Finally, we add the `ul` list and its children `li` .
+In a separate file, called `my-component.js` , we create the Web Component. At this point without any animation. We declare it [open](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM) to be able to access the shadow DOM (through `shadowRoot` ), we create a style to hide all `li` and define the `transition` . Finally, we add the `ul` list and its children `li` .
 
 ```javascript
 class MyComponent extends HTMLElement {
+	constructor() {
+		super();
 
-  constructor() {
-    super();
+		this.attachShadow({ mode: "open" });
 
-    this.attachShadow({mode: 'open'});
+		const style = this.initStyle();
+		const ul = this.initElement();
 
-    const style = this.initStyle();
-    const ul = this.initElement();
+		this.shadowRoot.appendChild(style);
+		this.shadowRoot.appendChild(ul);
+	}
 
-    this.shadowRoot.appendChild(style);
-    this.shadowRoot.appendChild(ul);
-  }
+	connectedCallback() {
+		this.className = "hydrated";
+	}
 
-  connectedCallback() {
-    this.className = 'hydrated';
-  }
+	next() {
+		// TODO in next chapter
+	}
 
-  next() {
-    // TODO in next chapter
-  }
+	initStyle() {
+		const style = document.createElement("style");
 
-  initStyle() {
-    const style = document.createElement('style');
-
-    style.innerHTML = `
+		style.innerHTML = `
           :host {
             display: block;
           }
@@ -102,28 +97,28 @@ class MyComponent extends HTMLElement {
           }
         `;
 
-    return style;
-  }
+		return style;
+	}
 
-  initElement() {
-    const ul = document.createElement('ul');
+	initElement() {
+		const ul = document.createElement("ul");
 
-    const li1 = document.createElement('li');
-    li1.innerHTML = 'Spine';
+		const li1 = document.createElement("li");
+		li1.innerHTML = "Spine";
 
-    const li2 = document.createElement('li');
-    li2.innerHTML = 'Cowboy';
+		const li2 = document.createElement("li");
+		li2.innerHTML = "Cowboy";
 
-    const li3 = document.createElement('li');
-    li3.innerHTML = 'Shelving';
+		const li3 = document.createElement("li");
+		li3.innerHTML = "Shelving";
 
-    ul.append(li1, li2, li3);
+		ul.append(li1, li2, li3);
 
-    return ul;
-  }
+		return ul;
+	}
 }
 
-customElements.define('my-component', MyComponent);
+customElements.define("my-component", MyComponent);
 ```
 
 At this point, if we open our example in a browser (`npx serve .`), we should find a component, with a hidden content, and a button which has no effect yet. Not much to see, but that’s a start 😁.
@@ -135,7 +130,7 @@ To develop the animation, we have to keep track of the displayed `li` , that’s
 ```javascript
 class MyComponent extends HTMLElement {
     index = 0;
-    
+
     constructor() {
 ...
 ```
@@ -182,7 +177,7 @@ If we open again our browser to give it a try, items should be animated among cl
 
 ![](https://cdn-images-1.medium.com/max/1600/1*G76KWZf9do9aBnCo2rtLdw.png)
 
-*****
+---
 
 ### StencilJS
 
@@ -193,43 +188,43 @@ Let’s double the fun with the same example but, using a [StencilJS](https://st
 Because we are developing the exact same component, we can copy the previous HTML content (declaring the component and, adding a `button` ) in the `./src/index.html` of the project with an only slight small difference, the method `next()` has to be declared and, called with async — await. This is a requirement — best practice of Stencil, public method of components have to be `async` .
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+		/>
+		<title>Stencil Component Starter</title>
 
-    <script type="module" src="/build/demo-stencil.esm.js"></script>
-    <script nomodule src="/build/demo-stencil.js"></script>
-  </head>
-  <body>
-  <!-- Same code as in previous chapter -->
-  <my-component></my-component>
+		<script type="module" src="/build/demo-stencil.esm.js"></script>
+		<script nomodule src="/build/demo-stencil.js"></script>
+	</head>
+	<body>
+		<!-- Same code as in previous chapter -->
+		<my-component></my-component>
 
-  <button>Next</button>
+		<button>Next</button>
 
-  <script>
-    document.querySelector('button')
-       .addEventListener(
-          'click', 
-          async () => await document
-                             .querySelector('my-component').next()
-            );
-  </script>
-  <!-- Same code as in previous chapter -->
-  </body>
+		<script>
+			document
+				.querySelector("button")
+				.addEventListener("click", async () => await document.querySelector("my-component").next());
+		</script>
+		<!-- Same code as in previous chapter -->
+	</body>
 </html>
 ```
 
 We can also repeat previous steps and, create first a component which does nothing else than rendering a `ul` list and, hidden items `li`.
 
 ```javascript
-import { Component, h } from '@stencil/core';
+import { Component, h } from "@stencil/core";
 
 @Component({
-  tag: 'my-component',
-  styles: `:host {
+	tag: "my-component",
+	styles: `:host {
       display: block;
     }
 
@@ -238,16 +233,18 @@ import { Component, h } from '@stencil/core';
       transition: opacity 0.5s ease-out;
     }
   `,
-  shadow: true,
+	shadow: true
 })
 export class MyComponent {
-  render() {
-    return <ul>
-      <li>Spine</li>
-      <li>Cowboy</li>
-      <li>Shelving</li>
-    </ul>
-  }
+	render() {
+		return (
+			<ul>
+				<li>Spine</li>
+				<li>Cowboy</li>
+				<li>Shelving</li>
+			</ul>
+		);
+	}
 }
 ```
 
@@ -355,7 +352,7 @@ export class MyComponent {
 }
 ```
 
-*****
+---
 
 ### Summary
 

@@ -10,7 +10,7 @@ canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/announcing-papyrs-
 
 So, I have developed a new open-source, privacy-first, decentralized blogging platform that lives 100% on chain and today I am making it available to anyone. I called it: [Papyrs](https://app.papy.rs).
 
-* * *
+---
 
 ## What a ride!
 
@@ -24,7 +24,7 @@ On the one hand, thanks to this approach, I limit the number of features I launc
 
 On the other hand, I like to develop new ideas and thus double the fun 😜.
 
-* * *
+---
 
 ## Manifesto
 
@@ -32,13 +32,13 @@ So, why launch another blogging application? After-all there are already many pl
 
 Sure there is but none are following the guidelines that drive me.
 
-* * *
+---
 
 ### Decentralization & blockchain
 
 The concept of decentralization - or web3 - is linked to a certain form of romanticism for developers that [Chris Dixon](https://twitter.com/cdixon) summarizes in following terms:
 
-*The lesson is that when you compare centralized and decentralized systems you need to consider them dynamically, as processes, instead of statically, as rigid products. Centralized systems often start out fully baked, but only get better at the rate at which employees at the sponsoring company improve them. Decentralized systems start out half-baked but, under the right conditions, grow exponentially as they attract new contributors ([source](https://twg.io/whiteboard/why-decentralization-matters/)).*
+_The lesson is that when you compare centralized and decentralized systems you need to consider them dynamically, as processes, instead of statically, as rigid products. Centralized systems often start out fully baked, but only get better at the rate at which employees at the sponsoring company improve them. Decentralized systems start out half-baked but, under the right conditions, grow exponentially as they attract new contributors ([source](https://twg.io/whiteboard/why-decentralization-matters/))._
 
 As a programmer myself, this idea is appealing. I also think that blockchain technology might lead to interesting new perspectives for the future.
 
@@ -50,7 +50,7 @@ Between ads networks - that I cannot stand - and Big Tech companies that exploit
 
 That's why I developed Papyrs with a true privacy first approach.
 
-* * *
+---
 
 ### Privacy-first
 
@@ -64,7 +64,7 @@ Finally, as currently implemented, I - as the admin of the platform - have absol
 
 Your data are your own, period.
 
-* * *
+---
 
 ### Open-source
 
@@ -72,23 +72,23 @@ In my opinion, there can be no privacy without open source code. It is a matter 
 
 Therefore, here are all the links to each and every single lines of code I wrote for Papyrs:
 
-*   [Papyrs](https://github.com/papyrs/papyrs): the main repo - the web application
-*   [IC](https://github.com/papyrs/ic): canisters and sign-in providers
-*   [CDN](https://github.com/papyrs/cdn): libraries and assets used across the platform
+- [Papyrs](https://github.com/papyrs/papyrs): the main repo - the web application
+- [IC](https://github.com/papyrs/ic): canisters and sign-in providers
+- [CDN](https://github.com/papyrs/cdn): libraries and assets used across the platform
 
-*   [Unsplash-proxy](https://github.com/papyrs/unsplash-proxy): a proxy used to query Unsplash
+- [Unsplash-proxy](https://github.com/papyrs/unsplash-proxy): a proxy used to query Unsplash
 
-*   [Stylo](https://github.com/papyrs/stylo): another kind of rich text editor
+- [Stylo](https://github.com/papyrs/stylo): another kind of rich text editor
 
-*   [Kit](https://github.com/papyrs/kit): the templates for the posts that are published on chain
+- [Kit](https://github.com/papyrs/kit): the templates for the posts that are published on chain
 
-*   [Papyrs to markdown](https://github.com/papyrs/markdown-plugin): a Chrome plugin to convert to markdown
+- [Papyrs to markdown](https://github.com/papyrs/markdown-plugin): a Chrome plugin to convert to markdown
 
-*   [DeckDeckGo](https://github.com/deckgo/deckdeckgo/): various web components, utilities and the providers for the offline persistence and synchronization of the data
+- [DeckDeckGo](https://github.com/deckgo/deckdeckgo/): various web components, utilities and the providers for the offline persistence and synchronization of the data
 
 As the saying goes, "sharing is caring" 🤗. I hope what I implemented can help any developer starts building on the Internet Computer. Furthermore, I am also looking forward to feedbacks and contributions (🤞) in order to improve the project.
 
-* * *
+---
 
 ### Indie hacking
 
@@ -96,7 +96,7 @@ Beside my opinionated point of view and the fact that I am the first user of my 
 
 All this cannot happen without users but if some would be interested, I am convinced there will be a way to find a model that can be both profitable for Papyrs and the content creators while absolutely making no concession on my values.
 
-* * *
+---
 
 ## Features
 
@@ -106,7 +106,7 @@ e.g. browsing [Unsplash](https://unsplash.com/) to select images for presentatio
 
 ![https://unsplash.com/photos/uNNCs5kL70Q](https://images.unsplash.com/photo-1514984879728-be0aff75a6e8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw0OXx8ZG9nJTIwaGVsbG98ZW58MHx8fHwxNjU0NDMzNDEy&ixlib=rb-1.2.1&q=80&w=1080)
 
-*Photo by [Jamie Street](https://unsplash.com/@jamie452?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Jamie Street](https://unsplash.com/@jamie452?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Adding GIFs from [Tenor](https://tenor.com/) for comic relief.
 
@@ -116,26 +116,25 @@ Showcasing code snippets and editing these with the [Monaco editor](https://micr
 
 ```typescript
 export const addParagraph = ({
-  paragraph,
-  container,
-  fragment
+	paragraph,
+	container,
+	fragment
 }: {
-  container: HTMLElement;
-  paragraph: HTMLElement;
-  fragment: DocumentFragment;
+	container: HTMLElement;
+	paragraph: HTMLElement;
+	fragment: DocumentFragment;
 }): Promise<Node | undefined> => {
-  return new Promise<Node | undefined>((resolve) => {
-    const addObserver = 
-      new MutationObserver((mutations: MutationRecord[]) => {
-        addObserver.disconnect();
+	return new Promise<Node | undefined>((resolve) => {
+		const addObserver = new MutationObserver((mutations: MutationRecord[]) => {
+			addObserver.disconnect();
 
-        resolve(mutations[0]?.addedNodes?.[0]);
-    });
+			resolve(mutations[0]?.addedNodes?.[0]);
+		});
 
-    addObserver.observe(container, {childList: true, subtree: true});
+		addObserver.observe(container, { childList: true, subtree: true });
 
-    paragraph.after(fragment);
-  });
+		paragraph.after(fragment);
+	});
 };
 ```
 
@@ -145,7 +144,7 @@ Sketching hand-draw like diagrams with [Excalidraw](https://excalidraw.com/).
 
 And more to come...
 
-* * *
+---
 
 ## Call for writers
 

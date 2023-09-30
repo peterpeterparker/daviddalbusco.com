@@ -10,13 +10,13 @@ canonical: "https://daviddalbusco.medium.com/singleton-factory-patterns-with-typ
 
 ![](https://cdn-images-1.medium.com/max/1600/1*0XVEe8Cqa9xFGveX8JLMxA.jpeg)
 
-*[Eisvogel](https://www.zentrale.ch/) — The best ice creams in Zürich*
+_[Eisvogel](https://www.zentrale.ch/) — The best ice creams in Zürich_
 
 Of all design patterns I learned in engineering school, the singleton and factory are probably those I use the most in my day to day programming activities. Sometimes I even mix the two to double the fun 😜.
 
 In this blog post, I will show you how to implement these patterns with [TypeScript](https://www.typescriptlang.org/).
 
-*****
+---
 
 ### Singleton
 
@@ -55,11 +55,11 @@ To the contrary, accessing the instance will always return the first object whic
 const hairdresser: Hairdresser = Hairdresser.getInstance();
 ```
 
-*****
+---
 
 ### Factory
 
-> In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method  rather than by calling a constructor ([source](https://en.wikipedia.org/wiki/Factory_method_pattern)).
+> In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created. This is done by creating objects by calling a factory method rather than by calling a constructor ([source](https://en.wikipedia.org/wiki/Factory_method_pattern)).
 
 The factory pattern is like [Eisvogel](https://www.gaultmillau.ch/zuri-isst/eisvogel-das-beste-glace-zurich), my favorite and of course the best ice creams shop in Zürich. They sell artisanal yummy ice creams they manufacture on a daily basis with five new different flavors a day.
 
@@ -116,7 +116,7 @@ With a `static` method:
 ```javascript
 export class Factory {
   static getIceCream(): IceCream {
-    return Math.random() % 2 === 0 ? 
+    return Math.random() % 2 === 0 ?
                 new Strawberry() : new Chocolate();
   }
 }
@@ -134,14 +134,14 @@ I used a `random` number to create either one or the other type of object. In a 
 Requesting an object through the `static` method or the `function` will return different objects.
 
 ```javascript
-// Static method call 
+// Static method call
 console.log(Factory.getIceCream().yummy());
 
 // Function call
 console.log(getIceCream().yummy());
 ```
 
-*****
+---
 
 ### Combined
 
@@ -158,7 +158,7 @@ export class SingletonFactory {
   static getInstance(): IceCream {
     if (!this.instance) {
       this.instance =
-        Math.random() % 2 === 0 ? 
+        Math.random() % 2 === 0 ?
              new Strawberry() : new Chocolate();
     }
 
@@ -167,7 +167,7 @@ export class SingletonFactory {
 }
 ```
 
-*****
+---
 
 ### Summary
 

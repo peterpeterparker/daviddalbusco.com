@@ -9,7 +9,7 @@ canonical: "https://medium.com/@david.dalbusco/reorder-with-google-cloud-firesto
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*wRwngS5dVwEFcnpF4t1q4w.jpeg)
-*Photo by [Héctor J. Rivas](https://unsplash.com/@hjrc33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Héctor J. Rivas](https://unsplash.com/@hjrc33?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Have you ever had the need to let your users order data as they wish to?
 
@@ -21,7 +21,7 @@ In both cases, I use [Cloud Firestore](https://firebase.google.com/docs/firestor
 
 Firestore don’t offer out of box the ability to maintain data in collections ordered dynamically. It does give you the ability to perform sorted queries but doesn’t allow you to specify a custom ordering yet.
 
-There are probably more than the following three solutions  but, after thinking about the problem, I figured out that these were probably my best approaches to achieve my goal:
+There are probably more than the following three solutions but, after thinking about the problem, I figured out that these were probably my best approaches to achieve my goal:
 
 1. Storing the data in document arrays instead of collections
 2. Using linked list to keep track of the data's order
@@ -29,7 +29,7 @@ There are probably more than the following three solutions  but, after thinking 
 
 For me, the first approach, storing data in arrays, was quickly a no go idea. It would have probably been the fastet solution to implement but I find it not scalable. The second one, linked lists, was interesting but I thought that the realization would be a bit verbose because I could imagine that each time an element of the list is modified, its adjacent nodes have to be updated too.
 
-That’s why the only remaining approach was the third one, using arrays of references, which has the advantages of being scalable and not too verbose. 
+That’s why the only remaining approach was the third one, using arrays of references, which has the advantages of being scalable and not too verbose.
 
 But, as great power comes with great responsibility, this solution has a small downside: it costs more than the two other solutions since it needs a bit more database operations.
 
@@ -67,21 +67,21 @@ In order to split the implementation in separate parts we proceed with the follo
 
 ```javascript
 (async () => {
-  try {
-    const deckId = await createDeck();
-    
-    await createSlide(deckId, 'Slide 1');
-    await createSlide(deckId, 'Slide 2');
-    await createSlide(deckId, 'Slide 3');
+	try {
+		const deckId = await createDeck();
 
-    await printSlides(deckId);
+		await createSlide(deckId, "Slide 1");
+		await createSlide(deckId, "Slide 2");
+		await createSlide(deckId, "Slide 3");
 
-    await moveSlide(deckId, 1, 0);
+		await printSlides(deckId);
 
-    await printSlides(deckId);
-  } catch (err) {
-    console.error(err);
-  }
+		await moveSlide(deckId, 1, 0);
+
+		await printSlides(deckId);
+	} catch (err) {
+		console.error(err);
+	}
 })();
 ```
 
@@ -92,7 +92,7 @@ The creation of the parent data, the `deck`, isn’t different as any data creat
 ```javascript
 async createDeck() {
   const firestore = firebase.firestore();
-  
+
   const data = {};
 
   const doc = await firestore.collection('decks').add(data);
@@ -106,7 +106,7 @@ async createDeck() {
 }
 ```
 
-*In order to try to keep the demonstrated pieces of code clear and lean, please do note that in these I didn’t amended errors, performances and other subjects which are needed for a real implementation.*
+_In order to try to keep the demonstrated pieces of code clear and lean, please do note that in these I didn’t amended errors, performances and other subjects which are needed for a real implementation._
 
 ### Create Data In The Sub-Collection
 
@@ -122,12 +122,12 @@ async createSlide(deckId, content) {
 
   const doc = await firestore.collection(`/decks/${deckId}/slides`)
                     .add(data);
-  
+
   console.log('Slide created', {
     id: doc.id,
     data: data
   });
-  
+
   await updateDeck(deckId, doc.id);
 }
 ```
@@ -137,7 +137,7 @@ This extra step, the update of the `deck` , can for example be implemented like 
 ```javascript
 async updateDeck(deckId, slideId) {
   const firestore = firebase.firestore();
-  
+
   const snapshot = await firestore
       .collection('decks')
       .doc(deckId)
@@ -161,7 +161,7 @@ async updateDeck(deckId, slideId) {
       .collection('decks')
       .doc(deckId)
       .set(data, {merge: true});
-  
+
   console.log('Deck updated');
 }
 ```

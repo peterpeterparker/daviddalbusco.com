@@ -10,9 +10,9 @@ canonical: "https://juno.build/blog/build-a-web3-app-with-react-js"
 
 ![Working on Sunday](https://images.unsplash.com/photo-1506878206813-92402b8ded23?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxfHxDb21wdXRlciUyMEdyb25pbmdlbiUyQyUyME5ldGhlcmxhbmRzfGVufDB8fHx8MTY3OTk0MzA1OQ&ixlib=rb-4.0.3&q=80&w=1080)
 
-*Photo by [Jantine Doornbos](https://unsplash.com/@jantined?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Jantine Doornbos](https://unsplash.com/@jantined?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-* * *
+---
 
 ## Introduction
 
@@ -22,7 +22,7 @@ That’s why [Juno](https://juno.build) takes a different approach, aiming to ha
 
 In this blog post, we’ll explore how to combine React and Juno to develop a dApp. So, let’s dive in and discover how Juno can help you build powerful and user-friendly decentralized applications!
 
-* * *
+---
 
 ## How Juno Works
 
@@ -30,13 +30,13 @@ Juno is an open-source Blockchain-as-a-Service platform. It works just like trad
 
 Behind the scenes, Juno uses the [Internet Computer](https://internetcomputer.org/) blockchain network and infrastructure to launch what we call a “Satellite” for each app you build. A Satellite is essentially a smart contract on steroids that contains your entire app. From its assets provided on the web (such as JavaScript, HTML, and image files) to its state saved in a super simple database, file storage, and authentication, each Satellite controlled solely by you contains everything it needs to run smoothly.
 
-* * *
+---
 
 ## Build Your First DApp
 
 Let’s build our first dapp! In this example, we will create a simple note-taking app that allows users to store data entries, upload files, and retrieve them as needed.
 
-* * *
+---
 
 ### Initialization
 
@@ -55,16 +55,14 @@ import { useEffect } from "react";
 import { initJuno } from "@junobuild/core";
 
 function App() {
-    useEffect(() => {
-        (async () =>
-            await initJuno({
-                satelliteId: "pycrs-xiaaa-aaaal-ab6la-cai",
-            }))();
-    }, []);
+	useEffect(() => {
+		(async () =>
+			await initJuno({
+				satelliteId: "pycrs-xiaaa-aaaal-ab6la-cai"
+			}))();
+	}, []);
 
-    return (
-        <h1>Hello World</h1>
-    );
+	return <h1>Hello World</h1>;
 }
 
 export default App;
@@ -72,7 +70,7 @@ export default App;
 
 That’s it for the configuration! Your app is now ready for Web3! 😎
 
-* * *
+---
 
 ### Authentication
 
@@ -103,31 +101,25 @@ import { authSubscribe } from "@junobuild/core";
 export const AuthContext = createContext();
 
 export const Auth = ({ children }) => {
-  const [user, setUser] = useState(undefined);
+	const [user, setUser] = useState(undefined);
 
-  useEffect(() => {
-    const sub = authSubscribe((user) => setUser(user));
+	useEffect(() => {
+		const sub = authSubscribe((user) => setUser(user));
 
-    return () => unsubscribe();
-  }, []);
+		return () => unsubscribe();
+	}, []);
 
-  return (
-    <AuthContext.Provider value={{ user }}>
-      {user !== undefined && user !== null ? (
-        <div>
-          {children}
-        </div>
-      ) : (
-        <p>Not signed in.</p>
-      )}
-    </AuthContext.Provider>
-  );
+	return (
+		<AuthContext.Provider value={{ user }}>
+			{user !== undefined && user !== null ? <div>{children}</div> : <p>Not signed in.</p>}
+		</AuthContext.Provider>
+	);
 };
 ```
 
 Juno’s library is framework-agnostic and currently does not include any framework-specific code. However, we welcome contributions from the community. If you are interested in providing React plugins, contexts, hooks or else, feel free to contribute to the project! 💪
 
-* * *
+---
 
 ### Storing Documents
 
@@ -142,11 +134,11 @@ import { setDoc } from "@junobuild/core";
 
 // TypeScript example from the documentation
 await setDoc<Example>({
-    collection: "my_collection_key",
-    doc: {
-        key: "my_document_key",
-        data: myExample,
-    },
+	collection: "my_collection_key",
+	doc: {
+		key: "my_document_key",
+		data: myExample
+	}
 });
 ```
 
@@ -158,36 +150,33 @@ import { setDoc } from "@junobuild/core";
 import { nanoid } from "nanoid";
 
 export const Example = () => {
-  const [inputText, setInputText] = useState("");
+	const [inputText, setInputText] = useState("");
 
-  const add = async () => {
-    await setDoc({
-      collection: "data",
-      doc: {
-        key: nanoid(),
-        data: {
-          text: inputText,
-        },
-      },
-    });
-  };
+	const add = async () => {
+		await setDoc({
+			collection: "data",
+			doc: {
+				key: nanoid(),
+				data: {
+					text: inputText
+				}
+			}
+		});
+	};
 
-  return (
-    <>
-      <textarea
-        onChange={(e) => setInputText(e.target.value)}
-        value={inputText}
-      ></textarea>
+	return (
+		<>
+			<textarea onChange={(e) => setInputText(e.target.value)} value={inputText}></textarea>
 
-      <button type="button" onClick={add}>
-        Add
-      </button>
-    </>
-  );
+			<button type="button" onClick={add}>
+				Add
+			</button>
+		</>
+	);
 };
 ```
 
-* * *
+---
 
 ### Listing Documents
 
@@ -201,39 +190,39 @@ import { AuthContext } from "./Auth";
 import { listDocs } from "@junobuild/core";
 
 export const ListExample = () => {
-  const { user } = useContext(AuthContext);
+	const { user } = useContext(AuthContext);
 
-  const [items, setItems] = useState([]);
+	const [items, setItems] = useState([]);
 
-  const list = async () => {
-    const { items } = await listDocs({
-      collection: "notes",
-      filter: {},
-    });
+	const list = async () => {
+		const { items } = await listDocs({
+			collection: "notes",
+			filter: {}
+		});
 
-    setItems(items);
-  };
+		setItems(items);
+	};
 
-  useEffect(() => {
-    if ([undefined, null].includes(user)) {
-      setItems([]);
-      return;
-    }
+	useEffect(() => {
+		if ([undefined, null].includes(user)) {
+			setItems([]);
+			return;
+		}
 
-    (async () => await list())();
-  }, [user]);
+		(async () => await list())();
+	}, [user]);
 
-  return (
-    <>
-      {items.map(({ key, data: { text } }) => (
-        <p key={key}>{text}</p>
-      ))}
-    </>
-  );
+	return (
+		<>
+			{items.map(({ key, data: { text } }) => (
+				<p key={key}>{text}</p>
+			))}
+		</>
+	);
 };
 ```
 
-* * *
+---
 
 ### Uploading File
 
@@ -251,44 +240,44 @@ import { AuthContext } from "./Auth";
 import { uploadFile } from "@junobuild/core";
 
 export const UploadExample = () => {
-  const [file, setFile] = useState();
-  const [image, setImage] = useState();
+	const [file, setFile] = useState();
+	const [image, setImage] = useState();
 
-  const { user } = useContext(AuthContext);
+	const { user } = useContext(AuthContext);
 
-  const add = async () => {
-    const filename = `${user.key}-${file.name}`;
+	const add = async () => {
+		const filename = `${user.key}-${file.name}`;
 
-    const { downloadUrl } = await uploadFile({
-      collection: "images",
-      data: file,
-      filename,
-    });
+		const { downloadUrl } = await uploadFile({
+			collection: "images",
+			data: file,
+			filename
+		});
 
-    setImage(downloadUrl);
-  };
+		setImage(downloadUrl);
+	};
 
-  return (
-    <>
-      <input
-        type="file"
-        accept="image/png, image/gif, image/jpeg"
-        onChange={(event) => setFile(event.target.files?.[0])}
-      />
+	return (
+		<>
+			<input
+				type="file"
+				accept="image/png, image/gif, image/jpeg"
+				onChange={(event) => setFile(event.target.files?.[0])}
+			/>
 
-      <button type="button" onClick={add}>
-        Add
-      </button>
+			<button type="button" onClick={add}>
+				Add
+			</button>
 
-      {image !== undefined && <img src={image} loading="lazy" /> }
-    </>
-  );
+			{image !== undefined && <img src={image} loading="lazy" />}
+		</>
+	);
 };
 ```
 
 Once an asset is uploaded, a `downloadUrl` is returned which provides a direct HTTPS link to access the uploaded asset on the web.
 
-* * *
+---
 
 ### Listing Assets
 
@@ -302,39 +291,39 @@ import { AuthContext } from "./Auth";
 import { listAssets } from "@junobuild/core";
 
 export const ListAssetsExample = () => {
-  const { user } = useContext(AuthContext);
+	const { user } = useContext(AuthContext);
 
-  const [assets, setAssets] = useState([]);
+	const [assets, setAssets] = useState([]);
 
-  const list = async () => {
-    const { assets } = await listAssets({
-      collection: "images",
-      filter: {},
-    });
+	const list = async () => {
+		const { assets } = await listAssets({
+			collection: "images",
+			filter: {}
+		});
 
-    setAssets(assets);
-  };
+		setAssets(assets);
+	};
 
-  useEffect(() => {
-    if ([undefined, null].includes(user)) {
-      setAssets([]);
-      return;
-    }
+	useEffect(() => {
+		if ([undefined, null].includes(user)) {
+			setAssets([]);
+			return;
+		}
 
-    (async () => await list())();
-  }, [user]);
+		(async () => await list())();
+	}, [user]);
 
-  return (
-    <>
-      {assets.map(({ fullPath, downloadUrl }) => (
-        <img key={fullPath} loading="lazy" src={downloadUrl} />
-      ))}
-    </>
-  );
+	return (
+		<>
+			{assets.map(({ fullPath, downloadUrl }) => (
+				<img key={fullPath} loading="lazy" src={downloadUrl} />
+			))}
+		</>
+	);
 };
 ```
 
-* * *
+---
 
 ### Deployment 🚀
 
@@ -358,13 +347,13 @@ juno deploy
 
 Congratulations! Your app is now decentralized 🎉.
 
-* * *
+---
 
 ## Ressources
 
-*   Juno documentation and getting started: [https://juno.build/docs/intro](https://juno.build/docs/intro)
-*   Code source of this tutorial: [https://github.com/buildwithjuno/examples/tree/main/react/diary](https://github.com/buildwithjuno/examples/tree/main/react/diary)
-*   The outcome of this article: [https://pycrs-xiaaa-aaaal-ab6la-cai.icp0.io/](https://pycrs-xiaaa-aaaal-ab6la-cai.icp0.io/)
+- Juno documentation and getting started: [https://juno.build/docs/intro](https://juno.build/docs/intro)
+- Code source of this tutorial: [https://github.com/buildwithjuno/examples/tree/main/react/diary](https://github.com/buildwithjuno/examples/tree/main/react/diary)
+- The outcome of this article: [https://pycrs-xiaaa-aaaal-ab6la-cai.icp0.io/](https://pycrs-xiaaa-aaaal-ab6la-cai.icp0.io/)
 
 To infinity and beyond
 David

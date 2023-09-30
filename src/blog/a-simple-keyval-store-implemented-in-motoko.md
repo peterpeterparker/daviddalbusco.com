@@ -10,9 +10,9 @@ canonical: "https://daviddalbusco.medium.com/a-simple-keyval-store-implemented-i
 
 ![](https://cdn-images-1.medium.com/max/1600/1*TtIqarWb4Sbvh2lntKUlHg.jpeg)
 
-*Photo by [Pedro Lastra](https://unsplash.com/@peterlaster?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Pedro Lastra](https://unsplash.com/@peterlaster?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-*****
+---
 
 I am a fond of offline web applications and most of my personal open source projects, such as [DeckDeckGo](https://deckdeckgo.com/) or [Tie Tracker](https://tietracker.app.link/), follow the approach.
 
@@ -20,7 +20,7 @@ In these two particular apps, I use [idb-keyval](https://github.com/jakearchibal
 
 That’s why, in the last iteration of our migration to the [DFINITY](https://dfinity.org/)’s Internet Computer, I developed a generic store for canister smart contract in [Motoko](https://smartcontracts.org/docs/language-guide/motoko.html) that also maintain data with key and values.
 
-*****
+---
 
 ### Store
 
@@ -36,13 +36,13 @@ import Array "mo:base/Array";
 
 module {
     public class DataStore<T>() {
-        private var data: HashMap.HashMap<Text, T> = 
+        private var data: HashMap.HashMap<Text, T> =
                 HashMap.HashMap<Text, T>(10, Text.equal, Text.hash);
     }
 }
 ```
 
-*****
+---
 
 ### Put, Get & Delete
 
@@ -71,7 +71,7 @@ public func del(key: Text): ?T {
 };
 ```
 
-*****
+---
 
 ### List
 
@@ -108,7 +108,7 @@ private func keyContains(key: Text, contains: ?Text): Bool {
 };
 ```
 
-The above functions are returning `true` if no filters are defined, assuming `undefined` means “ignore the option”. There is probably a better way of  implementing such condition in Motoko but, I am not yet as fluid in it as I am with others languages such as TypeScript. If you are up to improve the solution, go for it, send me a [Pull Request](https://github.com/deckgo/deckdeckgo/blob/main/canisters/src/data/data.filter.mo)!
+The above functions are returning `true` if no filters are defined, assuming `undefined` means “ignore the option”. There is probably a better way of implementing such condition in Motoko but, I am not yet as fluid in it as I am with others languages such as TypeScript. If you are up to improve the solution, go for it, send me a [Pull Request](https://github.com/deckgo/deckdeckgo/blob/main/canisters/src/data/data.filter.mo)!
 
 Finally, I implemented the `list` function itself that either returns all entries or applies the filter following an `and` logic.
 
@@ -125,10 +125,10 @@ public func list(filter: ?DataFilter): [(Text, T)] {
 
             let {startsWith; contains} = filter;
 
-            let values: [(Text, T)] = 
+            let values: [(Text, T)] =
                         Array.mapFilter<(Text, T), (Text, T)>
             (keyValues, func ((key: Text, value: T)) : ?(Text, T) {
-                if (keyStartsWith(key, startsWith) and 
+                if (keyStartsWith(key, startsWith) and
                     keyContains(key, contains)) {
                     return ?(key, value);
                 };
@@ -142,7 +142,7 @@ public func list(filter: ?DataFilter): [(Text, T)] {
 };
 ```
 
-*****
+---
 
 ### Upgrades
 
@@ -158,8 +158,7 @@ public func postupgrade(stableData: [(Text, T)]) {
 };
 ```
 
-
-*****
+---
 
 ### Usage
 
@@ -179,7 +178,7 @@ actor Test {
         manufacturer: Text;
     };
 
-    private let store: DataStore.DataStore<Car> = 
+    private let store: DataStore.DataStore<Car> =
                        DataStore.DataStore<Car>();
 
     private stable var entries : [(Text, Car)] = [];
@@ -223,7 +222,7 @@ public query func get(key: Text) : async (?Car) {
 
 Et voilà, with few lines of code, we have implemented a simple keyval canister smart contract that store our data 🥳.
 
-*****
+---
 
 ### Playground
 
@@ -231,27 +230,27 @@ Wanna play with the previous example and store? Checkout this [Motoko Playground
 
 ![](https://cdn-images-1.medium.com/max/1600/1*CgTzjuNqFv3mr1IpCZsPgw.png)
 
-*****
+---
 
 ### Further Reading
 
 Wanna read more our project? Here is the list of blog posts I published since we started the project with the Internet Computer:
 
-* [TypeScript Utilities For Candid](https://daviddalbusco.com/blog/typescript-utilities-for-candid)
-* [Bye-Bye Amazon & Google, Hello Web 3.0](https://daviddalbusco.com/blog/bye-bye-amazon-and-google-hello-web-3-0)
-* [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
-* [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
-* [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
-* [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
-* [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)
+- [TypeScript Utilities For Candid](https://daviddalbusco.com/blog/typescript-utilities-for-candid)
+- [Bye-Bye Amazon & Google, Hello Web 3.0](https://daviddalbusco.com/blog/bye-bye-amazon-and-google-hello-web-3-0)
+- [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
+- [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
+- [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
+- [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
+- [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)
 
-*****
+---
 
 ### Keep In Touch
 
 To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️ and [sign up](https://eepurl.com/hKeMLD) to join the list of beta tester.
 
-*****
+---
 
 ### Conclusion
 

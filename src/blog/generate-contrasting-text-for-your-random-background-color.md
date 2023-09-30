@@ -9,7 +9,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*o8tTGo3vsocTKnCUyz0wHA.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*o8tTGo3vsocTKnCUyz0wHA.jpeg)
 
-*Photo by [davisco](https://unsplash.com/@codytdavis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [davisco](https://unsplash.com/@codytdavis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I’m currently developing a new application to improve, notably, my [React Redux](https://react-redux.js.org) know-how. In this new project, users will be able to assign the color of their choice to some entities background. That’s why I had to find a solution to display contrasted texts.
 
@@ -27,7 +27,7 @@ To generate a contrasting text, we are using the following formula defined by th
 ((Red value X 299) + (Green value X 587) + (Blue value X 114)) / 1000
 ```
 
-The above algorithm takes a YIQ color scheme, converted from a RGB formula, as input and outputs a perceived brightness for a color. 
+The above algorithm takes a YIQ color scheme, converted from a RGB formula, as input and outputs a perceived brightness for a color.
 
 Because I’m working with hexadecimal colors, the implementation needs two conversions before being able to calculate the brightness. It first need to convert the the input to RGB and then to YIQ colors.
 
@@ -35,43 +35,43 @@ Finally, with the help of a threshold value, it could determine if the contrast 
 
 ```typescript
 interface RGB {
-    b: number;
-    g: number;
-    r: number;
+	b: number;
+	g: number;
+	r: number;
 }
 
 function rgbToYIQ({ r, g, b }: RGB): number {
-    return ((r * 299) + (g * 587) + (b * 114)) / 1000;
+	return (r * 299 + g * 587 + b * 114) / 1000;
 }
 
 function hexToRgb(hex: string): RGB | undefined {
-    if (!hex || hex === undefined || hex === '') {
-        return undefined;
-    }
+	if (!hex || hex === undefined || hex === "") {
+		return undefined;
+	}
 
-    const result: RegExpExecArray | null =
-          /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	const result: RegExpExecArray | null = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : undefined;
+	return result
+		? {
+				r: parseInt(result[1], 16),
+				g: parseInt(result[2], 16),
+				b: parseInt(result[3], 16)
+		  }
+		: undefined;
 }
 
-export function contrast(colorHex: string | undefined,
-                         threshold: number = 128): string {
-    if (colorHex === undefined) {
-        return '#000';
-    }
+export function contrast(colorHex: string | undefined, threshold: number = 128): string {
+	if (colorHex === undefined) {
+		return "#000";
+	}
 
-    const rgb: RGB | undefined = hexToRgb(colorHex);
+	const rgb: RGB | undefined = hexToRgb(colorHex);
 
-    if (rgb === undefined) {
-        return '#000';
-    }
+	if (rgb === undefined) {
+		return "#000";
+	}
 
-    return rgbToYIQ(rgb) >= threshold ? '#000' : '#fff';
+	return rgbToYIQ(rgb) >= threshold ? "#000" : "#fff";
 }
 ```
 
@@ -81,69 +81,75 @@ Let’s give a try to the above solution in Vanilla Javascript.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*33JQbJ-KqGrry-VIXHZbMA.gif)
 
-*Contrasting text automatically generated for the selected color*
+_Contrasting text automatically generated for the selected color_
 
-In an `html` page, we add a color picker to select a dynamic value. For that purpose, we use the component we developed  for [DeckDeckGo](https://deckdeckgo.com), our web open source editor for presentations. We load the component from [Unpkg](https://unpkg.com) that’s why no dependencies have to be installed locally.
+In an `html` page, we add a color picker to select a dynamic value. For that purpose, we use the component we developed for [DeckDeckGo](https://deckdeckgo.com), our web open source editor for presentations. We load the component from [Unpkg](https://unpkg.com) that’s why no dependencies have to be installed locally.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Contrast color</title>
-  <script type="module" src="https://unpkg.com/@deckdeckgo/color@latest/dist/deckdeckgo-color/deckdeckgo-color.esm.js"></script>
-  <script nomodule=""
-src="https://unpkg.com/@deckdeckgo/color@latest/dist/deckdeckgo-color/deckdeckgo-color.js"></script>
-</head>
+	<head>
+		<meta charset="utf-8" />
+		<title>Contrast color</title>
+		<script
+			type="module"
+			src="https://unpkg.com/@deckdeckgo/color@latest/dist/deckdeckgo-color/deckdeckgo-color.esm.js"
+		></script>
+		<script
+			nomodule=""
+			src="https://unpkg.com/@deckdeckgo/color@latest/dist/deckdeckgo-color/deckdeckgo-color.js"
+		></script>
+	</head>
 
-<body style="background: #F78DA7;">
-  <h1 style="font-size: 40px;">Hello World</h1>
+	<body style="background: #F78DA7;">
+		<h1 style="font-size: 40px;">Hello World</h1>
 
-  <deckgo-color></deckgo-color>
+		<deckgo-color></deckgo-color>
 
-  <!-- Here we will add the contrast function -->
+		<!-- Here we will add the contrast function -->
 
-  <!-- Here we will bind the event and modify the colors -->
-
-</body>
+		<!-- Here we will bind the event and modify the colors -->
+	</body>
+</html>
 ```
 
 Then we add our above function to generate a contrasting text. Note that we just remove the Typescript part and only parse the Javascript code.
 
 ```html
 <script>
-  function rgbToYIQ({r, g, b}) {
-    return ((r * 299) + (g * 587) + (b * 114)) / 1000;
-  }
+	function rgbToYIQ({ r, g, b }) {
+		return (r * 299 + g * 587 + b * 114) / 1000;
+	}
 
-  function hexToRgb(hex) {
-    if (!hex || hex === undefined || hex === '') {
-      return undefined;
-    }
+	function hexToRgb(hex) {
+		if (!hex || hex === undefined || hex === "") {
+			return undefined;
+		}
 
-    const result =
-          /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+		const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    } : undefined;
-  }
+		return result
+			? {
+					r: parseInt(result[1], 16),
+					g: parseInt(result[2], 16),
+					b: parseInt(result[3], 16)
+			  }
+			: undefined;
+	}
 
-  function contrast(colorHex, threshold = 128) {
-    if (colorHex === undefined) {
-      return '#000';
-    }
+	function contrast(colorHex, threshold = 128) {
+		if (colorHex === undefined) {
+			return "#000";
+		}
 
-    const rgb = hexToRgb(colorHex);
+		const rgb = hexToRgb(colorHex);
 
-    if (rgb === undefined) {
-      return '#000';
-    }
+		if (rgb === undefined) {
+			return "#000";
+		}
 
-    return rgbToYIQ(rgb) >= threshold ? '#000' : '#fff';
-  }
+		return rgbToYIQ(rgb) >= threshold ? "#000" : "#fff";
+	}
 </script>
 ```
 
@@ -151,15 +157,12 @@ Finally, we bind an event to the color picker to listen to the selected color, w
 
 ```html
 <script>
-  document.querySelector('deckgo-color')
-          .addEventListener('colorChange', updateColor, true);
+	document.querySelector("deckgo-color").addEventListener("colorChange", updateColor, true);
 
-  function updateColor($event) {
-    document.querySelector('body').style.background = 
-                                   $event.detail.hex;
-    document.querySelector('body').style.color = 
-                                   contrast($event.detail.hex);
-  }
+	function updateColor($event) {
+		document.querySelector("body").style.background = $event.detail.hex;
+		document.querySelector("body").style.color = contrast($event.detail.hex);
+	}
 </script>
 ```
 

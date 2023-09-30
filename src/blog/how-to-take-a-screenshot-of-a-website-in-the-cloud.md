@@ -9,17 +9,17 @@ image: "https://cdn-images-1.medium.com/max/1600/1*0cBVakg6yb906eFR0VLm8Q.jpeg"
 
 ![](https://thepracticaldev.s3.amazonaws.com/i/nsa5dduag5csoamhu28o.jpg)
 
-*Photo by [samsommer](https://unsplash.com/@samsomfotos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [samsommer](https://unsplash.com/@samsomfotos?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 We are currently [developing](https://daviddalbusco.com/blog/we-are-developing-an-open-source-editor-for-presentations) an open source web editor for presentations called [DeckDeckGo] which, hopefully, we will be able to release in beta around the end of the summer (🤞).
 
 Why I allowed my self to be so frontal in my opening sentence? Well, here we go: I'm happy to officially announce that it will not "just" be an editor but that we also designed it to be an online platform where presentations will be shared and ultimately, if I let my self dream a bit about the future, will be indexed according your interests and maybe will be even discussed.
 
-We are far, far away of such an application and community but it does not mean we can't dream a bit, specially as the project is a side one which we implement at nights and on the weekends for fun. Therefore we have decided to already implement the first piece of this idea in our beta. The main screen, which I call the "feed", will present all the decks which are going to be edited and published (as standalone Progressive Web Apps…but that's another story 😉) with our tool. For that purpose, as for their social cards, we had the need, or we decided, to capture in the cloud a screenshot of the first slide of such decks and that's why I'm writing this new blog post to display how you could create a [Google Functions for Firebase](https://firebase.google.com/docs/functions) to  take a screenshot of a website in the cloud 📸
+We are far, far away of such an application and community but it does not mean we can't dream a bit, specially as the project is a side one which we implement at nights and on the weekends for fun. Therefore we have decided to already implement the first piece of this idea in our beta. The main screen, which I call the "feed", will present all the decks which are going to be edited and published (as standalone Progressive Web Apps…but that's another story 😉) with our tool. For that purpose, as for their social cards, we had the need, or we decided, to capture in the cloud a screenshot of the first slide of such decks and that's why I'm writing this new blog post to display how you could create a [Google Functions for Firebase](https://firebase.google.com/docs/functions) to take a screenshot of a website in the cloud 📸
 
 ![](https://thepracticaldev.s3.amazonaws.com/i/o9122u7ms0zku9xcevo1.gif)
 
-*A sneak peek of our feed filled with our test presentations*
+_A sneak peek of our feed filled with our test presentations_
 
 # Introduction of the solution
 
@@ -29,7 +29,7 @@ As introduced above, for this solution, we are going to write a new Google Funct
 
 To be honest, as always, Google published a really well written article in August 2018 which introduces the [headless Chrome support in Cloud Functions and App Engine](https://cloud.google.com/blog/products/gcp/introducing-headless-chrome-support-in-cloud-functions-and-app-engine) which exactly displays how to take a screenshot. In comparison to this article, this post introduces the storage but also improves a bit the way of capturing the screenshot, so I hope you still do think it deserves a read and even your time 🙏
 
-*In this "tutorial" I am going to skip the part where you setup and interact with your [Google Firebase Functions](https://firebase.google.com/docs/functions) or Storage, there are dozen of documentations and tutorials about it and, furthermore, the Google Firebase Console even provides wizards to drive you through all these process. You could also note that I use [TypeScript](https://firebase.google.com/docs/functions/typescript) to write the functions and we are going to write all our code in the main file* `src/index.ts`.
+_In this "tutorial" I am going to skip the part where you setup and interact with your [Google Firebase Functions](https://firebase.google.com/docs/functions) or Storage, there are dozen of documentations and tutorials about it and, furthermore, the Google Firebase Console even provides wizards to drive you through all these process. You could also note that I use [TypeScript](https://firebase.google.com/docs/functions/typescript) to write the functions and we are going to write all our code in the main file_ `src/index.ts`.
 
 # Getting started
 
@@ -116,7 +116,7 @@ What's happening there 🤔? We are telling Puppeteer to run a headless Chrome w
 
 ## Special credits
 
-I did not came to that really neat solution alone. It is actually the result of an exchange   with Matthias Max, CEO of [bitflower](https://www.bitflower.net/), on the [StencilJS Slack](https://stencil-worldwide.herokuapp.com/) channel. Kudos to him, I would for example not have seriously thought in a first place on disabling the service workers if he would not have shared his idea and code, thanks a lot Matthias 👍
+I did not came to that really neat solution alone. It is actually the result of an exchange with Matthias Max, CEO of [bitflower](https://www.bitflower.net/), on the [StencilJS Slack](https://stencil-worldwide.herokuapp.com/) channel. Kudos to him, I would for example not have seriously thought in a first place on disabling the service workers if he would not have shared his idea and code, thanks a lot Matthias 👍
 
 ## Tips and tricks
 
@@ -146,7 +146,7 @@ import * as puppeteer from 'puppeteer';
 
 import * as admin from 'firebase-admin';
 
-export const takeScreenshot = 
+export const takeScreenshot =
              functions.https.onRequest(takeScreenShotOnRequest);
 
 async function takeScreenShotOnRequest(request, response) {
@@ -210,7 +210,7 @@ And you could also try it out running the following curl command in your termina
 $ curl -i -H "Accept: application/json" -X GET  https://us-central1-your-cool-app.cloudfunctions.net/takeScreenshot
 ```
 
-*Replace `https://us-central1-your-cool-app.cloundfuntions.net` with your application/functions URL.*
+_Replace `https://us-central1-your-cool-app.cloundfuntions.net` with your application/functions URL._
 
 # Cherry on the cake 🍒🎂
 

@@ -10,15 +10,15 @@ canonical: "https://medium.com/@david.dalbusco/firebase-cloud-functions-verify-u
 
 ![](https://cdn-images-1.medium.com/max/1600/1*BSLn4cG8OsG63z4pbJqrXA.jpeg)
 
-*Photo by [Nigel Tadyanehondo](https://unsplash.com/@nxvision?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/you-shall-not-pass?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Nigel Tadyanehondo](https://unsplash.com/@nxvision?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/you-shall-not-pass?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I started yesterday the refactoring of one of the core functions of [DeckDeckGo](https://deckdeckgo.com) by declaring a new [Firebase Cloud Functions](https://firebase.google.com/docs/functions/), which can be triggered via [HTTP requests](https://firebase.google.com/docs/functions/http-events).
 
 As I was looking to protect its access, in order to avoid sneaky requests, I followed one of my [previous blog post](https://medium.com/better-programming/protect-your-http-firebase-cloud-functions-adf23c45765e) to protect it with the help of a bearer.
 
-Once I tested  this first step of the feature, I actually noticed that it was not the correct solution for my use case. I rather had to grant the access using the users tokens.
+Once I tested this first step of the feature, I actually noticed that it was not the correct solution for my use case. I rather had to grant the access using the users tokens.
 
-*****
+---
 
 ### Verify Users’ Tokens In Cloud Functions
 
@@ -51,7 +51,7 @@ export async function verifyToken(
       return false;
     }
 
-    const payload: admin.auth.DecodedIdToken = 
+    const payload: admin.auth.DecodedIdToken =
                    await admin.auth().verifyIdToken(token);
 
     return payload !== null;
@@ -60,13 +60,13 @@ export async function verifyToken(
   }
 }
 
-async function getToken(request: functions.Request): 
+async function getToken(request: functions.Request):
                        Promise<string | undefined> {
   if (!request.headers.authorization) {
     return undefined;
   }
 
-  const token: string = 
+  const token: string =
         request.headers.authorization.replace(/^Bearer\s/, '');
 
   return token;
@@ -87,7 +87,7 @@ Given for example a token ID `975dd9f6` , an HTTP POST request would look like t
          -X POST https://us-central1-yolo.cloudfunctions.net/helloWorld
 ```
 
-*****
+---
 
 ### Grant Only Not Anonymous Users
 
@@ -100,14 +100,14 @@ For these processes, we are using the ability given by Firebase to use [anonymou
 That’s why, in addition to verify the tokens, I also add to check this information. Fortunately, this can also be solved easily, as the `payload` provided by the `verifyToken` function does contain such information.
 
 ```javascript
-const payload: admin.auth.DecodedIdToken = 
+const payload: admin.auth.DecodedIdToken =
                    await admin.auth().verifyIdToken(token);
 
 return payload !== null &&
        payload.firebase.sign_in_provider !== 'anonymous';
 ```
 
-*****
+---
 
 ### Call Function With Bearer
 
@@ -117,13 +117,13 @@ In case you would be interested, here is how I provide the above `bearer` to a f
 helloWorld(): Promise<void> {
   return new Promise<void>(async (resolve, reject) => {
     try {
-      const token: string = 
+      const token: string =
             await firebase.auth().currentUser.getIdToken();
 
-      const functionsUrl: string = 
+      const functionsUrl: string =
            'https://us-central1-yolo.cloudfunctions.net';
 
-      const rawResponse: Response = 
+      const rawResponse: Response =
             await fetch(`${functionsUrl}/helloWorld`, {
         method: 'POST',
         headers: {
@@ -149,7 +149,7 @@ helloWorld(): Promise<void> {
 }
 ```
 
-*****
+---
 
 ### Cherry On Top: CORS
 
@@ -179,7 +179,7 @@ async function helloWorld(request: functions.Request,
 }
 ```
 
-*****
+---
 
 ### Take Away
 

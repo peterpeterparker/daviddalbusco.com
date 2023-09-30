@@ -10,17 +10,17 @@ canonical: "https://medium.com/@david.dalbusco/javascript-useful-functions-2d9d3
 
 ![](https://cdn-images-1.medium.com/max/1600/1*qvaNuuGMVDesVbjYY_fdoQ.png)
 
-*Photo by [Sam Moqadam](https://unsplash.com/@sammoqadam?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Sam Moqadam](https://unsplash.com/@sammoqadam?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the original scheduled date of the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Seven** days left until this first milestone. Hopefully better days are ahead.
 
-*****
+---
 
 We are using a couple of JavaScript functions across the multiple applications and Web Components of [DeckDeckGo](https://deckdeckgo.com).
 
 Maybe these can be useful for your projects too?
 
-*****
+---
 
 ### Unifying Mouse And Touch Events
 
@@ -29,10 +29,10 @@ If you are implementing functions which have to do with user interactions throug
 For example, presenters can draw over their presentations using our [remote control](https://deckdeckgo.app). For such purpose we use canvas and are attaching events such as:
 
 ```javascript
-const canvas = document.querySelector('canvas');
+const canvas = document.querySelector("canvas");
 
-canvas.addEventListener('mousedown', this.startEvent);
-canvas.addEventListener('touchstart', this.startEvent);
+canvas.addEventListener("mousedown", this.startEvent);
+canvas.addEventListener("touchstart", this.startEvent);
 ```
 
 As you can notice, both `mouse` and `touch` events are handled by the same functions, which is good, but unfortunately, can’t work out without a bit of logic if you would like to access to positions information as for example `clientX` or `clientY` .
@@ -41,11 +41,11 @@ Indeed, `touch` positioning are not available at the root of the object but rath
 
 ```javascript
 function startEvent($event) {
-  // MouseEvent
-  console.log($event.clientX);
+	// MouseEvent
+	console.log($event.clientX);
 
-  // TouchEvent
-  console.log($event.changedTouches[0].clientX);
+	// TouchEvent
+	console.log($event.changedTouches[0].clientX);
 }
 ```
 
@@ -53,7 +53,7 @@ That’s why, we are using a function we have called `unifyEvents` to get the po
 
 ```javascript
 export function unifyEvent($event) {
-  return $event.changedTouches ? $event.changedTouches[0] : $event;
+	return $event.changedTouches ? $event.changedTouches[0] : $event;
 }
 ```
 
@@ -61,16 +61,16 @@ Which can be use as the following:
 
 ```javascript
 function startEvent($event) {
-  // TouchEvent and MouseEvent unified
-  console.log(unifyEvent($event).clientX);
+	// TouchEvent and MouseEvent unified
+	console.log(unifyEvent($event).clientX);
 }
 ```
 
-*****
+---
 
 ### Debouncing
 
-I covered the topic debouncing  with JavaScript in a [previous article](https://daviddalbusco.com/blog/debounce-with-vanilla-javascript-or-rxjs) but if you are looking to add such feature to your application without any dependencies, here’s a function to do so.
+I covered the topic debouncing with JavaScript in a [previous article](https://daviddalbusco.com/blog/debounce-with-vanilla-javascript-or-rxjs) but if you are looking to add such feature to your application without any dependencies, here’s a function to do so.
 
 ```javascript
 export function debounce(func, timeout?) {
@@ -83,13 +83,13 @@ export function debounce(func, timeout?) {
       clearTimeout(timer);
     }
 
-    timer = 
+    timer =
       setTimeout(next, timeout && timeout > 0 ? timeout : 300);
   };
 }
 ```
 
-*****
+---
 
 ### User Agent
 
@@ -99,7 +99,7 @@ Therefor the following methods should be used wisely, knowing they will have to 
 
 That being said, here are a couple of handy functions which help detects information about the type of browser or device.
 
-*****
+---
 
 #### isMobile
 
@@ -111,8 +111,8 @@ export function isMobile() {
     return false;
   }
 
-  const a = 
-        navigator.userAgent || navigator.vendor || 
+  const a =
+        navigator.userAgent || navigator.vendor ||
         (window as any).opera;
   // Regex Source -> http://detectmobilebrowsers.com
   return (
@@ -126,7 +126,7 @@ export function isMobile() {
 }
 ```
 
-*****
+---
 
 #### isIOS
 
@@ -138,15 +138,15 @@ export function isIOS() {
     return false;
   }
 
-  const a = 
-        navigator.userAgent || navigator.vendor || 
+  const a =
+        navigator.userAgent || navigator.vendor ||
         (window as any).opera;
 
   return /iPad|iPhone|iPod/i.test(a);
 }
 ```
 
-*****
+---
 
 #### isIPad
 
@@ -158,15 +158,15 @@ export function isIPad() {
     return false;
   }
 
-  const a = 
-        navigator.userAgent || navigator.vendor || 
+  const a =
+        navigator.userAgent || navigator.vendor ||
         (window as any).opera;
 
   return /iPad/i.test(a);
 }
 ```
 
-*****
+---
 
 #### isFirefox
 
@@ -178,15 +178,15 @@ export function isFirefox() {
     return false;
   }
 
-  const a = 
-        navigator.userAgent || navigator.vendor || 
+  const a =
+        navigator.userAgent || navigator.vendor ||
         (window as any).opera;
 
   return /firefox/i.test(a);
 }
 ```
 
-*****
+---
 
 ### Full screen
 
@@ -194,24 +194,26 @@ Our presentations can be edited and browse in standalone or in full screen mode,
 
 ```javascript
 export function isFullscreen() {
-  if (!window || !screen) {
-    return false;
-  }
+	if (!window || !screen) {
+		return false;
+	}
 
-  return window.innerHeight == screen.height;
+	return window.innerHeight == screen.height;
 }
 ```
 
-*****
+---
 
 ### Remove Attribute From HTML String
 
-Let say your DOM contains an element which you would like to parse to a `string` with the help of JavaScript. 
+Let say your DOM contains an element which you would like to parse to a `string` with the help of JavaScript.
 
 ```javascript
-<div contentEditable="true" style="color: #ff0000">Red</div>
+<div contentEditable="true" style="color: #ff0000">
+	Red
+</div>;
 
-const div = document.querySelector('div').outerHTML;
+const div = document.querySelector("div").outerHTML;
 ```
 
 For some reason, you might not be able to touch or clone the DOM element but would be interested to remove an attribute from `string` value anyway.
@@ -237,10 +239,10 @@ Basically, it searches all attribute possibilities and create a new `string` con
 
 My favorite tricks of all of these 😉.
 
-*****
+---
 
 ### Summary
- 
+
 [DeckDeckGo](https://deckdeckgo.com) is open source, you can find the above functions in our [GitHub repo](https://github.com/deckgo/deckdeckgo/tree/master/utils) or their related [npm packages](https://www.npmjs.com/search?q=%40deckdeckgo).
 
 Stay home, stay safe!

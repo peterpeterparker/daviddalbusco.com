@@ -10,7 +10,7 @@ canonical: "https://medium.com/@david.dalbusco/replace-environment-variables-in-
 
 ![](https://cdn-images-1.medium.com/max/1600/1*ez9DfR9-odbABx1E3E6Zcg.png)
 
-*Photo by [Joshua Earle](https://unsplash.com/@joshuaearle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Joshua Earle](https://unsplash.com/@joshuaearle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Yesterday evening I began that crazy [challenge](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) to share a blog post each and every day until the quarantine is over here in Switzerland the 19th April 2020, 33 days left until hopefully better days.
 
@@ -38,8 +38,8 @@ Of course, out of the box, this content security policy will not be compliant as
 
 ```html
 <meta
-  http-equiv="Content-Security-Policy"
-  content="default-src 'self';
+	http-equiv="Content-Security-Policy"
+	content="default-src 'self';
   connect-src 'self' <@API_URLS@>"
 />
 ```
@@ -51,40 +51,39 @@ Configuration is in place, variable has been added, we just have now to implemen
 ```javascript
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 function updateCSP(filename) {
-  fs.readFile(`${filename}`, 'utf8', function(err, data) {
-    if (err) {
-      return console.log(err);
-    }
+	fs.readFile(`${filename}`, "utf8", function (err, data) {
+		if (err) {
+			return console.log(err);
+		}
 
-    const result =
-          data.replace(/<@API_URLS@>/g, `https://myapi.com`);
+		const result = data.replace(/<@API_URLS@>/g, `https://myapi.com`);
 
-    fs.writeFile(`${filename}`, result, 'utf8', function(err) {
-      if (err) return console.log(err);
-    });
-  });
+		fs.writeFile(`${filename}`, result, "utf8", function (err) {
+			if (err) return console.log(err);
+		});
+	});
 }
 
 function findHTMLFiles(dir, files) {
-  fs.readdirSync(dir).forEach((file) => {
-    const fullPath = path.join(dir, file);
-    if (fs.lstatSync(fullPath).isDirectory()) {
-      findHTMLFiles(fullPath, files);
-    } else if (path.extname(fullPath) === '.html') {
-      files.push(fullPath);
-    }
-  });
+	fs.readdirSync(dir).forEach((file) => {
+		const fullPath = path.join(dir, file);
+		if (fs.lstatSync(fullPath).isDirectory()) {
+			findHTMLFiles(fullPath, files);
+		} else if (path.extname(fullPath) === ".html") {
+			files.push(fullPath);
+		}
+	});
 }
 
 let htmlFiles = [];
-findHTMLFiles('./www/', htmlFiles);
+findHTMLFiles("./www/", htmlFiles);
 
 for (const file of htmlFiles) {
-  updateCSP(`./${file}`);
+	updateCSP(`./${file}`);
 }
 ```
 
@@ -108,62 +107,59 @@ Once done, we now enhance the update script with a new function which takes care
 ```javascript
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-const crypto = require('crypto');
+const crypto = require("crypto");
 
 function updateCSP(filename) {
-  fs.readFile(`${filename}`, 'utf8', function(err, data) {
-    if (err) {
-      return console.log(err);
-    }
+	fs.readFile(`${filename}`, "utf8", function (err, data) {
+		if (err) {
+			return console.log(err);
+		}
 
-    let result = data.replace(/<@API_URLS@>/g, `https://myapi.com`);
+		let result = data.replace(/<@API_URLS@>/g, `https://myapi.com`);
 
-    const swHash = findSWHash(data);
-    if (swHash) {
-      result = result.replace(/<@SW_LOADER@>/g, swHash);
-    }
+		const swHash = findSWHash(data);
+		if (swHash) {
+			result = result.replace(/<@SW_LOADER@>/g, swHash);
+		}
 
-    fs.writeFile(`${filename}`, result, 'utf8', function(err) {
-      if (err) return console.log(err);
-    });
-  });
+		fs.writeFile(`${filename}`, result, "utf8", function (err) {
+			if (err) return console.log(err);
+		});
+	});
 }
 
 function findSWHash(data) {
-  const sw = /(<.?script data-build.*?>)([\s\S]*?)(<\/script>)/gm;
+	const sw = /(<.?script data-build.*?>)([\s\S]*?)(<\/script>)/gm;
 
-  let m;
-  while ((m = sw.exec(data))) {
-    if (m && m.length >= 3 && m[2].indexOf('serviceWorker') > -1) {
-      return `'sha256-${crypto
-        .createHash('sha256')
-        .update(m[2])
-        .digest('base64')}'`;
-    }
-  }
+	let m;
+	while ((m = sw.exec(data))) {
+		if (m && m.length >= 3 && m[2].indexOf("serviceWorker") > -1) {
+			return `'sha256-${crypto.createHash("sha256").update(m[2]).digest("base64")}'`;
+		}
+	}
 
-  return undefined;
+	return undefined;
 }
 
 function findHTMLFiles(dir, files) {
-  fs.readdirSync(dir).forEach((file) => {
-    const fullPath = path.join(dir, file);
-    if (fs.lstatSync(fullPath).isDirectory()) {
-      findHTMLFiles(fullPath, files);
-    } else if (path.extname(fullPath) === '.html') {
-      files.push(fullPath);
-    }
-  });
+	fs.readdirSync(dir).forEach((file) => {
+		const fullPath = path.join(dir, file);
+		if (fs.lstatSync(fullPath).isDirectory()) {
+			findHTMLFiles(fullPath, files);
+		} else if (path.extname(fullPath) === ".html") {
+			files.push(fullPath);
+		}
+	});
 }
 
 let htmlFiles = [];
-findHTMLFiles('./www/', htmlFiles);
+findHTMLFiles("./www/", htmlFiles);
 
 for (const file of htmlFiles) {
-  updateCSP(`./${file}`);
+	updateCSP(`./${file}`);
 }
 ```
 

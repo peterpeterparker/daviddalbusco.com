@@ -10,9 +10,9 @@ canonical: "https://zhx6p-eqaaa-aaaai-abbrq-cai.raw.ic0.app/d/converting-svg-to-
 
 ![](https://cdn-images-1.medium.com/max/1600/1*zXDaYiF8SRHlI_OIGZnf8w.jpeg)
 
-*Photo by [Justin Aikin](https://unsplash.com/@justnjames?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Justin Aikin](https://unsplash.com/@justnjames?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/dog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-*****
+---
 
 Last Monday I built and published [a new Web Component](https://docs.deckdeckgo.com/?path=/story/components-social-image--social-image), developed with [StencilJS](https://stenciljs.com/), to generate social images dynamically in the browser.
 
@@ -22,13 +22,13 @@ This is how it works.
 
 > Note: Code snippets are written in TypeScript.
 
-*****
+---
 
 ### SVG
 
 To create the dynamic SVG, I used a `foreignObject` to embed the text with an HTML paragraph (`<p/>`) and a graphical `image` element.
 
-*****
+---
 
 #### ForeignObject
 
@@ -38,11 +38,11 @@ This is something I found easier to implement with CSS rather than with JavaScri
 
 ```javascript
 <svg>
-  {this.text && (
-    <foreignObject>
-      <p>{this.text}</p>
-    </foreignObject>
-  )}
+	{this.text && (
+		<foreignObject>
+			<p>{this.text}</p>
+		</foreignObject>
+	)}
 </svg>
 ```
 
@@ -57,7 +57,7 @@ p {
 }
 ```
 
-*****
+---
 
 #### Image
 
@@ -65,10 +65,15 @@ Unlike the text, to embed the image, I had to use a graphical `<image/>` element
 
 ```javascript
 <svg>
-  {this.imgBase64 && this.imgMimeType && (
-    <image x="500" y="1000" width="64" height="64"
-       href={`data:${this.imgMimeType};base64,${this.imgBase64}`} />
-  )}
+	{this.imgBase64 && this.imgMimeType && (
+		<image
+			x="500"
+			y="1000"
+			width="64"
+			height="64"
+			href={`data:${this.imgMimeType};base64,${this.imgBase64}`}
+		/>
+	)}
 </svg>
 ```
 
@@ -107,21 +112,21 @@ const toBase64 = ({blob}: {blob: Blob}): Promise<string> => {
 
 In the above code snippet, the `imgSrc` is the URL to the image -- the logo -- that should be embedded. It is first fetched, then transformed to a `blob` and finally converted to a `base64` string.
 
-*****
+---
 
 ### Convert To Image
 
 Basically, the conversion process happens in two steps:
 
-* SVG to Canvas
-* Canvas to Image (Blob)
+- SVG to Canvas
+- Canvas to Image (Blob)
 
 Translated to code, these steps can be chained in a function.
 
 ```javascript
 @Method()
 async toBlob(type: string = 'image/webp'): Promise<Blob> {
-  const canvas: HTMLCanvasElement = 
+  const canvas: HTMLCanvasElement =
         await svgToCanvas({svg: this.svgRef});
   return canvasToBlob({canvas, type});
 }
@@ -129,7 +134,7 @@ async toBlob(type: string = 'image/webp'): Promise<Blob> {
 
 As you may notice, the above method defines a default mime type (`image/webp`) for the export. According to my tests, it also works for other format such as `image/png` and `image/jpg`.
 
-*****
+---
 
 #### SVG To Canvas
 
@@ -149,14 +154,14 @@ export const transformCanvas = ({index}: Frame): Promise<SvgToCanvas | undefined
     const {width, height} = svgSize(svg);
 
     const blob: Blob =
-      new Blob([svg.outerHTML], 
+      new Blob([svg.outerHTML],
               {type: 'image/svg+xml;charset=utf-8'});
     const blobURL: string = URL.createObjectURL(blob);
 
     const image = new Image();
 
     image.onload = () => {
-      const canvas: HTMLCanvasElement = 
+      const canvas: HTMLCanvasElement =
                     document.createElement('canvas');
 
       canvas.width = width;
@@ -184,7 +189,7 @@ At first, I had the feeling it would be a piece of cake to re-implement the exac
 The first issue I faced was related to the conversion of the SVG to Blob. In the previous method, it converts it using the SVG value and an object URL.
 
 ```javascript
-const blob: Blob = new Blob([svg.outerHTML], 
+const blob: Blob = new Blob([svg.outerHTML],
                        {type: 'image/svg+xml;charset=utf-8'});
 const blobURL: string = URL.createObjectURL(blob);
 ```
@@ -275,7 +280,7 @@ async toBlob(type: string = 'image/webp'): Promise<Blob> {
 }
 ```
 
-*****
+---
 
 #### Canvas To Image (Blob)
 
@@ -304,7 +309,7 @@ export const canvasToBlob =
   };
 ```
 
-*****
+---
 
 ### Conclusion
 
@@ -315,22 +320,22 @@ Not only it resolves a feature I needed to (among others) publish this blog post
 Merry Christmas 🎄
 David
 
-*****
+---
 
 ### Further Reading
 
 Wanna read more about our project? We are porting [DeckDeckGo](https://deckdeckgo.com/) to [DFINITY’s](https://dfinity.org/) Internet Computer. Here is the list of blog posts I published since we started the project:
 
-* [A Simple KeyVal Store Implemented in Motoko](https://daviddalbusco.com/blog/a-simple-keyval-store-implemented-in-motoko)
-* [TypeScript Utilities For Candid](https://daviddalbusco.com/blog/typescript-utilities-for-candid)
-* [Bye-Bye Amazon & Google, Hello Web 3.0](https://daviddalbusco.com/blog/bye-bye-amazon-and-google-hello-web-3-0)
-* [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
-* [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
-* [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
-* [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
-* [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)
+- [A Simple KeyVal Store Implemented in Motoko](https://daviddalbusco.com/blog/a-simple-keyval-store-implemented-in-motoko)
+- [TypeScript Utilities For Candid](https://daviddalbusco.com/blog/typescript-utilities-for-candid)
+- [Bye-Bye Amazon & Google, Hello Web 3.0](https://daviddalbusco.com/blog/bye-bye-amazon-and-google-hello-web-3-0)
+- [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
+- [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
+- [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
+- [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
+- [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)
 
-*****
+---
 
 ### Keep In Touch
 

@@ -10,9 +10,9 @@ canonical: "https://daviddalbusco.medium.com/angular-create-a-lazy-loaded-tailwi
 
 ![](https://cdn-images-1.medium.com/max/1600/1*5yG0_AlxnZfzLYHwbwrcDQ.jpeg)
 
-*Photo by [Emile Guillemot](https://unsplash.com/@emilegt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Emile Guillemot](https://unsplash.com/@emilegt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-*****
+---
 
 I have the opportunity to participate to [Owlly](https://owlly.ch/), an amazing and meaningful [open source](https://github.com/project-owlly) project, founded by [Sandro Scalco](https://twitter.com/saandr0o), which aims to enable digital democracy in Switzerland🇨🇭.
 
@@ -20,13 +20,13 @@ Last week, as we were discussing the need to pre-render the main Angular applica
 
 As a result, I notably had to create a custom generic lazy loaded modal.
 
-*****
+---
 
 ### Meta
 
 This blog post has been published in November 2020. The solution has been tested with Angular v11 and Tailwind v2.
 
-*****
+---
 
 ### Introduction
 
@@ -34,7 +34,7 @@ This tutorial describes the creation of a generic dialog with Angular and Tailwi
 
 In addition, it was and is also important to me that the modal content is lazy loaded for the best performances.
 
-*****
+---
 
 ### Add Tailwind CSS
 
@@ -46,7 +46,7 @@ ng add @ngneat/tailwind
 
 Run the above command, follow the prompt and enjoy.
 
-*****
+---
 
 ### Service
 
@@ -89,7 +89,7 @@ export class ModalService<T> {
       .create(this.injector);
     this.appRef.attachView(this.componentRef.hostView);
 
-    const domElem = (this.componentRef.hostView as 
+    const domElem = (this.componentRef.hostView as
                      EmbeddedViewRef<any>)
                      .rootNodes[0] as HTMLElement;
     document.body.appendChild(domElem);
@@ -108,27 +108,27 @@ export class ModalService<T> {
 }
 ```
 
-*****
+---
 
 ### Modal Container
 
 To initialize the modal, the container, we create a new module `modal.module.ts`.
 
 ```javascript
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import {ModalComponent} from './modal.component';
+import { ModalComponent } from "./modal.component";
 
 @NgModule({
-  declarations: [ModalComponent],
-  imports: [CommonModule],
-  exports: [ModalComponent],
+	declarations: [ModalComponent],
+	imports: [CommonModule],
+	exports: [ModalComponent]
 })
 export class ModalModule {}
 ```
 
-We then add the related component `modal.component.ts` which does not do much except being created with a state `display` per default initialized to `true` and exposes a function `close`. 
+We then add the related component `modal.component.ts` which does not do much except being created with a state `display` per default initialized to `true` and exposes a function `close`.
 
 As we are lazy loading the modals, these are going to be displayed upon creation, therefore the default state is `open` respectively not closed.
 
@@ -193,19 +193,19 @@ Finally, we animate the opening and closing of the modal upon the style class `o
 
 ```scss
 section {
-  visibility: hidden;
-  opacity: 0;
+	visibility: hidden;
+	opacity: 0;
 
-  &.open {
-    visibility: inherit;
-    opacity: 1;
-  }
+	&.open {
+		visibility: inherit;
+		opacity: 1;
+	}
 
-  transition: opacity 250ms ease-in;
+	transition: opacity 250ms ease-in;
 }
 ```
 
-*****
+---
 
 ### Modal Example
 
@@ -278,50 +278,49 @@ export class NewsletterComponent {
 export class NewsletterComponentModule {}
 ```
 
-The key of the template is the encapsulation of the content in the container, in the `app-modal` component we have created previously. Beside, as for the code of the component, nothing particular to notice. 
+The key of the template is the encapsulation of the content in the container, in the `app-modal` component we have created previously. Beside, as for the code of the component, nothing particular to notice.
 
 ```html
 <app-modal #modalComponent>
-  <form [formGroup]="newsletterForm" (ngSubmit)="createRecord()">
-    <label
-      for="username"
-      class="block mt-2 text-xs font-semibold text-gray-600"
-      >Username <span class="text-red-600">*</span></label
-    >
-    <input
-      id="username"
-      type="text"
-      name="firstname"
-      formControlName="username"
-      class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
-      required
-    />
+	<form [formGroup]="newsletterForm" (ngSubmit)="createRecord()">
+		<label for="username" class="block mt-2 text-xs font-semibold text-gray-600"
+			>Username <span class="text-red-600">*</span></label
+		>
+		<input
+			id="username"
+			type="text"
+			name="firstname"
+			formControlName="username"
+			class="block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner"
+			required
+		/>
 
-    <ng-container *ngTemplateOutlet="toolbar"></ng-container>
-  </form>
+		<ng-container *ngTemplateOutlet="toolbar"></ng-container>
+	</form>
 </app-modal>
 
 <ng-template #toolbar>
-  <div class="py-3 flex justify-end">
-    <button
-      (click)="close()"
-      type="button"
-      class="rounded-md shadow-lg sm:tracking-wider mx-2 border border-gray-300 px-4 py-2 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-    >
-      Close
-    </button>
+	<div class="py-3 flex justify-end">
+		<button
+			(click)="close()"
+			type="button"
+			class="rounded-md shadow-lg sm:tracking-wider mx-2 border border-gray-300 px-4 py-2 bg-white text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+		>
+			Close
+		</button>
 
-    <button
-      type="submit"
-      class="bg-yellow-300 hover:bg-yellow-400 text-black font-bold rounded-md shadow-lg sm:tracking-wider py-2 px-4"
-      [disabled]="newsletterForm.invalid"
-      >Submit</button
-    >
-  </div>
+		<button
+			type="submit"
+			class="bg-yellow-300 hover:bg-yellow-400 text-black font-bold rounded-md shadow-lg sm:tracking-wider py-2 px-4"
+			[disabled]="newsletterForm.invalid"
+		>
+			Submit
+		</button>
+	</div>
 </ng-template>
 ```
 
-*****
+---
 
 ### Modal Creation
 
@@ -362,11 +361,11 @@ If everything work as expected, the modal should be lazy loaded and, we should b
 
 ![](https://cdn-images-1.medium.com/max/1600/1*BY_Wt6hf0noQbjakv_2I5A.gif)
 
-*****
+---
 
 ### Epilogue
 
-I am really grateful to have had the opportunity to be hired as a freelancer to collaborate on a project like  [Owlly](https://owlly.ch/). Once again, thank you Sandro for the opportunity. I also hope this tutorial is going to be helpful to anyone looking to set up modals with Angular and Tailwind and if you have idea of improvements, let me know!
+I am really grateful to have had the opportunity to be hired as a freelancer to collaborate on a project like [Owlly](https://owlly.ch/). Once again, thank you Sandro for the opportunity. I also hope this tutorial is going to be helpful to anyone looking to set up modals with Angular and Tailwind and if you have idea of improvements, let me know!
 
 To infinity and beyond!
 

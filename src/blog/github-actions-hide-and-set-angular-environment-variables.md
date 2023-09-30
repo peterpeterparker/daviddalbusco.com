@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/github-actions-hide-and-set-angul
 
 ![](https://cdn-images-1.medium.com/max/1600/1*D8K_z16GbcE3t3YqgvPbEQ.png)
 
-*Photo by [jae bano](https://unsplash.com/@jae462?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [jae bano](https://unsplash.com/@jae462?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the original scheduled date of the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Eight** days left until this first milestone. Hopefully better days are ahead.
 
-*****
+---
 
 Yesterday I suddenly remembered that I still had to create a [GitHub Actions](https://github.com/features/actions) to build and deploy the editor of our project [DeckDeckGo](https://deckdeckgo.com).
 
@@ -24,7 +24,7 @@ When I thought about it, I asked my self if I actually had not already solved su
 
 That’s why I am sharing with you today this new tricks.
 
-*****
+---
 
 ### Concept
 
@@ -32,26 +32,26 @@ Angular, out of the box, let us handle environments variables thanks to the prop
 
 The idea is the following: In `environment.prod.ts` we are going to define keys without any values, allowing us to push these in our public [GitHub](https://github.com) repo safely. Then, with the help of system variables, set these before build within our GitHub Actions.
 
-*****
+---
 
 ### Setup Environment.ts
 
 To begin with, let’s setup first our `environment.ts` files. Our goal is to obfuscate a token, let’s say for example that we want to hide our [Firebase](https://firebase.google.com) Api key.
 
-Not really related to the solution but let’s say a goodie, we also inject the `version` and `name` of our application in your configuration. Note that this requires the activation of the compiler options `resolveJsonModule` to `true` in your `tsconfig.json.` 
+Not really related to the solution but let’s say a goodie, we also inject the `version` and `name` of our application in your configuration. Note that this requires the activation of the compiler options `resolveJsonModule` to `true` in your `tsconfig.json.`
 
 Our `environment.ts` :
 
 ```javascript
-import {name, version} from '../../package.json';
+import { name, version } from "../../package.json";
 
 export const environment = {
-  production: false,
-  firebase: {
-    apiKey: 'the-key-you-can-expose',
-  },
-  name,
-  version
+	production: false,
+	firebase: {
+		apiKey: "the-key-you-can-expose"
+	},
+	name,
+	version
 };
 ```
 
@@ -59,16 +59,16 @@ And our `environment.prod.ts` which contains `'undefined'` for the hidden value.
 
 ```javascript
 export const environment = {
-   production: true,
-   firebase: {
-        apiKey: 'undefined'
-    },
-    name: 'enviro-replace',
-    version: '0.0.1'
+	production: true,
+	firebase: {
+		apiKey: "undefined"
+	},
+	name: "enviro-replace",
+	version: "0.0.1"
 };
 ```
 
-*****
+---
 
 #### Hide Development Variables
 
@@ -78,28 +78,28 @@ For example, let’s say we create a new file `firebase.environment.ts` in which
 
 ```javascript
 export const firebase = {
-    firebase: {
-        apiKey: 'the-key-you-can-expose',
-    }
+	firebase: {
+		apiKey: "the-key-you-can-expose"
+	}
 };
 ```
 
 Then we can update our `environment.ts` as following:
 
 ```javascript
-import {firebase} from './firebase.environment';
+import { firebase } from "./firebase.environment";
 
-import {name, version} from '../../package.json';
+import { name, version } from "../../package.json";
 
 export const environment = {
-  production: false,
-  ...firebase,
-  name,
-  version
+	production: false,
+	...firebase,
+	name,
+	version
 };
 ```
 
-*****
+---
 
 ### Update Variables Before Build
 
@@ -115,11 +115,11 @@ In this parser we notice two interesting things:
 2. We are using the environment process `process.env.FIREBASE_API_KEY` to inject a value we would path from our environment or from GitHub Actions to overwrite the environment with the effective key we were looking to hide.
 
 ```javascript
-import {writeFile} from 'fs';
+import { writeFile } from "fs";
 
-import {name, version} from '../package.json';
+import { name, version } from "../package.json";
 
-const targetPath = './src/environments/environment.prod.ts';
+const targetPath = "./src/environments/environment.prod.ts";
 
 const envConfigFile = `export const environment = {
    production: true,
@@ -131,10 +131,10 @@ const envConfigFile = `export const environment = {
 };
 `;
 
-writeFile(targetPath, envConfigFile, 'utf8', (err) => {
-  if (err) {
-    return console.log(err);
-  }
+writeFile(targetPath, envConfigFile, "utf8", (err) => {
+	if (err) {
+		return console.log(err);
+	}
 });
 ```
 
@@ -142,13 +142,13 @@ Finally we can add the execution of the script to our `package.json` :
 
 ```json
 "scripts": {
-  "config": 
+  "config":
      "ts-node -O '{\"module\": \"commonjs\"}' ./config.index.ts",
   "build": "npm run config && ng build --prod",
 }
 ```
 
-*****
+---
 
 ### Testing
 
@@ -162,11 +162,11 @@ Let’s now try to define an environment variable (`export FIREBASE_API_KEY="thi
 
 ![](https://cdn-images-1.medium.com/max/1600/1*BU5qNiYe0mr3JcjdUHc9bQ.png)
 
-Tada, our environment variable has been set and use for our build  🎉.
+Tada, our environment variable has been set and use for our build 🎉.
 
 At this point you may ask yourself “yes but David, if we do so, then each time we run a build our `environment.prod.ts` file is going to be modified”. To which I would answer “yes you are right … but our goal is to automate the build with a GitHub Actions in order to not run productive build locally anymore, therefore the modification is not that a problem for our daily workflow 😇”.
 
-*****
+---
 
 ### GitHub Actions
 
@@ -212,7 +212,7 @@ jobs:
 
 That’s already it. Doing so, GitHub Actions will set the related environment variable for our build and our above script and configuration will take care of the rest.
 
-*****
+---
 
 ### Summary
 

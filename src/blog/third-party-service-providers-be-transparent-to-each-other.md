@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/third-party-service-providers-tra
 
 ![](https://cdn-images-1.medium.com/max/1600/1*5qdXAhgCLQUv5yxL_wiDaQ.png)
 
-*Photo by [Elijah O’Donnell](https://unsplash.com/@elijahsad?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Elijah O’Donnell](https://unsplash.com/@elijahsad?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until (probably not) the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Thirteen** days left until hopefully better days.
 
-*****
+---
 
 I don’t know if you share my observation but I feel like currently we have reached a point in the Coronavirus crisis where every third news is either about another [Zoom data breach](https://techcrunch.com/2020/04/01/daily-crunch-zoom-faces-security-scrutiny/) or about a new solution or application which aims to solve and improve the current situation with the help of “anonymized cell phone geolocation data” or other behavioral data.
 
@@ -22,11 +22,11 @@ From a personal point of view, moreover than making me aware than once again I s
 
 Indeed, like most of the web platforms, we do have a [privacy policy](https://deckdeckgo.com/privacy) and [terms of services](https://deckdeckgo.com/terms), like some we are also open source and all our code is available publicly on [GitHub](https://github.com/deckgo/deckdeckgo) but what we do have and, to my knowledge few also have, is a [dedicated page](https://deckdeckgo.com/services) where we summarize transparently all the third party service providers we are using to provide our solution.
 
-It is maybe not much,  but such a page is to our eyes really worthy. No long pages to scroll, no hidden information, no tricks, no b*ullshit (excuse my french),  just one page in which you can find quickly what services and what partners are used, period.
+It is maybe not much, but such a page is to our eyes really worthy. No long pages to scroll, no hidden information, no tricks, no b\*ullshit (excuse my french), just one page in which you can find quickly what services and what partners are used, period.
 
 It might not speak to everybody, I'm agree, and I don't except neither big companies to do the same as well, but if just one person would read this article, maybe implement it too or improve it with any feedback, I think that would be already a small step towards a more transparent web and that's why I am sharing the idea with you today.
 
-*****
+---
 
 Here is the copy of what we are currently using respectively what we are displaying in such a page (for later reader, today is the 6th April 2020):
 
@@ -56,11 +56,11 @@ In order to send time to time newsletters, mostly when we are releasing new feat
 
 All these services are covered in our [Privacy Policy](https://deckdeckgo.com/privacy) and [Terms of Services](https://deckdeckgo.com/terms).
 
-*****
+---
 
 ### Summary
 
-Do not misunderstand me, we are using third party services,  we always apply a “privacy per default” approach but we are far away of being perfect, but at least, we always try our best and we are transparent.
+Do not misunderstand me, we are using third party services, we always apply a “privacy per default” approach but we are far away of being perfect, but at least, we always try our best and we are transparent.
 
 Stay home, stay safe
 

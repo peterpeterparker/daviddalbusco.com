@@ -10,15 +10,15 @@ canonical: "https://daviddalbusco.medium.com/dynamically-import-esm-modules-from
 
 ![](https://cdn-images-1.medium.com/max/2400/1*hC1zkJeJsjBGN56FMa5mJA.jpeg)
 
-*Photo by [Daniel Born](https://unsplash.com/@danborn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Daniel Born](https://unsplash.com/@danborn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-*****
+---
 
 What if I told you modern browsers can natively import a single, or sets of functions, of a JavaScript library bundles, at runtime and, from a CDN? Wouldn’t that open up possibilities?
 
 Well, good news. This is not an hypothesis but, a fact. Nowadays, all modern browsers can dynamically import [JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules) from content delivery networks 🥳.
 
-*****
+---
 
 ### Introduction
 
@@ -26,20 +26,20 @@ There are a number of libraries and frameworks that enable module usage when dev
 
 Thanks to these tools, the JavaScript code can be analyzed, build and split into smaller chunks.
 
-While this approach works like a charm, it has for downside that  ES modules are imported regardless if executed or not.
+While this approach works like a charm, it has for downside that ES modules are imported regardless if executed or not.
 
 For example, if you would use an awesome library such as [idb-keyval](https://github.com/jakearchibald/idb-keyval) to print out a value stored in IndexedDB but, had for goal to reserve the function to administrators only.
 
 ```javascript
-import { get } from 'idb-keyval';
+import { get } from "idb-keyval";
 
 const print = async (admin) => {
-  if (!admin) {
-    return;
-  }
-  
-  console.log(await get('hello'));
-}
+	if (!admin) {
+		return;
+	}
+
+	console.log(await get("hello"));
+};
 ```
 
 If the code is build statically, the third party dependency would be added to the ES modules no matter what. As a result, all users, administrators or not, would have to download the related code even if they would never require it.
@@ -50,21 +50,21 @@ It tells the browser to load code on demand and only when it is required.
 
 ```javascript
 const print = async (admin) => {
-  if (!admin) {
-    return;
-  }
+	if (!admin) {
+		return;
+	}
 
-  const { get } = await import('idb-keyval');
+	const { get } = await import("idb-keyval");
 
-  console.log(await get('hello'));
-}
+	console.log(await get("hello"));
+};
 ```
 
 Only the administrators would now have to download the code of the third party library.
 
-*Note: Dynamic import is not mandatory, your code is all fine. Bundlers and browsers do an incredible job with the dozens of modules of your libraries and applications. It can be helpful in some situations. As in the above example, or when large modules take time to load. It can help improve boot time performance.*
+_Note: Dynamic import is not mandatory, your code is all fine. Bundlers and browsers do an incredible job with the dozens of modules of your libraries and applications. It can be helpful in some situations. As in the above example, or when large modules take time to load. It can help improve boot time performance._
 
-*****
+---
 
 ### Dynamic Import + CDN … But Why?
 
@@ -102,7 +102,7 @@ For each user request, upon a certain condition such as an environment configura
 
 Doing so, not just the user is downloading only what is required to perform the queries but, the application also becomes almost independent of the services. Patching these or even adding a new backend can now be developed and deployed without any changes to the application!
 
-*****
+---
 
 ### Show Me Some Code
 
@@ -143,7 +143,7 @@ The usage of such a temporary `string` value is useful with TypeScript. Without 
 
 The URL of the library on the CDN can then be used to dynamically import, `await import(cdn)`, the functions we are interested in and voilà, that’s already it 🥳.
 
-*****
+---
 
 ### Type Safety
 
@@ -151,7 +151,7 @@ Dynamic import is a native feature, therefore supported out of the box in JavaSc
 
 ![](https://cdn-images-1.medium.com/max/1600/1*ZP2hO1-pD2NH0vLPqDvfJg.png)
 
-*****
+---
 
 For example, we can declare an `interface` of a function that says “hello”:
 
@@ -164,7 +164,7 @@ export interface SayHello {
 The `library` can implements it as follows:
 
 ```javascript
-export const say: SayHello = 
+export const say: SayHello =
                async ({name}: {name: string}): Promise<string> => {
   return `Hello ${name}`;
 }
@@ -184,7 +184,7 @@ The `app` can also uses the types to improve the syntax:
 
 Moreover, extracting interfaces and types can also ease new development in the future.
 
-*****
+---
 
 ### Conclusion
 

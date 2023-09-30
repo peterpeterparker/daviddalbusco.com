@@ -10,13 +10,13 @@ canonical: "https://medium.com/@daviddalbusco/rust-trait-a-powerful-alternative-
 
 ![Distorted Sun](https://images.unsplash.com/photo-1579547621706-1a9c79d5c9f1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxfHxHcmFkaWVudHxlbnwwfHx8fDE2NzgwMzYwNDI&ixlib=rb-4.0.3&q=80&w=1080)
 
-*Photo by [Gradienta](https://unsplash.com/pt-br/@gradienta?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Gradienta](https://unsplash.com/pt-br/@gradienta?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 While Rust has a concept of interface, it differs from other programming languages in that it does not use the `interface` keyword to specify the behavior of classes and functions. Instead, Rust’s closest abstraction pattern is `trait`. Although these concepts have many differences, they both address the problem of having multiple possible implementations.
 
 In this blog post, I will compare a TypeScript code snippet with its potential Rust equivalent to demonstrate how to achieve a simple flexible and composable code.
 
-* * *
+---
 
 ## Declaration
 
@@ -28,16 +28,16 @@ In TypeScript, we can define this interface as follows:
 
 ```typescript
 interface Entity {
-    id: string;
-    timestamp: number;
+	id: string;
+	timestamp: number;
 }
 
 interface Document extends Entity {
-    revised: boolean;
+	revised: boolean;
 }
 
 interface Image extends Entity {
-    type: string;
+	type: string;
 }
 ```
 
@@ -57,44 +57,30 @@ struct Image {
 }
 ```
 
-* * *
+---
 
 ## Inheritance and Generic
 
 Let’s now consider a scenario where we want to find a specific document or image. In TypeScript, we can write the code to accomplish this as follows:
 
 ```typescript
-const getDocument = (
- id: string,
- documents: Document[]
-): Document | undefined =>
- documents.find(({ id: docId }) => docId === id);
+const getDocument = (id: string, documents: Document[]): Document | undefined =>
+	documents.find(({ id: docId }) => docId === id);
 
-const getImages = (
- id: string,
- images: Image[]
-): Image | undefined =>
- images.find(({ id: imageId }) => imageId === id);
+const getImages = (id: string, images: Image[]): Image | undefined =>
+	images.find(({ id: imageId }) => imageId === id);
 ```
 
 However, since both types implement the same interface, we can avoid duplication by extracting a generic function:
 
 ```typescript
-const get = <T extends Entity>(
- id: string,
- elements: T[]
-): T | undefined =>
- elements.find(({ id: elementId }) => elementId === id);
+const get = <T extends Entity>(id: string, elements: T[]): T | undefined =>
+	elements.find(({ id: elementId }) => elementId === id);
 
-const getDocument = (
- id: string,
- documents: Document[]
-): Document | undefined => get<Document>(id, documents);
+const getDocument = (id: string, documents: Document[]): Document | undefined =>
+	get<Document>(id, documents);
 
-const getImages = (
- id: string,
- images: Image[]
-): Image | undefined => get<Image>(id, images);
+const getImages = (id: string, images: Image[]): Image | undefined => get<Image>(id, images);
 ```
 
 In Rust, implementing the same functionality would initially also require duplicating the code:
@@ -172,7 +158,7 @@ impl Compare for Document {
 }
 ```
 
-* * *
+---
 
 ## Conclusion
 

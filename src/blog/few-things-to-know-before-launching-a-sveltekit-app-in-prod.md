@@ -10,9 +10,9 @@ canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/few-things-to-know
 
 ![3D Rendering Rocket Space Launching Illustration](https://images.unsplash.com/photo-1636819488524-1f019c4e1c44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw5fHxsYXVuY2h8ZW58MHx8fHwxNjY2MDE4Njg1&ixlib=rb-1.2.1&q=80&w=1080)
 
-*Photo by [Andy Hermawan](https://unsplash.com/@kolamdigital?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Andy Hermawan](https://unsplash.com/@kolamdigital?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-* * *
+---
 
 Last week new version of [NNS-dapp](https://internetcomputer.org/nns) (the dapp of NNS, one of the world's largest DAOs that governs the [Internet Computer](https://internetcomputer.org/)) introduced a new feature named "Stake Maturity", a light design update of its modals and, a change in its build system.
 
@@ -20,9 +20,9 @@ Indeed, while the frontend application used to be packaged with the help of the 
 
 Here are the three things I learned along the way. I hope they will be helpful to you so that you can deploy your applications safely in production too.
 
-*\* without any changes regarding routing, yet*
+_\* without any changes regarding routing, yet_
 
-* * *
+---
 
 ## 1\. CSP breaks app in Firefox
 
@@ -42,10 +42,10 @@ This can be achieved as following:
 
 ```html
 <script>
-    const loader = document.createElement("script");
-    loader.type = "module";
-    loader.src = "./main.js";
-    document.head.appendChild(loader);
+	const loader = document.createElement("script");
+	loader.type = "module";
+	loader.src = "./main.js";
+	document.head.appendChild(loader);
 </script>
 ```
 
@@ -60,8 +60,8 @@ import { join } from "path";
 const publicIndexHTML = join(process.cwd(), "public", "index.html");
 
 const buildCsp = () => {
-  const indexHTMLWithoutStartScript = extractStartScript();
-  writeFileSync(publicIndexHTML, indexHTMLWithoutStartScript);
+	const indexHTMLWithoutStartScript = extractStartScript();
+	writeFileSync(publicIndexHTML, indexHTMLWithoutStartScript);
 };
 
 /**
@@ -74,24 +74,19 @@ const buildCsp = () => {
  * 3. we use our custom script loader to load the main.js script
  */
 const extractStartScript = () => {
-  const indexHtml = readFileSync(publicIndexHTML, "utf-8");
+	const indexHtml = readFileSync(publicIndexHTML, "utf-8");
 
-  const svelteKitStartScript =
-    /(<script type=\"module\" data-sveltekit-hydrate[\s\S]*?>)([\s\S]*?)(<\/script>)/gm;
+	const svelteKitStartScript =
+		/(<script type=\"module\" data-sveltekit-hydrate[\s\S]*?>)([\s\S]*?)(<\/script>)/gm;
 
-  // 1. extract SvelteKit start script to a separate main.js file
-  const [_script, _scriptStartTag, content, _scriptEndTag] =
-    svelteKitStartScript.exec(indexHtml);
-  const inlineScript = content.replace(/^\s*/gm, "");
+	// 1. extract SvelteKit start script to a separate main.js file
+	const [_script, _scriptStartTag, content, _scriptEndTag] = svelteKitStartScript.exec(indexHtml);
+	const inlineScript = content.replace(/^\s*/gm, "");
 
-  writeFileSync(
-    join(process.cwd(), "public", "main.js"),
-    inlineScript,
-    "utf-8"
-  );
+	writeFileSync(join(process.cwd(), "public", "main.js"), inlineScript, "utf-8");
 
-  // 2. replace SvelteKit script tag content with empty
-  return indexHtml.replace(svelteKitStartScript, "$1$3");
+	// 2. replace SvelteKit script tag content with empty
+	return indexHtml.replace(svelteKitStartScript, "$1$3");
 };
 
 buildCsp();
@@ -101,14 +96,14 @@ buildCsp();
 
 ```json
 {
-    "scripts": {
-        "build:csp": "node scripts/build.csp.mjs",
-        "build": "vite build && npm run build:csp"
-    }
+	"scripts": {
+		"build:csp": "node scripts/build.csp.mjs",
+		"build": "vite build && npm run build:csp"
+	}
 }
 ```
 
-* * *
+---
 
 ## 2\. Build reproducibility
 
@@ -176,14 +171,14 @@ Bash script which we chained in `package.json` as well.
 
 ```json
 {
-    "scripts": {
-        "build:csp": "node scripts/build.csp.mjs",
-        "build": "vite build && npm run build:csp && ./scripts/make-reproducible"
-    }
+	"scripts": {
+		"build:csp": "node scripts/build.csp.mjs",
+		"build": "vite build && npm run build:csp && ./scripts/make-reproducible"
+	}
 }
 ```
 
-* * *
+---
 
 ## 3\. Polyfill Buffer
 
@@ -210,7 +205,7 @@ const config: UserConfig = {
   build: {
     target: "es2020",
     rollupOptions: {
-      // Polyfill Buffer for production build. 
+      // Polyfill Buffer for production build.
       // The hardware wallet needs Buffer.
       plugins: [
         inject({
@@ -235,11 +230,11 @@ export default config;
 
 Notes:
 
-*   we need above polyfill for hardware wallet related features. That is why we scope it to the `ledgerhq` library when we use the Rollup plugin.
-*   the solution is not yet optimal because we apply the polyfill twice - i.e. we actually load too much JavaScript code in the production build. Never too sure I agree but, still, this can be improved.
-*   web worker code does not get polyfied with above solution. If you need to do so, you probably will need to investigate further.
+- we need above polyfill for hardware wallet related features. That is why we scope it to the `ledgerhq` library when we use the Rollup plugin.
+- the solution is not yet optimal because we apply the polyfill twice - i.e. we actually load too much JavaScript code in the production build. Never too sure I agree but, still, this can be improved.
+- web worker code does not get polyfied with above solution. If you need to do so, you probably will need to investigate further.
 
-* * *
+---
 
 ## Conclusion
 

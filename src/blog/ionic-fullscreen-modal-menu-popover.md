@@ -10,13 +10,13 @@ canonical: "https://medium.com/@david.dalbusco/ionic-fullscreen-modal-menu-popov
 
 ![](https://cdn-images-1.medium.com/max/1600/1*v93pK6K7hTbHnVI3dqzhyA.jpeg)
 
-*Photo by [Dino Reichmuth](https://unsplash.com/@dinoreichmuth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Dino Reichmuth](https://unsplash.com/@dinoreichmuth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 [Ionic](https://ionicframework.com) is not just an amazing design system made for mobile devices but also work like a charm on desktop. We use it at [DeckDeckGo](https://deckdeckgo.com) particularly for that reason.
 
 While we developed our editor for presentations, we implemented the following two tricks I am about to share with you and which I hope, may be one day useful to you too.
 
-*****
+---
 
 ### Fullscreen Modal
 
@@ -30,7 +30,7 @@ For example, users editing their slides with our editor are able to ship their d
 
 ![](https://cdn-images-1.medium.com/max/1600/1*QteGvwweJXOOrG63Qid7gA.gif)
 
-*****
+---
 
 Assuming you are not looking to make all your modals fullscreen but only some, I suggest that we style the modals with the help of a CSS class selector which we can apply as displayed on the [documentation](https://ionicframework.com/docs/api/modal).
 
@@ -62,7 +62,7 @@ React:
 
 ```javascript
 <IonModal isOpen={showModal} cssClass="fullscreen">
- <PageModal></PageModal>
+	<PageModal></PageModal>
 </IonModal>
 ```
 
@@ -87,7 +87,7 @@ export default {
 </script>
 ```
 
-*****
+---
 
 The style, `.fullscreen`, should be defined on the application level and not higher in the hierarchy than `ion-app`, because the modals are going to be injected in the DOM in `ion-modal` elements which are direct descendant of the app container. For example, in our Stencil application I defined it in `app.css` or, in a React one, I define it in a stylesheet I import in `App.tsx` .
 
@@ -95,15 +95,15 @@ It should contain the information to apply a full screen sizing (width/height) a
 
 ```css
 ion-modal.fullscreen {
-  --width: 100%;
-  --height: 100%;
-  --border-radius: 0;
+	--width: 100%;
+	--height: 100%;
+	--border-radius: 0;
 }
 ```
 
 That’s it, nothing more, nothing less 😄.
 
-*****
+---
 
 ### Popover Menu
 
@@ -113,7 +113,7 @@ For example, we had to find a solution to display options without hiding all the
 
 ![](https://cdn-images-1.medium.com/max/1600/1*m7NWUeN_E-Rdw78SKuDrzA.gif)
 
-*****
+---
 
 As in previous chapter about the modal, I am assuming that we might want to only apply this effect on specific popovers of our application, that’s why we are again going to use a CSS style class. Moreover, we also want to explicitly use the mode `md` to give the popover a “flat” style and avoid the display of a backdrop. This last point is not mandatory but make sense if you want your user to be still able to see clearly what’s next to the “popover menu”.
 
@@ -148,12 +148,8 @@ async presentPopover() {
 React:
 
 ```javascript
-<IonPopover
-    isOpen={showPopover}
-    cssClass="menu"
-    mode="md"
-    showBackdrop={false}>
- <PagePopover></PagePopover>
+<IonPopover isOpen={showPopover} cssClass="menu" mode="md" showBackdrop={false}>
+	<PagePopover></PagePopover>
 </IonPopover>
 ```
 
@@ -180,7 +176,7 @@ export default {
 </script>
 ```
 
-*****
+---
 
 We define the style on the root level of the application because the `ion-popover` elements are added as direct children of the main `ion-app` element.
 
@@ -188,8 +184,8 @@ We set a width, for example `540px`, and a maximal value because we want to fit 
 
 ```css
 ion-popover.menu {
-  --width: 540px;
-  --max-width: 100%;
+	--width: 540px;
+	--max-width: 100%;
 }
 ```
 
@@ -203,18 +199,18 @@ Meanwhile, let’s use the following style. First of all, we set the popover to 
 
 ```css
 ion-popover.menu div.popover-content {
-  top: 0 !important;
-  left: inherit !important;
-  right: 0;
+	top: 0 !important;
+	left: inherit !important;
+	right: 0;
 
-  transform-origin: right top !important;
+	transform-origin: right top !important;
 
-  --min-height: 100%;
+	--min-height: 100%;
 
-  background: white;
+	background: white;
 
-  box-shadow: -8px 0 16px rgba(0, 0, 0, 0.12);
-  border-radius: 0;
+	box-shadow: -8px 0 16px rgba(0, 0, 0, 0.12);
+	border-radius: 0;
 }
 ```
 
@@ -222,7 +218,7 @@ That’s it, our popover can act as a menu 😃.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*4djCKLd9CV0lWLmcGnH-YQ.gif)
 
-*****
+---
 
 ### Conclusion
 

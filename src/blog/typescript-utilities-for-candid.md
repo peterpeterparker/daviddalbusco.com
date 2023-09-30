@@ -10,16 +10,15 @@ canonical: "https://daviddalbusco.medium.com/typescript-utilities-for-candid-bf5
 
 ![](https://cdn-images-1.medium.com/max/2400/1*-zlHKiCIag6cmR5WO2Z_RQ.jpeg)
 
-*Photo by [Georgie Cobbs](https://unsplash.com/@georgie_cobbs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Georgie Cobbs](https://unsplash.com/@georgie_cobbs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-
-*****
+---
 
 To port our web editor, [DeckDeckGo](https://deckdeckgo.com/), to [DFINITY](https://dfinity.org/)’s Internet Computer I developed several helpers in TypeScript to interact with our canister smart contracts.
 
 If it can make your life easier too, here are those I use the most.
 
-*****
+---
 
 ### Nullable
 
@@ -58,7 +57,7 @@ export const fromNullable = <T>(value: [] | [T]): T | undefined => {
 
 `toNullable` convert an object that can either be of type `T` or `undefined` to what’s expected to interact with the IC and, `fromNullable` do the opposite.
 
-*****
+---
 
 ### Dates
 
@@ -92,23 +91,23 @@ export const toNullableTimestamp = (value?: Date): [] | [Time] => {
   return value && !isNaN(time) ? [toTimestamp(value)] : [];
 };
 
-export const fromNullableTimestamp = 
+export const fromNullableTimestamp =
        (value?: [] | [Time]): Date | undefined => {
   return !isNaN(parseInt(`${value?.[0]}`)) ?
     fromTimestamp(value[0]) : undefined;
 };
 ```
 
-*****
+---
 
 ### Blob
 
-Binary [blobs](https://smartcontracts.org/docs/base-libraries/Blob.html) are described in Candid as `Array` of  `numbers`. To save untyped data in smart contracts (assuming the use case allows such risk) while still preserving types on the frontend side, we can `stringify` objects, converts these to blobs and gets their contents as binary data contained in an `ArrayBuffer`.
+Binary [blobs](https://smartcontracts.org/docs/base-libraries/Blob.html) are described in Candid as `Array` of `numbers`. To save untyped data in smart contracts (assuming the use case allows such risk) while still preserving types on the frontend side, we can `stringify` objects, converts these to blobs and gets their contents as binary data contained in an `ArrayBuffer`.
 
 ```javascript
-export const toArray = 
+export const toArray =
        async <T>(data: T): Promise<Array<number>> => {
-  const blob: Blob = new Blob([JSON.stringify(data)], 
+  const blob: Blob = new Blob([JSON.stringify(data)],
                          {type: 'application/json; charset=utf-8'});
   return [...new Uint8Array(await blob.arrayBuffer())];
 };
@@ -117,9 +116,9 @@ export const toArray =
 To convert back an `Array` of `numbers` to a specific object type, the [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob) type can be used again but, this time a textual conversion shall be used to parse the results.
 
 ```javascript
-export const fromArray = 
+export const fromArray =
        async <T>(data: Array<number>): Promise<T> => {
-  const blob: Blob = new Blob([new Uint8Array(data)], 
+  const blob: Blob = new Blob([new Uint8Array(data)],
                          {type: 'application/json; charset=utf-8'});
   return JSON.parse(await blob.text());
 };
@@ -127,26 +126,26 @@ export const fromArray =
 
 Both conversions are asynchronous because interacting with the blob object requires resolving promises in JavaScript.
 
-*****
+---
 
 ### Further Reading
 
 Wanna read more our project? Here is the list of blog posts I published since we started the project with the Internet Computer:
 
-* [Bye-Bye Amazon & Google, Hello Web 3.0](https://daviddalbusco.com/blog/bye-bye-amazon-and-google-hello-web-3-0)
-* [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
-* [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
-* [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
-* [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
-* [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)
+- [Bye-Bye Amazon & Google, Hello Web 3.0](https://daviddalbusco.com/blog/bye-bye-amazon-and-google-hello-web-3-0)
+- [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
+- [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
+- [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
+- [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
+- [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)
 
-*****
+---
 
 ### Keep In Touch
 
 To follow our adventure, you can star and watch our [GitHub repo](https://github.com/deckgo/deckdeckgo) ⭐️ and [sign up](https://eepurl.com/hKeMLD) to join the list of beta tester.
 
-*****
+---
 
 ### Conclusion
 

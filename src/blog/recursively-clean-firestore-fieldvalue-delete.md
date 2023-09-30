@@ -10,11 +10,11 @@ canonical: "https://daviddalbusco.medium.com/recursively-clean-firestore-fieldva
 
 ![](https://cdn-images-1.medium.com/max/1600/1*2lFmIJDlVr6D_q8iAchhxw.jpeg)
 
-*Photo by [The Creative Exchange](https://unsplash.com/@thecreative_exchange?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [The Creative Exchange](https://unsplash.com/@thecreative_exchange?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 This morning I had to improve a function we used in [DeckDeckGo](https://deckdeckgo.com) to recursively clean objects after persistence. Because I am currently quite busy but would not like to push my blogging habits too much on the side, I got the idea that this small "hack" would be a nice subject for a new blog post 🤗.
 
-*****
+---
 
 ### Introduction
 
@@ -24,22 +24,22 @@ For example, if your database contains a document such as the following:
 
 ```json
 {
-  description: 'Hello World'
+	"description": "Hello World"
 }
 ```
 
 You have to use the above method to remove it because setting it for example to `null` would not remove the attribute but “only” set its value to `null` .
 
 ```javascript
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
+import * as firebase from "firebase/app";
+import "firebase/firestore";
 
 const firestore = firebase.firestore();
 
-const ref = firestore.collection('users').doc('david');
+const ref = firestore.collection("users").doc("david");
 
 const user = {
-  description: firebase.firestore.FieldValue.delete()
+	description: firebase.firestore.FieldValue.delete()
 };
 
 await ref.update(user);
@@ -47,7 +47,7 @@ await ref.update(user);
 
 Thanks to this method, the above document's example becomes `{}` in the database.
 
-*****
+---
 
 ### Issue
 
@@ -63,20 +63,20 @@ Concretely, with our above example, if we would print out the `user` to the cons
 
 This can lead to some unexpected behavior in your application, if you are still using the object after its update, notably if it is a state.
 
-*****
+---
 
 To overcome this issue, one solution would be explicitly fetch the newly updated document from Firestore, what is also happening automatically if you have developed some polling to fetch the information or if you are using libraries such as [AngularFire](https://github.com/angular/angularfire) or [RxFire](https://github.com/firebase/firebase-js-sdk/tree/master/packages/rxfire).
 
 ```javascript
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
+import * as firebase from "firebase/app";
+import "firebase/firestore";
 
 const firestore = firebase.firestore();
 
-const ref = firestore.collection('users').doc('david');
+const ref = firestore.collection("users").doc("david");
 
 let user = {
-  description: firebase.firestore.FieldValue.delete()
+	description: firebase.firestore.FieldValue.delete()
 };
 
 await ref.update(user);
@@ -92,7 +92,7 @@ Indeed, when you use [Cloud Firestore](https://firebase.google.com/docs/firestor
 
 That’s why I came up to the idea of cleaning recursively clean the method `FieldValue.delete()`, why I had the idea of a "hack" 😎.
 
-*****
+---
 
 ### Solution
 
@@ -137,15 +137,15 @@ function shouldAttributeBeCleaned<T>(attr: T): boolean {
 Thanks to this function, I am able to achieve the exact same behavior as if I would fetch the updated document from the database.
 
 ```javascript
-import * as firebase from 'firebase/app';
-import 'firebase/firestore';
+import * as firebase from "firebase/app";
+import "firebase/firestore";
 
 const firestore = firebase.firestore();
 
-const ref = firestore.collection('users').doc('david');
+const ref = firestore.collection("users").doc("david");
 
 let user = {
-  description: firebase.firestore.FieldValue.delete()
+	description: firebase.firestore.FieldValue.delete()
 };
 
 await ref.update(user);
@@ -153,7 +153,7 @@ await ref.update(user);
 console.log(filterDelete(user)); // {}
 ```
 
-*****
+---
 
 ### Limitation
 
@@ -161,7 +161,7 @@ The major limitation of this strategy is its dependency on the [Firebase](https:
 
 I can also recommend, if you would use it, to have a special attention on the error handling between the update and clean, because you may want to avoid the scenario in which the values of the local objects are not equals to their database value (“not in sync”).
 
-*****
+---
 
 ### Conclusion
 
@@ -171,7 +171,7 @@ To infinity and beyond!
 
 David
 
-*****
+---
 
 Reach me out on [Twitter](https://twitter.com/daviddalbusco) and, why not, give a try to [DeckDeckGo](https://deckdeckgo.com/) for your next presentations.
 

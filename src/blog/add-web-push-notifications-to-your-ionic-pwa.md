@@ -9,16 +9,16 @@ image: "https://cdn-images-1.medium.com/max/2600/1*zZyMLQSqP8VZsi-ptOgLSw.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/2600/1*zZyMLQSqP8VZsi-ptOgLSw.jpeg)
 
-I volunteered to showcase to our [Ionic Zürich Meetup](https://www.meetup.com/fr-FR/Ionic-Zurich/) community the implementation of Web Push Notifications, using [Google FCM](https://firebase.google.com/docs/cloud-messaging/), in a Progressive Web App developed with [Ionic ](https://ionicframework.com/) and [Angular](https://angular.io/).  Although the [set up guide](https://firebase.google.com/docs/cloud-messaging/js/client) provided by Google is relatively clear, I thought it might be a good idea to write a new article, in form of a step by step tutorial, about that particular topic (specially to help me not forget something 😅).
+I volunteered to showcase to our [Ionic Zürich Meetup](https://www.meetup.com/fr-FR/Ionic-Zurich/) community the implementation of Web Push Notifications, using [Google FCM](https://firebase.google.com/docs/cloud-messaging/), in a Progressive Web App developed with [Ionic ](https://ionicframework.com/) and [Angular](https://angular.io/). Although the [set up guide](https://firebase.google.com/docs/cloud-messaging/js/client) provided by Google is relatively clear, I thought it might be a good idea to write a new article, in form of a step by step tutorial, about that particular topic (specially to help me not forget something 😅).
 
-*For the purpose of this article I assume that you already have an `@ionic/angular` application. If not, you could start a new project running the following command in a terminal:*
+_For the purpose of this article I assume that you already have an `@ionic/angular` application. If not, you could start a new project running the following command in a terminal:_
 
 ```
 ionic start --type=angular
 ```
 
-*I will also assume that your application is already a Progressive Web App, if
-not have a look to the Angular [documentation](https://angular.io/guide/service-worker-getting-started) to get to know how to add that support to your project or run the following command in your freshly created new Ionic project:*
+_I will also assume that your application is already a Progressive Web App, if
+not have a look to the Angular [documentation](https://angular.io/guide/service-worker-getting-started) to get to know how to add that support to your project or run the following command in your freshly created new Ionic project:_
 
 ```
 ng add @angular/pwa — project app
@@ -74,7 +74,7 @@ async ngOnInit() {
 }
 ```
 
-*Note: pay attention to the import of Firebase. If you are using an editor which add automatically the import, it might resolves *`import * as firebase from 'firebase'`* instead of *`import {firebase} from '@firebase/app'`* which would lead to loading all the libraries, which obviously we don’t want. Furthermore, if you do so, the library itself will displays a warning in the console to ask you to correct the import for production.*
+_Note: pay attention to the import of Firebase. If you are using an editor which add automatically the import, it might resolves _`import * as firebase from 'firebase'`_ instead of _`import {firebase} from '@firebase/app'`_ which would lead to loading all the libraries, which obviously we don’t want. Furthermore, if you do so, the library itself will displays a warning in the console to ask you to correct the import for production._
 
 ### Configure Google Fire Cloud Messaging
 
@@ -102,7 +102,7 @@ export const environment = {
 
 Finally, to authorize Google FCM to send messages to your application, you will need to add first a **fixed** value to the Web App Manifest (`manifest.json` or other `manifest.webmanifest`) file of your project.
 
-*Yes this value is the same for every single apps in the world, it identifies Google FCM as sender of the notifications.*
+_Yes this value is the same for every single apps in the world, it identifies Google FCM as sender of the notifications._
 
 ```
 {
@@ -291,9 +291,9 @@ To build the application, run the following command in your terminal:
 ionic build --prod
 ```
 
-*Note that we are running the command with the option *`--prod`* as per default the service worker will only be included in your application by the Angular CLI in case of that production build.*
+_Note that we are running the command with the option _`--prod`_ as per default the service worker will only be included in your application by the Angular CLI in case of that production build._
 
-Once built, if you already have your hosting solution, just drop the content of the `www` folder of your application on your web server. If not, I would then suggest you to use the [Google Firebase Hosting] (https://console.firebase.google.com/project/web-push-notifications-medium/hosting) solution as we are already using their solution for the purpose of this tutorial. If you never used before such a solution, just go back to your Firebase console and click “Get started” in the menu “Hosting”. 
+Once built, if you already have your hosting solution, just drop the content of the `www` folder of your application on your web server. If not, I would then suggest you to use the [Google Firebase Hosting] (https://console.firebase.google.com/project/web-push-notifications-medium/hosting) solution as we are already using their solution for the purpose of this tutorial. If you never used before such a solution, just go back to your Firebase console and click “Get started” in the menu “Hosting”.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*z56WG_qUcxg_LMfJN7--CQ.png)
 <span class="figcaption_hack">Initialize a Google Firebase Hosting</span>
@@ -304,7 +304,7 @@ I will not cover further all the steps to initialize and deploy your application
 
 Now that your application is up and running, you could access it through the url provided by Firebase or your own hosting url. If everything works according plan, just after you accessed your application, it should ask you if you wish or not to receive notifications.
 
-*Worth to notice, if you are using Google Chrome, don’t try out your application with a private tab or private window as Chrome block these kind of notifications in such tabs or windows. Just use a regular tab or window.*
+_Worth to notice, if you are using Google Chrome, don’t try out your application with a private tab or private window as Chrome block these kind of notifications in such tabs or windows. Just use a regular tab or window._
 
 ![](https://cdn-images-1.medium.com/max/1600/1*7rDw7XpG4xF2UCp0e6C0hA.png)
 <span class="figcaption_hack">Do you want to receive notifications?</span>
@@ -339,7 +339,7 @@ Once you have replaced the user’s token and server key in the above message, r
 
 ![](https://cdn-images-1.medium.com/max/1600/1*c3Jd8c2H9l2UXA83ARctrA.png)
 
-*Worth to notice, if your application is active or in foreground, at least when I tested on my Macbook OSX Mojave, no notification will pop up. For the purpose of this test, I suggest you to reduce your browser windows.*
+_Worth to notice, if your application is active or in foreground, at least when I tested on my Macbook OSX Mojave, no notification will pop up. For the purpose of this test, I suggest you to reduce your browser windows._
 
 ### Test on mobile devices
 
@@ -352,7 +352,7 @@ To reproduce what would a user would do, I suggest to access the PWA, accept the
 
 Now that the application is installed, we have to retrieve the user’s token. Again we are going to open the browser’s debug to find this in the console output.
 
-*If you never done that before, pair your phone to your computer with a cable an open the “Remote devices” tab in Google Chrome.*
+_If you never done that before, pair your phone to your computer with a cable an open the “Remote devices” tab in Google Chrome._
 
 ![](https://cdn-images-1.medium.com/max/1600/1*j6jT3YwhI7k5bIH_LPQ-zA.png)
 <span class="figcaption_hack">Open “Remote devices”</span>

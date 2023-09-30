@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/angular-and-web-workers-17cd3bf9a
 
 ![](https://cdn-images-1.medium.com/max/1600/1*0EDeEWFc3O8KxelyJArjjA.png)
 
-*Photo by [Darya Tryfanava](https://unsplash.com/@darya_tryfanava?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Darya Tryfanava](https://unsplash.com/@darya_tryfanava?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the original scheduled date of the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Four** days left until this first milestone. Hopefully better days are ahead.
 
-*****
+---
 
 It has been a long time since the last time [Angular](https://angular.io/) did not make me say out at loud “Wow, that’s pretty neat”, but today was the day again!
 
@@ -22,7 +22,7 @@ Together with my client’s colleagues we had a new requirement which had to do 
 
 That’s why we developed our feature using [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) and why I am sharing this new blog post.
 
-*****
+---
 
 ### Adding A Web Worker
 
@@ -41,29 +41,29 @@ The sample will find place in `./src/app/app.worker.ts` . It contains the TypeSc
 ```javascript
 /// <reference lib="webworker" />
 
-addEventListener('message', ({ data }) => {
-  const response = `worker response to ${data}`;
-  postMessage(response);
+addEventListener("message", ({ data }) => {
+	const response = `worker response to ${data}`;
+	postMessage(response);
 });
 ```
 
 Its usage will be added to `./src/app/app.component.ts` . It tests if workers are supported and if yes, build a new object and call the worker respectively instructs it to start its job.
 
 ```javascript
-if (typeof Worker !== 'undefined') {
-  // Create a new
-  const worker = new Worker('./app.worker', { type: 'module' });
-  worker.onmessage = ({ data }) => {
-    console.log(`page got message: ${data}`);
-  };
-  worker.postMessage('hello');
+if (typeof Worker !== "undefined") {
+	// Create a new
+	const worker = new Worker("./app.worker", { type: "module" });
+	worker.onmessage = ({ data }) => {
+		console.log(`page got message: ${data}`);
+	};
+	worker.postMessage("hello");
 } else {
-  // Web Workers are not supported in this environment.
-  // You should add a fallback so that your program still executes correctly.
+	// Web Workers are not supported in this environment.
+	// You should add a fallback so that your program still executes correctly.
 }
 ```
 
-*****
+---
 
 ### Refactor
 
@@ -71,30 +71,28 @@ In order to use this worker, there is a good chance that we might want to refact
 
 Moreover, we may have more than workers in our app. That’s why I also suggest to rename it, for example, let’s call it `hello.worker.ts` .
 
-In the same way, we might want to call the worker from a `service` and not from `app.component.ts` . 
+In the same way, we might want to call the worker from a `service` and not from `app.component.ts` .
 
 Note that in the following example I also rename the worker and modify the relative path to point to the correct location.
 
 ```javascript
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: "root"
 })
 export class HelloService {
+	async sayHello() {
+		if (typeof Worker !== "undefined") {
+			const worker = new Worker("../workers/hello.worker", { type: "module" });
 
-  async sayHello() {
-    if (typeof Worker !== 'undefined') {
-      const worker = new Worker('../workers/hello.worker', 
-                               { type: 'module' });
+			worker.onmessage = ({ data }) => {
+				console.log(`page got message: ${data}`);
+			};
 
-      worker.onmessage = ({ data }) => {
-        console.log(`page got message: ${data}`);
-      };
-
-      worker.postMessage('hello');
-    }
-  }
+			worker.postMessage("hello");
+		}
+	}
 }
 ```
 
@@ -114,7 +112,7 @@ export class HomePage implements OnInit {
 
   constructor(private helloService: HelloService) {
   }
-  
+
   async ngOnInit() {
     await this.helloService.sayHello();
   }
@@ -126,7 +124,7 @@ All set, we can try to run a test. If everything goes according plan, you should
 
 ![](https://cdn-images-1.medium.com/max/1600/1*YJ9O5OKJO2ZWHSYbVOrmww.png)
 
-*****
+---
 
 ### Simulate A Blocked User Interface
 
@@ -138,19 +136,13 @@ In our main template we add these two buttons and link these with their related 
 
 ```html
 <ion-content [fullscreen]="true">
+	<ion-label> Tomato: {{countTomato}} | Apple: {{countApple}} </ion-label>
 
-  <ion-label>
-     Tomato: {{countTomato}} | Apple: {{countApple}}
-  </ion-label>
+	<div className="ion-padding-top">
+		<ion-button (click)="incTomato()" color="primary">Tomato</ion-button>
 
-  <div className="ion-padding-top">
-    <ion-button (click)="incTomato()" 
-                color="primary">Tomato</ion-button>
-
-    <ion-button (click)="incApple()" 
-                color="secondary">Apple</ion-button>
-  </div>
-
+		<ion-button (click)="incApple()" color="secondary">Apple</ion-button>
+	</div>
 </ion-content>
 ```
 
@@ -188,7 +180,7 @@ export class HomePage implements OnInit {
     }
     this.countApple++;
   }
-  
+
 }
 ```
 
@@ -196,13 +188,13 @@ If you would test the above in your browser you would effectively notice that as
 
 ![](https://cdn-images-1.medium.com/max/1600/1*OTDF80thurZxQLMwbHtvTA.gif)
 
-*****
+---
 
 ### Defer Work With Web Workers
 
 Let’s now try to solve the situation by deferring this custom made delay to our worker thread.
 
-*****
+---
 
 #### Web Workers
 
@@ -211,16 +203,15 @@ We move our blocker code to our `hello.worker` and we also modify it in order to
 ```javascript
 /// <reference lib="webworker" />
 
-addEventListener('message', ({ data }) => {
-  const start = Date.now();
-  while (Date.now() < start + 5000) {
-  }
+addEventListener("message", ({ data }) => {
+	const start = Date.now();
+	while (Date.now() < start + 5000) {}
 
-  postMessage(data + 1);
+	postMessage(data + 1);
 });
 ```
 
-*****
+---
 
 #### Services
 
@@ -236,10 +227,10 @@ import { Injectable } from '@angular/core';
 })
 export class HelloService {
 
-  async countApple(counter: number, 
+  async countApple(counter: number,
                    updateCounter: (value: number) => void) {
     if (typeof Worker !== 'undefined') {
-      const worker = 
+      const worker =
           new Worker('../workers/hello.worker', { type: 'module' });
 
       worker.onmessage = ({ data }) => {
@@ -252,7 +243,7 @@ export class HelloService {
 }
 ```
 
-*****
+---
 
 #### Component
 
@@ -282,7 +273,7 @@ export class HomePage {
   }
 
   async incApple() {
-    await this.helloService.countApple(this.countApple, 
+    await this.helloService.countApple(this.countApple,
                (value: number) => this.countApple = value);
   }
 
@@ -293,7 +284,7 @@ If you would run the example in your browser you should be able to notice that o
 
 ![](https://cdn-images-1.medium.com/max/1600/1*IEjanj7fsFvpvcXGbFSzsg.gif)
 
-*****
+---
 
 ### Cherry On Top
 
@@ -304,16 +295,16 @@ For example, if your application is using [idb-keyval](https://github.com/jakear
 ```javascript
 /// <reference lib="webworker" />
 
-import { set } from 'idb-keyval';
+import { set } from "idb-keyval";
 
-addEventListener('message', async ({ data }) => {
-  await set('hello', 'world');
+addEventListener("message", async ({ data }) => {
+	await set("hello", "world");
 
-  postMessage(data);
+	postMessage(data);
 });
 ```
 
-*****
+---
 
 ### Summary
 

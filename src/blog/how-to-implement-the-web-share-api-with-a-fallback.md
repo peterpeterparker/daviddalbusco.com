@@ -8,7 +8,7 @@ image: "https://cdn-images-1.medium.com/max/2400/1*rjWBYTwXqa5YsogRl5kPdg.jpeg"
 ---
 
 ![](https://cdn-images-1.medium.com/max/2400/1*rjWBYTwXqa5YsogRl5kPdg.jpeg)
-*Photo by [Noiseporn](https://unsplash.com/@noiseporn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/social-share?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Noiseporn](https://unsplash.com/@noiseporn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/social-share?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 In the past weeks I often had to implement the [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share) in several applications. As it is not yet [supported](https://caniuse.com/#search=web%20share%20api) by all browsers and devices, I always had to implement the same fallback, respectively I always used the open source Web Component I developed called “[Web Social Share](https://websocialshare.com/)” as a fallback. That’s why I’m sharing my solution with this new blog post, hoping that maybe someday it will help someone or even better, that maybe someone will ping me back with a better solution 😁
 
@@ -17,7 +17,7 @@ In the past weeks I often had to implement the [Web Share API](https://developer
 The following implementation is pretty straight forward. We are going to implement a share method which detects if the Web Share API is supported by the browser or not. If supported it will, I guess you get it, use and open the Web Share API otherwise it will open the share fallback.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*6rNMJkG_C-N6B-5ibAL_8Q.gif)
-*Safari (left) supports Web Share API, Chrome (desktop, right) doesn’t support it and fallback to the Web Component “Web Social Share”*
+_Safari (left) supports Web Share API, Chrome (desktop, right) doesn’t support it and fallback to the Web Component “Web Social Share”_
 
 ### Main function and detection
 
@@ -61,7 +61,7 @@ function shareNative() {
 }
 ```
 
-*We are using `window.location` to build dynamically the url we are going to share. You could replace this piece of code with any valid URL as a string if you rather like.*
+_We are using `window.location` to build dynamically the url we are going to share. You could replace this piece of code with any valid URL as a string if you rather like._
 
 ### Web Social Share as Fallback
 
@@ -70,7 +70,7 @@ The Web Component I developed need firstly to be consumed. You could install it 
 ```
 <script type="module"
     src="https://unpkg.com/web-social-share@latest/dist/websocialshare/websocialshare.esm.js"></script>
-<script nomodule 
+<script nomodule
     src="https://unpkg.com/web-social-share@latest/dist/websocialshare/websocialshare.js"></script>
 ```
 
@@ -91,7 +91,7 @@ To declare the component we are going to add it to the page, specifying that per
   <ion-icon name="logo-twitter" ariaLabel="Twitter" slot="twitter"
             style="color: #00aced;">
   </ion-icon>
-  <ion-icon name="mail" slot="email" ariaLabel="Email" 
+  <ion-icon name="mail" slot="email" ariaLabel="Email"
             style="color: #ff8ea3;">
   </ion-icon>
   <ion-icon name="logo-whatsapp" ariaLabel="WhatsApp"
@@ -101,7 +101,7 @@ To declare the component we are going to add it to the page, specifying that per
 </web-social-share>
 ```
 
-*If you never use `slot` before and want to know a bit more about them, I wrote another article “[A practical introduction to styling a Shadow DOM and Slots](https://medium.com/stencil-tricks/a-practical-introduction-to-styling-a-shadow-dom-and-slots-879565a2f423)” which tries to explain practically how these could be used and styled.*
+_If you never use `slot` before and want to know a bit more about them, I wrote another article “[A practical introduction to styling a Shadow DOM and Slots](https://medium.com/stencil-tricks/a-practical-introduction-to-styling-a-shadow-dom-and-slots-879565a2f423)” which tries to explain practically how these could be used and styled._
 
 #### Implementation
 
@@ -163,7 +163,7 @@ To try out the implementation, we could just add for example a `button` which ca
 If everything went according plan, the result should looks like the following:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*MtKK5WfJQJq0piMe1Gfj9Q.gif)
-*Again, Safari (left) supports Web Share API and Chrome (desktop) doesn’t and use the fallback*
+_Again, Safari (left) supports Web Share API and Chrome (desktop) doesn’t and use the fallback_
 
 ### Cherry on the cake 🍒🎂
 

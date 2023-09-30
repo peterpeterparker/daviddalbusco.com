@@ -10,17 +10,17 @@ canonical: "https://medium.com/@david.dalbusco/starting-in-a-new-company-think-n
 
 ![](https://cdn-images-1.medium.com/max/1600/1*HG7Ivs6JrMErB7GdQZWSog.png)
 
-*Photo by [Max Rovensky](https://unsplash.com/@fivepointseven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Max Rovensky](https://unsplash.com/@fivepointseven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twenty-six** days left until hopefully better days.
 
-*****
+---
 
 Every single time I am hired to join a team as an external developer for a while, I can guarantee you that I will have to google how I can configure the company [npm](https://www.npmjs.com) Enterprise registry on my laptop 🙈. Moreover, it is also pretty sure that my first commit is going to happens with my GitHub username [peterpeterparker](https://github.com/peterpeterparker) instead of my real name or any other expected IDs 😄.
 
 Therefore see this new article as an open letter to my future self 😉.
 
-*****
+---
 
 ### Setting your company’s npm Enterprise registry
 
@@ -28,7 +28,7 @@ If the company has hired you, there is a good chance that, unfortunately, at lea
 
 ```bash
 npm config set registry
-``` 
+```
 
 #### Npmrc
 
@@ -51,7 +51,7 @@ npmrc -c client
 After the profile has been created, it becomes the one in use, therefore, if we run the registry command, it will now set the registry only for the active profile.
 
 ```bash
-npm config set registry 
+npm config set registry
 ```
 
 #### Switch Between Profiles
@@ -97,7 +97,7 @@ ls -ltr /Users/daviddalbusco/.npmrc
 /Users/daviddalbusco/.npmrc -> /Users/daviddalbusco/.npmrcs/default
 ```
 
-*****
+---
 
 ### Setting Your Name In Git
 
@@ -126,7 +126,7 @@ Finally, in case you would have already performed a commit and are looking to am
 git commit --amend --author=”David Dal Busco <david.dalbusco@company.com>”
 ```
 
-*****
+---
 
 ### Summary
 

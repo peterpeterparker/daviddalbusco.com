@@ -44,17 +44,17 @@ In your `gatsby-config.js` configure (or add) `gatsby-transformer-remark`:
 
 ```javascript
 plugins: [
-  {
-    resolve: `gatsby-transformer-remark`,
-    options: {
-      plugins: [
-        {
-          resolve: `gatsby-remark-highlight-code`
-        },
-      ],
-    },
-  },
-]
+	{
+		resolve: `gatsby-transformer-remark`,
+		options: {
+			plugins: [
+				{
+					resolve: `gatsby-remark-highlight-code`
+				}
+			]
+		}
+	}
+];
 ```
 
 #### Load the component
@@ -70,7 +70,7 @@ async componentDidMount() {
   try {
     const deckdeckgoLoader =
       require("@deckdeckgo/highlight-code/dist/loader");
-    
+
     await deckdeckgoLoader.defineCustomElements(window);
   } catch (err) {
     console.error(err);
@@ -84,7 +84,7 @@ That's it, the plugin is configured and ready. After your next build, the code o
 
 As I explained above, the exact same Web Component can be used in any modern web applications and is, of course, open source. But the other cherry on the cake is the fact that we are using it in our open source web editor for presentations and developer kit.
 
-Therefore, if you are going to showcase code in an upcoming talk, give a try to [DeckDeckGo](https://deckdeckgo.com)  😃
+Therefore, if you are going to showcase code in an upcoming talk, give a try to [DeckDeckGo](https://deckdeckgo.com) 😃
 
 ![](https://cdn-images-1.medium.com/max/1600/1*8SuFF5R9siRlSqAkTSXWjQ.gif)
 

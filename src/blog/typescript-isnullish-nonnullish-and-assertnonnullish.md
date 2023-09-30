@@ -10,11 +10,11 @@ canonical: "https://daviddalbusco.medium.com/typescript-isnullish-nonnullish-and
 
 ![Nil in the Alps](https://images.unsplash.com/photo-1630083133034-b4644df639cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw4fHxuaWx8ZW58MHx8fHwxNjcyNDAzODEy&ixlib=rb-4.0.3&q=80&w=1080)
 
-*[Baptiste Buisson](https://unsplash.com/fr/@shoots_of_bapt_)*
+_[Baptiste Buisson](https://unsplash.com/fr/@shoots_of_bapt_)\_
 
 There are few gems we have implemented in [NNS-dapp](https://nns.ic0.app/) that makes our devs life easier on daily basis. Among those, the following three little [TypeScript](https://www.typescriptlang.org/) functions have proven to be really useful.
 
-* * *
+---
 
 ## isNullish
 
@@ -23,12 +23,12 @@ How often have you code `if...else` statement that checks if an object is `undef
 ```typescript
 // Pseudo code (assuming optional chaining does not exist 😉)
 const test = (obj: MyObject | undefined | null) => {
-    if (obj === undefined || obj === null) {
-        return;
-    }
+	if (obj === undefined || obj === null) {
+		return;
+	}
 
-    obj.fn();
-}
+	obj.fn();
+};
 ```
 
 Thanks to [generics](https://www.typescriptlang.org/docs/handbook/2/generics.html) and [type predicates](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates), we have developed a helper that makes us avoid code duplication while preserving type safety.
@@ -46,17 +46,17 @@ We can use the helper as following:
 
 ```typescript
 const test = (obj: MyObject | undefined | null) => {
-    // 1. Avoid code duplication
-    if (isNullish(obj)) {
-        return;
-    }
+	// 1. Avoid code duplication
+	if (isNullish(obj)) {
+		return;
+	}
 
-    // 2. TypeScript checks it is defined
-    obj.fn();
-}
+	// 2. TypeScript checks it is defined
+	obj.fn();
+};
 ```
 
-* * *
+---
 
 ## nonNullish
 
@@ -73,15 +73,15 @@ That way, TypeScript will understand that indeed, an object is defined.
 
 ```typescript
 const test = (obj: MyObject | undefined | null) => {
-    //1. Avoid code duplication
-    if (nonNullish(obj)) {
-        // 2. TypeScript checks it is defined
-        obj.fn();
-    }
-}
+	//1. Avoid code duplication
+	if (nonNullish(obj)) {
+		// 2. TypeScript checks it is defined
+		obj.fn();
+	}
+};
 ```
 
-* * *
+---
 
 ## assertNonNullish
 
@@ -108,16 +108,16 @@ Applied to our previous code snippet, we can transform the function to execute t
 
 ```typescript
 const test = (obj: MyObject | undefined | null) => {
-    // 1. Avoid code duplication
-    // 2. TypeScript understands it might throw an error
-    assertNonNullish(obj);
-        
-    // 3. TypeScript checks it is defined
-    obj.fn();
-}
+	// 1. Avoid code duplication
+	// 2. TypeScript understands it might throw an error
+	assertNonNullish(obj);
+
+	// 3. TypeScript checks it is defined
+	obj.fn();
+};
 ```
 
-* * *
+---
 
 ## Conclusion
 

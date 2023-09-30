@@ -10,9 +10,9 @@ canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/install-code-in-ch
 
 ![Fakurian.com](https://images.unsplash.com/photo-1620207418302-439b387441b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw1Nnx8YWJzdHJhY3R8ZW58MHx8fHwxNjU5MTgzOTI4&ixlib=rb-1.2.1&q=80&w=1080)
 
-*Photo by [Milad Fakurian](https://unsplash.com/@fakurian?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Milad Fakurian](https://unsplash.com/@fakurian?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-* * *
+---
 
 On [Papyrs](https://papy.rs) - a web3 open source blogging platform - each user gets two smart contract canisters upon sign-in. One that contains private data and another that enables the user's personal blog-space on the internet.
 
@@ -20,7 +20,7 @@ Until the day I (hopefully) hand over the control of all canisters to a [Sns](ht
 
 This article describes how I can install code with [NodeJS](https://nodejs.org/en/) scripts and how you could do as well.
 
-* * *
+---
 
 ## Getting started
 
@@ -32,7 +32,7 @@ Earlier this year I published two related articles:
 
 These articles lead to this tutorial. The first display how to query canisters in NodeJS and the second how to create smart contracts on the fly - i.e. how to create canisters in which, I want to install newer version of my code 😜.
 
-* * *
+---
 
 ## Child canister
 
@@ -63,7 +63,7 @@ Once modified, I have to re-generate the wasm binary that will be installed - de
 
 3.  Revert the change in `dfx.json`.
 
-* * *
+---
 
 ## Backend
 
@@ -101,61 +101,59 @@ To install code in my target canister, I need four parameters:
 3.  a `mode` set to `#upgrade` to perform an update as described in [Canister upgrades](https://internetcomputer.org/docs/current/references/ic-interface-spec/#system-api-upgrades) - with the goal to maintain the state
 4.  arguments - those that are used to initialize the canister
 
-* * *
+---
 
 ## NodeJS script
 
 I can implement the call to the endpoint of the `manager` in a NodeJS module script I named `installcode.mjs`. The script will take care of collecting the parameters mentioned above before effectively calling my actor (function `upgradeBucket`).
 
 ```javascript
-import {Principal} from "@dfinity/principal";
-import {IDL} from '@dfinity/candid';
+import { Principal } from "@dfinity/principal";
+import { IDL } from "@dfinity/candid";
 
 const installCode = async () => {
-    // Param 1.
-    const canisterId = 
-            Principal.fromText('renrk-eyaaa-aaaaa-aaada-cai');
+	// Param 1.
+	const canisterId = Principal.fromText("renrk-eyaaa-aaaaa-aaada-cai");
 
-    // Param 2.
-    const wasmModule = loadWasm();
+	// Param 2.
+	const wasmModule = loadWasm();
 
-    // Param 3.
-    const arg = IDL.encode([IDL.Text], ['User1']);
+	// Param 3.
+	const arg = IDL.encode([IDL.Text], ["User1"]);
 
-    // Agent-js actor
-    const actor = await managerActor();
+	// Agent-js actor
+	const actor = await managerActor();
 
-    // Execute
-    await upgradeBucket({actor, wasmModule, canisterId, arg})
-}
+	// Execute
+	await upgradeBucket({ actor, wasmModule, canisterId, arg });
+};
 
 try {
-    await installCode()
+	await installCode();
 } catch (err) {
-    console.error(err);
+	console.error(err);
 }
 ```
 
-* * *
+---
 
 The first parameter is the targeted canister id as `Principal`. As I collected the local child canister as a `string` when I printed its id - `renrk-eyaaa-aaaaa-aaada-cai` - in the browser console, I need to convert it the help of `Principal.fromText()`.
 
-* * *
+---
 
 The second parameter I need is the wasm module. To collect it, I can read the file that has been generated when I previously ran `dfx deploy` and can transform it to an `ArrayBuffer` - the expected type that matches to the `Blob` defined in the backend actor's code.
 
 ```javascript
-import {readFileSync} from 'fs';
+import { readFileSync } from "fs";
 
 const loadWasm = () => {
-  const localPath = 
-     `${process.cwd()}/.dfx/local/canisters/bucket/bucket.wasm`;
-  const buffer = readFileSync(localPath);
-  return [...new Uint8Array(buffer)];
+	const localPath = `${process.cwd()}/.dfx/local/canisters/bucket/bucket.wasm`;
+	const buffer = readFileSync(localPath);
+	return [...new Uint8Array(buffer)];
 };
 ```
 
-* * *
+---
 
 The third parameter is the one that matches those use to create the canister on the fly 🤪. Concretely, the bucket's actors of this tutorial are created with a `user` parameter:
 
@@ -168,44 +166,42 @@ actor class Bucket(user: Text) = this {
 So, to install the code, I need to provide the same parameters which has to be encoded with Candid (otherwise the parameters are rejected):
 
 ```javascript
-import {IDL} from '@dfinity/candid';
+import { IDL } from "@dfinity/candid";
 
-const arg = IDL.encode([IDL.Text], ['User1']);
+const arg = IDL.encode([IDL.Text], ["User1"]);
 ```
 
 Note that `IDL` support various format - e.g. if the Motoko parameter would have been a `Principal`, I could have encoded it as following:
 
 ```javascript
-import {IDL} from '@dfinity/candid';
-import {Principal} from "@dfinity/principal";
+import { IDL } from "@dfinity/candid";
+import { Principal } from "@dfinity/principal";
 
-const arg = IDL.encode([IDL.Principal], 
-   [Principal.fromText('rrrrr-ccccc-user-principal')]);
+const arg = IDL.encode([IDL.Principal], [Principal.fromText("rrrrr-ccccc-user-principal")]);
 ```
 
-* * *
+---
 
 To instantiate the `manager` actor, once I find its canister ID, I can proceed as I would commonly do with [agent-js](https://github.com/dfinity/agent-js):
 
 ```javascript
-import {idlFactory} from './.dfx/local/canisters/manager/manager.did.mjs';
-import fetch from 'node-fetch';
-import {HttpAgent, Actor} from '@dfinity/agent';
+import { idlFactory } from "./.dfx/local/canisters/manager/manager.did.mjs";
+import fetch from "node-fetch";
+import { HttpAgent, Actor } from "@dfinity/agent";
 
 const managerActor = async () => {
-    const canisterId = managerPrincipalLocal();
+	const canisterId = managerPrincipalLocal();
 
-    // Replace host with https://ic0.app for mainnet
-    const agent = 
-      new HttpAgent({fetch, host: 'http://localhost:8000/'});
+	// Replace host with https://ic0.app for mainnet
+	const agent = new HttpAgent({ fetch, host: "http://localhost:8000/" });
 
-    // Only if local IC
-    await agent.fetchRootKey();
+	// Only if local IC
+	await agent.fetchRootKey();
 
-    return Actor.createActor(idlFactory, {
-        agent,
-        canisterId
-    });
+	return Actor.createActor(idlFactory, {
+		agent,
+		canisterId
+	});
 };
 ```
 
@@ -221,10 +217,9 @@ The principal ID of the `manager` deployed on a local simulated IC can be found 
 
 ```javascript
 const managerPrincipalLocal = () => {
-    const buffer = 
-      readFileSync('./.dfx/local/canister_ids.json');
-    const {manager} = JSON.parse(buffer.toString('utf-8'));
-    return Principal.fromText(manager.local);
+	const buffer = readFileSync("./.dfx/local/canister_ids.json");
+	const { manager } = JSON.parse(buffer.toString("utf-8"));
+	return Principal.fromText(manager.local);
 };
 ```
 
@@ -232,30 +227,29 @@ Ultimately, if you would deploy on `mainnet`, you would be able to find the same
 
 ```javascript
 const managerPrincipalIC = () => {
-    const buffer = readFileSync('./canister_ids.json');
-    const {manager} = JSON.parse(buffer.toString('utf-8'));
-    return Principal.fromText(manager.ic);
+	const buffer = readFileSync("./canister_ids.json");
+	const { manager } = JSON.parse(buffer.toString("utf-8"));
+	return Principal.fromText(manager.ic);
 };
 ```
 
 Note that you would also have to comment `fetchRootKey` and change the `host` property in the `HttpAgent` initialization.
 
-* * *
+---
 
 Finally, the effective call that will install the code can be implemented with the parameters I collected.
 
 ```javascript
-const upgradeBucket = 
-  async ({actor, wasmModule, canisterId, arg}) => {
-    console.log(`Upgrading: ${canisterId.toText()}`);
+const upgradeBucket = async ({ actor, wasmModule, canisterId, arg }) => {
+	console.log(`Upgrading: ${canisterId.toText()}`);
 
-    await actor.installCode(canisterId, [...arg], wasmModule);
+	await actor.installCode(canisterId, [...arg], wasmModule);
 
-    console.log(`Done: ${canisterId.toText()}`);
+	console.log(`Done: ${canisterId.toText()}`);
 };
 ```
 
-* * *
+---
 
 ## Test
 
@@ -265,15 +259,13 @@ Everything is set. I can call my NodeJS script - `node installcode.mjs`.
 
 The installation was a success. To be certain the code was deployed, I called afterwards the canister - which was updated - to check that indeed, it now returned the new version - `v2` - I was expecting and, indeed it worked out 🎉.
 
-* * *
+---
 
 ## Conclusion and sample repo
 
 You can find the source code of this tutorial in a sample repo I published on GitHub:
 
 👉 [https://github.com/peterpeterparker/manager](https://github.com/peterpeterparker/manager)
-
-
 
 I hope it will be useful for the community and let me know if you have idea of improvements!
 

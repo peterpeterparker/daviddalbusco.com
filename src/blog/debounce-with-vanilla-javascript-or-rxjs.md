@@ -9,7 +9,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*710b8KhbLG3vPrV2cL-3dw.jpeg"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*710b8KhbLG3vPrV2cL-3dw.jpeg)
 
-*Photo by [Barna Bartis](https://unsplash.com/@barnabartis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Barna Bartis](https://unsplash.com/@barnabartis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I recently had to clean the code we are using in [DeckDeckGo](https://deckdeckgo.com) and had notably to refactor singleton methods to stateless functions. One of these gave me a harder time and that's why, guess what, I came to the idea of this new blog post 😅
 
@@ -17,7 +17,7 @@ I recently had to clean the code we are using in [DeckDeckGo](https://deckdeckgo
 
 ![](https://cdn-images-1.medium.com/max/1600/1*L2pWuWEFxqMLUPGnmumuaw.gif)
 
-*Sure, what’s “debouncing” ?*
+_Sure, what’s “debouncing” ?_
 
 Let’s say you have implemented an `<input/>` in your application which triggers an update into your database each time its content change. For performance reason and maybe even for cost reason (if for example you are using [Google Firestore](https://cloud.google.com/firestore/pricing)) you might not want to trigger a database update every single time a keyboard key is hit but rather perform a save only when needed. For example you might want to only perform the save when the user would mark a pause or when she/he has finished her/his interaction with the component.
 
@@ -33,7 +33,7 @@ Commonly, in order to detect which functions should effectively be triggered, a 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*1kXFGBTN-o1VZ8nxRn5yjw.gif)
 
-*setTimeout and clearTimeout working together*
+_setTimeout and clearTimeout working together_
 
 There is currently no platform implementation of a standard “debouncing function” supported across browsers (correct me if I am wrong of course 😅). Fortunately, Javascript provide both the ability to delay a function’s call using `setTimeout` and to cancel it using `clearTimeout` which we could combine in order to implement our own solution.
 
@@ -72,7 +72,7 @@ If you wish to observe and test this in action, give a try to this [Codepen](htt
 
 ![](https://cdn-images-1.medium.com/max/1600/1*N3XGY3qwrM86jfr-WdqbHg.gif)
 
-*Good dog helping with the cleaning*
+_Good dog helping with the cleaning_
 
 The above solution with vanilla Javascript is pretty cool but what about achieving the same result using [RxJS](https://rxjs-dev.firebaseapp.com) (the Reactive Extensions Library for JavaScript)? That would be pretty slick isn’t it? Lucky us, RxJS offers out of the box a solution to debounce easily functions using Observables. Moreover, in my point of view, this solution is a bit cleaner and more readable.
 
@@ -95,7 +95,7 @@ That’s it, nothing more nothing else. No custom functions to write, RxJS just 
 
 If you wish to give it a try in action too, have a look at this other [Codepen](https://codepen.io/peterpeterparker/pen/ZEzqXPw).
 
-*Notabene: in the above example I did not, for simplicity reason, took care of unsubscribing the Observable. Obviously if you would use this solution in a real application, please be careful about this.*
+_Notabene: in the above example I did not, for simplicity reason, took care of unsubscribing the Observable. Obviously if you would use this solution in a real application, please be careful about this._
 
 ### Cherry on the cake 🍒🎂
 

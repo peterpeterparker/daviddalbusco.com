@@ -9,7 +9,7 @@ image: "https://cdn-images-1.medium.com/max/1600/1*EqOsVaqdhDXCI2Vwi7YAwg.png"
 
 ![](https://cdn-images-1.medium.com/max/1600/1*EqOsVaqdhDXCI2Vwi7YAwg.png)
 
-*Photo by [Sincerely Media](https://unsplash.com/@sincerelymedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Sincerely Media](https://unsplash.com/@sincerelymedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 There are a lot of good tutorials out there about the subject “dark mode” but less rarely one which covers the two main goals, in my opinion, of such an implementation in a real application. Respectively, giving the users the ability to switch between themes but also inheriting per default the OS color scheme given by the platform, specially as both Google and Apple began to rollout such modes in their products.
 
@@ -17,7 +17,7 @@ That’s why I’m writing this new blog post to share the solution we have impl
 
 ### Credits
 
-As staten above, we have developed such a feature with the help of our contributors, more precisely with the help of Grant Herman ([GitHub](https://github.com/grantlouisherman) / [Twitter](https://twitter.com/gherman1990)). He even helped us implement it in three different applications 🤯 
+As staten above, we have developed such a feature with the help of our contributors, more precisely with the help of Grant Herman ([GitHub](https://github.com/grantlouisherman) / [Twitter](https://twitter.com/gherman1990)). He even helped us implement it in three different applications 🤯
 
 Definitely, not all heroes wear capes, thank you Grant 🙏
 
@@ -25,8 +25,8 @@ Definitely, not all heroes wear capes, thank you Grant 🙏
 
 To implement our solution, we are relying on two amazing pieces of software:
 
-* [idb-keyval](https://github.com/jakearchibald/idb-keyval): a super simple small promise-based keyval store implemented with IndexedDB, which we are using to save the user selection.
-* [RxJS](https://rxjs-dev.firebaseapp.com): a reactive extensions library for JavaScript, which we are using to store and propagate the state representing the theme in memory.
+- [idb-keyval](https://github.com/jakearchibald/idb-keyval): a super simple small promise-based keyval store implemented with IndexedDB, which we are using to save the user selection.
+- [RxJS](https://rxjs-dev.firebaseapp.com): a reactive extensions library for JavaScript, which we are using to store and propagate the state representing the theme in memory.
 
 We are going to use a runtime value to switch between themes, therefore, it would be also possible to implement such a solution using a [React Redux](https://react-redux.js.org) stored state. Don’t hesitate to ping me if you would like to get such an example, I also have got one ready in another new application I am currently developing 😉
 
@@ -87,9 +87,9 @@ async switch(dark: boolean) {
 
 At boot time, we have to load the theme according the following steps:
 
-* Does the user already have set a preferred theme?
-* Or were we unable to read this information (does an error occurred)?
-* Or should we fallback using the OS default color scheme provided by the platform?
+- Does the user already have set a preferred theme?
+- Or were we unable to read this information (does an error occurred)?
+- Or should we fallback using the OS default color scheme provided by the platform?
 
 For these reasons, we create a function which implements this logic and use our previous `switch` method to propagate the theme.
 
@@ -109,7 +109,7 @@ async init(): Promise<void> {
     }
 
     // Otherwise we check the prefers-color-scheme of the OS
-    const darkFromMedia: MediaQueryList = 
+    const darkFromMedia: MediaQueryList =
               window.matchMedia('(prefers-color-scheme: dark)');
 
     this.switch(darkFromMedia.matches);
@@ -137,11 +137,11 @@ import {ThemeService} from './theme.service';
 })
 export class AppRoot {
     private sub: Subscription;
-    private domBodyClassList: DOMTokenList = 
+    private domBodyClassList: DOMTokenList =
                               document.body.classList;
 
     async componentWillLoad() {
-        this.sub = 
+        this.sub =
              ThemeService.getInstance()
                          .watch()
                          .subscribe((dark: boolean) => {
@@ -220,12 +220,12 @@ In case you would use Ionic, you would for example be able to style a specific b
 
 ```css
 :root {
-  --ion-text-color: black;
+	--ion-text-color: black;
 }
 
 body.dark {
-  --ion-background-color: black;
-  --ion-text-color: white;
+	--ion-background-color: black;
+	--ion-text-color: white;
 }
 ```
 
@@ -233,14 +233,14 @@ Or another example in plain HTML/CSS:
 
 ```html
 <style>
-  body {
-    background: red;
-    color: yellow;
-  }
-  body.dark {
-    background: purple;
-    color: green;
-  }
+	body {
+		background: red;
+		color: yellow;
+	}
+	body.dark {
+		background: purple;
+		color: green;
+	}
 </style>
 ```
 
@@ -248,10 +248,10 @@ Or another example in plain HTML/CSS:
 
 Our project, DeckDeckGo, is open source 😺. Therefore, let me share with you the above implementation with some GitHub references of our remote control:
 
-* Singleton service: [Theme.service](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/app/services/theme/theme.service.tsx).ts
-* Init and watch: [app-root.tsx](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/app/app-root.tsx)
-* An example of switcher: [app-general-settings.tsx](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/app/components/settings/app-general-settings/app-general-settings.tsx)
-* Styling: [variables.scss](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/global/theme/variables.scss)
+- Singleton service: [Theme.service](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/app/services/theme/theme.service.tsx).ts
+- Init and watch: [app-root.tsx](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/app/app-root.tsx)
+- An example of switcher: [app-general-settings.tsx](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/app/components/settings/app-general-settings/app-general-settings.tsx)
+- Styling: [variables.scss](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/global/theme/variables.scss)
 
 ![](https://cdn-images-1.medium.com/max/1600/1*KgzkIUhche5Netqi1kfSTQ.gif)
 
@@ -287,7 +287,7 @@ export class AppThemeSwitcher {
       return false;
     }
 
-    const darkFromMedia: MediaQueryList = 
+    const darkFromMedia: MediaQueryList =
               window.matchMedia('(prefers-color-scheme: dark)');
 
     return darkFromMedia.matches;
@@ -319,7 +319,7 @@ export class AppThemeSwitcher {
   }
 
   render() {
-    return <ion-toggle checked={this.darkMode} 
+    return <ion-toggle checked={this.darkMode}
                        onIonChange={() => this.toggleTheme()}>
     </ion-toggle>
   }

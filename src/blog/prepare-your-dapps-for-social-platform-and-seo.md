@@ -10,26 +10,26 @@ canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/prepare-your-dapps
 
 ![Minimalistic 3D Rendering Wallpaper in 8K Resolution.](https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw0Nnx8YWJzdHJhY3R8ZW58MHx8fHwxNjY0NDI4NDU5&ixlib=rb-1.2.1&q=80&w=1080)
 
-*[Sebastian Svenson](https://unsplash.com/@sebastiansvenson)*
+_[Sebastian Svenson](https://unsplash.com/@sebastiansvenson)_
 
 Now that the [Internet Computer](https://internetcomputer.org/) finally supports crawlers, dapps running 100% on chain can be indexed by search engine and their metadata can be read to generate card on social platform.
 
 This is the list of things I do to prepare my web applications for social media sites and SEO so that you can do too.
 
-*Note that I am no SEO expert. Following tips are not related to ranking but to the way the information are extracted for presentation purpose.*
+_Note that I am no SEO expert. Following tips are not related to ranking but to the way the information are extracted for presentation purpose._
 
-* * *
+---
 
 ## Introduction
 
 To configure the bare minimum meta data for a project, we need following information to get started:
 
-*   Title: the name of the application, the product.
-*   Description: its tag line, its catchy selling phrase.
-*   Icon: a square image used to generate the favicons (note the plural).
-*   Social image: another image (ratio 1.9:1) used to generate a card on platforms such as Twitter, Facebook, Discord, LinkedIn etc.
+- Title: the name of the application, the product.
+- Description: its tag line, its catchy selling phrase.
+- Icon: a square image used to generate the favicons (note the plural).
+- Social image: another image (ratio 1.9:1) used to generate a card on platforms such as Twitter, Facebook, Discord, LinkedIn etc.
 
-* * *
+---
 
 ## Meta tags
 
@@ -39,7 +39,7 @@ Likewise, crawlers of social platform look for meta tags to generate the social 
 
 That is why, we have to provide a variety of meta tags and images for our dapps.
 
-* * *
+---
 
 ### HTML tags
 
@@ -53,25 +53,25 @@ Two others things that should really not be forgotten:
 2.  If your content is redundant on the web - e.g. blogging on multiple platforms - or if you want to indicate that multiple pages are actually related, it is important to provide `canonical` links to inform search engine that they should not index multiple times the same content. Otherwise, it can lead to a downgrade of the ranking note (my understanding).
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    
-    <title>Papyrs</title>
-    <meta content="Blog on web3" name="description" />
+	<head>
+		<meta charset="utf-8" />
 
-    <link href="https://papy.rs" rel="canonical" />
-  </head>
+		<title>Papyrs</title>
+		<meta content="Blog on web3" name="description" />
+
+		<link href="https://papy.rs" rel="canonical" />
+	</head>
 </html>
 ```
 
 Resources:
 
-*   [https://www.w3schools.com/html/html\_head.asp](https://www.w3schools.com/html/html_head.asp)
-*   [https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)
+- [https://www.w3schools.com/html/html_head.asp](https://www.w3schools.com/html/html_head.asp)
+- [https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls)
 
-* * *
+---
 
 ## og: tags
 
@@ -88,31 +88,29 @@ There are lots of these different tags but, commonly I use only the following fi
 5.  `og:image`: an absolute URL to the social image (see chapter here under for more information about its format).
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <!-- Here same HTML tags as previous chapter -->
+	<head>
+		<!-- Here same HTML tags as previous chapter -->
 
-    <meta content="Papyrs" property="og:title" />
-    <meta content="Blog on web3" property="og:description" />
-    <meta content="website" property="og:type" />
-    <meta content="https://papy.rs" property="og:url" />
-    <meta content="https://papy.rs/images/social-image.jpg" property="og:image" />
-  </head>
+		<meta content="Papyrs" property="og:title" />
+		<meta content="Blog on web3" property="og:description" />
+		<meta content="website" property="og:type" />
+		<meta content="https://papy.rs" property="og:url" />
+		<meta content="https://papy.rs/images/social-image.jpg" property="og:image" />
+	</head>
 </html>
 ```
 
 Resources:
 
-*   [https://ogp.me/](https://ogp.me/)
+- [https://ogp.me/](https://ogp.me/)
 
 ![capture-d%E2%80%99e%CC%81cran-2022-09-29-a%CC%80-12.01.15.png](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/capture-d%E2%80%99e%CC%81cran-2022-09-29-a%CC%80-12.01.15.png?token=zmeCyAslDbC4Yc5k8Hqlo)
 
-*Sharing https://papy.rs on LinkedIn*
+_Sharing https://papy.rs on LinkedIn_
 
-
-
-* * *
+---
 
 ### twitter: tags
 
@@ -129,32 +127,30 @@ There are various possibilities of display, I generally set following property t
 It is worth to remember that a tweet limit is 280 characters which apply to the information we provide.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <!-- Here same HTML tags as previous chapter -->
-    <!-- Here same og: tags as previous chapter -->
+	<head>
+		<!-- Here same HTML tags as previous chapter -->
+		<!-- Here same og: tags as previous chapter -->
 
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta content="Papyrs" name="twitter:title" />
-    <meta content="Blog on web3" name="twitter:description" />
-    <meta content="https://papy.rs/images/social-image.jpg" name="twitter:image" />
-    <meta content="@PapyrsApp" name="twitter:creator" />
-  </head>
+		<meta content="summary_large_image" name="twitter:card" />
+		<meta content="Papyrs" name="twitter:title" />
+		<meta content="Blog on web3" name="twitter:description" />
+		<meta content="https://papy.rs/images/social-image.jpg" name="twitter:image" />
+		<meta content="@PapyrsApp" name="twitter:creator" />
+	</head>
 </html>
 ```
 
 Resources:
 
-*   [https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image)
+- [https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image](https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image)
 
 ![capture-d%E2%80%99e%CC%81cran-2022-09-29-a%CC%80-12.03.37.png](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/capture-d%E2%80%99e%CC%81cran-2022-09-29-a%CC%80-12.03.37.png?token=AoqEPYOZe9maYX2R_W39X)
 
-*Sharing https://papy.rs on Twitter*
+_Sharing https://papy.rs on Twitter_
 
-
-
-* * *
+---
 
 ## Social image
 
@@ -172,11 +168,11 @@ Regarding format and content and as a best practice, I advise to create an image
 
 Speaking of, it will be displayed on small and large screen - i.e. there is only one single image for all screens. Therefore, when designing it, it is also worth to remember to compose its content so that it fits best anywhere.
 
-* * *
+---
 
 ## Favicons
 
-Favicons aren't just the good old `favicon.ico` we used to set at the root of our website back in the good old days (😉). Sure, we should still provide one favorite icon for the browser but, we also  have to think on various devices. Vendors have added various ways of defining icons that will be use when our applications and sites get added to the device' home screen.
+Favicons aren't just the good old `favicon.ico` we used to set at the root of our website back in the good old days (😉). Sure, we should still provide one favorite icon for the browser but, we also have to think on various devices. Vendors have added various ways of defining icons that will be use when our applications and sites get added to the device' home screen.
 
 In addition, there are also some new meta tags that we can set to specify other capabilities. e.g. defining the theme color that will be applied around the browser URL bar on mobile devices.
 
@@ -189,43 +185,41 @@ To generate these data I proceed as following:
 5.  Finally, I set the related meta tags to my HTML pages.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <!-- Here same HTML tags as previous chapter -->
-    <!-- Here same og: tags as previous chapter -->
-    <!-- Here same twitter: tags as previous chapter -->
+	<head>
+		<!-- Here same HTML tags as previous chapter -->
+		<!-- Here same og: tags as previous chapter -->
+		<!-- Here same twitter: tags as previous chapter -->
 
-    <link href="/favicon-32x32.png" rel="icon" type="image/png" />
-    <meta content="#000000" name="theme-color" />
+		<link href="/favicon-32x32.png" rel="icon" type="image/png" />
+		<meta content="#000000" name="theme-color" />
 
-    <link href="/icons/icon-48x48.png" rel="apple-touch-icon" sizes="48x48" />
-    <link href="/icons/icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
-    <link href="/icons/icon-96x96.png" rel="apple-touch-icon" sizes="96x96" />
-    <link href="/icons/icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
-    <link href="/icons/icon-192x192.png" rel="apple-touch-icon" sizes="192x192" />
-    <link href="/icons/icon-256x256.png" rel="apple-touch-icon" sizes="256x256" />
-    <link href="/icons/icon-384x384.png" rel="apple-touch-icon" sizes="384x384" />
-    <link href="/icons/icon-512x512.png" rel="apple-touch-icon" sizes="512x512" />
+		<link href="/icons/icon-48x48.png" rel="apple-touch-icon" sizes="48x48" />
+		<link href="/icons/icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+		<link href="/icons/icon-96x96.png" rel="apple-touch-icon" sizes="96x96" />
+		<link href="/icons/icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
+		<link href="/icons/icon-192x192.png" rel="apple-touch-icon" sizes="192x192" />
+		<link href="/icons/icon-256x256.png" rel="apple-touch-icon" sizes="256x256" />
+		<link href="/icons/icon-384x384.png" rel="apple-touch-icon" sizes="384x384" />
+		<link href="/icons/icon-512x512.png" rel="apple-touch-icon" sizes="512x512" />
 
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#7888ff" />
-    <meta name="msapplication-TileColor" content="#ffeed6" />
-    <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-  </head>
+		<link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#7888ff" />
+		<meta name="msapplication-TileColor" content="#ffeed6" />
+		<meta name="msapplication-config" content="/icons/browserconfig.xml" />
+	</head>
 </html>
 ```
 
 Resources:
 
-*   [https://realfavicongenerator.net/](https://realfavicongenerator.net/)
+- [https://realfavicongenerator.net/](https://realfavicongenerator.net/)
 
 ![capture-d%E2%80%99e%CC%81cran-2022-09-29-a%CC%80-12.10.11.png](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/capture-d%E2%80%99e%CC%81cran-2022-09-29-a%CC%80-12.10.11.png?token=ZDNI5SzJk2WsjoE9z9gDD)
 
-*A favicon displayed in the tab by Firefox*
+_A favicon displayed in the tab by Firefox_
 
-
-
-* * *
+---
 
 ### Maskable icons
 
@@ -235,14 +229,12 @@ I generally create another icon which I shape with the help of [https://maskable
 
 Resources:
 
-*   [https://web.dev/maskable-icon/](https://web.dev/maskable-icon/)
-*   [https://maskable.app/editor](https://maskable.app/editor)
+- [https://web.dev/maskable-icon/](https://web.dev/maskable-icon/)
+- [https://maskable.app/editor](https://maskable.app/editor)
 
 ![maskable-animation.gif](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/images/maskable-animation.gif?token=Np_L4Zk4hIMEYArteyU00)
 
-
-
-* * *
+---
 
 ## Web app manifest
 
@@ -255,16 +247,16 @@ Commonly named `manifest.webmanifest` or `manifest.json` and served from the roo
 Even if provided on a top-level directory, it should be referenced in the HTML pages.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <!-- Here same HTML tags as previous chapter -->
-    <!-- Here same og: tags as previous chapter -->
-    <!-- Here same twitter: tags as previous chapter -->
-    <!-- Here same favicons and other info as previous chapter -->
+	<head>
+		<!-- Here same HTML tags as previous chapter -->
+		<!-- Here same og: tags as previous chapter -->
+		<!-- Here same twitter: tags as previous chapter -->
+		<!-- Here same favicons and other info as previous chapter -->
 
-    <link crossorigin="anonymous" href="/manifest.webmanifest" rel="manifest" />
-  </head>
+		<link crossorigin="anonymous" href="/manifest.webmanifest" rel="manifest" />
+	</head>
 </html>
 ```
 
@@ -272,80 +264,79 @@ The tool I listed previously - Favicon Generator - provides a bare minimal web a
 
 ```json
 {
-  "name": "Papyrs",
-  "short_name": "Papyrs",
-  "start_url": "/",
-  "background_color": "#000000",
-  "theme_color": "#000000",
-  "display": "standalone",
-  "icons": [
-    {"src": "icons/icon-48x48.png", "sizes": "48x48", "type": "image/png", "purpose": "any"},
-    {"src": "icons/icon-72x72.png", "sizes": "72x72", "type": "image/png", "purpose": "any"},
-    {"src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png", "purpose": "any"},
-    {"src": "icons/icon-144x144.png", "sizes": "144x144", "type": "image/png", "purpose": "any"},
-    {"src": "icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
-    {"src": "icons/icon-256x256.png", "sizes": "256x256", "type": "image/png", "purpose": "any"},
-    {"src": "icons/icon-384x384.png", "sizes": "384x384", "type": "image/png", "purpose": "any"},
-    {"src": "icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
-    {
-      "src": "icons/maskable-48x48.png",
-      "sizes": "48x48",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/maskable-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/maskable-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/maskable-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/maskable-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/maskable-256x256.png",
-      "sizes": "256x256",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/maskable-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "icons/maskable-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    }
-  ]
+	"name": "Papyrs",
+	"short_name": "Papyrs",
+	"start_url": "/",
+	"background_color": "#000000",
+	"theme_color": "#000000",
+	"display": "standalone",
+	"icons": [
+		{ "src": "icons/icon-48x48.png", "sizes": "48x48", "type": "image/png", "purpose": "any" },
+		{ "src": "icons/icon-72x72.png", "sizes": "72x72", "type": "image/png", "purpose": "any" },
+		{ "src": "icons/icon-96x96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+		{ "src": "icons/icon-144x144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
+		{ "src": "icons/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+		{ "src": "icons/icon-256x256.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+		{ "src": "icons/icon-384x384.png", "sizes": "384x384", "type": "image/png", "purpose": "any" },
+		{ "src": "icons/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+		{
+			"src": "icons/maskable-48x48.png",
+			"sizes": "48x48",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/maskable-72x72.png",
+			"sizes": "72x72",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/maskable-96x96.png",
+			"sizes": "96x96",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/maskable-144x144.png",
+			"sizes": "144x144",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/maskable-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/maskable-256x256.png",
+			"sizes": "256x256",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/maskable-384x384.png",
+			"sizes": "384x384",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "icons/maskable-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	]
 }
-
 ```
 
 Resources:
 
-*   [https://web.dev/add-manifest/](https://web.dev/add-manifest/)
-*   [https://developer.mozilla.org/en-US/docs/Web/Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+- [https://web.dev/add-manifest/](https://web.dev/add-manifest/)
+- [https://developer.mozilla.org/en-US/docs/Web/Manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 
-* * *
+---
 
 ## Sitemap.xml
 
@@ -365,32 +356,32 @@ Sitemaps are useful to help search engines understand what pages should be crawl
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     </url>
-    
+
 </urlset>
 ```
 
 The `sitemap.xml` is an XML file, therefore it should be served by our canister with the appropriate mime type (`application/xml`). It should also be referenced within our HTML pages.
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <!-- Here same HTML tags as previous chapter -->
-    <!-- Here same og: tags as previous chapter -->
-    <!-- Here same twitter: tags as previous chapter -->
-    <!-- Here same favicons and other info as previous chapter -->
-    <!-- Here link to web app manifest -->
+	<head>
+		<!-- Here same HTML tags as previous chapter -->
+		<!-- Here same og: tags as previous chapter -->
+		<!-- Here same twitter: tags as previous chapter -->
+		<!-- Here same favicons and other info as previous chapter -->
+		<!-- Here link to web app manifest -->
 
-    <link href="/sitemap.xml" rel="sitemap" type="application/xml" />
-  </head>
+		<link href="/sitemap.xml" rel="sitemap" type="application/xml" />
+	</head>
 </html>
 ```
 
 Resources:
 
-*   [https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
+- [https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
 
-* * *
+---
 
 Robots.txt
 
@@ -401,17 +392,14 @@ Assuming we want any crawlers to index our all app, we can provide such informat
 We can also provide again the URL to our sitemap and host information.
 
 ```html
-User-agent: *
-Allow: /
-Sitemap: https://papy.rs/sitemap.xml
-Host: https://papy.rs
+User-agent: * Allow: / Sitemap: https://papy.rs/sitemap.xml Host: https://papy.rs
 ```
 
 Resources:
 
-*   [https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt](https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt)
+- [https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt](https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt)
 
-* * *
+---
 
 ## Summary
 
@@ -424,9 +412,9 @@ To prepare our dapps for social media sites and SEO we need:
 
 These static assets need to be served by our canister smart contracts and we have to set meta data in:
 
-*   all HTML pages of our application
-*   a web app manifest
-*   a sitemap.xml
+- all HTML pages of our application
+- a web app manifest
+- a sitemap.xml
 
 And we should not forget to allow crawlers to view our content by defining a robots.txt.
 

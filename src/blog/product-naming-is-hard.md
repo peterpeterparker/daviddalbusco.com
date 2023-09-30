@@ -10,11 +10,11 @@ canonical: "https://daviddalbusco.medium.com/product-naming-is-hard-202a6e7e849b
 
 ![becca-tapert-gny_mw1q6xc-unsplash.jpg](https://miro.medium.com/max/1400/0*ySGfMIBPjKjuxUC9)
 
-*Photo de [Becca Tapert](https://unsplash.com/@beccatapert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) sur [Unsplash](https://unsplash.com/fr/photos/GnY_mW1Q6Xc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo de [Becca Tapert](https://unsplash.com/@beccatapert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) sur [Unsplash](https://unsplash.com/fr/photos/GnY_mW1Q6Xc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Gosh, I finally got the name for my new side project. It will be called: **[Juno](https://twitter.com/junobuild)**.
 
-* * *
+---
 
 ## "Nervous breakdown"
 
@@ -28,15 +28,13 @@ What a frustrating phase of development for the project. Not finding - and ownin
 
 That's why, needless to say, I feel now relieved. So, here are some super high level marketing hints and the story behind **Juno**'s name.
 
-* * *
+---
 
 ## My marketing
 
-
-
 Most of following points might be obvious to the one who's searching for a product name or have better knowledges in marketing than myself but, who knows. It might be useful to someone, some day 🤷‍♂️.
 
-* * *
+---
 
 ### 1\. Goal
 
@@ -52,7 +50,7 @@ Therefore soon, I will ease - by a lot - building decentralized applications and
 
 That's my goal. **Juno** is a game changer!
 
-* * *
+---
 
 ### 2\. Target audience
 
@@ -68,7 +66,7 @@ The more questions, the more scepticism, the more barrier to entry, the less con
 
 In case of **Juno**, I am addressing developers which makes things a bit easier because, I am part of that target audience. That said, it is not always an asset to consider her/himself as such. It can lead to shortcuts and misjudgements - e.g. like assuming all other developers develop the same way I do. However, in this particular case, I think it helps (🤞).
 
-* * *
+---
 
 ### 3\. Competitors
 
@@ -90,7 +88,7 @@ They do so too, I am guessing, because developers install and run their command 
 
 I think **Juno** works well 😁.
 
-* * *
+---
 
 ### 4\. Storytelling
 
@@ -112,11 +110,9 @@ Of course, I was not the first one that thought about using such a topic as "spa
 
 I am glad I finally figured out a solution. There was the Apollo program, there is now the **Juno** program 😁.
 
-*[Juno](https://en.wikipedia.org/wiki/Juno_(mythology)) is an ancient Roman goddess. She was equated to Hera, goddess of the sky in Greek mythology.*
+_[Juno](<https://en.wikipedia.org/wiki/Juno_(mythology)>) is an ancient Roman goddess. She was equated to Hera, goddess of the sky in Greek mythology.\_
 
-* * *
-
-
+---
 
 ### 5\. Keywords
 
@@ -128,7 +124,7 @@ Fortunately, the name itself is not the only variable in this equation. All the 
 
 Nevertheless, next time I am looking for a product name, I should think about making such types of analysis.
 
-* * *
+---
 
 ### 6\. Similarity
 
@@ -140,7 +136,7 @@ e.g. when I decided to go for **Juno**, I was aware such a name was already used
 
 That is one of the few reasons why I also opted for a top domain - `.build` - that has a explicit meaning. It will address developers that want to build projects - i.e. it strengthens the purpose of the name.
 
-* * *
+---
 
 ### 7\. Channels
 
@@ -156,14 +152,14 @@ Again here, most names are already taken. In addition, while GitHub used to rele
 
 Few solutions and lots of restriction but, I think I actually managed to find some a-ok (🙂) channels for **Juno**:
 
-*   [https://juno.build/](https://juno.build/)
-*   [https://twitter.com/junobuild](https://twitter.com/junobuild)
+- [https://juno.build/](https://juno.build/)
+- [https://twitter.com/junobuild](https://twitter.com/junobuild)
 
-*   [https://github.com/buildwithjuno](https://github.com/buildwithjuno)
+- [https://github.com/buildwithjuno](https://github.com/buildwithjuno)
 
-*   [https://www.npmjs.com/org/junobuild](https://www.npmjs.com/org/junobuild)
+- [https://www.npmjs.com/org/junobuild](https://www.npmjs.com/org/junobuild)
 
-* * *
+---
 
 # Conclusion
 

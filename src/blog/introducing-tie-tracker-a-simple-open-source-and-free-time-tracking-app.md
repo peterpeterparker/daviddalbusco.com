@@ -19,11 +19,11 @@ I’m happy to share with you [Tie Tracker](https://tietracker.app.link): a simp
 
 Last December, in between clients' projects, I had some spare time to learn new concepts. Of all of interesting subjects out there, one particular retained my attention: improving my [React](https://reactjs.org) skills and giving a real try to [Redux](https://react-redux.js.org).
 
-Knowing my self, in comparison to experimenting, I knew  I had to implement something concrete to get to feel comfortable with the technologies, specially with Redux. That’s why I came back to my long time idea to implement a time tracking and reporting application which perfectly matches my business processes.
+Knowing my self, in comparison to experimenting, I knew I had to implement something concrete to get to feel comfortable with the technologies, specially with Redux. That’s why I came back to my long time idea to implement a time tracking and reporting application which perfectly matches my business processes.
 
 Nevertheless, at this point, I was still unsure to start or not this project. After all, developing an application needs a certain effort. Moreover, I was not that motivated to develop yet again another solution which would need a cloud, authentication and database.
 
-But after much thinking about it, I finally found the last bit of motivation: I would develop the app to run entirely offline, with the help of [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), and I would  give a try to [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) to defer “heavy” computation.
+But after much thinking about it, I finally found the last bit of motivation: I would develop the app to run entirely offline, with the help of [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), and I would give a try to [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) to defer “heavy” computation.
 
 And that was it, I was all in. I started my new [Ionic](https://ionicframework.com) app and I developed my new tool 😁.
 
@@ -31,17 +31,17 @@ And that was it, I was all in. I started my new [Ionic](https://ionicframework.c
 
 The application helps track productivity and billable hours for a list of clients and projects. Each entries can be billed. It also supports miscellaneous currencies and optionally a VAT rate.
 
-* ✅ Simple work hours tracking
-* ✅ Assign time to clients and projects
-* ✅ Mark entries as billed
+- ✅ Simple work hours tracking
+- ✅ Assign time to clients and projects
+- ✅ Mark entries as billed
 
 ### Reporting
 
 For my company, I use a third party online accounting system to generate my client’s bill. When I send these, I join a report of every worked hours I spent on the projects for the selected period. So far, I was editing these timesheets manually but fortunately, I can now extract these on demand directly from Tie Tracker 😄.
 
-* ✅ Export open invoices to XLSX timesheets
-* ✅ Weekly work summary
-* ✅ Daily list of activities
+- ✅ Export open invoices to XLSX timesheets
+- ✅ Weekly work summary
+- ✅ Daily list of activities
 
 ### Goodies
 
@@ -49,9 +49,9 @@ Of course I had to implement some goodies 😉. One of these is an hourly remind
 
 I was also a little bit concerned about the persistence of the data on mobile devices, specially regarding iOS and its reliability with IndexedDB. To overcom this concern, I implemented a backup process: once a week, the application asks the user, if she/he would like to export all current not billed hours.
 
-* Light and dark theme
-* Weekly backup
-* Hourly notification for task in progress (only mobile devices)
+- Light and dark theme
+- Weekly backup
+- Hourly notification for task in progress (only mobile devices)
 
 ### Open Source
 

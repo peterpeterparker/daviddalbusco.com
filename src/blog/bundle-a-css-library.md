@@ -9,7 +9,7 @@ canonical: "https://medium.com/@david.dalbusco/bundle-a-css-library-6e9ff1ff8a2c
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*ktUiN4HuCz_nkRrL96xfFg.jpeg)
-*Photo by [KOBU Agency](https://unsplash.com/@kobuagency?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://medium.com/s/photos/css?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [KOBU Agency](https://unsplash.com/@kobuagency?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://medium.com/s/photos/css?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 We have build [DeckDeckGo](https://deckdeckgo.com) in a relatively fragmented way 😅. There is our web editor, which can be used to create and showcase slides and which can also be automatically synchronized with our remote control. There is also a developer kit, which supports HTML or markdown and there is even another version of it, we only used to deploy online your presentations as Progressive Web Apps.
 
@@ -19,13 +19,13 @@ These do also have to share the same layout capabilities. For example, if we def
 
 That’s why we had to create our own custom CSS library and why I am sharing with you, how you can also bundle such a utility for your own projects.
 
-*****
+---
 
 ### Credits
 
 This solution is the one implemented by the CSS framework [Bulma](https://bulma.io/). No need to reinvent the wheel when it is already wonderfully solved. Thank you Bulma for being [open source](https://github.com/jgthms/bulma) 🙏.
 
-*****
+---
 
 ### Getting Started
 
@@ -33,11 +33,11 @@ To initialize our library, we create a new folder, for example `bundle-css`, and
 
 ```json
 {
-  "name": "bundle-css",
-  "version": "1.0.0",
-  "main": "index.scss",
-  "author": "David",
-  "license": "MIT"
+	"name": "bundle-css",
+	"version": "1.0.0",
+	"main": "index.scss",
+	"author": "David",
+	"license": "MIT"
 }
 ```
 
@@ -51,11 +51,11 @@ In a new folder `src` we create our style sheet file `index.scss` . As I was men
 }
 ```
 
-*****
+---
 
 ### Clean output
 
-We might probably want to ensure that every time we build our lib, the outcome does not contain any previous style we would have deleted previously. 
+We might probably want to ensure that every time we build our lib, the outcome does not contain any previous style we would have deleted previously.
 
 That’s why we firstly add [rimraf](https://github.com/isaacs/rimraf) to our project to delete the output folder at begin of each build.
 
@@ -63,9 +63,9 @@ That’s why we firstly add [rimraf](https://github.com/isaacs/rimraf) to our pr
 npm i rimraf -D
 ```
 
-*Note that all dependencies we are adding to our project have to be added as development dependencies because none of these are part of the output.*
+_Note that all dependencies we are adding to our project have to be added as development dependencies because none of these are part of the output._
 
-Once rimraf installed, we can initiate  our `build` by editing the `scripts` in `package.json` .
+Once rimraf installed, we can initiate our `build` by editing the `scripts` in `package.json` .
 
 ```json
 "scripts": {
@@ -85,24 +85,22 @@ At this point, altogether, our `package.json` should contains the following:
 
 ```json
 {
-  "name": "bundle-css",
-  "version": "1.0.0",
-  "main": "index.scss",
-  "scripts": {
-    "build": "rimraf css"
-  },
-  "files": [
-    "css"
-  ],
-  "author": "David",
-  "license": "MIT",
-  "devDependencies": {
-    "rimraf": "^3.0.2"
-  }
+	"name": "bundle-css",
+	"version": "1.0.0",
+	"main": "index.scss",
+	"scripts": {
+		"build": "rimraf css"
+	},
+	"files": ["css"],
+	"author": "David",
+	"license": "MIT",
+	"devDependencies": {
+		"rimraf": "^3.0.2"
+	}
 }
 ```
 
-*****
+---
 
 ### SASS
 
@@ -127,11 +125,11 @@ If we give a try to our build script by running `npm run build` , we should disc
 
 ```css
 :fullscreen #main p {
-  background: #3880ff;
+	background: #3880ff;
 }
 ```
 
-*****
+---
 
 ### Autoprefixing
 
@@ -157,18 +155,18 @@ If we run our build pipeline `npm run build` , the output `css` folder should no
 
 ```css
 :-webkit-full-screen #main p {
-  background: #3880ff;
+	background: #3880ff;
 }
 :-ms-fullscreen #main p {
-  background: #3880ff;
+	background: #3880ff;
 }
 :fullscreen #main p {
-  background: #3880ff;
+	background: #3880ff;
 }
 /*# sourceMappingURL=index.css.map */
 ```
 
-*****
+---
 
 ### Optimization
 
@@ -191,10 +189,18 @@ By adding a last script to our chain, we are able to create a minified version o
 If we run one last time `npm run build` we should now discover the minified version of our input CSS in the output folder `css` .
 
 ```css
-:-webkit-full-screen #main p{background:#3880ff}:-ms-fullscreen #main p{background:#3880ff}:fullscreen #main p{background:#3880ff}
+:-webkit-full-screen #main p {
+	background: #3880ff;
+}
+:-ms-fullscreen #main p {
+	background: #3880ff;
+}
+:fullscreen #main p {
+	background: #3880ff;
+}
 ```
 
-*****
+---
 
 ### Altogether
 
@@ -202,31 +208,29 @@ Summarized, here’s the `package.json` which contains all dependencies and buil
 
 ```json
 {
-  "name": "bundle-css",
-  "version": "1.0.0",
-  "main": "index.scss",
-  "scripts": {
-    "build": "rimraf css && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
-    "build-sass": "node-sass --output-style expanded src/index.scss ./css/index.css",
-    "build-autoprefix": "postcss --use autoprefixer --map --output ./css/index.css ./css/index.css",
-    "build-cleancss": "cleancss -o ./css/index.min.css ./css/index.css"
-  },
-  "files": [
-    "css"
-  ],
-  "author": "David",
-  "license": "MIT",
-  "devDependencies": {
-    "autoprefixer": "^9.8.4",
-    "clean-css-cli": "^4.3.0",
-    "node-sass": "^4.14.1",
-    "postcss-cli": "^7.1.1",
-    "rimraf": "^3.0.2"
-  }
+	"name": "bundle-css",
+	"version": "1.0.0",
+	"main": "index.scss",
+	"scripts": {
+		"build": "rimraf css && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+		"build-sass": "node-sass --output-style expanded src/index.scss ./css/index.css",
+		"build-autoprefix": "postcss --use autoprefixer --map --output ./css/index.css ./css/index.css",
+		"build-cleancss": "cleancss -o ./css/index.min.css ./css/index.css"
+	},
+	"files": ["css"],
+	"author": "David",
+	"license": "MIT",
+	"devDependencies": {
+		"autoprefixer": "^9.8.4",
+		"clean-css-cli": "^4.3.0",
+		"node-sass": "^4.14.1",
+		"postcss-cli": "^7.1.1",
+		"rimraf": "^3.0.2"
+	}
 }
 ```
 
-*****
+---
 
 ### Summary
 

@@ -1,5 +1,5 @@
-import {listSlugs} from '$lib/plugins/slug.plugin';
-import type {Slug} from '$lib/types/slug';
+import { listSlugs } from '$lib/plugins/slug.plugin';
+import type { Slug } from '$lib/types/slug';
 
 export const prerender = true;
 
@@ -8,13 +8,13 @@ const url = 'https://daviddalbusco.com/';
 const staticPages: string[] = ['blog', 'portfolio'];
 
 export const GET = async (): Promise<Response> => {
-  const headers: Record<string, string> = {
-    'Cache-Control': 'max-age=3600',
-    'Content-Type': 'application/xml'
-  };
+	const headers: Record<string, string> = {
+		'Cache-Control': 'max-age=3600',
+		'Content-Type': 'application/xml'
+	};
 
-  return new Response(
-    `<?xml version="1.0" encoding="UTF-8" ?>
+	return new Response(
+		`<?xml version="1.0" encoding="UTF-8" ?>
     <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
@@ -28,26 +28,26 @@ export const GET = async (): Promise<Response> => {
         <priority>0.7</priority>
       </url>
       ${pages()
-        .map(
-          (path: string) => `<url>
+				.map(
+					(path: string) => `<url>
         <loc>${url}${path}</loc>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
       </url>`
-        )
-        .join('')}
+				)
+				.join('')}
     </urlset>`,
-    {headers: headers}
-  );
+		{ headers: headers }
+	);
 };
 
 const pages = (): string[] => {
-  const blog: Slug[] = listSlugs({path: 'blog'});
-  const portfolio: Slug[] = listSlugs({path: 'portfolio'});
+	const blog: Slug[] = listSlugs({ path: 'blog' });
+	const portfolio: Slug[] = listSlugs({ path: 'portfolio' });
 
-  return [
-    ...staticPages,
-    ...blog.map(({slug}: Slug) => `blog/${slug}`),
-    ...portfolio.map(({slug}: Slug) => `portfolio/${slug}`)
-  ];
+	return [
+		...staticPages,
+		...blog.map(({ slug }: Slug) => `blog/${slug}`),
+		...portfolio.map(({ slug }: Slug) => `portfolio/${slug}`)
+	];
 };

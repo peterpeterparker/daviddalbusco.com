@@ -10,13 +10,13 @@ canonical: "https://medium.com/@david.dalbusco/the-state-of-progressive-web-apps
 
 ![](https://cdn-images-1.medium.com/max/1600/1*CJ0b6w9jioWxBedVLqS6NQ.jpeg)
 
-*Photo by [YTCount](https://unsplash.com/@ytcount?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://medium.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [YTCount](https://unsplash.com/@ytcount?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://medium.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Following this week’s “[Apple vs Hey](https://twitter.com/dhh/status/1272968382329942017)” story I was curious to know if Progressive Web Apps, which can be seen as a solution to such issues, are mostly preached by developers or are actually already adopted too 🤔.
 
 To answer my questions, I ran some polls on [Twitter](https://twitter.com/) and learned some interesting facts and figures which I would like to share with you in this new blog post.
 
-*****
+---
 
 ### Limitation
 
@@ -26,7 +26,7 @@ That’s why do not take anything you are about to read as granted. Please do se
 
 Also please do note that I am a Progressive Web Apps aficionado. I can try to remain impartial but of course in case of equality, I might be more positive than negative 😉.
 
-*****
+---
 
 ### 47% Of The Developers Do Not Use PWA
 
@@ -50,7 +50,7 @@ This leads me to the following idea: What if the future of Progressive Web Apps 
 
 That is probably too much interpretation or assumptions, but I am really looking forward to the future to get to know if this evolves in this way or not.
 
-*****
+---
 
 ### 63% Of Those Who Do Not Use PWA Are On iOS
 
@@ -72,7 +72,7 @@ I do not know if any designer at Firefox will ever read these lines, but if you 
 
 [Source](https://twitter.com/daviddalbusco/status/1274341226041442304)
 
-*****
+---
 
 ### 8% Of The Developers Rather Like Apps From Google Play
 
@@ -82,13 +82,13 @@ It took me some times to think about possible solutions and I fear that my sugge
 
 That being said, it seems that most developers, **44%** of these who do not use PWA on Android, **7%** of all of them, do not use Progressive Web Apps but rather get applications for the store, respectively Google Play, because they feel like their UX or design is better.
 
-To be honest with you, I do not know how to interpret this fact. To me,  there can be ugly and not performant web applications as much as there can be bad “native” applications (or coming from store) for the same reasons. I think that it is all about concept and execution. Regardless of the technologies, if badly implemented or designed, it will not be stunning at the end.
+To be honest with you, I do not know how to interpret this fact. To me, there can be ugly and not performant web applications as much as there can be bad “native” applications (or coming from store) for the same reasons. I think that it is all about concept and execution. Regardless of the technologies, if badly implemented or designed, it will not be stunning at the end.
 
 [Source](https://twitter.com/daviddalbusco/status/1274324722109595648)
 
 Worth to notice: Following a feedback which mentioned that PWA are maybe most suited for low end devices, I was curious to know if [Kaios](https://www.kaiostech.com/) does support Progressive Web Apps. Guess what? They do not just support PWA, it is also possible to publish these in their [store](https://twitter.com/daviddalbusco/status/1274559473206595584).
 
-*****
+---
 
 ### Conclusion
 

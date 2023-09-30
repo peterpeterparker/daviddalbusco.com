@@ -10,15 +10,15 @@ canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/canister-guard-in-
 
 ![Security from a Cypress Towne Lake event enjoyed the 4th of July fireworks with the rest of the crowd.](https://images.unsplash.com/photo-1571283056653-e9802feac258?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwzMnx8Z3VhcmR8ZW58MHx8fHwxNjcxMTE1ODg1&ixlib=rb-4.0.3&q=80&w=1080)
 
-*Photo by [Illumination Marketing](https://unsplash.com/@illuminationmarketing?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Illumination Marketing](https://unsplash.com/@illuminationmarketing?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-* * *
+---
 
 I recently discovered it was possible to specify a guard function to be executed before update and query functions of canister smart contracts written in Rust on the [Internet Computer](https://internetcomputer.org/).
 
 You might tell me that the following post is just a rip off of the [Crate](https://docs.rs/ic-cdk/latest/ic_cdk/attr.update.html) documentation but, as I only figured out this was possible while having a look at the [transaction notifier](https://github.com/open-ic/transaction-notifier) repo of [OpenChat](https://oc.app/), I thought it was worth a post 😄.
 
-* * *
+---
 
 ## Original approach
 
@@ -76,7 +76,7 @@ While it works as I expected, you can easily imagine that duplicating the same c
 
 That was before I fortunately discovered the **guard** feature 💪.
 
-* * *
+---
 
 ## Guard
 
@@ -154,7 +154,7 @@ The recipe:
 3.  Annotate the functions that need to be protected
 4.  Having fun 😁
 
-* * *
+---
 
 ## Summary
 

@@ -8,11 +8,11 @@ image: "https://cdn-images-1.medium.com/max/1600/1*qSYqGVlUNNhJgsYDxenv9A.jpeg"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*qSYqGVlUNNhJgsYDxenv9A.jpeg)
-*More about Le Gruyère AOP on [MySwitzerland.com](https://www.myswitzerland.com/en-ch/experiences/food-wine/le-gruyere-aop/)*
+_More about Le Gruyère AOP on [MySwitzerland.com](https://www.myswitzerland.com/en-ch/experiences/food-wine/le-gruyere-aop/)_
 
-I recently began a new good old JAVA friend  project for a returning client. One of my first task was to implement a new feature which had, notably, for goal to make the application globally configurable using a JSON property file.
+I recently began a new good old JAVA friend project for a returning client. One of my first task was to implement a new feature which had, notably, for goal to make the application globally configurable using a JSON property file.
 
-I found the outcome of the solution relatively handy and therefore I thought that I would share it in a new blog post. Moreover, as I never wrote any Java blog post so far,  I found it quite challenging and interesting 😉
+I found the outcome of the solution relatively handy and therefore I thought that I would share it in a new blog post. Moreover, as I never wrote any Java blog post so far, I found it quite challenging and interesting 😉
 
 ### Introduction
 
@@ -21,9 +21,9 @@ In this article we are going to:
 1.  Create a new project
 1.  Read a JSON file and property
 1.  Create an ENUM
-1.  Map the properties to a generic  ENUM
+1.  Map the properties to a generic ENUM
 
-*Note: If you already have a project, you could obviously skip the first chapter which has for goal to create a project. Likewise, if you would not like to use Maven, skip it too and include the library we are going to use as requested by your setup.*
+_Note: If you already have a project, you could obviously skip the first chapter which has for goal to create a project. Likewise, if you would not like to use Maven, skip it too and include the library we are going to use as requested by your setup._
 
 ### Create a new project
 
@@ -104,10 +104,10 @@ public class App {
     public static void main(String[] args) {
         // Load and init the configuration library
         final Config conf = ConfigFactory.load();
-        
+
         // Get the value of the JSON property
         final String cheese = conf.getString("swiss.cheese");
-        
+
         System.out.println(String.format("I like %s 🧀", cheese));
     }
 }
@@ -200,7 +200,7 @@ public static void main(String[] args) {
 }
 ```
 
-Voilà, that’s it, nothing more, nothing less 🎉 
+Voilà, that’s it, nothing more, nothing less 🎉
 
 You could try to run our project using the previous command line and if everything goes according plan, the output should looks like the following:
 

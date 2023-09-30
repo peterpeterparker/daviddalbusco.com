@@ -12,13 +12,13 @@ canonical: "https://daviddalbusco.medium.com/a-sass-mixin-to-build-your-own-css-
 
 Photo by [Mike Dorner](https://unsplash.com/fr/@dorner?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/sf_1ZDA1YFw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-***
+---
 
 In a recent project I built from scratch, I was intrigued by the idea of experimenting with chunking my app to optimize its performance when deployed on the blockchain. One of my primary goals was to minimize the number of CSS files included in the project. As I explored this further, I had the idea of using components with a class-based approach similar to Tailwind CSS. However, I steered clear of relying on any external frameworks, as I’ve always been cautious about adding unnecessary dependencies if they aren’t required. I also believed that this experiment could provide greater flexibility in the long run.
 
 In a nutshell, I ended up creating a Sass mixin for building my own class-based framework. In this blog post, I’m excited to share it with you.
 
->  The project we built together with my colleagues is called [Oisy](https://oisy.com/). It’s an [open-source](https://github.com/dfinity/oisy-wallet) Ethereum wallet hosted on the [Internet Computer](https://internetcomputer.org/).
+> The project we built together with my colleagues is called [Oisy](https://oisy.com/). It’s an [open-source](https://github.com/dfinity/oisy-wallet) Ethereum wallet hosted on the [Internet Computer](https://internetcomputer.org/).
 
 ## Overview
 
@@ -26,8 +26,8 @@ The idea behind the mixin is to eliminate code duplication while enabling the ge
 
 ```html
 <div class="flex justify-center gap-1 mt-4">
-    <span class="text-blue">Hello</span>
-    <span class="text-cyclamen font-bold">World</span>
+	<span class="text-blue">Hello</span>
+	<span class="text-cyclamen font-bold">World</span>
 </div>
 ```
 
@@ -57,101 +57,101 @@ $breakpoint-large: 1024px;
 $breakpoint-extra-large: 1300px;
 
 @mixin min-width($breakpoint) {
-    @if ($breakpoint == xsmall) {
-       @media (min-width: $breakpoint-xsmall) {
-          @content;
-       }
-    } @else if ($breakpoint == small) {
-       @media (min-width: $breakpoint-small) {
-          @content;
-       }
-    } @else if ($breakpoint == medium) {
-       @media (min-width: $breakpoint-medium) {
-          @content;
-       }
-    } @else if ($breakpoint == large) {
-       @media (min-width: $breakpoint-large) {
-          @content;
-       }
-    } @else if ($breakpoint == xlarge) {
-       @media (min-width: $breakpoint-extra-large) {
-          @content;
-       }
-    } @else {
-       @error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
-    }
+	@if ($breakpoint == xsmall) {
+		@media (min-width: $breakpoint-xsmall) {
+			@content;
+		}
+	} @else if ($breakpoint == small) {
+		@media (min-width: $breakpoint-small) {
+			@content;
+		}
+	} @else if ($breakpoint == medium) {
+		@media (min-width: $breakpoint-medium) {
+			@content;
+		}
+	} @else if ($breakpoint == large) {
+		@media (min-width: $breakpoint-large) {
+			@content;
+		}
+	} @else if ($breakpoint == xlarge) {
+		@media (min-width: $breakpoint-extra-large) {
+			@content;
+		}
+	} @else {
+		@error "UNKNOWN MEDIA BREAKPOINT #{$breakpoint}";
+	}
 }
 
 @mixin light-theme() {
-    :global(html[theme='light']) {
-       @content;
-    }
+	:global(html[theme="light"]) {
+		@content;
+	}
 }
 
 @mixin dark-theme() {
-    :global(html[theme='dark']) {
-       @content;
-    }
+	:global(html[theme="dark"]) {
+		@content;
+	}
 }
 ```
 
->  As I’ve already shared and explained the snippet above in a previous blog post, I won’t go into extensive detail here. If you’re interested in learning more, please refer to my article titled “[Sass Media Queries Mixins](https://medium.com/geekculture/sass-media-queries-mixins-1c5e5f605704)”.
+> As I’ve already shared and explained the snippet above in a previous blog post, I won’t go into extensive detail here. If you’re interested in learning more, please refer to my article titled “[Sass Media Queries Mixins](https://medium.com/geekculture/sass-media-queries-mixins-1c5e5f605704)”.
 
 ## Class Generator
 
 Finally, we’ve reached the heart of our solution. To produce the responsive classes we’ve discussed, I’ve created the following Sass mixin in a file I’ve named `_utilities.scss`:
 
 ```scss
-@use 'media';
+@use "media";
 
 @mixin generate($selector, $property, $value) {
-    .xs\:#{$selector} {
-       @include media.min-width(xsmall) {
-          #{$property}: $value;
-       }
-    }
+	.xs\:#{$selector} {
+		@include media.min-width(xsmall) {
+			#{$property}: $value;
+		}
+	}
 
-    .sm\:#{$selector},
-    .sm\:#{$selector}[class*='-'],
-    .sm\:#{$selector}[class*='xs\:'] {
-       @include media.min-width(small) {
-          #{$property}: $value;
-       }
-    }
+	.sm\:#{$selector},
+	.sm\:#{$selector}[class*="-"],
+	.sm\:#{$selector}[class*="xs\:"] {
+		@include media.min-width(small) {
+			#{$property}: $value;
+		}
+	}
 
-    .md\:#{$selector},
-    .md\:#{$selector}[class*='-'],
-    .md\:#{$selector}[class*='xs\:'],
-    .md\:#{$selector}[class*='sm\:'] {
-       @include media.min-width(medium) {
-          #{$property}: $value;
-       }
-    }
+	.md\:#{$selector},
+	.md\:#{$selector}[class*="-"],
+	.md\:#{$selector}[class*="xs\:"],
+	.md\:#{$selector}[class*="sm\:"] {
+		@include media.min-width(medium) {
+			#{$property}: $value;
+		}
+	}
 
-    .lg\:#{$selector},
-    .lg\:#{$selector}[class*='-'],
-    .lg\:#{$selector}[class*='xs\:'],
-    .lg\:#{$selector}[class*='sm\:'],
-    .lg\:#{$selector}[class*='md\:'] {
-       @include media.min-width(large) {
-          #{$property}: $value;
-       }
-    }
+	.lg\:#{$selector},
+	.lg\:#{$selector}[class*="-"],
+	.lg\:#{$selector}[class*="xs\:"],
+	.lg\:#{$selector}[class*="sm\:"],
+	.lg\:#{$selector}[class*="md\:"] {
+		@include media.min-width(large) {
+			#{$property}: $value;
+		}
+	}
 
-    .xl\:#{$selector},
-    .xl\:#{$selector}[class*='-'],
-    .xl\:#{$selector}[class*='xs\:'],
-    .xl\:#{$selector}[class*='sm\:'],
-    .xl\:#{$selector}[class*='md\:'],
-    .xl\:#{$selector}[class*='lg\:'] {
-       @include media.min-width(xlarge) {
-          #{$property}: $value;
-       }
-    }
+	.xl\:#{$selector},
+	.xl\:#{$selector}[class*="-"],
+	.xl\:#{$selector}[class*="xs\:"],
+	.xl\:#{$selector}[class*="sm\:"],
+	.xl\:#{$selector}[class*="md\:"],
+	.xl\:#{$selector}[class*="lg\:"] {
+		@include media.min-width(xlarge) {
+			#{$property}: $value;
+		}
+	}
 
-    .#{$selector} {
-       #{$property}: $value;
-    }
+	.#{$selector} {
+		#{$property}: $value;
+	}
 }
 ```
 
@@ -173,51 +173,51 @@ For example, when using the generator with a selector called `block` and specify
  */
 
 @media (min-width: 320px) {
-    .xs\:block {
-       display: block;
-    }
+	.xs\:block {
+		display: block;
+	}
 }
 
 @media (min-width: 576px) {
-    .sm\:block,
-    .sm\:block[class*='-'],
-    .sm\:block[class*='xs:'] {
-       display: block;
-    }
+	.sm\:block,
+	.sm\:block[class*="-"],
+	.sm\:block[class*="xs:"] {
+		display: block;
+	}
 }
 
 @media (min-width: 768px) {
-    .md\:block,
-    .md\:block[class*='-'],
-    .md\:block[class*='xs:'],
-    .md\:block[class*='sm:'] {
-       display: block;
-    }
+	.md\:block,
+	.md\:block[class*="-"],
+	.md\:block[class*="xs:"],
+	.md\:block[class*="sm:"] {
+		display: block;
+	}
 }
 
 @media (min-width: 1024px) {
-    .lg\:block,
-    .lb\:block[class*='-'],
-    .lg\:block[class*='xs:'],
-    .lg\:block[class*='sm:'],
-    .lg\:block[class*='md:'] {
-       display: block;
-    }
+	.lg\:block,
+	.lb\:block[class*="-"],
+	.lg\:block[class*="xs:"],
+	.lg\:block[class*="sm:"],
+	.lg\:block[class*="md:"] {
+		display: block;
+	}
 }
 
 @media (min-width: 1300px) {
-    .xl\:block,
-    .xl\:block[class*='-'],
-    .xl\:block[class*='xs:'],
-    .xl\:block[class*='sm:'],
-    .xl\:block[class*='md:'],
-    .xl\:block[class*='lg:'] {
-       display: block;
-    }
+	.xl\:block,
+	.xl\:block[class*="-"],
+	.xl\:block[class*="xs:"],
+	.xl\:block[class*="sm:"],
+	.xl\:block[class*="md:"],
+	.xl\:block[class*="lg:"] {
+		display: block;
+	}
 }
 
 .block {
-    display: block;
+	display: block;
 }
 ```
 
@@ -232,7 +232,7 @@ To demonstrate this usage, I’ll share the classes I’ve declared, which are u
 `display.scss` :
 
 ```scss
-@use '../mixins/utilities';
+@use "../mixins/utilities";
 
 $property: display;
 
@@ -241,11 +241,10 @@ $property: display;
 @include utilities.generate(flex, $property, flex);
 ```
 
-
 `justify-content.scss` :
 
 ```scss
-@use '../mixins/utilities';
+@use "../mixins/utilities";
 
 $property: justify-content;
 
@@ -258,7 +257,7 @@ $property: justify-content;
 `gap.scss` :
 
 ```scss
-@use '../mixins/utilities';
+@use "../mixins/utilities";
 
 $property: gap;
 
@@ -267,12 +266,12 @@ $property: gap;
 @include utilities.generate(gap-4, #{$property}, var(--padding-4x));
 ```
 
->  Note that in the application, I make use of global CSS variables, such as --padding set to 8px.
+> Note that in the application, I make use of global CSS variables, such as --padding set to 8px.
 
 `margin.scss` :
 
 ```scss
-@use '../mixins/utilities';
+@use "../mixins/utilities";
 
 $property: margin;
 
@@ -320,7 +319,7 @@ $property: margin;
 `color.scss` :
 
 ```scss
-@use '../mixins/utilities';
+@use "../mixins/utilities";
 
 $property: color;
 
@@ -331,7 +330,7 @@ $property: color;
 `font-weight.scss` :
 
 ```scss
-@use '../mixins/utilities';
+@use "../mixins/utilities";
 
 $property: font-weight;
 
@@ -341,13 +340,12 @@ $property: font-weight;
 
 As you can see, it’s quite straightforward to generate these class helpers using the mixin we’ve created above. This approach not only simplifies class declarations but also reduces them to just a few lines of code.
 
->  For more examples of usage, you can explore the Oisy’s [repository](https://github.com/dfinity/oisy-wallet/tree/main/src/frontend/src/lib/styles/utilities).
+> For more examples of usage, you can explore the Oisy’s [repository](https://github.com/dfinity/oisy-wallet/tree/main/src/frontend/src/lib/styles/utilities).
 
 ## Conclusion
 
 In closing, we’ve explored the creation of a dynamic and responsive class generation solution using Sass mixins. This approach has fulfilled my initial intent and exploration. While I may not be certain about reusing it in upcoming projects, there are certainly several valuable concepts within it that I believe are worth revisiting in the future.
 
 I must admit, as a developer who generally isn’t particularly fond of CSS class-based approaches, I not only enjoyed developing it but have also found a certain affinity for using it.
-
 
 David

@@ -10,7 +10,7 @@ canonical: "https://medium.com/@david.dalbusco/how-to-make-your-pwa-offline-on-d
 
 ![](https://cdn-images-1.medium.com/max/1600/1*LBBws2VRETowxwxMNKN--w.jpeg)
 
-*Photo by [Kym Ellis](https://unsplash.com/@kymellis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/wifi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Kym Ellis](https://unsplash.com/@kymellis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/wifi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Finally!
 
@@ -21,7 +21,7 @@ We have now implemented and launched this new capability and that’s why I woul
 <iframe width="280" height="158" src="https://www.youtube.com/embed/J_VyyIlLuWg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe
 <br/>
 
-*****
+---
 
 ### User Experience (UX)
 
@@ -33,7 +33,7 @@ This approach is the one we implemented, and the one I am sharing with you.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*fUjlTckDh0X3VthqvH0ANg.jpeg)
 
-*****
+---
 
 ### Introduction
 
@@ -48,11 +48,11 @@ async goOffline() {
 }
 ```
 
-*****
+---
 
 ### Lazy Load
 
-Our presentations are lazy loaded to improve performances. When you are browsing slides, only the current, previous and next one are loaded. Therefore, the first action required in order to go offline is downloading  locally all their assets (images, charts data, code languages etc.).
+Our presentations are lazy loaded to improve performances. When you are browsing slides, only the current, previous and next one are loaded. Therefore, the first action required in order to go offline is downloading locally all their assets (images, charts data, code languages etc.).
 
 This can also be the case in your app. Imagine you have got a lazy loaded image down at the bottom of a page or in another location not accessed yet by your user. One solution would be to add it to your service worker precaching strategy but if it is dynamic and unknown at build time, you can’t do so.
 
@@ -85,38 +85,38 @@ We are relying on [Workbox](https://developers.google.com/web/tools/workbox/) to
 
 ```javascript
 workbox.routing.registerRoute(
-  /^(?!.*(?:unsplash|giphy|tenor|firebasestorage))(?=.*(?:png|jpg|jpeg|svg|webp|gif)).*/,
-  new workbox.strategies.CacheFirst({
-    cacheName: 'images',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxAgeSeconds: 30 * 24 * 60 * 60,
-        maxEntries: 60,
-      }),
-    ],
-  })
+	/^(?!.*(?:unsplash|giphy|tenor|firebasestorage))(?=.*(?:png|jpg|jpeg|svg|webp|gif)).*/,
+	new workbox.strategies.CacheFirst({
+		cacheName: "images",
+		plugins: [
+			new workbox.expiration.Plugin({
+				maxAgeSeconds: 30 * 24 * 60 * 60,
+				maxEntries: 60
+			})
+		]
+	})
 );
 
 workbox.routing.registerRoute(
-  /^(?=.*(?:unsplash|giphy|tenor|firebasestorage))(?=.*(?:png|jpg|jpeg|svg|webp|gif)).*/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: 'cors-images',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxAgeSeconds: 30 * 24 * 60 * 60,
-        maxEntries: 60,
-      }),
-      new workbox.cacheableResponse.CacheableResponse({
-        statuses: [0, 200],
-      }),
-    ],
-  })
+	/^(?=.*(?:unsplash|giphy|tenor|firebasestorage))(?=.*(?:png|jpg|jpeg|svg|webp|gif)).*/,
+	new workbox.strategies.StaleWhileRevalidate({
+		cacheName: "cors-images",
+		plugins: [
+			new workbox.expiration.Plugin({
+				maxAgeSeconds: 30 * 24 * 60 * 60,
+				maxEntries: 60
+			}),
+			new workbox.cacheableResponse.CacheableResponse({
+				statuses: [0, 200]
+			})
+		]
+	})
 );
 ```
 
 If you are curious about all strategies we developed, checkout out our [sw.js](https://github.com/deckgo/deckdeckgo/blob/master/studio/src/sw.js) script in our open source repo.
 
-*****
+---
 
 ### Save Content
 
@@ -131,7 +131,7 @@ import {set} from 'idb-keyval';
 
 private saveDeck(deckId: string): Promise<Deck> {
   return new Promise(async (resolve, reject) => {
-    
+
     // 1. Retrieve data from online DB
     const deck = await this.deckOnlineService.get(deckId);
 
@@ -149,7 +149,7 @@ private saveDeck(deckId: string): Promise<Deck> {
 
 At this point you may ask yourself what’s the point? It is nice to have the content locally saved but it does not mean yet that the user will be able to use it once offline right? Moreover, you may fear that it would need a full rewrite of the application to consume these data isn’t it?
 
-Fortunately, our application was already separated in different layers and with the help of a new global state, which tells if the application is `offline` or `online` , we were able to extend our singleton services to  make these behave differently with the databases according the mode.
+Fortunately, our application was already separated in different layers and with the help of a new global state, which tells if the application is `offline` or `online` , we were able to extend our singleton services to make these behave differently with the databases according the mode.
 
 Concretely, if online it interacts with Firestore, if offline, it interacts with IndexedDB.
 
@@ -229,7 +229,7 @@ get(deckId: string): Promise<Deck> {
 
 As you can notice, we are using the unique identifier as storage key which makes the all system really handy as we are able to fetch data locally almost as we would do if we would do with the online database. Doing so we did not had to modify the other layers of the application, everything was kind of working offline almost out of the box without any further changes.
 
-*****
+---
 
 ### Cache Assets
 
@@ -261,13 +261,13 @@ async function cacheUrls(cacheName: string, urls: string[]) {
 
 If you are eager to know more about this specific feature, I published earlier this year another [blog post](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) about it.
 
-*****
+---
 
 ### Toggle Offline
 
 Finally, as everything is cached and the internet access can now safely be turned off, we can save a global state to instruct our application to works in an offline mode.
 
-*****
+---
 
 ### Go Online
 
@@ -296,7 +296,7 @@ private async uploadDeck(deck: Deck) {
 
 Happy to develop this process further if requested, ping me with your questions 👋.
 
-*****
+---
 
 ### Summary
 

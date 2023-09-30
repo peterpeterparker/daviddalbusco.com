@@ -33,10 +33,10 @@ First, the easy part, we add a button to our website:
 
 Then we implement the function `googleLogin()` which does the following:
 
-* It generates a random `state` to identify the login flow
-* Writes this `state` in a cookie (which should be available across our
-subdomains)
-* It finally redirects the user to her/his social account
+- It generates a random `state` to identify the login flow
+- Writes this `state` in a cookie (which should be available across our
+  subdomains)
+- It finally redirects the user to her/his social account
 
 ```
 constructor(@Inject(DOCUMENT) private document: Document) {
@@ -55,7 +55,7 @@ googleLogin() {
      // Then we build our social login url
      const googleUrl: string = url + 'client_id='
      + webClientId +
- '&response_type=code&scope=openid%20profile%20email&redirect_uri=' 
+ '&response_type=code&scope=openid%20profile%20email&redirect_uri='
          + encodeURIComponent(pwaUrl)
          + '&nonce=' + state + '&state=' + state;
      // And we redirect the user to his google account
@@ -66,7 +66,7 @@ private writeCookieState(state: string, googleAuth: boolean)
         : Promise<{}> {
 
   return new Promise((resolve) => {
- 
+
  // Note here the specific domain beginning with a point
 // That’s one of the key in order to be able to read the cookie from the subdomain
     const baseDomain = '.mydomain.com’;
@@ -111,19 +111,19 @@ ngOnInit() {
 ```
 
 2. Once our PWA is fully loaded, we could start automatically the login process.
-Before displaying some codes, here a summary of what we are going to do:
+   Before displaying some codes, here a summary of what we are going to do:
 
-* First we will check if a `state` and a `code` have been read and added to our
-provider
-* Then we will try to retrieve the `state` we previously saved in the cross-domain
-cookie
-* Finally we will compare both states to validate the flow, respectively to
-validate the fact that the user who tries to log in is effectively the user who
-wants to log in
+- First we will check if a `state` and a `code` have been read and added to our
+  provider
+- Then we will try to retrieve the `state` we previously saved in the cross-domain
+  cookie
+- Finally we will compare both states to validate the flow, respectively to
+  validate the fact that the user who tries to log in is effectively the user who
+  wants to log in
 
 ```
 constructor(@Inject(DOCUMENT) private document: Document) {
-    
+
 }
 private ionViewWillEnter() {
     const state: string = this.loginService.getState();

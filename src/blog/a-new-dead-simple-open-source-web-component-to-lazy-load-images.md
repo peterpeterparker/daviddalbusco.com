@@ -8,9 +8,9 @@ image: "https://cdn-images-1.medium.com/max/2400/1*fGVtZ0a_ki-Vg14YzJqKYQ.jpeg"
 ---
 
 ![](https://cdn-images-1.medium.com/max/2400/1*fGVtZ0a_ki-Vg14YzJqKYQ.jpeg)
-*A lazy good girl or boy. Photo by [Brianna Santellan](https://unsplash.com/photos/Zwvxj3ytTHcutm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_A lazy good girl or boy. Photo by [Brianna Santellan](https://unsplash.com/photos/Zwvxj3ytTHcutm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-Last month I published a blog post in which I tried to demonstrate how to [create a Web Component to lazy load images using Intersection Observer](https://dev.to/daviddalbusco/create-a-web-component-to-lazy-load-images-using-intersection-observer-45gf) and it turned out afterwards, that I actually had  to use my own medicine several times while developing [DeckDeckGo](https://deckdeckgo.com), our upcoming open source editor for presentations.
+Last month I published a blog post in which I tried to demonstrate how to [create a Web Component to lazy load images using Intersection Observer](https://dev.to/daviddalbusco/create-a-web-component-to-lazy-load-images-using-intersection-observer-45gf) and it turned out afterwards, that I actually had to use my own medicine several times while developing [DeckDeckGo](https://deckdeckgo.com), our upcoming open source editor for presentations.
 
 That’s why we are happy to publish on [npm](https://www.npmjs.com/package/deckdeckgo-lazy-img) today a new dead simple
 open source Web Component, developed with [StencilJS](https://stenciljs.com), to lazy load images in any modern web projects regardless of which framework (or none) you are using 😃
@@ -18,7 +18,7 @@ open source Web Component, developed with [StencilJS](https://stenciljs.com), to
 ### But why?
 
 ![](https://cdn-images-1.medium.com/max/1600/1*evsRlXzetp7FdEOK2ynL1Q.gif)
-*But why another Web Component to lazy load images?*
+_But why another Web Component to lazy load images?_
 
 You may ask yourself why we had to develop and publish a new Web Component to lazy load images when it’s so easy to just write a couple of lines of Javascript, using the [Intersection Observer API](https://developer.mozilla.org/fr/docs/Web/API/Intersection_Observer_API), to already have images supporting lazy loading 🤔
 
@@ -27,8 +27,8 @@ In fact, as I said before, we are developing an open source web editor for prese
 As we were saving the content and manipulating the `img` elements of the DOM, we were not able to ensure that we were always saving images in a “not loaded state” in our database, without having to add a couple of extra functions and recursions, which, we were not agree to implement, as it would have added complexity and computation time to the process. That’s why we came up to the idea of using a custom Web Component to isolate the lazy loading process and therefore to always be able to sav and load images in and from our database in the correct state without any extra checks.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*6w47kZMDJi-TfOMt1LJd8Q.gif)
-*Funny gifs but it took us actually three days to figure out what was the
-solution* 😂
+_Funny gifs but it took us actually three days to figure out what was the
+solution_ 😂
 
 ### Integration with a framework
 
@@ -40,7 +40,7 @@ npm i @deckdeckgo/lazy-img --save
 
 Once installed, you could integrate it according the needs of the framework you are using like described in the Stencil’s [documentation](https://stenciljs.com/docs/overview).
 
-Finally you could use the component easily  in your project, for example by replacing your `img` tags with its tag, respectively `deckgo-lazy-img` (note that instead of `src` and `alt` you would have to use `img-src` and `img-alt`). 
+Finally you could use the component easily in your project, for example by replacing your `img` tags with its tag, respectively `deckgo-lazy-img` (note that instead of `src` and `alt` you would have to use `img-src` and `img-alt`).
 
 Summarized, you could use the component like the following:
 
@@ -55,7 +55,7 @@ That’s it, your image is lazy loaded 😄
 
 ### Integration without a framework
 
-Our component could also be use in any projects where no framework would be use. For that purpose you would just use the component from a CDN, like for example from [Unpkg](https://unpkg.com), and then consume it like displayed above. 
+Our component could also be use in any projects where no framework would be use. For that purpose you would just use the component from a CDN, like for example from [Unpkg](https://unpkg.com), and then consume it like displayed above.
 
 Again, summarized, you could do the following:
 

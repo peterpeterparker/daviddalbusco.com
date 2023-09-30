@@ -10,9 +10,9 @@ canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/migrate-canister-s
 
 ![Whale tail](https://images.unsplash.com/photo-1464925885047-b49393632a77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxOHx8bWlncmF0ZXxlbnwwfHx8fDE2Njc3MjY0NDU&ixlib=rb-4.0.3&q=80&w=1080)
 
-*Photo by [Jeremy Bishop](https://unsplash.com/@jeremybishop?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Jeremy Bishop](https://unsplash.com/@jeremybishop?utm_source=Papyrs&utm_medium=referral) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-* * *
+---
 
 Last Friday (November 4, 2022) I upgraded the code of the 1'000+ canister smart contracts of [Papyrs](https://papy.rs) - an open-source, privacy-first, decentralized blogging platform. Among these, half of them have had their source code rewritten entirely from Motoko to Rust.
 
@@ -25,7 +25,7 @@ While on the paper and in practice switching the code base from one to the other
 
 Two topics I would like to share with you in this blog post.
 
-* * *
+---
 
 ## 1\. Creating Rust canister on the fly
 
@@ -33,7 +33,7 @@ On Papyrs there is no single smart contract that holds the data for all the user
 
 As I was looking to migrate that last type of canisters, I had to find a way to create Rust based canister on the fly from my existing "manager" canister written in Motoko.
 
-*\> Interested to get to know how I dynamically create smart contracts on the fly in Motoko? Checkout this 👉 [blog post](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/dynamically-create-canister-smart-contracts-in-motoko).*
+_\> Interested to get to know how I dynamically create smart contracts on the fly in Motoko? Checkout this 👉 [blog post](https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/dynamically-create-canister-smart-contracts-in-motoko)._
 
 I rapidly discovered that it was possible to solve such feature by actually changing few lines of my code. Indeed, importing a Rust canister within Motoko and within the same project with the help of a simple `import` just works out.
 
@@ -90,7 +90,7 @@ actor Main {
         let { canister_id } = await ic.create_canister({ settings = null });
 
         // Set the controllers of the new canister
-        // In this case this canister, the caller and the canister itself        
+        // In this case this canister, the caller and the canister itself
         let self : Principal = Principal.fromActor(Main);
         let controllers : ?[Principal] = ?[canister_id, caller, self];
 
@@ -168,48 +168,47 @@ Finally, I created a NodeJS script that reads the wasm code and calls above endp
 
 ```javascript
 import { readFile } from "fs/promises";
-import {canisterId, managerActor} from "./manager.actor.mjs";
+import { canisterId, managerActor } from "./manager.actor.mjs";
 
 const loadWasm = async () => {
-  const buffer = await readFile(
-    `${process.cwd()}/.dfx/local/canisters/my_rust_canister/my_rust_canister.wasm`
-  );
-  return [...new Uint8Array(buffer)];
+	const buffer = await readFile(
+		`${process.cwd()}/.dfx/local/canisters/my_rust_canister/my_rust_canister.wasm`
+	);
+	return [...new Uint8Array(buffer)];
 };
 
 const resetWasm = async () => {
-  await managerActor.storateResetWasm();
-}
+	await managerActor.storateResetWasm();
+};
 
 const installWasm = async (wasmModule) => {
-  console.log(`Installing wasm code in: ${canisterId}`);
+	console.log(`Installing wasm code in: ${canisterId}`);
 
-  const chunkSize = 700000;
+	const chunkSize = 700000;
 
-  const upload = async (chunks) => {
-    const result = await managerActor.storageLoadWasm(chunks);
-    console.log("Chunks:", result);
-  };
+	const upload = async (chunks) => {
+		const result = await managerActor.storageLoadWasm(chunks);
+		console.log("Chunks:", result);
+	};
 
-  for (let start = 0; start < wasmModule.length; start += chunkSize) {
-    const chunks = wasmModule.slice(start, start + chunkSize);
-    await upload(chunks);
-  }
+	for (let start = 0; start < wasmModule.length; start += chunkSize) {
+		const chunks = wasmModule.slice(start, start + chunkSize);
+		await upload(chunks);
+	}
 
-  console.log(`Done: ${canisterId}`);
+	console.log(`Done: ${canisterId}`);
 };
 
 (async () => {
-  const wasmModule = await loadWasm();
+	const wasmModule = await loadWasm();
 
-  // Install wasm in manager
-  await resetWasm();
-  await installWasm(wasmModule);
+	// Install wasm in manager
+	await resetWasm();
+	await installWasm(wasmModule);
 })();
-
 ```
 
-* * *
+---
 
 ## 2\. Upgrading and preserving state
 
@@ -258,7 +257,7 @@ actor Demo {
 
 Fortunately the amazing IC community shined once again and thanks to the help of [Frederik Rothenberger](https://forum.dfinity.org/u/frederikrothenberger) and particularly to [Alexander Vtyurin](https://forum.dfinity.org/u/senior.joinu) code snippet, the biggest issue I had could be resolved on the [forum](https://forum.dfinity.org/t/upgrade-canister-from-motoko-to-rust-with-stable-memory/)!
 
-In Rust, the stable memory that has been populated before the upgrade can be read in a post upgrade hook with the help of the [stable API](https://docs.rs/ic-cdk/latest/ic_cdk/api/stable/index.html) and decoded using candid [decode\_args](https://docs.rs/candid/latest/candid/utils/fn.decode_args.html).
+In Rust, the stable memory that has been populated before the upgrade can be read in a post upgrade hook with the help of the [stable API](https://docs.rs/ic-cdk/latest/ic_cdk/api/stable/index.html) and decoded using candid [decode_args](https://docs.rs/candid/latest/candid/utils/fn.decode_args.html).
 
 ```rust
 mod types;
@@ -283,7 +282,7 @@ fn post_upgrade() {
     let mut stable_length_buf = [0u8; std::mem::size_of::<u32>()];
     stable_read(0, &mut stable_length_buf);
     let stable_length = u32::from_le_bytes(stable_length_buf);
- 
+
     let mut buf = vec![0u8; stable_length as usize];
     stable_read(std::mem::size_of::<u32>() as u32, &mut buf);
     // END: read
@@ -327,25 +326,25 @@ pub mod demo {
 
 Above snippet are the corresponding types for the preceding Motoko code and here are the most important takeover of such a conversion:
 
-*   variable names have to match. If a stable variable is named `test` in Motoko, it has to be named `test` in Rust.
-*   all root types that are decoded from the stable memory become optional regardless if they were declared mandatory or not in previous code.
-*   not declaring these types as optional leads to a decoding error that will be thrown in the local IC started with dfx.
-*   any type at any levels of the conversion that does not match the original type will lead to a silent error (⚠️) and will have for effect to decode to none. e.g. in above example, if I would had declared `modified` as a `u128` instead of a the correct `candid::int` - which relates to the Motoko `Time` - the all `entries` would just have been decoded to none. No error, no stracktrace, just none and an ocean of tears.
+- variable names have to match. If a stable variable is named `test` in Motoko, it has to be named `test` in Rust.
+- all root types that are decoded from the stable memory become optional regardless if they were declared mandatory or not in previous code.
+- not declaring these types as optional leads to a decoding error that will be thrown in the local IC started with dfx.
+- any type at any levels of the conversion that does not match the original type will lead to a silent error (⚠️) and will have for effect to decode to none. e.g. in above example, if I would had declared `modified` as a `u128` instead of a the correct `candid::int` - which relates to the Motoko `Time` - the all `entries` would just have been decoded to none. No error, no stracktrace, just none and an ocean of tears.
 
 Once the memory read and re-structured, the upgrade was almost achieved. There was no other big blockers. I could persist the state and all data were still there.
 
-* * *
+---
 
 ## Sample repo
 
 To validate the hypothesis of such a migration, I developed both chapters in two distinctive sample repo. Their code is not as clean as the final implementation but if they can be useful here are these:
 
-*   Motoko Rust interop validation 👉 [https://github.com/peterpeterparker/motoko\_rust\_interop](https://github.com/peterpeterparker/motoko_rust_interop)
-*   Motoko to Rust migration 👉 [https://github.com/peterpeterparker/motoko\_to\_rust\_migration](https://github.com/peterpeterparker/motoko_to_rust_migration)
+- Motoko Rust interop validation 👉 [https://github.com/peterpeterparker/motoko_rust_interop](https://github.com/peterpeterparker/motoko_rust_interop)
+- Motoko to Rust migration 👉 [https://github.com/peterpeterparker/motoko_to_rust_migration](https://github.com/peterpeterparker/motoko_to_rust_migration)
 
 My migration being over, the related code I executed on mainnet has been archived but, you can still find it in the history of the backend and providers of Papyrs 👉 [https://github.com/papyrs/ic](https://github.com/papyrs/ic)
 
-* * *
+---
 
 ## Summary
 

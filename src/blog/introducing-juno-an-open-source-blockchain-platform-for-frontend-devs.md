@@ -45,7 +45,7 @@ Our easy-to-use SDKs support authentication via [Internet Identity](https://inte
 Authentication integrates tightly with other Juno services, like [datastore](https://juno.build/docs/build/datastore) and [storage](https://juno.build/docs/build/storage):
 
 ```javascript
-import { signIn } from '@junobuild/core';
+import { signIn } from "@junobuild/core";
 
 const btn = document.querySelector("#signin");
 btn?.addEventListener("click", signIn, { passive: true });
@@ -62,25 +62,25 @@ Juno Datastore can be use to add persistence to your application using simple co
 Collections specify which users and/or administrators have access to their data. Juno itself does _not_ have access to data in collections (unless you make it public, of course). Juno also gives you the possibility to design your architecture so that even _you_ (the developer of your application) can have no access to the data saved by your users.
 
 ```typescript
-import { getDoc, setDoc } from '@junobuild/core';
+import { getDoc, setDoc } from "@junobuild/core";
 
 const collection = "my_collection";
 const key = "my_key";
 
 const doc = await getDoc({
-  collection,
-  key
+	collection,
+	key
 });
 
 await setDoc({
-  collection,
-  doc: {
-   key,
-   ...doc,
-   data: {
-    email: myNewEmail
-   }
-  }
+	collection,
+	doc: {
+		key,
+		...doc,
+		data: {
+			email: myNewEmail
+		}
+	}
 });
 ```
 
@@ -95,9 +95,9 @@ Juno Storage is the easiest way to let your users upload and manage their files 
 ```javascript
 const input = document.querySelector("input");
 
-const {downloadUrl} = await uploadFile({
-    data: input.files[0],
-    collection: 'images'
+const { downloadUrl } = await uploadFile({
+	data: input.files[0],
+	collection: "images"
 });
 ```
 

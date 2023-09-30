@@ -10,7 +10,7 @@ canonical: "https://medium.com/@david.dalbusco/create-a-react-custom-hooks-for-y
 
 ![](https://cdn-images-1.medium.com/max/1600/1*5KdZblpLM1bckDE3zr4kFA.jpeg)
 
-*Photo by [Tamara Gore](https://unsplash.com/@thenightstxlker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Tamara Gore](https://unsplash.com/@thenightstxlker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 When I walk up this morning, I said to myself: “Look David, now is the day, you should try to develop a [React](https://reactjs.org) custom hooks”.
 
@@ -21,9 +21,7 @@ The experiment went well and was implemented faster than I expected, therefore I
 Web Components are working everywhere, period. That being said, when used in React, the implementation tends to become a bit more verbose, notably because `events` have to be attached “manually”. For example, you would not be able **out of the box** with a [Stencil](https://stenciljs.com) Web Component to do the following.
 
 ```javascript
-<my-component 
-    onMyEvent={($event) => console.log($event)}>
-</my-component>
+<my-component onMyEvent={($event) => console.log($event)}></my-component>
 ```
 
 To overcome this issue, you could bundle your Web Component with their related output targets using the [stencil-ds-plugins](https://github.com/ionic-team/stencil-ds-plugins) and the problem is solved. But if you don’t, or can’t, then you have to manually register event listeners which, as I said above, could quickly become a bit verbose.
@@ -31,10 +29,9 @@ To overcome this issue, you could bundle your Web Component with their related o
 ```javascript
 const ref = useRef();
 
-ref.current.addEventListener('myEvent',
-                             ($event) => console.log($event));
+ref.current.addEventListener("myEvent", ($event) => console.log($event));
 
-<my-component ref={ref}></my-component>
+<my-component ref={ref}></my-component>;
 ```
 
 Fortunately, it is possible to create custom hooks and therefore possible to create reusable pieces of code for our application to make it more readable.
@@ -57,36 +54,34 @@ npm install @deckdeckgo/color
 Once installed, we can `import` and declare it in you application respectively in `src/App.js` .
 
 ```javascript
-import React, {useEffect, useRef, useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
-import {defineCustomElements} from '@deckdeckgo/color/dist/loader';
+import { defineCustomElements } from "@deckdeckgo/color/dist/loader";
 defineCustomElements(window);
 
 function App() {
+	return (
+		<div className="App">
+			<header className="App-header">
+				<deckgo-color></deckgo-color>
 
-    return (
-        <div className="App">
-            <header className="App-header">
-                <deckgo-color></deckgo-color>
-
-                <img src={logo} className="App-logo" 
-                     alt="logo"/>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
-    );
+				<img src={logo} className="App-logo" alt="logo" />
+				<p>
+					Edit <code>src/App.js</code> and save to reload.
+				</p>
+				<a
+					className="App-link"
+					href="https://reactjs.org"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Learn React
+				</a>
+			</header>
+		</div>
+	);
 }
 
 export default App;
@@ -106,35 +101,34 @@ const colorRef = useRef();
 const [color, setColor] = useState();
 
 return (
-    <div className="App">
-        <header className="App-header">
-            <deckgo-color ref={colorRef}></deckgo-color>
+	<div className="App">
+		<header className="App-header">
+			<deckgo-color ref={colorRef}></deckgo-color>
 
-            <img src={logo} className="App-logo"
-                 alt="logo" style={{background: color}}/>
-        </header>
-    </div>
+			<img src={logo} className="App-logo" alt="logo" style={{ background: color }} />
+		</header>
+	</div>
 );
 ```
 
-Finally, to attach the events, we use the hooks `useEffect` to bind these when our component’s reference is ready. 
+Finally, to attach the events, we use the hooks `useEffect` to bind these when our component’s reference is ready.
 
 ```javascript
 useEffect(() => {
-    const ref = colorRef.current;
+	const ref = colorRef.current;
 
-    const colorListener = ($event) => {
-      // $event.detail.hex is the selected color
-      setColor($event.detail.hex);
-    };
+	const colorListener = ($event) => {
+		// $event.detail.hex is the selected color
+		setColor($event.detail.hex);
+	};
 
-    // attach the event to the component
-    ref.addEventListener('colorChange', colorListener, false);
+	// attach the event to the component
+	ref.addEventListener("colorChange", colorListener, false);
 
-    // remove event on component unmount
-    return () => {
-        ref.removeEventListener('colorChange', colorListener, true);
-    }
+	// remove event on component unmount
+	return () => {
+		ref.removeEventListener("colorChange", colorListener, true);
+	};
 }, [colorRef]);
 ```
 
@@ -148,9 +142,9 @@ Time to have fun by refactoring our previous implementation in order to create a
 
 ```javascript
 function useColorChange(paramColorRef) {
-    const [data, setData] = useState(undefined);
+	const [data, setData] = useState(undefined);
 
-    return [data];
+	return [data];
 }
 ```
 
@@ -158,45 +152,43 @@ To complete our hooks, we move our previous `useEffect` code to this new hooks a
 
 ```javascript
 function useColorChange(paramColorRef) {
-    const [data, setData] = useState(undefined);
+	const [data, setData] = useState(undefined);
 
-    useEffect(() => {
-        const ref = paramColorRef.current;
+	useEffect(() => {
+		const ref = paramColorRef.current;
 
-        const colorListener = ($event) => {
-            setData($event.detail.hex);
-        };
+		const colorListener = ($event) => {
+			setData($event.detail.hex);
+		};
 
-        ref.addEventListener('colorChange', colorListener, false);
+		ref.addEventListener("colorChange", colorListener, false);
 
-        return () => {
-            ref.removeEventListener('colorChange', 
-                                     colorListener, true);
-        };
-    }, [paramColorRef]);
+		return () => {
+			ref.removeEventListener("colorChange", colorListener, true);
+		};
+	}, [paramColorRef]);
 
-    return [data];
+	return [data];
 }
 ```
 
-Finally, we use our hooks in our application respectively we replace the previous `useState` and `useEffect.` 
+Finally, we use our hooks in our application respectively we replace the previous `useState` and `useEffect.`
 
 ```javascript
 function App() {
-    const colorRef = useRef();
+	const colorRef = useRef();
 
-    const [color] = useColorChange(colorRef);
+	const [color] = useColorChange(colorRef);
 
-    return (
-        <div className="App">
-            <header className="App-header">
-            <deckgo-color ref={colorRef}></deckgo-color>
+	return (
+		<div className="App">
+			<header className="App-header">
+				<deckgo-color ref={colorRef}></deckgo-color>
 
-            <img src={logo} className="App-logo"
-                 alt="logo" style={{background: color}}/>
-            </header>
-        </div>
-    );
+				<img src={logo} className="App-logo" alt="logo" style={{ background: color }} />
+			</header>
+		</div>
+	);
 }
 ```
 

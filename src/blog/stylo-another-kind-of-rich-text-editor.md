@@ -10,13 +10,13 @@ canonical: "https://daviddalbusco.medium.com/announcing-stylo-another-kind-of-ri
 
 ![](https://cdn-images-1.medium.com/max/1600/1*kPGH8RB1reGGiq6nU0UaIg.jpeg)
 
-*Photo by [Amy Hirschi](https://unsplash.com/@amyhirschi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Amy Hirschi](https://unsplash.com/@amyhirschi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-*****
+---
 
 So, I developed a new open source WYSIWYG interactive editor for JavaScript. Its goal is to bring great user experience and interactivity to the web, for everyone, with no dependencies. I called it: [Stylo](https://stylojs.com/).
 
-*****
+---
 
 ### But Why?
 
@@ -30,13 +30,13 @@ In addition, by publishing the new library as a new open source repo, I was also
 
 What can I add? I am an engineer, I like to code 😉.
 
-*****
+---
 
 ### Features
 
 Not looking to oversell what Stylo can do — or do differently — but here are in my humble opinion a list of cool things it can do:
 
-*****
+---
 
 #### Interactive Design 🎯
 
@@ -48,9 +48,9 @@ When writing the document, the user can use different types of paragraph that ca
 
 For styling purposes, another toolbar gives the user the ability to modify text — e.g. bold, italic, colors, etc. — and add hyperlinks.
 
-Last but not least, for an optimized experience on desktop, many actions can be performed without the mouse. Opening the list of paragraphs can be triggered hitting “/” and **bold**, *italic* and `mark` are accessible through keyboard shortcuts.
+Last but not least, for an optimized experience on desktop, many actions can be performed without the mouse. Opening the list of paragraphs can be triggered hitting “/” and **bold**, _italic_ and `mark` are accessible through keyboard shortcuts.
 
-*****
+---
 
 #### Customizable 💪
 
@@ -91,13 +91,13 @@ Finally, it is worth noting that the function `createParagraphs` is async which 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*9GgkGbx_4D-hIwT8PxJivQ.gif)
 
-*****
+---
 
 #### Framework Agnostic 😎
 
 Stylo is a framework agnostic library of reusable components developed with [StencilJS](https://stenciljs.com/). It works on all modern browsers.
 
-*****
+---
 
 #### Lightweight 🪶
 
@@ -105,7 +105,7 @@ Stylo is a framework agnostic library of reusable components developed with [Ste
 
 From what I observed, it might even be the lightest. There is also probably room for improvement.
 
-*****
+---
 
 #### Future Proof 🚀
 
@@ -117,7 +117,7 @@ Plugins are applied using plain vanilla JavaScript and the Selection API is also
 
 That's why, regardless of what happens to the deprecated API, Stylo is built for the future.
 
-*****
+---
 
 #### Open Source ⭐️
 
@@ -125,7 +125,7 @@ The components are licensed under MIT license. They can be used by anyone, anywh
 
 To contribute and follow the adventure, watch and star the [GitHub repo](https://github.com/papyrs/stylo).
 
-*****
+---
 
 ### Is It Production Ready?
 
@@ -135,7 +135,7 @@ Stylo is currently an **alpha** version! ⚠️ The project is under active deve
 
 I did use it — not without noticing many bugs I need to fix — to write this article. It might probably not be ready tomorrow nor the day after but I am confident that it will be ready to start the beta phase of our project that will run on the Internet Computer.
 
-*****
+---
 
 ### Conclusion
 
@@ -144,19 +144,18 @@ I am well aware there is still quite some work to make [Stylo](https://stylojs.c
 To infinity and beyond!
 David
 
-
-*****
+---
 
 ### Further Reading
 
 Wanna read more about our project? We are porting [DeckDeckGo](https://deckdeckgo.com/) to [DFINITY’s](https://dfinity.org/) Internet Computer. Here is the list of blog posts I published since we started the project:
 
-* [Converting SVG To Image (PNG, Webp, etc.) in JavaScript](https://daviddalbusco.com/blog/converting-svg-to-image-png-webp-etc-in-javascript)
-* [A Simple KeyVal Store Implemented in Motoko](https://daviddalbusco.com/blog/a-simple-keyval-store-implemented-in-motoko)
-* [TypeScript Utilities For Candid](https://daviddalbusco.com/blog/typescript-utilities-for-candid)
-* [Bye-Bye Amazon & Google, Hello Web 3.0](https://daviddalbusco.com/blog/bye-bye-amazon-and-google-hello-web-3-0)
-* [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
-* [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
-* [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
-* [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
-* [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)
+- [Converting SVG To Image (PNG, Webp, etc.) in JavaScript](https://daviddalbusco.com/blog/converting-svg-to-image-png-webp-etc-in-javascript)
+- [A Simple KeyVal Store Implemented in Motoko](https://daviddalbusco.com/blog/a-simple-keyval-store-implemented-in-motoko)
+- [TypeScript Utilities For Candid](https://daviddalbusco.com/blog/typescript-utilities-for-candid)
+- [Bye-Bye Amazon & Google, Hello Web 3.0](https://daviddalbusco.com/blog/bye-bye-amazon-and-google-hello-web-3-0)
+- [Dynamically Import ESM Modules From A CDN](https://daviddalbusco.com/blog/dynamically-import-esm-modules-from-a-cdn)
+- [Internet Computer: Web App Decentralized Database Architecture](https://daviddalbusco.com/blog/internet-computer-web-app-decentralized-database-architecture)
+- [Singleton & Factory Patterns With TypeScript](https://daviddalbusco.com/blog/singleton-and-factory-patterns-with-typescript)
+- [Hosting on the Internet Computer](https://daviddalbusco.com/blog/getting-started-with-the-internet-computer-web-hosting)
+- [We Received A Grant To Port Our Web App To The Internet Computer](https://daviddalbusco.com/blog/we-received-a-grant-to-port-our-web-app-to-the-internet-computer)

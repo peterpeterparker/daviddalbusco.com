@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/get-app-name-and-version-in-angul
 
 ![](https://cdn-images-1.medium.com/max/1600/1*KwiK0jtPVZnLUyZV1BPdag.png)
 
-*Photo by [Joe Chau](https://unsplash.com/@joechau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Joe Chau](https://unsplash.com/@joechau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Twenty-height** days left until hopefully better days.
 
-*****
+---
 
 Today, Sunday, I had to upgrade an application I’ve developed last year with [Ionic](https://ionicframework.com) and [Angular](https://angular.io) because my client seems to finally have decided to publish it in stores (better start without technical debt 😉).
 
@@ -28,7 +28,7 @@ For the web, I’m using [AngularFire](https://github.com/angular/angularfire), 
 
 Therefore here is how you can get or read the name and version of your application in Angular.
 
-*****
+---
 
 ### Import JSON File In TypeScript
 
@@ -40,55 +40,52 @@ We don’t want to duplicate the app’s name or version, that’s why I suggest
 },
 ```
 
-*****
+---
 
 ### Environment Variables
 
 A convenient way to handle environment variables is possible, out of the box, in Angular through the use of the multiples `environment.ts` files. That’s why we enhance these to “inject” our application’s name and version.
 
 ```javascript
-import {name, version} from '../../package.json';
+import { name, version } from "../../package.json";
 
 export const environment = {
-  production: true,
-  name,
-  version
+	production: true,
+	name,
+	version
 };
 ```
 
 That’s it, in our code we have now access the information 😁.
 
-*****
+---
 
 ### AngularFire Analytics
 
 If like me, you use AngularFire and would like to track these information, proceed as the following in your `app.module.ts` . Note that in the spinet I also set `anonymize_ip` to `true` , as it should, in my humble opinion, always be the case.
 
 ```javascript
-import {AngularFireAnalyticsModule, 
-       APP_NAME, APP_VERSION, CONFIG} 
-       from '@angular/fire/analytics';
+import { AngularFireAnalyticsModule, APP_NAME, APP_VERSION, CONFIG } from "@angular/fire/analytics";
 
-import {environment} from '../environments/environment';
+import { environment } from "../environments/environment";
 
 @NgModule({
-   providers: [
-     {
-       provide: CONFIG,
-       useValue: {
-         allow_ad_personalization_signals: false,
-         anonymize_ip: true
-       }
-     },
-     {provide: APP_NAME, useValue: environment.name},
-     {provide: APP_VERSION, useValue: environment.version}
-    ]
+	providers: [
+		{
+			provide: CONFIG,
+			useValue: {
+				allow_ad_personalization_signals: false,
+				anonymize_ip: true
+			}
+		},
+		{ provide: APP_NAME, useValue: environment.name },
+		{ provide: APP_VERSION, useValue: environment.version }
+	]
 })
-export class AppModule {
-}
+export class AppModule {}
 ```
 
-*****
+---
 
 ### Summary
 

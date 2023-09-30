@@ -10,9 +10,9 @@ canonical: "https://daviddalbusco.medium.com/copy-url-to-clipboard-on-npm-run-st
 
 ![](https://cdn-images-1.medium.com/max/1600/1*vO-uFCV6MmXmDCbHS5iO-Q.jpeg)
 
-*Photo by [Gia Oris](https://unsplash.com/@giabyte?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Gia Oris](https://unsplash.com/@giabyte?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
-*****
+---
 
 I am not sure anyone will ever need the following tricks but, at my client’s place, we have an application which can only be accessed through an URL which contains a dynamic base64 parameter. Needless to say, it makes its local development a bit inconvenient.
 
@@ -22,7 +22,7 @@ Finally, I don’t use bookmarks (don’t judge me) and, I often switch between 
 
 That’s why I had the idea to add a pre-start script to the application which should copy the start URL of the application to my clipboard. Doing so, I can then just select a browser, paste the URI and, I am good to go.
 
-*****
+---
 
 ### Dependencies
 
@@ -36,7 +36,7 @@ You may notice that all these dependencies are open source and developed by the 
 npm i clipboardy chalk boxen --save-dev
 ```
 
-*****
+---
 
 ### Script
 
@@ -51,38 +51,38 @@ Using `clipboardy` to copy the URL to the clipboard is actually really few work 
 Finally, in a `console.log` , I print out the message inside a box generated with `boxen` .
 
 ```javascript
-const { write: copy } = require('clipboardy');
-const chalk = require('chalk');
-const boxen = require('boxen');
+const { write: copy } = require("clipboardy");
+const chalk = require("chalk");
+const boxen = require("boxen");
 
-const params = encodeURIComponent('Hello World 👋');
+const params = encodeURIComponent("Hello World 👋");
 
 const url = `http://localhost:3333/profile/${params}`;
 
 (async () => {
-    let message = chalk.yellow.inverse('Your URL');
+	let message = chalk.yellow.inverse("Your URL");
 
-    message += `\n\n${chalk.bold(`${url}`)}`;
+	message += `\n\n${chalk.bold(`${url}`)}`;
 
-    try {
-        await copy(url);
-        message += `\n\n${chalk.grey('Copied local address to clipboard!')}`;
-    } catch (err) {
-        message = chalk.red.bold(`Cannot copy ${url} to clipboard 🥺\n\n${err.message}`);
-    }
+	try {
+		await copy(url);
+		message += `\n\n${chalk.grey("Copied local address to clipboard!")}`;
+	} catch (err) {
+		message = chalk.red.bold(`Cannot copy ${url} to clipboard 🥺\n\n${err.message}`);
+	}
 
-    console.log(
-        boxen(message, {
-            borderStyle: 'round',
-            padding: 1,
-            borderColor: 'yellow',
-            margin: 1
-        })
-    );
+	console.log(
+		boxen(message, {
+			borderStyle: "round",
+			padding: 1,
+			borderColor: "yellow",
+			margin: 1
+		})
+	);
 })();
 ```
 
-*****
+---
 
 ### Life Cycle
 
@@ -96,7 +96,7 @@ Thanks to [npm](https://docs.npmjs.com/cli/v6/using-npm/scripts) it is possible 
 
 You might ask “But David, why a prestart and not poststart?” to which I would answer that `prestart` is executed for sure. On the contrary, `poststart`, is indeed also executed but, only when the `start` life cycle would be released. If your local server, as often, would stay active to watch for changes, `poststart` would only resolve when you would cancel your local server.
 
-*****
+---
 
 ### Demo
 
@@ -112,7 +112,7 @@ Finally, hit `enter` and access my URL with the generated parameters.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Zgx91lAb1eO8wN66IqYuYA.png)
 
-*****
+---
 
 ### Summary
 

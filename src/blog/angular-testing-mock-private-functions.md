@@ -10,11 +10,11 @@ canonical: "https://medium.com/@david.dalbusco/angular-testing-mock-private-func
 
 ![](https://cdn-images-1.medium.com/max/1600/1*hVf0bMRV3eeYXaj6D2ZJJg.png)
 
-*Photo by [Overture Creations](https://unsplash.com/@overture_creations?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+_Photo by [Overture Creations](https://unsplash.com/@overture_creations?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service-worker-from-the-web-app-context) until (probably not) the end of the COVID-19 quarantine in Switzerland, April 19th 2020. **Eleven** days left until hopefully better days.
 
-*****
+---
 
 This week I made several progress in one of my client’s project and had therefore to write new test cases. For one of these, I notably had to mock a private function using [Jest](https://jestjs.io).
 
@@ -22,7 +22,7 @@ When I was replicating this test for the purpose of this blog post, I figured ou
 
 That’s why I am sharing today both solutions or how to mock a private function with Jasmine or Jest 😇.
 
-*****
+---
 
 ### Credits
 
@@ -30,7 +30,7 @@ This blog post Jest’s solution has been provided by [Brian Adams](https://stac
 
 Kudos to them, not all heroes wear capes!
 
-*****
+---
 
 ### Test Setup
 
@@ -72,7 +72,7 @@ export class DoggosService {
 }
 ```
 
-*****
+---
 
 ### Failing Unit Test
 
@@ -115,7 +115,7 @@ Because we are performing an HTTP request and are not mocking it, the test fails
 
 ![](https://cdn-images-1.medium.com/max/1600/1*d2u_KJrrxiKqi-HKgsTfFw.png)
 
-*****
+---
 
 ### Mock A Private Function With Jasmine
 
@@ -123,10 +123,10 @@ To mock a private function with Jasmine, we can spy on our service private funct
 
 ```javascript
 it('should fetch a doggo', async () => {
-    const mockUrl = 
+    const mockUrl =
     'https://images.dog.ceo/breeds/setter-irish/n02100877_1965.jpg';
 
-    const handleSpy = spyOn(DoggosService.prototype as any, 
+    const handleSpy = spyOn(DoggosService.prototype as any,
                             'searchDoggos');
     handleSpy.and.callFake(() => {
         return new Promise((resolve) => {
@@ -150,7 +150,7 @@ Thanks to these changes, we are now able to run our test with success 🥳.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*072z86Cn9K5wz_1U4d0D9Q.png)
 
-*****
+---
 
 ### Mock A Private Function With Jest
 
@@ -158,10 +158,10 @@ The Jest solution follow the same logic as the above one except that we take adv
 
 ```javascript
 it('should fetch a doggo', async () => {
-    const mockUrl = 
+    const mockUrl =
     'https://images.dog.ceo/breeds/setter-irish/n02100877_1965.jpg';
 
-    const handleSpy = jest.spyOn(DoggosService.prototype as any, 
+    const handleSpy = jest.spyOn(DoggosService.prototype as any,
                                  'searchDoggos');
     handleSpy.mockImplementation(() => {
         return new Promise(resolve =>
@@ -181,7 +181,7 @@ it('should fetch a doggo', async () => {
 });
 ```
 
-*****
+---
 
 ### Summary
 

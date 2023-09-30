@@ -8,7 +8,7 @@ image: "https://miro.medium.com/max/4160/1*4H2Zo7JLHzdfoDc-ltuy3A.png"
 canonical: "https://medium.com/@david.dalbusco/one-trick-a-day-d-34-469a0336a07e"
 ---
 
-![Photo by [Arindam Saha](https://unsplash.com/@flux_culture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/day-1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](https://cdn-images-1.medium.com/max/4160/1*4H2Zo7JLHzdfoDc-ltuy3A.png)*Photo by [Arindam Saha](https://unsplash.com/@flux_culture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/day-1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)*
+![Photo by [Arindam Saha](https://unsplash.com/@flux_culture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/day-1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](https://cdn-images-1.medium.com/max/4160/1*4H2Zo7JLHzdfoDc-ltuy3A.png)_Photo by [Arindam Saha](https://unsplash.com/@flux_culture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/day-1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I literally just had such a bad idea I already know I might not make it, but well, it is worth a try 😅.
 
@@ -24,16 +24,16 @@ For example, let’s say you have defined a rule to cache your images.
 
 ```javascript
 workbox.routing.registerRoute(
-  /\.(?:png|gif|jpg|jpeg|webp|svg)$/,
-  new workbox.strategies.CacheFirst({
-    cacheName: 'images',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxAgeSeconds: 30 * 24 * 60 * 60,
-        maxEntries: 60
-      })
-    ]
-  })
+	/\.(?:png|gif|jpg|jpeg|webp|svg)$/,
+	new workbox.strategies.CacheFirst({
+		cacheName: "images",
+		plugins: [
+			new workbox.expiration.Plugin({
+				maxAgeSeconds: 30 * 24 * 60 * 60,
+				maxEntries: 60
+			})
+		]
+	})
 );
 ```
 
@@ -43,21 +43,21 @@ This can be solved by requesting the service worker to cache specific routes or 
 
 ```javascript
 async function addToCache() {
-    const list = ['/assets/img1.svg', '/assets/img2.svg'];
+	const list = ["/assets/img1.svg", "/assets/img2.svg"];
 
-    const myCache = await window.caches.open('images');
-    await myCache.addAll(list);
+	const myCache = await window.caches.open("images");
+	await myCache.addAll(list);
 }
 ```
 
 And that’s it. With the help of the above function, taken from the [documentation](https://developers.google.com/web/tools/workbox/guides/common-recipes), you can trigger the service worker to cache resources, routes or other requests on demand. Worth to notice that it can be called with or without user interaction, as you rather like.
 
 ```javascript
-document.addEventListener('DOMContentLoaded', ($event) => {
-    addToCache();
+document.addEventListener("DOMContentLoaded", ($event) => {
+	addToCache();
 });
 
-<button onclick="addToCache()">Go images offline</button>
+<button onclick="addToCache()">Go images offline</button>;
 ```
 
 That’s it, this was the first of the tricks I will try share during this quarantine but hopefully only one of really few articles.

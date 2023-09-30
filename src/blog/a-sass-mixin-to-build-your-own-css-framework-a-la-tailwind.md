@@ -20,6 +20,8 @@ In a nutshell, I ended up creating a Sass mixin for building my own class-based 
 
 > The project we built together with my colleagues is called [Oisy](https://oisy.com/). It’s an [open-source](https://github.com/dfinity/oisy-wallet) Ethereum wallet hosted on the [Internet Computer](https://internetcomputer.org/).
 
+---
+
 ## Overview
 
 The idea behind the mixin is to eliminate code duplication while enabling the generation of classes that can be used to create responsive components. For instance, consider the following code snippet:
@@ -37,6 +39,8 @@ This code would render a web page featuring a `div` container with a centered fl
 
 While I could have simply declared these classes globally, my objective was to generate them using a Sass utility for all my styling needs.
 
+---
+
 ## Gotcha
 
 This solution exceeded my expectation when I first began to code it but, it’s essential to note that it’s not as advanced as dedicated CSS frameworks like Tailwind. Before we proceed further, it’s important to be aware of the following two limitations:
@@ -44,6 +48,8 @@ This solution exceeded my expectation when I first began to code it but, it’s 
 1. Responsivity in this solution is limited to the usage **one breakpoint**. Throughout the development of the application, UI rules consistently relied on a single breakpoint. However, there were instances when experimenting with multiple breakpoints, the visual outcomes didn’t always align with expectations. If your requirements involve multiple breakpoints, the mixin may require improvements in terms of selectors to accommodate these scenarios.
 
 2. It’s common for CSS frameworks to include a `postCss` job that handles the task of cleaning up your bundle by removing any unused styles after compilation. However, I do not provide such a hook here.
+
+---
 
 ## Media Queries
 
@@ -96,6 +102,8 @@ $breakpoint-extra-large: 1300px;
 ```
 
 > As I’ve already shared and explained the snippet above in a previous blog post, I won’t go into extensive detail here. If you’re interested in learning more, please refer to my article titled “[Sass Media Queries Mixins](https://medium.com/geekculture/sass-media-queries-mixins-1c5e5f605704)”.
+
+---
 
 ## Class Generator
 
@@ -221,6 +229,8 @@ For example, when using the generator with a selector called `block` and specify
 }
 ```
 
+---
+
 ## Usage
 
 The generator mixin handles the task of class generation, but it doesn’t have knowledge of which classes need to be generated. Therefore, when integrating this solution, developers are still responsible for declaring the specific classes they intend to use in their application.
@@ -341,6 +351,8 @@ $property: font-weight;
 As you can see, it’s quite straightforward to generate these class helpers using the mixin we’ve created above. This approach not only simplifies class declarations but also reduces them to just a few lines of code.
 
 > For more examples of usage, you can explore the Oisy’s [repository](https://github.com/dfinity/oisy-wallet/tree/main/src/frontend/src/lib/styles/utilities).
+
+---
 
 ## Conclusion
 

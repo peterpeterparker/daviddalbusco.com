@@ -1,7 +1,6 @@
 <script>
   import Section from '$lib/components/section.svelte';
   import Button from '$lib/components/button.svelte';
-  import IconOpen from "$lib/icons/IconOpen.svelte";
 </script>
 
 <Section background="white" color="black">

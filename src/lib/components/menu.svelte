@@ -14,7 +14,7 @@
 
 <div class:open>
   {#if open}
-    <a href="/" sveltekit:reload on:click={navigate}><h2 in:fly={{y: 100, duration: 500}}>Home</h2></a>
+    <a href="/" data-sveltekit-reload on:click={navigate}><h2 in:fly={{y: 100, duration: 500}}>Home</h2></a>
     <a href="/#portfolio" on:click={navigate} rel="external"><h2 in:fly={{y: 100, duration: 500}}>Portfolio</h2></a>
     <a href="/#about" on:click={navigate} rel="external"><h2 in:fly={{y: 100, duration: 500}}>About</h2></a>
     <a href="/blog" on:click={navigate}><h2 in:fly={{y: 100, duration: 500}}>Blog</h2></a>

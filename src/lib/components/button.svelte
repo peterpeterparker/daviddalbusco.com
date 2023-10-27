@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let action: () => void | undefined = undefined;
+  export let action: (() => void) | undefined = undefined;
   export let type: 'submit' | 'button' = 'button';
 
   const onClick = () => {

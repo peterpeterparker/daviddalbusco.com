@@ -5,7 +5,7 @@ title: "Migrate canister smart contracts from Motoko to Rust"
 description: "I migrated 500+ canisters from Motoko to Rust on the Internet Computer. Here are the two major things I learned."
 tags: "#motoko #rust #programming #technology"
 image: "https://images.unsplash.com/photo-1464925885047-b49393632a77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxOHx8bWlncmF0ZXxlbnwwfHx8fDE2Njc3MjY0NDU&ixlib=rb-4.0.3&q=80&w=1080"
-canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/migrate-canister-smart-contracts-from-motoko-to-rust"
+canonical: "https://medium.com/dfinity/how-to-migrate-canister-smart-contracts-from-motoko-to-rust-3446a4b0c2ff"
 ---
 
 ![Whale tail](https://images.unsplash.com/photo-1464925885047-b49393632a77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxOHx8bWlncmF0ZXxlbnwwfHx8fDE2Njc3MjY0NDU&ixlib=rb-4.0.3&q=80&w=1080)

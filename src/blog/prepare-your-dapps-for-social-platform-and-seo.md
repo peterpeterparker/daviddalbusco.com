@@ -5,7 +5,7 @@ title: "Prepare your dapps for social platform and SEO"
 description: "A guide to set up dapps metadata, icons and social image for social media sites and search engines."
 tags: "#social #seo #programming #web"
 image: "https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw0Nnx8YWJzdHJhY3R8ZW58MHx8fHwxNjY0NDI4NDU5&ixlib=rb-1.2.1&q=80&w=1080"
-canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/prepare-your-dapps-for-social-platform-and-seo"
+canonical: "https://medium.com/dfinity/how-to-configure-dapps-for-social-platform-previews-and-seo-62a55ee63d33"
 ---
 
 ![Minimalistic 3D Rendering Wallpaper in 8K Resolution.](https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw0Nnx8YWJzdHJhY3R8ZW58MHx8fHwxNjY0NDI4NDU5&ixlib=rb-1.2.1&q=80&w=1080)

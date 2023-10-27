@@ -5,7 +5,7 @@ title: "Poll canister on the Internet Computer"
 description: "Repeatedly calls a function on the IC with web workers without decreasing your dapp frontend performance."
 tags: "#javascript #internetcomputer #programming #webdev"
 image: "https://images.unsplash.com/photo-1524678714210-9917a6c619c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxMHx8dGltZXJ8ZW58MHx8fHwxNjY1MjIzNjYx&ixlib=rb-1.2.1&q=80&w=1080"
-canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/poll-canister-on-the-internet-computer"
+canonical: "https://medium.com/dfinity/creating-poll-canister-smart-contracts-on-the-internet-computer-7572cb1ffee8"
 ---
 
 ![Blue clock on a pastel background](https://images.unsplash.com/photo-1524678714210-9917a6c619c2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwxMHx8dGltZXJ8ZW58MHx8fHwxNjY1MjIzNjYx&ixlib=rb-1.2.1&q=80&w=1080)

@@ -5,7 +5,7 @@ title: "Few things to know before launching a SvelteKit app in prod"
 description: "Content security policy, build reproducibility and polyfill. Few tips to know before going live with SvelteKit."
 tags: "#javascript #svelte #programming #technology"
 image: "https://images.unsplash.com/photo-1636819488524-1f019c4e1c44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw5fHxsYXVuY2h8ZW58MHx8fHwxNjY2MDE4Njg1&ixlib=rb-1.2.1&q=80&w=1080"
-canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/few-things-to-know-before-launching-a-sveltekit-app-in-prod"
+canonical: "https://itnext.io/few-things-to-know-before-launching-a-sveltekit-app-in-prod-754c5f84ac61"
 ---
 
 ![3D Rendering Rocket Space Launching Illustration](https://images.unsplash.com/photo-1636819488524-1f019c4e1c44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw5fHxsYXVuY2h8ZW58MHx8fHwxNjY2MDE4Njg1&ixlib=rb-1.2.1&q=80&w=1080)

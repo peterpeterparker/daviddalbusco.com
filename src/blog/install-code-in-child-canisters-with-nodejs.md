@@ -5,7 +5,7 @@ title: "Install code in child canisters with NodeJS"
 description: "How to upgrade smart contracts on the Internet Computer with JavaScript"
 tags: "#javascript #nodejs #web3 #internetcomputer"
 image: "https://images.unsplash.com/photo-1620207418302-439b387441b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw1Nnx8YWJzdHJhY3R8ZW58MHx8fHwxNjU5MTgzOTI4&ixlib=rb-1.2.1&q=80&w=1080"
-canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/install-code-in-child-canisters-with-nodejs"
+canonical: "https://medium.com/dfinity/upgrade-smart-contracts-on-the-internet-computer-with-javascript-62367ec09580"
 ---
 
 ![Fakurian.com](https://images.unsplash.com/photo-1620207418302-439b387441b0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHw1Nnx8YWJzdHJhY3R8ZW58MHx8fHwxNjU5MTgzOTI4&ixlib=rb-1.2.1&q=80&w=1080)

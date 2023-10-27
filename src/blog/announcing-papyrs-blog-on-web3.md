@@ -5,7 +5,7 @@ title: "Announcing Papyrs: Blog on web3"
 description: "I have developed a new open-source, privacy-first, decentralized blogging platform and today I am making it available to anyone."
 tags: "#startup #programming #web3 #blockchain"
 image: "https://cdn-images-1.medium.com/max/1600/1*gEI9lNAq_sce_TsPXSt5Tg.jpeg"
-canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/announcing-papyrs-blog-on-web3"
+canonical: "https://medium.com/dfinity/papyrs-a-web3-blog-on-the-internet-computer-4223aa9fda4e"
 ---
 
 So, I have developed a new open-source, privacy-first, decentralized blogging platform that lives 100% on chain and today I am making it available to anyone. I called it: [Papyrs](https://app.papy.rs).

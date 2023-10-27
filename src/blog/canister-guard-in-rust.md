@@ -5,7 +5,7 @@ title: "Canister guard in Rust on the Internet Computer"
 description: "Guard functions can be executed before updates and queries of canister smart contracts written in Rust on the Internet Computer."
 tags: "#rust #internetcomputer #canister #smartcontract"
 image: "https://images.unsplash.com/photo-1571283056653-e9802feac258?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwzMnx8Z3VhcmR8ZW58MHx8fHwxNjcxMTE1ODg1&ixlib=rb-4.0.3&q=80&w=1080"
-canonical: "https://6zvwc-sqaaa-aaaal-aalma-cai.raw.ic0.app/d/canister-guard-in-rust"
+canonical: "https://daviddalbusco.medium.com/canister-guard-in-rust-on-the-internet-computer-c896f75e0cef"
 ---
 
 ![Security from a Cypress Towne Lake event enjoyed the 4th of July fireworks with the rest of the crowd.](https://images.unsplash.com/photo-1571283056653-e9802feac258?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzMDkyMzV8MHwxfHNlYXJjaHwzMnx8Z3VhcmR8ZW58MHx8fHwxNjcxMTE1ODg1&ixlib=rb-4.0.3&q=80&w=1080)

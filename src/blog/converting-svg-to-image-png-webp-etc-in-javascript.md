@@ -5,7 +5,7 @@ title: "Converting SVG To Image (PNG, Webp, etc.) in JavaScript"
 description: "How to convert SVG to image in the browser without dependencies."
 tags: "#javascript #webdev #typescript #tutorial"
 image: "https://cdn-images-1.medium.com/max/1600/1*zXDaYiF8SRHlI_OIGZnf8w.jpeg"
-canonical: "https://zhx6p-eqaaa-aaaai-abbrq-cai.raw.ic0.app/d/converting-svg-to-image-in-javascript"
+canonical: "https://medium.com/geekculture/converting-svg-to-image-png-webp-etc-in-javascript-31f822e6df01"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*zXDaYiF8SRHlI_OIGZnf8w.jpeg)

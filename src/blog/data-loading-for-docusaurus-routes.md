@@ -12,9 +12,9 @@ canonical: "https://daviddalbusco.medium.com/data-loading-for-docusaurus-routes-
 
 ---
 
-This weekend, I started creating a showcase of all dapps built with [Juno](https://juno.build) for our website, which uses Docusaurus. Since I found the documentation somewhat lacking, I’ve decided to share a tutorial outlining the steps involved.
+This weekend, I started creating a showcase of all dapps built with [Juno](https://juno.build/showcase) for our website, which uses Docusaurus. Since I found the documentation somewhat lacking, I’ve decided to share a tutorial outlining the steps involved.
 
->  Note: All the code discussed in this blog post is open source and available for you to view and use. You can find it in my repository [here](https://github.com/junobuild/docs).
+> Note: All the code discussed in this blog post is open source and available for you to view and use. You can find it in my repository [here](https://github.com/junobuild/docs).
 
 ---
 
@@ -26,41 +26,37 @@ The layout of this page is simple. It’s composed of two sections: the first se
 
 Remember, at this point, the component doesn’t contain any data. It’s essentially a skeletong that we’ll populate with data in the following chapters.
 
-```typescript
-import React from "react";
-import styles from "./index.module.scss";
+```tsx
 import Link from "@docusaurus/Link";
 import Spotlight from "@site/src/components/Spotlight";
 import Layout from "@theme/Layout";
+import styles from "./index.module.scss";
 
 export default function Showcase() {
-  // TODO: the data we want to display
-  const dapps = [];
+	// TODO: the data we want to display
+	const dapps = [];
 
-  return (
-    <Layout>
-      <section>
-        <h1>Showcase</h1>
+	return (
+		<Layout>
+			<section>
+				<h1>Showcase</h1>
 
-        <p>List of dApps devs are building with Juno.</p>
+				<p>List of dApps devs are building with Juno.</p>
 
-        <Link
-          href="https://github.com/junobuild/docs#submit-your-work"
-          target="_blank"
-        >
-          🙏 Please add yours
-        </Link>
-      </section>
+				<Link href="https://github.com/junobuild/docs#submit-your-work" target="_blank">
+					🙏 Please add yours
+				</Link>
+			</section>
 
-      <section>
-        <div className={styles.grid}>
-          {dapps.map((data, i) => (
-            <Spotlight {...data} key={i} />
-          ))}
-        </div>
-      </section>
-    </Layout>
-  );
+			<section>
+				<div className={styles.grid}>
+					{dapps.map((data, i) => (
+						<Spotlight {...data} key={i} />
+					))}
+				</div>
+			</section>
+		</Layout>
+	);
 }
 ```
 
@@ -68,20 +64,20 @@ The snippet shared earlier focuses on the HTML structure and doesn’t include s
 
 ```css
 .grid {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-  --grid-gap: 2rem;
-  gap: var(--grid-gap);
-  
-  @media screen and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: repeat(2, calc((100% - (1 * var(--grid-gap))) / 2));
-  }
-  
-  @media screen and (min-width: 996px) {
-    grid-template-columns: repeat(3, calc((100% - (3 * var(--grid-gap))) / 3));
-  }
+	--grid-gap: 2rem;
+	gap: var(--grid-gap);
+
+	@media screen and (min-width: 768px) {
+		display: grid;
+		grid-template-columns: repeat(2, calc((100% - (1 * var(--grid-gap))) / 2));
+	}
+
+	@media screen and (min-width: 996px) {
+		grid-template-columns: repeat(3, calc((100% - (3 * var(--grid-gap))) / 3));
+	}
 }
 ```
 
@@ -95,49 +91,45 @@ Given that the project is built with TypeScript, I created an interface to defin
 
 ```typescript
 export interface ShowcaseSpotlight {
-  title: string;
-  url: string;
-  description: string;
-  img: string;
+	title: string;
+	url: string;
+	description: string;
+	img: string;
 }
 ```
 
 Following the definition of the interface, the next step is to create the component src/components/Spotlight/index.tsx that will render the information. This component will use the structure provided by the interface to display the details of each dapp in the showcase effectively and consistently.
 
-```javascript
-import React from "react";
-import styles from "./index.module.scss";
+```tsx
 import Link from "@docusaurus/Link";
 import { ShowcaseSpotlight } from "@site/src/types/showcase";
+import styles from "./index.module.scss";
 
-export default function Spotlight({
-  title,
-  description,
-  img,
-  url,
-}: ShowcaseSpotlight) {
-  return (
-    <Link href={url} target="_blank" rel="noreferrer noopener nofollow">
-      <article>
-        <div>
-          <img
-            src={img}
-            loading="lazy"
-            className={styles.img}
-            role="presentation"
-            alt={`${title} banner`}
-          />
-        </div>
+export default function Spotlight({ title, description, img, url }: ShowcaseSpotlight) {
+	return (
+		<Link href={url} target="_blank" rel="noreferrer noopener nofollow">
+			<article>
+				<div>
+					<img
+						src={img}
+						loading="lazy"
+						className={styles.img}
+						role="presentation"
+						alt={`${title} banner`}
+					/>
+				</div>
 
-        <div>
-          <h4>{title}</h4>
-          <p>{description}</p>
-        </div>
-      </article>
-    </Link>
-  );
+				<div>
+					<h4>{title}</h4>
+					<p>{description}</p>
+				</div>
+			</article>
+		</Link>
+	);
 }
 ```
+
+---
 
 ## Data
 
@@ -147,18 +139,18 @@ This JSON source file aligns with the structure of the data as defined by the in
 
 ```json
 [
-  {
-    "title": "Windoge98",
-    "url": "https://windoge98.com",
-    "description": "An art/memecoin launched on the Internet Computer Protocol (ICP).",
-    "img": "/showcase/windoge98.jpg"
-  },
-  {
-    "title": "Spellkaster",
-    "url": "https://spellkaster.app",
-    "description": "Cast spells on internet computer things 🪄.",
-    "img": "/showcase/spellkaster.webp"
-  }
+	{
+		"title": "Windoge98",
+		"url": "https://windoge98.com",
+		"description": "An art/memecoin launched on the Internet Computer Protocol (ICP).",
+		"img": "/showcase/windoge98.jpg"
+	},
+	{
+		"title": "Spellkaster",
+		"url": "https://spellkaster.app",
+		"description": "Cast spells on internet computer things 🪄.",
+		"img": "/showcase/spellkaster.webp"
+	}
 ]
 ```
 
@@ -183,26 +175,26 @@ import { readFileSync } from "node:fs";
 const source = join(process.cwd(), "showcase.json");
 
 export default function showcasePlugin(context, options) {
-  return {
-    name: "docusaurus-dapps-plugin",
-    async loadContent() {
-      return readFileSync(source, "utf-8");
-    },
-    async contentLoaded({ content, actions }) {
-      const { createData, addRoute } = actions;
+	return {
+		name: "docusaurus-dapps-plugin",
+		async loadContent() {
+			return readFileSync(source, "utf-8");
+		},
+		async contentLoaded({ content, actions }) {
+			const { createData, addRoute } = actions;
 
-      const dappsJsonPath = await createData("dapps.json", content);
+			const dappsJsonPath = await createData("dapps.json", content);
 
-      addRoute({
-        path: "/showcase",
-        component: "@site/src/pages/showcase/index.tsx",
-        modules: {
-          dapps: dappsJsonPath,
-        },
-        exact: true,
-      });
-    },
-  };
+			addRoute({
+				path: "/showcase",
+				component: "@site/src/pages/showcase/index.tsx",
+				modules: {
+					dapps: dappsJsonPath
+				},
+				exact: true
+			});
+		}
+	};
 }
 ```
 
@@ -252,31 +244,28 @@ import Link from "@docusaurus/Link";
 import Spotlight from "@site/src/components/Spotlight";
 import Layout from "@theme/Layout";
 
-export default function Showcase({dapps}) {
-  return (
-    <Layout>
-      <section>
-        <h1>Showcase</h1>
+export default function Showcase({ dapps }) {
+	return (
+		<Layout>
+			<section>
+				<h1>Showcase</h1>
 
-        <p>List of dApps devs are building with Juno.</p>
+				<p>List of dApps devs are building with Juno.</p>
 
-        <Link
-          href="https://github.com/junobuild/docs#submit-your-work"
-          target="_blank"
-        >
-          🙏 Please add yours
-        </Link>
-      </section>
+				<Link href="https://github.com/junobuild/docs#submit-your-work" target="_blank">
+					🙏 Please add yours
+				</Link>
+			</section>
 
-      <section>
-        <div className={styles.grid}>
-          {dapps.map((data, i) => (
-            <Spotlight {...data} key={i} />
-          ))}
-        </div>
-      </section>
-    </Layout>
-  );
+			<section>
+				<div className={styles.grid}>
+					{dapps.map((data, i) => (
+						<Spotlight {...data} key={i} />
+					))}
+				</div>
+			</section>
+		</Layout>
+	);
 }
 ```
 
@@ -285,5 +274,3 @@ export default function Showcase({dapps}) {
 ## Conclusion
 
 This tutorial guided us through building a dapps showcase using Docusaurus. From setting up the UI to integrating a custom plugin for data handling, each step contributed to the final, dynamic showcase. I hope this straightforward approach helps in your own Docusaurus projects.
-
-Thank you for reading! For more exciting coding content, please consider following me on [Twitter / X](https://twitter.com/daviddalbusco). 👨‍💻

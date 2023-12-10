@@ -24,7 +24,7 @@ If your primary interest is in data loading, this step might be optional. Howeve
 
 The layout of this page is simple. It’s composed of two sections: the first serves as an introduction and includes an invitation for submissions of dapps to be featured in the showcase. The second section is where the spotlighted applications will be displayed.
 
-Remember, at this point, the component doesn’t contain any data. It’s essentially a skeletong that we’ll populate with data in the following chapters.
+Remember, at this point, the component doesn’t contain any data. It’s essentially a skeleton that we’ll populate with data in the following chapters.
 
 ```tsx
 import Link from "@docusaurus/Link";

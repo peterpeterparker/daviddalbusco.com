@@ -89,7 +89,7 @@ In this chapter, we’re going to look at the component that displays the dapps 
 
 Given that the project is built with TypeScript, I created an interface to define the metadata for the dapps. This interface is helpful for the process of loading, listing, and displaying the data, ensuring that the information about each project is organized and clear.
 
-```typescript
+```tsx
 export interface ShowcaseSpotlight {
 	title: string;
 	url: string;

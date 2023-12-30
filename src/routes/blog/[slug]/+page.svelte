@@ -87,7 +87,7 @@
 	}
 
 	main {
-		max-width: 1140px;
+		max-width: 960px;
 		margin: 5.45rem auto;
 		padding: 0 2.45rem;
 	}

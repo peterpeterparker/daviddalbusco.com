@@ -4,7 +4,7 @@
 
 <header><h3>David Dal Busco</h3></header>
 
-<Section background="var(--color-highlight)" color="var(--color-highlight-contrast)">
+<Section>
 	<h1>Freelance Web Developer</h1>
 </Section>
 
@@ -12,8 +12,9 @@
 	h1 {
 		font-size: calc(var(--font-size-h1) * 2.5);
 		line-height: calc(var(--line-height-h1) * 1.75);
-		text-shadow: 0.05em 0.05em var(--color-primary);
+		text-shadow: 0.05em 0.05em var(--section-background, var(--color-primary));
 		margin: 0.75em 0 1.25em;
+		transition: color 0.15s ease-in;
 
 		@media screen and (max-width: 960px) {
 			font-size: calc(var(--font-size-h1) * 1.5);
@@ -34,6 +35,6 @@
 
 	h1,
 	h3 {
-		color: var(--color-highlight-contrast);
+		color: var(--section-color, var(--color-highlight-contrast));
 	}
 </style>

@@ -37,7 +37,7 @@
 
 <style lang="scss">
 	.grid {
-		margin: 0 0 3.25em;
+		margin: 0 0 2.25em;
 	}
 
 	p {

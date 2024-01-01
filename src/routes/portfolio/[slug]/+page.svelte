@@ -36,9 +36,8 @@
 
 <style lang="scss">
 	main {
-		max-width: 1140px;
+		max-width: 1200px;
 		margin: 5.45rem auto;
-		padding: 0 2.45rem;
 
 		:global(img) {
 			padding: 0;

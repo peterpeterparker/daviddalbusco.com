@@ -4,13 +4,13 @@
 
 	let section: HTMLElement;
 
-	export let color: string;
-	export let background: string;
+	export let color: string | undefined = undefined;
+	export let background: string | undefined = undefined;
 
 	onMount(() => {
 		const observer: IntersectionObserver = new IntersectionObserver(
 			(entries: IntersectionObserverEntry[]) => {
-				const entry: IntersectionObserverEntry = entries.find(
+				const entry = entries.find(
 					({ isIntersecting }: IntersectionObserverEntry) => isIntersecting
 				);
 
@@ -46,5 +46,10 @@
 <style lang="scss">
 	section {
 		position: relative;
+		max-width: 1200px;
+
+		@media screen and (min-width: 1200px) {
+			margin: 2.45rem auto;
+		}
 	}
 </style>

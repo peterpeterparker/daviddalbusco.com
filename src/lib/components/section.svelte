@@ -46,9 +46,9 @@
 <style lang="scss">
 	section {
 		position: relative;
-		max-width: 1200px;
+		max-width: 1240px;
 
-		@media screen and (min-width: 1200px) {
+		@media screen and (min-width: 1240px) {
 			margin: 2.45rem auto;
 		}
 	}

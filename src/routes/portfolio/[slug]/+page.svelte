@@ -36,7 +36,7 @@
 
 <style lang="scss">
 	main {
-		max-width: 1200px;
+		max-width: 1240px;
 		margin: 5.45rem auto;
 
 		:global(img) {

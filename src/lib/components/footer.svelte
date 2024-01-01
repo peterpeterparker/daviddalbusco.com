@@ -41,7 +41,7 @@
 	}
 
 	footer > div {
-		max-width: 1200px;
+		max-width: 1240px;
 		margin: 0.45rem auto;
 
 		display: flex;

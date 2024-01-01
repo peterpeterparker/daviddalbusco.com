@@ -4,7 +4,7 @@
 	import '../../theme/_section.scss';
 	import '../../theme/_grid.scss';
 
-	import Button from '$lib/components/button.svelte';
+	import Link from '$lib/components/link.svelte';
 	import Post from '$lib/components/post.svelte';
 	import Section from '$lib/components/section.svelte';
 	import type { MarkdownData } from '$lib/types/markdown';
@@ -12,8 +12,6 @@
 
 	export let posts: MarkdownData<BlogMetadata>[];
 	export let more = false;
-
-	const navigateBlog = () => goto('/blog');
 </script>
 
 <Section background="var(--color-tertiary)" color="var(--color-tertiary-contrast)">
@@ -31,7 +29,7 @@
 	</div>
 
 	{#if more}
-		<Button action={navigateBlog}>Read more articles</Button>
+		<Link href="/blog">More articles...</Link>
 	{/if}
 </Section>
 

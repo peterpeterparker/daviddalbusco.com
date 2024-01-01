@@ -11,7 +11,7 @@
 
 	<p>
 		As an open source enthusiast, I have actively engaged in developing various projects for both
-		fun and learning purposes. Here are some notable products I have developed:
+		fun and learning purposes. Here are some notable projects I have developed:
 	</p>
 </Projects>
 

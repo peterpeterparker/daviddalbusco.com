@@ -3,13 +3,13 @@
 		<p>Fluster GmbH<br />c/o The Hub Zürich Association<br />Sihlquai 131 <br />8005 Zürich</p>
 
 		<div class="social">
-			<a aria-label="Twitter" href="https://twitter.com/daviddalbusco/">
-				<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
-					><path
-						d="M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z"
+			<a aria-label="X / Twitter" href="https://twitter.com/daviddalbusco/">
+				<svg viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg" class="twitter">
+					<path
+						d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
 						fill="currentColor"
-					/></svg
-				>
+					/>
+				</svg>
 			</a>
 			<a aria-label="Linkedin" href="https://www.linkedin.com/in/david-dal-busco/">
 				<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +55,7 @@
 
 	.social {
 		display: flex;
+		gap: 0.45rem;
 	}
 
 	a {
@@ -68,5 +69,9 @@
 	svg {
 		width: 2rem;
 		height: 2rem;
+	}
+
+	.twitter {
+		width: 1.6rem;
 	}
 </style>

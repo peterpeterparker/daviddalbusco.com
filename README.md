@@ -17,7 +17,7 @@ To develop and run this website locally, proceed as following:
 git clone https://github.com/peterpeterparker/daviddalbusco.com
 cd daviddalbusco.com
 npm ci
-npm run start
+npm run dev
 ```
 
 ## License

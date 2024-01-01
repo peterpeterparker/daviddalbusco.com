@@ -15,7 +15,7 @@ jobs:
       - name: Set Node version
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
+          node-version: 'lts'
       - name: Install Dependencies
         run: npm ci
       - name: Build

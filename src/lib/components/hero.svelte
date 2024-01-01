@@ -1,14 +1,11 @@
 <script>
   import Section from '$lib/components/section.svelte';
-  import Scroll from '$lib/components/scroll.svelte';
 </script>
 
 <header><h3>David Dal Busco</h3></header>
 
 <Section background="var(--color-highlight)" color="var(--color-highlight-contrast)">
   <h1>Freelance Web Developer</h1>
-
-  <Scroll />
 </Section>
 
 <style lang="scss">

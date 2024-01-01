@@ -56,7 +56,7 @@ function hexToRgb(hex: string): RGB | undefined {
 				r: parseInt(result[1], 16),
 				g: parseInt(result[2], 16),
 				b: parseInt(result[3], 16)
-		  }
+			}
 		: undefined;
 }
 
@@ -133,7 +133,7 @@ Then we add our above function to generate a contrasting text. Note that we just
 					r: parseInt(result[1], 16),
 					g: parseInt(result[2], 16),
 					b: parseInt(result[3], 16)
-			  }
+				}
 			: undefined;
 	}
 

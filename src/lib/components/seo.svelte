@@ -1,14 +1,14 @@
 <script lang="ts">
-  let defaultUrl = 'https://daviddalbusco.com';
-  let defaultImage = `${defaultUrl}/images/daviddalbusco.jpg`;
-  let defaultTitle = 'David Dal Busco';
-  let defaultDescription = 'Freelance Web Developer';
+	let defaultUrl = 'https://daviddalbusco.com';
+	let defaultImage = `${defaultUrl}/images/daviddalbusco.jpg`;
+	let defaultTitle = 'David Dal Busco';
+	let defaultDescription = 'Freelance Web Developer';
 
-  export let url: string = defaultUrl;
-  export let canonical: string | undefined = undefined;
-  export let image: string | undefined = undefined;
-  export let title: string | undefined = undefined;
-  export let description: string | undefined = undefined;
+	export let url: string = defaultUrl;
+	export let canonical: string | undefined = undefined;
+	export let image: string | undefined = undefined;
+	export let title: string | undefined = undefined;
+	export let description: string | undefined = undefined;
 </script>
 
 <title>{title ?? defaultTitle}</title>

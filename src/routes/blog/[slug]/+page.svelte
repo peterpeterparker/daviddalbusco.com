@@ -71,7 +71,7 @@
 			class="newsletter"
 			href="http://eepurl.com/giun5j"
 			target="_blank"
-			rel="external noopener noreferrer">Subscribe to the newsletter</a
+			rel="external noopener noreferrer">Subscribe to my newsletter</a
 		>
 	</div>
 </main>

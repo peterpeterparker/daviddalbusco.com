@@ -106,6 +106,8 @@ To stop all running containers quickly, I use:
 docker stop $(docker ps -aq)
 ```
 
+---
+
 ## Cleaning Up
 
 And finally, when I need or want to clean everything, like removing all images and volumes:

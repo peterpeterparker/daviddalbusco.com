@@ -65,7 +65,7 @@
 	</article>
 
 	<div class="actions">
-		<Button action={navigateBlog}>Continue to blog</Button>
+		<Button action={navigateBlog}>Continue reading</Button>
 
 		<a
 			class="newsletter"

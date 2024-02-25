@@ -14,7 +14,7 @@ Photo by [Joanna Kosinska](https://unsplash.com/fr/@joannakosinska?utm_content=c
 
 ---
 
-I’ve been on this blogging journey for a while, aiming to share a least a new post every month. Yet, finding the time and motivation isn’t easy anymore, especially with the seismic shifts in how we consume content post the AI merge. The appetite for long-form blog posts and detailed tutorials seems to be waning, at least from my perspective. Ironically, while my motivation for these extensive pieces dwindles, my activity on [**X / Twitter](https://twitter.com/daviddalbusco)** remains unabated. There, in the flurry of daily interactions, I often share snippets of what I’ve learned, encapsulated in “TIL…” tweets.
+I’ve been on this blogging journey for a while, aiming to share a least a new post every month. Yet, finding the time and motivation isn’t easy anymore, especially with the seismic shifts in how we consume content post the AI merge. The appetite for long-form blog posts and detailed tutorials seems to be waning, at least from my perspective. Ironically, while my motivation for these extensive pieces dwindles, my activity on **[X / Twitter](https://twitter.com/daviddalbusco)** remains unabated. There, in the flurry of daily interactions, I often share snippets of what I’ve learned, encapsulated in “TIL…” tweets.
 
 It dawned on me — Why not transform these brief insights into a series of blog posts? And so, here we are, at the inception of what I hope to be a series that blends the brevity of tweets with the depth of a blog. Welcome to the first episode of this journey. Let’s dive in what tips I learned in February 2024!
 
@@ -46,7 +46,7 @@ While TypeScript will check this at compile time, it's important to remember tha
 
 This month, I stumbled upon something quite useful: how to read a canister’s WebAssembly (WASM) module’s metadata section using Node.js.
 
-This discovery was not just about the cool factor; it also had practical applications in the new Serverless Function feature of [**Juno](https://juno.build/)**, where understanding the extensions made to smart contracts by developers can be crucial for the platform.
+This discovery was not just about the cool factor; it also had practical applications in the new Serverless Function feature of **[Juno](https://juno.build/)**, where understanding the extensions made to smart contracts by developers can be crucial for the platform.
 
 To access this metadata, the process is straightforward:
 

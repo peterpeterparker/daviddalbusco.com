@@ -11,7 +11,7 @@ hr {
 	&:before {
 		content: "\25FC\25FC\25FC";
 		display: inline-block;
-		color: var(--docsearch-text-color);
+		color: black;
 		position: absolute;
 		top: 75%;
 		left: 50%;

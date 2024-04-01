@@ -16,7 +16,7 @@ I’ve never been a fan of slides. Similarly, I find the typical “hello world�
 
 This project also marked my first foray into using the ChatGPT API. It seemed like the perfect chance to not only broaden my skill set but to explore an intriguing possibility: generating an image from another image using AI. As of March 2024, this functionality isn’t directly offered by OpenAI. However, I’ve discovered a creative workaround, which I’m excited to share with you in this blog post.
 
->  Side note: For those of you who are curious about the nuts and bolts of my demo, or just love diving into the details, I’ve shared a thread on [X / Twitter ](https://twitter.com/daviddalbusco/status/1765443683606839566)complete with videos and a link to the repository.
+> Side note: For those of you who are curious about the nuts and bolts of my demo, or just love diving into the details, I’ve shared a thread on [X / Twitter ](https://twitter.com/daviddalbusco/status/1765443683606839566)complete with videos and a link to the repository.
 
 ---
 
@@ -41,47 +41,47 @@ First, we’ll start with a basic HTML page. It will feature a button to initiat
 ```html
 <!doctype html>
 <html lang="en">
-  <body>
-    <button id="generate" type="button">Generate</button>
+	<body>
+		<button id="generate" type="button">Generate</button>
 
-    <div id="output"></div>
+		<div id="output"></div>
 
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
 </html>
 ```
 
 Next, we’ll implement a script that handles the interaction by binding a click event to the button and rendering the AI-generated SVG in the DOM.
 
->  Note that I’m skipping nullish validation and error handling for the sake of simplifying this post.
+> Note that I’m skipping nullish validation and error handling for the sake of simplifying this post.
 
 ```ts
 import { generate } from "./chatgpt.ts";
 
 document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    const btn = document.querySelector("#generate");
-    
-    const onClick = async () => {
-        const { svgOuterHTML } = await generate();
-        
-        document.querySelector("#output").innerHTML = svgOuterHTML;
-    }
-    
-    btn.addEventListener("click", onClick, { passive: true });
-  },
-  { once: true },
+	"DOMContentLoaded",
+	() => {
+		const btn = document.querySelector("#generate");
+
+		const onClick = async () => {
+			const { svgOuterHTML } = await generate();
+
+			document.querySelector("#output").innerHTML = svgOuterHTML;
+		};
+
+		btn.addEventListener("click", onClick, { passive: true });
+	},
+	{ once: true }
 );
 ```
 
-At this stage, we’re ready to set up the generate function.  This function will kick off the process with the OpenAI API and handle  the result, ultimately providing it back to the user. For now, we'll  outline a basic version and refine it with the actual API call later:
+At this stage, we’re ready to set up the generate function. This function will kick off the process with the OpenAI API and handle the result, ultimately providing it back to the user. For now, we'll outline a basic version and refine it with the actual API call later:
 
 ```ts
 export const generate = async (): Promise<{ svgOuterHTML: string }> => {
-  const previewResponse = await call();
+	const previewResponse = await call();
 
-  return { svgOuterHTML: "TODO implement me" };
+	return { svgOuterHTML: "TODO implement me" };
 };
 ```
 
@@ -95,9 +95,9 @@ In this chapter, we dive deeper into the technical aspects of making the call to
 
 2. **Crafting the System Prompt**: The heart of our request to OpenAI lies in a system prompt. This detailed prompt guides the AI to understand exactly what we’re asking for — a high-fidelity SVG based on a low-fidelity sketch. It not only sets the context for the AI, outlining a specific expertise in web design and SVG programming inspired by expressionism, surrealism, and Bauhaus design principles — you can, of course, be more creative with those details when implementing your own solution — but it also explicitly instructs the AI to return a single SVG file. This ensures the AI’s output aligns precisely with our needs.
 
-3. **Preparing the Fetch Request**: The body of our fetch  call is meticulously prepared to communicate our requirements to  OpenAI. It includes the system prompt and a URL to the source image,  here represented by DRAWING_URL. This URL points to a sketch  that we've uploaded to the web. Though the process of converting a  user's drawing to an image and uploading it isn't covered here, it's a  necessary step before making this call.
+3. **Preparing the Fetch Request**: The body of our fetch call is meticulously prepared to communicate our requirements to OpenAI. It includes the system prompt and a URL to the source image, here represented by DRAWING_URL. This URL points to a sketch that we've uploaded to the web. Though the process of converting a user's drawing to an image and uploading it isn't covered here, it's a necessary step before making this call.
 
-4. **Executing the Call and Handling the Response**: With everything in place, we execute a fetch  request to OpenAI's API. This request is sent with the appropriate  headers, including our API key for authentication. Upon receiving a  response, we check for success and then parse the JSON data. This data,  ideally, contains the SVG code generated by the AI in response to our  prompt and image.
+4. **Executing the Call and Handling the Response**: With everything in place, we execute a fetch request to OpenAI's API. This request is sent with the appropriate headers, including our API key for authentication. Upon receiving a response, we check for success and then parse the JSON data. This data, ideally, contains the SVG code generated by the AI in response to our prompt and image.
 
 ```ts
 const OPENAI_API_KEY = "my_openai_api_key";
@@ -117,55 +117,52 @@ Respond ONLY with the contents of the SVG file.`; // <--- We only want SVG
 const DRAWING_URL = "https://domain.com/your-drawing.png";
 
 const call = async (): Promise<Gpt4VisionPreviewResponse> => {
-  const body: GPT4VVisionPayload = {
-    model: "gpt-4-vision-preview",
-    max_tokens: 4096,
-    temperature: 0,
-    messages: [
-      {
-        role: "system",
-        content: SYSTEM_PROMPT,
-      },
-      {
-        role: "user",
-        content: [
-          {
-            type: "image_url",
-            image_url: {
-              url: DRAWING_URL,
-              detail: "high",
-            },
-          },
-          {
-            type: "text",
-            text: "Turn this into a single svg file.", // <--- We only want SVG
-          },
-        ],
-      },
-    ],
-  };
+	const body: GPT4VVisionPayload = {
+		model: "gpt-4-vision-preview",
+		max_tokens: 4096,
+		temperature: 0,
+		messages: [
+			{
+				role: "system",
+				content: SYSTEM_PROMPT
+			},
+			{
+				role: "user",
+				content: [
+					{
+						type: "image_url",
+						image_url: {
+							url: DRAWING_URL,
+							detail: "high"
+						}
+					},
+					{
+						type: "text",
+						text: "Turn this into a single svg file." // <--- We only want SVG
+					}
+				]
+			}
+		]
+	};
 
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${OPENAI_API_KEY}`,
-    },
-    body: JSON.stringify(body),
-  });
+	const response = await fetch("https://api.openai.com/v1/chat/completions", {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${OPENAI_API_KEY}`
+		},
+		body: JSON.stringify(body)
+	});
 
-  if (!response.ok) {
-    throw new Error(
-      `Response not ok. Status ${response.status}. Message ${response.statusText}.`,
-    );
-  }
+	if (!response.ok) {
+		throw new Error(`Response not ok. Status ${response.status}. Message ${response.statusText}.`);
+	}
 
-  return await response.json();
+	return await response.json();
 };
 ```
 
 Note that for this solution, I used my own TypeScript types, as detailed below. Alternatively, you can use the official Node.js/TypeScript library for the OpenAI API ([repo](https://github.com/openai/openai-node)).
-
 
 ```ts
 /**
@@ -173,33 +170,33 @@ Note that for this solution, I used my own TypeScript types, as detailed below. 
  */
 
 type GPT4VVisionPayloadMessageContent =
-  | string
-  | (
-      | string
-      | {
-          type: "image_url";
-          image_url: {
-            url: string;
-            detail: "low" | "high" | "auto";
-          };
-        }
-      | {
-          type: "text";
-          text: string;
-        }
-    )[];
+	| string
+	| (
+			| string
+			| {
+					type: "image_url";
+					image_url: {
+						url: string;
+						detail: "low" | "high" | "auto";
+					};
+			  }
+			| {
+					type: "text";
+					text: string;
+			  }
+	  )[];
 
 export interface GPT4VVisionPayloadMessage {
-  role: "system" | "user" | "assistant" | "function";
-  content: GPT4VVisionPayloadMessageContent;
-  name?: string | undefined;
+	role: "system" | "user" | "assistant" | "function";
+	content: GPT4VVisionPayloadMessageContent;
+	name?: string | undefined;
 }
 
 export interface GPT4VVisionPayload {
-  model: "gpt-4-vision-preview";
-  max_tokens?: number | undefined;
-  temperature?: number | undefined;
-  messages: GPT4VVisionPayloadMessage[];
+	model: "gpt-4-vision-preview";
+	max_tokens?: number | undefined;
+	temperature?: number | undefined;
+	messages: GPT4VVisionPayloadMessage[];
 }
 
 /**
@@ -207,29 +204,29 @@ export interface GPT4VVisionPayload {
  */
 
 interface Gpt4VisionPreviewResponse {
-  id: string;
-  object: string;
-  created: number;
-  model: string;
-  usage: Gpt4VisionPreviewUsage;
-  choices: Gpt4VisionPreviewChoice[];
+	id: string;
+	object: string;
+	created: number;
+	model: string;
+	usage: Gpt4VisionPreviewUsage;
+	choices: Gpt4VisionPreviewChoice[];
 }
 
 interface Gpt4VisionPreviewUsage {
-  prompt_tokens: number;
-  completion_tokens: number;
-  total_tokens: number;
+	prompt_tokens: number;
+	completion_tokens: number;
+	total_tokens: number;
 }
 
 interface Gpt4VisionPreviewChoice {
-  message: Gpt4VisionPreviewMessage;
-  finish_reason: String;
-  index: number;
+	message: Gpt4VisionPreviewMessage;
+	finish_reason: String;
+	index: number;
 }
 
 interface Gpt4VisionPreviewMessage {
-  role: string;
-  content: string;
+	role: string;
+	content: string;
 }
 ```
 
@@ -239,24 +236,24 @@ interface Gpt4VisionPreviewMessage {
 
 In the concluding chapter, we circle back to complete our generate function, initially outlined but left unfinished in a previous section.
 
-```ts
+````ts
 export const generate = async (): Promise<{ svgOuterHTML: string }> => {
-  const previewResponse = await call();
+	const previewResponse = await call();
 
-  const {
-    choices: [choice],
-  } = previewResponse;
+	const {
+		choices: [choice]
+	} = previewResponse;
 
-  const {
-    message: { content },
-  } = choice;
+	const {
+		message: { content }
+	} = choice;
 
-  // Stripping the markdown code block syntax to isolate the SVG code
-  return { svgOuterHTML: content.replace("```svg", "").replace("```", "") };
+	// Stripping the markdown code block syntax to isolate the SVG code
+	return { svgOuterHTML: content.replace("```svg", "").replace("```", "") };
 };
-```
+````
 
-This function invokes the call function, which  communicates with the OpenAI API to submit our request. Upon receiving  the response, it extracts the first choice (assuming the API might  return multiple options) and then focuses on the message content, which  contains our SVG code wrapped in markdown syntax. The final step strips  this syntax to yield clean SVG code, ready for rendering in our  application’s UI.
+This function invokes the call function, which communicates with the OpenAI API to submit our request. Upon receiving the response, it extracts the first choice (assuming the API might return multiple options) and then focuses on the message content, which contains our SVG code wrapped in markdown syntax. The final step strips this syntax to yield clean SVG code, ready for rendering in our application’s UI.
 
 ---
 

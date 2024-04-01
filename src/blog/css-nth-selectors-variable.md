@@ -224,15 +224,16 @@ import { Component, h } from "@stencil/core";
 
 @Component({
 	tag: "my-component",
-	styles: `:host {
-      display: block;
-    }
+	styles: `
+		:host {
+			display: block;
+		}
 
-    li {
-      opacity: 0;
-      transition: opacity 0.5s ease-out;
-    }
-  `,
+		li {
+			opacity: 0;
+			transition: opacity 0.5s ease-out;
+		}
+	`,
 	shadow: true
 })
 export class MyComponent {

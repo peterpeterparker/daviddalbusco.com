@@ -51,13 +51,12 @@ This discovery was not just about the cool factor; it also had practical applica
 To access this metadata, the process is straightforward:
 
 ```javascript
-const { readFileSync } = require('node:fs');
+const { readFileSync } = require("node:fs");
 
 const wasmBuffer = readFileSync("/path/to/satellite.wasm");
 const mod = new WebAssembly.Module(wasmBuffer);
 
-const metadata = 
-        WebAssembly.Module.customSections(mod, "icp:public juno:build");
+const metadata = WebAssembly.Module.customSections(mod, "icp:public juno:build");
 
 const decoder = new TextDecoder();
 const buildType = decoder.decode(metadata[0]);

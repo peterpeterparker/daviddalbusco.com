@@ -4,6 +4,7 @@
 	import '../theme/main.scss';
 	import '../theme/iframe.scss';
 	import '../theme/variables.scss';
+	import '../theme/hr.scss';
 
 	import Nav from '$lib/components/nav.svelte';
 	import Footer from '$lib/components/footer.svelte';

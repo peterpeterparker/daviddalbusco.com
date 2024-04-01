@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
-
 	import '../../theme/_section.scss';
 	import '../../theme/_grid.scss';
 

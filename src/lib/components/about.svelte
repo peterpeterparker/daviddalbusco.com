@@ -9,61 +9,90 @@
 			aria-hidden="true"
 			loading="lazy"
 			role="presentation"
-			src="/icons/icon-256x256.png"
+			src="/images/david.webp"
 		/>
 	</h2>
 
 	<p>Hi there! It's great to meet you! 👋</p>
+
 	<p>I'm a freelance web developer and contractor based in Zürich, Switzerland.</p>
 
 	<p>
-		My expertise lies in
-		<mark> <a href="https://svelte.dev/" rel="noopener noreferrer">Svelte</a></mark>,
-		<mark> <a href="https://angular.io" rel="noopener noreferrer">Angular</a></mark>,
-		<mark>
-			<a href="https://reactjs.org" rel="noopener noreferrer">React</a>
-		</mark>
-		and
-		<mark>
-			<a href="https://stenciljs.com" rel="noopener noreferrer">StencilJS</a>
-		</mark>, but I'm particularly passionate about developing agnostic JavaScript/TypeScript
-		solutions.
+		I build performant, user-centric web applications. I develop both visually appealing apps and
+		kick-ass architecture layers. Clients often hire me to create prototypes, products, or even
+		entire ecosystems from scratch.
 	</p>
+
 	<p>
-		I believe in the principles of decentralization and data ownership, which is why I have a keen
-		interest in blockchain networks. As a proud supporter of the <mark>
-			<a href="https://internetcomputer.org/" rel="noopener noreferrer">Internet Computer</a>
-		</mark>, I see tremendous potential in its future.
+		My frontend skills include <a
+			href="https://svelte.dev/"
+			rel="noopener noreferrer"
+			target="_blank">Svelte</a
+		>,
+		<a href="https://angular.io" rel="noopener noreferrer" target="_blank">Angular</a>,
+		<a href="https://reactjs.org" rel="noopener noreferrer" target="_blank">React</a>
+		and
+		<a href="https://stenciljs.com" rel="noopener noreferrer" target="_blank">StencilJS</a>, but I'm
+		passionate about framework-agnostic agnostic solutions using TypeScript.
 	</p>
+
+	<p>
+		I prefer decentralized solutions over using big tech cloud providers, which is why I have a keen
+		interest in blockchain networks, particularly the <a
+			href="https://internetcomputer.org/"
+			rel="noopener noreferrer"
+			target="_blank">Internet Computer</a
+		>.
+	</p>
+
+	<p>
+		While I don't handle any backend work for clients, I have developed a few smart contracts using <a
+			href="https://www.rust-lang.org"
+			rel="noopener noreferrer"
+			target="_blank">Rust</a
+		> for my personal projects.
+	</p>
+
 	<p>
 		In addition to my technical skills, I have experience in project management, business
 		requirements analysis, and UX design from a developer's perspective. I hold degrees in Computer
-		Engineering and an Executive Master's in Business Administration. I'm also fluent in French,
-		German, and English.
+		Engineering and an Executive Master's in Business Administration. I'm fluent in French, German,
+		and English.
 	</p>
+
 	<p>
-		When I'm not busy coding, you can often find me running on mountain trails or along the river.
-		It's my way of finding peace and staying active. ⛰🏃
+		I've launched several open-source personal projects that failed, but I gained valuable
+		experience in how to launch a tech-focused project and build communities without spending money
+		on advertisement.
 	</p>
+
 	<p>
-		If you have a web or mobile project in mind, feel free to
-		<a href="/#contact" rel="noopener noreferrer">reach out!</a> I would be more than happy to discuss
-		how I can contribute to the success of your project.
+		When I'm not busy coding, you can often find me running on mountain trails for a few hours on
+		the weekend. 🏔️🏃
+	</p>
+
+	<p>
+		If you need help or have a project in mind, feel free to <a
+			href="/#contact"
+			rel="noopener noreferrer">get in touch!</a
+		>
 	</p>
 </Section>
 
 <style lang="scss">
 	img {
-		box-shadow: 3px 3px black;
-		border: 1px solid black;
+		border: 0.25rem solid black;
 		width: 5rem;
 		height: 5rem;
-		border-radius: 50%;
 		margin-left: 1.45rem;
 
 		@media screen and (max-width: 960px) {
 			width: 3rem;
 			height: 3rem;
 		}
+	}
+
+	a {
+		font-weight: bold;
 	}
 </style>

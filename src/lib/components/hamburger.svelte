@@ -29,9 +29,9 @@
 		width: 3em;
 		height: 3em;
 
+		z-index: 3;
+
 		display: flex;
-		justify-content: flex-end;
-		align-content: flex-end;
 		flex-direction: column;
 
 		position: relative;
@@ -39,10 +39,6 @@
 		padding: 0.25rem 0;
 
 		transition: transform 0.2s ease 0s;
-
-		&:focus {
-			transform: scale(1.25) translateY(-0.25rem);
-		}
 	}
 
 	div {
@@ -69,10 +65,14 @@
 
 			border-radius: 1px;
 
-			background: var(--section-color, var(--menu-color));
+			background: black;
 			transition:
 				width 0.2s ease 0s,
 				background 0.2s ease 0s;
+
+			@media screen and (max-width: 576px) {
+				background: white;
+			}
 		}
 
 		&.open:before {

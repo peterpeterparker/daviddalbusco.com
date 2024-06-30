@@ -4,6 +4,7 @@ description: "DV Bern is more than a normal IT company. They describe the compan
 icon: "/images/portfolio/icons/dvb-icon.png"
 background: "#2e4051"
 type: "work"
+order: "4"
 ---
 
 # DV Bern AG
@@ -13,6 +14,8 @@ I collaborate with [DV Bern AG](https://www.dvbern.ch/), a company by which I us
 DV Bern AG provides the most used ERP solution in Switzerland for such administrations.
 
 The project's scope was the development of a new process which had an influence on both the online end clients of the registers and the workflow of their employees.
+
+---
 
 ## Fact sheet
 

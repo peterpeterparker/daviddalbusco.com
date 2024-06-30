@@ -4,6 +4,7 @@ description: "Our Energy was a project that had for goal to analyse the impact o
 icon: "/images/portfolio/icons/ourenergy-icon.png"
 background: "#f2f2f2"
 type: "work"
+order: "5"
 ---
 
 # Our Energy - ETH Zürich
@@ -15,6 +16,8 @@ It is a mobile and web application for citizens to learn how they can intelligen
 This app was notably used as a support for a 2-week energy challenge in June 2019 for the people of Einsiedeln in Switzerland.
 
 ![Mobile application screenshots](/images/portfolio/screenshots/ourenergy.webp)
+
+---
 
 ## Fact sheet
 

@@ -5,6 +5,7 @@
 	import { goto } from '$app/navigation';
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
+	import Section from '$lib/components/section.svelte';
 
 	export let data: PageData;
 
@@ -28,27 +29,14 @@
 	</style>
 </svelte:head>
 
-<main>
+<Section>
 	{@html content}
 
-	<Button action={navigatePortfolio}>Continue to portfolio</Button>
-</main>
+	<div class="action"><Button action={navigatePortfolio}>Continue to portfolio</Button></div>
+</Section>
 
 <style lang="scss">
-	main {
-		max-width: 1240px;
-		margin: 5.45rem auto;
-
-		:global(img) {
-			padding: 0;
-		}
-
-		:global(h2) {
-			margin-top: 3.45rem;
-		}
-
-		:global(button:last-of-type) {
-			margin-top: 2.45rem;
-		}
+	.action {
+		margin: 3.45em 0 0;
 	}
 </style>

@@ -10,6 +10,7 @@
 	import type { BlogMetadata } from '$lib/types/blog';
 	import { goto } from '$app/navigation';
 	import type { MarkdownData } from '$lib/types/markdown';
+	import Section from '$lib/components/section.svelte';
 
 	export let data: PageData;
 
@@ -49,7 +50,7 @@
 	</style>
 </svelte:head>
 
-<main>
+<Section>
 	<h1>{title}</h1>
 	<h3>{description}</h3>
 
@@ -74,7 +75,7 @@
 			rel="external noopener noreferrer">Subscribe to my newsletter</a
 		>
 	</div>
-</main>
+</Section>
 
 <style lang="scss">
 	.date {
@@ -84,12 +85,6 @@
 	h3 {
 		font-weight: 400;
 		margin-bottom: 1.45rem;
-	}
-
-	main {
-		max-width: 860px;
-		margin: 5.45rem auto;
-		padding: 0 2.45rem;
 	}
 
 	.actions {

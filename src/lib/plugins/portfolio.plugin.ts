@@ -14,15 +14,20 @@ export const listPortfolio = async (): Promise<Portfolio> => {
 
 			const { work, play } = acc;
 
+			console.log(work, type);
+
 			if (type === 'work') {
 				return {
-					work: [...work, data],
+					work: [...work, data].sort(
+						({ metadata: { order: orderA } }, { metadata: { order: orderB } }) =>
+							parseInt(orderA ?? '0') - parseInt(orderB ?? '0')
+					),
 					play
 				};
 			}
 
 			return {
-				work,
+				work: work,
 				play: [...play, data]
 			};
 		},

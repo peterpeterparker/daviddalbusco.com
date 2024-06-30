@@ -12,33 +12,35 @@
 	};
 </script>
 
-<div class:open>
+<div class:open class="menu">
 	{#if open}
-		<a href="/" data-sveltekit-reload on:click={navigate}
-			><h2 in:fly={{ y: 100, duration: 500 }}>Home</h2></a
-		>
-		<a href="/#portfolio" on:click={navigate} rel="external"
-			><h2 in:fly={{ y: 100, duration: 500 }}>Portfolio</h2></a
-		>
-		<a href="/#about" on:click={navigate} rel="external"
-			><h2 in:fly={{ y: 100, duration: 500 }}>About</h2></a
-		>
-		<a href="/blog" on:click={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
-		<a
-			href="http://eepurl.com/giun5j"
-			target="_blank"
-			on:click={navigate}
-			rel="external noopener noreferrer"
-			><h2 in:fly={{ y: 100, duration: 500 }}>Newsletter<IconOpen size="2.5rem" /></h2></a
-		>
-		<a href="/#contact" on:click={navigate} rel="external"
-			><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
-		>
+		<div class="container">
+			<a href="/" data-sveltekit-reload on:click={navigate}
+				><h2 in:fly={{ y: 100, duration: 500 }}>Home</h2></a
+			>
+			<a href="/#portfolio" on:click={navigate} rel="external"
+				><h2 in:fly={{ y: 100, duration: 500 }}>Portfolio</h2></a
+			>
+			<a href="/#about" on:click={navigate} rel="external"
+				><h2 in:fly={{ y: 100, duration: 500 }}>About</h2></a
+			>
+			<a href="/blog" on:click={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
+			<a
+				href="http://eepurl.com/giun5j"
+				target="_blank"
+				on:click={navigate}
+				rel="external noopener noreferrer"
+				><h2 in:fly={{ y: 100, duration: 500 }}>Newsletter<IconOpen size="2.5rem" /></h2></a
+			>
+			<a href="/#contact" on:click={navigate} rel="external"
+				><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
+			>
+		</div>
 	{/if}
 </div>
 
 <style lang="scss">
-	div {
+	.menu {
 		pointer-events: none;
 		visibility: hidden;
 		opacity: 0;
@@ -74,5 +76,10 @@
 
 	a {
 		text-decoration: none;
+	}
+
+	.container {
+		max-width: 1240px;
+		margin: 0 auto;
 	}
 </style>

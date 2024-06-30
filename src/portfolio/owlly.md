@@ -4,6 +4,7 @@ description: "Owlly enables digital democracy by holistically promoting the coll
 icon: "/images/portfolio/icons/owlly-icon.png"
 background: "linear-gradient(155deg, #00a6d4 0%, #81bc4f)"
 type: "work"
+order: "8"
 ---
 
 # Owlly
@@ -13,6 +14,8 @@ I had the opportunity to participate to [Owlly](https://owlly.ch/), an amazing a
 As part of this project, I notably developed a Web Component which can be integrated in any websites or applications to ease the access to the Owlly's wizard.
 
 In addition, I supported the team in their technical decisions and also developed some part of the website, wizard and cloud functions.
+
+---
 
 ## Fact sheet
 
@@ -25,6 +28,8 @@ In addition, I supported the team in their technical decisions and also develope
 **Infrastructure:** [Google Cloud Firebase](https://firebase.google.com/) and [Functions](https://cloud.google.com/functions)
 
 **Database:** [Google Firestore](https://firebase.google.com/docs/firestore)
+
+---
 
 ## Open source
 

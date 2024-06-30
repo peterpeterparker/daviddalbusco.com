@@ -4,6 +4,7 @@ description: "Die Mobiliar is the oldest private Swiss insurance group."
 icon: "/images/portfolio/icons/mobi-icon.png"
 background: "#DA2323"
 type: "work"
+order: "2"
 ---
 
 # Die Mobiliar
@@ -13,6 +14,8 @@ I collaborated with [die Mobiliar](https://www.mobiliar.ch/) (La Mobilière, La 
 Through this mandate, I took part in all the activities and development of the team I was attached to.
 
 Together we develop new Angular applications (SPA) and libraries which were integrated in the internal ERP of the company.
+
+---
 
 ## Fact sheet
 

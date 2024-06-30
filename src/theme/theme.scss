@@ -77,11 +77,9 @@ dfn {
 	font-style: italic;
 }
 mark {
-	background: var(--color-highlight);
-	color: var(--color-primary);
+	background: black;
+	color: white;
 	padding: 0 0.25em;
-	border-radius: 1px;
-	box-shadow: 1px 1px black;
 
 	&:focus-visible {
 		outline: none;
@@ -255,17 +253,16 @@ img {
 }
 h1 {
 	padding: 0;
-	margin: 0 0 1.45rem;
+	margin: 0 0 1.45rem var(--title-margin-left);
 	color: inherit;
 	text-rendering: optimizeLegibility;
 	font-size: var(--font-size-h1);
 	line-height: var(--line-height-h1);
 	font-weight: var(--font-weight-h1);
-	letter-spacing: -0.036em;
 }
 h2 {
 	padding: 0;
-	margin: 0 0 1.45rem;
+	margin: 0 0 1.45rem var(--title-margin-left);
 	color: inherit;
 	text-rendering: optimizeLegibility;
 	font-size: var(--font-size-h2);
@@ -274,7 +271,7 @@ h2 {
 }
 h3 {
 	padding: 0;
-	margin: 0 0 0.45rem;
+	margin: 0 0 0.45rem var(--title-margin-left);
 	color: inherit;
 	text-rendering: optimizeLegibility;
 	font-size: var(--font-size-h3);

@@ -46,11 +46,11 @@
 			transform: translateY(-1.5rem);
 
 			img:not(.cover) {
-				transform: scale(1.2);
+				transform: scale(1.25);
 			}
 
 			div {
-				border: 0.75rem solid #ff74b2;
+				border: 0.75rem solid var(--color-highlight);
 			}
 		}
 	}
@@ -67,7 +67,7 @@
 	}
 
 	div {
-		border-radius: 1px;
+		position: relative;
 
 		display: flex;
 		flex-direction: column;

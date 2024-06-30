@@ -2,7 +2,7 @@
 title: "DFINITY"
 description: "The DFINITY Foundation develops the Internet Computer, a public blockchain network platform based on the Internet Computer Protocol (ICP)."
 icon: "/images/portfolio/icons/dfinity-icon.png"
-background: "#28282C"
+background: "#ffffff"
 type: "work"
 order: "1"
 ---

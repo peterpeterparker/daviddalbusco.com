@@ -1,4 +1,5 @@
 header,
+footer,
 section {
 	margin: 2.45em;
 
@@ -12,11 +13,13 @@ section {
 	border: 0.25rem solid black;
 }
 
+footer,
 section {
 	padding: 2.45rem 1.45rem;
 }
 
 header,
+footer,
 section {
 	position: relative;
 	max-width: 1240px;

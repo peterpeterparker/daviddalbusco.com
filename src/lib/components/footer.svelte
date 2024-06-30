@@ -32,21 +32,10 @@
 </footer>
 
 <style lang="scss">
-	footer {
-		background: black;
-		color: white;
-
-		margin-top: 5.25rem;
-		padding: 4rem 0 3rem;
-	}
-
 	footer > div {
-		max-width: 1240px;
-		margin: 0.45rem auto;
-
 		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
+		flex-direction: column;
+		gap: 2rem;
 
 		@media screen and (max-width: 960px) {
 			display: block;
@@ -67,11 +56,11 @@
 	}
 
 	svg {
-		width: 3rem;
-		height: 3rem;
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 
 	.twitter {
-		width: 2.4rem;
+		width: 2rem;
 	}
 </style>

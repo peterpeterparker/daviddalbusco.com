@@ -7,7 +7,7 @@ type: "work"
 order: "7"
 ---
 
-# Bonjour - Circle
+# Bonjour Foundation
 
 I develop several components and applications for the [Bonjour Foundation](https://bonjour.help) together with [customfuture SA](https://www.customfuture.com/).
 

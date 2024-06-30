@@ -77,11 +77,9 @@ dfn {
 	font-style: italic;
 }
 mark {
-	background: var(--color-highlight);
-	color: var(--color-primary);
+	background: black;
+	color: white;
 	padding: 0 0.25em;
-	border-radius: 1px;
-	box-shadow: 1px 1px black;
 
 	&:focus-visible {
 		outline: none;

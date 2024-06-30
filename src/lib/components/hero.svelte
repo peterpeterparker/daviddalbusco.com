@@ -23,18 +23,16 @@
 <style lang="scss">
 	h1 {
 		font-size: calc(var(--font-size-h1) * 1.45);
-		line-height: calc(var(--line-height-h1) * 1.25);
+		line-height: 0.85;
 		margin: 0 0 2.45rem var(--title-margin-left);
 		transition: color 0.15s ease-in;
 
 		@media screen and (max-width: 960px) {
-			font-size: calc(var(--font-size-h1) * 1.5);
-			line-height: calc(var(--line-height-h1));
-		}
-
-		@media screen and (max-width: 576px) {
 			font-size: calc(var(--font-size-h1));
-			line-height: calc(var(--line-height-h1) * 0.7);
+
+			svg {
+				width: 50px;
+			}
 		}
 	}
 

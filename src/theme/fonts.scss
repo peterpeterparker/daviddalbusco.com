@@ -32,16 +32,22 @@
 	-webkit-font-smoothing: antialiased;
 
 	--font-size-h1: 3.85rem;
-	--line-height-h1: 3.625rem;
-	--font-weight-h1: 700;
+	--line-height-h1: 1.15;
+	--font-weight-h1: 900;
 
-	--font-size-h2: 2.85rem;
-	--line-height-h2: 2.625rem;
-	--font-weight-h2: 700;
+	--font-size-h2: 3.052rem;
+	--line-height-h2: 1.15;
+	--font-weight-h2: 900;
 
-	--font-size-h3: 1.75rem;
-	--line-height-h3: 1.9166666666666667rem;
-	--font-weight-h3: 700;
+	--font-size-h3: 2.441rem;
+	--line-height-h3: 1.15;
+	--font-weight-h3: 900;
+
+	@media screen and (max-width: 576px) {
+		--font-size-h1: 3.052rem;
+		--font-size-h2: 2.441rem;
+		--font-size-h3: 1.953rem;
+	}
 
 	line-height: 1.15;
 }

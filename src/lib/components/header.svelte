@@ -52,6 +52,10 @@
 
 	h3 {
 		margin: 0;
+
+		@media screen and (max-width: 960px) {
+			font-size: 1rem;
+		}
 	}
 
 	a {

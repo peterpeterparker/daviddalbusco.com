@@ -253,7 +253,7 @@ img {
 }
 h1 {
 	padding: 0;
-	margin: 0 0 1.45rem;
+	margin: 0 0 1.45rem var(--title-margin-left);
 	color: inherit;
 	text-rendering: optimizeLegibility;
 	font-size: var(--font-size-h1);
@@ -262,7 +262,7 @@ h1 {
 }
 h2 {
 	padding: 0;
-	margin: 0 0 1.45rem;
+	margin: 0 0 1.45rem var(--title-margin-left);
 	color: inherit;
 	text-rendering: optimizeLegibility;
 	font-size: var(--font-size-h2);
@@ -271,7 +271,7 @@ h2 {
 }
 h3 {
 	padding: 0;
-	margin: 0 0 0.45rem;
+	margin: 0 0 0.45rem var(--title-margin-left);
 	color: inherit;
 	text-rendering: optimizeLegibility;
 	font-size: var(--font-size-h3);

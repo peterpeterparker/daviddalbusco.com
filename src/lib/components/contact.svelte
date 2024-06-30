@@ -3,7 +3,7 @@
 	import Button from '$lib/components/button.svelte';
 </script>
 
-<Section background="white" color="black">
+<Section background="var(--color-primary)" color="var(--color-primary-contrast)">
 	<h2 id="contact">Contact</h2>
 
 	<p>Get in touch through this form and let's work together!</p>

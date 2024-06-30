@@ -9,7 +9,7 @@
 	export let projects: MarkdownData<PortfolioMetadata>[];
 </script>
 
-<Section background="white" color="black">
+<Section>
 	<slot />
 
 	<div class="grid">

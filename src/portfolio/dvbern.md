@@ -4,6 +4,7 @@ description: "DV Bern is more than a normal IT company. They describe the compan
 icon: "/images/portfolio/icons/dvb-icon.png"
 background: "#2e4051"
 type: "work"
+order: "4"
 ---
 
 # DV Bern AG

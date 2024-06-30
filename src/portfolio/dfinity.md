@@ -4,6 +4,7 @@ description: "The DFINITY Foundation develops the Internet Computer, a public bl
 icon: "/images/portfolio/icons/dfinity-icon.png"
 background: "#28282C"
 type: "work"
+order: "1"
 ---
 
 # DFINITY

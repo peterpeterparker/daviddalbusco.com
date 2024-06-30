@@ -8,6 +8,7 @@ export interface PortfolioMetadata {
 	icon: string;
 	background: string;
 	type: PortfolioType;
+	order?: string;
 }
 
 export interface Portfolio {

@@ -4,6 +4,7 @@ description: "Owlly enables digital democracy by holistically promoting the coll
 icon: "/images/portfolio/icons/owlly-icon.png"
 background: "linear-gradient(155deg, #00a6d4 0%, #81bc4f)"
 type: "work"
+order: "8"
 ---
 
 # Owlly

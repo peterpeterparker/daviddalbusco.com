@@ -7,6 +7,6 @@ div.grid {
 	grid-row-gap: 2.25rem;
 
 	@media screen and (min-width: 1240px) {
-		grid-template-columns: repeat(auto-fit, minmax(250px, 276px));
+		grid-template-columns: repeat(auto-fit, 1fr);
 	}
 }

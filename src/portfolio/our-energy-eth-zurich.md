@@ -4,6 +4,7 @@ description: "Our Energy was a project that had for goal to analyse the impact o
 icon: "/images/portfolio/icons/ourenergy-icon.png"
 background: "#f2f2f2"
 type: "work"
+order: "5"
 ---
 
 # Our Energy - ETH Zürich

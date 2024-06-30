@@ -7,11 +7,11 @@
 </script>
 
 <Projects {projects}>
-	<h2>Play</h2>
+	<h2>Personal Projects</h2>
 
 	<p>
-		As an open source enthusiast, I have actively engaged in developing various projects for both
-		fun and learning purposes. Here are some notable projects I have developed:
+		As an open-source enthusiast, I have actively developed various projects for both fun and
+		learning. Here are some of my notable creations:
 	</p>
 </Projects>
 

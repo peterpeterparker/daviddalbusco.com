@@ -4,6 +4,7 @@ description: "ineexa is a digital solution for the construction industry."
 icon: "/images/portfolio/icons/ineexa-icon.png"
 background: "#f3f3f3"
 type: "work"
+order: "6"
 ---
 
 # Ineexa

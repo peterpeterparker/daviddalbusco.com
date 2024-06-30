@@ -1,5 +1,4 @@
 <script lang="ts">
-	import '../../theme/_section.scss';
 	import '../../theme/_grid.scss';
 
 	import Project from '$lib/components/project.svelte';

@@ -4,6 +4,7 @@ description: "Bonjour inspires the interface between low-threshold technologies,
 icon: "/images/portfolio/icons/bonjour-icon.png"
 background: "#ffd664"
 type: "work"
+order: "7"
 ---
 
 # Bonjour - Circle

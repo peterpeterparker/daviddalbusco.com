@@ -4,6 +4,7 @@ description: "ETH Library Lab strives to advance information infrastructure and 
 icon: "/images/portfolio/icons/eth-library-lab-icon.png"
 background: "#bbc3cc"
 type: "work"
+order: "3"
 ---
 
 # ETH Library Lab

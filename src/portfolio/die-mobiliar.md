@@ -4,6 +4,7 @@ description: "Die Mobiliar is the oldest private Swiss insurance group."
 icon: "/images/portfolio/icons/mobi-icon.png"
 background: "#DA2323"
 type: "work"
+order: "2"
 ---
 
 # Die Mobiliar

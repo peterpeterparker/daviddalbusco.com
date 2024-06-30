@@ -14,8 +14,6 @@ export const listPortfolio = async (): Promise<Portfolio> => {
 
 			const { work, play } = acc;
 
-			console.log(work, type);
-
 			if (type === 'work') {
 				return {
 					work: [...work, data].sort(

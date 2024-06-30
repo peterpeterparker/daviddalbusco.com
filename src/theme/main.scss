@@ -1,9 +1,36 @@
-section,
-header {
+header,
+footer,
+section {
 	margin: 2.45em;
+
+	@media screen and (max-width: 576px) {
+		margin: 1.45em;
+	}
+
+	background: white;
+	color: black;
+
+	border: 0.25rem solid black;
 }
 
-nav {
-	padding: 0 2.45em;
-	margin: 1.45em 0;
+footer,
+section {
+	padding: 2.45rem 1.45rem;
+}
+
+header,
+footer,
+section {
+	position: relative;
+	max-width: 1240px;
+
+	@media screen and (min-width: 1240px) {
+		margin: 2.45rem auto;
+	}
+}
+
+section > h2,
+section > p,
+section > form {
+	max-width: min(820px, 100vw);
 }

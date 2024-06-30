@@ -16,6 +16,8 @@ It allows developers to outsource all the behind-the-scenes aspects of your web 
 
 The platform operates without controlling their data or work.
 
+---
+
 ## Fact sheet
 
 **Website:** [Juno](https://juno.build) (build with [Docusaurus](https://docusaurus.io))
@@ -23,6 +25,8 @@ The platform operates without controlling their data or work.
 **Technology:** [SvelteKit](https://kit.svelte.dev/) for the frontend dapp. Vanilla [TypeScript](https://www.typescriptlang.org/) for the libraries and CLI. [Rust](https://www.rust-lang.org/) for the canister smart contracts.
 
 **Infrastructure:** 100% on blockchain [Internet Computer](https://internetcomputer.org/).
+
+---
 
 ## Open source
 

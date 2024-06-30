@@ -1,69 +1,65 @@
-/* open-sans-300 - latin */
+/* jetbrains-mono-regular - latin */
 @font-face {
-	font-family: "Open Sans";
-	font-style: normal;
-	font-weight: 300;
-	font-display: swap;
-	src: url("/fonts/open-sans-v17-latin-300.eot"); /* IE9 Compat Modes */
-	src:
-		local("Open Sans Light"),
-		local("OpenSans-Light"),
-		url("/fonts/open-sans-v17-latin-300.eot?#iefix") format("embedded-opentype"),
-		/* IE6-IE8 */ url("/fonts/open-sans-v17-latin-300.woff2") format("woff2"),
-		/* Super Modern Browsers */ url("/fonts/open-sans-v17-latin-300.woff") format("woff"),
-		/* Modern Browsers */ url("/fonts/open-sans-v17-latin-300.ttf") format("truetype"),
-		/* Safari, Android, iOS */ url("/fonts/open-sans-v17-latin-300.svg#OpenSans") format("svg"); /* Legacy iOS */
-}
-
-/* open-sans-regular - latin */
-@font-face {
-	font-family: "Open Sans";
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: "JetBrains Mono";
 	font-style: normal;
 	font-weight: 400;
-	font-display: swap;
-	src: url("/fonts/open-sans-v17-latin-regular.eot"); /* IE9 Compat Modes */
-	src:
-		local("Open Sans Regular"),
-		local("OpenSans-Regular"),
-		url("/fonts/open-sans-v17-latin-regular.eot?#iefix") format("embedded-opentype"),
-		/* IE6-IE8 */ url("/fonts/open-sans-v17-latin-regular.woff2") format("woff2"),
-		/* Super Modern Browsers */ url("/fonts/open-sans-v17-latin-regular.woff") format("woff"),
-		/* Modern Browsers */ url("/fonts/open-sans-v17-latin-regular.ttf") format("truetype"),
-		/* Safari, Android, iOS */ url("/fonts/open-sans-v17-latin-regular.svg#OpenSans") format("svg"); /* Legacy iOS */
+	src: url("/fonts/jetbrains-mono-v18-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-/* open-sans-700 - latin */
+/* lexend-mega-regular - latin */
 @font-face {
-	font-family: "Open Sans";
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: "Lexend Mega";
 	font-style: normal;
-	font-weight: 700;
-	font-display: swap;
-	src: url("/fonts/open-sans-v17-latin-700.eot"); /* IE9 Compat Modes */
-	src:
-		local("Open Sans Bold"),
-		local("OpenSans-Bold"),
-		url("/fonts/open-sans-v17-latin-700.eot?#iefix") format("embedded-opentype"),
-		/* IE6-IE8 */ url("/fonts/open-sans-v17-latin-700.woff2") format("woff2"),
-		/* Super Modern Browsers */ url("/fonts/open-sans-v17-latin-700.woff") format("woff"),
-		/* Modern Browsers */ url("/fonts/open-sans-v17-latin-700.ttf") format("truetype"),
-		/* Safari, Android, iOS */ url("/fonts/open-sans-v17-latin-700.svg#OpenSans") format("svg"); /* Legacy iOS */
+	font-weight: 400;
+	src: url("/fonts/lexend-mega-v25-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lexend-mega-900 - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: "Lexend Mega";
+	font-style: normal;
+	font-weight: 900;
+	src: url("/fonts/lexend-mega-v25-latin-900.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
 :root {
-	font-family: "Open Sans", sans-serif;
+	font-family: "JetBrains Mono", sans-serif;
 
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 
 	--font-size-h1: 3.85rem;
-	--line-height-h1: 3.625rem;
-	--font-weight-h1: 700;
+	--line-height-h1: 1.15;
+	--font-weight-h1: 900;
 
-	--font-size-h2: 2.85rem;
-	--line-height-h2: 2.625rem;
-	--font-weight-h2: 700;
+	--font-size-h2: 3.052rem;
+	--line-height-h2: 1.15;
+	--font-weight-h2: 900;
 
-	--font-size-h3: 1.75rem;
-	--line-height-h3: 1.9166666666666667rem;
-	--font-weight-h3: 700;
+	--font-size-h3: 2.441rem;
+	--line-height-h3: 1.15;
+	--font-weight-h3: 900;
+
+	@media screen and (max-width: 576px) {
+		--font-size-h1: 3.052rem;
+		--font-size-h2: 2.441rem;
+		--font-size-h3: 1.953rem;
+	}
+
+	line-height: 1.15;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Lexend Mega", sans-serif;
+	letter-spacing: -0.2em;
+	--title-margin-left: -0.6rem;
+	margin: 0 0 0 var(--title-margin-left);
 }

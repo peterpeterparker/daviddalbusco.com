@@ -29,18 +29,22 @@
 
 	input,
 	textarea {
-		box-shadow: 3px 3px black;
-		border: 1px solid black;
+		border: 0.25rem solid black;
 
 		margin: 0.45rem 0;
 		padding: 0.25rem 0.45rem;
 
 		outline: none;
 
-		transition: box-shadow 0.15s ease-out;
+		transition: border 0.15s ease-out;
 
 		&:focus {
-			box-shadow: 3px 3px var(--color-highlight);
+			border: 0.25rem solid var(--color-highlight);
+		}
+
+		&::placeholder {
+			color: var(--color-highlight);
+			opacity: 1;
 		}
 	}
 

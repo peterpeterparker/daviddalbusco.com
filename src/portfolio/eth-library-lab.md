@@ -4,6 +4,7 @@ description: "ETH Library Lab strives to advance information infrastructure and 
 icon: "/images/portfolio/icons/eth-library-lab-icon.png"
 background: "#bbc3cc"
 type: "work"
+order: "3"
 ---
 
 # ETH Library Lab
@@ -18,6 +19,8 @@ As part of their projects, I use my engineering background and experience to pro
 - discuss technical questions
 - recommandations on design and UX topics
 - support regarding the open source and prototyping concepts
+
+---
 
 ## Open source
 

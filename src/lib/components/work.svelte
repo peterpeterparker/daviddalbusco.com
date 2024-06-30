@@ -7,7 +7,7 @@
 </script>
 
 <Projects {projects}>
-	<h2 id="portfolio">Work & Clients</h2>
+	<h2 id="portfolio">Portfolio</h2>
 
 	<p>
 		Throughout my career, I've had the pleasure of collaborating with a diverse range of clients.

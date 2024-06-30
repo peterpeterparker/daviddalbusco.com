@@ -60,7 +60,7 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const codeRule = () => (tokens, idx, _options, _env) => {
-		return `<deckgo-highlight-code 
+		return `<deckgo-highlight-code
                 language="${tokens[idx].params ? tokens[idx].params : 'javascript'}">
                     <code slot="code">${utils.escapeHtml(tokens[idx].content)}</code>
             </deckgo-highlight-code>`;

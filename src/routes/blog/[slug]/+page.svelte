@@ -10,7 +10,7 @@
 	import type { BlogMetadata } from '$lib/types/blog';
 	import { goto } from '$app/navigation';
 	import type { MarkdownData } from '$lib/types/markdown';
-	import Section from "$lib/components/section.svelte";
+	import Section from '$lib/components/section.svelte';
 
 	export let data: PageData;
 
@@ -69,10 +69,10 @@
 		<Button action={navigateBlog}>Continue reading</Button>
 
 		<a
-				class="newsletter"
-				href="http://eepurl.com/giun5j"
-				target="_blank"
-				rel="external noopener noreferrer">Subscribe to my newsletter</a
+			class="newsletter"
+			href="http://eepurl.com/giun5j"
+			target="_blank"
+			rel="external noopener noreferrer">Subscribe to my newsletter</a
 		>
 	</div>
 </Section>

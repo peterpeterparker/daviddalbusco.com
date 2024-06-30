@@ -37,8 +37,8 @@
 	</p>
 
 	<p>
-		I prefer decentralized solutions over using big tech cloud providers, which is why I have a
-		keen interest in blockchain networks, particularly the <a
+		I prefer decentralized solutions over using big tech cloud providers, which is why I have a keen
+		interest in blockchain networks, particularly the <a
 			href="https://internetcomputer.org/"
 			rel="noopener noreferrer"
 			target="_blank">Internet Computer</a
@@ -46,8 +46,7 @@
 	</p>
 
 	<p>
-		While I don't handle any backend work for clients, I have developed a few
-		smart contracts using <a
+		While I don't handle any backend work for clients, I have developed a few smart contracts using <a
 			href="https://www.rust-lang.org"
 			rel="noopener noreferrer"
 			target="_blank">Rust</a

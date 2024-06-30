@@ -16,24 +16,24 @@
 	{#if open}
 		<div class="container">
 			<a href="/" data-sveltekit-reload on:click={navigate}
-			><h2 in:fly={{ y: 100, duration: 500 }}>Home</h2></a
+				><h2 in:fly={{ y: 100, duration: 500 }}>Home</h2></a
 			>
 			<a href="/#portfolio" on:click={navigate} rel="external"
-			><h2 in:fly={{ y: 100, duration: 500 }}>Portfolio</h2></a
+				><h2 in:fly={{ y: 100, duration: 500 }}>Portfolio</h2></a
 			>
 			<a href="/#about" on:click={navigate} rel="external"
-			><h2 in:fly={{ y: 100, duration: 500 }}>About</h2></a
+				><h2 in:fly={{ y: 100, duration: 500 }}>About</h2></a
 			>
 			<a href="/blog" on:click={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
 			<a
-					href="http://eepurl.com/giun5j"
-					target="_blank"
-					on:click={navigate}
-					rel="external noopener noreferrer"
-			><h2 in:fly={{ y: 100, duration: 500 }}>Newsletter<IconOpen size="2.5rem" /></h2></a
+				href="http://eepurl.com/giun5j"
+				target="_blank"
+				on:click={navigate}
+				rel="external noopener noreferrer"
+				><h2 in:fly={{ y: 100, duration: 500 }}>Newsletter<IconOpen size="2.5rem" /></h2></a
 			>
 			<a href="/#contact" on:click={navigate} rel="external"
-			><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
+				><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
 			>
 		</div>
 	{/if}

@@ -5,7 +5,7 @@
 	import { goto } from '$app/navigation';
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
-	import Section from "$lib/components/section.svelte";
+	import Section from '$lib/components/section.svelte';
 
 	export let data: PageData;
 

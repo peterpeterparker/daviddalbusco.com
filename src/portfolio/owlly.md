@@ -15,6 +15,8 @@ As part of this project, I notably developed a Web Component which can be integr
 
 In addition, I supported the team in their technical decisions and also developed some part of the website, wizard and cloud functions.
 
+---
+
 ## Fact sheet
 
 **Technology:** [StencilJS](https://stenciljs.com/), [Angular](https://angular.io/) and [Tailwind CSS](https://tailwindcss.com/)
@@ -26,6 +28,8 @@ In addition, I supported the team in their technical decisions and also develope
 **Infrastructure:** [Google Cloud Firebase](https://firebase.google.com/) and [Functions](https://cloud.google.com/functions)
 
 **Database:** [Google Firestore](https://firebase.google.com/docs/firestore)
+
+---
 
 ## Open source
 

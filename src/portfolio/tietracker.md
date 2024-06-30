@@ -16,6 +16,8 @@ It was also interesting to develop a fully offline solution with [IndexedDB](htt
 
 ![Mobile application screenshots](/images/portfolio/screenshots/tietracker.webp)
 
+---
+
 ## Fact sheet
 
 **Available:** [Progressive Web Apps](https://tietracker.com/), [Apple Store](https://itunes.apple.com/app/id1493399075) and [Google Play](https://play.google.com/store/apps/details?id=com.tietracker.app)
@@ -25,6 +27,8 @@ It was also interesting to develop a fully offline solution with [IndexedDB](htt
 **Infrastructure:** [Google Cloud Hosting](https://firebase.google.com/) and [GitHub Actions](https://github.com/peterpeterparker/tietracker/tree/master/.github/workflows)
 
 **Database:** Offline with [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
+
+---
 
 ## Open source
 

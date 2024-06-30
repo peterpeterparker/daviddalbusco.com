@@ -15,6 +15,8 @@ Through this mandate, I took part in all the activities and development of the t
 
 Together we develop new Angular applications (SPA) and libraries which were integrated in the internal ERP of the company.
 
+---
+
 ## Fact sheet
 
 **Technology:** [Angular](https://angular.io/), [RxJS](https://rxjs.dev/) and [ngrx](https://ngrx.io/)

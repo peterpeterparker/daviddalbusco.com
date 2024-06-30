@@ -17,6 +17,8 @@ This app was notably used as a support for a 2-week energy challenge in June 201
 
 ![Mobile application screenshots](/images/portfolio/screenshots/ourenergy.webp)
 
+---
+
 ## Fact sheet
 
 **Available:** [Progressive Web Apps](https://ourenergy.ch/), [Apple Store](https://itunes.apple.com/app/id1453497591) and [Google Play](https://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy)

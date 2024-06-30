@@ -19,11 +19,15 @@ Features
 - Future Proof 🚀
 - Open Source (MIT license) ⭐️
 
+---
+
 ## Fact sheet
 
 **Website:** [Stylo](https://stylojs.com/)
 
 **Technology:** [StencilJS](https://stenciljs.com/)
+
+---
 
 ## Open source
 

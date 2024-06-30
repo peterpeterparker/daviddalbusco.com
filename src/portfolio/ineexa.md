@@ -13,6 +13,8 @@ order: "6"
 
 In addition to the development, I also designed the UI and defined the UX of the application that has for goal to replicate the experience of web-shops ("login > upload > edit > done").
 
+---
+
 ## Fact sheet
 
 **Technology:** [React](https://reactjs.org/)

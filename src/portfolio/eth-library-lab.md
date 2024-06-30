@@ -20,6 +20,8 @@ As part of their projects, I use my engineering background and experience to pro
 - recommandations on design and UX topics
 - support regarding the open source and prototyping concepts
 
+---
+
 ## Open source
 
 The Lab seeks to advance tools, systems, practices and services and therefore will publish, at least, some projects and prototypes as open source software on[GitHub](https://github.com/eth-library-lab)

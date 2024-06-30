@@ -15,6 +15,8 @@ DV Bern AG provides the most used ERP solution in Switzerland for such administr
 
 The project's scope was the development of a new process which had an influence on both the online end clients of the registers and the workflow of their employees.
 
+---
+
 ## Fact sheet
 
 **Technology:** [Java](https://www.java.com/), [Jakarta EE](https://jakarta.ee/) and [PrimeFaces](https://www.primefaces.org/)

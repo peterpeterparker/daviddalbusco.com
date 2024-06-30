@@ -30,14 +30,19 @@
 
 <main>
 	{@html content}
-
-	<Button action={navigatePortfolio}>Continue to portfolio</Button>
 </main>
 
+<div class="action"><Button action={navigatePortfolio}>Continue to portfolio</Button></div>
+
 <style lang="scss">
-	main {
+	main, .action {
 		max-width: 1240px;
-		margin: 5.45rem auto;
+		margin: 0 auto 2.45rem;
+	}
+
+	main {
+		border: 0.25rem solid black;
+		padding: 2.45rem 1.45rem;
 
 		:global(img) {
 			padding: 0;

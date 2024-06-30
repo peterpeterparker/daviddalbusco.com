@@ -63,18 +63,18 @@
 	<article>
 		{@html content}
 	</article>
+</main>
 
-	<div class="actions">
-		<Button action={navigateBlog}>Continue reading</Button>
+<div class="actions">
+	<Button action={navigateBlog}>Continue reading</Button>
 
-		<a
+	<a
 			class="newsletter"
 			href="http://eepurl.com/giun5j"
 			target="_blank"
 			rel="external noopener noreferrer">Subscribe to my newsletter</a
-		>
-	</div>
-</main>
+	>
+</div>
 
 <style lang="scss">
 	.date {
@@ -86,10 +86,14 @@
 		margin-bottom: 1.45rem;
 	}
 
+	main, .actions {
+		max-width: 1240px;
+		margin: 0 auto 2.45rem;
+	}
+
 	main {
-		max-width: 860px;
-		margin: 5.45rem auto;
-		padding: 0 2.45rem;
+		border: 0.25rem solid black;
+		padding: 2.45rem 1.45rem;
 	}
 
 	.actions {

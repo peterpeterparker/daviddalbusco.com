@@ -18,5 +18,9 @@
 <style lang="scss">
 	p {
 		margin: 0 0 3.25em;
+
+		@media screen and (max-width: 960px) {
+			display: none;
+		}
 	}
 </style>

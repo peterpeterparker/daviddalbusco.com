@@ -10,14 +10,17 @@
 	<h2 id="portfolio">Portfolio</h2>
 
 	<p>
-		Throughout my career, I've had the pleasure of collaborating with a diverse range of clients.
-		From small startups and corporates to universities and foundations, I've had the opportunity to
-		assist them in creating exceptional web products and mobile applications.
+		I've had the pleasure of collaborating with a diverse range of clients. From small startups and
+		corporates to universities and foundations.
 	</p>
 </Projects>
 
 <style lang="scss">
 	p {
 		margin: 0 0 3.25em;
+
+		@media screen and (max-width: 960px) {
+			display: none;
+		}
 	}
 </style>

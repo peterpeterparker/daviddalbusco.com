@@ -56,14 +56,8 @@
 	<p>
 		In addition to my technical skills, I have experience in project management, business
 		requirements analysis, and UX design from a developer's perspective. I hold degrees in Computer
-		Engineering and an Executive Master's in Business Administration. I'm fluent in French, German,
-		and English.
-	</p>
-
-	<p>
-		I've launched several open-source personal projects that failed, but I gained valuable
-		experience in how to launch a tech-focused project and build communities without spending money
-		on advertisement.
+		Engineering and an Executive Master's in Business Administration (EMBA). I'm fluent in French,
+		German, and English.
 	</p>
 
 	<p>

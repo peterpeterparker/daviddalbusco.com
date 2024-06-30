@@ -37,12 +37,20 @@
 			transition: transform 0.5s ease-out;
 		}
 
+		div {
+			transition: border 0.25s ease-out;
+		}
+
 		&:focus,
 		&:hover {
 			transform: translateY(-1.5rem);
 
 			img:not(.cover) {
 				transform: scale(1.2);
+			}
+
+			div {
+				border: 0.75rem solid #ff74b2;
 			}
 		}
 	}
@@ -69,8 +77,7 @@
 		width: 100%;
 		height: 15rem;
 
-		box-shadow: 3px 3px black;
-		border: 1px solid black;
+		border: 0.75rem solid black;
 
 		margin-bottom: 1em;
 

@@ -1,6 +1,6 @@
 <script lang="ts">
 	let defaultUrl = 'https://daviddalbusco.com';
-	let defaultImage = `${defaultUrl}/images/daviddalbusco.jpg`;
+	let defaultImage = `${defaultUrl}/images/social-image.jpg`;
 	let defaultTitle = 'David Dal Busco';
 	let defaultDescription = 'Freelance Web Developer';
 

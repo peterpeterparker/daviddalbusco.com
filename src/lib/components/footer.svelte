@@ -37,7 +37,7 @@
 		color: white;
 
 		margin-top: 5.25rem;
-		padding: 3rem;
+		padding: 4rem 0 3rem;
 	}
 
 	footer > div {
@@ -55,7 +55,7 @@
 
 	.social {
 		display: flex;
-		gap: 0.45rem;
+		gap: 0.75rem;
 	}
 
 	a {
@@ -67,11 +67,11 @@
 	}
 
 	svg {
-		width: 2rem;
-		height: 2rem;
+		width: 3rem;
+		height: 3rem;
 	}
 
 	.twitter {
-		width: 1.6rem;
+		width: 2.4rem;
 	}
 </style>

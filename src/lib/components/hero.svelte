@@ -24,10 +24,8 @@
 	h1 {
 		font-size: calc(var(--font-size-h1) * 1.45);
 		line-height: calc(var(--line-height-h1) * 1.25);
-		letter-spacing: -0.1em;
-		margin: 0 0 2.45rem;
+		margin: 0 0 2.45rem var(--title-margin-left);
 		transition: color 0.15s ease-in;
-		max-width: 640px;
 
 		@media screen and (max-width: 960px) {
 			font-size: calc(var(--font-size-h1) * 1.5);

@@ -42,7 +42,7 @@
 		background: black;
 		color: white;
 
-		padding: 0 1.45rem;
+		padding: 0 1.45rem 0 1.25rem;
 	}
 
 	.menu {

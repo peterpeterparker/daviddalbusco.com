@@ -12,7 +12,8 @@
 		<input aria-label="Your name" name="name" placeholder="Your name" type="text" />
 		<input aria-label="Your email" name="_replyto" placeholder="Your email" type="email" />
 		<input aria-label="Your phone" name="phone" placeholder="Your phone" type="tel" />
-		<textarea aria-label="Your message" name="message" placeholder="Your message" rows="4" />
+		<textarea aria-label="Your message" name="message" placeholder="Your message" rows="4"
+		></textarea>
 
 		<input name="_gotcha" style="display: none" type="text" />
 		<input name="_next" type="hidden" value="https://daviddalbusco.com" />

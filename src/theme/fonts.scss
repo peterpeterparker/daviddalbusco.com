@@ -43,13 +43,13 @@
 	--line-height-h3: 1.15;
 	--font-weight-h3: 900;
 
+	line-height: 1.15;
+
 	@media screen and (max-width: 576px) {
 		--font-size-h1: 3.052rem;
 		--font-size-h2: 2.441rem;
 		--font-size-h3: 1.953rem;
 	}
-
-	line-height: 1.15;
 }
 
 h1,

@@ -3,14 +3,14 @@ footer,
 section {
 	margin: 2.45em;
 
-	@media screen and (max-width: 576px) {
-		margin: 1.45em;
-	}
-
 	background: white;
 	color: black;
 
 	border: 0.25rem solid black;
+
+	@media screen and (max-width: 576px) {
+		margin: 1.45em;
+	}
 }
 
 footer,

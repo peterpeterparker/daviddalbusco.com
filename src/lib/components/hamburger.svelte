@@ -19,9 +19,9 @@
 </script>
 
 <button aria-label="Menu" on:click={onClick}>
-	<div class="first" class:open />
-	<div class="second" class:open />
-	<div class="third" class:open />
+	<div class="first" class:open></div>
+	<div class="second" class:open></div>
+	<div class="third" class:open></div>
 </button>
 
 <style lang="scss">

@@ -14,8 +14,8 @@
 	<h2>Personal Projects</h2>
 
 	<p>
-		As an open-source enthusiast, I have actively developed various projects for both fun and
-		learning. Here are some of my notable creations:
+		As an open-source enthusiast, I've developed various personal projects. Here are some of my
+		notable creations:
 	</p>
 </Projects>
 

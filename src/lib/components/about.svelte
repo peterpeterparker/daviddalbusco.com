@@ -13,14 +13,14 @@
 		/>
 	</h2>
 
-	<p>Hi there! It's great to meet you! 👋</p>
+	<p>Hi there! 👋</p>
 
 	<p>I'm a freelance web developer and contractor based in Zürich, Switzerland.</p>
 
 	<p>
 		I build performant, user-centric web applications. I develop both visually appealing apps and
-		kick-ass architecture layers. Clients often hire me to create prototypes, products, or even
-		entire ecosystems from scratch.
+		kick-ass architecture layers. Clients often hire me to create prototypes, products, or entire
+		ecosystems from scratch.
 	</p>
 
 	<p>
@@ -32,21 +32,22 @@
 		<a href="https://angular.io" rel="noopener noreferrer" target="_blank">Angular</a>,
 		<a href="https://reactjs.org" rel="noopener noreferrer" target="_blank">React</a>
 		and
-		<a href="https://stenciljs.com" rel="noopener noreferrer" target="_blank">StencilJS</a>, but I'm
-		passionate about framework-agnostic agnostic solutions using TypeScript.
+		<a href="https://stenciljs.com" rel="noopener noreferrer" target="_blank">StencilJS</a>, though
+		I'm particularly passionate about framework-agnostic solutions using TypeScript.
 	</p>
 
 	<p>
-		I prefer decentralized solutions over using big tech cloud providers, which is why I have a keen
-		interest in blockchain networks, particularly the <a
+		I prefer decentralized solutions over big tech cloud providers, which fuels my interest in
+		blockchain networks — especially the <a
 			href="https://internetcomputer.org/"
 			rel="noopener noreferrer"
 			target="_blank">Internet Computer</a
-		>.
+		>, on which I built
+		<a href="https://juno.build" rel="noopener noreferrer" target="_blank">Juno</a>.
 	</p>
 
 	<p>
-		While I don't handle any backend work for clients, I have developed a few smart contracts using <a
+		While I don't handle backend work for clients, I have developed smart contracts in <a
 			href="https://www.rust-lang.org"
 			rel="noopener noreferrer"
 			target="_blank">Rust</a
@@ -54,21 +55,15 @@
 	</p>
 
 	<p>
-		In addition to my technical skills, I have experience in project management, business
-		requirements analysis, and UX design from a developer's perspective. I hold degrees in Computer
-		Engineering and an Executive Master's in Business Administration (EMBA). I'm fluent in French,
-		German, and English.
+		I hold degrees in Computer Engineering and an Executive Master’s in Business Administration
+		(EMBA), and I’m fluent in French, German, and English.
 	</p>
 
-	<p>
-		When I'm not busy coding, you can often find me running on mountain trails for a few hours on
-		the weekend. 🏔️🏃
-	</p>
+	<p>When I'm not coding, you can find me running on mountain trails. 🏔️🏃</p>
 
 	<p>
-		If you need help or have a project in mind, feel free to <a
-			href="/#contact"
-			rel="noopener noreferrer">get in touch!</a
+		If you have a project in mind or need some help, <a href="/#contact" rel="noopener noreferrer"
+			>get in touch!</a
 		>
 	</p>
 </Section>

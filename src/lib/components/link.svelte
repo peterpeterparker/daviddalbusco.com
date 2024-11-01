@@ -1,8 +1,13 @@
 <script lang="ts">
 	import IconOpen from '$lib/icons/IconOpen.svelte';
 
-	export let href: string;
-	export let external = false;
+	interface Props {
+		href: string;
+		external?: boolean;
+		children?: import('svelte').Snippet;
+	}
+
+	let { href, external = false, children }: Props = $props();
 </script>
 
 <a
@@ -10,7 +15,7 @@
 	target={external ? '_blank' : undefined}
 	rel={external ? 'external noopener noreferrer' : undefined}
 >
-	<slot />
+	{@render children?.()}
 	{#if external}<IconOpen />{/if}
 </a>
 

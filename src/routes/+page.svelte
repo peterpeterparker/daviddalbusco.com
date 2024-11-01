@@ -10,13 +10,15 @@
 	import Newsletter from '$lib/components/newsletter.svelte';
 	import { cleanBodyStyles } from '$lib/utils/styles.utils';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	let work;
-	let play;
-	let blog;
+	let { data }: Props = $props();
 
-	$: ({ work, play, blog } = data);
+	let work = $derived(data.work);
+	let play = $derived(data.play);
+	let blog = $derived(data.blog);
 
 	const onScroll = () => {
 		const scrolledSize =
@@ -43,7 +45,7 @@
 	</style>
 </svelte:head>
 
-<svelte:window on:scroll={onScroll} />
+<svelte:window onscroll={onScroll} />
 
 <Hero />
 

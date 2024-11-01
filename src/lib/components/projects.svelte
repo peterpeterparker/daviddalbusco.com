@@ -6,11 +6,16 @@
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 
-	export let projects: MarkdownData<PortfolioMetadata>[];
+	interface Props {
+		projects: MarkdownData<PortfolioMetadata>[];
+		children?: import('svelte').Snippet;
+	}
+
+	let { projects, children }: Props = $props();
 </script>
 
 <Section>
-	<slot />
+	{@render children?.()}
 
 	<div class="grid">
 		{#each projects as project}

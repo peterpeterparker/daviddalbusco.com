@@ -4,11 +4,21 @@
 	let defaultTitle = 'David Dal Busco';
 	let defaultDescription = 'Freelance Web Developer';
 
-	export let url: string = defaultUrl;
-	export let canonical: string | undefined = undefined;
-	export let image: string | undefined = undefined;
-	export let title: string | undefined = undefined;
-	export let description: string | undefined = undefined;
+	interface Props {
+		url?: string;
+		canonical?: string | undefined;
+		image?: string | undefined;
+		title?: string | undefined;
+		description?: string | undefined;
+	}
+
+	let {
+		url = defaultUrl,
+		canonical = undefined,
+		image = undefined,
+		title = undefined,
+		description = undefined
+	}: Props = $props();
 </script>
 
 <title>{title ?? defaultTitle}</title>

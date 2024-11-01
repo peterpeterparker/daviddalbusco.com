@@ -2,8 +2,8 @@
 	import Hamburger from '$lib/components/hamburger.svelte';
 	import Menu from '$lib/components/menu.svelte';
 
-	let open = false;
-	let hamburger: Hamburger;
+	let open = $state(false);
+	let hamburger: Hamburger = $state();
 
 	const onStateChange = ({ detail }: CustomEvent<boolean>) => (open = detail);
 

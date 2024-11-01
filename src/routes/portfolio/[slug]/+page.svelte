@@ -7,13 +7,15 @@
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 	import Section from '$lib/components/section.svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	let portfolio: MarkdownData<PortfolioMetadata>;
-	$: ({ portfolio } = data);
+	let { data }: Props = $props();
 
-	let content: string;
-	$: ({ content } = portfolio);
+	let portfolio: MarkdownData<PortfolioMetadata> = $derived(data.portfolio);
+
+	let content: string = $derived(portfolio.content);
 
 	const navigatePortfolio = () => goto('/portfolio');
 </script>

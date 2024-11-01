@@ -3,7 +3,11 @@
 	import { createEventDispatcher } from 'svelte';
 	import IconOpen from '$lib/icons/IconOpen.svelte';
 
-	export let open: boolean;
+	interface Props {
+		open: boolean;
+	}
+
+	let { open }: Props = $props();
 
 	const dispatch = createEventDispatcher();
 
@@ -15,24 +19,24 @@
 <div class:open class="menu">
 	{#if open}
 		<div class="container">
-			<a href="/" data-sveltekit-reload on:click={navigate}
+			<a href="/" data-sveltekit-reload onclick={navigate}
 				><h2 in:fly={{ y: 100, duration: 500 }}>Home</h2></a
 			>
-			<a href="/#portfolio" on:click={navigate} rel="external"
+			<a href="/#portfolio" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Portfolio</h2></a
 			>
-			<a href="/#about" on:click={navigate} rel="external"
+			<a href="/#about" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>About</h2></a
 			>
-			<a href="/blog" on:click={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
+			<a href="/blog" onclick={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
 			<a
 				href="http://eepurl.com/giun5j"
 				target="_blank"
-				on:click={navigate}
+				onclick={navigate}
 				rel="external noopener noreferrer"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Newsletter<IconOpen size="2.5rem" /></h2></a
 			>
-			<a href="/#contact" on:click={navigate} rel="external"
+			<a href="/#contact" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
 			>
 		</div>

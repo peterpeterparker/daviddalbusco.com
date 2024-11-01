@@ -3,7 +3,11 @@
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 	import type { MarkdownData } from '$lib/types/markdown';
 
-	export let projects: MarkdownData<PortfolioMetadata>[];
+	interface Props {
+		projects: MarkdownData<PortfolioMetadata>[];
+	}
+
+	let { projects }: Props = $props();
 </script>
 
 <Projects {projects}>

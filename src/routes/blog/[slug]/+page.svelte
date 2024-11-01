@@ -12,18 +12,19 @@
 	import type { MarkdownData } from '$lib/types/markdown';
 	import Section from '$lib/components/section.svelte';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
 
-	let post: MarkdownData<BlogMetadata>;
-	$: ({ post } = data);
+	let { data }: Props = $props();
 
-	let slug: string;
-	let content: string;
-	let metadata: BlogMetadata;
+	let post: MarkdownData<BlogMetadata> = $derived(data.post);
 
-	$: ({ slug, content, metadata } = post);
+	let slug: string = $derived(post.slug);
+	let content: string = $derived(post.content);
+	let metadata: BlogMetadata = $derived(post.metadata);
 
-	$: ({ title, canonical, description, image, date: postDate, tags } = metadata);
+	let { title, canonical, description, image, date: postDate, tags } = $derived(metadata);
 
 	onMount(async () => {
 		if (!browser) {

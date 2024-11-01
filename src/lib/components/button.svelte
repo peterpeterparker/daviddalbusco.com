@@ -1,6 +1,11 @@
 <script lang="ts">
-	export let action: (() => void) | undefined = undefined;
-	export let type: 'submit' | 'button' = 'button';
+	interface Props {
+		action?: (() => void) | undefined;
+		type?: 'submit' | 'button';
+		children?: import('svelte').Snippet;
+	}
+
+	let { action = undefined, type = 'button', children }: Props = $props();
 
 	const onClick = () => {
 		if (!action) {
@@ -11,8 +16,8 @@
 	};
 </script>
 
-<button on:click={onClick} {type}>
-	<slot />
+<button onclick={onClick} {type}>
+	{@render children?.()}
 </button>
 
 <style lang="scss">

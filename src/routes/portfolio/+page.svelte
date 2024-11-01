@@ -8,10 +8,13 @@
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 	import type { MarkdownData } from '$lib/types/markdown';
 
-	export let data: PageData;
-	let work: MarkdownData<PortfolioMetadata>[];
-	let play: MarkdownData<PortfolioMetadata>[];
-	$: ({ work, play } = data);
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
+	let work: MarkdownData<PortfolioMetadata>[] = $derived(data.work);
+	let play: MarkdownData<PortfolioMetadata>[] = $derived(data.play);
 </script>
 
 <svelte:head>

@@ -7,8 +7,12 @@
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { BlogMetadata } from '$lib/types/blog';
 
-	export let posts: MarkdownData<BlogMetadata>[];
-	export let more = false;
+	interface Props {
+		posts: MarkdownData<BlogMetadata>[];
+		more?: boolean;
+	}
+
+	let { posts, more = false }: Props = $props();
 </script>
 
 <Section background="var(--color-tertiary)" color="var(--color-tertiary-contrast)">

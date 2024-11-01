@@ -3,10 +3,19 @@
 	import type { BlogMetadata } from '$lib/types/blog';
 	import Card from '$lib/components/card.svelte';
 
-	export let post: MarkdownData<BlogMetadata>;
+	interface Props {
+		post: MarkdownData<BlogMetadata>;
+	}
 
-	export let { metadata, slug } = post;
-	export let { title, description, image, date: postDate } = metadata;
+	let { post }: Props = $props();
+
+	let metadata = $derived(post.metadata);
+	let slug = $derived(post.slug);
+
+	let title = $derived(metadata.title);
+	let description = $derived(metadata.description);
+	let image = $derived(metadata.image);
+	let postDate = $derived(metadata.date);
 </script>
 
 <Card background="transparent" cover={true} {image} path="blog" {slug}>

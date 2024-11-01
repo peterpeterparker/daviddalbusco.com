@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 
-	let open = false;
+	let open = $state(false);
 
 	const dispatch = createEventDispatcher();
 
@@ -18,7 +18,7 @@
 	};
 </script>
 
-<button aria-label="Menu" on:click={onClick}>
+<button aria-label="Menu" onclick={onClick}>
 	<div class="first" class:open></div>
 	<div class="second" class:open></div>
 	<div class="third" class:open></div>

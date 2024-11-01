@@ -1,15 +1,17 @@
 <script lang="ts">
 	import '../../theme/_grid.scss';
-
 	import type { PageData } from './$types';
 	import Seo from '$lib/components/seo.svelte';
 	import Blog from '$lib/components/blog.svelte';
 	import type { BlogMetadata } from '$lib/types/blog';
 	import type { MarkdownData } from '$lib/types/markdown';
 
-	export let data: PageData;
-	let posts: MarkdownData<BlogMetadata>[];
-	$: ({ posts } = data);
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
+	let posts: MarkdownData<BlogMetadata>[] = $derived(data.posts);
 </script>
 
 <svelte:head>

@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 
-	export let path: string;
-	export let slug: string;
+	interface Props {
+		path: string;
+		slug: string;
+		background: string;
+		image: string;
+		cover?: boolean;
+		children?: import('svelte').Snippet;
+	}
 
-	export let background: string;
-	export let image: string;
-
-	export let cover: boolean = false;
+	let { path, slug, background, image, cover = false, children }: Props = $props();
 </script>
 
 <a href={`${base}/${path}/${slug}`}>
@@ -16,7 +19,7 @@
 			<img alt="" aria-hidden="true" class:cover loading="lazy" role="presentation" src={image} />
 		</div>
 
-		<slot />
+		{@render children?.()}
 	</article>
 </a>
 
@@ -45,7 +48,7 @@
 		&:hover {
 			transform: translateY(-1.5rem);
 
-			img:not(.cover) {
+			img:not(:global(.cover)) {
 				transform: scale(1.25);
 			}
 
@@ -81,7 +84,7 @@
 
 		margin-bottom: 1em;
 
-		img:not(.cover) {
+		img:not(:global(.cover)) {
 			width: 8rem;
 			height: 8rem;
 		}

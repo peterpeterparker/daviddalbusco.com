@@ -1,6 +1,6 @@
 <!-- source: https://fonts.google.com/icons?selected=Material%20Icons%20Round%3Aopen_in_new%3A -->
 <script lang="ts">
-	export let size = `24px`;
+	let { size = `24px` } = $props();
 </script>
 
 <svg

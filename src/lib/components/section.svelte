@@ -2,10 +2,15 @@
 	import { onMount } from 'svelte';
 	import { /* @vite-ignore */ isMobile } from '@deckdeckgo/utils';
 
-	let section: HTMLElement;
+	let section: HTMLElement = $state();
 
-	export let color: string | undefined = undefined;
-	export let background: string | undefined = undefined;
+	interface Props {
+		color?: string | undefined;
+		background?: string | undefined;
+		children?: import('svelte').Snippet;
+	}
+
+	let { color = undefined, background = undefined, children }: Props = $props();
 
 	onMount(() => {
 		const observer: IntersectionObserver = new IntersectionObserver(
@@ -40,7 +45,7 @@
 </script>
 
 <section bind:this={section}>
-	<slot />
+	{@render children?.()}
 </section>
 
 <style lang="scss">

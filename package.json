@@ -23,7 +23,7 @@
 	"devDependencies": {
 		"@stencil/core": "^4.22.2",
 		"@sveltejs/adapter-static": "^3.0.6",
-		"@sveltejs/kit": "^2.7.3",
+		"@sveltejs/kit": "^2.8.3",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0",
 		"@types/eslint": "^9.6.1",
 		"@types/remarkable": "^2.0.8",

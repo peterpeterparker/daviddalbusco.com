@@ -4,7 +4,6 @@
 	import Blog from '$lib/components/blog.svelte';
 	import Work from '$lib/components/work.svelte';
 	import Play from '$lib/components/play.svelte';
-	import Hero from '$lib/components/hero.svelte';
 	import About from '$lib/components/about.svelte';
 	import Contact from '$lib/components/contact.svelte';
 	import Newsletter from '$lib/components/newsletter.svelte';
@@ -46,8 +45,6 @@
 </svelte:head>
 
 <svelte:window onscroll={onScroll} />
-
-<Hero />
 
 <Work projects={work} />
 

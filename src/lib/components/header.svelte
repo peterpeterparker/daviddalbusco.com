@@ -12,7 +12,7 @@
 
 <header>
 	<div class="title">
-		<a href="/" aria-label="Go to daviddalbusco.com home page"><h3>David Dal Busco</h3></a>
+		<a href="/" aria-label="Go to daviddalbusco.com home page"><h1>David Dal Busco</h1></a>
 	</div>
 
 	<div class="menu"><Hamburger bind:this={hamburger} on:state={onStateChange} /></div>
@@ -50,7 +50,11 @@
 		padding: 0 0 0 1.45rem;
 	}
 
-	h3 {
+	h1 {
+		font-size: var(--font-size-h3);
+		line-height: var(--line-height-h3);
+		font-weight: var(--font-weight-h3);
+
 		margin: 0;
 
 		@media screen and (max-width: 960px) {

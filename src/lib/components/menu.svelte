@@ -22,13 +22,23 @@
 			<a href="/" data-sveltekit-reload onclick={navigate}
 				><h2 in:fly={{ y: 100, duration: 500 }}>Home</h2></a
 			>
+
 			<a href="/#portfolio" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Portfolio</h2></a
 			>
+
+			<a href="/#projects" onclick={navigate} rel="external"
+				><h2 in:fly={{ y: 100, duration: 500 }}>Projects</h2></a
+			>
+
 			<a href="/#about" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>About</h2></a
 			>
-			<a href="/blog" onclick={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
+
+			<a href="/#talks" onclick={navigate} rel="external"
+				><h2 in:fly={{ y: 100, duration: 500 }}>Talks</h2></a
+			>
+
 			<a
 				href="http://eepurl.com/giun5j"
 				target="_blank"
@@ -36,6 +46,9 @@
 				rel="external noopener noreferrer"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Newsletter<IconOpen size="2.5rem" /></h2></a
 			>
+
+			<a href="/blog" onclick={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
+
 			<a href="/#contact" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
 			>

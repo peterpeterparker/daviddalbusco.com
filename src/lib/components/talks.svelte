@@ -4,7 +4,7 @@
 </script>
 
 <Section background="var(--color-tertiary)" color="var(--color-tertiary-contrast)">
-	<h2 id="newsletter">Talks</h2>
+	<h2 id="talks">Talks</h2>
 
 	<p>
 		Over the past few years, I’ve had the opportunity to speak at and run workshops at several

@@ -11,7 +11,7 @@
 </script>
 
 <Projects {projects}>
-	<h2>Personal Projects</h2>
+	<h2 id="projects">Personal Projects</h2>
 
 	<p>
 		As an open-source enthusiast, I've developed various personal projects. Here are some of my

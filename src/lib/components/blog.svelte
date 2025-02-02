@@ -19,8 +19,9 @@
 	<h2 id="blog">Blog</h2>
 
 	<p>
-		New skills I have learned, technologies I have used, and tutorials I have followed. In my series
-		of blog posts, I share the outcomes of my recent hobby work.
+		New skills I have learned and technologies I have used are part of my blog series, where I share
+		the results of my recent work. That said, I’ve been blogging less lately as my focus is on
+		building <a href="https://juno.build" rel="noopener noreferrer" target="_blank">Juno</a>.
 	</p>
 
 	<div class="grid">

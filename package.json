@@ -66,5 +66,8 @@
 	},
 	"bugs": {
 		"url": "https://github.com/peterpeterparker/daviddalbusco.com/issues"
+	},
+	"overrides": {
+		"cookie": "^0.7.0"
 	}
 }

@@ -14,14 +14,17 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"postinstall": "node -e \"require('fs').cpSync('node_modules/@junobuild/analytics/dist/workers/', './static/workers', {recursive: true});\""
 	},
 	"dependencies": {
 		"@deckdeckgo/highlight-code": "^4.4.0",
-		"@deckdeckgo/utils": "^5.1.0"
+		"@deckdeckgo/utils": "^5.1.0",
+		"@junobuild/analytics": "^0.1.2"
 	},
 	"devDependencies": {
 		"@junobuild/config": "^0.1.1",
+		"@junobuild/vite-plugin": "^0.0.19",
 		"@stencil/core": "^4.26.0",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.17.2",

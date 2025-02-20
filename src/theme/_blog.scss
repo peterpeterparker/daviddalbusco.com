@@ -27,3 +27,18 @@ article p:first-child img {
 	border: 1px solid black;
 	border-radius: 1px;
 }
+
+p img {
+	max-width: 960px;
+	margin: 1.25rem auto 3.75rem;
+	display: block;
+}
+
+article ol,
+article ul {
+	padding: 0 0.5rem;
+
+	li {
+		padding: 1.25rem 0 0;
+	}
+}

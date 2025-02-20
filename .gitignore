@@ -20,4 +20,4 @@ package/
 .env.*
 !.env.example
 
-.firebase/
+static/workers

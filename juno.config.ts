@@ -21,5 +21,8 @@ export default defineConfig({
 				}
 			]
 		}
+	},
+	orbiter: {
+		id: '3iier-sqaaa-aaaal-aczaa-cai'
 	}
 });

@@ -8,15 +8,15 @@ export default defineConfig({
 		storage: {
 			headers: [
 				{
-					source: 'icons/**/*',
+					source: '/icons/**/*',
 					headers: [['Cache-Control', 'max-age=31536000']]
 				},
 				{
-					source: 'images/**/*',
+					source: '/images/**/*',
 					headers: [['Cache-Control', 'max-age=31536000']]
 				},
 				{
-					source: 'fonts/**/*',
+					source: '/fonts/**/*',
 					headers: [['Cache-Control', 'max-age=31536000']]
 				}
 			]

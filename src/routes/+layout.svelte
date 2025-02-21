@@ -6,9 +6,9 @@
 	import '../theme/variables.scss';
 	import '../theme/hr.scss';
 
-    import { onMount } from 'svelte';
-    import { initAnalytics } from '$lib/services/analytics.services.js';
-    import Header from '$lib/components/header.svelte';
+	import { onMount } from 'svelte';
+	import { initAnalytics } from '$lib/services/analytics.services.js';
+	import Header from '$lib/components/header.svelte';
 	import Footer from '$lib/components/footer.svelte';
 
 	let { children } = $props();

@@ -2,7 +2,7 @@
 	"name": "daviddalbusco.com",
 	"private": true,
 	"description": "David Dal Busco - Freelance Web Developer",
-	"version": "2.5.0",
+	"version": "3.0.0",
 	"author": "David Dal Busco <david@fluster.io>",
 	"license": "MIT",
 	"type": "module",

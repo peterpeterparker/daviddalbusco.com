@@ -57,17 +57,17 @@ Now, obviously, if your site is dynamic and frequently updates state, costs will
 
 If you’re in the same boat and want to migrate to Juno, here’s what you need to do:
 
-1.  **Sign in to Juno**
+#### 1. Sign in to Juno
 
 Go to [console.juno.build](https://console.juno.build) and sign in. If you don’t have an **Internet Identity (II)** yet, create one. It’s a decentralized, open-source, privacy-friendly authentication method — meaning **you own your data**.
 
 Oh, and by the way — **starting on Juno is free**, so be my guest! 🎉
 
-2. **Create a Satellite**
+#### 2. Create a Satellite
 
 A Satellite is like a container for your project. Not exactly like a Docker container — it’s a **smart contract** — but you can think of it as something similar, running on a blockchain. Because yes, everything on Juno is **on-chain**. Magic! ✨
 
-3. **Set Up GitHub Actions**
+#### 3. Set Up GitHub Actions
 
 You’ll need to:
 
@@ -77,11 +77,11 @@ You’ll need to:
 
 Everything is well-documented ([here](https://juno.build/docs/guides/github-actions)), so just **follow the step-by-step guide** and copy-paste what you need.
 
-4. **Deploy On-Chain**
+#### 4. Deploy On-Chain
 
 Once the action runs, **boom — your site is deployed on-chain**. No extra steps. How wonderful.
 
-5. **Update Your DNS**
+#### 5. Update Your DNS
 
 Now, time to connect **your domain name**:
 
@@ -89,7 +89,7 @@ Now, time to connect **your domain name**:
 - Head over to the **Hosting tab** in the [Juno Console](https://console.juno.build/) and register your domain.
 - The UI will give you the new DNS records to add, and the docs have extra guidance if needed.
 
-6. **Delete Your Firebase Project**
+#### 6. Delete Your Firebase Project
 
 Finally, clean up:
 

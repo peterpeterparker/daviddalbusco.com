@@ -39,6 +39,14 @@ article ul {
 	padding: 0 0.5rem;
 
 	li {
-		padding: 1.25rem 0 0;
+		padding: 0;
+
+		&:last-child {
+			padding: 0 0 0.75rem;
+		}
 	}
+}
+
+article h4 {
+	padding: 0.5rem;
 }

@@ -1,7 +1,9 @@
 import { listSlugs } from '$lib/plugins/slug.plugin';
 import type { MarkdownData } from '$lib/types/markdown';
 import type { Slug } from '$lib/types/slug';
-import { readFileSync } from 'fs';
+import { readFileSync } from 'node:fs';
+
+// @ts-expect-error Type definition incorrect
 import { Remarkable, utils } from 'remarkable';
 
 // Remove frontmatter YAML - https://stackoverflow.com/a/33537453/5404186
@@ -58,7 +60,7 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 		breaks: true
 	});
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	// @ts-expect-error We are fine without types.
 	const codeRule = () => (tokens, idx, _options, _env) => {
 		return `<deckgo-highlight-code
                 language="${tokens[idx].params ? tokens[idx].params : 'javascript'}">
@@ -68,7 +70,7 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 
 	md.renderer.rules.fence = codeRule();
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	// @ts-expect-error We are fine without types.
 	const linkOpenRule = () => (tokens, idx, options, _env) => {
 		const title = tokens[idx].title
 			? ' title="' + utils.escapeHtml(utils.replaceEntities(tokens[idx].title)) + '"'
@@ -86,7 +88,7 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 
 	md.renderer.rules.link_open = linkOpenRule();
 
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	// @ts-expect-error We are fine without types.
 	const imageRule = () => (tokens, idx, options, _env) => {
 		const src = ' src="' + utils.escapeHtml(tokens[idx].src) + '"';
 		const title = tokens[idx].title

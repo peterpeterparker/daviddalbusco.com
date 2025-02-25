@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 Sitemap: https://daviddalbusco.com/sitemap/sitemap-index.xml
 Host: https://daviddalbusco.com
+
+# Try to disable bots trying un-existing URLs
+Disallow: /blog/blog/
+Disallow: /portfolio/portfolio/

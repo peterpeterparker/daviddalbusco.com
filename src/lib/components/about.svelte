@@ -37,8 +37,7 @@
 	</p>
 
 	<p>
-		I prefer decentralized solutions over big tech cloud providers, which fuels my interest in
-		blockchain networks — especially the <a
+		Not being a big fan of big tech fuels an interest in decentralized networks — especially the <a
 			href="https://internetcomputer.org/"
 			rel="noopener noreferrer"
 			target="_blank">Internet Computer</a

@@ -5,7 +5,6 @@ title: "Bye Bye, Firebase Hosting $$$"
 description: "I’ve been using Firebase Hosting for the last six years, but the new pricing changes have pushed me away."
 tags: "#firebase #hosting #pricing #juno"
 image: "https://images.unsplash.com/photo-1606145166375-714fe7f24261?fm=jpg&q=80&w=1080&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-canonical: "https://juno.build/blog/bye-bye-firebase-hosting"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*rkJkG5mkhIDjcJrCR1fivQ.jpeg)
@@ -14,13 +13,13 @@ canonical: "https://juno.build/blog/bye-bye-firebase-hosting"
 
 ---
 
-I’ve been using Firebase to host my website — [daviddalbusco.com](https://daviddalbusco.com/) — for the last six years. It was convenient and “free” (putting quotes because, let’s be real, Google probably used my data to sell me ads).
+I’ve been using Firebase to host my website — [daviddalbusco.com](https://daviddalbusco.com/) — for the last six years. It was convenient and “free” (quotes intentional because, one way or another, Google makes money).
 
 But recently, they changed their pricing model, and well... let’s just say it’s not great. This month alone, I’m set to pay $30 for hosting a simple static site. That feels excessive. I mean, sure, my site serves 2.6GB of data a day, which is over their 360MB free limit, but still — $30? That’s 2–3 times the price of Netflix or Spotify 🤷‍♂️.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*tvNeqm3X1W0YHGt8tOX3tA.png)
 
-And for context, based on the data I have, my traffic hasn’t changed — for example, it was the same in January and February. The only thing that changed? **Firebase’s pricing.**
+And for context, based on the data I have, my traffic hasn't changed - January and February had the same numbers. Some might argue I should focus on blocking bots that generate excessive traffic, and fair enough, I've started looking into it. But the reality is, I never had to worry about it - until Firebase changed its pricing.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*pWv3bYVG7HYNrzG2nt-YEQ.png)
 
@@ -28,13 +27,13 @@ So yeah, I’m moving to [**Juno**](https://juno.build/). 🚀
 
 ---
 
-## “Wait... WTF? You didn’t already migrate to Juno?”
+## "Wait… What? You hadn't already migrated to Juno?"
 
 If you’ve been following my work, you might be wondering:
 
 > “Dude... Juno is literally your project. Why were you still on Firebase?”
 
-And here’s my confession: **I knew**. I was fully aware my site was still on Firebase. In fact, moving it to Juno was always this unspoken goal (or dream) I had — kind of like putting the cherry on top. I told myself I’d make the switch the day Juno became a DAO. A way to mark that milestone and personal achievement.
+And here’s my confession: **I knew**. I was fully aware my site was still on Firebase. In fact, moving it to Juno was always this unspoken goal I had — kind of like putting the cherry on top. I told myself I’d make the switch the day Juno became a DAO. A way to mark that milestone and personal achievement.
 
 But hey, Firebase “forced” my hand, so here we are.
 
@@ -44,9 +43,11 @@ But hey, Firebase “forced” my hand, so here we are.
 
 So how does Juno compare?
 
-On the **[Internet Computer](https://internetcomputer.org/)** — the blockchain that super powers Juno - costs come from storing data and updating state in its smart contracts, but querying data — like accessing a website — is currently free. That means as long as this remains the case, hosting a static site on Juno is **cheap**.
+On the **[Internet Computer](https://internetcomputer.org/)** — the blockchain that super powers Juno - costs come from storing data and updating state, but querying data — like accessing a website — is currently free. That means as long as this remains the case, hosting a static site on Juno is **cheap**.
 
 I haven’t done the exact math, but I expect it to cost me **around $10 for an entire year**. Yep, **a whole year** for what Firebase was about to charge me in **10 days**.
+
+And even if it ends up being $20 - it's still less than what I paid this month.
 
 Now, obviously, if your site is dynamic and frequently updates state, costs will be different. But for a static site like mine? **Juno now wins, hands down.**
 

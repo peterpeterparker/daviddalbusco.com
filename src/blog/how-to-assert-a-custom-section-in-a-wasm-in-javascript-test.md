@@ -1,10 +1,10 @@
 ---
-path: "/blog/how-to-assert-a-custom-section-in-a-wasm-in-javascript"
+path: "/blog/how-to-assert-a-custom-section-in-a-wasm-in-javascript-test"
 date: "2025-04-14"
 title: "How to Assert a Custom Section in a WASM (in JavaScript)"
 description: "Read and assert a WebAssembly module metadata using Vitest, a quick recipe."
 tags: "#wasm #vitest #test #metadata"
-image: "https://images.unsplash.com/photo-1668417008465-da390a5d0add?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=pawel-czerwinski-HypiDneHQsQ-unsplash.jpg"
+image: "https://cdn-images-1.medium.com/max/1600/1*U-RfGMLu6r_dkcD1FveD_A.jpeg"
 ---
 
 ![](https://cdn-images-1.medium.com/max/1600/1*U-RfGMLu6r_dkcD1FveD_A.jpeg)

@@ -18,7 +18,7 @@
 	{@render children?.()}
 
 	<div class="grid">
-		{#each projects as project}
+		{#each projects as project (project.slug)}
 			<Project {project} />
 		{/each}
 	</div>

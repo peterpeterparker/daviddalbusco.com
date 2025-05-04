@@ -1,7 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import { onMount } from 'svelte';
-
 	import '../../../theme/_blog.scss';
 
 	import type { PageData } from './$types';
@@ -25,17 +22,6 @@
 	let metadata: BlogMetadata = $derived(post.metadata);
 
 	let { title, canonical, description, image, date: postDate, tags } = $derived(metadata);
-
-	onMount(async () => {
-		if (!browser) {
-			return;
-		}
-
-		const { defineCustomElement } = await import(
-			/* @vite-ignore */ '@deckdeckgo/highlight-code/dist/components/deckgo-highlight-code'
-		);
-		defineCustomElement();
-	});
 
 	const navigateBlog = () => goto('/blog');
 </script>

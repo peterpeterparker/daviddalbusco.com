@@ -234,7 +234,7 @@ On the contrary, the process that creates a new sample project is not aware that
 
 1\. Edit the configuration `dfx.json` to list the bucket actor.
 
-```jsonp
+```json
 "canisters": {
     "buckets_sample": {
       "main": "src/buckets_sample/main.mo",

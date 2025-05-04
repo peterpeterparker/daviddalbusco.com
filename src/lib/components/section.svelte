@@ -1,8 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { /* @vite-ignore */ isMobile } from '@deckdeckgo/utils';
-
-	let section: HTMLElement = $state();
+	import { untrack } from 'svelte';
 
 	interface Props {
 		color?: string | undefined;
@@ -12,7 +9,26 @@
 
 	let { color = undefined, background = undefined, children }: Props = $props();
 
-	onMount(() => {
+	let section = $state<HTMLElement | undefined>(undefined);
+
+	interface UserAgentData {
+		mobile?: boolean;
+	}
+
+	const isMobile = (): boolean => {
+		if ('userAgentData' in navigator && navigator.userAgentData !== undefined) {
+			const { userAgentData } = navigator as { userAgentData: UserAgentData };
+			return userAgentData.mobile === true;
+		}
+
+		const isTouchScreen = window.matchMedia('(any-pointer:coarse)').matches;
+		const isMouseScreen = window.matchMedia('(any-pointer:fine)').matches;
+		return isTouchScreen && !isMouseScreen;
+	};
+
+	let unsubscribeObserver = $state<(() => void) | undefined>(undefined);
+
+	const initObserver = (section: HTMLElement): (() => void) => {
 		const observer: IntersectionObserver = new IntersectionObserver(
 			(entries: IntersectionObserverEntry[]) => {
 				const entry = entries.find(
@@ -41,6 +57,19 @@
 
 		observer.observe(section);
 		return () => observer.disconnect();
+	};
+
+	$effect(() => {
+		if (section === undefined) {
+			return;
+		}
+
+		untrack(() => {
+			unsubscribeObserver?.();
+			unsubscribeObserver = initObserver(section!);
+		});
+
+		return () => unsubscribeObserver?.();
 	});
 </script>
 

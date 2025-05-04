@@ -1,10 +1,46 @@
 import { listSlugs } from '$lib/plugins/slug.plugin';
 import type { MarkdownData } from '$lib/types/markdown';
 import type { Slug } from '$lib/types/slug';
+import bash from '@shikijs/langs/bash';
+import css from '@shikijs/langs/css';
+import html from '@shikijs/langs/html';
+import javascript from '@shikijs/langs/javascript';
+import json from '@shikijs/langs/json';
+import markdown from '@shikijs/langs/markdown';
+import rust from '@shikijs/langs/rust';
+import sass from '@shikijs/langs/sass';
+import scss from '@shikijs/langs/scss';
+import tsx from '@shikijs/langs/tsx';
+import typescript from '@shikijs/langs/typescript';
+import xml from '@shikijs/langs/xml';
+import yaml from '@shikijs/langs/yaml';
+import theme from '@shikijs/themes/dracula';
 import { readFileSync } from 'node:fs';
+import { createHighlighterCoreSync } from 'shiki/core';
+import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
 // @ts-expect-error Type definition incorrect
 import { Remarkable, utils } from 'remarkable';
+
+const shiki = createHighlighterCoreSync({
+	themes: [theme],
+	langs: [
+		javascript,
+		typescript,
+		html,
+		rust,
+		bash,
+		json,
+		yaml,
+		scss,
+		css,
+		sass,
+		xml,
+		tsx,
+		markdown
+	],
+	engine: createJavaScriptRegexEngine()
+});
 
 // Remove frontmatter YAML - https://stackoverflow.com/a/33537453/5404186
 const metadataRegex = /^---((.|\n)*?)---/g;
@@ -62,10 +98,13 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 
 	// @ts-expect-error We are fine without types.
 	const codeRule = () => (tokens, idx, _options, _env) => {
-		return `<deckgo-highlight-code
-                language="${tokens[idx].params ? tokens[idx].params : 'javascript'}">
-                    <code slot="code">${utils.escapeHtml(tokens[idx].content)}</code>
-            </deckgo-highlight-code>`;
+		return shiki.codeToHtml(tokens[idx].content.trim(), {
+			lang: tokens[idx].params ? tokens[idx].params : 'javascript',
+			theme: 'dracula',
+			colorReplacements: {
+				'#282a36': '#000000'
+			}
+		});
 	};
 
 	md.renderer.rules.fence = codeRule();

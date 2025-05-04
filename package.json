@@ -19,14 +19,11 @@
 		"postinstall": "node -e \"require('fs').cpSync('node_modules/@junobuild/analytics/dist/workers/analytics.worker.js', './static/workers/analytics.worker.js', {recursive: true});\""
 	},
 	"dependencies": {
-		"@deckdeckgo/highlight-code": "^4.4.0",
-		"@deckdeckgo/utils": "^5.1.0",
 		"@junobuild/analytics": "^0.1.8"
 	},
 	"devDependencies": {
 		"@junobuild/config": "^0.1.6",
 		"@junobuild/vite-plugin": "^3.3.0",
-		"@stencil/core": "^4.26.0",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.20.5",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
@@ -43,6 +40,7 @@
 		"prettier-plugin-svelte": "^3.3.3",
 		"remarkable": "^2.0.1",
 		"sass": "^1.86.3",
+		"shiki": "^3.3.0",
 		"svelte": "^5.26.3",
 		"svelte-check": "^4.1.6",
 		"typescript": "^5.8.3",

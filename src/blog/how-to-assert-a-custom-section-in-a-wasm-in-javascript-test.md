@@ -39,13 +39,13 @@ So I wrote a simple Vitest test that:
 Here’s what that looks like:
 
 ```typescript
-it('should expose public custom section juno:package', async () => {
-  const junoPkg = await customSectionJunoPackage({ path: SATELLITE_WASM_PATH });
+it("should expose public custom section juno:package", async () => {
+	const junoPkg = await customSectionJunoPackage({ path: SATELLITE_WASM_PATH });
 
-  expect(junoPkg).toEqual({
-    name: '@junobuild/satellite',
-    version: readWasmVersion('satellite')
-  });
+	expect(junoPkg).toEqual({
+		name: "@junobuild/satellite",
+		version: readWasmVersion("satellite")
+	});
 });
 ```
 
@@ -57,8 +57,8 @@ The `customSectionJunoPackage()` helper is just a tiny wrapper that calls a more
 
 ```typescript
 export const customSectionJunoPackage = async ({ path }) => {
-  const section = await customSection({ path, sectionName: 'icp:public juno:package' });
-  return JSON.parse(section);
+	const section = await customSection({ path, sectionName: "icp:public juno:package" });
+	return JSON.parse(section);
 };
 ```
 
@@ -70,26 +70,26 @@ Here’s how that looks:
 
 ```typescript
 const customSection = async ({
- path,
- sectionName
+	path,
+	sectionName
 }: {
- path: string;
- sectionName: string;
+	path: string;
+	sectionName: string;
 }): Promise<string> => {
- // Read WASM
- const buffer = await readFile(path);
- const wasm = await gunzipFile({ source: buffer });
+	// Read WASM
+	const buffer = await readFile(path);
+	const wasm = await gunzipFile({ source: buffer });
 
- // Compile a WebAssembly.Module object
- const wasmModule = await WebAssembly.compile(wasm);
+	// Compile a WebAssembly.Module object
+	const wasmModule = await WebAssembly.compile(wasm);
 
- // Read the public custom section
- const pkgSections = WebAssembly.Module.customSections(wasmModule, sectionName);
- expect(pkgSections).toHaveLength(1);
+	// Read the public custom section
+	const pkgSections = WebAssembly.Module.customSections(wasmModule, sectionName);
+	expect(pkgSections).toHaveLength(1);
 
- // Parse content to object
- const [pkgBuffer] = pkgSections;
- return uint8ArrayToString(pkgBuffer);
+	// Parse content to object
+	const [pkgBuffer] = pkgSections;
+	return uint8ArrayToString(pkgBuffer);
 };
 ```
 
@@ -98,7 +98,7 @@ Now let’s walk through it step by step.
 1.  Read the `.wasm` file
 
 ```typescript
-import { readFile } from 'fs/promises';
+import { readFile } from "fs/promises";
 
 const buffer = await readFile(path);
 ```
@@ -108,7 +108,7 @@ Pretty straightforward — this reads the file from disk (either absolute or rel
 2. Decompress it
 
 ```typescript
-import { gunzipFile } from '@junobuild/cli-tools';
+import { gunzipFile } from "@junobuild/cli-tools";
 
 const wasm = await gunzipFile({ source: buffer });
 ```
@@ -118,20 +118,20 @@ Since I gzip the `.wasm` file during the build step (mostly for size reasons), I
 Here’s what it looks like:
 
 ```typescript
-import {Readable} from 'node:stream';
-import {createGunzip} from 'node:zlib';
+import { Readable } from "node:stream";
+import { createGunzip } from "node:zlib";
 
 export const gunzipFile = async ({ source }: { source: Buffer }): Promise<Buffer> =>
-  await new Promise((resolve, reject) => {
-    const sourceStream = Readable.from(source);
-    const chunks: Uint8Array[] = [];
-    const gzip = createGunzip();
+	await new Promise((resolve, reject) => {
+		const sourceStream = Readable.from(source);
+		const chunks: Uint8Array[] = [];
+		const gzip = createGunzip();
 
-    sourceStream.pipe(gzip);
-    gzip.on('data', (chunk) => chunks.push(chunk));
-    gzip.on('end', () => resolve(Buffer.concat(chunks)));
-    gzip.on('error', reject);
-  });
+		sourceStream.pipe(gzip);
+		gzip.on("data", (chunk) => chunks.push(chunk));
+		gzip.on("end", () => resolve(Buffer.concat(chunks)));
+		gzip.on("error", reject);
+	});
 ```
 
 3. Compile it to a WebAssembly module
@@ -162,7 +162,7 @@ No section? No metadata anyway.
 5. Convert the section to a string
 
 ```typescript
-import { uint8ArrayToString } from 'uint8array-extras';
+import { uint8ArrayToString } from "uint8array-extras";
 
 const [pkgBuffer] = pkgSections;
 return uint8ArrayToString(pkgBuffer);
@@ -187,21 +187,21 @@ Since my build pipeline grabs the version from that file, I want my test to conf
 Here’s how I read the version from the TOML:
 
 ```typescript
-import { parse } from '@ltd/j-toml';
-import { assertNonNullish} from '@dfinity/utils';
+import { parse } from "@ltd/j-toml";
+import { assertNonNullish } from "@dfinity/utils";
 
 export const readWasmVersion = (segment: string): string => {
-  const tomlFile = readFileSync(join(process.cwd(), 'src', segment, 'Cargo.toml'));
+	const tomlFile = readFileSync(join(process.cwd(), "src", segment, "Cargo.toml"));
 
-  type Toml = { package: { version: string } } | undefined;
+	type Toml = { package: { version: string } } | undefined;
 
-  const result: Toml = parse(tomlFile.toString()) as unknown as Toml;
+	const result: Toml = parse(tomlFile.toString()) as unknown as Toml;
 
-  const version = result?.package?.version;
+	const version = result?.package?.version;
 
-  assertNonNullish(version);
+	assertNonNullish(version);
 
-  return version;
+	return version;
 };
 ```
 
@@ -210,7 +210,6 @@ I use the [j-toml](https://github.com/LongTengDao/j-toml) library to parse TOML 
 This way, the test isn’t just checking _if_ the metadata is present — it’s making sure it’s _correct_.
 
 ---
-
 
 ## That’s a Wrap
 

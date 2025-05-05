@@ -18,9 +18,6 @@
 		"format": "prettier --write .",
 		"postinstall": "node -e \"require('fs').cpSync('node_modules/@junobuild/analytics/dist/workers/analytics.worker.js', './static/workers/analytics.worker.js', {recursive: true});\""
 	},
-	"dependencies": {
-		"@junobuild/analytics": "^0.1.8"
-	},
 	"devDependencies": {
 		"@junobuild/config": "^0.1.8",
 		"@junobuild/vite-plugin": "^3.4.0",
@@ -73,5 +70,8 @@
 	},
 	"overrides": {
 		"cookie": "^0.7.0"
+	},
+	"dependencies": {
+		"@junobuild/analytics": "^0.2.0"
 	}
 }

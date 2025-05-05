@@ -15,8 +15,7 @@
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"postinstall": "node -e \"require('fs').cpSync('node_modules/@junobuild/analytics/dist/workers/analytics.worker.js', './static/workers/analytics.worker.js', {recursive: true});\""
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@junobuild/config": "^0.1.8",

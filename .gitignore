@@ -19,5 +19,3 @@ package/
 .env
 .env.*
 !.env.example
-
-static/workers

@@ -7,9 +7,5 @@ export const initAnalytics = async () => {
 		return;
 	}
 
-	await initOrbiter({
-		options: {
-			performance: false
-		}
-	});
+	initOrbiter();
 };

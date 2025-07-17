@@ -13,8 +13,8 @@
 
 	<ul>
 		<li>
-			<a href="https://www.ethcluj.org/" target="_blank" rel="noopener noreferrer">ETHCluj</a> /
-			June 2025 <mark>Upcoming</mark> / Cluj-Napoca, Romania
+			<a href="https://www.ethcluj.org/" target="_blank" rel="noopener noreferrer">ETHCluj</a> / June
+			2025 / Cluj-Napoca, Romania
 		</li>
 		<li>
 			<a href="https://web3summit.com/" target="_blank" rel="noopener noreferrer">Web3 Summit</a> / August

@@ -23,6 +23,6 @@ jobs:
       - name: Deploy to Juno
         uses: junobuild/juno-action@main
         with:
-          args: deploy
+          args: deploy --clear
         env:
           JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}

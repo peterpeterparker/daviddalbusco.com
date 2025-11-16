@@ -121,7 +121,7 @@ export_candid!();
 cargo install candid-extractor
 ```
 
-6. Add the following script to your project or copy it from Juno’s repo: [https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh](https://github.com/buildwithjuno/juno/blob/main/scripts/did.sh)
+6. Add the following script to your project or copy it from Juno’s repo: [https://github.com/junobuild/juno/blob/main/scripts/did.sh](https://github.com/junobuild/juno/blob/main/scripts/did.sh)
 
 ```bash
 #!/usr/bin/env bash
@@ -146,7 +146,7 @@ do
 done
 ```
 
-7. Optional: ⭐️ star [Juno’s repo on GitHub](https://github.com/buildwithjuno/juno) and show your support!
+7. Optional: ⭐️ star [Juno’s repo on GitHub](https://github.com/junobuild/juno) and show your support!
 
 8. Update the scripts variable `CANISTERS` with the names of the canisters in your project (comma separated list).
 

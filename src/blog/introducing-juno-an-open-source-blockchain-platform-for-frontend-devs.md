@@ -121,4 +121,4 @@ Custom domain names are fully supported and easily configured, meaning your uniq
 
 We are starting our closed beta program today. Contact David on [Twitter](https://daviddalbusco.com) or fill this [form](https://jx5yt-yyaaa-aaaal-abzbq-cai.ic0.app/) - built with Juno 😉 - to enter the waiting list.
 
-⭐️⭐️⭐️ are also much appreciated: visit the [GitHub repo](https://github.com/buildwithjuno/juno) and show your support!
+⭐️⭐️⭐️ are also much appreciated: visit the [GitHub repo](https://github.com/junobuild/juno) and show your support!

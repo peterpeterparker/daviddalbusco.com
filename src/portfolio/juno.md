@@ -1,6 +1,6 @@
 ---
 title: "Juno"
-description: "A Blockchain-as-a-Service platform for frontend developers."
+description: "A next-gen serverless platform to build, deploy, and run modern apps with the privacy and control of self-hosting. "
 icon: "/images/portfolio/icons/juno-icon.png"
 background: "#c9cfff"
 type: "play"
@@ -8,13 +8,13 @@ type: "play"
 
 # Juno
 
-Juno is an open-source Blockchain-as-a-Service platform that makes building decentralized apps faster and easier than ever before ⚡️🚀🤯.
+[Juno](https://juno.build) is an open source serverless platform for building and deploying modern web applications. It provides hosting, data storage, authentication, assets, serverless functions, and analytics, all running inside an isolated WebAssembly container.
 
-Unlike traditional Backend-as-a-Service (BaaS) platforms like Google Firebase or AWS Amplify, Juno runs entirely on the blockchain.
+Projects are developed locally using an emulator that mirrors production. Frontend frameworks such as React, Next.js, and SvelteKit integrate directly, while backend logic is implemented with serverless functions in Rust or TypeScript. Deployment produces a single artifact that can be pushed via the CLI or GitHub Actions.
 
-It allows developers to outsource all the behind-the-scenes aspects of your web or mobile development, giving you the ability to focus on the frontend.
+Each application runs in its own container under full ownership and control. Juno has no access to user code, data, or infrastructure. The platform delivers a familiar cloud development experience with the privacy and sovereignty of self hosting.
 
-The platform operates without controlling their data or work.
+<img src="https://juno.build/assets/images/light-1640px-dcdfd8f7a8ac9cc64243251d73eacaee.webp" alt="A screenshot of the Juno Console" />
 
 ---
 
@@ -22,12 +22,12 @@ The platform operates without controlling their data or work.
 
 **Website:** [Juno](https://juno.build)
 
-**Technology:** [SvelteKit](https://kit.svelte.dev/) for the frontend dapp. [TypeScript](https://www.typescriptlang.org/) for the libraries and CLI. [Rust](https://www.rust-lang.org/) for the canister smart contracts.
+**Technology:** [TypeScript](https://www.typescriptlang.org/), [SvelteKit](https://kit.svelte.dev/), [Rust](https://www.rust-lang.org/) and [Docker](https://www.docker.com/).
 
-**Infrastructure:** 100% on blockchain [Internet Computer](https://internetcomputer.org/).
+**Infrastructure:** [Internet Computer](https://internetcomputer.org/).
 
 ---
 
 ## Open source
 
-This project is open source and available on [GitHub](https://github.com/buildwithjuno/juno)
+This project is open source and available on [GitHub](https://github.com/junobuild/juno)

@@ -18,13 +18,15 @@
 	<p>I'm a freelance web developer and contractor based in Zürich, Switzerland.</p>
 
 	<p>
-		I build performant, user-centric web applications. I develop both visually appealing apps and
-		kick-ass architecture layers. Clients often hire me to create prototypes, products, or entire
-		ecosystems from scratch.
+		The focus of my work is on building performant, user-centric web applications, from polished
+		interfaces to solid architectural foundations. Clients hire me to create prototypes, products,
+		and complete ecosystems from the ground up.
 	</p>
 
+	<p>Recent work includes large scale applications, developer tools, and platform ecosystems.</p>
+
 	<p>
-		My frontend skills include <a
+		My frontend experience includes <a
 			href="https://svelte.dev/"
 			rel="noopener noreferrer"
 			target="_blank">Svelte</a
@@ -37,31 +39,14 @@
 	</p>
 
 	<p>
-		Not being a big fan of big tech fuels an interest in decentralized networks — especially the <a
-			href="https://internetcomputer.org/"
-			rel="noopener noreferrer"
-			target="_blank">Internet Computer</a
-		>, on which I built
-		<a href="https://juno.build" rel="noopener noreferrer" target="_blank">Juno</a>.
-	</p>
-
-	<p>
-		While I don't handle backend work for clients, I have developed smart contracts in <a
-			href="https://www.rust-lang.org"
-			rel="noopener noreferrer"
-			target="_blank">Rust</a
-		> for my personal projects.
-	</p>
-
-	<p>
-		I hold degrees in Computer Engineering and an Executive Master’s in Business Administration
-		(EMBA), and I’m fluent in French, German, and English.
+		I hold degrees in Computer Engineering and an Executive Master's in Business Administration
+		(EMBA). I'm fluent in French, German, and English.
 	</p>
 
 	<p>When I'm not coding, you can find me running on mountain trails. 🏔️🏃</p>
 
 	<p>
-		If you have a project in mind or need some help, <a href="/#contact" rel="noopener noreferrer"
+		If you have a project in mind or need some help, <a href="#contact" rel="noopener noreferrer"
 			>get in touch!</a
 		>
 	</p>

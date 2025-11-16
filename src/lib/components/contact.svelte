@@ -4,51 +4,27 @@
 </script>
 
 <Section background="var(--color-primary)" color="var(--color-primary-contrast)">
-	<h2 id="contact">Contact</h2>
+	<h2 id="contact">Get in touch</h2>
 
-	<p>Get in touch through this form and let's work together!</p>
+	<p>Want to collaborate or just say hi?</p>
 
-	<form action="https://formspree.io/f/mblkovby" method="POST">
-		<input aria-label="Your name" name="name" placeholder="Your name" type="text" />
-		<input aria-label="Your email" name="_replyto" placeholder="Your email" type="email" />
-		<textarea aria-label="Your message" name="message" placeholder="Your message" rows="4"
-		></textarea>
-
-		<input name="_gotcha" style="display: none" type="text" />
-		<input name="_next" type="hidden" value="https://daviddalbusco.com" />
-
-		<Button type="submit">Send</Button>
-	</form>
+	<p>Drop me an email at <span class="email"><b>hi</b>@<b>mail.</b>daviddalbusco.com</span></p>
 </Section>
 
 <style lang="scss">
-	form {
-		display: flex;
-		flex-direction: column;
+	p {
+		margin: 0 0.45rem 0 0;
 	}
 
-	input,
-	textarea {
-		border: 0.25rem solid black;
+	.email {
+		text-decoration: underline;
 
-		margin: 0.45rem 0;
-		padding: 0.25rem 0.45rem;
+		b {
+			font-weight: normal;
 
-		outline: none;
-
-		transition: border 0.15s ease-out;
-
-		&:focus {
-			border: 0.25rem solid var(--color-highlight);
+			&:nth-child(2) {
+				display: none;
+			}
 		}
-
-		&::placeholder {
-			color: var(--color-highlight);
-			opacity: 1;
-		}
-	}
-
-	textarea {
-		resize: none;
 	}
 </style>

@@ -335,7 +335,7 @@ Congratulations! Your Vue dapp is now live and fully powered by the blockchain ð
 ## Resources
 
 - Juno documentation and getting started: [https://juno.build/docs/intro](https://juno.build/docs/intro)
-- The source code of this tutorial is available in our [GitHub Repository](https://github.com/buildwithjuno/examples/tree/main/vue/diary).
+- The source code of this tutorial is available in our [GitHub Repository](https://github.com/junobuild/examples/tree/main/vue/diary).
 
 To infinity and beyond
 David

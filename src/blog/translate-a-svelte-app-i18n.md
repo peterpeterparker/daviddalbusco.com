@@ -416,4 +416,4 @@ import {i18n} from "$lib/stores/i18n.store";
 
 ## Source code
 
-The source code for this tutorial can be found in the [GitHub repository](https://github.com/buildwithjuno/juno) of [Juno](https://juno.build/), an open-source blockchainless platform designed for developers who want to build Web3 applications with the simplicity of Web2.
+The source code for this tutorial can be found in the [GitHub repository](https://github.com/junobuild/juno) of [Juno](https://juno.build/), an open-source blockchainless platform designed for developers who want to build Web3 applications with the simplicity of Web2.

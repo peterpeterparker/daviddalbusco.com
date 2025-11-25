@@ -39,7 +39,9 @@ export default ts.config(
 					varsIgnorePattern: '^_',
 					caughtErrorsIgnorePattern: '^_'
 				}
-			]
+			],
+			// The linter throws error for goto('/') but, also href="/" which is really annoying.
+			'svelte/no-navigation-without-resolve': ['off']
 		}
 	}
 );

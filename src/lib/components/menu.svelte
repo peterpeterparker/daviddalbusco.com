@@ -70,7 +70,7 @@
 		right: 0;
 		bottom: 0;
 
-		background: white;
+		background: #fafafa;
 
 		z-index: 2;
 

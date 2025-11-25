@@ -20,11 +20,10 @@
 <svelte:head>
 	<Seo />
 
-	<style>
-		body > div:first-child {
-			--menu-color: black;
-			--section-color: black;
-		}
+	<style lang="scss">
+		@use '../../theme/_page.scss';
+
+		@include page.tertiary;
 	</style>
 </svelte:head>
 

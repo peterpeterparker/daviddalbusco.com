@@ -29,11 +29,10 @@
 <svelte:head>
 	<Seo {canonical} {description} {image} {title} url={`/blog/${slug}`} />
 
-	<style>
-		body > div:first-child {
-			--menu-color: black;
-			--section-color: black;
-		}
+	<style lang="scss">
+		@use '../../../theme/_page.scss';
+
+		@include page.light;
 	</style>
 </svelte:head>
 

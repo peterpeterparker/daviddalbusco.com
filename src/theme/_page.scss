@@ -1,0 +1,21 @@
+@mixin light {
+	body {
+		color: var(--color-light-contrast);
+		background: var(--color-light);
+	}
+
+	body > div:first-child {
+		--menu-color: black;
+	}
+}
+
+@mixin tertiary {
+	body {
+		color: var(--color-tertiary-contrast);
+		background: var(--color-tertiary);
+	}
+
+	body > div:first-child {
+		--menu-color: black;
+	}
+}

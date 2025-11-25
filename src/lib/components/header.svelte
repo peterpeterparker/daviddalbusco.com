@@ -40,7 +40,7 @@
 		align-items: center;
 
 		background: black;
-		color: white;
+		color: #fafafa;
 
 		padding: 0 1.45rem 0 1.25rem;
 	}

@@ -71,7 +71,7 @@
 				background 0.2s ease 0s;
 
 			@media screen and (max-width: 576px) {
-				background: white;
+				background: #fafafa;
 			}
 		}
 

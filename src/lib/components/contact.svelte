@@ -1,14 +1,8 @@
-<script lang="ts">
-	import Section from '$lib/components/section.svelte';
-</script>
+<h2 id="contact">Get in touch</h2>
 
-<Section background="var(--color-primary)" color="var(--color-primary-contrast)">
-	<h2 id="contact">Get in touch</h2>
+<p>Want to collaborate or just say hi?</p>
 
-	<p>Want to collaborate or just say hi?</p>
-
-	<p>Drop me an email at <span class="email"><b>hi</b>@<b>mail.</b>daviddalbusco.com</span></p>
-</Section>
+<p>Drop me an email at <span class="email"><b>hi</b>@<b>mail.</b>daviddalbusco.com</span></p>
 
 <style lang="scss">
 	p {

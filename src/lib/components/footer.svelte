@@ -1,8 +1,12 @@
-<footer>
-	<div>
-		<p>Fluster GmbH<br />c/o The Hub Zürich Association<br />Sihlquai 131 <br />8005 Zürich</p>
+<script lang="ts">
+	import Contact from '$lib/components/contact.svelte';
+</script>
 
-		<div class="social">
+<footer>
+	<Contact />
+
+	<div class="social">
+		<div class="social-content">
 			<a aria-label="X / Twitter" href="https://twitter.com/daviddalbusco/">
 				<svg viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg" class="twitter">
 					<path
@@ -32,35 +36,52 @@
 </footer>
 
 <style lang="scss">
-	footer > div {
+	.social {
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+
+		margin: 3.75rem 0 0;
 
 		@media screen and (max-width: 960px) {
 			display: block;
 		}
 	}
 
-	.social {
+	.social-content {
 		display: flex;
-		gap: 0.75rem;
+		gap: 0.5rem;
 	}
 
 	a {
 		margin: 0 0.15rem;
 
+		transition: transform 0.25s ease-out;
+
+		svg {
+			transition: transform 0.5s ease-out;
+		}
+
 		&:last-of-type {
 			margin-right: 0;
+		}
+
+		&:focus,
+		&:hover {
+			transform: translateY(-0.25rem);
+
+			svg {
+				transform: scale(1.25);
+			}
 		}
 	}
 
 	svg {
-		width: 2.5rem;
-		height: 2.5rem;
+		width: 1.5rem;
+		height: 1.5rem;
 	}
 
 	.twitter {
-		width: 2rem;
+		width: 1rem;
 	}
 </style>

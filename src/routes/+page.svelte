@@ -5,7 +5,6 @@
 	import Work from '$lib/components/work.svelte';
 	import Play from '$lib/components/play.svelte';
 	import About from '$lib/components/about.svelte';
-	import Contact from '$lib/components/contact.svelte';
 	import Talks from '$lib/components/talks.svelte';
 	import Newsletter from '$lib/components/newsletter.svelte';
 	import { cleanBodyStyles } from '$lib/utils/styles.utils';
@@ -58,5 +57,3 @@
 <Newsletter />
 
 <Blog more={true} posts={blog} />
-
-<Contact />

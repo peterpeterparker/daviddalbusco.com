@@ -13,20 +13,21 @@
 		/>
 	</h2>
 
-	<p>Hi there! 👋</p>
-
-	<p>I'm a freelance web developer and contractor based in Zürich, Switzerland.</p>
-
 	<p>
-		The focus of my work is on building performant, user-centric web applications, from polished
-		interfaces to solid architectural foundations. Clients hire me to create prototypes, products,
-		and complete ecosystems from the ground up.
+		I'm David, a freelance web developer based in Zürich, available for project-based work and
+		contract positions.
 	</p>
 
-	<p>Recent work includes large scale applications, developer tools, and platform ecosystems.</p>
+	<p>
+		My focus is building performant web applications with careful attention to both interface
+		quality and secure, scalable architectural foundations. Clients hire me to create prototypes,
+		products, and complete ecosystems from the ground up.
+	</p>
+
+	<p>Recent work includes large applications, developer tools, and platform ecosystems.</p>
 
 	<p>
-		My frontend experience includes <a
+		My frontend experience covers <a
 			href="https://svelte.dev/"
 			rel="noopener noreferrer"
 			target="_blank">Svelte</a

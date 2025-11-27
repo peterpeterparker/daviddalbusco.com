@@ -8,6 +8,7 @@
 	import Talks from '$lib/components/Talks.svelte';
 	import Newsletter from '$lib/components/Newsletter.svelte';
 	import { cleanBodyStyles } from '$lib/utils/styles.utils';
+	import Hero from '$lib/components/Hero.svelte';
 
 	interface Props {
 		data: PageData;
@@ -45,6 +46,8 @@
 </svelte:head>
 
 <svelte:window onscroll={onScroll} />
+
+<Hero />
 
 <Work projects={work} />
 

@@ -14,6 +14,8 @@ Projects are developed locally using an emulator that mirrors production. Fronte
 
 Each application runs in its own container under full ownership and control. Juno has no access to user code, data, or infrastructure. The platform delivers a familiar cloud development experience with the privacy and sovereignty of self hosting.
 
+Think of it as **Vercel + Firebase + Self-Hosting** - without the compromises.
+
 <img src="https://juno.build/assets/images/light-1640px-dcdfd8f7a8ac9cc64243251d73eacaee.webp" alt="A screenshot of the Juno Console" />
 
 ---

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '../../theme/_grid.scss';
 
-	import Project from '$lib/components/project.svelte';
-	import Section from '$lib/components/section.svelte';
+	import Project from '$lib/components/Project.svelte';
+	import Section from '$lib/components/Section.svelte';
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 

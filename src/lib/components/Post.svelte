@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { BlogMetadata } from '$lib/types/blog';
-	import Card from '$lib/components/card.svelte';
+	import Card from '$lib/components/Card.svelte';
 
 	interface Props {
 		post: MarkdownData<BlogMetadata>;

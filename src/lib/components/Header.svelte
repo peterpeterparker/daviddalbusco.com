@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Hamburger from '$lib/components/hamburger.svelte';
-	import Menu from '$lib/components/menu.svelte';
+	import Hamburger from '$lib/components/Hamburger.svelte';
+	import Menu from '$lib/components/Menu.svelte';
 
 	let open = $state(false);
 	let hamburger: Hamburger = $state();

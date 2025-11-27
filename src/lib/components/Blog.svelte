@@ -1,9 +1,9 @@
 <script lang="ts">
 	import '../../theme/_grid.scss';
 
-	import Link from '$lib/components/link.svelte';
-	import Post from '$lib/components/post.svelte';
-	import Section from '$lib/components/section.svelte';
+	import Link from '$lib/components/Link.svelte';
+	import Post from '$lib/components/Post.svelte';
+	import Section from '$lib/components/Section.svelte';
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { BlogMetadata } from '$lib/types/blog';
 

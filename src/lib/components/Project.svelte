@@ -2,7 +2,7 @@
 <script lang="ts">
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
-	import Card from '$lib/components/card.svelte';
+	import Card from '$lib/components/Card.svelte';
 
 	interface Props {
 		project: MarkdownData<PortfolioMetadata>;

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Section from '$lib/components/section.svelte';
-	import Link from '$lib/components/link.svelte';
+	import Section from '$lib/components/Section.svelte';
+	import Link from '$lib/components/Link.svelte';
 </script>
 
 <Section background="var(--color-tertiary)" color="var(--color-tertiary-contrast)">

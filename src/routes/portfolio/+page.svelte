@@ -2,9 +2,9 @@
 	import '../../theme/_grid.scss';
 
 	import type { PageData } from './$types';
-	import Seo from '$lib/components/seo.svelte';
-	import Work from '$lib/components/work.svelte';
-	import Play from '$lib/components/play.svelte';
+	import Seo from '$lib/components/Seo.svelte';
+	import Work from '$lib/components/Work.svelte';
+	import Play from '$lib/components/Play.svelte';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 	import type { MarkdownData } from '$lib/types/markdown';
 

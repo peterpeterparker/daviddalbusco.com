@@ -8,8 +8,8 @@
 
 	import { onMount } from 'svelte';
 	import { initAnalytics } from '$lib/services/analytics.services.js';
-	import Header from '$lib/components/header.svelte';
-	import Footer from '$lib/components/footer.svelte';
+	import Header from '$lib/components/Header.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	let { children } = $props();
 

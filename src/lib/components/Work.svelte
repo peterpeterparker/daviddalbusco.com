@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Projects from '$lib/components/projects.svelte';
+	import Projects from '$lib/components/Projects.svelte';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 	import type { MarkdownData } from '$lib/types/markdown';
 

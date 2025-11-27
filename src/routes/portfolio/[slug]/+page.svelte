@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import Seo from '$lib/components/seo.svelte';
-	import Button from '$lib/components/button.svelte';
+	import Seo from '$lib/components/Seo.svelte';
+	import Button from '$lib/components/Button.svelte';
 	import { goto } from '$app/navigation';
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
-	import Section from '$lib/components/section.svelte';
+	import Section from '$lib/components/Section.svelte';
 
 	interface Props {
 		data: PageData;

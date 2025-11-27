@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Section from '$lib/components/section.svelte';
+	import Section from '$lib/components/Section.svelte';
 </script>
 
 <Section background="var(--color-primary)" color="var(--color-primary-contrast)">

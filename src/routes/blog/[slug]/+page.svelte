@@ -2,12 +2,12 @@
 	import '../../../theme/_blog.scss';
 
 	import type { PageData } from './$types';
-	import Button from '$lib/components/button.svelte';
-	import Seo from '$lib/components/seo.svelte';
+	import Button from '$lib/components/Button.svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import type { BlogMetadata } from '$lib/types/blog';
 	import { goto } from '$app/navigation';
 	import type { MarkdownData } from '$lib/types/markdown';
-	import Section from '$lib/components/section.svelte';
+	import Section from '$lib/components/Section.svelte';
 
 	interface Props {
 		data: PageData;

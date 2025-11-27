@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import Seo from '$lib/components/seo.svelte';
-	import Blog from '$lib/components/blog.svelte';
-	import Work from '$lib/components/work.svelte';
-	import Play from '$lib/components/play.svelte';
-	import About from '$lib/components/about.svelte';
-	import Talks from '$lib/components/talks.svelte';
-	import Newsletter from '$lib/components/newsletter.svelte';
+	import Seo from '$lib/components/Seo.svelte';
+	import Blog from '$lib/components/Blog.svelte';
+	import Work from '$lib/components/Work.svelte';
+	import Play from '$lib/components/Play.svelte';
+	import About from '$lib/components/About.svelte';
+	import Talks from '$lib/components/Talks.svelte';
+	import Newsletter from '$lib/components/Newsletter.svelte';
 	import { cleanBodyStyles } from '$lib/utils/styles.utils';
 
 	interface Props {

@@ -17,9 +17,15 @@
 
 	<p>I build web apps that won't need a rewrite after a few months.</p>
 
-	<p>
+	<p class="link">
 		{#if loaded}
 			<Link href="mailto:hi@daviddalbusco.com">Hire me!</Link>
 		{/if}
 	</p>
 </Section>
+
+<style lang="scss">
+	.link {
+		min-height: 4rem;
+	}
+</style>

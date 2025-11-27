@@ -14,8 +14,8 @@
 	<h2 id="portfolio">Portfolio</h2>
 
 	<p>
-		I've had the pleasure of collaborating with a diverse range of clients. From small startups and
-		corporates to universities and foundations.
+		I've collaborated with a diverse range of clients - startups, corporates, universities, and
+		foundations.
 	</p>
 </Projects>
 

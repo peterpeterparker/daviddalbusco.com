@@ -2,12 +2,11 @@
 	import '../../../theme/_blog.scss';
 
 	import type { PageData } from './$types';
-	import Button from '$lib/components/Button.svelte';
 	import Seo from '$lib/components/Seo.svelte';
 	import type { BlogMetadata } from '$lib/types/blog';
-	import { goto } from '$app/navigation';
 	import type { MarkdownData } from '$lib/types/markdown';
 	import Section from '$lib/components/Section.svelte';
+	import Link from '$lib/components/Link.svelte';
 
 	interface Props {
 		data: PageData;
@@ -22,8 +21,6 @@
 	let metadata: BlogMetadata = $derived(post.metadata);
 
 	let { title, canonical, description, image, date: postDate, tags } = $derived(metadata);
-
-	const navigateBlog = () => goto('/blog');
 </script>
 
 <svelte:head>
@@ -52,7 +49,7 @@
 	</article>
 
 	<div class="actions">
-		<Button action={navigateBlog}>Continue reading</Button>
+		<Link href="/blog">Continue reading</Link>
 
 		<a
 			class="newsletter"

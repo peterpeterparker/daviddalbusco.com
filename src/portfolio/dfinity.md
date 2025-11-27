@@ -11,17 +11,17 @@ order: "1"
 
 I first started collaborating with [DFINITY](https://dfinity.org) by redeveloping the Network Nervous System (NNS) frontend dapp and its ecosystem. The [NNS dapp](https://nns.internetcomputer.org/) is a decentralized web application that holders of ICP tokens can use to stake neurons to participate in governance and contribute to decision-making.
 
-Following this, I helped build various prototypes, such as the [Voluntary Recycling Credits](https://recyclingcredit.org/) initiative.
+In parallel, I helped build various prototypes, such as the [Voluntary Recycling Credits](https://recyclingcredit.org/) initiative.
 
-I then worked extensively on [OISY Wallet](https://oisy.com/), a browser-based multi-chain wallet that supports ICP, Bitcoin, Ethereum, twin tokens on the IC, and more. I also created its signer library to enable secure communication between relying parties and wallets.
+Later, I worked extensively on [OISY Wallet](https://oisy.com/), a browser-based multi-chain wallet that supports ICP, Bitcoin, Ethereum, twin tokens on the IC, and more. I also created its signer library to enable secure communication between relying parties and wallets.
 
-Ultimately, in 2025, I continued supporting both the NNS dapp, OISY, and the broader ecosystem but, I was also sponsored to dedicate time to my own project [Juno](/portfolio/juno), an open source serverless platform built on the Internet Computer.
+Ultimately, in 2025, I continued supporting both the NNS dapp, OISY, and the broader ecosystem, but I was also sponsored to dedicate time to my own project [Juno](/portfolio/juno), an open source serverless platform which was beneficial to the Internet Computer.
 
 ---
 
 ## Fact sheet
 
-**Technology:** [Svelte](https://svelte.dev/), TypeScript and a tiny bit of [Rust](https://www.rust-lang.org)
+**Technology:** [Svelte](https://svelte.dev/), TypeScript
 
 **Infrastructure:** [Internet Computer](https://internetcomputer.org/)
 

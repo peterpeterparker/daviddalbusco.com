@@ -8,11 +8,7 @@ type: "play"
 
 # Tie Tracker
 
-I was looking to improve my [React](https://reactjs.org/) and [Redux](https://react-redux.js.org/) knowledge, that's why I started the development of this simple, open source and free time tracking app ⏱.️
-
-This is also the application I use to track my working hours and bill my clients.
-
-It was also interesting to develop a fully offline solution with [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API), experiment [Web Workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers) (in order to defer "heavy" computation) and try out the new [Native File System API](https://web.dev/native-file-system/).
+I built this simple, open-source time tracking app ⏱️ while learning React and ended up solving my own problem. I've been using it to track my hours and bill clients for several years now.
 
 ![Mobile application screenshots](/images/portfolio/screenshots/tietracker.webp)
 

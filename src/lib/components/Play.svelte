@@ -13,10 +13,7 @@
 <Projects {projects}>
 	<h2 id="projects">Personal Projects</h2>
 
-	<p>
-		As an open-source enthusiast, I've developed various personal projects. Here are some of my
-		notable creations:
-	</p>
+	<p>As an open-source enthusiast, I've built a number of projects. Here are some highlights:</p>
 </Projects>
 
 <style lang="scss">

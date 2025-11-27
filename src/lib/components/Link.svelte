@@ -23,10 +23,8 @@
 	a {
 		margin: 0.45rem 0;
 		padding: 0.45rem;
-		background: var(--color-primary);
-		color: var(--color-primary-contrast);
 		box-shadow: 3px 3px black;
-		border: 1px solid black;
+		border: 2px solid black;
 
 		transition:
 			color 0.25s ease-out,

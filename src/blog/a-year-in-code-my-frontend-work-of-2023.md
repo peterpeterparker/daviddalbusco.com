@@ -4,7 +4,7 @@ date: "2023-12-30"
 title: "A Year in Code: My Frontend Work of 2023"
 description: "A visual journey through the frontend projects I’ve build this year."
 tags: "#webdev #showdev #programming #journal"
-image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JThVguqwUiuW1U8rqNgvMA.png"
+image: "https://daviddalbusco.com/assets/images/1*JThVguqwUiuW1U8rqNgvMA.png"
 canonical: "https://daviddalbusco.medium.com/a-year-in-code-my-frontend-work-of-2023-afd4025560f7"
 ---
 

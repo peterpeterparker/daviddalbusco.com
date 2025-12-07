@@ -4,7 +4,7 @@ date: "2023-10-27"
 title: "$: npm publish -if-needed"
 description: "Publish a new version of your libraries on NPM only if changes have been made."
 tags: "#npm #javascript #programming #ci"
-image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KYD5_FMmuJCIbp2--hBcvA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*KYD5_FMmuJCIbp2--hBcvA.jpeg"
 canonical: "https://daviddalbusco.medium.com/npm-publish-if-needed-bfeaa781dfd0"
 ---
 

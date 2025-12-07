@@ -4,11 +4,11 @@ date: "2023-01-10"
 title: "Product naming is hard 😩"
 description: "Gosh, I finally got the name for my new side project. It will be called: Juno."
 tags: "#marketing #sass #developers"
-image: "https://miro.medium.com/max/1400/0*ySGfMIBPjKjuxUC9"
+image: "https://daviddalbusco.com/assets/images/0*ySGfMIBPjKjuxUC9"
 canonical: "https://daviddalbusco.medium.com/product-naming-is-hard-202a6e7e849b"
 ---
 
-![becca-tapert-gny_mw1q6xc-unsplash.jpg](https://miro.medium.com/max/1400/0*ySGfMIBPjKjuxUC9)
+![becca-tapert-gny_mw1q6xc-unsplash.jpg](https://daviddalbusco.com/assets/images/0*ySGfMIBPjKjuxUC9)
 
 _Photo de [Becca Tapert](https://unsplash.com/@beccatapert?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) sur [Unsplash](https://unsplash.com/fr/photos/GnY_mW1Q6Xc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

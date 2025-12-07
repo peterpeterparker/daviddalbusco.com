@@ -4,11 +4,11 @@ date: "2024-04-01"
 title: "Make AI-generated image (kind of) from drawing"
 description: "How to create SVG images with ChatGPT from hand-drawn sketches."
 tags: "#openai #chatgpt #programming #tutorial"
-image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*MtSx1X7gJiyWtTSrxL6Tdg.png"
+image: "https://daviddalbusco.com/assets/images/1*MtSx1X7gJiyWtTSrxL6Tdg.png"
 canonical: "https://daviddalbusco.medium.com/make-ai-generated-image-kind-of-from-drawing-192275bcaa6f"
 ---
 
-![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*MtSx1X7gJiyWtTSrxL6Tdg.png)
+![](https://daviddalbusco.com/assets/images/1*MtSx1X7gJiyWtTSrxL6Tdg.png)
 
 ---
 

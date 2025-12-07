@@ -26,3 +26,8 @@ jobs:
           args: hosting deploy
         env:
           JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}
+
+      - name: Upload static assets
+        run: juno run --src ./scripts/juno.upload.assets.ts
+        env:
+          JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}

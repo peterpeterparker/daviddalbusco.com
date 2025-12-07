@@ -4,11 +4,11 @@ date: "2023-11-12"
 title: "Essential JavaScript Functions for Detecting User’s Device Characteristics"
 description: "Learn how to detect iOS, Android, fullscreen mode, Firefox, Safari, and more with JavaScript."
 tags: "#javascript #programming #webdev #showdev"
-image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dQT7UMbmwnLQNoV4Z0Uqzg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*dQT7UMbmwnLQNoV4Z0Uqzg.jpeg"
 canonical: "https://daviddalbusco.medium.com/essential-javascript-functions-for-detecting-users-device-characteristics-763e397514cd"
 ---
 
-![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dQT7UMbmwnLQNoV4Z0Uqzg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*dQT7UMbmwnLQNoV4Z0Uqzg.jpeg)
 
 Photo by [Bram Naus](https://unsplash.com/fr/@bramnaus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/fr/photos/macbook-argento-accanto-a-iphone-6-grigio-siderale-e-bicchiere-trasparente-su-ripiano-in-legno-marrone-n8Qb1ZAkK88?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 

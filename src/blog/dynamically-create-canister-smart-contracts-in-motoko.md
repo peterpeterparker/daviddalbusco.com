@@ -4,11 +4,11 @@ date: "2022-05-10"
 title: "Dynamically Create Canister Smart Contracts In Motoko"
 description: "How to generate on-the-fly decentralized smart contracts on the Internet Computer."
 tags: "#blockchain #programming #web3 #internetcomputer"
-image: "https://miro.medium.com/max/1400/1*0aVC6yVZLehL990fUJDazw.png"
+image: "https://daviddalbusco.com/assets/images/1*0aVC6yVZLehL990fUJDazw.png"
 canonical: "https://medium.com/dfinity/dynamically-create-canister-smart-contracts-in-motoko-d3b38a748c07"
 ---
 
-![](https://miro.medium.com/max/1400/1*0aVC6yVZLehL990fUJDazw.png)
+![](https://daviddalbusco.com/assets/images/1*0aVC6yVZLehL990fUJDazw.png)
 
 ---
 

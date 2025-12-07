@@ -4,11 +4,11 @@ date: "2023-08-20"
 title: "JSON Parse And Stringify: BigInt, Objects and Uint8Arrays"
 description: "Learn JSON Handling for BigInts, Objects, and Uint8Arrays with Replacer and Reviver. Discover parsing, stringify, and testing strategies."
 tags: "#javascript #programming #webdev #json"
-image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*V4hY8EjtJ0jlbJw4l9R4tg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*V4hY8EjtJ0jlbJw4l9R4tg.jpeg"
 canonical: "https://daviddalbusco.medium.com/json-parse-and-stringify-bigint-objects-and-uint8arrays-e861a7b327c8"
 ---
 
-![](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*V4hY8EjtJ0jlbJw4l9R4tg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*V4hY8EjtJ0jlbJw4l9R4tg.jpeg)
 
 Photo by [Aron Visuals](https://unsplash.com/fr/@aronvisuals?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/bZZp1PmHI0E?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

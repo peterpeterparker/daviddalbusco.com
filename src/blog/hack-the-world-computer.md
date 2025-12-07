@@ -4,10 +4,10 @@ date: "2025-11-27"
 title: Hack the World (Computer)
 description: "How I used a CSP loophole to rescue trapped ICP tokens from a web app"
 tags: "#javascript #webdev #security #internetcomputer #icp #typescript #esbuild #webworkers"
-image: "https://miro.medium.com/v2/resize:fit:1400/1*I8hVM9GzLEmHtVsAr2G4zA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*I8hVM9GzLEmHtVsAr2G4zA.jpeg"
 ---
 
-![](https://miro.medium.com/v2/resize:fit:1400/1*I8hVM9GzLEmHtVsAr2G4zA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*I8hVM9GzLEmHtVsAr2G4zA.jpeg)
 
 > Photo by [Markus Spiske](https://unsplash.com/fr/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/photo-du-film-matrix-iar-afB0QQw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -62,7 +62,7 @@ VM50:1 Loading the script 'https://unpkg.com/yolosns@latest/dist/esm/index.js' v
 Uncaught TypeError: Failed to fetch dynamically imported module: https://unpkg.com/yolosns@latest/dist/esm/index.js
 ```
 
-![A screenshot of the import blocked by the CSP in the browser console debugger](https://miro.medium.com/v2/resize:fit:1400/1*7dev_oxGbi42GNjlwg9r_g.png)
+![A screenshot of the import blocked by the CSP in the browser console debugger](https://daviddalbusco.com/assets/images/1*7dev_oxGbi42GNjlwg9r_g.png)
 
 At this point I was about to share that it couldn't work but, then I told myself, wait have a second look.
 
@@ -171,7 +171,7 @@ const blob = new Blob([uint8Array], { type: "application/javascript" });
 const worker = new Worker(URL.createObjectURL(blob));
 ```
 
-![A screenshot of the step successfully run in the Chrome browser debugger](https://miro.medium.com/v2/resize:fit:1400/1*61rGpu9ntwL3sImWmD880w.png)
+![A screenshot of the step successfully run in the Chrome browser debugger](https://daviddalbusco.com/assets/images/1*61rGpu9ntwL3sImWmD880w.png)
 
 Hooray that did the trick!!! The console logged "Yolo". 🥳
 

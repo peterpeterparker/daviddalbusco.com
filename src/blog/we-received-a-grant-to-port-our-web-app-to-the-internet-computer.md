@@ -4,11 +4,11 @@ date: "2021-07-06"
 title: "We Received A Grant To Port Our Web App To The Internet Computer"
 description: "Can our web editor for slides work on the futuristic internet of the DFINITY foundation? Let's figure it out."
 tags: "#webdev #showdev #motivation #news"
-image: "https://cdn-images-1.medium.com/max/1600/1*uMo-wgL0-asMeYajl6CSfQ.png"
+image: "https://daviddalbusco.com/assets/images/1*uMo-wgL0-asMeYajl6CSfQ.png"
 canonical: "https://daviddalbusco.medium.com/we-received-a-grant-to-port-our-web-app-to-the-internet-computer-7be64806565a"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*uMo-wgL0-asMeYajl6CSfQ.png)
+![](https://daviddalbusco.com/assets/images/1*uMo-wgL0-asMeYajl6CSfQ.png)
 
 _Source: DFINITY press kit + DeckDeckGo logo_
 

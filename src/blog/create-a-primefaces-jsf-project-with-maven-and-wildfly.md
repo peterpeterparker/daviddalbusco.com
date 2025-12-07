@@ -4,10 +4,10 @@ date: "2019-10-30"
 title: "Create a Primefaces JSF project with Maven and Wildfly"
 description: "How to create a Primefaces and JSF project with Maven and Wildfly as a local server"
 tags: "#tutorial #java #jsf #primefaces"
-image: "https://cdn-images-1.medium.com/max/1600/1*w93lFGpSosbY9UblQNqUCA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*w93lFGpSosbY9UblQNqUCA.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*w93lFGpSosbY9UblQNqUCA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*w93lFGpSosbY9UblQNqUCA.jpeg)
 
 I'm currently on my way to Fuerteventura to enjoy a week of holidays ☀️ Earlier this year, I found out that writing blog posts was a great way to use wisely my time spent traveling, that's why I'm repeating the experience.
 
@@ -15,7 +15,7 @@ When I thought about which subject I should write about earlier this morning (I 
 
 ### But why a JSF project?
 
-![](https://cdn-images-1.medium.com/max/1600/1*evsRlXzetp7FdEOK2ynL1Q.gif)
+![](https://daviddalbusco.com/assets/images/1*evsRlXzetp7FdEOK2ynL1Q.gif)
 
 _But why a JSF project?_
 
@@ -77,11 +77,11 @@ Once the configuration saved, we could build and install our project and run the
 mvn clean install && mvn wildfly:run
 ```
 
-![](https://cdn-images-1.medium.com/max/1600/1*Bj1lhJuKOuWch0DICh7npA.png)
+![](https://daviddalbusco.com/assets/images/1*Bj1lhJuKOuWch0DICh7npA.png)
 
 _Administration console_
 
-![](https://cdn-images-1.medium.com/max/1600/1*nWVepJkORKK6_wp4w2EB3Q.png)
+![](https://daviddalbusco.com/assets/images/1*nWVepJkORKK6_wp4w2EB3Q.png)
 
 _"Hello World" page_
 
@@ -174,7 +174,7 @@ mvn clean install && mvn wildfly:run
 
 If we access [http://localhost:8080/jsf-demo/hello.xhtml](http://localhost:8080/jsf-demo/hello.xhtml) with our browser, we should now see the friendly message as title and content of the page.
 
-![](https://cdn-images-1.medium.com/max/1600/1*c6cxLyLRRScp0nTWgya9zQ.png)
+![](https://daviddalbusco.com/assets/images/1*c6cxLyLRRScp0nTWgya9zQ.png)
 
 _"Hello World form Fuerteventura"_
 
@@ -232,7 +232,7 @@ mvn clean install && mvn wildfly:run
 
 Finally we could check [http://localhost:8080/jsf-demo/hello.xhtml](http://localhost:8080/jsf-demo/hello.xhtml) in our browser to check if everything is correctly running.
 
-![](https://cdn-images-1.medium.com/max/1600/1*hBnP4yj5wIgn9fE-NJc-bA.png)
+![](https://daviddalbusco.com/assets/images/1*hBnP4yj5wIgn9fE-NJc-bA.png)
 _“Hello World from Fuerteventura” presented in a Primefaces’ panel_
 
 Voilà, we did it! We created a Primefaces JSF project with Maven and Widfly and are now able to make some testing 🎉 Moreover, even if I'm not looking forward to going home, I will be able to use this blank new project as a starter kit for my next article 😆

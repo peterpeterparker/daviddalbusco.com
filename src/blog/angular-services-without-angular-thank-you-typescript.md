@@ -4,10 +4,10 @@ date: "2019-06-30"
 title: "Angular services without Angular? Thank you Typescript"
 description: "Create a singleton service with Typescript to narrow specific functions or share data across components"
 tags: "#javascript #webdev #typescript #beginners"
-image: "https://cdn-images-1.medium.com/max/1600/1*Snr-Scxt2w2y3LJa59HX9Q.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*Snr-Scxt2w2y3LJa59HX9Q.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*Snr-Scxt2w2y3LJa59HX9Q.jpeg)
+![](https://daviddalbusco.com/assets/images/1*Snr-Scxt2w2y3LJa59HX9Q.jpeg)
 _Not related, it’s just that my mum is cooking french fries next to me right now — Photo by [Louis Hansel](https://unsplash.com/@louishansel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/fries?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 One thing we could all agree on, I think, is the fact that using [Angular services](https://angular.io/guide/architecture-services) is just super duper easy. They are a great way to narrow specific functions and are straight forward to understand.

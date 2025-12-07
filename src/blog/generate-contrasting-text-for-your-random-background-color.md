@@ -4,10 +4,10 @@ date: "2019-12-23"
 title: "Generate Contrasting Text For Your Random Background Color"
 description: "How to generate automatically a contrasting text for your random background color in Javascript."
 tags: "#javascript #webdev #a11y #tutorial"
-image: "https://cdn-images-1.medium.com/max/1600/1*o8tTGo3vsocTKnCUyz0wHA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*o8tTGo3vsocTKnCUyz0wHA.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*o8tTGo3vsocTKnCUyz0wHA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*o8tTGo3vsocTKnCUyz0wHA.jpeg)
 
 _Photo by [davisco](https://unsplash.com/@codytdavis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -79,7 +79,7 @@ export function contrast(colorHex: string | undefined, threshold: number = 128):
 
 Let’s give a try to the above solution in Vanilla Javascript.
 
-![](https://cdn-images-1.medium.com/max/1600/1*33JQbJ-KqGrry-VIXHZbMA.gif)
+![](https://daviddalbusco.com/assets/images/1*33JQbJ-KqGrry-VIXHZbMA.gif)
 
 _Contrasting text automatically generated for the selected color_
 

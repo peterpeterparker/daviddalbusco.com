@@ -4,11 +4,11 @@ date: "2020-06-10"
 title: "Fullscreen: Practical Tips And Tricks"
 description: "Toggle the fullscreen mode with any browser, a Sass mixin for polyfill and hide the mouse on inactivity"
 tags: "#javascript #webdev #css #typescript"
-image: "https://cdn-images-1.medium.com/max/1600/1*qyf7I6z6WCwU_jGOBpacng.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*qyf7I6z6WCwU_jGOBpacng.jpeg"
 canonical: "https://medium.com/@david.dalbusco/fullscreen-practical-tips-and-tricks-cebcba69fb95"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*qyf7I6z6WCwU_jGOBpacng.jpeg)
+![](https://daviddalbusco.com/assets/images/1*qyf7I6z6WCwU_jGOBpacng.jpeg)
 
 _Photo by [Jr Korpa](https://unsplash.com/@korpa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/full-screen-wallpapers?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -40,7 +40,7 @@ function toggleFullScreen() {
 
 Even if the methods are well supported across browser, you might notice on [Caniuse](https://caniuse.com/#search=requestFullscreen) a small yellow note next to some version number.
 
-![](https://cdn-images-1.medium.com/max/1600/1*EO0i13KYRL7b9d7LxDbT6w.png)
+![](https://daviddalbusco.com/assets/images/1*EO0i13KYRL7b9d7LxDbT6w.png)
 
 _Caniuse | Full screen API | Jun 9th 2020_
 
@@ -95,7 +95,7 @@ The `:fullscreen` CSS pseudo-class (documented [here](https://developer.mozilla.
 
 It is well supported across browser, as displayed by [Caniuse](https://caniuse.com/#search=%3Afullscreen), but you might also again notice some limitation, specially when it comes to Safari. That’s why it might be interesting to polyfill the pseudo-class.
 
-![](https://cdn-images-1.medium.com/max/1600/1*s3cBdYOjRVpc_2PhYxmyzw.png)
+![](https://daviddalbusco.com/assets/images/1*s3cBdYOjRVpc_2PhYxmyzw.png)
 
 _Caniuse | Full screen API | Jun 9th 2020_
 
@@ -146,7 +146,7 @@ Do you also notice, when a presenter has her/his presentation displayed in fulls
 
 I do notice it and I rather like to have it hidden 😆. And with rather like I mean that when I noticed this behavior in [DeckDeckGo](https://deckdeckgo.com), I had to develop a solution asap. even if I was spending surf holidays in India (you can check my GitHub commit history, I am not joking, true story 🤣).
 
-![](https://cdn-images-1.medium.com/max/1600/1*krc3a3DHYjqUkw-CQjaLEw.gif)
+![](https://daviddalbusco.com/assets/images/1*krc3a3DHYjqUkw-CQjaLEw.gif)
 
 In order to detect the inactivity, we listen to the event [mousemove](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event). Each time the event is fired, we reset a timer and delay the modification of the style [cursor](https://developer.mozilla.org/fr/docs/Web/CSS/cursor) to hide the mouse. Likewise, if we are toggling between fullscreen and normal mode, we proceed with the same function.
 

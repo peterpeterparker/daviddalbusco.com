@@ -4,10 +4,10 @@ date: "2019-06-15"
 title: "Create a Web Component to lazy load images using Intersection Observer"
 description: "How to create step by step a Web Component with StencilJS to lazy load images using the Intersection Oberserver API"
 tags: "#webcomponents #stencil #javascript #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*ZR2kkYSQYyq97uwcbukDTQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*ZR2kkYSQYyq97uwcbukDTQ.jpeg"
 ---
 
-![A lazy cow](https://cdn-images-1.medium.com/max/1600/1*ZR2kkYSQYyq97uwcbukDTQ.jpeg)
+![A lazy cow](https://daviddalbusco.com/assets/images/1*ZR2kkYSQYyq97uwcbukDTQ.jpeg)
 
 One of the many improvements introduced in the version [12.1](https://webkit.org/blog/8718/new-webkit-features-in-safari-12-1/) of Safari is the support for the Intersection Observer. Thanks to this enhancement, all [modern browsers](https://caniuse.com/#search=IntersectionObserver) are now supporting this API and it is therefore possible to detect when a particular element would become visible with the exact same piece code ([almost](https://caniuse.com/#search=IntersectionObserver)) everywhere.
 
@@ -19,13 +19,13 @@ _When it comes to Web Components, I have a bit more experience with the [Stencil
 
 To begin our (short) journey, we are going to create a new Web Component using StencilJS. For that purpose, run `npm init stencil` in a terminal and follow the prompt:
 
-![](https://cdn-images-1.medium.com/max/1600/1*Pvfa6ISTSDMmQb0T9ZtN-w.png)
+![](https://daviddalbusco.com/assets/images/1*Pvfa6ISTSDMmQb0T9ZtN-w.png)
 <span class="figcaption_hack">Run the initial command</span>
 
-![](https://cdn-images-1.medium.com/max/1600/1*KiMpOh_Tkc-c-lbQtshueQ.png)
+![](https://daviddalbusco.com/assets/images/1*KiMpOh_Tkc-c-lbQtshueQ.png)
 <span class="figcaption_hack">Select “component” as we want to develop a library</span>
 
-![](https://cdn-images-1.medium.com/max/1600/1*OrBL_5unZ5Ll8F3adWlBcA.png)
+![](https://daviddalbusco.com/assets/images/1*OrBL_5unZ5Ll8F3adWlBcA.png)
 <span class="figcaption_hack">Give a name to the component and project, like “lazy-load-img”</span>
 
 _Note: To shorten the tutorial I won’t cover here how you could rename the default namespace and component’s names, just ping me if you would have specific questions about it._
@@ -210,12 +210,12 @@ StencilJS comes with a handy [development server](https://stenciljs.com/docs/dev
 
 Once edited, we could now start the development server with the command `npm run start`
 
-![](https://cdn-images-1.medium.com/max/1600/1*1EIqxblllapum3l6BQpvgQ.png)
+![](https://daviddalbusco.com/assets/images/1*1EIqxblllapum3l6BQpvgQ.png)
 <span class="figcaption_hack">Start the development server</span>
 
 And once executed, open Chrome or Safari at the address `http://localhost:3333` and test your lazy loading component 🎉
 
-![](https://cdn-images-1.medium.com/max/1600/1*LmehcptdT_bkoCqFtui0ew.gif)
+![](https://daviddalbusco.com/assets/images/1*LmehcptdT_bkoCqFtui0ew.gif)
 
 As you could notice in this animated gif above, I added a console output to display in the debugger when images are effectively loaded. At first, only one image is loaded but when I began to scroll, the other images began to be loaded as soon as they appear in the viewport (see the counter in the debugger)
 

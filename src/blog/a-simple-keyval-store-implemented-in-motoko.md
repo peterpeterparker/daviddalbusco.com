@@ -4,11 +4,11 @@ date: "2021-11-30"
 title: "A Simple KeyVal Store Implemented in Motoko"
 description: "Build a generic keyval store for canister smart contract on the Internet Computer."
 tags: "#motoko #blockchain #web3 #dapp"
-image: "https://cdn-images-1.medium.com/max/1600/1*TtIqarWb4Sbvh2lntKUlHg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*TtIqarWb4Sbvh2lntKUlHg.jpeg"
 canonical: "https://daviddalbusco.medium.com/a-simple-keyval-store-implemented-in-motoko-f8ba5af43618"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*TtIqarWb4Sbvh2lntKUlHg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*TtIqarWb4Sbvh2lntKUlHg.jpeg)
 
 _Photo by [Pedro Lastra](https://unsplash.com/@peterlaster?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -228,7 +228,7 @@ Et voilà, with few lines of code, we have implemented a simple keyval canister 
 
 Wanna play with the previous example and store? Checkout this [Motoko Playground](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=1517752901) and have fun 🤙.
 
-![](https://cdn-images-1.medium.com/max/1600/1*CgTzjuNqFv3mr1IpCZsPgw.png)
+![](https://daviddalbusco.com/assets/images/1*CgTzjuNqFv3mr1IpCZsPgw.png)
 
 ---
 

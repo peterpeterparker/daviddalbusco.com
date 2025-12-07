@@ -4,11 +4,11 @@ date: "2020-11-19"
 title: "StencilJS & Web Worker: A Fairy Tale"
 description: "The story of the Stencil's compiler and its magical integration of the Web Worker API."
 tags: "#stencil #showdev #javascript #typescript"
-image: "https://cdn-images-1.medium.com/max/1600/1*WXwuHYRWLLamBbB5zg6gtg.png"
+image: "https://daviddalbusco.com/assets/images/1*WXwuHYRWLLamBbB5zg6gtg.png"
 canonical: "https://daviddalbusco.medium.com/stenciljs-web-worker-a-fairy-tale-ec48343fce17"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*WXwuHYRWLLamBbB5zg6gtg.png)
+![](https://daviddalbusco.com/assets/images/1*WXwuHYRWLLamBbB5zg6gtg.png)
 
 ---
 
@@ -92,7 +92,7 @@ export const parseMarkdown = async (text: string) => {
 
 Some who might fear nothing and who might run the above code on their local computers, `npm run start`, might observe the following outcome.
 
-![](https://cdn-images-1.medium.com/max/1600/1*ube4TfnIPeJrXX0vD0wRDA.png)
+![](https://daviddalbusco.com/assets/images/1*ube4TfnIPeJrXX0vD0wRDA.png)
 
 ---
 
@@ -106,7 +106,7 @@ To the contrary and to the boy wonder, Stencil made all these steps magical by s
 
 Indeed, as you can notice in following screenshot, any TypeScript file within the `src` directory that ends with `.worker.ts` will automatically use a worker by the Stencil’s compiler making, as far as the boy knows, the most magical Web Worker recipe he ever tried out 🔥.
 
-![](https://cdn-images-1.medium.com/max/1600/1*WjLbi1ajmi4H0rlACo4dPA.png)
+![](https://daviddalbusco.com/assets/images/1*WjLbi1ajmi4H0rlACo4dPA.png)
 
 ---
 

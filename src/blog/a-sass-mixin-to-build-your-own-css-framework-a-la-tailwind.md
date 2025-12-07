@@ -35,7 +35,7 @@ The idea behind the mixin is to eliminate code duplication while enabling the ge
 
 This code would render a web page featuring a `div` container with a centered flex layout and a top margin. Inside this container, there are two inline `span` elements, each assigned specific colors, with one of them set to bold text.
 
-![](https://cdn-images-1.medium.com/max/2892/1*dkHS4VctREJmFtyftvFS_w.png)
+![](https://daviddalbusco.com/assets/images/1*dkHS4VctREJmFtyftvFS_w.png)
 
 While I could have simply declared these classes globally, my objective was to generate them using a Sass utility for all my styling needs.
 

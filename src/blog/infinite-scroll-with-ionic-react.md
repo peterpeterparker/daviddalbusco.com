@@ -4,10 +4,10 @@ date: "2019-12-02"
 title: "Infinite Scroll with Ionic + React"
 description: "How to implement an Infinite Scroll with Ionic + React and a filter with Hooks"
 tags: "#programming #react #javascript #tutorial"
-image: "https://cdn-images-1.medium.com/max/1600/1*VST3XVmoX1R3hAXJ8OGw4A.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*VST3XVmoX1R3hAXJ8OGw4A.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*VST3XVmoX1R3hAXJ8OGw4A.jpeg)
+![](https://daviddalbusco.com/assets/images/1*VST3XVmoX1R3hAXJ8OGw4A.jpeg)
 
 Ionic React has been made [available](https://ionicframework.com/blog/announcing-ionic-react/) earlier this year and I’ll introduce some of its features at our local [meetup](https://www.meetup.com/fr-FR/Ionic-Zurich/events/265767496/) this Thursday. One of these is the implementation of an infinite scroller, which I’m about to share with you in the following post 😃
 
@@ -136,7 +136,7 @@ I split the code in the above steps to makes the implementation more accessible 
 
 If everything went according plan, once you run our application with the command line `ionic serve` , you should be able to browse an infinite list of doggos with your favorite browser 🎉
 
-![](https://cdn-images-1.medium.com/max/1600/1*zOAnHKLkcqo0M7NMtVioQQ.gif)
+![](https://daviddalbusco.com/assets/images/1*zOAnHKLkcqo0M7NMtVioQQ.gif)
 
 _So much doggos_
 
@@ -208,7 +208,7 @@ I have implemented this filter example in the second tab of the demo solution I�
 
 If you run the application again, you should now be able to filter the list with only dachshund 🥳
 
-![](https://cdn-images-1.medium.com/max/1600/1*dCTUxVxI8yfkxGsqtV0baA.gif)
+![](https://daviddalbusco.com/assets/images/1*dCTUxVxI8yfkxGsqtV0baA.gif)
 
 _So much dachshund_
 

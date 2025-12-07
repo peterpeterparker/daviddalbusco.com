@@ -4,11 +4,11 @@ date: "2020-03-25"
 title: "Test Angular Pipes With Services"
 description: "How to test an Angular pipe which uses injected services"
 tags: "#angular #testing #javascript #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*q3KXO31t7qXMjn0bf5Z3OQ.png"
+image: "https://daviddalbusco.com/assets/images/1*q3KXO31t7qXMjn0bf5Z3OQ.png"
 canonical: "https://medium.com/@david.dalbusco/test-angular-pipes-with-services-4cf77e34e576"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*q3KXO31t7qXMjn0bf5Z3OQ.png)
+![](https://daviddalbusco.com/assets/images/1*q3KXO31t7qXMjn0bf5Z3OQ.png)
 
 _Photo by [Guillaume TECHER](https://unsplash.com/@guillaume_t?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

@@ -4,7 +4,7 @@ date: "2022-07-05"
 title: "Build a library with esbuild (vol. 2)"
 description: "A few new tips and tricks to build a library with esbuild"
 tags: "#javascript #programming #webdev #showdev"
-image: "https://cdn-images-1.medium.com/max/1600/0*OCuN_lShUlE2vb_V"
+image: "https://daviddalbusco.com/assets/images/0*OCuN_lShUlE2vb_V"
 canonical: "https://daviddalbusco.medium.com/build-a-library-with-esbuild-vol-2-c0e3caa25150"
 ---
 

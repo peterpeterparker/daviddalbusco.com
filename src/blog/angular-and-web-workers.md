@@ -4,11 +4,11 @@ date: "2020-04-15"
 title: "Angular And Web Workers"
 description: "How to integrate Web Workers to your Angular applications"
 tags: "#angular #javascript #showdev #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*0EDeEWFc3O8KxelyJArjjA.png"
+image: "https://daviddalbusco.com/assets/images/1*0EDeEWFc3O8KxelyJArjjA.png"
 canonical: "https://medium.com/@david.dalbusco/angular-and-web-workers-17cd3bf9acca"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*0EDeEWFc3O8KxelyJArjjA.png)
+![](https://daviddalbusco.com/assets/images/1*0EDeEWFc3O8KxelyJArjjA.png)
 
 _Photo by [Darya Tryfanava](https://unsplash.com/@darya_tryfanava?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -122,7 +122,7 @@ export class HomePage implements OnInit {
 
 All set, we can try to run a test. If everything goes according plan, you should be able to discover a message in the console which follow the exchange between the app and the worker.
 
-![](https://cdn-images-1.medium.com/max/1600/1*YJ9O5OKJO2ZWHSYbVOrmww.png)
+![](https://daviddalbusco.com/assets/images/1*YJ9O5OKJO2ZWHSYbVOrmww.png)
 
 ---
 
@@ -186,7 +186,7 @@ export class HomePage implements OnInit {
 
 If you would test the above in your browser you would effectively notice that as long the “Apple” counter is not resolved, the GUI will not be rendered again and therefor will not been updated.
 
-![](https://cdn-images-1.medium.com/max/1600/1*OTDF80thurZxQLMwbHtvTA.gif)
+![](https://daviddalbusco.com/assets/images/1*OTDF80thurZxQLMwbHtvTA.gif)
 
 ---
 
@@ -282,7 +282,7 @@ export class HomePage {
 
 If you would run the example in your browser you should be able to notice that our interaction and UI aren’t blocked anymore, tada 🎉.
 
-![](https://cdn-images-1.medium.com/max/1600/1*IEjanj7fsFvpvcXGbFSzsg.gif)
+![](https://daviddalbusco.com/assets/images/1*IEjanj7fsFvpvcXGbFSzsg.gif)
 
 ---
 

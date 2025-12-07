@@ -4,11 +4,11 @@ date: "2020-03-18"
 title: "Inject JavaScript Or CSS At Runtime And On Demand"
 description: "How to load a JavaScript library, component or a style only when you really need it #OneTrickADay-32"
 tags: "#webdev #javascript #css #html"
-image: "https://cdn-images-1.medium.com/max/1600/1*NFVyLIxNmR6l8QJjFmzIpg.png"
+image: "https://daviddalbusco.com/assets/images/1*NFVyLIxNmR6l8QJjFmzIpg.png"
 canonical: "https://medium.com/@david.dalbusco/inject-javascript-or-css-at-runtime-and-on-demand-dd89c109c6b3"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*NFVyLIxNmR6l8QJjFmzIpg.png)
+![](https://daviddalbusco.com/assets/images/1*NFVyLIxNmR6l8QJjFmzIpg.png)
 
 _Photo by [Aditya Saxena](https://unsplash.com/@adityaries?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

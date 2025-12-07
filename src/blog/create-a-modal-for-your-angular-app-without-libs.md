@@ -4,11 +4,11 @@ date: "2020-03-30"
 title: "Create A Modal For Your Angular App Without Libs"
 description: "How to create a modal for your application developed with Angular without the use of any libraries or dependencies"
 tags: "#angular #webdev #javascript #css"
-image: "https://cdn-images-1.medium.com/max/1600/1*xNE1YF5sWgrqysu1GqwUNA.png"
+image: "https://daviddalbusco.com/assets/images/1*xNE1YF5sWgrqysu1GqwUNA.png"
 canonical: "https://medium.com/@david.dalbusco/create-a-modal-for-your-angular-app-without-libs-671bd7280867"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*xNE1YF5sWgrqysu1GqwUNA.png)
+![](https://daviddalbusco.com/assets/images/1*xNE1YF5sWgrqysu1GqwUNA.png)
 
 _Photo by [Roger Burkhard](https://unsplash.com/@roger_burkhard?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -20,7 +20,7 @@ The other day we were building a quick proof of [Angular](https://angular.io) co
 
 Yesterday I [shared another solution](https://daviddalbusco.com/blog/create-a-menu-for-your-gatsby-website-without-libs) to create a custom menu for a [Gatsby](https://www.gatsbyjs.org) website without any dependencies and that’s why I had the idea today to share the following tutorial.
 
-![](https://cdn-images-1.medium.com/max/1600/1*s0eN_t22IJLbosGLHblfiw.gif)
+![](https://daviddalbusco.com/assets/images/1*s0eN_t22IJLbosGLHblfiw.gif)
 
 ---
 

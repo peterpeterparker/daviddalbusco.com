@@ -4,11 +4,11 @@ date: "2020-04-09"
 title: "React, Web Workers and IndexedDB"
 description: "How to use IndexedDB in React applications with Web Workers"
 tags: "#react #showdev #webdev #javascript"
-image: "https://cdn-images-1.medium.com/max/1600/1*Ih6g24vTLWb_Zl-yiNOuNA.png"
+image: "https://daviddalbusco.com/assets/images/1*Ih6g24vTLWb_Zl-yiNOuNA.png"
 canonical: "https://medium.com/@david.dalbusco/react-web-workers-and-indexeddb-a973797e771b"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*Ih6g24vTLWb_Zl-yiNOuNA.png)
+![](https://daviddalbusco.com/assets/images/1*Ih6g24vTLWb_Zl-yiNOuNA.png)
 
 _Photo by [Pawan Kawan](https://unsplash.com/@pawankawan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -105,7 +105,7 @@ export default Page;
 
 Of course as we do not have yet implemented the sum part, the Web Worker, it does not do much.
 
-![](https://cdn-images-1.medium.com/max/1600/1*0Qz6Y3scEzimJ--S7TTNgA.gif)
+![](https://daviddalbusco.com/assets/images/1*0Qz6Y3scEzimJ--S7TTNgA.gif)
 
 ---
 
@@ -129,7 +129,7 @@ async function incTomato() {
 
 And that’s already it. Every time the counter is incremented, the effect is triggered and in extension we are using idb-keyval to add a value in the database.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Upl2MW8HhjDarFAcOoOdUQ.gif)
+![](https://daviddalbusco.com/assets/images/1*Upl2MW8HhjDarFAcOoOdUQ.gif)
 
 ---
 
@@ -198,7 +198,7 @@ async function sumTomato() {
 
 And voilà 🎉. We are using IndexedDB in all our threads 😃.
 
-![](https://cdn-images-1.medium.com/max/1600/1*o4uSCTJUb9X253cdPmJJMA.gif)
+![](https://daviddalbusco.com/assets/images/1*o4uSCTJUb9X253cdPmJJMA.gif)
 
 ---
 

@@ -4,11 +4,11 @@ date: "2021-01-21"
 title: "Build Gatsby Websites Using Firestore Data (Without Plugin)"
 description: "Get Firestore data to build your Gatsby static website with flexibility."
 tags: "#gatsby #firebase #javascript #react"
-image: "https://cdn-images-1.medium.com/max/1600/1*dFqYiAhtL5Z9RR-b2JArVQ.png"
+image: "https://daviddalbusco.com/assets/images/1*dFqYiAhtL5Z9RR-b2JArVQ.png"
 canonical: "https://daviddalbusco.medium.com/build-gatsby-websites-using-firestore-data-without-plugin-3fc7496dba2f"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*dFqYiAhtL5Z9RR-b2JArVQ.png)
+![](https://daviddalbusco.com/assets/images/1*dFqYiAhtL5Z9RR-b2JArVQ.png)
 
 _Photo by [Melanie Magdalena](https://unsplash.com/@m2creates?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -41,7 +41,7 @@ The feature we are about to develop, takes place at **build time**. We are going
 
 To ease this tutorial and, to have a common point of reference, let’s define our goal to be the display of a list of dogs.
 
-![](https://cdn-images-1.medium.com/max/1600/1*zT7YJpdlsioaLZSLE2G0ug.png)
+![](https://daviddalbusco.com/assets/images/1*zT7YJpdlsioaLZSLE2G0ug.png)
 
 These are going to be fetched from a Firestore collection called `dogs`.
 
@@ -191,7 +191,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
 
 At this point, if we build (`npm run build` ) our site, we should notice our data being fetched and printed to the terminal.
 
-![](https://cdn-images-1.medium.com/max/1600/1*lEJgBAxrFRBuzyfj9LpXOg.png)
+![](https://daviddalbusco.com/assets/images/1*lEJgBAxrFRBuzyfj9LpXOg.png)
 
 ---
 
@@ -241,7 +241,7 @@ query MyQuery {
 
 If successful, we should find all the results delivered by the API.
 
-![](https://cdn-images-1.medium.com/max/1600/1*3ut-xNScba3910Ky2OIxiA.png)
+![](https://daviddalbusco.com/assets/images/1*3ut-xNScba3910Ky2OIxiA.png)
 
 ---
 
@@ -281,7 +281,7 @@ export default IndexPage;
 
 Such minimalistic component produce the following output which, however, confirm us the fact that we are able to fetch data from Firestore and, use these at build time in Gatsby 🥳.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Ne96f5Ue7Mt40MPJRk_JtA.png)
+![](https://daviddalbusco.com/assets/images/1*Ne96f5Ue7Mt40MPJRk_JtA.png)
 
 ---
 
@@ -326,7 +326,7 @@ query MyQuery {
 }
 ```
 
-![](https://cdn-images-1.medium.com/max/1600/1*OYwkYIeElCDoNzuyMoXMAA.png)
+![](https://daviddalbusco.com/assets/images/1*OYwkYIeElCDoNzuyMoXMAA.png)
 
 To make the optimization of images possible at build time, we double check that the default [gatsby-plugin-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-sharp) and [gatsby-transformer-sharp](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-transformer-sharp) plugins are installed in our project.
 
@@ -350,7 +350,7 @@ query MyQuery {
 }
 ```
 
-![](https://cdn-images-1.medium.com/max/1600/1*lX2FTYwV-pwfBZ8w8wCvXA.png)
+![](https://daviddalbusco.com/assets/images/1*lX2FTYwV-pwfBZ8w8wCvXA.png)
 
 Finally, we reflect the improvements to the GraphQL query in our component and, we render the images using the [gatsby-image](https://www.gatsbyjs.com/plugins/gatsby-image/) component.
 
@@ -404,7 +404,7 @@ export default IndexPage;
 
 In addition to being displayed, our images should now appear with a “blur-up” effect while the images are being lazy-loaded.
 
-![](https://cdn-images-1.medium.com/max/1600/1*HcgSjYGHybfb6-IOe79B-Q.gif)
+![](https://daviddalbusco.com/assets/images/1*HcgSjYGHybfb6-IOe79B-Q.gif)
 
 _Gif slowed down to 0.25% of its original speed._
 

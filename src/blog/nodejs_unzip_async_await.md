@@ -4,11 +4,11 @@ date: "2021-03-14"
 title: "Node.js: Unzip Async Await"
 description: "Unzip a .zip file in an asynchronous Node.js context."
 tags: "#javascript #nodejs #webdev #programming"
-image: "https://cdn-images-1.medium.com/max/1600/1*aRAiHOPwSAGnffuFtAGghA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*aRAiHOPwSAGnffuFtAGghA.jpeg"
 canonical: "https://daviddalbusco.medium.com/node-js-unzip-async-await-901040d30393"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*aRAiHOPwSAGnffuFtAGghA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*aRAiHOPwSAGnffuFtAGghA.jpeg)
 
 _Photo by [Florian Steciuk](https://unsplash.com/@flo_stk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://medium.com/s/photos/highway?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -104,7 +104,7 @@ It follows the same approach as previously and read the file content to an in me
 
 ### Summary
 
-![](https://cdn-images-1.medium.com/max/1600/1*6wJfY8vH1FbC1s4Uzxy0QQ.gif)
+![](https://daviddalbusco.com/assets/images/1*6wJfY8vH1FbC1s4Uzxy0QQ.gif)
 
 > Coding is like a box of chocolates. You never know what you’re gonna get. Sometimes it should be quick, it takes time. Sometimes it should take so much time but, it goes fast — For-dev-rest Gump
 

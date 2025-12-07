@@ -4,11 +4,11 @@ date: "2020-03-26"
 title: "Gatsby Tricks: Viewport, CSS Modules Transition And i18n Tricks"
 description: "Overriding Viewport settings, CSS modules transition and an i18n formatting tricks with Gatsby"
 tags: "#javascript #webdev #gatsby #css"
-image: "https://cdn-images-1.medium.com/max/1600/1*ytcX2rE89fOxjHjKfEAJng.png"
+image: "https://daviddalbusco.com/assets/images/1*ytcX2rE89fOxjHjKfEAJng.png"
 canonical: "https://medium.com/@david.dalbusco/gatsby-tricks-viewport-css-modules-transition-and-i18n-tricks-a3d1089a4910"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*ytcX2rE89fOxjHjKfEAJng.png)
+![](https://daviddalbusco.com/assets/images/1*ytcX2rE89fOxjHjKfEAJng.png)
 
 _Photo by [Ronald Ladines](https://unsplash.com/@massrecall?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -28,7 +28,7 @@ I was a bit surprise because it did worked out everywhere else. As a skeptical p
 
 Concretely the following was happening.
 
-![](https://cdn-images-1.medium.com/max/1600/1*t7rBjEcQRqcbuy183JaSSw.gif)
+![](https://daviddalbusco.com/assets/images/1*t7rBjEcQRqcbuy183JaSSw.gif)
 
 _Browser left ok vs iPad right not ok_
 

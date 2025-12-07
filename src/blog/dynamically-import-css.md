@@ -4,11 +4,11 @@ date: "2020-06-01"
 title: "Dynamically Import CSS"
 description: "Lazy load CSS with the help of dynamic import() demonstrated in a Stencil Web Components"
 tags: "#javascript #webdev #css #typescript"
-image: "https://cdn-images-1.medium.com/max/1600/1*01MP69dykx8YMQqMeRB2OQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*01MP69dykx8YMQqMeRB2OQ.jpeg"
 canonical: "https://medium.com/@david.dalbusco/dynamically-import-css-d8222423f109"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*01MP69dykx8YMQqMeRB2OQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*01MP69dykx8YMQqMeRB2OQ.jpeg)
 
 _Photo by [Joshua Eckstein](https://unsplash.com/@dcemr_e?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/dynamic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -110,11 +110,11 @@ Finally, in addition to the component, we also add a `<select/>` field, which sh
 
 If we now run the local server, `npm run start`, to test our component with our favorite browser, we should be able to switch between backgrounds.
 
-![](https://cdn-images-1.medium.com/max/1600/1*8V3kFZUmrYcph6dePl4eig.gif)
+![](https://daviddalbusco.com/assets/images/1*8V3kFZUmrYcph6dePl4eig.gif)
 
 More important, if we open our debugger, we should also that both our styles `.green` and `.red` are loaded. It means that the client side as fetch these two styles, even if would have not used for example one of these two colors.
 
-![](https://cdn-images-1.medium.com/max/1600/1*eeqg_F7tPnDQyIu4-sw2pw.png)
+![](https://daviddalbusco.com/assets/images/1*eeqg_F7tPnDQyIu4-sw2pw.png)
 
 ---
 
@@ -278,15 +278,15 @@ Et voilà, we are able to lazy load CSS using dynamic `import()` 🎉.
 
 If we test again our component in the browser using the development server (`npm run start` ), we should notice that it still renders different background according our selection.
 
-![](https://cdn-images-1.medium.com/max/1600/1*i3lO5coMF-8IugLx1jLvfg.gif)
+![](https://daviddalbusco.com/assets/images/1*i3lO5coMF-8IugLx1jLvfg.gif)
 
 More important, if we observe the debugger, we should also notice that our theme loads on the fly.
 
-![](https://cdn-images-1.medium.com/max/1600/1*XaPbuFwYoLKX9-VEAlX8Sg.gif)
+![](https://daviddalbusco.com/assets/images/1*XaPbuFwYoLKX9-VEAlX8Sg.gif)
 
 Likewise, if we watch out the shadowed elements, we should notice that only the related `<style/>` node should be contained.
 
-![](https://cdn-images-1.medium.com/max/1600/1*nq32o3Us1mosIoFXuiZSmw.gif)
+![](https://daviddalbusco.com/assets/images/1*nq32o3Us1mosIoFXuiZSmw.gif)
 
 ---
 
@@ -294,7 +294,7 @@ Likewise, if we watch out the shadowed elements, we should notice that only the 
 
 It was the first time I used dynamic `import()` to lazy load CSS in a Web Component and I have to admit that I am really happy with the outcome. Moreover, adding these themes for the code displayed in slides made with [DeckDeckGo](https://deckdeckgo.com) is a really nice improvement I think. Give it a try for your next talk 😁.
 
-![](https://cdn-images-1.medium.com/max/1600/1*kdOK8ra4vmoz8eltHbMRMA.gif)
+![](https://daviddalbusco.com/assets/images/1*kdOK8ra4vmoz8eltHbMRMA.gif)
 
 To infinity and beyond!
 

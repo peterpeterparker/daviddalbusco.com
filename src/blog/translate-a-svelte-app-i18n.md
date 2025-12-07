@@ -4,11 +4,11 @@ date: "2023-05-18"
 title: "Translate a Svelte app (i18n) without external dependencies"
 description: "Adding internationalization support to a Svelte application: a step-by-step guide."
 tags: "#svelte #i18n #webdev #programming"
-image: "https://cdn-images-1.medium.com/max/1600/1*bXhlRgLdEKKomTCR32Q4ZA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*bXhlRgLdEKKomTCR32Q4ZA.jpeg"
 canonical: "https://daviddalbusco.medium.com/translate-i18n-a-svelte-app-without-external-dependencies-7603630d2440"
 ---
 
-![nareeta-martin-vf1ycolhmpg-unsplash.jpg](https://cdn-images-1.medium.com/max/1600/1*bXhlRgLdEKKomTCR32Q4ZA.jpeg)
+![nareeta-martin-vf1ycolhmpg-unsplash.jpg](https://daviddalbusco.com/assets/images/1*bXhlRgLdEKKomTCR32Q4ZA.jpeg)
 
 _Photo by [Nareeta Martin](https://medium.com/r/?url=https%3A%2F%2Funsplash.com%2Fpt-br%2F%40splashabout%3Futm_source%3Dunsplash%26utm_medium%3Dreferral%26utm_content%3DcreditCopyText) on [Unsplash](https://medium.com/r/?url=https%3A%2F%2Funsplash.com%2Fphotos%2FvF1YCoLHMpg%3Futm_source%3Dunsplash%26utm_medium%3Dreferral%26utm_content%3DcreditCopyText)_
 

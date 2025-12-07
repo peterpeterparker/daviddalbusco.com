@@ -4,10 +4,10 @@ date: "2019-11-02"
 title: "Highlight Markdown code with Remarkable and a Web Component"
 description: "Highlight Markdown code with Remarkable and a Web Component"
 tags: "#javascript #markdown #webdev #showdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*TfrSMW1qpZb_6x0opEVNwQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*TfrSMW1qpZb_6x0opEVNwQ.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*TfrSMW1qpZb_6x0opEVNwQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*TfrSMW1qpZb_6x0opEVNwQ.jpeg)
 
 _Photo by [Tim Patch](https://unsplash.com/@tdpatch?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/highlight?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

@@ -4,11 +4,11 @@ date: "2021-01-04"
 title: "A Little Scanner App Made With The Web"
 description: "I developed a little scanner prototype with the web during Christmas holidays to learn and try new skills."
 tags: "#webdev #showdev #javascript #react"
-image: "https://cdn-images-1.medium.com/max/1600/1*107_wVVJ8y3BVpo4SQKEkA.png"
+image: "https://daviddalbusco.com/assets/images/1*107_wVVJ8y3BVpo4SQKEkA.png"
 canonical: "https://daviddalbusco.medium.com/a-little-scanner-app-made-with-the-web-dc9ebe1f2d4"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*107_wVVJ8y3BVpo4SQKEkA.png)
+![](https://daviddalbusco.com/assets/images/1*107_wVVJ8y3BVpo4SQKEkA.png)
 
 ---
 
@@ -58,7 +58,7 @@ On the other side, without having done any research or statistics, I have the im
 
 That being said, I am talking about peanuts. Both stacks are amazing and let me unleash performant websites and applications. I love them both ❤️.
 
-![](https://cdn-images-1.medium.com/max/1600/1*vSF3L96OuojzBPiExnpevg.gif)
+![](https://daviddalbusco.com/assets/images/1*vSF3L96OuojzBPiExnpevg.gif)
 
 ---
 
@@ -68,7 +68,7 @@ Oh boy, this one gave me a hard time 😅.
 
 The API itself is a wonderful piece of software and being able to capture a video stream with the Web is just amazing but, the feature I was looking to develop was a bit challenging regarding its responsiveness across devices. Indeed, my goal was to display the full video behind a cropped section (“two distinct elements”), without breaking points, and this regardless of the screen or camera size.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Jt8uqpzR_IvqYwWNqdmIVg.png)
+![](https://daviddalbusco.com/assets/images/1*Jt8uqpzR_IvqYwWNqdmIVg.png)
 
 It ain’t probably rocket science for some but, to me, it was a bit challenging for the following reasons:
 
@@ -86,7 +86,7 @@ Therefore, I had two options. Either generate a certificate and run an HTTPS ser
 
 I let you check my commit history of the 2nd January 2020 to guess which method I went for 🤣.
 
-![](https://cdn-images-1.medium.com/max/1600/1*-B8CROTQuPCbhZAR3IjTwg.png)
+![](https://daviddalbusco.com/assets/images/1*-B8CROTQuPCbhZAR3IjTwg.png)
 
 ---
 
@@ -147,7 +147,7 @@ context.drawImage(videoRef.current, deltaX, deltaY, x, y, 0, 0, 2100, 2970);
 
 In above snippet, I calculate the section of the image, using a format A4, and I am looking to crop it while ensuring that the results won’t be larger than the video (remember, the size is unpredictable). If so, I do the contrary and take the width as maximum value. Finally, I draw my section in a 2D canvas with my expected ratio.
 
-![](https://cdn-images-1.medium.com/max/1600/1*eacFy349YzXyGycPboGkkw.jpeg)
+![](https://daviddalbusco.com/assets/images/1*eacFy349YzXyGycPboGkkw.jpeg)
 
 _Source: MDN Web Docs [CanvasRenderingContext2D.drawImage()](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage)_
 

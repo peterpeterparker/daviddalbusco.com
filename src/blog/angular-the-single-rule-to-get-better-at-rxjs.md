@@ -4,11 +4,11 @@ date: "2021-09-10"
 title: "Angular: The Single Rule To Get Better At RxJS"
 description: "A guideline that helps develop Angular applications and libraries in a reactive programming way with RxJS."
 tags: "#angular #rxjs #javascript #beginners"
-image: "https://cdn-images-1.medium.com/max/1600/0*nigHuCYvLjp9d92D.jpg"
+image: "https://daviddalbusco.com/assets/images/0*nigHuCYvLjp9d92D.jpg"
 canonical: "https://daviddalbusco.medium.com/angular-the-single-rule-to-get-better-at-rxjs-6bd9f9786429"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/0*nigHuCYvLjp9d92D.jpg)
+![](https://daviddalbusco.com/assets/images/0*nigHuCYvLjp9d92D.jpg)
 
 ---
 
@@ -30,7 +30,7 @@ However, there is a single rule that can help you make the switch:
 
 The rule is not strict, it is a guideline, like the code of the pirates of the Caribbean 🏴‍☠️.
 
-![](https://cdn-images-1.medium.com/max/1600/0*VBCiXqgoBrlzo4tQ)
+![](https://daviddalbusco.com/assets/images/0*VBCiXqgoBrlzo4tQ)
 
 It does not mean that you should never ever subscribe to a stream but rather, that you should try to avoid it. In that way, according my experience, you are going to slowly transform the imperative way of programming into more declarative concepts.
 
@@ -46,7 +46,7 @@ The following demo uses the [coinpaprika API](https://api.coinpaprika.com) to di
 
 The code source is available on [GitHub](https://github.com/peterpeterparker/rxjs-no-subscribe). Each following chapters (steps [1](https://github.com/peterpeterparker/rxjs-no-subscribe/tree/step_1), [2](https://github.com/peterpeterparker/rxjs-no-subscribe/tree/step_2), [3](https://github.com/peterpeterparker/rxjs-no-subscribe/tree/step_3) and [4](https://github.com/peterpeterparker/rxjs-no-subscribe/tree/step_4)) are separate branches.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Yw5GBUxaeWBeC8bGIgMPlA.png)
+![](https://daviddalbusco.com/assets/images/1*Yw5GBUxaeWBeC8bGIgMPlA.png)
 
 It defers the HTTP queries to a `coins.service` and presents the results in a `coins.component`.
 
@@ -249,7 +249,7 @@ The imperative `if` has become a reactive `filter` and the `array.filter` has be
 
 Even though the code still compiles, at this point no currencies are displayed anymore because no caller is using, is subscribing, to the stream.
 
-![](https://cdn-images-1.medium.com/max/1600/1*kNHqMcjFeNKFFOYNAZZMBg.png)
+![](https://daviddalbusco.com/assets/images/1*kNHqMcjFeNKFFOYNAZZMBg.png)
 
 As we are proceeding iteratively, we basically reproduce what we removed in the service earlier, we subscribe within the component.
 
@@ -289,7 +289,7 @@ export class CoinsComponent implements OnInit, OnDestroy {
 
 I know, I said “never subscribe”, this ain’t the end 😉. Nevertheless, we notice that the cryptos are listed again.
 
-![](https://cdn-images-1.medium.com/max/1600/1*HB1cJ9j7em8iz4QodbUvHg.png)
+![](https://daviddalbusco.com/assets/images/1*HB1cJ9j7em8iz4QodbUvHg.png)
 
 ---
 
@@ -499,7 +499,7 @@ If you compare to its original version, has not the component become really slim
 
 A last check to the GUI.
 
-![](https://cdn-images-1.medium.com/max/1600/1*HB1cJ9j7em8iz4QodbUvHg.png)
+![](https://daviddalbusco.com/assets/images/1*HB1cJ9j7em8iz4QodbUvHg.png)
 
 All cryptos are still listed, the code is reactive and, we are not using any “subscribe” anymore 🥳.
 

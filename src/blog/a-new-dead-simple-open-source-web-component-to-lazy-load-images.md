@@ -4,10 +4,10 @@ date: "2019-05-17"
 title: "A new dead simple open source Web Component to lazy load images"
 description: "A new dead simple open source Web Component to lazy load images developed with StencilJS"
 tags: "#webdev #javascript #programming #opensource"
-image: "https://cdn-images-1.medium.com/max/2400/1*fGVtZ0a_ki-Vg14YzJqKYQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*fGVtZ0a_ki-Vg14YzJqKYQ.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/2400/1*fGVtZ0a_ki-Vg14YzJqKYQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*fGVtZ0a_ki-Vg14YzJqKYQ.jpeg)
 _A lazy good girl or boy. Photo by [Brianna Santellan](https://unsplash.com/photos/Zwvxj3ytTHcutm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Last month I published a blog post in which I tried to demonstrate how to [create a Web Component to lazy load images using Intersection Observer](https://dev.to/daviddalbusco/create-a-web-component-to-lazy-load-images-using-intersection-observer-45gf) and it turned out afterwards, that I actually had to use my own medicine several times while developing [DeckDeckGo](https://deckdeckgo.com), our upcoming open source editor for presentations.
@@ -17,7 +17,7 @@ open source Web Component, developed with [StencilJS](https://stenciljs.com), to
 
 ### But why?
 
-![](https://cdn-images-1.medium.com/max/1600/1*evsRlXzetp7FdEOK2ynL1Q.gif)
+![](https://daviddalbusco.com/assets/images/1*evsRlXzetp7FdEOK2ynL1Q.gif)
 _But why another Web Component to lazy load images?_
 
 You may ask yourself why we had to develop and publish a new Web Component to lazy load images when it’s so easy to just write a couple of lines of Javascript, using the [Intersection Observer API](https://developer.mozilla.org/fr/docs/Web/API/Intersection_Observer_API), to already have images supporting lazy loading 🤔
@@ -26,7 +26,7 @@ In fact, as I said before, we are developing an open source web editor for prese
 
 As we were saving the content and manipulating the `img` elements of the DOM, we were not able to ensure that we were always saving images in a “not loaded state” in our database, without having to add a couple of extra functions and recursions, which, we were not agree to implement, as it would have added complexity and computation time to the process. That’s why we came up to the idea of using a custom Web Component to isolate the lazy loading process and therefore to always be able to sav and load images in and from our database in the correct state without any extra checks.
 
-![](https://cdn-images-1.medium.com/max/1600/1*6w47kZMDJi-TfOMt1LJd8Q.gif)
+![](https://daviddalbusco.com/assets/images/1*6w47kZMDJi-TfOMt1LJd8Q.gif)
 _Funny gifs but it took us actually three days to figure out what was the
 solution_ 😂
 

@@ -4,10 +4,10 @@ date: "2019-01-24"
 title: "Create a Web Component to keep track of your input's draft with StencilJS"
 description: "Create a Web Component to keep track of your input's draft with StencilJS"
 tags: "#webcomponents #stencil #javascript #html"
-image: "https://cdn-images-1.medium.com/max/2000/1*Kw2TcCGoU1-7Ex8RbyjB0A.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*Kw2TcCGoU1-7Ex8RbyjB0A.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/2000/1*Kw2TcCGoU1-7Ex8RbyjB0A.jpeg)
+![](https://daviddalbusco.com/assets/images/1*Kw2TcCGoU1-7Ex8RbyjB0A.jpeg)
 <span class="figcaption_hack">Grab a coffee or tea, open a terminal and let’s code a clever <textarea/> with StencilJS</span>
 
 Earlier this week, I saw a tweet of [Ali Spittel](https://medium.com/@ali07cat07) who was trying to figure out how [GitHub](https://github.com/), [Twitter](https://twitter.com/) and others, were able to keep track of the draft of your inputs respectively how such platforms were saving and restoring the content of your `input` or `textarea` before you would actually submit them and if the browser would refresh.
@@ -22,21 +22,21 @@ _For the purpose of this tutorial, I selected _[StencilJS](https://stenciljs.com
 
 To get started we are going to initialize a new project, a new Web Component. Using a command line, run `npm init stencil` , pick `component` for the starter type and enter a name for the project (I used `clever-textarea` for the purpose of this tutorial).
 
-![](https://cdn-images-1.medium.com/max/1600/1*foHSCS1AgJ46b-O6WaAG3Q.png)
+![](https://daviddalbusco.com/assets/images/1*foHSCS1AgJ46b-O6WaAG3Q.png)
 <span class="figcaption_hack">npm init stencil</span>
 
-![](https://cdn-images-1.medium.com/max/1600/1*h0jM5WWL7H028tgPwhBfSg.png)
+![](https://daviddalbusco.com/assets/images/1*h0jM5WWL7H028tgPwhBfSg.png)
 <span class="figcaption_hack">select the starter “component”</span>
 
-![](https://cdn-images-1.medium.com/max/1600/1*HLy-80fohxuB3s3tY06zSA.png)
+![](https://daviddalbusco.com/assets/images/1*HLy-80fohxuB3s3tY06zSA.png)
 <span class="figcaption_hack">enter a project name</span>
 
 That’s it, our new project is initialized. We could now jump into the newly created folder, `cd clever-textarea` , and start the component runing the command line`npm run start` in order to test if everything is alright by opening a browser and accessing the url `http://localhost:3333` 😎
 
-![](https://cdn-images-1.medium.com/max/1600/1*Jxu5c2jSNxJwAxkIopNGCw.png)
+![](https://daviddalbusco.com/assets/images/1*Jxu5c2jSNxJwAxkIopNGCw.png)
 <span class="figcaption_hack">start the local server for the component</span>
 
-![](https://cdn-images-1.medium.com/max/1600/1*3shvGjyXaBw_9kXByxv5sg.png)
+![](https://daviddalbusco.com/assets/images/1*3shvGjyXaBw_9kXByxv5sg.png)
 <span class="figcaption_hack">access the component</span>
 
 _To continue this tutorial, I suggest you to keep the component running, Stencil will automatically pick the changes we are going to make to the code and will trigger a refresh of the browser on new build._
@@ -65,7 +65,7 @@ export class MyComponent {
 
 The above code `render()` a `textarea` which should update our browser as the following:
 
-![](https://cdn-images-1.medium.com/max/1600/1*ie9v5mt8r9dZCAmo7FLP2w.png)
+![](https://daviddalbusco.com/assets/images/1*ie9v5mt8r9dZCAmo7FLP2w.png)
 
 #### Saving your inputs before refresh
 
@@ -107,10 +107,10 @@ export class MyComponent {
 
 Once implemented, you could go back to your browser and have a try. Don’t forget to enter a value in your `textarea`, perform a browser refresh and observe your session storage, you should now find the value your previously entered.
 
-![](https://cdn-images-1.medium.com/max/1600/1*ss05v5GOv0e5B8D5UdrqxA.png)
+![](https://daviddalbusco.com/assets/images/1*ss05v5GOv0e5B8D5UdrqxA.png)
 <span class="figcaption_hack">enter a value in the textarea and refresh the browser</span>
 
-![](https://cdn-images-1.medium.com/max/1600/1*Mn2nx4e8_gLpyoP67PVOcg.png)
+![](https://daviddalbusco.com/assets/images/1*Mn2nx4e8_gLpyoP67PVOcg.png)
 <span class="figcaption_hack">open the debugger and find your value in the session storage</span>
 
 #### Loading your inputs after refresh
@@ -161,7 +161,7 @@ export class MyComponent {
 
 If you refresh your browser you should now find a pre-filled `textarea` which should contains the last value you would have entered before refresh.
 
-![](https://cdn-images-1.medium.com/max/1600/1*6mED0Asr6LRfVGqEsNPIjg.png)
+![](https://daviddalbusco.com/assets/images/1*6mED0Asr6LRfVGqEsNPIjg.png)
 <span class="figcaption_hack">textarea should be pre-filled with your previous value after refresh</span>
 
 #### Add the support for multiple inputs in the same page
@@ -225,10 +225,10 @@ _As for the JSX code, you could safely remove the previous demo attributes “la
 
 If we go back to your browser you should now find two `textarea` respectively two components. You could now try to fill them and again try to refresh your browser.
 
-![](https://cdn-images-1.medium.com/max/1600/1*XQB1PxxL6tTWOh7xy7tJ8g.png)
+![](https://daviddalbusco.com/assets/images/1*XQB1PxxL6tTWOh7xy7tJ8g.png)
 <span class="figcaption_hack">fill the two components before refresh</span>
 
-![](https://cdn-images-1.medium.com/max/1600/1*iAebxf4nzQI37wCyin02fw.png)
+![](https://daviddalbusco.com/assets/images/1*iAebxf4nzQI37wCyin02fw.png)
 <span class="figcaption_hack">after refresh of the browser</span>
 
 Hooray we were able to use two clever `textarea` Web Components in our page 🎉

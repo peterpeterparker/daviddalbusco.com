@@ -4,11 +4,11 @@ date: "2020-03-20"
 title: "Internationalization with Gatsby"
 description: "How to internationalize your Gatsby website with gatsby-plugin-i18n and react-intl in 2020"
 tags: "#javascript #webdev #a11y #tutorial"
-image: "https://cdn-images-1.medium.com/max/1600/1*tuOyAQ0r1d4nnAcA1xccyQ.png"
+image: "https://daviddalbusco.com/assets/images/1*tuOyAQ0r1d4nnAcA1xccyQ.png"
 canonical: "https://medium.com/@david.dalbusco/internationalization-with-gatsby-ae3991c39e92"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*tuOyAQ0r1d4nnAcA1xccyQ.png)
+![](https://daviddalbusco.com/assets/images/1*tuOyAQ0r1d4nnAcA1xccyQ.png)
 
 _Photo by [Nicola Nuttall](https://unsplash.com/@nicnut?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

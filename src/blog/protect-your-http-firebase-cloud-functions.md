@@ -4,11 +4,11 @@ date: "2020-03-28"
 title: "Protect Your HTTP Firebase Cloud Functions"
 description: "How to protect your HTTP Firebase Cloud Functions with an authorization bearer"
 tags: "#firebase #javascript #webdev #serverless"
-image: "https://cdn-images-1.medium.com/max/1600/1*ScsCTy63_eHnGH57WbJcLQ.png"
+image: "https://daviddalbusco.com/assets/images/1*ScsCTy63_eHnGH57WbJcLQ.png"
 canonical: "https://medium.com/@david.dalbusco/protect-your-http-firebase-cloud-functions-adf23c45765e"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*ScsCTy63_eHnGH57WbJcLQ.png)
+![](https://daviddalbusco.com/assets/images/1*ScsCTy63_eHnGH57WbJcLQ.png)
 
 _Photo by [Andre Hunter](https://unsplash.com/@dre0316?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

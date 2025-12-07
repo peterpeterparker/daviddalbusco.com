@@ -4,11 +4,11 @@ date: "2020-04-13"
 title: "Deeplinking in Ionic Apps With Branch.io"
 description: "How to set up deep links for your Ionic Apps with Branch.io and intercept parameters"
 tags: "#showdev #webdev #ionic #mobile"
-image: "https://cdn-images-1.medium.com/max/1600/1*AbG39baPvtxSgOoSjWgHqg.png"
+image: "https://daviddalbusco.com/assets/images/1*AbG39baPvtxSgOoSjWgHqg.png"
 canonical: "https://medium.com/@david.dalbusco/deeplinking-in-ionic-apps-with-branch-io-ba1a1c4ed227"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*AbG39baPvtxSgOoSjWgHqg.png)
+![](https://daviddalbusco.com/assets/images/1*AbG39baPvtxSgOoSjWgHqg.png)
 
 _Photo by [Javier Allegue Barros](https://unsplash.com/@soymeraki?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

@@ -4,11 +4,11 @@ date: "2020-11-30"
 title: "Angular: Create A Lazy Loaded Tailwind Modal"
 description: "Build a generic, lazy loaded, dialog with Angular and Tailwind CSS."
 tags: "#angular #javascript #tailwind #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*5yG0_AlxnZfzLYHwbwrcDQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*5yG0_AlxnZfzLYHwbwrcDQ.jpeg"
 canonical: "https://daviddalbusco.medium.com/angular-create-a-lazy-loaded-tailwind-modal-73675c66acae"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*5yG0_AlxnZfzLYHwbwrcDQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*5yG0_AlxnZfzLYHwbwrcDQ.jpeg)
 
 _Photo by [Emile Guillemot](https://unsplash.com/@emilegt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -359,7 +359,7 @@ export class LandingComponent {
 
 If everything work as expected, the modal should be lazy loaded and, we should be able to open and close the example modal.
 
-![](https://cdn-images-1.medium.com/max/1600/1*BY_Wt6hf0noQbjakv_2I5A.gif)
+![](https://daviddalbusco.com/assets/images/1*BY_Wt6hf0noQbjakv_2I5A.gif)
 
 ---
 

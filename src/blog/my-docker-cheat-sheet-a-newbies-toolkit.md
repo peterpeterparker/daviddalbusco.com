@@ -8,7 +8,7 @@ image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Ryeo2D3AbYwp-vO
 canonical: "https://daviddalbusco.medium.com/my-docker-cheat-sheet-a-newbies-toolkit-d8ee930bca5a"
 ---
 
-![](https://cdn-images-1.medium.com/max/3584/1*Ryeo2D3AbYwp-vOhW5aDWQ.png)
+![](https://daviddalbusco.com/assets/images/1*Ryeo2D3AbYwp-vOhW5aDWQ.png)
 
 ---
 

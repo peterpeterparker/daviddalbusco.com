@@ -4,11 +4,11 @@ date: "2021-04-20"
 title: "Bundling Figma Plugin With Esbuild"
 description: "Build a plugin for Figma with esbuild, the extremely fast JavaScript bundler."
 tags: "#javascript #showdev #figma #esbuild"
-image: "https://cdn-images-1.medium.com/max/1600/1*NNXUKFJSiPegQbuWq0f47g.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*NNXUKFJSiPegQbuWq0f47g.jpeg"
 canonical: "https://daviddalbusco.medium.com/bundling-figma-plugin-with-esbuild-e6d41e28f872"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*NNXUKFJSiPegQbuWq0f47g.jpeg)
+![](https://daviddalbusco.com/assets/images/1*NNXUKFJSiPegQbuWq0f47g.jpeg)
 
 _Photo by [Uillian Vargas](https://unsplash.com/@vargasuillian?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/fast?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

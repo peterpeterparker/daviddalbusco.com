@@ -4,11 +4,11 @@ date: "2021-07-26"
 title: "Singleton & Factory Patterns With TypeScript"
 description: "The singleton and factory design pattern implemented with TypeScript, explained with a hairdresser and an ice creams shop examples."
 tags: "#javascript #beginner #webdev #programming"
-image: "https://cdn-images-1.medium.com/max/1600/1*0XVEe8Cqa9xFGveX8JLMxA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*0XVEe8Cqa9xFGveX8JLMxA.jpeg"
 canonical: "https://daviddalbusco.medium.com/singleton-factory-patterns-with-typescript-59e5a405531e"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*0XVEe8Cqa9xFGveX8JLMxA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*0XVEe8Cqa9xFGveX8JLMxA.jpeg)
 
 _[Eisvogel](https://www.zentrale.ch/) — The best ice creams in Zürich_
 

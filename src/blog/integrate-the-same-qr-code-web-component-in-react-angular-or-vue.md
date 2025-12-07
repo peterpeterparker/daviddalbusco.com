@@ -4,10 +4,10 @@ date: "2019-10-08"
 title: "Integrate the same QR code Web Component in React, Angular or Vue"
 description: "How to integrate the same QR code Web Component developed with StencilJS in React, Angular or Vue"
 tags: "#tutorial #react #vue #angular"
-image: "https://cdn-images-1.medium.com/max/1600/1*fqN7UAsguHXdG2ojvxgvJA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*fqN7UAsguHXdG2ojvxgvJA.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*fqN7UAsguHXdG2ojvxgvJA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*fqN7UAsguHXdG2ojvxgvJA.jpeg)
 _Photo by [Mitya Ivanov](https://unsplash.com/@aka_opex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/qr-codes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 One of the cool asset of Web Components is the fact that they could be integrated in any modern web applications, regardless if these are using a framework or not. As I had to implement some improvements in the QR code Web Component we are using in [DeckDeckGo](https://deckdeckgo.com), as thought it would be interesting to display how it could be used across frameworks. Furthermore, as I’m not yet that experienced with React and Vue, it’s also a fun way for me to improve a bit my skills.
@@ -115,7 +115,7 @@ npm run start
 
 If everything works according plan, our application and QR code should be deployed and accessible in our browser at the address `http://localhost:3000` .
 
-![](https://cdn-images-1.medium.com/max/1600/1*e_xIvjI2ZdELhj36u1LlfA.png)
+![](https://daviddalbusco.com/assets/images/1*e_xIvjI2ZdELhj36u1LlfA.png)
 
 _The result of our test with React_
 
@@ -220,7 +220,7 @@ npm run start
 
 Our application and QR code should now be deployed and accessible in our browser at the address `http://localhost:4200` .
 
-![](https://cdn-images-1.medium.com/max/1600/1*_Vbu1yVm5naiR7QQtAom-g.png)
+![](https://daviddalbusco.com/assets/images/1*_Vbu1yVm5naiR7QQtAom-g.png)
 
 _The result of our test with Angular_
 
@@ -306,7 +306,7 @@ npm run serve
 
 All right, final test 🎉 Our application and QR code should now be deployed and accessible in our browser at the address `http://localhost:8080.`
 
-![](https://cdn-images-1.medium.com/max/1600/1*mvCWPtw9p-Da-doxk6Cedw.png)
+![](https://daviddalbusco.com/assets/images/1*mvCWPtw9p-Da-doxk6Cedw.png)
 
 _The result of our test with Vue_
 

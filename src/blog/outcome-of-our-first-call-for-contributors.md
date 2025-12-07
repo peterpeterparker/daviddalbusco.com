@@ -4,10 +4,10 @@ date: "2019-08-01"
 title: "Outcome of our first call for contributors"
 description: "Outcome of our first call for contributors"
 tags: "#motivation #webdev #contributorswanted #opensource"
-image: "https://cdn-images-1.medium.com/max/1600/1*tQGx3mWFA0Oq3rGLA4Ypgg.gif"
+image: "https://daviddalbusco.com/assets/images/1*tQGx3mWFA0Oq3rGLA4Ypgg.gif"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*tQGx3mWFA0Oq3rGLA4Ypgg.gif)
+![](https://daviddalbusco.com/assets/images/1*tQGx3mWFA0Oq3rGLA4Ypgg.gif)
 
 _Wow — Owen Wilson_
 
@@ -29,7 +29,7 @@ The goal of this feature was to add an option to our code highlighter component,
 
 This feature was developed by Stefan Nieuwenhuis ([Twitter](https://twitter.com/stefannhs) / [GitHub](https://github.com/StefanNieuwenhuis)) and was submitted in the PR [#213](https://github.com/deckgo/deckdeckgo/pull/213). Not all heroes wear capes, you are awesome Stefan 👍
 
-![](https://cdn-images-1.medium.com/max/1600/1*nuVLuov6bXRr6SpREDzzxA.gif)
+![](https://daviddalbusco.com/assets/images/1*nuVLuov6bXRr6SpREDzzxA.gif)
 
 _Automatically display line numbers at the begin of the code you want to showcase_
 
@@ -39,7 +39,7 @@ We faced an issue with our component and “Youtube” template (which allow use
 
 This fix was developed by Rohit Bokade ([GitHub](https://github.com/bokaderohit98)) and was submitted in PR [#207](https://github.com/deckgo/deckdeckgo/pull/207). The force is strong with you Rohit, thanks a lot 👍
 
-![](https://cdn-images-1.medium.com/max/1600/1*GpJzea6l2X946tufjgb5kw.gif)
+![](https://daviddalbusco.com/assets/images/1*GpJzea6l2X946tufjgb5kw.gif)
 
 _Integrate easily a YouTube video to your presentation_
 

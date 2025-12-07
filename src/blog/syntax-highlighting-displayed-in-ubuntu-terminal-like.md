@@ -4,11 +4,11 @@ date: "2020-02-24"
 title: "Syntax Highlighting Displayed In Ubuntu Terminal Like"
 description: "Display the code of your apps, websites or blogs with code highlighting in stylish Ubuntu Terminal like"
 tags: "#webdev #showdev #javascript #css"
-image: "https://cdn-images-1.medium.com/max/1600/1*sJQnreNU9DZ0ARLHDil8gg.png"
+image: "https://daviddalbusco.com/assets/images/1*sJQnreNU9DZ0ARLHDil8gg.png"
 canonical: "https://medium.com/@david.dalbusco/syntax-highlighting-displayed-in-ubuntu-terminal-like-a7e9c310b504"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*sJQnreNU9DZ0ARLHDil8gg.png)
+![](https://daviddalbusco.com/assets/images/1*sJQnreNU9DZ0ARLHDil8gg.png)
 _Background photo by [MUNMUN SINGH](https://unsplash.com/@munmuns?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 A couple of days ago, [Cody Pearce](https://twitter.com/codyapearce) published an [article](https://dev.to/codypearce/ubuntu-terminal-in-css-1aeo) which picked my curiosity. In his post he was displaying how the unique and immediately recognizable design of the Ubuntu terminal can be reproduced with CSS.
@@ -45,7 +45,7 @@ Regarding the code to highlight, it should be provided to match the slot name `c
 
 Rendered in a browser, the above code looks like the following:
 
-![](https://cdn-images-1.medium.com/max/1600/1*EQdSlwuhodPaVtTKzJ2JwQ.png)
+![](https://daviddalbusco.com/assets/images/1*EQdSlwuhodPaVtTKzJ2JwQ.png)
 
 As you may notice, it isn’t yet rendered in a stylish Ubuntu terminal like but in a “Macish” terminal, which is the default behavior. Therefore, to achieve our goal, we just improve the solution by providing the attribute `terminal` set to `ubuntu` .
 
@@ -57,7 +57,7 @@ As you may notice, it isn’t yet rendered in a stylish Ubuntu terminal like but
 
 And voilà, nothing more, nothing less 😁
 
-![](https://cdn-images-1.medium.com/max/1600/1*K8ZJJL3WohfdOa8pKcCRlg.png)
+![](https://daviddalbusco.com/assets/images/1*K8ZJJL3WohfdOa8pKcCRlg.png)
 
 By the way, don’t you feel too that it is over awesome to be able to write what, five lines of code in a plain HTML file and to already have a “complex” and performing element rendered? Damned, I love Web Components 🚀.
 
@@ -86,7 +86,7 @@ plugins: [
 
 If I would apply the above configuration to my personal website then, after rebuild, automatically all of its blocks of code would be encapsulated in Ubuntu terminal like.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Bpmo6Lcv0WL5OiPRpTtIOA.png)
+![](https://daviddalbusco.com/assets/images/1*Bpmo6Lcv0WL5OiPRpTtIOA.png)
 
 ### Properties And Styling
 
@@ -98,4 +98,4 @@ David
 
 P.S.: Even though the Ubuntu Terminal like are only going to be unleashed in our next major release, such stylish cards do already also look good in slides, so why not giving a try to [DeckDeckGo](https://deckdeckgo.com) for your next talk 😜
 
-![](https://cdn-images-1.medium.com/max/1600/1*IpmwISIqDl__NE3SjrNdng.gif)
+![](https://daviddalbusco.com/assets/images/1*IpmwISIqDl__NE3SjrNdng.gif)

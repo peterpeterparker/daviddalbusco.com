@@ -4,10 +4,10 @@ date: "2019-12-10"
 title: "How to declare and pass parameters to an Ionic + React Modal"
 description: "How to declare and pass parameters to an Ionic + React Modal"
 tags: "#programming #react #javascript #tutorial"
-image: "https://cdn-images-1.medium.com/max/1600/1*lTN15RS0mfGtXUAQF5RVJQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*lTN15RS0mfGtXUAQF5RVJQ.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*lTN15RS0mfGtXUAQF5RVJQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*lTN15RS0mfGtXUAQF5RVJQ.jpeg)
 
 _Photo by [timJ](https://unsplash.com/@the_roaming_platypus?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/dialog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

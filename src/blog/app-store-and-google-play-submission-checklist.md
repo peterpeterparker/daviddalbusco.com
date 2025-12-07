@@ -4,11 +4,11 @@ date: "2020-11-03"
 title: "App Store & Google Play: Submission Checklist"
 description: "A bare minimum checklist of the information required to submit your application to the App Store and Google Play."
 tags: "#appstore #googleplay #ios #android"
-image: "https://cdn-images-1.medium.com/max/1600/1*uLq44jxngEeseb70ImZZDA.png"
+image: "https://daviddalbusco.com/assets/images/1*uLq44jxngEeseb70ImZZDA.png"
 canonical: "https://daviddalbusco.medium.com/app-store-google-play-submission-checklist-d13d78309d56"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*uLq44jxngEeseb70ImZZDA.png)
+![](https://daviddalbusco.com/assets/images/1*uLq44jxngEeseb70ImZZDA.png)
 
 _Background’s photo by [Jess Bailey](https://unsplash.com/@jessbaileydesigns?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/background?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

@@ -8,7 +8,7 @@ image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*KYD5_FMmuJCIbp2
 canonical: "https://daviddalbusco.medium.com/npm-publish-if-needed-bfeaa781dfd0"
 ---
 
-![](https://cdn-images-1.medium.com/max/6720/1*KYD5_FMmuJCIbp2--hBcvA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*KYD5_FMmuJCIbp2--hBcvA.jpeg)
 
 Photo by [Milad Fakurian](https://unsplash.com/fr/@fakurian?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/fr/photos/tableau-abstrait-rose-vert-et-bleu-UYgrVfIhBec?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 

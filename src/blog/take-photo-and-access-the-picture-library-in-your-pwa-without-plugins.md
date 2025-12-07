@@ -4,10 +4,10 @@ date: "2019-07-10"
 title: "Take photo and access the picture library in your PWA (without plugins)"
 description: "How to access camera and photo library in a Progressive Web App using web technologies and no plugins"
 tags: "#javascript #webdev #programming #beginners"
-image: "https://cdn-images-1.medium.com/max/1600/1*94yTSEwDkPK52B22ll74mQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*94yTSEwDkPK52B22ll74mQ.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*94yTSEwDkPK52B22ll74mQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*94yTSEwDkPK52B22ll74mQ.jpeg)
 _When I wrote this post I was visiting Frankfurt, I could had use your PWA to take this picture 😉_
 
 I recently developed a new feature in our upcoming web open source editor for presentations, [DeckDeckGo](https://deckdeckgo.com), to let users upload their own pictures. Turn out, as our application is a Progressive Web App, that the feature I implemented not only let users access their picture library on their phones but also allow them to take photos and upload these directly in their presentations 🚀

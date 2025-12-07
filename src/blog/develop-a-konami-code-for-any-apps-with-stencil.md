@@ -4,11 +4,11 @@ date: "2020-04-19"
 title: "Develop A Konami Code For Any Apps With Stencil"
 description: "How to create  a Web Component with Stencil to add a Konami Code feature in any modern web applications"
 tags: "#javascript #webdev #beginners #tutorial"
-image: "https://cdn-images-1.medium.com/max/1600/1*xQKl3mFjtshpfAN2gQZ4Bw.png"
+image: "https://daviddalbusco.com/assets/images/1*xQKl3mFjtshpfAN2gQZ4Bw.png"
 canonical: "https://medium.com/@david.dalbusco/develop-a-konami-code-for-any-apps-with-stencil-bd8b11a50071"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*xQKl3mFjtshpfAN2gQZ4Bw.png)
+![](https://daviddalbusco.com/assets/images/1*xQKl3mFjtshpfAN2gQZ4Bw.png)
 
 _Photo by [Mohamed Nohassi](https://unsplash.com/@coopery?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -24,7 +24,7 @@ As it found a place in the popular culture, many websites or applications are no
 
 That’s why I thought that it was a good example to introduce [Stencil](https://stenciljs.com/) but a fun idea to conclude this series of articles.
 
-![](https://cdn-images-1.medium.com/max/1600/1*4ys6BI2a0KM10GxgnxNmpQ.gif)
+![](https://daviddalbusco.com/assets/images/1*4ys6BI2a0KM10GxgnxNmpQ.gif)
 
 ---
 
@@ -97,7 +97,7 @@ We don’t modify yet the CSS but we do modify the `./src/index.html` for test p
 
 If we run our project ( `npm run start` ), your default browser should automatically open itself at the address `http://localhost:3333` and you should be able to see the following elements rendered:
 
-![](https://cdn-images-1.medium.com/max/1600/1*eQHNSTCKskWew5o9IQvidg.png)
+![](https://daviddalbusco.com/assets/images/1*eQHNSTCKskWew5o9IQvidg.png)
 
 ---
 
@@ -145,7 +145,7 @@ onKeydown($event: KeyboardEvent) {
 
 At this point our layout should not change but if we would add a `console.log($event.code, match);` at the end of our listener function for demo purpose, we should be able to test our component by observing the debugger.
 
-![](https://cdn-images-1.medium.com/max/1600/1*wQ5VT43wJ_V_1FU1hCDfag.gif)
+![](https://daviddalbusco.com/assets/images/1*wQ5VT43wJ_V_1FU1hCDfag.gif)
 
 ---
 
@@ -202,7 +202,7 @@ export class MyComponent {
 
 If you would test it in your browser, you should now notice that the message as per default disappear but that you are able to make it appearing as soon as you have hit the Konami code sequence 🎉.
 
-![](https://cdn-images-1.medium.com/max/1600/1*v9T9jbZxtk5CwbdXL54iZQ.gif)
+![](https://daviddalbusco.com/assets/images/1*v9T9jbZxtk5CwbdXL54iZQ.gif)
 
 ---
 
@@ -223,7 +223,7 @@ Something I learned recently, we can provide a default value to the `<slot/>`. D
 
 For example, `<konami-code></konami-code>` displays “Hadouken!” but `<konami-code>Shoryuken!</konami-code>` renders, well, “Shoryuken!”.
 
-![](https://cdn-images-1.medium.com/max/1600/1*6vLBzlgN4xZ-6xXvbdUfaw.gif)
+![](https://daviddalbusco.com/assets/images/1*6vLBzlgN4xZ-6xXvbdUfaw.gif)
 
 ---
 
@@ -288,7 +288,7 @@ div {
 
 If we try out our component again in the browser the result should be a bit more smooth.
 
-![](https://cdn-images-1.medium.com/max/1600/1*TCSHaGf7dWwmPEDxobD4XA.gif)
+![](https://daviddalbusco.com/assets/images/1*TCSHaGf7dWwmPEDxobD4XA.gif)
 
 ---
 
@@ -323,7 +323,7 @@ Just in case, I also suggest to “block” events on the container when not act
 
 We are now able to close our message with a mouse click.
 
-![](https://cdn-images-1.medium.com/max/1600/1*ybD_Ot6mbL3MMjuWp2B3RQ.gif)
+![](https://daviddalbusco.com/assets/images/1*ybD_Ot6mbL3MMjuWp2B3RQ.gif)
 
 ---
 

@@ -4,17 +4,17 @@ date: "2020-03-03"
 title: "Introducing A New Web Component To Drag, Resize And Rotate"
 description: "Add drag, drop and resize capabilities to any web apps"
 tags: "#webdev #showdev #javascript #opensource"
-image: "https://cdn-images-1.medium.com/max/1600/1*1pqUKDcoxfwUQ6jN6tZ0xQ.png"
+image: "https://daviddalbusco.com/assets/images/1*1pqUKDcoxfwUQ6jN6tZ0xQ.png"
 canonical: "https://medium.com/@david.dalbusco/introducing-a-new-web-component-to-drag-resize-and-rotate-e08db59fad2f"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*1pqUKDcoxfwUQ6jN6tZ0xQ.png)
+![](https://daviddalbusco.com/assets/images/1*1pqUKDcoxfwUQ6jN6tZ0xQ.png)
 
 Today we are happy to unleash a new open source Web Component that we developed for our web editor for presentations, [DeckDeckGo](https://deckdeckgo.com). With it you can add **drag**, **resize** and **rotate** features to your applications or websites, regardless of your web framework. Cherry on the cake: it works out of the box -- no extra JavaScript needed.
 
 A demo is worth a thousand words:
 
-![](https://cdn-images-1.medium.com/max/1600/1*_hmiwuTByWYJXuViGPBxFQ.gif)
+![](https://daviddalbusco.com/assets/images/1*_hmiwuTByWYJXuViGPBxFQ.gif)
 
 ### Back Story
 
@@ -63,7 +63,7 @@ If we want to make it movable, draggable and resizable, we wrap it in our Web Co
 
 All together tested in the browser looks like the following.
 
-![](https://cdn-images-1.medium.com/max/1600/1*XUNHKbM_Q7ht6KyiHhDezA.gif)
+![](https://daviddalbusco.com/assets/images/1*XUNHKbM_Q7ht6KyiHhDezA.gif)
 
 ### Options
 

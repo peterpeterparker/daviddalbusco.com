@@ -4,11 +4,11 @@ date: "2020-09-14"
 title: "Angular State Management Without RxJS - An Experiment"
 description: "Angular state management without RxJS - An Experiment. Can it be done with the Stencil Store?"
 tags: "#angular #javascript #rxjs #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*cwU_XXxEkjzRiSXxuNYTeQ.png"
+image: "https://daviddalbusco.com/assets/images/1*cwU_XXxEkjzRiSXxuNYTeQ.png"
 canonical: "https://medium.com/@david.dalbusco/angular-state-management-without-rxjs-an-experiment-243de024d396"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*cwU_XXxEkjzRiSXxuNYTeQ.png)
+![](https://daviddalbusco.com/assets/images/1*cwU_XXxEkjzRiSXxuNYTeQ.png)
 
 Implementing a state management in modern web [Angular](https://angular.io/) applications can be tricky.
 
@@ -42,7 +42,7 @@ Let’s try to answer these questions, but first, let setup another kind of stat
 
 > The [@stencil/store](https://github.com/ionic-team/stencil-store) is a lightweight shared state library by the [StencilJS](https://stenciljs.com/) core team. It implements a simple key/value map that efficiently re-renders components when necessary.
 
-![](https://cdn-images-1.medium.com/max/1600/1*QE-QFGXyHgVLowWutgUA5A.gif)
+![](https://daviddalbusco.com/assets/images/1*QE-QFGXyHgVLowWutgUA5A.gif)
 
 I use it in our web open source editor for presentations, [DeckDeckGo](https://deckdeckgo.com), and I have to admit, I kind of have a crush for this lightweight store. It is so bare minimum simple, and effective, I obviously selected it to perform my experiment.
 
@@ -136,7 +136,7 @@ inc() {
 
 Therefore, if everything works as expected, each time I would call the above function, the `clicks` should be incremented and displayed. Because I registered an `onChange` on such property, the `count` should be actualized with twice the value.
 
-![](https://cdn-images-1.medium.com/max/1600/1*8b1SV-obHx5L-N0dMEfOFg.gif)
+![](https://daviddalbusco.com/assets/images/1*8b1SV-obHx5L-N0dMEfOFg.gif)
 
 **Success** ✅
 
@@ -166,7 +166,7 @@ export class Page2Component {
 
 If this would work out, once I would navigate, I would find the exact same value in each page without having to implement anything else respectively without the need to pass values between routes.
 
-![](https://cdn-images-1.medium.com/max/1600/1*G-kIoh5UTY9rSAq8bKWWpw.gif)
+![](https://daviddalbusco.com/assets/images/1*G-kIoh5UTY9rSAq8bKWWpw.gif)
 
 **Success** ✅
 
@@ -211,7 +211,7 @@ export class Page2Component {}
 
 As for previous test, this would be validated, if values would be displayed and updated even if use in a child component.
 
-![](https://cdn-images-1.medium.com/max/1600/1*tKYc1DwBsGcrUU_x4Q8Apg.gif)
+![](https://daviddalbusco.com/assets/images/1*tKYc1DwBsGcrUU_x4Q8Apg.gif)
 
 **Success** ✅
 
@@ -240,7 +240,7 @@ export class AlertService {
 
 If I call the service’s function, an alert should be triggered and the current `count` value of the store should be displayed.
 
-![](https://cdn-images-1.medium.com/max/1600/1*-KQgSKTCDBWsW7y9jW8ZlA.gif)
+![](https://daviddalbusco.com/assets/images/1*-KQgSKTCDBWsW7y9jW8ZlA.gif)
 
 **Success** ✅
 
@@ -301,9 +301,9 @@ describe('Page1Component', () => {
 
 If this would be correct, the test should pass.
 
-![](https://cdn-images-1.medium.com/max/1600/1*xumQL55FR4t0S9XCU0spqA.png)
+![](https://daviddalbusco.com/assets/images/1*xumQL55FR4t0S9XCU0spqA.png)
 
-![](https://cdn-images-1.medium.com/max/1600/1*PsZJK-IrkOwtSWGRCmNbNQ.png)
+![](https://daviddalbusco.com/assets/images/1*PsZJK-IrkOwtSWGRCmNbNQ.png)
 
 **Success** ✅
 
@@ -315,7 +315,7 @@ It is possible to use the store in unit tests and thus, without any particular h
 
 All hypothesis, re-rendering data, accessing these and testing the store were a success ✅.
 
-![](https://cdn-images-1.medium.com/max/1600/1*KE-3sINtqGTzJ4JgEcw0yA.gif)
+![](https://daviddalbusco.com/assets/images/1*KE-3sINtqGTzJ4JgEcw0yA.gif)
 
 ---
 

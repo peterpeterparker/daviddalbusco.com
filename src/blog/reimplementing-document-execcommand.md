@@ -4,11 +4,11 @@ date: "2020-08-13"
 title: "Re-implementing document.execCommand()"
 description: "The execCommand method has been marked has obsolete, here is how I re-implemented its styling command."
 tags: "#javascript #webdev #showdev #html"
-image: "https://cdn-images-1.medium.com/max/1600/1*BDpmr6_txiIdod6OCOyvZA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*BDpmr6_txiIdod6OCOyvZA.jpeg"
 canonical: "https://medium.com/@david.dalbusco/reimplementing-document-execcommand-6ffc33a80f02"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*BDpmr6_txiIdod6OCOyvZA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*BDpmr6_txiIdod6OCOyvZA.jpeg)
 
 \*Photo by [Nathan Rodriguez](https://unsplash.com/@nathanrodrigue_z?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)</span>
 
@@ -30,7 +30,7 @@ One thing I like about our WYSIWYG editor is its cross devices compatibility. It
 
 It can change text style (bold, italic, underline and strikethrough), fore- and background color, alignment (left, center or right), lists (ordered and not ordered) and even exposes a `slot` for a custom action.
 
-![](https://cdn-images-1.medium.com/max/1600/1*4wuYSS_u3KfKHSI1xLdR4g.gif)
+![](https://daviddalbusco.com/assets/images/1*4wuYSS_u3KfKHSI1xLdR4g.gif)
 
 ---
 

@@ -4,11 +4,11 @@ date: "2020-07-16"
 title: "App Shortcuts And Maskable Icons: Play It Like Twitter"
 description: "Follow the Twitter example to add App Shortcuts and maskable icons to your Progressive Web Apps."
 tags: "#showdev #webdev #design #pwa"
-image: "https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*GGBgZEgWp8_bR5S2fVhybg.jpeg"
 canonical: "https://medium.com/@david.dalbusco/app-shortcuts-and-maskable-icons-play-it-like-twitter-c7da9b7e90fa"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*GGBgZEgWp8_bR5S2fVhybg.jpeg)
 
 _Photo by [Ravi Sharma](https://unsplash.com/@ravinepz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/twitter?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -76,23 +76,23 @@ That’s where Twitter came to the rescue for first time 😉.
 
 I began by having a look at the HTML source of Twitter to find out the url of their `web app manifest` .
 
-![](https://cdn-images-1.medium.com/max/1600/1*nTKC1LdR6zH2-g5OGCNhtg.png)
+![](https://daviddalbusco.com/assets/images/1*nTKC1LdR6zH2-g5OGCNhtg.png)
 
 Once found, I opened the [manifest](https://twitter.com/manifest.json) file and had a look at their `shortcuts` section. They are providing four shortcuts (“New Tweet”, “Explore”, “Notifications” and “Direct Messages”).
 
-![](https://cdn-images-1.medium.com/max/1600/1*gcRMTV-lQhSH8v8-ZVUo0g.png)
+![](https://daviddalbusco.com/assets/images/1*gcRMTV-lQhSH8v8-ZVUo0g.png)
 
 Finally, I opened these icons to answer my question: yes, they don’t use their primary color as background for the shortcut’s icons but rather use a contrasting color and the primary as color of the symbol. I also noticed that the contrasting color was not white but rather a light grey (#F5F5F5).
 
 Furthermore, it also answered another question I was asking my self: no, shortcuts icons are not maskable, these are regular icons and therefore, can be round.
 
-![](https://cdn-images-1.medium.com/max/1600/1*rd2urydS262GndrprB7cwQ.png)
+![](https://daviddalbusco.com/assets/images/1*rd2urydS262GndrprB7cwQ.png)
 
 As I was about to finalize my icons with these colors, a new question bumped into my mind: what about the safe area?
 
 To solve this new question, I downloaded the Twitter shortcut icon, imported it in my design tool ([Affinity Designer](https://affinity.serif.com/fr/designer/)) and resized mine as it matched the same size. Told you, why reinventing the wheels 🤷.
 
-![](https://cdn-images-1.medium.com/max/1600/1*jtC-IqCQFXv56ziJJkjHAg.png)
+![](https://daviddalbusco.com/assets/images/1*jtC-IqCQFXv56ziJJkjHAg.png)
 
 That was it. My icons were ready to be added as shortcuts.
 
@@ -121,13 +121,13 @@ I notably was unsure about the best way to approach this because when I ran the 
 
 Once again, Twitter come to the rescue. I checked their [manifest](https://twitter.com/manifest.json) and noticed that indeed they are providing four icons.
 
-![](https://cdn-images-1.medium.com/max/1600/1*--XhgCYeqy5-tBR4lL70nQ.png)
+![](https://daviddalbusco.com/assets/images/1*--XhgCYeqy5-tBR4lL70nQ.png)
 
 I noticed that they are providing two pairs of icons, the regular and maskable one, both with two sizes, 192x192 and 512x512, and more important, that they are providing the field `purpose` only for the maskable one.
 
 I set our definition the same way. I was happy to notice that maskable icons were still use on my Android phone and that our sweet logo was back in the form I wanted in the Chrome tab bar 🥳.
 
-![](https://cdn-images-1.medium.com/max/1600/1*yU-hbKFs8p--b9O64PYZ7A.png)
+![](https://daviddalbusco.com/assets/images/1*yU-hbKFs8p--b9O64PYZ7A.png)
 
 ---
 

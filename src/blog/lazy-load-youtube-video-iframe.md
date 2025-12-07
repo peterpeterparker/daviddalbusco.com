@@ -4,11 +4,11 @@ date: "2020-01-09"
 title: "Lazy Load YouTube Video <iFrame/>"
 description: "How to lazy load Youtube Video using the Intersection Observer API."
 tags: "#javascript #react #tutorial #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*IwlNLyd4Db7716sLSeGq_w.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*IwlNLyd4Db7716sLSeGq_w.jpeg"
 canonical: "https://medium.com/@david.dalbusco/lazy-load-youtube-video-iframe-8838e1913751"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*IwlNLyd4Db7716sLSeGq_w.jpeg)
+![](https://daviddalbusco.com/assets/images/1*IwlNLyd4Db7716sLSeGq_w.jpeg)
 
 _Photo by [Julia Joppien](https://unsplash.com/@vitreous_macula?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -61,7 +61,7 @@ export default Video;
 
 We can now open our browser and check that it is effectively loaded at the same time that our page. You will notice that the Youtube url is loaded even if the video is not displayed.
 
-![](https://cdn-images-1.medium.com/max/1600/1*MrPtsQS5FB6aF0L-eXncfQ.gif)
+![](https://daviddalbusco.com/assets/images/1*MrPtsQS5FB6aF0L-eXncfQ.gif)
 
 ### Obfuscate The Video
 
@@ -115,7 +115,7 @@ export default Video;
 
 We can test our app in the browser, as we did previously, and should notice that the video is now neither loaded nor displayed.
 
-![](https://cdn-images-1.medium.com/max/1600/1*1EPwmYUiUcKyGdsochnN2w.gif)
+![](https://daviddalbusco.com/assets/images/1*1EPwmYUiUcKyGdsochnN2w.gif)
 
 ### Lazy Loading
 
@@ -161,7 +161,7 @@ function onVideoIntersection(entries) {
 
 Voilà, that’s it 🎉 We could perform our test again an notice that the video is only loaded when needed respectively when the container appears 😃
 
-![](https://cdn-images-1.medium.com/max/1600/1*nXaa2aaSs1jTOPN7XEm0xA.gif)
+![](https://daviddalbusco.com/assets/images/1*nXaa2aaSs1jTOPN7XEm0xA.gif)
 
 ### Going Further
 
@@ -263,7 +263,7 @@ export default Video;
 
 We proceed with our final test, notice that the video is lazy loaded, we play with the buttons and we enjoy the awesome music of [Maxi Puch Rodeo Club](https://maxipuchrodeoclub.bandcamp.com/) 🪕🥁🎵👍
 
-![](https://cdn-images-1.medium.com/max/1600/1*skQICbYpu0Q-x2C6u3TgkA.gif)
+![](https://daviddalbusco.com/assets/images/1*skQICbYpu0Q-x2C6u3TgkA.gif)
 
 ### Contribute To Our Project
 

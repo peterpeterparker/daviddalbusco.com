@@ -4,11 +4,11 @@ date: "2020-04-07"
 title: "React And Web Workers"
 description: "How to interact with Web Workers in React applications"
 tags: "#react #showdev #webdev #javascript"
-image: "https://cdn-images-1.medium.com/max/1600/1*zuX14URmAiO36mikljilOg.png"
+image: "https://daviddalbusco.com/assets/images/1*zuX14URmAiO36mikljilOg.png"
 canonical: "https://medium.com/@david.dalbusco/react-and-web-workers-c9b60b4b6ae8"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*zuX14URmAiO36mikljilOg.png)
+![](https://daviddalbusco.com/assets/images/1*zuX14URmAiO36mikljilOg.png)
 
 _Photo by [Tobias Tullius](https://unsplash.com/@tobiastu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -80,7 +80,7 @@ export default Page;
 
 As you can notice in the following animated Gif, as soon as I start the “Apple counter”, the user interaction on the “Tomato counter” have no effects anymore, do not trigger any new component rendering, as the function is currently blocking the JavaScript thread.
 
-![](https://cdn-images-1.medium.com/max/1600/1*UFSpBIR1gR1etkBkLdXRaA.gif)
+![](https://daviddalbusco.com/assets/images/1*UFSpBIR1gR1etkBkLdXRaA.gif)
 
 ---
 
@@ -151,7 +151,7 @@ function incApple() {
 
 Tada, that’s it 🎉. You should now be able to interact with the GUI even if the “blocker code is running”. As you can notice in the following animated Gif, I am still able to increment my tomato counter even if the blocking loops is performed by the web worker.
 
-![](https://cdn-images-1.medium.com/max/1600/1*ckzRpU3hVOmPyHw-of1u2w.gif)
+![](https://daviddalbusco.com/assets/images/1*ckzRpU3hVOmPyHw-of1u2w.gif)
 
 The component altogether in case you would need it:
 

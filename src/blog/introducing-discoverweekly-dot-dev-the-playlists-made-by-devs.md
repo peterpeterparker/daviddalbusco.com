@@ -4,11 +4,11 @@ date: "2021-02-22"
 title: "Introducing DiscoverWeekly.dev: The Playlists Made By Devs"
 description: "I developed an open source website to discover new music on a weekly basis without an algorithm."
 tags: "#showdev #webdev #motivation #music"
-image: "https://cdn-images-1.medium.com/max/1600/1*GFDCqLv-kxGco-IWWlwtJw.png"
+image: "https://daviddalbusco.com/assets/images/1*GFDCqLv-kxGco-IWWlwtJw.png"
 canonical: "https://daviddalbusco.medium.com/introducing-discoverweekly-dev-the-playlists-made-by-devs-66e9d14f6e05"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*GFDCqLv-kxGco-IWWlwtJw.png)
+![](https://daviddalbusco.com/assets/images/1*GFDCqLv-kxGco-IWWlwtJw.png)
 
 Like everyone in the current situation, I miss being able to do a lot of different things such as hugging my mum, attending live events or being able to travel.
 

@@ -4,11 +4,11 @@ date: "2020-03-21"
 title: "How To Declare And Use Ionic Modals With Stencil"
 description: "How to declare and use Ionic modals with Stencil incl. passing parameters, close actions and hardware back button support"
 tags: "#javascript #webdev #showdev #ionic"
-image: "https://cdn-images-1.medium.com/max/1600/1*MUxo-oCL6aB0QEjOH8AU3A.png"
+image: "https://daviddalbusco.com/assets/images/1*MUxo-oCL6aB0QEjOH8AU3A.png"
 canonical: "https://medium.com/@david.dalbusco/how-to-declare-and-use-ionic-modals-with-stencil-d5d97e69c930"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*MUxo-oCL6aB0QEjOH8AU3A.png)
+![](https://daviddalbusco.com/assets/images/1*MUxo-oCL6aB0QEjOH8AU3A.png)
 
 _Photo by [Tirza van Dijk](https://unsplash.com/@tirzavandijk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -95,7 +95,7 @@ export class AppHome {
 
 If everything went according plan, once started and opened, it should looks like the following:
 
-![](https://cdn-images-1.medium.com/max/1600/1*oi7_UdlrP21Wuwm5UyB4mw.png)
+![](https://daviddalbusco.com/assets/images/1*oi7_UdlrP21Wuwm5UyB4mw.png)
 
 ---
 
@@ -142,7 +142,7 @@ export class AppRemoteConnect {
 
 Again, if everything went fine, a close button in the header should now be displayed.
 
-![](https://cdn-images-1.medium.com/max/1600/1*ZV2OKs1bzf6eqI0SJnR9jg.png)
+![](https://daviddalbusco.com/assets/images/1*ZV2OKs1bzf6eqI0SJnR9jg.png)
 
 ---
 
@@ -249,7 +249,7 @@ private async openModal() {
 
 Nothing more, nothing left, really easy. I like such solution.
 
-![](https://cdn-images-1.medium.com/max/1600/1*t5Ri1zehrQLJSVRHnt529w.png)
+![](https://daviddalbusco.com/assets/images/1*t5Ri1zehrQLJSVRHnt529w.png)
 
 ---
 
@@ -270,7 +270,7 @@ async closeModalWithParams(greetings: string) {
 
 In our example, I linked this new action with a new button.
 
-![](https://cdn-images-1.medium.com/max/1600/1*qMxPYUnuhe4jtFicx5_yjQ.png)
+![](https://daviddalbusco.com/assets/images/1*qMxPYUnuhe4jtFicx5_yjQ.png)
 
 Finally, to handle the result, we listen to the `onDidDismiss` event of the modal and proceed with the details passed as callback.
 
@@ -323,7 +323,7 @@ export class AppHome {
 
 I used a state as demonstration purpose in order to render the results.
 
-![](https://cdn-images-1.medium.com/max/1600/1*fCDBeVvWKiRktdlAb7eTwQ.png)
+![](https://daviddalbusco.com/assets/images/1*fCDBeVvWKiRktdlAb7eTwQ.png)
 
 Note that you can use both primitives types, complex objects, callbacks or events as parameters.
 

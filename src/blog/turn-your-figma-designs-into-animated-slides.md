@@ -4,7 +4,7 @@ date: "2021-04-08"
 title: "Turn Your Figma Designs Into Animated Slides"
 description: "Export your Figma frames to presentations with DeckDeckGo."
 tags: "#showdev #webdev #figma #javascript"
-image: "https://cdn-images-1.medium.com/max/1600/1*_b7FQUkfmVU7O9IAVt90zw.png"
+image: "https://daviddalbusco.com/assets/images/1*_b7FQUkfmVU7O9IAVt90zw.png"
 canonical: "https://daviddalbusco.medium.com/turn-your-figma-designs-into-animated-slides-7eea5c47c49"
 ---
 
@@ -19,7 +19,7 @@ I am thrilled to unveil a new way to turn your Figma designs into animated slide
 
 You may ask yourself why would you export your content from [Figma](https://www.figma.com/) to [DeckDeckGo](https://deckdeckgo.com)? After-all it is possible to present a design without a 3rd party platform. I get that but, before making up your mind, let me list some advantages I do see in such a solution.
 
-![](https://cdn-images-1.medium.com/max/1600/1*-rC78uti7YtY_5rnCh7D7g.gif)
+![](https://daviddalbusco.com/assets/images/1*-rC78uti7YtY_5rnCh7D7g.gif)
 
 ---
 
@@ -39,7 +39,7 @@ The plugin splits the text of the design. The graphic components are exported in
 
 These images, once imported in DeckDeckGo, are added to your collection of assets. This means that they can be (re)used across all your slides. You can then create and style slides with your existing images as background.
 
-![](https://cdn-images-1.medium.com/max/1600/1*OFXb-3GA8T3ZqqDZQcwIcQ.gif)
+![](https://daviddalbusco.com/assets/images/1*OFXb-3GA8T3ZqqDZQcwIcQ.gif)
 
 ---
 
@@ -81,7 +81,7 @@ From a technical point of view, the plugin is developed with JavaScript, nothing
 
 ### Summary
 
-![](https://cdn-images-1.medium.com/max/1600/1*QW4oGxrM0iLJjjPXoxJvAQ.gif)
+![](https://daviddalbusco.com/assets/images/1*QW4oGxrM0iLJjjPXoxJvAQ.gif)
 
 This plugin is my first ever Figma plugin and needless to say, it was super fun to develop. I am very happy to launch this new feature for our eco-system, [give it a try](https://www.figma.com/community/plugin/950777256486678678/Figma-to-DeckDeckGo) 🤗.
 

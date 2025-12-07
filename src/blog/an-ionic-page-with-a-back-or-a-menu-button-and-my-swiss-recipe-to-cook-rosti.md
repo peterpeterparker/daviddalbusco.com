@@ -4,10 +4,10 @@ date: "2019-05-11"
 title: "An Ionic page with a back or a menu button and my Swiss recipe to cook Rösti"
 description: "An Ionic page with a back or a menu button and my Swiss recipe to cook Rösti"
 tags: "#showdev #webdev #ionic #cooking"
-image: "https://cdn-images-1.medium.com/max/1600/1*RLw_zF55AGJaTXkMOgwTNQ.png"
+image: "https://daviddalbusco.com/assets/images/1*RLw_zF55AGJaTXkMOgwTNQ.png"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*RLw_zF55AGJaTXkMOgwTNQ.png)
+![](https://daviddalbusco.com/assets/images/1*RLw_zF55AGJaTXkMOgwTNQ.png)
 
 Imagine Switzerland, stunning mountains, green grass everywhere, sun is shining, you’ve got a view on the Matterhorn, some cows are sitting peacefully next door doing nothing and your are eating some Rösti with your friends.
 
@@ -21,11 +21,11 @@ You might ask your self “why such a UX”? Well, you might want to list a page
 
 I guess you might be confused about my explanation 🤔 Therefore here’s what would happens if we would implement nothing particular. In both cases, navigation “root” or “forward”, the icon its action would remain linked with the menu.
 
-![](https://cdn-images-1.medium.com/max/1600/1*DyRRdLLV6VqXKgYvw_9Z6Q.gif)
+![](https://daviddalbusco.com/assets/images/1*DyRRdLLV6VqXKgYvw_9Z6Q.gif)
 
 And here’s what we are going to achieve:
 
-![](https://cdn-images-1.medium.com/max/1600/1*pctwpurwlPWrzAkvZykqSw.gif)
+![](https://daviddalbusco.com/assets/images/1*pctwpurwlPWrzAkvZykqSw.gif)
 
 ### Implementation
 
@@ -90,7 +90,7 @@ That’s it, we have implemented a conditional back or menu button and action �
 
 I like to always end my articles with a last paragraph “Cherry on the cake” where I give another hint or trick related to the content I displayed but in this particular article I don’t have specific in mind. Therefore, instead of something related to the above solution, here’s my dead simple recipe to cook your own Rösti:
 
-![](https://cdn-images-1.medium.com/max/1600/1*bRHfgb21RXhVuUnEEj1nUQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*bRHfgb21RXhVuUnEEj1nUQ.jpeg)
 _These kind of Rösti but with, optionally, smaller pieces of bacon_
 
 1. Boil 500 grams to 1 kilo of potatoes (for two) and once ready, let them cool down. Note: that step is optional, if you don’t have time you could cook the meal with raw potatoes but it’s more yummy with boiled ones.

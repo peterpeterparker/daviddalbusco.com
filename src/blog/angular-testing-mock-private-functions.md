@@ -4,11 +4,11 @@ date: "2020-04-08"
 title: "Angular Testing: Mock Private Functions"
 description: "How to mock a private function in your automated Angular tests with Jasmine or Jest"
 tags: "#angular #testing #javascript #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*hVf0bMRV3eeYXaj6D2ZJJg.png"
+image: "https://daviddalbusco.com/assets/images/1*hVf0bMRV3eeYXaj6D2ZJJg.png"
 canonical: "https://medium.com/@david.dalbusco/angular-testing-mock-private-functions-2c5e480ea7bb"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*hVf0bMRV3eeYXaj6D2ZJJg.png)
+![](https://daviddalbusco.com/assets/images/1*hVf0bMRV3eeYXaj6D2ZJJg.png)
 
 _Photo by [Overture Creations](https://unsplash.com/@overture_creations?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -113,7 +113,7 @@ describe('DoggosService', () => {
 
 Because we are performing an HTTP request and are not mocking it, the test fails on a timeout. That’s why our goal will be to solve this issue while mocking the `private` function which takes care of performing the request.
 
-![](https://cdn-images-1.medium.com/max/1600/1*d2u_KJrrxiKqi-HKgsTfFw.png)
+![](https://daviddalbusco.com/assets/images/1*d2u_KJrrxiKqi-HKgsTfFw.png)
 
 ---
 
@@ -148,7 +148,7 @@ it('should fetch a doggo', async () => {
 
 Thanks to these changes, we are now able to run our test with success 🥳.
 
-![](https://cdn-images-1.medium.com/max/1600/1*072z86Cn9K5wz_1U4d0D9Q.png)
+![](https://daviddalbusco.com/assets/images/1*072z86Cn9K5wz_1U4d0D9Q.png)
 
 ---
 

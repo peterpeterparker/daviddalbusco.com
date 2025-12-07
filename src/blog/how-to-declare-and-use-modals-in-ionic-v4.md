@@ -4,10 +4,10 @@ date: "2018-10-09"
 title: "How to declare and use modals in Ionic v4"
 description: "How to declare and use modals in Ionic v4"
 tags: "#ionic #angular #javascript #programming"
-image: "https://cdn-images-1.medium.com/max/2000/1*jJJ6qFutpkXsD-aRYGs1tA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*jJJ6qFutpkXsD-aRYGs1tA.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/2000/1*jJJ6qFutpkXsD-aRYGs1tA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*jJJ6qFutpkXsD-aRYGs1tA.jpeg)
 
 I noticed that questions about the declaration and use of modals in [Ionic](https://ionicframework.com/) v4 with [Angular](https://angular.io/) often pops up, therefore I thought I would briefly describe how I solved this subject in my mobile application [Fluster](https://fluster.io/).
 

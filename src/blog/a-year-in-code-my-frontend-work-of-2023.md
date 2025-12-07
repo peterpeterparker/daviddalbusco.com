@@ -8,7 +8,7 @@ image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*JThVguqwUiuW1U8
 canonical: "https://daviddalbusco.medium.com/a-year-in-code-my-frontend-work-of-2023-afd4025560f7"
 ---
 
-![](https://cdn-images-1.medium.com/max/3584/1*JThVguqwUiuW1U8rqNgvMA.png)
+![](https://daviddalbusco.com/assets/images/1*JThVguqwUiuW1U8rqNgvMA.png)
 
 ---
 
@@ -28,7 +28,7 @@ In most of my personal projects where aesthetics are key, I collaborate with my 
 
 Summarizing Juno in a single screenshot is challenging, given its vast scope (over 1,000 commits, encompassing a website, various backend smart contracts, an admin console, a CLI, numerous examples, etc.). However, the chosen screenshot from the console encapsulates my approach: building everything from scratch, including the UI, without relying on third-party libraries. I prefer crafting my own components and have a fondness for neo-brutalism. I firmly believe that an app should make a memorable first impression on its users. I hope this one does!
 
-![](https://cdn-images-1.medium.com/max/6144/1*Y_yuNbjrOcXHxDoYvWCfZA.png)
+![](https://daviddalbusco.com/assets/images/1*Y_yuNbjrOcXHxDoYvWCfZA.png)
 
 ---
 
@@ -40,7 +40,7 @@ Among the various cross-department projects, I participated in the ckBTC project
 
 One exciting thing from a frontend perspective is that we are not relying on third-party UI libraries. Instead, we have built and open-sourced our own [GIX components](https://gix.design/), which can be used by our colleagues in other teams and the community. This way, we not only control our tools but also help others. It’s essentially an awesome job for anyone who’s passionate about OSS.
 
-![](https://cdn-images-1.medium.com/max/6144/1*X6jpzy-pu46yN1XktGIcrg.png)
+![](https://daviddalbusco.com/assets/images/1*X6jpzy-pu46yN1XktGIcrg.png)
 
 ---
 
@@ -52,7 +52,7 @@ So, I developed a whiteboard dapp for sketching hand-drawn-like diagrams on Web3
 
 As for the UI design, I kept it straightforward but distinctive: I added bold borders, a signature style of mine, and chose a few really vibrant background colors. After all, tools like these can never be too flashy 😉.
 
-![](https://cdn-images-1.medium.com/max/6144/1*XXWwTTiPloOCtXJOq0ZV4g.png)
+![](https://daviddalbusco.com/assets/images/1*XXWwTTiPloOCtXJOq0ZV4g.png)
 
 ---
 
@@ -68,7 +68,7 @@ The design was crafted by [Artem Korotkikh](https://twitter.com/artkorotkikh), w
 
 From a frontend perspective, there’s a lot going on, but UI-wise, it’s one of the first applications in which I began to really bet on Svelte’s transitions. While not everyone might notice it, most components are designed to transition as smoothly as possible.
 
-![](https://cdn-images-1.medium.com/max/6144/1*v76COgOlJolaRmGlKRM_ng.png)
+![](https://daviddalbusco.com/assets/images/1*v76COgOlJolaRmGlKRM_ng.png)
 
 ---
 
@@ -80,7 +80,7 @@ In recent years, I collaborated with ETH to create an application aimed at simul
 
 The design was realized by Misha Iskandarov with additional contributions from Artem, and in my opinion, the outcome looks great. While one might expect a cumbersome interface for a ‘waste marketplace,’ I believe the result is user-friendly and visually appealing. As a user, it’s definitely something I would like to use.
 
-![](https://cdn-images-1.medium.com/max/6144/1*h4NsFyeaJz1Mb0WeoBvCsg.png)
+![](https://daviddalbusco.com/assets/images/1*h4NsFyeaJz1Mb0WeoBvCsg.png)
 
 ---
 
@@ -94,7 +94,7 @@ This project took more than just a weekend to complete — it was more like a we
 
 It was fascinating to note that integrating authentication, data persistence, custom domains, and even analytics was actually the quickest part of the process. I might not be doing something entirely wrong with [Juno](https://juno.build/).
 
-![](https://cdn-images-1.medium.com/max/6144/1*pSAP0xQMaOGKD0kx5wovxg.png)
+![](https://daviddalbusco.com/assets/images/1*pSAP0xQMaOGKD0kx5wovxg.png)
 
 ---
 

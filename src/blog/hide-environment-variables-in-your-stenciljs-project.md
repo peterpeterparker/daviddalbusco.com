@@ -4,10 +4,10 @@ date: "2019-03-27"
 title: "Hide environment variables in your StencilJS project"
 description: "How to hide environment variables in the repo of your projects developed with StencilJS or the Ionic PWA Toolkit"
 tags: "#webcomponents #stencil #javascript #html"
-image: "https://cdn-images-1.medium.com/max/1600/1*uC9a-6ZDkV2PKxYv0QW6Kw.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*uC9a-6ZDkV2PKxYv0QW6Kw.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*uC9a-6ZDkV2PKxYv0QW6Kw.jpeg)
+![](https://daviddalbusco.com/assets/images/1*uC9a-6ZDkV2PKxYv0QW6Kw.jpeg)
 
 In a previous [article](https://medium.com/stencil-tricks/environment-variables-with-stenciljs-57e9da591280) I described how I implemented environment variables in my [Stencil’s](https://stenciljs.com/) projects or in my projects created with the [Ionic PWA toolkit](https://ionicframework.com/pwa/toolkit).
 

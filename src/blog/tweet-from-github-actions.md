@@ -4,11 +4,11 @@ date: "2021-03-05"
 title: "Tweet From GitHub Actions"
 description: "Develop a Twitter Bot that runs in GitHub Actions."
 tags: "#javascript #showdev #webdev #tutorial"
-image: "https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*GGBgZEgWp8_bR5S2fVhybg.jpeg"
 canonical: "https://daviddalbusco.medium.com/tweet-from-github-actions-e289de58988a"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*GGBgZEgWp8_bR5S2fVhybg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*GGBgZEgWp8_bR5S2fVhybg.jpeg)
 
 _Photo by [Ravi Sharma](https://unsplash.com/@ravinepz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -28,15 +28,15 @@ The process takes several steps but, overall, can be solved in a couple of minut
 
 Once you get access to your [Dashboard](https://developer.twitter.com/en/portal/dashboard), create a new project.
 
-![](https://cdn-images-1.medium.com/max/1600/1*d7T5ulDZCk5AbJD5Qrwz-A.png)
+![](https://daviddalbusco.com/assets/images/1*d7T5ulDZCk5AbJD5Qrwz-A.png)
 
 In your “App permissions”, request the “Read and Write” permissions.
 
-![](https://cdn-images-1.medium.com/max/1600/1*NWATz8Zlxx3CgNZMmBvRVQ.png)
+![](https://daviddalbusco.com/assets/images/1*NWATz8Zlxx3CgNZMmBvRVQ.png)
 
 Finally, under “Keys and Tokens”, generate all “Access token & secret”.
 
-![](https://cdn-images-1.medium.com/max/1600/1*axwweoz1kGPPaZW-I5h6Lg.png)
+![](https://daviddalbusco.com/assets/images/1*axwweoz1kGPPaZW-I5h6Lg.png)
 
 Note that if you have generated your secrets before requesting the "read & write" permission, you have to regenerate your secrets.
 
@@ -101,7 +101,7 @@ To run the Bot, we add a related `scripts` target in our `package.json` .
 
 To make our tokens and secrets, we are handling through environment variables, available to our GitHub Actions, go to your `GitHub repo > Settings > Secrets` and add these with their respective values.
 
-![](https://cdn-images-1.medium.com/max/1600/1*p_SW7X4ifZ0tiONf0PsEDA.png)
+![](https://daviddalbusco.com/assets/images/1*p_SW7X4ifZ0tiONf0PsEDA.png)
 
 ---
 
@@ -144,7 +144,7 @@ jobs:
 
 ### Summary
 
-![](https://cdn-images-1.medium.com/max/1600/1*N4H7Sfn1DEt9XJWQ3PnnEA.gif)
+![](https://daviddalbusco.com/assets/images/1*N4H7Sfn1DEt9XJWQ3PnnEA.gif)
 
 I was surprised to notice how straight forward it was to develop such a Twitter Bot and it was actually kind of fun. I hope this article will help you too.
 

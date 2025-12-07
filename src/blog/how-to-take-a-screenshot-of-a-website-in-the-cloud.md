@@ -4,7 +4,7 @@ date: "2019-07-20"
 title: "How to take a screenshot of a website in the cloud"
 description: "How to take a screenshot of a website in the cloud using Puppeteer in a Google Firebase Functions and to save the results to Google Firebase Storage"
 tags: "#javascript #webdev #tutorial #programming"
-image: "https://cdn-images-1.medium.com/max/1600/1*0cBVakg6yb906eFR0VLm8Q.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*0cBVakg6yb906eFR0VLm8Q.jpeg"
 ---
 
 ![](https://thepracticaldev.s3.amazonaws.com/i/nsa5dduag5csoamhu28o.jpg)

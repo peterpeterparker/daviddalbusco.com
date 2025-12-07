@@ -4,10 +4,10 @@ date: "2019-11-12"
 title: "Introducing the new remote control for your presentations"
 description: "Introducing the new remote control for your presentations developed with the web open source editor DeckDeckGo"
 tags: "#webdev #showdev #opensource #motivation"
-image: "https://cdn-images-1.medium.com/max/1600/1*pk4BfD4Sqt6gHIX4lpYO8g.png"
+image: "https://daviddalbusco.com/assets/images/1*pk4BfD4Sqt6gHIX4lpYO8g.png"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*pk4BfD4Sqt6gHIX4lpYO8g.png)
+![](https://daviddalbusco.com/assets/images/1*pk4BfD4Sqt6gHIX4lpYO8g.png)
 
 > Change is the essential process of all existence - Spock
 
@@ -35,7 +35,7 @@ Enough teasing, here are the major new features of our remote controller.
 
 Through our [Slack](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) channel, [GitHub](https://github.com/deckgo/deckdeckgo/projects/4) or messages, being able to add “**speaker notes** for the slides in the web editor” was often the most requested feature. Fortunately, it was already implemented in our core and even available in the developer kit, therefore, the biggest challenge was “only” its integration in terms of UX. Moreover, when implementing the feature, we thought that it would be handy if **Markdown** would be supported too 😃
 
-![](https://cdn-images-1.medium.com/max/1600/1*uKHylyasNOXQu3W3Uc7uhw.png)
+![](https://daviddalbusco.com/assets/images/1*uKHylyasNOXQu3W3Uc7uhw.png)
 
 _Edit your speaker notes with Markdown in our web open source editor_
 
@@ -47,7 +47,7 @@ It’s worth to notice that the presentation don’t have to be published on int
 
 _Note: this new solution is a **breaking change**. It is automatically rolled out in our web editor but if you have already published a deck, you just would have to publish it again in order to upgrade it._
 
-![](https://cdn-images-1.medium.com/max/1600/1*NfYAdoMvNHAuaMOf809-iA.png)
+![](https://daviddalbusco.com/assets/images/1*NfYAdoMvNHAuaMOf809-iA.png)
 
 _Synchronized content_
 
@@ -57,7 +57,7 @@ Although all functions (swiping the slides, drawing over the presentations, play
 
 Moreover, the speaker notes weren’t really cleverly displayed. That’s why we moved them to a new sheet component which could be opened with a “swipe up” gesture.
 
-![](https://cdn-images-1.medium.com/max/1600/1*pQx-i5jfIdweWYTIu_9KzQ.gif)
+![](https://daviddalbusco.com/assets/images/1*pQx-i5jfIdweWYTIu_9KzQ.gif)
 
 _New user experience_
 
@@ -65,7 +65,7 @@ _New user experience_
 
 Earlier October I attended the [DINAcon](https://dinacon.ch) 2019 conference in Bern. The speakers were presenting their subjects on a shiny stage, behind a stylish thin desk which aimed, I guess, to be discrete but on the other hand, they were still using a laptop to have a look at their talk and notes 🤔
 
-![](https://cdn-images-1.medium.com/max/1600/1*iXSRsFNZUOItDFyevXYsqQ.png)
+![](https://daviddalbusco.com/assets/images/1*iXSRsFNZUOItDFyevXYsqQ.png)
 
 _[Katariina Kari](https://twitter.com/katsi111) speaking about “Knowledge Graph” and having a quick look at her laptop at DINACon 2019 (source [Flickr](https://www.flickr.com/photos/140845441@N04/48947571397/in/album-72157711466719708))_
 
@@ -75,7 +75,7 @@ _If you read these lines I’m guessing that now you know why the cover photo is
 
 Moreover of the user experience, this new version of our remote control introduces a new responsive design which aims to implement this vision and aims to deliver all the information and commands needed to perform your talk with tablet devices or any browsers in landscape mode as support.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Nhax5Zz-ReP2Qq0E3mOjqQ.gif)
+![](https://daviddalbusco.com/assets/images/1*Nhax5Zz-ReP2Qq0E3mOjqQ.gif)
 
 _Inspired from the USS Enterprise bridge_
 
@@ -83,7 +83,7 @@ _Inspired from the USS Enterprise bridge_
 
 Last goodies, as we already did with our [documentation](https://docs.deckdeckgo.com) for developers, we also rolled out a light and dark theme switcher 🌓
 
-![](https://cdn-images-1.medium.com/max/1600/1*k_xss5uP7Jeb5zAK7hAwmQ.gif)
+![](https://daviddalbusco.com/assets/images/1*k_xss5uP7Jeb5zAK7hAwmQ.gif)
 
 _Switch between light and dark theme_
 

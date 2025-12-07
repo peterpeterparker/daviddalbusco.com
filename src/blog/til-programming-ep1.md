@@ -4,11 +4,11 @@ date: "2024-02-25"
 title: "TIL Programming Ep1"
 description: "In this episode, I learned about TypeScript string patterns and Node.js WASM metadata reading."
 tags: "#programming #webdev #showdev #til"
-image: "https://cdn-images-1.medium.com/max/12032/1*7DPrmiwTpheVxgpZ9rjSUA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*7DPrmiwTpheVxgpZ9rjSUA.jpeg"
 canonical: "https://daviddalbusco.medium.com/til-programming-ep1-5bb58690a120"
 ---
 
-![](https://cdn-images-1.medium.com/max/12032/1*7DPrmiwTpheVxgpZ9rjSUA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*7DPrmiwTpheVxgpZ9rjSUA.jpeg)
 
 Photo by [Joanna Kosinska](https://unsplash.com/fr/@joannakosinska?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/fr/photos/deux-crayons-gris-sur-surface-jaune-1_CMoFsPfso?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 

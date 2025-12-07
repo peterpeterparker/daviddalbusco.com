@@ -3,12 +3,5 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-	plugins: [sveltekit(), juno()],
-	css: {
-		preprocessorOptions: {
-			scss: {
-				api: 'modern-compiler'
-			}
-		}
-	}
+	plugins: [sveltekit(), juno()]
 });

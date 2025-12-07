@@ -4,10 +4,10 @@ date: "2019-05-06"
 title: "How to close Ionic modals using the hardware back button"
 description: "How to close Ionic modals using the hardware back button in applications developed with Angular or StencilJS"
 tags: "#webdev #ionic #angular #stencil"
-image: "https://cdn-images-1.medium.com/max/2400/1*AE_pfiSxN5bMBApg_Nodow.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*AE_pfiSxN5bMBApg_Nodow.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/2400/1*AE_pfiSxN5bMBApg_Nodow.jpeg)
+![](https://daviddalbusco.com/assets/images/1*AE_pfiSxN5bMBApg_Nodow.jpeg)
 
 I noticed today that I’m always reusing the exact same piece of code in order to close [Ionic](https://ionicframework.com) modals using the Android hardware back button. Moreover, as I wrote a couple of months ago a blog post about “[How to declare and use modals in Ionic v4](https://dev.to/daviddalbusco/how-to-declare-and-use-modals-in-ionic-v4-3nj7)”, I thought that displaying quickly how I solve this would be a nice add-on.
 

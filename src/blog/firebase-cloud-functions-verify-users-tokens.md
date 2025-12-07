@@ -4,11 +4,11 @@ date: "2020-09-04"
 title: "Firebase Cloud Functions: Verify Users Tokens"
 description: "Grant access to your Firebase Cloud Functions only for authenticated users."
 tags: "#firebase #javascript #webdev #showdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*BSLn4cG8OsG63z4pbJqrXA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*BSLn4cG8OsG63z4pbJqrXA.jpeg"
 canonical: "https://medium.com/@david.dalbusco/firebase-cloud-functions-verify-users-tokens-d4e60e314d1a"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*BSLn4cG8OsG63z4pbJqrXA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*BSLn4cG8OsG63z4pbJqrXA.jpeg)
 
 _Photo by [Nigel Tadyanehondo](https://unsplash.com/@nxvision?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/you-shall-not-pass?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

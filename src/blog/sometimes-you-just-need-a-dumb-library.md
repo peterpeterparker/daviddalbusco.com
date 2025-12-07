@@ -4,11 +4,11 @@ date: "2020-03-19"
 title: "Sometimes You Just Need A Dumb Library"
 description: "How to create a library with Rollup and Typescript #OneTrickADay-31"
 tags: "#showdev #javascript #tutorial #programming"
-image: "https://cdn-images-1.medium.com/max/1600/1*3WQ_e2_-d02nvob2rlEJCA.png"
+image: "https://daviddalbusco.com/assets/images/1*3WQ_e2_-d02nvob2rlEJCA.png"
 canonical: "https://medium.com/@david.dalbusco/sometimes-you-just-need-a-dumb-library-5f8e79e667dd"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*3WQ_e2_-d02nvob2rlEJCA.png)
+![](https://daviddalbusco.com/assets/images/1*3WQ_e2_-d02nvob2rlEJCA.png)
 
 _Photo by [Benjamin Davies](https://unsplash.com/@bendavisual?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

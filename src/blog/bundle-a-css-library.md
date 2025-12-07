@@ -4,11 +4,11 @@ date: "2020-07-01"
 title: "Bundle A CSS Library"
 description: "How to build your own custom CSS library with SASS, postcss and clean-css."
 tags: "#css #showdev #javascript #productivity"
-image: "https://cdn-images-1.medium.com/max/1600/1*ktUiN4HuCz_nkRrL96xfFg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*ktUiN4HuCz_nkRrL96xfFg.jpeg"
 canonical: "https://medium.com/@david.dalbusco/bundle-a-css-library-6e9ff1ff8a2c"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*ktUiN4HuCz_nkRrL96xfFg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*ktUiN4HuCz_nkRrL96xfFg.jpeg)
 _Photo by [KOBU Agency](https://unsplash.com/@kobuagency?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://medium.com/s/photos/css?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 We have build [DeckDeckGo](https://deckdeckgo.com) in a relatively fragmented way 😅. There is our web editor, which can be used to create and showcase slides and which can also be automatically synchronized with our remote control. There is also a developer kit, which supports HTML or markdown and there is even another version of it, we only used to deploy online your presentations as Progressive Web Apps.

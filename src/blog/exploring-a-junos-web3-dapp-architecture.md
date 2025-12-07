@@ -4,11 +4,11 @@ date: "2023-06-23"
 title: "Exploring a Juno’s Web3 Dapp Architecture"
 description: "I built a web app on the Internet Computer blockchain in a weekend with Juno. Check out my insights into the frontend architecture! 🛰️"
 tags: "#dapp #web3 #programming #webdev"
-image: "https://cdn-images-1.medium.com/max/2400/1*qBDGBb6aklck9uiOSzezPA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*qBDGBb6aklck9uiOSzezPA.jpeg"
 canonical: "https://juno.build/blog/exploring-a-juno-web3-dapp-architecture"
 ---
 
-![](https://cdn-images-1.medium.com/max/2400/1*qBDGBb6aklck9uiOSzezPA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*qBDGBb6aklck9uiOSzezPA.jpeg)
 
 ---
 
@@ -22,17 +22,17 @@ From a fundamental perspective, developing a JavaScript frontend application run
 
 At the heart of the application lies a library responsible for evaluating the user’s authentication status, enabling or disabling access to different features based on this assessment. Each of these features has the capability to interact with and manipulate data and files on the blockchain, allowing for read, write, update, or delete operations. The only minor distinction is that modifying a state on the blockchain introduces a slight delay of a few seconds compared to saving data on a centralized server. This delay is due to the requirement of certifying the information through a consensus round.
 
-![](https://cdn-images-1.medium.com/max/3870/1*jgPnSRFcW4O46jlCDN4Bkg.png)
+![](https://daviddalbusco.com/assets/images/1*jgPnSRFcW4O46jlCDN4Bkg.png)
 
 While there are no significant other differences, one crucial aspect stands out: my personal aversion to using applications that necessitate “manual save.” To address this, I envisioned and implemented an auto-save feature.
 
 However, as I understand that data persistence requires resources, I strategically incorporated this process within a Web Worker. By doing so, the burden of this task is shifted away from the UI, ensuring a seamless user experience.
 
-![](https://cdn-images-1.medium.com/max/4646/1*4vTielgW4OSOTi97000Xkw.png)
+![](https://daviddalbusco.com/assets/images/1*4vTielgW4OSOTi97000Xkw.png)
 
 Instead of implementing an approach where the UI triggers any changes by directly interacting with the worker, I opted for a different approach in this project. Upon app initialization, a cron timer is initiated within the web worker. This timer periodically checks for any changes and processes the save operation if any modifications are detected.
 
-![](https://cdn-images-1.medium.com/max/2872/1*lQ132OMsoLHeL1lB_jjgKg.png)
+![](https://daviddalbusco.com/assets/images/1*lQ132OMsoLHeL1lB_jjgKg.png)
 
 Due to Juno’s ability to simplify and abstract the backend complexities associated with interfacing with the Internet Computer, there are no particular architectural details of the project really worth mentioning in my opinion. However, as the application was developed using React, I can provide some insights into the code structure.
 
@@ -44,7 +44,7 @@ In my development process, I generally adopt a code organization strategy based 
 
 In the case of this project developed with React, the code was structured as follows:
 
-![](https://cdn-images-1.medium.com/max/2000/1*5McpLM70W97RxCX6lEOVsQ.png)
+![](https://daviddalbusco.com/assets/images/1*5McpLM70W97RxCX6lEOVsQ.png)
 
 I developed the UI using several independent and reusable UI components. Rather than relying on an external state management system, I opted to utilize a few React contexts for the few information that needed to be available globally.
 

@@ -4,11 +4,11 @@ date: "2020-08-19"
 title: "Send Email From Firebase Cloud Functions"
 description: "How to send email with HTML content from Firebase Cloud functions"
 tags: "#javascript #showdev #webdev #firebase"
-image: "https://cdn-images-1.medium.com/max/1600/1*dsCLua-wdb1qDvvAfz8MmA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*dsCLua-wdb1qDvvAfz8MmA.jpeg"
 canonical: "https://medium.com/@david.dalbusco/send-email-from-firebase-cloud-functions-e406e1f3eea7"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*dsCLua-wdb1qDvvAfz8MmA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*dsCLua-wdb1qDvvAfz8MmA.jpeg)
 
 _Photo by [Volodymyr Hryshchenko](https://unsplash.com/@lunarts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

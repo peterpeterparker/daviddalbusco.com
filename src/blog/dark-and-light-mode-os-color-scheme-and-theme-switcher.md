@@ -4,10 +4,10 @@ date: "2019-12-30"
 title: "Dark And Light Mode: OS Color Scheme And Theme Switcher"
 description: "How to add a dark and light mode theme switcher to your application which inherits the OS color scheme as default state too."
 tags: "#javascript #webdev #tutorial #webcomponents"
-image: "https://cdn-images-1.medium.com/max/1600/1*EqOsVaqdhDXCI2Vwi7YAwg.png"
+image: "https://daviddalbusco.com/assets/images/1*EqOsVaqdhDXCI2Vwi7YAwg.png"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*EqOsVaqdhDXCI2Vwi7YAwg.png)
+![](https://daviddalbusco.com/assets/images/1*EqOsVaqdhDXCI2Vwi7YAwg.png)
 
 _Photo by [Sincerely Media](https://unsplash.com/@sincerelymedia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -253,7 +253,7 @@ Our project, DeckDeckGo, is open source 😺. Therefore, let me share with you t
 - An example of switcher: [app-general-settings.tsx](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/app/components/settings/app-general-settings/app-general-settings.tsx)
 - Styling: [variables.scss](https://github.com/deckgo/deckdeckgo/blob/master/remote/src/global/theme/variables.scss)
 
-![](https://cdn-images-1.medium.com/max/1600/1*KgzkIUhche5Netqi1kfSTQ.gif)
+![](https://daviddalbusco.com/assets/images/1*KgzkIUhche5Netqi1kfSTQ.gif)
 
 ### Cherry on the Cake 🍒🎂
 

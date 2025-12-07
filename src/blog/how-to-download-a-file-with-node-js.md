@@ -4,11 +4,11 @@ date: "2021-02-10"
 title: "How To Download A File With Node.js"
 description: "If you ever need to download a file with Node.js, here is a small script to achieve your goal."
 tags: "#javascript #nodejs #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*D86BStQhZNADuM6GjmVVAQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*D86BStQhZNADuM6GjmVVAQ.jpeg"
 canonical: "https://daviddalbusco.medium.com/how-to-download-a-file-with-node-js-e2b88fe55409"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*D86BStQhZNADuM6GjmVVAQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*D86BStQhZNADuM6GjmVVAQ.jpeg)
 
 _Photo by [Savannah Wakefield](https://unsplash.com/@sw_creates?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/download-file?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

@@ -4,7 +4,7 @@ date: "2022-02-18"
 title: "Export To The File System (Save As...) + Fallback In TypeScript"
 description: "How to save a file to the user's local devices with the new File System Access API and a fallback for incompatible browsers."
 tags: "#typescript #beginners #tutorial #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*5z07fHoPx9LGqb4UjH5PYg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*5z07fHoPx9LGqb4UjH5PYg.jpeg"
 canonical: "https://daviddalbusco.medium.com/export-to-the-file-system-save-as-fallback-in-typescript-6561eba853cb"
 ---
 

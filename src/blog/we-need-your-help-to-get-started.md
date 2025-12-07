@@ -4,23 +4,23 @@ date: "2019-08-28"
 title: "We need your help to get started"
 description: "We need your help for the launch of DeckDeckGo our upcoming web open source editor for presentations"
 tags: "#help #motivation #karma #showdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*rKupQcNGK0DIGsSwjPxVsQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*rKupQcNGK0DIGsSwjPxVsQ.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*rKupQcNGK0DIGsSwjPxVsQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*rKupQcNGK0DIGsSwjPxVsQ.jpeg)
 _Photo by [Jonny Caspari](https://unsplash.com/@jonnysplsh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I'm currently sitting in a bus between Zürich and Munich on my way for a weekend trip where I plan to not work and nerd that much. Ok I admit it, that plan doesn't begin exactly as I just told and I may have to work for a client tomorrow morning, but, I've got an awesome news to share:
 
 We are about to launch [DeckDeckGo](https://deckdeckgo.com), our upcoming [open source](https://github.com/deckgo/deckdeckgo) web editor for presentations, next month (Mid to late September 2019) 🎉
 
-![](https://cdn-images-1.medium.com/max/1600/1*H0grMl4nUD8LuzAl3QX8Dg.gif)
+![](https://daviddalbusco.com/assets/images/1*H0grMl4nUD8LuzAl3QX8Dg.gif)
 
 _A quick overview of some of the features of our upcoming editor_
 
 # Launch without content sucks
 
-![](https://cdn-images-1.medium.com/max/1600/1*JMCskumAuEW6DcSDl02Z2w.gif)
+![](https://daviddalbusco.com/assets/images/1*JMCskumAuEW6DcSDl02Z2w.gif)
 
 _The feels when they left the house, miss you Uncle Phil_
 
@@ -36,7 +36,7 @@ That's why **we need your help to get started** and are hoping that you would be
 
 # Almost nothing to win
 
-![](https://cdn-images-1.medium.com/max/1600/1*nevdIt2eQwdLfv6fOlnFcA.gif)
+![](https://daviddalbusco.com/assets/images/1*nevdIt2eQwdLfv6fOlnFcA.gif)
 
 _What a strange choice of Gifs for this article, I miss Frank Drebin too_
 
@@ -48,7 +48,7 @@ Furthermore, if you would visit Zürich someday, I'll be happy to guide you thro
 
 # How to participate?
 
-![](https://cdn-images-1.medium.com/max/1600/1*5ay_HPHArSh83KMlHDhKnw.gif)
+![](https://daviddalbusco.com/assets/images/1*5ay_HPHArSh83KMlHDhKnw.gif)
 
 _Join the dark side of the force - Gandalf_
 

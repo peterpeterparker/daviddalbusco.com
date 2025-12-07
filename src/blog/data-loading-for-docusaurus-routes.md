@@ -4,11 +4,11 @@ date: "2023-12-10"
 title: "Data-Loading for Docusaurus Routes"
 description: "A simple guide to building routes and loading data in Docusaurus projects, illustrated by a showcase example."
 tags: "#javascript #programming #webdev #showdev"
-image: "https://cdn-images-1.medium.com/max/5324/1*9d7swF0OBzT89QNTE-lEWA.png"
+image: "https://daviddalbusco.com/assets/images/1*9d7swF0OBzT89QNTE-lEWA.png"
 canonical: "https://daviddalbusco.medium.com/data-loading-for-docusaurus-routes-d1f98240be55"
 ---
 
-![](https://cdn-images-1.medium.com/max/5324/1*9d7swF0OBzT89QNTE-lEWA.png)
+![](https://daviddalbusco.com/assets/images/1*9d7swF0OBzT89QNTE-lEWA.png)
 
 ---
 

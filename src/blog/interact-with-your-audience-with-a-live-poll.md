@@ -4,10 +4,10 @@ date: "2019-12-05"
 title: "Interact With Your Audience With A Live Poll"
 description: "We are introducing a new feature to let your interact with your audience without leaving your presentation"
 tags: "#webdev #javascript #opensource #speaking"
-image: "https://cdn-images-1.medium.com/max/1600/1*ULPgfU4_6DDEHDLDCdUMKQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*ULPgfU4_6DDEHDLDCdUMKQ.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*ULPgfU4_6DDEHDLDCdUMKQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*ULPgfU4_6DDEHDLDCdUMKQ.jpeg)
 
 _Photo by [Nicholas Green](https://unsplash.com/@nickxshotz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -26,7 +26,7 @@ UX could often be discussed and I have to say that, for that feature in particul
 
 That’s why, at least in this first version of the feature, all the information is available at the same time and any time. Question, answers, connection information and even results of the vote, which are updated in real time, are all displayed on the same slide. Moreover, as I do think that QR codes are the best way to share links with the participants, the template also contains a deep link to point them directly to the answers on their phones.
 
-![](https://cdn-images-1.medium.com/max/1600/1*6DlXoX4G2WZer9xVYymqug.gif)
+![](https://daviddalbusco.com/assets/images/1*6DlXoX4G2WZer9xVYymqug.gif)
 
 ### Developer Mindset
 

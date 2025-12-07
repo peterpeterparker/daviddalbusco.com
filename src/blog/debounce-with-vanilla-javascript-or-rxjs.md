@@ -4,10 +4,10 @@ date: "2019-09-18"
 title: "Debounce with vanilla JavaScript or RxJS"
 description: "Debounce with vanilla JavaScript or RxJS"
 tags: "#tutorial #javascript #rxjs #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*710b8KhbLG3vPrV2cL-3dw.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*710b8KhbLG3vPrV2cL-3dw.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*710b8KhbLG3vPrV2cL-3dw.jpeg)
+![](https://daviddalbusco.com/assets/images/1*710b8KhbLG3vPrV2cL-3dw.jpeg)
 
 _Photo by [Barna Bartis](https://unsplash.com/@barnabartis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -15,7 +15,7 @@ I recently had to clean the code we are using in [DeckDeckGo](https://deckdeckgo
 
 ### What is debouncing?
 
-![](https://cdn-images-1.medium.com/max/1600/1*L2pWuWEFxqMLUPGnmumuaw.gif)
+![](https://daviddalbusco.com/assets/images/1*L2pWuWEFxqMLUPGnmumuaw.gif)
 
 _Sure, what’s “debouncing” ?_
 
@@ -31,7 +31,7 @@ Commonly, in order to detect which functions should effectively be triggered, a 
 
 ### Vanilla Javascript
 
-![](https://cdn-images-1.medium.com/max/1600/1*1kXFGBTN-o1VZ8nxRn5yjw.gif)
+![](https://daviddalbusco.com/assets/images/1*1kXFGBTN-o1VZ8nxRn5yjw.gif)
 
 _setTimeout and clearTimeout working together_
 
@@ -70,7 +70,7 @@ If you wish to observe and test this in action, give a try to this [Codepen](htt
 
 ### RxJS
 
-![](https://cdn-images-1.medium.com/max/1600/1*N3XGY3qwrM86jfr-WdqbHg.gif)
+![](https://daviddalbusco.com/assets/images/1*N3XGY3qwrM86jfr-WdqbHg.gif)
 
 _Good dog helping with the cleaning_
 

@@ -261,6 +261,6 @@ This function invokes the call function, which communicates with the OpenAI API 
 
 And there you have it — the entirety of our solution, from concept to completion. If you’ve followed along and implemented this on your side, you should see results similar to the one in the screenshot I’m sharing below, which demonstrates the transformation of a hand-drawn pineapple into a refined SVG.
 
-![](https://cdn-images-1.medium.com/max/5380/1*GcCuymVorJx5AuxUlNLtPQ.png)
+![](https://daviddalbusco.com/assets/images/1*GcCuymVorJx5AuxUlNLtPQ.png)
 
 Thank you for reading! I hope it inspires you to explore further intersections of art, technology, and AI in your projects.

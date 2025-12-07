@@ -4,10 +4,10 @@ date: "2018-09-20"
 title: "Chain a social login from your website to your PWA"
 description: "Chain a social login from your website to your PWA"
 tags: "#angular #pwa #login #authentication"
-image: "https://cdn-images-1.medium.com/max/1600/1*IXO653m7EDs58poOsnn5cg.gif"
+image: "https://daviddalbusco.com/assets/images/1*IXO653m7EDs58poOsnn5cg.gif"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*IXO653m7EDs58poOsnn5cg.gif)
+![](https://daviddalbusco.com/assets/images/1*IXO653m7EDs58poOsnn5cg.gif)
 
 Great news, after having open-sourced my mobile and progressive web app [Fluster](https://fluster.io/) last week, I follow up my move by releasing today my website on [GitHub](https://github.com/fluster/fluster-website) 🎉
 

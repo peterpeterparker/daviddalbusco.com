@@ -4,11 +4,11 @@ date: "2021-11-16"
 title: "TypeScript Utilities For Candid"
 description: "A collection of functions to handle Nullable, Date and Blob when interacting with canister smart contracts."
 tags: "#typescript #blockchain #motoko #javascript"
-image: "https://cdn-images-1.medium.com/max/2400/1*-zlHKiCIag6cmR5WO2Z_RQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*-zlHKiCIag6cmR5WO2Z_RQ.jpeg"
 canonical: "https://daviddalbusco.medium.com/typescript-utilities-for-candid-bf5bdd92a9a3"
 ---
 
-![](https://cdn-images-1.medium.com/max/2400/1*-zlHKiCIag6cmR5WO2Z_RQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*-zlHKiCIag6cmR5WO2Z_RQ.jpeg)
 
 _Photo by [Georgie Cobbs](https://unsplash.com/@georgie_cobbs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

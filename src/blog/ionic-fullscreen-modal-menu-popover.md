@@ -4,11 +4,11 @@ date: "2020-08-04"
 title: "Ionic: Fullscreen Modal & Menu Popover"
 description: "How to make Ionic modals become fullscreen and popovers act as menu"
 tags: "#javascript #ionic #showdev #css"
-image: "https://cdn-images-1.medium.com/max/1600/1*v93pK6K7hTbHnVI3dqzhyA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*v93pK6K7hTbHnVI3dqzhyA.jpeg"
 canonical: "https://medium.com/@david.dalbusco/ionic-fullscreen-modal-menu-popover-545c66d8e17b"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*v93pK6K7hTbHnVI3dqzhyA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*v93pK6K7hTbHnVI3dqzhyA.jpeg)
 
 _Photo by [Dino Reichmuth](https://unsplash.com/@dinoreichmuth?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -22,13 +22,13 @@ While we developed our editor for presentations, we implemented the following tw
 
 Out of the box, regardless which platform’s style is applied, as soon as your browser reaches the size of 768x600 pixels, an Ionic modal will not be displayed fullscreen anymore but rather as a centered popup.
 
-![](https://cdn-images-1.medium.com/max/1600/1*iFK9OeqLfVNQPERmhKMDww.gif)
+![](https://daviddalbusco.com/assets/images/1*iFK9OeqLfVNQPERmhKMDww.gif)
 
 While that might fits almost all the use cases, there might be one which would request a full screen modal. Indeed, you might want to present multiple information to the user, therefore need space, but might not want to add a page in the history stack.
 
 For example, users editing their slides with our editor are able to ship their decks as Progressive Web Apps. Upon request, we are packaging their presentations in PWAs and are deploying these online. As it is quite a process and something which the user has to explicitly trigger, we have decided to present all the information in a modal rather than using a navigation, avoiding possible back and forth errors 😇.
 
-![](https://cdn-images-1.medium.com/max/1600/1*QteGvwweJXOOrG63Qid7gA.gif)
+![](https://daviddalbusco.com/assets/images/1*QteGvwweJXOOrG63Qid7gA.gif)
 
 ---
 
@@ -111,7 +111,7 @@ Not sure anyone else would actually have the following requirement, but you migh
 
 For example, we had to find a solution to display options without hiding all the content when our users were editing their slides. Even though we could have developed a custom popup for such purpose, we thought that reusing the Ionic popover would be nice. I mean, look at that sweat animation triggered on opening 🤩.
 
-![](https://cdn-images-1.medium.com/max/1600/1*m7NWUeN_E-Rdw78SKuDrzA.gif)
+![](https://daviddalbusco.com/assets/images/1*m7NWUeN_E-Rdw78SKuDrzA.gif)
 
 ---
 
@@ -191,7 +191,7 @@ ion-popover.menu {
 
 Thanks to this definition, we were able to change the width of the popover, but we not yet able to set the correct position, the right side of the screen, and specify a height which covers the all window.
 
-![](https://cdn-images-1.medium.com/max/1600/1*YE9aSnlYYPZBceTmSe0eDA.gif)
+![](https://daviddalbusco.com/assets/images/1*YE9aSnlYYPZBceTmSe0eDA.gif)
 
 Even though we are going to achieve our goal, I have to say that unfortunately, it is only possible with the help of the infamous `!important` selector. I opened a [feature request](https://github.com/ionic-team/ionic-framework/issues/15036) about it a while ago and it is one of these suggestions which is so rarely used, that the solution should come from the community, what makes sense to my eyes. Unfortunately too, I did not have time yet to provide a pull request, maybe someday.
 
@@ -216,7 +216,7 @@ ion-popover.menu div.popover-content {
 
 That’s it, our popover can act as a menu 😃.
 
-![](https://cdn-images-1.medium.com/max/1600/1*4djCKLd9CV0lWLmcGnH-YQ.gif)
+![](https://daviddalbusco.com/assets/images/1*4djCKLd9CV0lWLmcGnH-YQ.gif)
 
 ---
 

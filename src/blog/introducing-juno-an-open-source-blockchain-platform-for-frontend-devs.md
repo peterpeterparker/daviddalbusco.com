@@ -4,13 +4,13 @@ date: "2023-02-14"
 title: "Introducing Juno. An Open Source Blockchain Platform For Frontend Devs 🚀"
 description: "Launching a new open-source Blockchain-as-a-Service solution that makes building Web3 applications more accessible frontend developers."
 tags: "#blockchain #programming #development #technology"
-image: "https://cdn-images-1.medium.com/max/1600/1*BufN6J5_X1q0Jjlep5DDdA.png"
+image: "https://daviddalbusco.com/assets/images/1*BufN6J5_X1q0Jjlep5DDdA.png"
 canonical: "https://juno.build/blog/introduction-juno"
 ---
 
 I am thrilled to introduce [Juno](https://juno.build), a groundbreaking open-source Blockchain-as-a-Service solution that makes building Web3 applications more accessible to the millions of front-end developers worldwide.
 
-![Overview screenshot](https://cdn-images-1.medium.com/max/1600/1*BufN6J5_X1q0Jjlep5DDdA.png)
+![Overview screenshot](https://daviddalbusco.com/assets/images/1*BufN6J5_X1q0Jjlep5DDdA.png)
 
 ---
 
@@ -51,7 +51,7 @@ const btn = document.querySelector("#signin");
 btn?.addEventListener("click", signIn, { passive: true });
 ```
 
-![Authentication screenshot](https://cdn-images-1.medium.com/max/1600/1*qiEtbcRsDdHpYOys37FxOQ.png)
+![Authentication screenshot](https://daviddalbusco.com/assets/images/1*qiEtbcRsDdHpYOys37FxOQ.png)
 
 ---
 
@@ -84,7 +84,7 @@ await setDoc({
 });
 ```
 
-![Datastore screenshot](https://cdn-images-1.medium.com/max/1600/1*q0vP9e7HGGsCpncy8LBALQ.png)
+![Datastore screenshot](https://daviddalbusco.com/assets/images/1*q0vP9e7HGGsCpncy8LBALQ.png)
 
 ---
 
@@ -101,7 +101,7 @@ const { downloadUrl } = await uploadFile({
 });
 ```
 
-![Storage screenshot](https://cdn-images-1.medium.com/max/1600/1*Yqwt5SdUaxJqK8z_ASWn4g.png)
+![Storage screenshot](https://daviddalbusco.com/assets/images/1*Yqwt5SdUaxJqK8z_ASWn4g.png)
 
 ---
 
@@ -113,7 +113,7 @@ Therefore, the "Satellites" launched on Juno run entirely on blockchain, which a
 
 Custom domain names are fully supported and easily configured, meaning your unique brand identity will be just as visible on chain.
 
-![Hosting screenshot](https://cdn-images-1.medium.com/max/1600/1*J3djnwgjWVWbGqYInpMMmA.png)
+![Hosting screenshot](https://daviddalbusco.com/assets/images/1*J3djnwgjWVWbGqYInpMMmA.png)
 
 ---
 

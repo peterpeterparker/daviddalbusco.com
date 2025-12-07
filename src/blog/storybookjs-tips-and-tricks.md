@@ -4,11 +4,11 @@ date: "2021-05-05"
 title: "StorybookJS: Tips & Tricks"
 description: "Import Markdown files as Docs only pages, use a CDN to load dependencies & sort stories."
 tags: "#javascript #storybook #webdev #webcomponents"
-image: "https://cdn-images-1.medium.com/max/1600/1*0yBFNNJGxc4vkhEPgV21aA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*0yBFNNJGxc4vkhEPgV21aA.jpeg"
 canonical: "https://daviddalbusco.medium.com/storybookjs-tips-tricks-785bc39aacbe"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*0yBFNNJGxc4vkhEPgV21aA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*0yBFNNJGxc4vkhEPgV21aA.jpeg)
 
 _Photo by [Florencia Viadana](https://unsplash.com/@florenciaviadana?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/books?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

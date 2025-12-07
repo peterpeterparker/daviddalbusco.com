@@ -4,10 +4,10 @@ date: "2019-06-10"
 title: "How to implement the Web Share API with a fallback"
 description: "How to implement the Web Share API with a fallback"
 tags: "#javascript #webdev #beginners #tutorial"
-image: "https://cdn-images-1.medium.com/max/2400/1*rjWBYTwXqa5YsogRl5kPdg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*rjWBYTwXqa5YsogRl5kPdg.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/2400/1*rjWBYTwXqa5YsogRl5kPdg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*rjWBYTwXqa5YsogRl5kPdg.jpeg)
 _Photo by [Noiseporn](https://unsplash.com/@noiseporn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/search/photos/social-share?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 In the past weeks I often had to implement the [Web Share API](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share) in several applications. As it is not yet [supported](https://caniuse.com/#search=web%20share%20api) by all browsers and devices, I always had to implement the same fallback, respectively I always used the open source Web Component I developed called “[Web Social Share](https://websocialshare.com/)” as a fallback. That’s why I’m sharing my solution with this new blog post, hoping that maybe someday it will help someone or even better, that maybe someone will ping me back with a better solution 😁
@@ -16,7 +16,7 @@ In the past weeks I often had to implement the [Web Share API](https://developer
 
 The following implementation is pretty straight forward. We are going to implement a share method which detects if the Web Share API is supported by the browser or not. If supported it will, I guess you get it, use and open the Web Share API otherwise it will open the share fallback.
 
-![](https://cdn-images-1.medium.com/max/1600/1*6rNMJkG_C-N6B-5ibAL_8Q.gif)
+![](https://daviddalbusco.com/assets/images/1*6rNMJkG_C-N6B-5ibAL_8Q.gif)
 _Safari (left) supports Web Share API, Chrome (desktop, right) doesn’t support it and fallback to the Web Component “Web Social Share”_
 
 ### Main function and detection
@@ -41,7 +41,7 @@ We are now going to implement the above method called `shareNative()` which will
 
 This API accepts three parameters currently: `url` , `text` and `title` . Only one of these parameters should at least be provided but I suggest you to use `text` and `url` . Using these two will for example allow you to add a nice message when a user would share an URL on Twitter.
 
-![](https://cdn-images-1.medium.com/max/1600/1*q6V5upxh3zwklbrMajj9fQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*q6V5upxh3zwklbrMajj9fQ.jpeg)
 
 The Web Share API is promised based and we are going to implement it like the following:
 
@@ -162,7 +162,7 @@ To try out the implementation, we could just add for example a `button` which ca
 
 If everything went according plan, the result should looks like the following:
 
-![](https://cdn-images-1.medium.com/max/1600/1*MtKK5WfJQJq0piMe1Gfj9Q.gif)
+![](https://daviddalbusco.com/assets/images/1*MtKK5WfJQJq0piMe1Gfj9Q.gif)
 _Again, Safari (left) supports Web Share API and Chrome (desktop) doesn’t and use the fallback_
 
 ### Cherry on the cake 🍒🎂

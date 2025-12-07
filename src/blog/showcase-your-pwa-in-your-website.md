@@ -4,11 +4,11 @@ date: "2020-05-08"
 title: "Showcase Your PWA In Your Website"
 description: "Introducing a new Web Component to embed applications in websites with stylish mobile devices iframes"
 tags: "#showdev #webdev #javascript #webcomponents"
-image: "https://cdn-images-1.medium.com/max/1600/1*dH35UnXlx3cw1RX4l8KIdw.png"
+image: "https://daviddalbusco.com/assets/images/1*dH35UnXlx3cw1RX4l8KIdw.png"
 canonical: "https://medium.com/@david.dalbusco/develop-a-konami-code-for-any-apps-with-stencil-bd8b11a50071"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*dH35UnXlx3cw1RX4l8KIdw.png)
+![](https://daviddalbusco.com/assets/images/1*dH35UnXlx3cw1RX4l8KIdw.png)
 
 Two weeks ago, [Matt Netkow](https://twitter.com/dotNetkow) introduced [Ionic React](https://ionicframework.com/docs/react) in an online presentation of the Ionic Zürich Meetup.
 
@@ -18,7 +18,7 @@ This literally let me speachless. What if anybody would be able to embed any int
 
 I was convinced as soon as his idea hit my brain and that’s why I am happy to share with you this new feature of [DeckDeckGo](https://deckdeckgo.com), our web editor for presentations, and per extension, the new Web Component we are open sourcing!
 
-![](https://cdn-images-1.medium.com/max/1600/1*FV6kFmGqYnXD2uIpQf27UA.gif)
+![](https://daviddalbusco.com/assets/images/1*FV6kFmGqYnXD2uIpQf27UA.gif)
 
 ---
 

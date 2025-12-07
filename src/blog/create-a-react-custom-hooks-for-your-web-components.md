@@ -4,11 +4,11 @@ date: "2020-02-12"
 title: "Create A React Custom Hooks For Your Web Components"
 description: "How to create a React custom hooks to bind your Web Components events with useEffect"
 tags: "#react #javascript #tutorial #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*5KdZblpLM1bckDE3zr4kFA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*5KdZblpLM1bckDE3zr4kFA.jpeg"
 canonical: "https://medium.com/@david.dalbusco/create-a-react-custom-hooks-for-your-web-components-f4319bb4bc35"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*5KdZblpLM1bckDE3zr4kFA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*5KdZblpLM1bckDE3zr4kFA.jpeg)
 
 _Photo by [Tamara Gore](https://unsplash.com/@thenightstxlker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -89,7 +89,7 @@ export default App;
 
 If everything went according plan, once we run (`npm run start` ) our application, the default sample page with our color picker should be rendered.
 
-![](https://cdn-images-1.medium.com/max/1600/1*UkXaxAlAOLW955WUmaLm2g.gif)
+![](https://daviddalbusco.com/assets/images/1*UkXaxAlAOLW955WUmaLm2g.gif)
 
 ### Implement The Events Listener
 
@@ -134,7 +134,7 @@ useEffect(() => {
 
 I’m agree, not the best UX I ever developed 🤣, but still, we should now be able to select colors and apply them to the background of the React logo.
 
-![](https://cdn-images-1.medium.com/max/1600/1*sCVKl0QyIYWC0quTalcgzg.gif)
+![](https://daviddalbusco.com/assets/images/1*sCVKl0QyIYWC0quTalcgzg.gif)
 
 ### Create A Custom Hooks
 
@@ -194,7 +194,7 @@ function App() {
 
 Voilà, isn’t that a cleaner code and pretty cool? And of course, if we redo our test, it should still work out, we should still be able to select a color and apply it to the background of the React logo 😸.
 
-![](https://cdn-images-1.medium.com/max/1600/1*xZ8UwUQcpfn_15YDwmekew.gif)
+![](https://daviddalbusco.com/assets/images/1*xZ8UwUQcpfn_15YDwmekew.gif)
 
 ### Conclusion
 

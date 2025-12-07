@@ -4,11 +4,11 @@ date: "2022-02-09"
 title: "Stylo - Another Kind Of Rich Text Editor"
 description: "So, I developed a new open source WYSIWYG interactive editor for JavaScript."
 tags: "#javascript #showdev #webdev #webcomponents"
-image: "https://cdn-images-1.medium.com/max/1600/1*kPGH8RB1reGGiq6nU0UaIg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*kPGH8RB1reGGiq6nU0UaIg.jpeg"
 canonical: "https://daviddalbusco.medium.com/announcing-stylo-another-kind-of-rich-text-editor-5bc123f02918"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*kPGH8RB1reGGiq6nU0UaIg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*kPGH8RB1reGGiq6nU0UaIg.jpeg)
 
 _Photo by [Amy Hirschi](https://unsplash.com/@amyhirschi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/pen?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -42,7 +42,7 @@ Not looking to oversell what Stylo can do — or do differently — but here are
 
 Unlike other WYSIWYG editors, Stylo has no sticky toolbar. It is inspired by design and user experience of platforms that I like — i.e [Notion](https://www.notion.so/) and [Medium](https://medium.com/).
 
-![](https://cdn-images-1.medium.com/max/1600/1*D-YYgIa5cY0Ya8FAN0Lyiw.gif)
+![](https://daviddalbusco.com/assets/images/1*D-YYgIa5cY0Ya8FAN0Lyiw.gif)
 
 When writing the document, the user can use different types of paragraph that can be added through a floating menu. These elements can be simple HTML elements — i.e. h1, h2, code etc. — or more complex block — i.e. any Web Component.
 
@@ -89,7 +89,7 @@ Stylo exposes interfaces and utilities to ease the development of custom plugins
 
 Finally, it is worth noting that the function `createParagraphs` is async which means the process of creating new elements can totally be hijacked by your application. As for example, when integrated in DeckDeckGo, the function does not always directly create new elements. For some more complex use cases, when the function is triggered, it opens modals that require more user interactions such as selecting an image before effectively modifying the content.
 
-![](https://cdn-images-1.medium.com/max/1600/1*9GgkGbx_4D-hIwT8PxJivQ.gif)
+![](https://daviddalbusco.com/assets/images/1*9GgkGbx_4D-hIwT8PxJivQ.gif)
 
 ---
 
@@ -129,7 +129,7 @@ To contribute and follow the adventure, watch and star the [GitHub repo](https:/
 
 ### Is It Production Ready?
 
-![](https://cdn-images-1.medium.com/max/1600/1*snbd7Pn0GcdqaEa9m48cIQ.gif)
+![](https://daviddalbusco.com/assets/images/1*snbd7Pn0GcdqaEa9m48cIQ.gif)
 
 Stylo is currently an **alpha** version! ⚠️ The project is under active development and contributions on GitHub are most welcome.
 

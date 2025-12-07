@@ -4,11 +4,11 @@ date: "2021-09-27"
 title: "Dynamically Import ESM Modules From A CDN"
 description: "Lazy load JavaScript code from a content delivery network to serve users only what they need when they need it."
 tags: "#javascript #webdev #architecture #programming"
-image: "https://cdn-images-1.medium.com/max/2400/1*hC1zkJeJsjBGN56FMa5mJA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*hC1zkJeJsjBGN56FMa5mJA.jpeg"
 canonical: "https://daviddalbusco.medium.com/dynamically-import-esm-modules-from-a-cdn-5a6f741e2a1c"
 ---
 
-![](https://cdn-images-1.medium.com/max/2400/1*hC1zkJeJsjBGN56FMa5mJA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*hC1zkJeJsjBGN56FMa5mJA.jpeg)
 
 _Photo by [Daniel Born](https://unsplash.com/@danborn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -70,7 +70,7 @@ _Note: Dynamic import is not mandatory, your code is all fine. Bundlers and brow
 
 Imagine now you are developing an application that interact with a backend. Whether you implement your own API or use a third party cloud provider, the code that interact with your data might commonly find place within your frontend app.
 
-![](https://cdn-images-1.medium.com/max/1600/1*YQ5N22V_d5PVclZ7Ups0jg.png)
+![](https://daviddalbusco.com/assets/images/1*YQ5N22V_d5PVclZ7Ups0jg.png)
 
 As we have seen in previous chapter, if you do not take advantages of “dynamic import”, all users might therefore download the code to interact with the backend (displayed in the schema as “services”) regardless if they use it or not.
 
@@ -80,11 +80,11 @@ Some day, you might have to migrate the application to a new backend or another 
 
 To prevent such issue, you might extract the “Services” to libraries, giving you more flexibility foreseen the pitfall.
 
-![](https://cdn-images-1.medium.com/max/1600/1*zppU1zdm2fm1va-X3WRWxw.png)
+![](https://daviddalbusco.com/assets/images/1*zppU1zdm2fm1va-X3WRWxw.png)
 
 However, without “dynamic import”, all users might still download all the code, what would be particularly unfortunate if you would ship the application with both “old” and “new” services at some point.
 
-![](https://cdn-images-1.medium.com/max/1600/1*09yQFPIiesplbZikZN2tEA.png)
+![](https://daviddalbusco.com/assets/images/1*09yQFPIiesplbZikZN2tEA.png)
 
 Let’s imagine again that everything is in now place. The application leverages “dynamic import”, both “old” and “new” services have been extracted to separate libs.
 
@@ -96,7 +96,7 @@ This is where the combination of “dynamic import” and CDN is finally going t
 
 These two strategies applied together can transform the frontend application from a monolith to a modular solution.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Q4niQVYzosDUo96OS6jr7Q.png)
+![](https://daviddalbusco.com/assets/images/1*Q4niQVYzosDUo96OS6jr7Q.png)
 
 For each user request, upon a certain condition such as an environment configuration, the frontend application can request at runtime only the function(s), piece of code, needed to perform the specific queries.
 
@@ -149,7 +149,7 @@ The URL of the library on the CDN can then be used to dynamically import, `await
 
 Dynamic import is a native feature, therefore supported out of the box in JavaScript. To improve the syntax with TypeScript, I suggest to use interfaces that can be shared by the consumer (the frontend application) and the libraries (the “Services”).
 
-![](https://cdn-images-1.medium.com/max/1600/1*ZP2hO1-pD2NH0vLPqDvfJg.png)
+![](https://daviddalbusco.com/assets/images/1*ZP2hO1-pD2NH0vLPqDvfJg.png)
 
 ---
 

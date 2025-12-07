@@ -4,11 +4,11 @@ date: "2020-04-11"
 title: "GitHub Actions: Hide And Set Angular Environment Variables"
 description: "How to hide Angular environments variables from your repo and set these at build time while using GitHub Actions"
 tags: "#angular #devops #github #javascript"
-image: "https://cdn-images-1.medium.com/max/1600/1*D8K_z16GbcE3t3YqgvPbEQ.png"
+image: "https://daviddalbusco.com/assets/images/1*D8K_z16GbcE3t3YqgvPbEQ.png"
 canonical: "https://medium.com/@david.dalbusco/github-actions-hide-and-set-angular-environment-variables-e753d06d16a8"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*D8K_z16GbcE3t3YqgvPbEQ.png)
+![](https://daviddalbusco.com/assets/images/1*D8K_z16GbcE3t3YqgvPbEQ.png)
 
 _Photo by [jae bano](https://unsplash.com/@jae462?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -154,13 +154,13 @@ Finally we can add the execution of the script to our `package.json` :
 
 We are all set, we can now give it a try. Let’s first run a build without doing anything.
 
-![](https://cdn-images-1.medium.com/max/1600/1*JMobhDqd7gnda8JQ1etzQw.png)
+![](https://daviddalbusco.com/assets/images/1*JMobhDqd7gnda8JQ1etzQw.png)
 
 As you can notice, our `apiKey` remains equals to `'undefined'` and therefor not valid for our build.
 
 Let’s now try to define an environment variable (`export FIREBASE_API_KEY="this is my prod key"`) and run our build again.
 
-![](https://cdn-images-1.medium.com/max/1600/1*BU5qNiYe0mr3JcjdUHc9bQ.png)
+![](https://daviddalbusco.com/assets/images/1*BU5qNiYe0mr3JcjdUHc9bQ.png)
 
 Tada, our environment variable has been set and use for our build 🎉.
 

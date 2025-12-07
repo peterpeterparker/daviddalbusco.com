@@ -4,10 +4,10 @@ date: "2025-04-14"
 title: "How to Assert a Custom Section in a WASM (in JavaScript)"
 description: "Read and assert a WebAssembly module metadata using Vitest, a quick recipe."
 tags: "#wasm #vitest #test #metadata"
-image: "https://cdn-images-1.medium.com/max/1600/1*U-RfGMLu6r_dkcD1FveD_A.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*U-RfGMLu6r_dkcD1FveD_A.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*U-RfGMLu6r_dkcD1FveD_A.jpeg)
+![](https://daviddalbusco.com/assets/images/1*U-RfGMLu6r_dkcD1FveD_A.jpeg)
 
 > Photo by [Pawel Czerwinski](https://unsplash.com/fr/@pawel_czerwinski?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/fr/photos/motif-darriere-plan-HypiDneHQsQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 

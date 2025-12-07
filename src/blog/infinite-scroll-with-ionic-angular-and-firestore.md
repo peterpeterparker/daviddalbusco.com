@@ -4,11 +4,11 @@ date: "2020-01-27"
 title: "Infinite Scroll with Ionic, Angular and Firestore"
 description: "How to implement an infinite scroll with Ionic, Angular and Google Cloud Firestore"
 tags: "#webdev #angular #javascript #tutorial"
-image: "https://cdn-images-1.medium.com/max/1600/1*yJGFgDFrXEnvCT3cEm_kOg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*yJGFgDFrXEnvCT3cEm_kOg.jpeg"
 canonical: "https://medium.com/@david.dalbusco/infinite-scroll-with-ionic-angular-and-firestore-f7a66e0e942c"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*yJGFgDFrXEnvCT3cEm_kOg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*yJGFgDFrXEnvCT3cEm_kOg.jpeg)
 
 _Photo by [Dan Schiumarini](https://unsplash.com/@dan_schiumarini?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

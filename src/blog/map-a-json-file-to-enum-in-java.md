@@ -4,10 +4,10 @@ date: "2019-08-16"
 title: "Map a JSON file to ENUM in Java"
 description: "Map a JSON file to ENUM in Java"
 tags: "#java #tutorial #webdev #maven"
-image: "https://cdn-images-1.medium.com/max/1600/1*qSYqGVlUNNhJgsYDxenv9A.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*qSYqGVlUNNhJgsYDxenv9A.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*qSYqGVlUNNhJgsYDxenv9A.jpeg)
+![](https://daviddalbusco.com/assets/images/1*qSYqGVlUNNhJgsYDxenv9A.jpeg)
 _More about Le Gruyère AOP on [MySwitzerland.com](https://www.myswitzerland.com/en-ch/experiences/food-wine/le-gruyere-aop/)_
 
 I recently began a new good old JAVA friend project for a returning client. One of my first task was to implement a new feature which had, notably, for goal to make the application globally configurable using a JSON property file.
@@ -45,7 +45,7 @@ At first I implemented a quick custom solution but I wasn’t, at all, enough ha
 
 For once at least, googling a solution was an excellent idea 😉
 
-![](https://cdn-images-1.medium.com/max/1600/1*Q2m7fr30xL1yj3gNZIunNQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*Q2m7fr30xL1yj3gNZIunNQ.jpeg)
 
 To use the library, let’s add this library has a new dependency to our `pom.xml`:
 

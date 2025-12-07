@@ -4,11 +4,11 @@ date: "2021-06-09"
 title: "CSS nth- Selectors Variable"
 description: "A practical hack to make CSS nth- selectors variable within Web Components."
 tags: "#javascript #webdev #webcomponents #css"
-image: "https://cdn-images-1.medium.com/max/1600/1*bCYvMc19HUEZEmZylGOoGg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*bCYvMc19HUEZEmZylGOoGg.jpeg"
 canonical: "https://daviddalbusco.medium.com/css-nth-selectors-variable-502eccae2e03"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*bCYvMc19HUEZEmZylGOoGg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*bCYvMc19HUEZEmZylGOoGg.jpeg)
 _Photo by [Mario Gogh](https://unsplash.com/@mariogogh?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Using CSS variables, at least when I’m writing these lines in June 2021, is not supported in media queries or selector, e.g. `:nth-child(var(--my-variable))` does not work.
@@ -32,7 +32,7 @@ I will first display the idea with the help a vanilla component and, end the art
 
 We are going to develop a Web Component which renders a `<ul/>` list and, which can animate the display of its entries.
 
-![](https://cdn-images-1.medium.com/max/1600/1*V_biZYrvRQsoYUdph7U_qQ.gif)
+![](https://daviddalbusco.com/assets/images/1*V_biZYrvRQsoYUdph7U_qQ.gif)
 
 No semantic elements are going to be added or removed from the DOM once the component is load. The animation will happen by modifying the `style` , more precisely by applying a different style on the selected `li:nth-child(n)` .
 
@@ -123,7 +123,7 @@ customElements.define("my-component", MyComponent);
 
 At this point, if we open our example in a browser (`npx serve .`), we should find a component, with a hidden content, and a button which has no effect yet. Not much to see, but that’s a start 😁.
 
-![](https://cdn-images-1.medium.com/max/1600/1*ODDEgNnoHmsbGwgIPuT5zA.png)
+![](https://daviddalbusco.com/assets/images/1*ODDEgNnoHmsbGwgIPuT5zA.png)
 
 To develop the animation, we have to keep track of the displayed `li` , that’s why we add a state (`index`) to the component.
 
@@ -175,7 +175,7 @@ Each time this method is call, a new `style` is applied and, therefore another `
 
 If we open again our browser to give it a try, items should be animated among click on our button `next` and, if we go further and observe the component in the inspector, we should notice that the shadowed `style` element change on each method call.
 
-![](https://cdn-images-1.medium.com/max/1600/1*G76KWZf9do9aBnCo2rtLdw.png)
+![](https://daviddalbusco.com/assets/images/1*G76KWZf9do9aBnCo2rtLdw.png)
 
 ---
 
@@ -251,7 +251,7 @@ export class MyComponent {
 
 By testing the component (`npm run start`) we should get the same result too 😉.
 
-![](https://cdn-images-1.medium.com/max/1600/1*qw2VVn0rZlENtjlYY9Yp1Q.png)
+![](https://daviddalbusco.com/assets/images/1*qw2VVn0rZlENtjlYY9Yp1Q.png)
 
 To keep track of the `li` to highlight, we need a state and, the function `state` . We add both to our component.
 
@@ -300,7 +300,7 @@ render() {
 
 That’s already it, we were able to replicate the same component 🥳.
 
-![](https://cdn-images-1.medium.com/max/1600/1*9DoGPKFedgsKnVMQp5wWIg.gif)
+![](https://daviddalbusco.com/assets/images/1*9DoGPKFedgsKnVMQp5wWIg.gif)
 
 The above component in a single block of code:
 

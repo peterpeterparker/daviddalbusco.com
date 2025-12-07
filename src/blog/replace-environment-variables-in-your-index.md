@@ -4,11 +4,11 @@ date: "2020-03-17"
 title: "Replace Environment Variables In Your Index.html"
 description: "How to update environment variables and even add a SHA-256 in your application index.html without any plugins #OneTrickADay-33"
 tags: "#showdev #javascript #webdev #motivation"
-image: "https://cdn-images-1.medium.com/max/1600/1*ez9DfR9-odbABx1E3E6Zcg.png"
+image: "https://daviddalbusco.com/assets/images/1*ez9DfR9-odbABx1E3E6Zcg.png"
 canonical: "https://medium.com/@david.dalbusco/replace-environment-variables-in-your-index-html-95ed2687575e"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*ez9DfR9-odbABx1E3E6Zcg.png)
+![](https://daviddalbusco.com/assets/images/1*ez9DfR9-odbABx1E3E6Zcg.png)
 
 _Photo by [Joshua Earle](https://unsplash.com/@joshuaearle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

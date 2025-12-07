@@ -4,11 +4,11 @@ date: "2020-03-22"
 title: "Get App Name And Version In Angular"
 description: "How to read or display the name and version of your application in Angular without duplicating these information"
 tags: "#angular #javascript #webdev #typescript"
-image: "https://cdn-images-1.medium.com/max/1600/1*KwiK0jtPVZnLUyZV1BPdag.png"
+image: "https://daviddalbusco.com/assets/images/1*KwiK0jtPVZnLUyZV1BPdag.png"
 canonical: "https://medium.com/@david.dalbusco/get-app-name-and-version-in-angular-8aa18eaa9f0e"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*KwiK0jtPVZnLUyZV1BPdag.png)
+![](https://daviddalbusco.com/assets/images/1*KwiK0jtPVZnLUyZV1BPdag.png)
 
 _Photo by [Joe Chau](https://unsplash.com/@joechau?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

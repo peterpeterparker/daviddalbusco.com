@@ -4,11 +4,11 @@ date: "2020-04-01"
 title: "Test Angular Components and Services With HTTP Mocks"
 description: "How to test Angular Components and Services with the help of mocked HTTP requests"
 tags: "#angular #testing #javascript #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*ARj7jYIrVb-eR7B0OOD2Zg.png"
+image: "https://daviddalbusco.com/assets/images/1*ARj7jYIrVb-eR7B0OOD2Zg.png"
 canonical: "https://medium.com/@david.dalbusco/test-angular-components-and-services-with-http-mocks-e143d90fa27d"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*ARj7jYIrVb-eR7B0OOD2Zg.png)
+![](https://daviddalbusco.com/assets/images/1*ARj7jYIrVb-eR7B0OOD2Zg.png)
 
 _Photo by [Josue Isai Ramos Figueroa](https://unsplash.com/@jramos10?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -81,7 +81,7 @@ export class DogComponent {
 
 If you test this component, rendered in your browser you should discover a good doggo like this sweet bulldog.
 
-![](https://cdn-images-1.medium.com/max/1600/1*nEw8NxG6y8xwPwOe9YXf4g.png)
+![](https://daviddalbusco.com/assets/images/1*nEw8NxG6y8xwPwOe9YXf4g.png)
 
 ---
 
@@ -144,7 +144,7 @@ describe('DogService', () => {
 
 If you run the tests (`npm run test` ) these should be successfull.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Ko-H8QOYgTlx4xuB9hhhSQ.png)
+![](https://daviddalbusco.com/assets/images/1*Ko-H8QOYgTlx4xuB9hhhSQ.png)
 
 ---
 
@@ -261,7 +261,7 @@ describe('DogComponent', () => {
 
 That’s it, it is super, furthermore than being able to test our component we are also able to test our service at the same time 🥳.
 
-![](https://cdn-images-1.medium.com/max/1600/1*S9NnYvTRXnX0ztI0WZkkag.png)
+![](https://daviddalbusco.com/assets/images/1*S9NnYvTRXnX0ztI0WZkkag.png)
 
 ---
 

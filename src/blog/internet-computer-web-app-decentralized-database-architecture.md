@@ -4,11 +4,11 @@ date: "2021-08-17"
 title: "Internet Computer: Web App Decentralized Database Architecture"
 description: "An approach of the data persistence for web applications with the Internet Computer of the DFINITY foundation."
 tags: "#webdev #serverless #database #blockchain"
-image: "https://cdn-images-1.medium.com/max/2600/1*eyGnrhxXL92xcbpJv4DqAA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*eyGnrhxXL92xcbpJv4DqAA.jpeg"
 canonical: "https://daviddalbusco.medium.com/internet-computer-web-app-decentralized-database-architecture-8647d1a437b8"
 ---
 
-![](https://cdn-images-1.medium.com/max/2600/1*eyGnrhxXL92xcbpJv4DqAA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*eyGnrhxXL92xcbpJv4DqAA.jpeg)
 
 We are developing a proof of concept to port our web app, [DeckDeckGo](https://deckdeckgo.com/), to [DFINITY's Internet Computer](https://dfinity.org).
 
@@ -39,13 +39,13 @@ Before digging into the Internet Computer, let's first review some common, old f
 
 Nowadays, server-less or not, the data persistence is often solve with one database for all information.
 
-![](https://cdn-images-1.medium.com/max/1600/1*eWuHlblTCJMdrJVNllri9Q.png)
+![](https://daviddalbusco.com/assets/images/1*eWuHlblTCJMdrJVNllri9Q.png)
 
 Users use the (web) application. It calls endpoint(s) to persist and read data and, it returns the results to the users.
 
 In a microservice architecture, the application(s) is split as a collection of services but, to some extension, the outcome is based on the same concept.
 
-![](https://cdn-images-1.medium.com/max/1600/1*3mAmSM4_l4QDF0aK2I_esA.png)
+![](https://daviddalbusco.com/assets/images/1*3mAmSM4_l4QDF0aK2I_esA.png)
 
 Users use the (web) application. It calls a dedicated service which in turn calls endpoint(s) to persist and read data and, returns the results to the users.
 
@@ -59,7 +59,7 @@ I do not know the exact architecture of Google [Firestore](https://firebase.goog
 
 If we develop, for example, an application that lists the kind of animals our users own, we would most probably define a db collection of `pets` to collect their entries.
 
-![](https://cdn-images-1.medium.com/max/1600/1*I4CP0N8GvViWCuAzRLa3UA.png)
+![](https://daviddalbusco.com/assets/images/1*I4CP0N8GvViWCuAzRLa3UA.png)
 
 To query and persist the data, we would then implement getter (`get` ) and setter (`add` ) functions in our web application that would call the cloud database.
 
@@ -102,11 +102,11 @@ I picture a "canister" as a container that runs a set of functions in the cloud,
 
 After studying the [documentation](https://sdk.dfinity.org/docs/introduction/welcome.html) of the SDK, [examples](https://github.com/dfinity/examples) and the “[linkedup](https://github.com/dfinity/linkedup/)” demo, our first approach had then for goal to replicate the approach we are familiar with, i.e. the “Nowadays" or "monolithic" database approach.
 
-![](https://cdn-images-1.medium.com/max/1600/1*GK30d2fOgC-7UVWdAnrQFA.png)
+![](https://daviddalbusco.com/assets/images/1*GK30d2fOgC-7UVWdAnrQFA.png)
 
 However, given the blockchain nature of the Internet Computer, it may be good to imagine the architecture in a decentralized way with data shared in the form of blocks.
 
-![](https://cdn-images-1.medium.com/max/1600/1*jI-CDFohigqIZCibwWrcqw.png)
+![](https://daviddalbusco.com/assets/images/1*jI-CDFohigqIZCibwWrcqw.png)
 
 If we omit the blockchain aspect (and the decentralization), it basically works the same as what I am familiar with, doesn't it?
 
@@ -116,7 +116,7 @@ If we omit the blockchain aspect (and the decentralization), it basically works 
 
 The way we can picture the persistence of the data within a canister, like we would for our "pets" web application, would be again quite similar to the previous architecture.
 
-![](https://cdn-images-1.medium.com/max/1600/1*DcChK7ojaMYGqExH6F-YtQ.png)
+![](https://daviddalbusco.com/assets/images/1*DcChK7ojaMYGqExH6F-YtQ.png)
 
 Instead of a key-value database collection -- as there are no built-in databases available -- our actor would simply have an attribute holding the data.
 
@@ -191,7 +191,7 @@ That is why, we challenged our first idea and, and tried to find a more scalable
 
 It resulted in an architecture in which a main actor acts as a a manager that -- on the fly, upon object creation -- generates a decentralized secure simple key-value database-like for each single data persistence of each user 🤯.
 
-![](https://cdn-images-1.medium.com/max/1600/1*Dnw7c5hNpF8cm49nCmT3JA.png)
+![](https://daviddalbusco.com/assets/images/1*Dnw7c5hNpF8cm49nCmT3JA.png)
 
 In the above diagram I displayed only two users and, did not reflect the blockchain nature of the network but, hopefully, it pictures well the idea.
 
@@ -205,7 +205,7 @@ We would need two actors to implement such a solution. One that acts as a “man
 
 The “manager” might have to track or not the list of canisters it has generated, unless end users save on their side their references. However, in the following snippet we will assume it does have to keep track of what it generates.
 
-![](https://cdn-images-1.medium.com/max/1600/1*i1UedTMw4GxvoiwkQI9gvw.png)
+![](https://daviddalbusco.com/assets/images/1*i1UedTMw4GxvoiwkQI9gvw.png)
 
 The base implementation of the manager is close to what we already implemented. However, instead of `Trie`, I used a [HashMap](https://sdk.dfinity.org/docs/base-libraries/hashmap) to keep track of the IDs of the canisters that has been generated.
 
@@ -304,7 +304,7 @@ Each user has his/her own little kingdom. That's why he/she does not need an ide
 
 It is the user's kingdom, it contains only the personal data of that particular user!
 
-![](https://cdn-images-1.medium.com/max/1600/1*LfdwUX1sVqLI9zp0WSWO_w.png)
+![](https://daviddalbusco.com/assets/images/1*LfdwUX1sVqLI9zp0WSWO_w.png)
 
 _Note: [Link](https://m7sm4-2iaaa-aaaab-qabra-cai.raw.ic0.app/?tag=4031577968) to related Motoko Playground to check out above example._
 

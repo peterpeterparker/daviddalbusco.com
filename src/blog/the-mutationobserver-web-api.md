@@ -4,11 +4,11 @@ date: "2021-05-11"
 title: "The MutationObserver Web API"
 description: "An introduction to the MutationObserver Web API which provides the ability to watch for changes being made to the document."
 tags: "#webdev #showdev #javascript #beginner"
-image: "https://cdn-images-1.medium.com/max/1600/1*uslRrEbuAeXmZvnKzhpPaQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*uslRrEbuAeXmZvnKzhpPaQ.jpeg"
 canonical: "https://daviddalbusco.medium.com/the-mutationobserver-web-api-cf469261eb36"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*uslRrEbuAeXmZvnKzhpPaQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*uslRrEbuAeXmZvnKzhpPaQ.jpeg)
 
 _Source forum [resetera](https://www.resetera.com/threads/magneto-or-professor-x-who-do-you-side-with-more.291911/)_
 

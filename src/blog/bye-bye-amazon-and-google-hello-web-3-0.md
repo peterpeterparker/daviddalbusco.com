@@ -4,11 +4,11 @@ date: "2021-10-11"
 title: "Bye-Bye Amazon & Google, Hello Web 3.0"
 description: "We are migrating our web application to DFINITY's Internet Computer."
 tags: "#webdev #serverless #blockchain #programming"
-image: "https://cdn-images-1.medium.com/max/1600/1*YNwx6BRv02H0wpV7xsKhtg.png"
+image: "https://daviddalbusco.com/assets/images/1*YNwx6BRv02H0wpV7xsKhtg.png"
 canonical: "https://daviddalbusco.medium.com/bye-bye-amazon-google-hello-web-3-0-b01bfe8f8783"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*YNwx6BRv02H0wpV7xsKhtg.png)
+![](https://daviddalbusco.com/assets/images/1*YNwx6BRv02H0wpV7xsKhtg.png)
 
 It’s official, we are porting our web editor for slides, [DeckDeckGo](https://deckdeckgo.com/), to [DFINITY](https://dfinity.org/)’s Internet Computer!
 

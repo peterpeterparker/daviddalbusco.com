@@ -4,11 +4,11 @@ date: "2021-05-24"
 title: "Build A Library With esbuild"
 description: "How to bundle ESM, IIFE or CommonJS libraries with esbuild."
 tags: "#javascript #esbuild #tutorial #typescript"
-image: "https://cdn-images-1.medium.com/max/1600/1*6sA4hPVV9wO_jo8l205Aig.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*6sA4hPVV9wO_jo8l205Aig.jpeg"
 canonical: "https://daviddalbusco.medium.com/build-a-library-with-esbuild-23235712f3c"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*6sA4hPVV9wO_jo8l205Aig.jpeg)
+![](https://daviddalbusco.com/assets/images/1*6sA4hPVV9wO_jo8l205Aig.jpeg)
 
 _Photo by [Colin Watts](https://unsplash.com/@imagefactory?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

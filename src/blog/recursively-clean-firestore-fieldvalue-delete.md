@@ -4,11 +4,11 @@ date: "2020-10-15"
 title: "Recursively Clean Firestore FieldValue.delete()"
 description: "How to recursively remove delete methods from the document's object you just updated and have in memory."
 tags: "#firebase #javascript #webdev #firestore"
-image: "https://cdn-images-1.medium.com/max/1600/1*2lFmIJDlVr6D_q8iAchhxw.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*2lFmIJDlVr6D_q8iAchhxw.jpeg"
 canonical: "https://daviddalbusco.medium.com/recursively-clean-firestore-fieldvalue-delete-60b7dff00bf4"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*2lFmIJDlVr6D_q8iAchhxw.jpeg)
+![](https://daviddalbusco.com/assets/images/1*2lFmIJDlVr6D_q8iAchhxw.jpeg)
 
 _Photo by [The Creative Exchange](https://unsplash.com/@thecreative_exchange?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

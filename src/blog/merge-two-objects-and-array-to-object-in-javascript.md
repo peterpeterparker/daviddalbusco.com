@@ -4,11 +4,11 @@ date: "2020-04-02"
 title: "Merge Two Objects And Array To Object In JavaScript"
 description: "How two merge two objects or transform an array into an object in JavaScript"
 tags: "#javascript #codenewbie #beginners #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*RqxfxRKtnHkUdmbpCFhxSA.png"
+image: "https://daviddalbusco.com/assets/images/1*RqxfxRKtnHkUdmbpCFhxSA.png"
 canonical: "https://medium.com/@david.dalbusco/merge-two-objects-and-array-to-object-in-javascript-79580583727a"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*RqxfxRKtnHkUdmbpCFhxSA.png)
+![](https://daviddalbusco.com/assets/images/1*RqxfxRKtnHkUdmbpCFhxSA.png)
 
 _Photo by [Ludovic Migneault](https://unsplash.com/@dargonesti?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

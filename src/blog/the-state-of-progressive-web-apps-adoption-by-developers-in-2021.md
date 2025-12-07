@@ -4,11 +4,11 @@ date: "2021-06-22"
 title: "The State Of Progressive Web Apps Adoption By Developers In 2021"
 description: "Are PWA preached or adopted by developers? Do they use these on mobile and desktop? Do they develop these even if their support on iOS is not optimal? Do they think Apple will ever implement Web Push Notifications?"
 tags: "#showdev #webdev #pwa #discuss"
-image: "https://cdn-images-1.medium.com/max/1600/1*xFkV_aTp7qE6kKOt1NxCbA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*xFkV_aTp7qE6kKOt1NxCbA.jpeg"
 canonical: "https://daviddalbusco.medium.com/the-state-of-progressive-web-apps-adoption-by-developers-in-2021-32a2ec405f41"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*xFkV_aTp7qE6kKOt1NxCbA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*xFkV_aTp7qE6kKOt1NxCbA.jpeg)
 
 _Photo by [Monica Sauro](https://unsplash.com/@monicasauro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -38,7 +38,7 @@ I am using on a daily basis the Progressive Web Apps of [DEV.to](https://dev.to/
 
 To my surprise, **58%** of the developers are not using any PWA, installed on their phone home screen, on a weekly basis. That’s **–11%** fewer developers using regularly such applications instead of native apps (those you get through the App Store or Google Play Store) than previous survey.
 
-[![](https://cdn-images-1.medium.com/max/1600/1*jrIhvU2vD9duQ08Kgl4GNg.png)](https://twitter.com/daviddalbusco/status/1404833211566505989?s=20)
+[![](https://daviddalbusco.com/assets/images/1*jrIhvU2vD9duQ08Kgl4GNg.png)](https://twitter.com/daviddalbusco/status/1404833211566505989?s=20)
 
 Of course both types of applications are not mutually exclusive. It is common to say that PWA are a good fit to acquire early adopters and, that native fits well loyal customers.
 
@@ -54,7 +54,7 @@ The Progressive Web Apps is not optimal on iOS, I can notably mention the lack o
 
 In the end, the answer is not so clear. **58%** of those who do not use PWA have iPhones.
 
-[![](https://cdn-images-1.medium.com/max/1600/1*2lclIWf7Rcy1f14xfRMMSg.png)](https://twitter.com/daviddalbusco/status/1406271148904615938?s=20)
+[![](https://daviddalbusco.com/assets/images/1*2lclIWf7Rcy1f14xfRMMSg.png)](https://twitter.com/daviddalbusco/status/1406271148904615938?s=20)
 
 Such number is quite stable (-5%) in comparison to previous survey and still display a bigger “rejection” rate on iOS. Nevertheless, the gap is not that big.
 
@@ -68,7 +68,7 @@ After-all, what if in addition or instead of mobile devices, the future of PWA w
 
 As a result, I discovered that **30%** of the developers are using PWA installed on their computers (pinned to dock, desktop or start menu) on a weekly basis.
 
-[![](https://cdn-images-1.medium.com/max/1600/1*OAg7Gs-VzLovW0MgXWyFTQ.png)](https://twitter.com/daviddalbusco/status/1405211451531354128?s=20)
+[![](https://daviddalbusco.com/assets/images/1*OAg7Gs-VzLovW0MgXWyFTQ.png)](https://twitter.com/daviddalbusco/status/1405211451531354128?s=20)
 
 On this type of device we are used to installing applications or using browser’s favorites features, that’s why I particularly find this number quite interesting.
 
@@ -82,7 +82,7 @@ Adoption as a user is something but, what about the development behavior. Do the
 
 As a matter of fact, they did. **72%** of the devs have initialized new PWAs last year.
 
-[![](https://cdn-images-1.medium.com/max/1600/1*nVLCghVeYDIyALWhfI73JQ.png)](https://twitter.com/daviddalbusco/status/1405569508224520196?s=20)
+[![](https://daviddalbusco.com/assets/images/1*nVLCghVeYDIyALWhfI73JQ.png)](https://twitter.com/daviddalbusco/status/1405569508224520196?s=20)
 
 This question would probably need some more questions to refine the granularity of the question (do they “just” added a worker to cache the assets or did they develop the applications with offline first strategies? etc.) but, for the majority it seems that it is the way to go development wise.
 
@@ -96,7 +96,7 @@ Because I am quite a fan of this solution, I wondered if other developers were t
 
 According to my surveys, **18** developers within my reach (one third of those who answered the poll) have already published their Progressive Web Apps in the Google Play Store.
 
-[![](https://cdn-images-1.medium.com/max/1600/1*SOhysyb0r8PvoPGbL63Qfw.png)](https://twitter.com/daviddalbusco/status/1405926594716352521?s=20)
+[![](https://daviddalbusco.com/assets/images/1*SOhysyb0r8PvoPGbL63Qfw.png)](https://twitter.com/daviddalbusco/status/1405926594716352521?s=20)
 
 [Trusted Web Activities](https://developer.chrome.com/docs/android/trusted-web-activity/overview/), the new option defined by Google to open web-app such as PWA on Android is a fairly new solution. It was introduced, if I am not wrong, begin of year2020. Therefore, it is an interesting result to get to know that some early developer’s adopters have already used such medium.
 
@@ -110,7 +110,7 @@ After-all, they do already support such feature on OSX but, do not on iOS device
 
 **15%** think it will happen for sure, and for the rest, the developers are divided between whether it can happen or never (both **42.5%**).
 
-[![](https://cdn-images-1.medium.com/max/1600/1*i4k-eO0d0TqPTvc9ArBi-A.png)](https://twitter.com/daviddalbusco/status/1406667470363152387?s=20)
+[![](https://daviddalbusco.com/assets/images/1*i4k-eO0d0TqPTvc9ArBi-A.png)](https://twitter.com/daviddalbusco/status/1406667470363152387?s=20)
 
 Not really a surprise to me that the trust in Apple is low on Twitter when it comes to the topic Web and Progressive Web Apps. Interesting on the other hand is that it is not a clear “all or nothing” scenario. Many developers do think it might happen. I would guess that probably some, as I do, think states’ regulations or anti-trust might be able someday to force Apple to open its mobile system. Remember, even if you install Chrome or Firefox on your iPhone, it is still Safari underneath.
 

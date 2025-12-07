@@ -4,11 +4,11 @@ date: "2020-03-24"
 title: "Starting In A New Company? Think Npmrc And Git Name"
 description: "How to configure your company's npm Enterprise registry and provide your name for Git interactions"
 tags: "#git #npm #bash #freelance"
-image: "https://cdn-images-1.medium.com/max/1600/1*HG7Ivs6JrMErB7GdQZWSog.png"
+image: "https://daviddalbusco.com/assets/images/1*HG7Ivs6JrMErB7GdQZWSog.png"
 canonical: "https://medium.com/@david.dalbusco/starting-in-a-new-company-think-npmrc-and-git-name-ebf44f71e498"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*HG7Ivs6JrMErB7GdQZWSog.png)
+![](https://daviddalbusco.com/assets/images/1*HG7Ivs6JrMErB7GdQZWSog.png)
 
 _Photo by [Max Rovensky](https://unsplash.com/@fivepointseven?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

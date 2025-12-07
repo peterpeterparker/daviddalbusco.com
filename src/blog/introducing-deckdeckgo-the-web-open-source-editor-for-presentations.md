@@ -4,10 +4,10 @@ date: "2019-09-24"
 title: "Introducing DeckDeckGo: the web open source editor for presentations"
 description: "Introducing DeckDeckGo: the web open source editor for presentations"
 tags: "#webdev #showdev #opensource #motivation"
-image: "https://cdn-images-1.medium.com/max/2400/1*TmZb15Yzu3mGVG7uMkHvHw.png"
+image: "https://daviddalbusco.com/assets/images/1*TmZb15Yzu3mGVG7uMkHvHw.png"
 ---
 
-![](https://cdn-images-1.medium.com/max/2400/1*TmZb15Yzu3mGVG7uMkHvHw.png)
+![](https://daviddalbusco.com/assets/images/1*TmZb15Yzu3mGVG7uMkHvHw.png)
 
 We are very happy and excited to share with you today our web open source editor for presentations: [DeckDeckGo](https://beta.deckdeckgo.com)
 
@@ -17,7 +17,7 @@ Before going further we would like first to thank all our off- and online friend
 
 ### But why yet again another editor for presentations?
 
-![](https://cdn-images-1.medium.com/max/1600/1*Ireg4JWSR6Se4c_UP8iJ6w.gif)
+![](https://daviddalbusco.com/assets/images/1*Ireg4JWSR6Se4c_UP8iJ6w.gif)
 
 _Sure why? Seriously why?_
 
@@ -27,7 +27,7 @@ We develop our project because we are, well, nerds and because we use this exper
 
 ### So what makes it different?
 
-![](https://cdn-images-1.medium.com/max/1600/1*MNW_kIkOJqNvRGBRFNIbfg.gif)
+![](https://daviddalbusco.com/assets/images/1*MNW_kIkOJqNvRGBRFNIbfg.gif)
 
 _Everything._
 
@@ -37,7 +37,7 @@ That being said and as I briefly introduced it above, we had some, I hope you wi
 
 #### Cloud solution
 
-![](https://cdn-images-1.medium.com/max/1600/1*9odqQrlsXeP0zykRe3lyaQ.gif)
+![](https://daviddalbusco.com/assets/images/1*9odqQrlsXeP0zykRe3lyaQ.gif)
 
 _My mum better understood “a cloud solution” than “we developed it with the web”_
 
@@ -47,7 +47,7 @@ There is by the way even no “Save” button in our editor, it does the job for
 
 #### Use an app to share apps
 
-![](https://cdn-images-1.medium.com/max/1600/1*4sMOauhgBsqV4wZzJ3fZqA.gif)
+![](https://daviddalbusco.com/assets/images/1*4sMOauhgBsqV4wZzJ3fZqA.gif)
 
 _Use an app to share other apps_
 
@@ -57,7 +57,7 @@ Well, here’s a cool thing: DeckDeckGo package and publish every single present
 
 #### Online feed
 
-![](https://cdn-images-1.medium.com/max/1600/1*QyNE4kixGi60FyZ8Y0we2Q.gif)
+![](https://daviddalbusco.com/assets/images/1*QyNE4kixGi60FyZ8Y0we2Q.gif)
 
 _Discover and share presentations_
 
@@ -71,7 +71,7 @@ Moreover, more than being able to develop slides with our editor, we also though
 
 Are you constantly switching between full screen and normal mode while editing your deck for your next presentation? Or did it you had more than one to correct a typo a couple of seconds before your talk? With our editor, your presentation is editable even in full screen mode.
 
-![](https://cdn-images-1.medium.com/max/1600/1*QM9ylLr7Tzj8ZYE-ZJUXoA.gif)
+![](https://daviddalbusco.com/assets/images/1*QM9ylLr7Tzj8ZYE-ZJUXoA.gif)
 
 _More than edition, per design all features are available in full screen mode too_
 
@@ -79,14 +79,14 @@ _More than edition, per design all features are available in full screen mode to
 
 We have integrated [Unsplash](https://unsplash.com/) to our tool to let your find and use stock photos easily. The editor keeps also track of the last 10 media you would have used for even a quicker access.
 
-![](https://cdn-images-1.medium.com/max/1600/1*_rEqbFfwTocrElky3mLJQA.gif)
+![](https://daviddalbusco.com/assets/images/1*_rEqbFfwTocrElky3mLJQA.gif)
 _Unsplash is integrated_
 
 #### Tenor
 
 Gifs are life (probably). Same as the stock photo, [Tenor](https://tenor.com/) is integrated, to let you find and integrate Gifs easily. There is even a special template which takes care of fitting the animated content to the all screen.
 
-![](https://cdn-images-1.medium.com/max/1600/1*bsyb3eakx7dcvI2CftHEzw.gif)
+![](https://daviddalbusco.com/assets/images/1*bsyb3eakx7dcvI2CftHEzw.gif)
 
 _Gifs are life_
 
@@ -94,7 +94,7 @@ _Gifs are life_
 
 I was a bit more lazy on the integration of [Youtube](https://www.youtube.com) videos, we didn’t interconnected any API, but still, it’s pretty damn easy to add any videos from that source to your deck. Cherry on top, you could start and pause the videos remotely with our app too.
 
-![](https://cdn-images-1.medium.com/max/1600/1*lyVzJnkv2MzOKCCRaSfkMg.gif)
+![](https://daviddalbusco.com/assets/images/1*lyVzJnkv2MzOKCCRaSfkMg.gif)
 
 _Drop Youtube videos in your presentation_
 

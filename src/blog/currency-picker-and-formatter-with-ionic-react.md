@@ -4,11 +4,11 @@ date: "2020-04-18"
 title: "Currency Picker And Formatter With Ionic React"
 description: "Build a currency picker and formatter for your application developed with Ionic and React"
 tags: "#react #ionic #javascript #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*vNyq4W-5NQoeX5jo8TqBQw.png"
+image: "https://daviddalbusco.com/assets/images/1*vNyq4W-5NQoeX5jo8TqBQw.png"
 canonical: "https://medium.com/@david.dalbusco/currency-picker-and-formatter-with-ionic-react-ede8e2ff53df"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*vNyq4W-5NQoeX5jo8TqBQw.png)
+![](https://daviddalbusco.com/assets/images/1*vNyq4W-5NQoeX5jo8TqBQw.png)
 
 _Photo by [Pawel Janiak](https://unsplash.com/@pawelj?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -20,7 +20,7 @@ I was looking for a subject idea for today’s blog post and it came to my mind 
 
 That’s why I’m sharing with you my solution to develop a custom currency picker and formatter.
 
-![](https://cdn-images-1.medium.com/max/1600/1*YCPfr5rf-N4Tk9l9JusTXA.gif)
+![](https://daviddalbusco.com/assets/images/1*YCPfr5rf-N4Tk9l9JusTXA.gif)
 
 ---
 
@@ -368,7 +368,7 @@ export default Home;
 
 If you implemented the above code you should now be able to run the application and pick currencies.
 
-![](https://cdn-images-1.medium.com/max/1600/1*l7-IXroNBIyWj11Ho1h9gA.gif)
+![](https://daviddalbusco.com/assets/images/1*l7-IXroNBIyWj11Ho1h9gA.gif)
 
 ---
 
@@ -472,7 +472,7 @@ export default Home;
 
 Voilà, both our currency picker and formatter are implemented in our Ionic React application 🎉.
 
-![](https://cdn-images-1.medium.com/max/1600/1*6ugZ2Y2mcpHkmdS4gpNJ6w.gif)
+![](https://daviddalbusco.com/assets/images/1*6ugZ2Y2mcpHkmdS4gpNJ6w.gif)
 
 ---
 

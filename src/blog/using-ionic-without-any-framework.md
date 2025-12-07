@@ -4,10 +4,10 @@ date: "2018-10-19"
 title: "Using Ionic without any framework"
 description: "Using Ionic without any framework"
 tags: "#ionic #webcomponents"
-image: "https://cdn-images-1.medium.com/max/2000/1*qMT7WHMPzBZai4ZikSlLTg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*qMT7WHMPzBZai4ZikSlLTg.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/2000/1*qMT7WHMPzBZai4ZikSlLTg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*qMT7WHMPzBZai4ZikSlLTg.jpeg)
 
 While I was preparing my last talk about Web Components and [Ionic](https://ionicframework.com/) v4, I noticed that I was using none of these to actually build my slides 🤔 That’s why I published this week [DeckDeckGo](https://deckdeckgo.com/), the new tool to create lightweight presentation using HTML and Ionic components 🚀
 

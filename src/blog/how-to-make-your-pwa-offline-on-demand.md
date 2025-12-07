@@ -4,11 +4,11 @@ date: "2020-05-21"
 title: "How To Make Your PWA Offline On Demand"
 description: "Download your Progressive Web Apps content à la Netflix or Spotify"
 tags: "#showdev #webdev #javascript #pwa"
-image: "https://cdn-images-1.medium.com/max/1600/1*LBBws2VRETowxwxMNKN--w.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*LBBws2VRETowxwxMNKN--w.jpeg"
 canonical: "https://medium.com/@david.dalbusco/how-to-make-your-pwa-offline-on-demand-7566d2f59280"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*LBBws2VRETowxwxMNKN--w.jpeg)
+![](https://daviddalbusco.com/assets/images/1*LBBws2VRETowxwxMNKN--w.jpeg)
 
 _Photo by [Kym Ellis](https://unsplash.com/@kymellis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/wifi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -31,7 +31,7 @@ Another one is what I call a “on demand offline content solution à la [Spotif
 
 This approach is the one we implemented, and the one I am sharing with you.
 
-![](https://cdn-images-1.medium.com/max/1600/1*fUjlTckDh0X3VthqvH0ANg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*fUjlTckDh0X3VthqvH0ANg.jpeg)
 
 ---
 

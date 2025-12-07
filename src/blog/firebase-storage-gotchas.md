@@ -4,11 +4,11 @@ date: "2020-02-04"
 title: "Firebase Storage Gotchas 😅"
 description: "Sharing some Google Cloud Storage key points I learned while implementing private assets and reverting two days of work."
 tags: "#firebase #javascript #webdev #serverless"
-image: "https://cdn-images-1.medium.com/max/1600/1*58twqItpOjtMRuQquE2l5w.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*58twqItpOjtMRuQquE2l5w.jpeg"
 canonical: "https://medium.com/@david.dalbusco/firebase-storage-gotchas-63a7cfef7677"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*58twqItpOjtMRuQquE2l5w.jpeg)
+![](https://daviddalbusco.com/assets/images/1*58twqItpOjtMRuQquE2l5w.jpeg)
 
 _Photo by [Element5 Digital](https://unsplash.com/@element5digital?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

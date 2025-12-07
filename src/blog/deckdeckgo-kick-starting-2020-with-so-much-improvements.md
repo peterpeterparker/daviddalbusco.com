@@ -4,11 +4,11 @@ date: "2020-01-20"
 title: "DeckDeckGo: Kick-starting 2020 with so much improvements"
 description: "We are unleashing Google Fonts, private assets, accessibility improvements and many new features in our web open source editor for presentations."
 tags: "#showdev #webdev #motivation #productivity"
-image: "https://cdn-images-1.medium.com/max/1600/1*Y4bkN-RtF1ROgb9jnGaE4g.png"
+image: "https://daviddalbusco.com/assets/images/1*Y4bkN-RtF1ROgb9jnGaE4g.png"
 canonical: "https://medium.com/@david.dalbusco/deckdeckgo-kick-starting-2020-with-so-much-improvements-2e5f5636f881"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*Y4bkN-RtF1ROgb9jnGaE4g.png)
+![](https://daviddalbusco.com/assets/images/1*Y4bkN-RtF1ROgb9jnGaE4g.png)
 _Background photo by [SpaceX](https://unsplash.com/@spacex?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 We have been relatively quiet since begin of last December, not on purpose, you know, just life, but recently, we increased our efforts and were even able to put together our biggest release so far! What a way of starting 2020.
@@ -21,7 +21,7 @@ It contains many improvements, fixes and notably the following features, which w
 
 Even if it was, and still is, already included our [developer starter kit](https://docs.deckdeckgo.com), we never took the time to add the option to let our users customize easily the font of their decks. As of now, you will be able to use [Google Fonts](https://fonts.google.com) for your presentation.
 
-![](https://cdn-images-1.medium.com/max/1600/1*U4Uc7u26qI7Seutz1ITlqQ.gif)
+![](https://daviddalbusco.com/assets/images/1*U4Uc7u26qI7Seutz1ITlqQ.gif)
 
 ### Private Assets For Every Users
 
@@ -35,7 +35,7 @@ It might sounds silly to highlight this fact but we invested some times in this 
 
 When you develop a platform you often have to develop more than “just” its core process, about which I tend sometimes to be a bit obsessed 😅, but also utilities around it. Once of these which was still missing, was the ability to clone presentations. This has now been solved.
 
-![](https://cdn-images-1.medium.com/max/1600/1*1CgaF2DzIeI1OK25f8Y-qg.gif)
+![](https://daviddalbusco.com/assets/images/1*1CgaF2DzIeI1OK25f8Y-qg.gif)
 
 ### Landing Page
 
@@ -43,7 +43,7 @@ I’m agree that is maybe not the most meaningful feature for our existing users
 
 It is worth to notice, notably as DeckDeckGo is a Progressive Web Apps and could be used in any mobile devices, that once registered, the “landing page” doesn’t appear anymore and our feed of recently shared presentations becomes again the welcoming screen.
 
-![](https://cdn-images-1.medium.com/max/1600/1*AHvgqdYhGiNjNFgshMsLyw.gif)
+![](https://daviddalbusco.com/assets/images/1*AHvgqdYhGiNjNFgshMsLyw.gif)
 
 ### Accessibility
 
@@ -55,7 +55,7 @@ Really what could I say, if you don’t have faith in humanity and open source, 
 
 Thank you so much Roy 🙏
 
-![](https://cdn-images-1.medium.com/max/1600/1*mgg66qja7oR8xi9kxtQMdA.gif)
+![](https://daviddalbusco.com/assets/images/1*mgg66qja7oR8xi9kxtQMdA.gif)
 
 It is also worth to notice that Grant ([Twitter](https://twitter.com/gherman1990) / [GitHub](https://github.com/grantlouisherman)) contributed **again** to one of our release which is super cool. Grant you are a hero too, thank you 🙏
 
@@ -63,7 +63,7 @@ It is also worth to notice that Grant ([Twitter](https://twitter.com/gherman1990
 
 The decks you will edit and share with our online editor are as now of embeddable in any web pages. At first I thought that we should solve this with a super complex solution but finally I opted for a standard iFrame solution “à la Youtube”.
 
-![](https://cdn-images-1.medium.com/max/1600/1*luu29-ONP3EAumNue6opKA.gif)
+![](https://daviddalbusco.com/assets/images/1*luu29-ONP3EAumNue6opKA.gif)
 
 ### Template “Author” New Design
 
@@ -71,7 +71,7 @@ DeckDeckGo is based on templates. The goal is to create presentations which fit 
 
 In this release, we have improved its layout, have added some options to the editor, like for example being able to opt out and not display your profile picture if you would rather like. We have also fix a long time issue and the slides will now display your social handles and not the name of the platform (“@daviddalbusco” instead of “Twitter”).
 
-![](https://cdn-images-1.medium.com/max/1600/1*OS2ouBoXzZOFOQzWCRUYkw.gif)
+![](https://daviddalbusco.com/assets/images/1*OS2ouBoXzZOFOQzWCRUYkw.gif)
 
 We hope these features are quite intriguing and slick to you. If you have any feedback, don’t hesitate to reach us on [Slack](https://join.slack.com/t/deckdeckgo/shared_invite/enQtNzM0NjMwOTc3NTI0LTBlNmFhODNhYmRkMWUxZmU4ZTQ2MDJiNjlmYWZiODNjMDU5OGRjYThlZmZjMTc5YmQ3MzUzMDlhMzk0ZDgzMDY) or found me on [Twitter](https://twitter.com/daviddalbusco).
 

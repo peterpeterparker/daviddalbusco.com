@@ -4,11 +4,11 @@ date: "2020-04-16"
 title: "Git Commands I Always Forget"
 description: "Revert last commit, change last or multiple commit messages or delete tags"
 tags: "#git #bash #github"
-image: "https://cdn-images-1.medium.com/max/1600/1*9xilCpCgG-BqhOICl-zNCg.png"
+image: "https://daviddalbusco.com/assets/images/1*9xilCpCgG-BqhOICl-zNCg.png"
 canonical: "https://medium.com/@david.dalbusco/git-commands-i-always-forget-24cbb71c502a"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*9xilCpCgG-BqhOICl-zNCg.png)
+![](https://daviddalbusco.com/assets/images/1*9xilCpCgG-BqhOICl-zNCg.png)
 
 _Photo by [Jonatan Lewczuk](https://unsplash.com/@jonny_lew?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -148,7 +148,7 @@ git merge --abort
 
 When you delete a release on [GitHub](https://github.com/), it does delete it but it does not delete the related tag. Typically, if you go back to your repo with your browser, it is still displayed.
 
-![](https://cdn-images-1.medium.com/max/1600/1*iRWNQQhtlR3gWy65f0qi0g.png)
+![](https://daviddalbusco.com/assets/images/1*iRWNQQhtlR3gWy65f0qi0g.png)
 
 If you would like to remove such tags, you can do so with the help of a Git push and the option`--delete` followed by the name of the tag to remove.
 

@@ -7,7 +7,7 @@ tags: "#firebase #hosting #pricing #juno"
 image: "https://images.unsplash.com/photo-1606145166375-714fe7f24261?fm=jpg&q=80&w=1080&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*rkJkG5mkhIDjcJrCR1fivQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*rkJkG5mkhIDjcJrCR1fivQ.jpeg)
 
 > Photo by [Marija Zaric](https://unsplash.com/fr/@simplicity?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/fr/photos/blanc-et-noir-je-taime-impression-sur-mur-en-beton-gris-q73jLftKN-A?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
@@ -17,11 +17,11 @@ I’ve been using Firebase to host my website — [daviddalbusco.com](https://da
 
 But recently, they changed their pricing model, and well... let’s just say it’s not great. This month alone, I’m set to pay $30 for hosting a simple static site. That feels excessive. I mean, sure, my site serves 2.6GB of data a day, which is over their 360MB free limit, but still — $30? That’s 2–3 times the price of Netflix or Spotify 🤷‍♂️.
 
-![](https://cdn-images-1.medium.com/max/1600/1*tvNeqm3X1W0YHGt8tOX3tA.png)
+![](https://daviddalbusco.com/assets/images/1*tvNeqm3X1W0YHGt8tOX3tA.png)
 
 And for context, based on the data I have, my traffic hasn't changed - January and February had the same numbers. Some might argue I should focus on blocking bots that generate excessive traffic, and fair enough, I've started looking into it. But the reality is, I never had to worry about it - until Firebase changed its pricing.
 
-![](https://cdn-images-1.medium.com/max/1600/1*pWv3bYVG7HYNrzG2nt-YEQ.png)
+![](https://daviddalbusco.com/assets/images/1*pWv3bYVG7HYNrzG2nt-YEQ.png)
 
 So yeah, I’m moving to [**Juno**](https://juno.build/). 🚀
 

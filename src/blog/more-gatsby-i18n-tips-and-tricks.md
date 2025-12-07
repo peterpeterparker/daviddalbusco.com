@@ -4,11 +4,11 @@ date: "2020-12-24"
 title: "More Gatsby i18n Tips And Tricks"
 description: "A follow-up to my article about the internationalization of Gatsby websites."
 tags: "#gatsby #react #javascript #i18n"
-image: "https://cdn-images-1.medium.com/max/1600/1*pWteHjwMcqePrFNKqgq2ug.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*pWteHjwMcqePrFNKqgq2ug.jpeg"
 canonical: "https://daviddalbusco.medium.com/more-gatsby-i18n-tips-and-tricks-4b71fc692136"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*pWteHjwMcqePrFNKqgq2ug.jpeg)
+![](https://daviddalbusco.com/assets/images/1*pWteHjwMcqePrFNKqgq2ug.jpeg)
 
 _Photo by [pure julia](https://unsplash.com/@purejulia?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/world-map?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

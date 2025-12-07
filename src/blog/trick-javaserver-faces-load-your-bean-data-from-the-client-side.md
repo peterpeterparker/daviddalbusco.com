@@ -4,10 +4,10 @@ date: "2019-11-04"
 title: "Trick JavaServer Faces, load your bean data from the client side"
 description: "How to trick JSF (JavaServer Faces) while loading your bean data from the client side with the help of Primefaces"
 tags: "#java #tutorial #webdev #primefaces"
-image: "https://cdn-images-1.medium.com/max/1600/1*QSKH-4KVY9VB1ssOElKYhQ.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*QSKH-4KVY9VB1ssOElKYhQ.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*QSKH-4KVY9VB1ssOElKYhQ.jpeg)
+![](https://daviddalbusco.com/assets/images/1*QSKH-4KVY9VB1ssOElKYhQ.jpeg)
 
 _Photo by [Shawn Pang](https://unsplash.com/@shawnpangg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -226,7 +226,7 @@ mvn clean install && mvn wildfly:run
 
 If everything goes according plan, we could open our application in our favorite browser at the address [http://localhost:8080/jsf-dogs/dogs.xhtml](http://localhost:8080/jsf-dogs/dogs.xhtml) and should now be able to fetch a random dog each time we call our action 😊
 
-![](https://cdn-images-1.medium.com/max/1600/1*lolMm4r-XdSiapWohK4pLg.gif)
+![](https://daviddalbusco.com/assets/images/1*lolMm4r-XdSiapWohK4pLg.gif)
 
 _So much doggy 😍_
 
@@ -243,7 +243,7 @@ public void init() {
 
 That’s it, we dit it! We could restart our server and test our final implementation 🎉
 
-![](https://cdn-images-1.medium.com/max/1600/1*jjw6lTngEY7xlODjsbKYjQ.gif)
+![](https://daviddalbusco.com/assets/images/1*jjw6lTngEY7xlODjsbKYjQ.gif)
 
 _An initial doggy and so much other doggy 😍_
 

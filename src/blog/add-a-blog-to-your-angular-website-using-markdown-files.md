@@ -4,10 +4,10 @@ date: "2018-09-07"
 title: "Add a blog to your Angular website using markdown files"
 description: "Add a blog to your Angular website using markdown files"
 tags: "#angular #markdown #blog"
-image: "https://cdn-images-1.medium.com/max/1600/1*MTFh-iQIpiz6mfzB93SWkA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*MTFh-iQIpiz6mfzB93SWkA.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*MTFh-iQIpiz6mfzB93SWkA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*MTFh-iQIpiz6mfzB93SWkA.jpeg)
 
 Last week I wanted to add a blog to my [Angular](https://angular.io/) Universal website, but I didn’t wanted to implement a complex solution and spend to much time on it. Neither did I wanted to add a CMS or even store the articles in a database. That’s why I came up, I think, with a pretty handy, for not saying dumb simple, solution with the implementation of a blog based on [markdown](https://en.wikipedia.org/wiki/Markdown) files 🚀
 
@@ -37,7 +37,7 @@ For this solution we will need to add two routes to our website
 
 I did group all routes under the same “blog” path, therefore the structure will look like the following once implemented
 
-![](https://cdn-images-1.medium.com/max/1600/1*K_WltAXjubVdyXWMUN7Tmg.png)
+![](https://daviddalbusco.com/assets/images/1*K_WltAXjubVdyXWMUN7Tmg.png)
 
 ### Implementation
 

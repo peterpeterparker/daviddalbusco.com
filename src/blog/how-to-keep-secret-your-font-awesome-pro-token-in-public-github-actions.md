@@ -4,10 +4,10 @@ date: "2019-11-27"
 title: "How to keep secret your Font Awesome Pro token in public GitHub actions"
 description: "Configure your GitHub actions to keep secret your Font Awesome Pro token or NPM private tokens"
 tags: "#devops #webdev #github #fontawesome"
-image: "https://cdn-images-1.medium.com/max/1600/1*oASKWYL2zJdXrSghTn92PA.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*oASKWYL2zJdXrSghTn92PA.jpeg"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*oASKWYL2zJdXrSghTn92PA.jpeg)
+![](https://daviddalbusco.com/assets/images/1*oASKWYL2zJdXrSghTn92PA.jpeg)
 
 _Photo by [Serkan Turk](https://unsplash.com/@serkanturk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -47,7 +47,7 @@ The Font Awesome NPM token could either be set up globally or per project. The m
 
 As we didn’t provided the token in the previous file, we will have to provide it to the GitHub action in a different way otherwise it will still not be able to download the dependency. Fortunately GitHub already provide an option to keep environment variables secret. Therefore we make the most of this option and we create a new secret for our Font Awesome NPM token. For example let’s call it `FONTAWESOME_NPM_AUTH_TOKEN`.
 
-![](https://cdn-images-1.medium.com/max/1600/1*NVoURzVa2jn6uuvAKvo12Q.png)
+![](https://daviddalbusco.com/assets/images/1*NVoURzVa2jn6uuvAKvo12Q.png)
 
 _Set up a GitHub secret for the Font Awesome NPM token_
 
@@ -73,7 +73,7 @@ The pipe (`|` ) let us specify multiple commands all run in the in the same shel
 
 And voilà, our CI should now be able to download the required dependency and therefore build and deploy our project 🎉
 
-![](https://cdn-images-1.medium.com/max/1600/1*B0QAOSrrjgtLV5zywnA8sg.png)
+![](https://daviddalbusco.com/assets/images/1*B0QAOSrrjgtLV5zywnA8sg.png)
 
 _Successful CI, happy CI 😺_
 

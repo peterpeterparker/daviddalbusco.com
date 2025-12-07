@@ -4,10 +4,10 @@ date: "2019-12-17"
 title: "Stylish Cards And Syntax Highlighting With Gatsby"
 description: "How to display the code of your Gatsby website and blog with styled cards and code highlighting with a new plugin"
 tags: "#gatsby #javascript #webdev #showdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*8DbEBAv_L1pK-1Xm03XEzw.png"
+image: "https://daviddalbusco.com/assets/images/1*8DbEBAv_L1pK-1Xm03XEzw.png"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*8DbEBAv_L1pK-1Xm03XEzw.png)
+![](https://daviddalbusco.com/assets/images/1*8DbEBAv_L1pK-1Xm03XEzw.png)
 
 I am a big fan of [Carbon](https://carbon.now.sh)! I often use it to share tips or mistakes I did on my [Twitter](https://twitter.com/daviddalbusco) feed.
 
@@ -86,7 +86,7 @@ As I explained above, the exact same Web Component can be used in any modern web
 
 Therefore, if you are going to showcase code in an upcoming talk, give a try to [DeckDeckGo](https://deckdeckgo.com) 😃
 
-![](https://cdn-images-1.medium.com/max/1600/1*8SuFF5R9siRlSqAkTSXWjQ.gif)
+![](https://daviddalbusco.com/assets/images/1*8SuFF5R9siRlSqAkTSXWjQ.gif)
 
 To infinity and beyond 🚀
 

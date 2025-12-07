@@ -4,11 +4,11 @@ date: "2020-04-17"
 title: "An Open Source Medium Like WYSIWYG Editor"
 description: "Add our WYSIWYG floating or sticky editor to any web applications"
 tags: "#showdev #webdev #javascript #webcomponents"
-image: "https://cdn-images-1.medium.com/max/1600/1*mEgbLcMRBUaJIvwIdirEvg.png"
+image: "https://daviddalbusco.com/assets/images/1*mEgbLcMRBUaJIvwIdirEvg.png"
 canonical: "https://medium.com/@david.dalbusco/an-open-source-medium-like-wysiwyg-editor-1258d3efdf92"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*mEgbLcMRBUaJIvwIdirEvg.png)
+![](https://daviddalbusco.com/assets/images/1*mEgbLcMRBUaJIvwIdirEvg.png)
 
 _Photo by [Silviana Toader](https://unsplash.com/@silviana?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -20,7 +20,7 @@ For [DeckDeckGo](https://deckdeckgo.com) our editor for presentations, we have d
 
 One of these is a Medium Like WYSIWYG editor. It can be integrated in any modern web applications, regardless of its technologies, and works on any devices (desktop, tablet and mobile).
 
-![](https://cdn-images-1.medium.com/max/1600/1*Dgkj18MA4FGYsd1FmYSegA.gif)
+![](https://daviddalbusco.com/assets/images/1*Dgkj18MA4FGYsd1FmYSegA.gif)
 
 I am actually not sure if I ever shared this component or not but as I spent my day improving its layout, bringing it some attention (love) it well deserved, and release a new version, that’s why I’m sharing it with you with this new blog post 😉.
 
@@ -99,7 +99,7 @@ If like us with our editor, you would have other need, for example we handle con
 
 As you can notice, as soon as I do so, the following paragraphs ( `p` ) are not editable anymore even though they are still set as `contenteditable` .
 
-![](https://cdn-images-1.medium.com/max/1600/1*olJ2RT5ChCBiF6UP4ZBNSw.gif)
+![](https://daviddalbusco.com/assets/images/1*olJ2RT5ChCBiF6UP4ZBNSw.gif)
 
 ---
 
@@ -121,7 +121,7 @@ That’s why we had the idea to make optionally the editor sticky on mobile devi
 
 Note that the editor is displayed at the top on iOS and bottom on Android. I rather like this last version but I did not find a clever way to solve this on iOS as the Webview is not resized and the keyboard size is not accessible.
 
-![](https://cdn-images-1.medium.com/max/1600/1*yOasEsPf8xmnmrB1TMsMXg.gif)
+![](https://daviddalbusco.com/assets/images/1*yOasEsPf8xmnmrB1TMsMXg.gif)
 
 Also worth to notice, the component emit an event `stickyToolbarActivated` when the toolbar is displayed. Thanks to this event, you can for example hide the header or footer of your applications, avoiding a small design glitch of two layers.
 
@@ -146,7 +146,7 @@ Likewise, images are not taken in account by the component per default. This can
 </deckgo-inline-editor>
 ```
 
-![](https://cdn-images-1.medium.com/max/1600/1*2EankUNvUC5y5p1bqZAqSQ.gif)
+![](https://daviddalbusco.com/assets/images/1*2EankUNvUC5y5p1bqZAqSQ.gif)
 
 ---
 
@@ -154,7 +154,7 @@ Likewise, images are not taken in account by the component per default. This can
 
 The colors can be modified with the help of our custom made color picker. It has a default palette but it can be overwritten too with its corresponding property `palette` .
 
-![](https://cdn-images-1.medium.com/max/1600/1*eZl2B801qCtpxE9rmL3Iuw.gif)
+![](https://daviddalbusco.com/assets/images/1*eZl2B801qCtpxE9rmL3Iuw.gif)
 
 ---
 
@@ -162,7 +162,7 @@ The colors can be modified with the help of our custom made color picker. It has
 
 If your application’s direction is Right-To-Left the component ordering will remains the same, but, automatically, the alignment feature will notice it and will be displayed as such per default.
 
-![](https://cdn-images-1.medium.com/max/1600/1*CXis2-sk0Na3xKIrMCtZpQ.gif)
+![](https://daviddalbusco.com/assets/images/1*CXis2-sk0Na3xKIrMCtZpQ.gif)
 
 ---
 

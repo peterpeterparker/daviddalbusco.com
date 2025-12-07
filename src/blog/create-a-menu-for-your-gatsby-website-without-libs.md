@@ -4,11 +4,11 @@ date: "2020-03-29"
 title: "Create A Menu For Your Gatsby Website Without Libs"
 description: "How to create a menu for your Gatsby website without the use of any libraries or dependencies"
 tags: "#gatsby #webdev #javascript #css"
-image: "https://cdn-images-1.medium.com/max/1600/1*yi2pw2XA-49C9nGuXudI1A.png"
+image: "https://daviddalbusco.com/assets/images/1*yi2pw2XA-49C9nGuXudI1A.png"
 canonical: "https://medium.com/@david.dalbusco/create-a-menu-for-your-gatsby-website-without-libs-b7eb3a563fd2"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*yi2pw2XA-49C9nGuXudI1A.png)
+![](https://daviddalbusco.com/assets/images/1*yi2pw2XA-49C9nGuXudI1A.png)
 
 _Photo by [Catherine Heath](https://unsplash.com/@catherineheath?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/menu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -18,7 +18,7 @@ I share [one trick a day](https://daviddalbusco.com/blog/how-to-call-the-service
 
 I have developed my [personal](https://daviddalbusco.com) website with [Gatsby](https://www.gatsbyjs.org) but without using any templates or any design libraries. No particular reason, I just like in my personal projects to restrict the use of dependencies when I can. Thereby, I had to build my own simple menu for the navigation which I’m sharing with you today.
 
-![](https://cdn-images-1.medium.com/max/1600/1*dhsTKRMX2hNVqfmaDGwaOg.gif)
+![](https://daviddalbusco.com/assets/images/1*dhsTKRMX2hNVqfmaDGwaOg.gif)
 
 _[daviddalbusco.com](https://daviddalbusco.com)_
 

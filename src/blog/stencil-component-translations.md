@@ -4,11 +4,11 @@ date: "2021-04-05"
 title: "Stencil Component Translations"
 description: "A quick way to set up i18n for Stencil components without dependencies."
 tags: "#javascript #typescript #stencil #webdev"
-image: "https://cdn-images-1.medium.com/max/1600/1*NXe3RbssR10n4RGMVGoZVg.jpeg"
+image: "https://daviddalbusco.com/assets/images/1*NXe3RbssR10n4RGMVGoZVg.jpeg"
 canonical: "https://daviddalbusco.medium.com/stencil-component-translations-4efc44018b1d"
 ---
 
-![](https://cdn-images-1.medium.com/max/1600/1*NXe3RbssR10n4RGMVGoZVg.jpeg)
+![](https://daviddalbusco.com/assets/images/1*NXe3RbssR10n4RGMVGoZVg.jpeg)
 
 _Photo by [Lucas George Wendt](https://unsplash.com/@lucasgwendt?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/internationalization?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -166,7 +166,7 @@ It renders text, with or without specifying a language, and can be used with `sl
 
 ### Summary
 
-![](https://cdn-images-1.medium.com/max/1600/1*Ud0o0tsLPyP76VNbKw-mvg.gif)
+![](https://daviddalbusco.com/assets/images/1*Ud0o0tsLPyP76VNbKw-mvg.gif)
 
 That was my small quick recipe to set up i18n to a relatively small set of components. I hope it is useful and if you think I should share the more complex solution in another post, let me know.
 

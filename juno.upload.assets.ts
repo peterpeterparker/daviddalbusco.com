@@ -101,13 +101,13 @@ const listContentAssets = async ({
 	startAfter?: string;
 	satellite: SatelliteOptions;
 }): Promise<Asset[]> => {
-	const { items, items_length, matches_length } = await listAssets({
+	const { items, items_page, matches_pages } = await listAssets({
 		collection: COLLECTION_ASSETS,
 		satellite,
 		filter: {
 			order: {
 				desc: true,
-				field: 'created_at'
+				field: 'keys'
 			},
 			paginate: {
 				startAfter,
@@ -116,7 +116,7 @@ const listContentAssets = async ({
 		}
 	});
 
-	if (items_length > matches_length) {
+	if ((items_page ?? 0n) < (matches_pages ?? 0n)) {
 		const nextItems = await listContentAssets({
 			startAfter: last(items)?.fullPath,
 			satellite

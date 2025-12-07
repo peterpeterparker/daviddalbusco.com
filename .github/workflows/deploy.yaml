@@ -30,6 +30,6 @@ jobs:
       - name: Upload static assets
         uses: junobuild/juno-action@main
         with:
-          args: run --src ./scripts/juno.upload.assets.ts
+          args: run --src ./juno.upload.assets.ts
         env:
           JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}

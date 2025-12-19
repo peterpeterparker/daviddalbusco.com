@@ -101,13 +101,13 @@ However, things have changed. Implementing Google sign-in meant building OpenID 
 
 If I want to compete with traditional dev experience, better GitHub integration is a must. And by "better integration," I don't mean an "export" button like some platforms do—I mean real integration with as little compromises on values as possible.
 
-### Team Support
+### Team
 
 More and more teams, small and large, are using my platform. There are workarounds to share projects, but it's not officially supported. Since the Foundation is both using Juno and requires team features, I see some synergy here.
 
 Moreover, I'm currently working on big changes to merge Mission Control and monitoring tools into a single umbrella or in other words, I'm making the platform even more microservices-oriented. Implementing team support fits that narrative well.
 
-### SQL Support
+### SQL
 
 I'll cut it short: I don't think SQL is the silver bullet that will suddenly make Juno massively adopted. However, the current datastore approach definitely has its requirements and limitations. It has advantages too, but providing devs a more familiar database-like experience would be really useful and can unlock some ideas.
 

@@ -95,7 +95,7 @@ I can't build everything — reduced sponsorship means reduced resources — but
 
 ### GitHub Integration
 
-GitHub integration was actually one of my goals for 2025. Not just GitHub Actions, but real integration—sign-in with GitHub, automatic deployment through GitHub Apps, etc.
+GitHub integration was actually one of my goals for 2025. Not just GitHub Actions, but deep integration including sign-in, automatic deployment through GitHub Apps, etc.
 
 Despite some proof of concepts and analysis, there wasn't a clean solution without compromising too much on either ownership or security (or putting too much responsibility on my shoulders). That is why it did not happen yet.
 

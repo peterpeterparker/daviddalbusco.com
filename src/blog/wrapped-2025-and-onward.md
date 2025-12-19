@@ -20,7 +20,7 @@ image: "https://daviddalbusco.com/assets/images/rene-bohmer-YeUVDKZWSZ4-unsplash
 
 My life isn't particularly interesting, but since a few people are using [Juno](https://juno.build), the platform I'm developing, I figured now that things are finally clear — and square, psycho-rigid old guy here — I should reflect on the year that passed and share what comes next.
 
-Long story short: the [DFINITY Foundation](https://dfinity.org/) and I have agreed to extend our collaboration until the end of April 2026. This year, my main task was improving the [Internet Computer](https://internetcomputer.org/) ecosystem and adoption by developing Juno. The upcoming period shifts focus—I'll be building things and providing consulting for the Foundation.
+Long story short: the [DFINITY Foundation](https://dfinity.org/) and I have agreed to extend our collaboration until the end of April 2026. This year, my main task was improving the [Internet Computer](https://internetcomputer.org/) ecosystem and adoption by developing Juno. The upcoming period shifts focus—I'll be building things and providing consulting for them.
 
 The good news for you: while no longer the primary focus and the sponsorship is reduced, the Foundation will continue supporting Juno and I'm really grateful for it.
 

@@ -32,7 +32,7 @@ I'm obviously biased, but this makes sense (to me at least): I'm reaching develo
 
 At this point however, you might be asking yourself: yeah that's great David, but what happens after April then?
 
-Let me be honest: without renewed sponsorship or wider adoption, Juno will likely enter some sort of maintenance mode.
+Let me be honest: without renewed sponsorship or wider adoption, Juno might likely enter some sort of maintenance mode.
 
 The platform hasn't reached the massive adoption needed to be financially self-sustainable yet. And I have little interest in convincing VCs — I'm not great at that dance, and frankly, I don't want to deal with investors who don't get it.
 

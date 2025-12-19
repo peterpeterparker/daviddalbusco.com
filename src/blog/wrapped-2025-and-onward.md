@@ -58,7 +58,7 @@ That said, my estimation might be too pessimistic as I'm more a glass-half-empty
 
 On average, I estimate new monthly sign-ups to be between **60-100**. It strongly depends on how active I am in terms of promotion.
 
-One interesting thing though: this year I (finally) introduced native [Google sign-in](https://juno.build/blog/google-sign-in-comes-to-juno) — i.e., devs can implement Google sign-in in their own projects or sign into Juno directly with their account without using Internet Identity, the authentication provider developed by the Foundation for the Internet Computer. And one number speaks for itself: I introduced this method on Oct. 25, and since then there were **83 sign-ups** with Internet Identity versus... **75 with Google**.
+One interesting thing though: this year I (finally) introduced native [Google sign-in](https://juno.build/blog/google-sign-in-comes-to-juno). As a result, one number speaks for itself: I introduced this method on Oct. 25, and since then there were **83 sign-ups** with Internet Identity versus... **75 with Google**.
 
 The number of sign-ins with Google is about to overtake the majority. This confirms this was an interesting move and opens up some possibilities for the future.
 
@@ -75,11 +75,13 @@ This refined message and unleashing Google sign-in unlocked new opportunities. T
 
 ### Community
 
-When it comes to following, there are 1,400+ followers on Twitter and 230 members on Discord. It's maybe not as active as I wish it could be, but I definitely feel like there's a little supportive community and it's great to have everybody around 💙.
+When it comes to following, there are **1,400+** followers on Twitter and **230** members on Discord. It's maybe not as active as I wish it could be, but I definitely feel like there's a little supportive community and it's great to have everybody around 💙.
 
 ### Open Source
 
-GitHub stars wise, Juno is still not that famous a project — not that stars are an obsession, but they do disclose how trendy something is or not. That said, there was a nice push in September, so hopefully it will continue that way. And if you haven't yet starred Juno, now is the time, old man or woman 😉.
+GitHub stars wise, Juno is still not that famous a project — not that stars are an obsession, but they do disclose how trendy something is. Interesting fact though: it's the most starred [internet-computer](https://github.com/topics/internet-computer) project that is not built by the Foundation.
+
+There was a nice push in September, so hopefully it will continue that way. And if you haven't yet starred Juno, now is the time, old man or woman 😉.
 
 👉 [https://github.com/junobuild/juno](https://github.com/junobuild/juno)
 

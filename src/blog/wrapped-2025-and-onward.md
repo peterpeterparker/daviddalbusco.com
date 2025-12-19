@@ -54,7 +54,7 @@ For once, let's not get too technical — you can find everything that was relea
 
 Since February 2023 — damn, almost three years already — **2,410** potential developers have signed into Juno's Console. I purposely don't track retention rate, meaning I don't know exactly how many of those really built something with it, but I'd estimate the number is low, maybe 2% or something.
 
-That said, my estimation might be too pessimistic as I'm more a glass-half-empty guy on that matter. There are some metrics I can't disclose that are actually more positive and validate the fact that Juno as a hosting provider has found its market fit, at least on the Internet Computer.
+That said, my estimation might be too pessimistic as I'm more a glass-half-empty guy on that matter. There are some double-digit metrics I can't disclose that are actually more positive and validate the fact that Juno as a hosting provider has found its market fit, at least on the Internet Computer.
 
 On average, I estimate new monthly sign-ups to be between **60-100**. It strongly depends on how active I am in terms of promotion.
 

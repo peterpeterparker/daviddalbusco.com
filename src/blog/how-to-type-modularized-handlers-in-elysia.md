@@ -2,7 +2,7 @@
 path: "/blog/how-to-type-modularized-handlers-in-elysia"
 date: "2026-01-16"
 title: How to Type Modularized Handlers in Elysia
-description: "A practical guide to typing modularized Elysia handlers with proper Context generics, including solutions for JWT plugin integration and schema validation."
+description: "A practical journey through typing Elysia handlers once you extract them from inline routes."
 tags: "#typescript #elysia #bun #type-safety #web-development #jwt #rest-api #backend"
 image: "https://daviddalbusco.com/assets/images/steve-johnson-dl6IqQFFnjM-unsplash.jpg"
 ---

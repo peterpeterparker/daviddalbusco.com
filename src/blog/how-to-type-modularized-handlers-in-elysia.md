@@ -151,7 +151,6 @@ const handler = ({ body }: Context<{ body: Handler }>) => {
 };
 
 const app = new Elysia()
-	// Type {} is missing the following properties from type unknown[]: length, pop, push, concat, and 28 more.
 	.get("/", handler, {
 		body: HandlerSchema
 	})

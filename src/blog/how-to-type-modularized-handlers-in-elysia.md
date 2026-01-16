@@ -319,6 +319,8 @@ const app = new Elysia().use(
 );
 ```
 
+---
+
 ## Putting It All Together
 
 Not five minutes later, I obviously needed to combine both solutions 😄.

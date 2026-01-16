@@ -4,10 +4,10 @@ date: "2026-01-16"
 title: How to Type Modularized Handlers in Elysia
 description: "A practical guide to typing modularized Elysia handlers with proper Context generics, including solutions for JWT plugin integration and schema validation."
 tags: "#typescript #elysia #bun #type-safety #web-development #jwt #rest-api #backend"
-image: "https://daviddalbusco.com/assets/images/steve-johnson-dl6IqQFFnjM-unsplash.jpeg"
+image: "https://daviddalbusco.com/assets/images/steve-johnson-dl6IqQFFnjM-unsplash.jpg"
 ---
 
-![](https://daviddalbusco.com/assets/images/steve-johnson-dl6IqQFFnjM-unsplash.jpeg)
+![](https://daviddalbusco.com/assets/images/steve-johnson-dl6IqQFFnjM-unsplash.jpg)
 
 > Photo by [Steve Johnson](https://unsplash.com/fr/@steve_j?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/image-generee-par-ordinateur-dun-groupe-de-cubes-dl6IqQFFnjM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

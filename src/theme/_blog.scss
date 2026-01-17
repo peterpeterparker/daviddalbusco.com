@@ -33,10 +33,6 @@ p img {
 	display: block;
 
 	max-width: 100%;
-
-	@media screen and (min-width: 960px) {
-		max-width: 960px;
-	}
 }
 
 article ol,

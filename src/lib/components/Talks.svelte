@@ -13,6 +13,14 @@
 
 	<ul>
 		<li>
+			<a
+				href="https://www.meetup.com/web-zurich/events/312842723"
+				target="_blank"
+				rel="noopener noreferrer">Web Zurich</a
+			>
+			/ January 2026 <mark>Upcoming</mark> / Zürich, Switzerland
+		</li>
+		<li>
 			<a href="https://www.ethcluj.org/" target="_blank" rel="noopener noreferrer">ETHCluj</a> / June
 			2025 / Cluj-Napoca, Romania
 		</li>

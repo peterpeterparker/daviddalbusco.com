@@ -18,7 +18,7 @@
 				target="_blank"
 				rel="noopener noreferrer">Web Zurich</a
 			>
-			/ January 2026 <mark>Upcoming</mark> / Zürich, Switzerland
+			/ January 2026 / Zürich, Switzerland
 		</li>
 		<li>
 			<a href="https://www.ethcluj.org/" target="_blank" rel="noopener noreferrer">ETHCluj</a> / June

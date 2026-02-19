@@ -24,12 +24,8 @@ jobs:
         uses: junobuild/juno-action@main
         with:
           args: hosting deploy
-        env:
-          JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}
 
       - name: Upload static assets
         uses: junobuild/juno-action@main
         with:
           args: run --src ./juno.upload.assets.ts
-        env:
-          JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}

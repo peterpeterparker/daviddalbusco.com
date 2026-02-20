@@ -38,7 +38,7 @@
 		"remarkable": "^2.0.1",
 		"sass": "^1.97.2",
 		"shiki": "^3.21.0",
-		"svelte": "^5.46.4",
+		"svelte": "^5.53.0",
 		"svelte-check": "^4.3.5",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.53.0",

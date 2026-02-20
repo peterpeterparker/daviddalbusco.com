@@ -29,7 +29,7 @@ That's what makes the implementation a bit particular, and why the flow ultimate
 
 To give you an idea, the diagram below summarizes the flow, from the moment a GitHub Actions workflow is triggered to the moment the ephemeral access key is approved for use.
 
-![](https://daviddalbusco.com/assets/images/github-actions-with-oidc-authentication-flow.png)
+![Sequence diagram showing the full GitHub Actions OIDC authentication flow, from workflow trigger to ephemeral access key approval](https://daviddalbusco.com/assets/images/github-actions-with-oidc-authentication-flow.png)
 
 Before any deployment happens, the Actions workflow generates an identity — a key-pair, a nonce, and their corresponding salt. It then exchanges the nonce with GitHub's API to obtain a signed JWT that also contains information about the repository, actor, and workflow.
 
@@ -42,6 +42,8 @@ From there, the satellite runs a series of verifications: the JWK signature and 
 If everything passes, the identity is saved as an allowed access key and the workflow can proceed with the deployment.
 
 From there it's standard Juno usage — the GitHub Action uploads a file, and the access key is validated to approve or reject the operation. I won't cover that part here, there are already enough steps as it is 😅.
+
+Alright, ready? There are quite a few moving parts here, so buckle up, the following chapters will go through each piece in detail.
 
 ---
 
@@ -376,3 +378,115 @@ pub async fn openid_authenticate_automation(
 ```
 
 After a successful verification, `save_unique_token_jti` stores the JTI claim and rejects any future request using the same token. Then the workflow metadata is saved — this is what powers the deployment history displayed in the Juno console — and finally the identity is registered as a controller, the ephemeral access key that the CLI will use for the rest of the workflow.
+
+---
+
+## The Observatory
+
+The Observatory is Juno's public infrastructure. Among other things, it is responsible for keeping the OIDC public keys fresh so that satellites do not have to fetch them on every request.
+
+The reason it exists as a separate piece of infrastructure is practical: OIDC public keys are the same for everyone. There is no point in having each satellite — and by extension each developer — independently fetch and pay for the same HTTP outcall. Having a single place fetch and cache the keys reduces redundant network traffic on the subnet and keeps costs down for everyone.
+
+The core of it is a recurring timer that fetches the JWKS from the provider's URL and stores it. If the fetch fails — which can happen during key rotation, when HTTPS outcall responses are not yet consistent across nodes — it retries with exponential backoff.
+
+```rust
+pub fn schedule_certificate_update(provider: OpenIdProvider, delay: Option<u64>) {
+    if assert_scheduler_running(&provider).is_err() {
+        return;
+    }
+
+    set_timer(Duration::from_secs(delay.unwrap_or(0)), async move {
+        let result = fetch_and_save_certificate(&provider).await;
+
+        let next_delay = if result.is_ok() {
+            FETCH_CERTIFICATE_INTERVAL
+        } else {
+            let backoff = match delay {
+                Some(delay) if delay < FETCH_CERTIFICATE_INTERVAL => delay.saturating_mul(2),
+                _ => 60 * 2,
+            };
+
+            min(FETCH_CERTIFICATE_INTERVAL, backoff)
+        };
+
+        schedule_certificate_update(provider, Some(next_delay));
+    });
+}
+```
+
+The function is recursive — each run schedules the next one. On success, it waits for the standard interval. On failure, it starts at a 2-minute delay and doubles on each subsequent failure, capping at the standard interval. This matters in practice: during a key rotation, GitHub may temporarily serve inconsistent responses across requests, so retrying too aggressively would just produce more errors.
+
+The actual fetch is straightforward:
+
+```rust
+async fn fetch_and_save_certificate(provider: &OpenIdProvider) -> Result<(), String> {
+    let http_result = get_certificate(provider).await?;
+
+    let jwks = from_slice::<Jwks>(&http_result.body).map_err(|e| e.to_string())?;
+
+    set_openid_certificate(provider, &jwks);
+
+    Ok(())
+}
+```
+
+It fetches, parses the JWKS from JSON, and stores it. The URL comes from the provider implementation — each provider knows its own JWKS endpoint.
+
+```rust
+impl OpenIdProvider {
+    pub fn jwks_url(&self) -> &'static str {
+        match self {
+            Self::Google => "https://www.googleapis.com/oauth2/v3/certs",
+            Self::GitHubAuth => "https://api.juno.build/v1/auth/certs",
+            Self::GitHubActions => "https://token.actions.githubusercontent.com/.well-known/jwks",
+        }
+    }
+}
+```
+
+The HTTP outcall itself uses the Internet Computer's `http_request_outcall`, which allows programs to make outbound HTTPS requests. The `is_replicated` flag ensures the call goes through consensus — all nodes in the subnet must agree on the response before it is accepted.
+
+```rust
+fn get_request(provider: &OpenIdProvider) -> HttpRequestArgs {
+    let url = provider.jwks_url();
+
+    let request_headers = vec![
+        HttpHeader {
+            name: "Accept".into(),
+            value: "application/json".into(),
+        },
+        HttpHeader {
+            name: "User-Agent".into(),
+            value: "juno_observatory".into(),
+        },
+    ];
+
+    HttpRequestArgs {
+        url: url.to_string(),
+        method: HttpMethod::GET,
+        body: None,
+        max_response_bytes: Some(FETCH_MAX_RESPONSE_BYTES),
+        transform: param_transform(),
+        headers: request_headers,
+        is_replicated: Some(true),
+    }
+}
+```
+
+Once stored, the JWKS is available to any satellite that needs to verify an OIDC token — without having to make an outbound call themselves.
+
+---
+
+## References
+
+- [GitHub Actions — OpenID Connect](https://docs.github.com/en/actions/concepts/security/openid-connect)
+- [junobuild/juno-action](https://github.com/junobuild/juno-action)
+- [junobuild/juno-js](https://github.com/junobuild/juno-js) — includes `@junobuild/auth`
+- [junobuild/juno](https://github.com/junobuild/juno) — Satellite, Observatory, and all Rust crates
+- [Internet Computer — HTTPS Outcalls](https://docs.internetcomputer.org/building-apps/network-features/using-http/https-outcalls/overview)
+
+---
+
+## Conclusion
+
+That's about it. If you are still here, congratulations! I'm well aware this blog post wasn't easy to follow and most probably dropped while going through all the steps — not speaking of my writing. I hope anyway it was interesting enough to give you some ideas, and if you have any suggestions for improvements, please let me know!

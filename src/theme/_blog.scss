@@ -9,7 +9,8 @@ deckgo-highlight-code {
 	--deckgo-highlight-code-scroll: hidden;
 }
 
-p code {
+p code,
+li code {
 	font-family: Menlo, monospace;
 	background: rgba(0, 0, 0, 0.05);
 	padding: 0.25rem 0.45rem;

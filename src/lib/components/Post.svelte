@@ -2,6 +2,7 @@
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { BlogMetadata } from '$lib/types/blog';
 	import Card from '$lib/components/Card.svelte';
+	import { env } from '$env/dynamic/public';
 
 	interface Props {
 		post: MarkdownData<BlogMetadata>;
@@ -14,7 +15,9 @@
 
 	let title = $derived(metadata.title);
 	let description = $derived(metadata.description);
-	let image = $derived(metadata.image);
+	let image = $derived(
+		metadata.image.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
+	);
 	let postDate = $derived(metadata.date);
 </script>
 

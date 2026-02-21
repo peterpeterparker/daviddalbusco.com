@@ -1,3 +1,4 @@
 .svelte-kit/**/*
 build/**/*
 assets
+pnpm-lock.yaml

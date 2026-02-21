@@ -2,10 +2,14 @@
 path: "/blog/building-a-github-actions-integration-with-oidc-authentication"
 date: "2026-02-24"
 title: Building a GitHub Actions Integration with OIDC Authentication
-description: "How I replaced GitHub Secrets with short-lived tokens for deploying with GitHub Actions."
+description: "How I replaced secrets with short-lived tokens for deploying with GitHub Actions."
 tags: "#github-actions #oidc #cicd #rust #javascript #deployment #authentication #security"
-image: "https://daviddalbusco.com/assets/images/maxim-berg-ANuuRuCRRAc-unsplash.jpg"
+image: "https://daviddalbusco.com/assets/images/anatoliy-shostak-MzEB7zNqXCo-unsplash.jpg"
 ---
+
+![](https://daviddalbusco.com/assets/images/anatoliy-shostak-MzEB7zNqXCo-unsplash.jpg)
+
+> Photo by [Anatoliy Shostak](https://unsplash.com/fr/@photogolic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/un-fond-bleu-fonce-avec-des-feux-dartifice-rouges-et-blancs-MzEB7zNqXCo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 ---
 

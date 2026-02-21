@@ -13,7 +13,7 @@ image: "https://daviddalbusco.com/assets/images/anatoliy-shostak-MzEB7zNqXCo-uns
 
 ---
 
-I rarely take the time to step back after releasing a new feature on Juno. I generally build, build, build, ship, and repeat — forgetting to breathe. On top of that, writing long blog posts often feels like a relative waste of time, as they rarely find their audience. Nonetheless, for once, I thought I'd take a moment to write about what I released yesterday: deploying frontends or publishing serverless functions on Juno from GitHub Actions using ephemeral access keys granted through an OpenID Connect flow.
+I rarely take the time to step back after releasing a new feature on [Juno](https://juno.build/). I generally build, build, build, ship, and repeat — forgetting to breathe. On top of that, writing long blog posts often feels like a relative waste of time, as they rarely find their audience. Nonetheless, for once, I thought I'd take a moment to write about what I released recently: deploying frontends or publishing serverless functions from GitHub Actions using ephemeral access keys granted through an OpenID Connect flow.
 
 The following is a walkthrough of the solution. I'll go through the various steps required to implement such a workflow and highlight the pieces I feel are important.
 
@@ -21,13 +21,13 @@ It won't be a tutorial, nor something you or your AI can — or should — copy-
 
 ---
 
-## How It Works
+## Introduction
 
-Authenticating CI/CD pipelines without long-lived secrets is not a new concept and, even though I kind of randomly learned about it, GitHub Actions has been supporting OpenID Connect for a while now.
+Authenticating CI/CD pipelines without long-lived secrets is not a new concept and, even though I kind of randomly learned about it, GitHub Actions has been [supporting OpenID Connect](https://docs.github.com/en/actions/concepts/security/openid-connect) for a while now.
 
 The idea is simple: instead of storing a secret that can leak, rotate, or be forgotten, the CI generates a short-lived token — a JWT that proves _where_ the workflow is running: which repository, which branch, which actor.
 
-The twist is that the other end is not a typical server. The satellite is a Rust WASM container running on the Internet Computer, where you cannot simply store sensitive secrets and call it a day. The verification has to be done properly, and entirely on the blockchain.
+The twist is that the other end is not a typical server. In Juno, the developer's application is in a Rust WASM container (which I call a Satellite) running on the Internet Computer. Since the underlying infrastructure is a public blockchain, sensitive information has to be handled carefully — secrets cannot simply be stored and trusted the way they would on a traditional server.
 
 That's what makes the implementation a bit particular, and why the flow ultimately goes through quite a few steps and assertions.
 
@@ -53,7 +53,7 @@ Alright, ready? There are quite a few moving parts here, so buckle up, the follo
 
 ## The GitHub Action
 
-The entry point of the integration is a bash script. Nothing fancy, it checks which command is being run, decides whether authentication is needed, and if so, generates an ephemeral token before passing it to the CLI.
+The entry point of the integration is a bash script ([source](https://github.com/junobuild/juno-action/blob/main/entrypoint.sh)). Nothing fancy, it checks which command is being run, decides whether authentication is needed, and if so, generates an ephemeral token before passing it to the CLI.
 
 ```bash
 JUNO_TOKEN=$(node /kit/token/src/authenticate.ts "$@")
@@ -66,7 +66,7 @@ Two things worth noting here:
 1. The generated token is passed as `JUNO_TOKEN`, the same environment variable the CLI already supports. No changes were needed in the CLI itself, which was a nice side effect of the approach.
 2. `::add-mask::` ensures the token never appears in the Actions logs, even accidentally. We do not want to leak the private key in some logs...
 
-From there, a custom script within the action takes over. I like abstraction, so rather than implementing the authentication flow directly, it delegates to `@junobuild/auth` — a library I maintain — through a single function call: `authenticateAutomation`.
+From there, a custom script within the action takes over. I like abstraction, so rather than implementing the authentication flow directly, it delegates to `@junobuild/auth` — a library I maintain — through a single function call: `authenticateAutomation` ([source](https://github.com/junobuild/juno-action/blob/main/kit/token/src/_authenticate.ts)).
 
 ```typescript
 const { identity } = await authenticateAutomation({
@@ -84,7 +84,7 @@ const { identity } = await authenticateAutomation({
 });
 ```
 
-The library doesn't know anything about GitHub. It just knows it needs a JWT and will ask for one by calling the `generateJwt` callback. This means the action is responsible for implementing that callback: taking the nonce, calling GitHub's token endpoint, and returning the signed JWT.
+The library doesn't know anything about GitHub. It just knows it needs a JWT and will ask for one by calling the `generateJwt` callback. This means the action is responsible for implementing that callback: taking the nonce, calling GitHub's [token endpoint](https://docs.github.com/en/actions/reference/security/oidc#methods-for-requesting-the-oidc-token), and returning the signed JWT.
 
 ```typescript
 const generateJwt = async ({ nonce }: { nonce: string }) => {
@@ -109,7 +109,7 @@ You may notice `audience=${nonce}` in the URL. This is a workaround: GitHub does
 
 `process.env.ACTIONS_ID_TOKEN_REQUEST_URL` and `process.env.ACTIONS_ID_TOKEN_REQUEST_TOKEN` are environment variables that GitHub automatically injects into the workflow, but only if the workflow declares `id-token: write` permissions.
 
-That `nonce` passed to the callback is generated by the library itself before calling back, and it is not purely random. It is derived from a SHA-256 hash of a salt and the identity's principal (basically a public key), encoded as a base64 URL string.
+That `nonce` passed to the callback is generated by the library itself before calling back, and it is not purely random. It is derived from a SHA-256 hash of a salt and the identity's principal (basically a public key), encoded as a base64 URL string ([source](https://github.com/junobuild/juno-js/blob/main/packages/auth/src/utils/nonce.utils.ts)).
 
 ```typescript
 const generateSalt = (): Salt => crypto.getRandomValues(new Uint8Array(32));
@@ -129,9 +129,9 @@ const buildNonce = async ({ salt, caller }: { salt: Salt; caller: Ed25519KeyIden
 
 This matters because the satellite will later reconstruct the nonce from the same inputs and verify it matches, which is what prevents man-in-the-middle attacks.
 
-> Note that `caller` is our identity, our access key. I use the three interchangeably here.
+> Note that `caller` is our identity, our access key. I use the three terms interchangeably in this post.
 
-Once the JWT is obtained, it is sent to the satellite along with the salt, using the generated identity as the caller.
+Once the JWT is obtained, it is sent to the satellite along with the salt, using the generated identity as the caller ([source](https://github.com/junobuild/juno-js/blob/main/packages/auth/src/automation/_automation.ts)).
 
 ```typescript
 const result = await authenticateAutomationApi({
@@ -150,13 +150,13 @@ const result = await authenticateAutomationApi({
 
 If the satellite approves, the identity is returned as the ephemeral access key, serialized and passed back to the CLI as `JUNO_TOKEN`.
 
-Later on, a cleanup step, registered as a trap on exit of the entry script, takes care of removing the access key from the satellite once the workflow is done.
+Later on, a cleanup step, registered as a trap on exit of the entry script, takes care of removing the access key from the satellite once the workflow is done (regardless of whether it succeeded or failed).
 
 ---
 
 ## The Satellite
 
-On the Rust side, the entry point is `openid_prepare_automation`. It receives the JWT and the salt sent by the action, and kicks off the verification chain.
+On the Rust side, the entry point is `openid_prepare_automation` ([source](https://github.com/junobuild/juno/blob/main/src/libs/satellite/src/automation/prepare.rs)). It receives the JWT and the salt sent by the action, and kicks off the verification chain.
 
 ```rust
 pub async fn openid_prepare_automation(
@@ -179,9 +179,9 @@ pub async fn openid_prepare_automation(
 }
 ```
 
-The first thing `verify_openid_credentials_with_jwks_renewal` does is figure out who is calling. It decodes the JWT header without verifying the signature, just enough to read the issuer (`iss`) which identifies who generated the token ("is this GitHub? Google? Something else?") and matches it against the configured providers.
+The first thing `verify_openid_credentials_with_jwks_renewal` ([source](https://github.com/junobuild/juno/blob/main/src/libs/auth/src/openid/credentials/automation/verify.rs)) does is figure out who is calling. It decodes the JWT header without verifying the signature, just enough to read the issuer (`iss`) which identifies who generated the token ("is this GitHub? Google? Something else?") and matches it against the configured providers.
 
-This is safe because the signature verification happens right after — skipping it here is just a pragmatic shortcut to avoid fetching the wrong set of public keys.
+This is safe because the signature verification happens right after — skipping it here is just a pragmatic shortcut to avoid fetching the wrong set of public keys. ([source](https://github.com/junobuild/juno/blob/main/src/libs/auth/src/openid/jwt/provider.rs))
 
 ```rust
 pub fn unsafe_find_jwt_provider<'a, Provider, Config>(
@@ -209,7 +209,7 @@ where
 }
 ```
 
-Once the provider is identified, the public keys are retrieved. The satellite first checks its cache. If the keys are not there, or the specific `kid` (key ID) referenced in the JWT header is not found, it fetches fresh keys from Observatory (described in the next chapter), Juno's public infrastructure. There is also a rate limiting mechanism to avoid hammering the key endpoint if something goes wrong.
+Once the provider is identified, the public keys are retrieved. The satellite first checks its cache. If the keys are not there, or the specific `kid` (key ID) referenced in the JWT header is not found, it fetches fresh keys from Observatory (described in the next chapter), Juno's public infrastructure. There is also a rate limiting mechanism to avoid hammering the key endpoint if something goes wrong. ([source](https://github.com/junobuild/juno/blob/main/src/libs/auth/src/openid/jwkset/jwks.rs))
 
 ```rust
 pub async fn get_or_refresh_jwks(
@@ -242,7 +242,7 @@ pub async fn get_or_refresh_jwks(
 }
 ```
 
-With the public keys in hand, the actual JWT verification happens in `verify_openid_jwt`. This is where the signature is checked, the issuer validated, the nonce reconstructed and compared, and the timestamps asserted.
+With the public keys in hand, the actual JWT verification happens in `verify_openid_jwt` ([source](https://github.com/junobuild/juno/blob/main/src/libs/auth/src/openid/jwt/verify.rs)). This is where the signature is checked, the issuer validated, the nonce reconstructed and compared, and the timestamps asserted.
 
 A few things worth highlighting before diving into the code.
 
@@ -348,7 +348,7 @@ let assert_repository = |claims: &AutomationClaims| -> Result<(), JwtVerifyError
 
 If all verifications pass, the identity is saved as an allowed access key on the satellite, and the workflow can proceed.
 
-One last thing worth mentioning: JTI replay protection. The verification function intentionally does not handle replay attacks on its own — that responsibility is left to the consumer of the crate (here again, I love abstraction therefore I use multiple layers). In practice, the full authentication flow looks like this:
+In practice, the full authentication flow looks like this ([source](https://github.com/junobuild/juno/blob/main/src/libs/satellite/src/automation/authenticate.rs)):
 
 ```rust
 pub async fn openid_authenticate_automation(
@@ -381,7 +381,9 @@ pub async fn openid_authenticate_automation(
 }
 ```
 
-After a successful verification, `save_unique_token_jti` stores the JTI claim and rejects any future request using the same token. Then the workflow metadata is saved — this is what powers the deployment history displayed in the Juno console — and finally the identity is registered as a controller, the ephemeral access key that the CLI will use for the rest of the workflow.
+One last thing worth mentioning: JTI replay protection. The verification function intentionally does not handle replay attacks on its own — that responsibility is left to the consumer of the crate (here again, I love abstraction therefore I use multiple layers). That's why `save_unique_token_jti` records the JTI only if it hasn't been seen before, rejecting any future request using the same token.
+
+Then the workflow metadata is saved — this is what powers the deployment history displayed in the Juno console — and finally the identity is registered as a controller, the ephemeral access key that the CLI will use for the rest of the workflow.
 
 ---
 
@@ -391,7 +393,7 @@ The Observatory is Juno's public infrastructure. Among other things, it is respo
 
 The reason it exists as a separate piece of infrastructure is practical: OIDC public keys are the same for everyone. There is no point in having each satellite — and by extension each developer — independently fetch and pay for the same HTTP outcall. Having a single place fetch and cache the keys reduces redundant network traffic on the subnet and keeps costs down for everyone.
 
-The core of it is a recurring timer that fetches the JWKS from the provider's URL and stores it. If the fetch fails — which can happen during key rotation, when HTTPS outcall responses are not yet consistent across nodes — it retries with exponential backoff.
+The core of it is a recurring timer that fetches the JWKS from the provider's URL and stores it. If the fetch fails — which can happen during key rotation, when HTTPS outcall responses are not yet consistent across nodes — it retries with exponential backoff. ([source](https://github.com/junobuild/juno/blob/main/src/observatory/src/openid/certificate.rs))
 
 ```rust
 pub fn schedule_certificate_update(provider: OpenIdProvider, delay: Option<u64>) {
@@ -434,7 +436,7 @@ async fn fetch_and_save_certificate(provider: &OpenIdProvider) -> Result<(), Str
 }
 ```
 
-It fetches, parses the JWKS from JSON, and stores it. The URL comes from the provider implementation — each provider knows its own JWKS endpoint.
+It fetches, parses the JWKS from JSON, and stores it. The URL comes from the provider implementation — each provider knows its own JWKS endpoint. ([source](https://github.com/junobuild/juno/blob/main/src/libs/auth/src/openid/impls.rs))
 
 ```rust
 impl OpenIdProvider {
@@ -448,7 +450,7 @@ impl OpenIdProvider {
 }
 ```
 
-The HTTP outcall itself uses the Internet Computer's `http_request_outcall`, which allows programs to make outbound HTTPS requests. The `is_replicated` flag ensures the call goes through consensus — all nodes in the subnet must agree on the response before it is accepted.
+The HTTP outcall itself uses the Internet Computer's `http_request_outcall`, which allows programs to make outbound HTTPS requests. The `is_replicated` flag ensures the call goes through consensus — all nodes in the subnet must agree on the response before it is accepted. ([source](https://github.com/junobuild/juno/blob/main/src/observatory/src/openid/http/request.rs))
 
 ```rust
 fn get_request(provider: &OpenIdProvider) -> HttpRequestArgs {

@@ -16,8 +16,9 @@ To develop and run this website locally, proceed as following:
 ```
 git clone https://github.com/peterpeterparker/daviddalbusco.com
 cd daviddalbusco.com
-npm ci
-npm run dev
+pnpm i --frozen-lockfile
+pnpm assets
+pnpm dev
 ```
 
 ## License

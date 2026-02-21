@@ -1,3 +1,4 @@
+import { env } from '$env/dynamic/public';
 import { listSlugs } from '$lib/plugins/slug.plugin';
 import type { MarkdownData } from '$lib/types/markdown';
 import type { Slug } from '$lib/types/slug';
@@ -129,7 +130,11 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 
 	// @ts-expect-error We are fine without types.
 	const imageRule = () => (tokens, idx, options, _env) => {
-		const src = ' src="' + utils.escapeHtml(tokens[idx].src) + '"';
+		const url = utils
+			.escapeHtml(tokens[idx].src)
+			.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS);
+
+		const src = ' src="' + url + '"';
 		const title = tokens[idx].title
 			? ' title="' + utils.escapeHtml(utils.replaceEntities(tokens[idx].title)) + '"'
 			: '';

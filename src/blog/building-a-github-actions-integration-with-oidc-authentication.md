@@ -1,6 +1,6 @@
 ---
 path: "/blog/building-a-github-actions-integration-with-oidc-authentication"
-date: "2026-02-24"
+date: "2026-02-23"
 title: Building a GitHub Actions Integration with OIDC Authentication
 description: "How I replaced secrets with short-lived tokens for deploying with GitHub Actions."
 tags: "#github-actions #oidc #cicd #rust #javascript #deployment #authentication #security"

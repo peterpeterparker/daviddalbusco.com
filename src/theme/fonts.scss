@@ -46,9 +46,9 @@
 	line-height: 1.45;
 
 	@media screen and (max-width: 576px) {
-		--font-size-h1: 3.052rem;
-		--font-size-h2: 2.441rem;
-		--font-size-h3: 1.953rem;
+		--font-size-h1: 2.552rem;
+		--font-size-h2: 1.941rem;
+		--font-size-h3: 1.453rem;
 	}
 }
 
@@ -62,4 +62,8 @@ h6 {
 	letter-spacing: -0.2em;
 	--title-margin-left: -0.6rem;
 	margin: 0 0 0 var(--title-margin-left);
+
+	@media screen and (max-width: 576px) {
+		--title-margin-left: -0.2rem;
+	}
 }

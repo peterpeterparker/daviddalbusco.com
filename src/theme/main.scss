@@ -9,13 +9,17 @@ section {
 	border: 0.25rem solid black;
 
 	@media screen and (max-width: 576px) {
-		margin: 1.45em;
+		margin: 1em;
 	}
 }
 
 footer,
 section {
 	padding: 2.45rem 1.45rem;
+
+	@media screen and (max-width: 576px) {
+		padding: 2rem 1rem;
+	}
 }
 
 header,

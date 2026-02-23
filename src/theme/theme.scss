@@ -259,6 +259,10 @@ h1 {
 	font-size: var(--font-size-h1);
 	line-height: var(--line-height-h1);
 	font-weight: var(--font-weight-h1);
+
+	@media screen and (max-width: 576px) {
+		margin: 0 0 1rem var(--title-margin-left);
+	}
 }
 h2 {
 	padding: 0;
@@ -268,6 +272,10 @@ h2 {
 	font-size: var(--font-size-h2);
 	line-height: var(--line-height-h2);
 	font-weight: var(--font-weight-h2);
+
+	@media screen and (max-width: 576px) {
+		margin: 0 0 1rem var(--title-margin-left);
+	}
 }
 h3 {
 	padding: 0;
@@ -277,6 +285,10 @@ h3 {
 	font-size: var(--font-size-h3);
 	line-height: var(--line-height-h3);
 	font-weight: var(--font-weight-h3);
+
+	@media screen and (max-width: 576px) {
+		margin: 0 0 0 var(--title-margin-left);
+	}
 }
 hgroup {
 	padding: 0;

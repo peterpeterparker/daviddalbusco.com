@@ -13,7 +13,7 @@ image: "https://daviddalbusco.com/assets/images/anatoliy-shostak-MzEB7zNqXCo-uns
 
 ---
 
-I rarely take the time to step back after releasing a new feature on [Juno](https://juno.build/). I generally build, build, build, ship, and repeat — forgetting to breathe. On top of that, writing long blog posts often feels like a relative waste of time, as they rarely find their audience. Nonetheless, for once, I thought I'd take a moment to write about what I released recently: deploying frontends or publishing serverless functions from GitHub Actions using ephemeral access keys granted through an OpenID Connect flow.
+I rarely take the time to step back after releasing a new feature on [Juno](https://juno.build/). I generally build, build, build, ship, and repeat. On top of that, writing long blog posts often feels like a relative waste of time, as they rarely find their audience. Nonetheless, for once, I thought I'd take a moment to write about what I released recently: deploying frontends or publishing serverless functions from GitHub Actions using ephemeral access keys granted through an OpenID Connect flow.
 
 The following is a walkthrough of the solution. I'll go through the various steps required to implement such a workflow and highlight the pieces I feel are important.
 

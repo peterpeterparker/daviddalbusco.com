@@ -8,7 +8,8 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"sourceMap": true,
-		"strict": true
+		"strict": true,
+		"types": ["node", "bun"]
 	},
 	"files": ["juno.upload.assets.ts", "juno.config.ts"]
 }

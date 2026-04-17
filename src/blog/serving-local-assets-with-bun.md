@@ -13,7 +13,7 @@ image: "https://daviddalbusco.com/assets/images/logan-voss-1QlMVjKbJrY-unsplash.
 
 I don't always have to write about a super niche topic, I guess. So, I thought about sharing a small helper I've developed for this website.
 
-I'm hosting my website on Juno, the full-stack platform I developed to deploy and run apps in WASM containers with zero DevOps. I do so in a bit of an unconventional way because I like to have many different variants of what's possible with my tooling. This way it's not solely tested with a large automated test base but also IRL.
+I'm hosting it on [Juno](https://juno.build), the full-stack platform I developed to deploy and run apps in WASM containers with zero DevOps. I do so in a bit of an unconventional way because I like to have many different variants of what's possible with my tooling. This way it's not solely tested with a large automated test base but also IRL.
 
 For this particular use case, I deviated from the standard way of deploying by uploading its assets using `juno run`, a command that allows running arbitrary scripts in the context of the Juno CLI or GitHub Actions.
 
@@ -21,15 +21,17 @@ I do so because after crossposting my posts for a long time, I switched to havin
 
 That's possible and even easy to do because my container can serve web storage. I just had to write a [little script](https://github.com/peterpeterparker/daviddalbusco.com/blob/main/juno.upload.assets.ts).
 
-Everything worked fine, except locally I kept running into a chicken-and-egg issue when writing new articles: the new images I was using weren't available until I deployed them, but I couldn't deploy them until my post was wrapped up.
+Everything worked fine, except locally as I kept running into a chicken-and-egg issue when writing new articles: the new images I was using weren't available until I deployed them, but I couldn't deploy them until my post was wrapped up.
 
-Long story short, I needed to serve them locally. One option would have been `npx serve`, but I try to avoid anything Vercel. I could have searched for a handy npm package, but that's always one more dependency. I could have written a quick Node script (gosh, so many options nowadays 😄), but lately I've been having fun with Bun, which is already installed on my machine and provides a [high-performance server](https://bun.com/docs/runtime/http/server).
+Long story short, I needed to serve them locally.
+
+For that, one option would have been `npx serve`, but I try to avoid anything Vercel. I could have searched for a handy npm package, but that's always one more dependency. I could have written a quick Node script (gosh, so many options nowadays 😄), but lately I've been having fun with Bun, which is already installed on my machine and provides a [high-performance server](https://bun.com/docs/runtime/http/server). So I went with this last solution.
 
 ---
 
 ## Serve Assets with Bun
 
-So I went with this last solution and set up the following little script.
+Here's the little script I've set up:
 
 ```ts
 import { join } from "node:path";
@@ -70,4 +72,4 @@ David
 
 ---
 
-PS: for this to work locally, if someone is interested in implementing a similar setup, I actually also set a `PUBLIC_ASSETS` environment variable pointing to http://localhost:3000 and replace the image URLs in my markdown SSG generator accordingly.
+PS: for this to work locally, if someone is interested in implementing a similar setup, I actually also set a `PUBLIC_ASSETS` environment variable pointing to `http://localhost:3000` and replace the image URLs in my markdown SSG generator accordingly.

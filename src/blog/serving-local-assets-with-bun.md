@@ -13,7 +13,7 @@ image: "https://daviddalbusco.com/assets/images/logan-voss-1QlMVjKbJrY-unsplash.
 
 I don't always have to write about a super niche topic, I guess. So, I thought about sharing a small helper I've developed for this website.
 
-I'm hosting it on [Juno](https://juno.build), the full-stack platform I developed to deploy and run apps in WASM containers with zero DevOps. I do so in a bit of an unconventional way because I like to have many different variants of what's possible with my tooling. This way it's not solely tested with a large automated test base but also IRL.
+I'm hosting it on [Juno](https://juno.build), the full-stack platform I built to deploy and run apps in WASM containers with zero DevOps. I do so in a bit of an unconventional way because I like to have many different variants of what's possible with my tooling. This way it's not solely tested with a large automated test base but also IRL.
 
 For this particular use case, I deviated from the standard way of deploying by uploading its assets using `juno run`, a command that allows running arbitrary scripts in the context of the Juno CLI or GitHub Actions.
 

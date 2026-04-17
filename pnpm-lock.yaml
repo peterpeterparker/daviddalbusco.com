@@ -4,6 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  brace-expansion@>=4.0.0 <5.0.5: '>=5.0.5'
+  cookie@<0.7.0: '>=0.7.0'
+  flatted@<3.4.0: '>=3.4.0'
+  flatted@<=3.4.1: '>=3.4.2'
+  minimatch@>=10.0.0 <10.2.3: '>=10.2.3'
+  picomatch@<2.3.2: '>=2.3.2'
+  yaml@>=1.0.0 <1.10.3: '>=1.10.3'
+
 importers:
 
   .:
@@ -17,13 +26,13 @@ importers:
         version: 10.0.1(eslint@10.2.0)
       '@junobuild/config':
         specifier: ^3.0.1
-        version: 3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)
+        version: 3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)
       '@junobuild/core':
         specifier: ^5.4.0
-        version: 5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.3.0))(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
+        version: 5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.0.0))(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)
       '@junobuild/vite-plugin':
         specifier: ^4.7.1
-        version: 4.7.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0))(zod@4.3.6)
+        version: 4.7.1(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(zod@4.3.5)
       '@shikijs/langs':
         specifier: ^4.0.2
         version: 4.0.2
@@ -32,13 +41,13 @@ importers:
         version: 4.0.2
       '@sveltejs/adapter-static':
         specifier: ^3.0.10
-        version: 3.0.10(@sveltejs/kit@2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)))
+        version: 3.0.10(@sveltejs/kit@2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)))
       '@sveltejs/kit':
         specifier: ^2.57.1
-        version: 2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0))
+        version: 2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^7.0.0
-        version: 7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0))
+        version: 7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))
       '@types/bun':
         specifier: ^1.3.12
         version: 1.3.12
@@ -98,12 +107,17 @@ importers:
         version: 8.58.2(eslint@10.2.0)(typescript@6.0.3)
       vite:
         specifier: ^8.0.8
-        version: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)
+        version: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
 
 packages:
 
   '@dfinity/cbor@0.2.2':
     resolution: {integrity: sha512-GPJpH73kDEKbUBdUjY80lz7cq9l0vm1h/7ppejPV6O0ZTqCLrYspssYvqjRmK4aNnJ/SKXsP0rg9LYX7zpegaA==}
+
+  '@dfinity/utils@4.1.0':
+    resolution: {integrity: sha512-dCtBW9lCW6TtgOoHig2/r7SqHL4KHsuiy+cOPcxPKnA+iyBASGZgRSA2/v4zZB9umfvLI0x5gbBW/va/7EwKDg==}
+    peerDependencies:
+      '@icp-sdk/core': ^5
 
   '@dfinity/zod-schemas@3.2.0':
     resolution: {integrity: sha512-xEmsHFETM3XFZj2QUVxzAYcwMn7uCX1VoAKqNygN8EZj4RdoWkdPdQjwTo5DACvmVRW+r+MlhfODsZWbBqqOGg==}
@@ -340,8 +354,8 @@ packages:
     peerDependencies:
       '@icp-sdk/core': ^5
 
-  '@icp-sdk/core@5.3.0':
-    resolution: {integrity: sha512-wOGPY7shB2cCuC+yXrpVd36xD5/tWZCOI9Cthe8a4SY34evoAHNmxaUN5VP28AdxVv6AVH7cfgasx4hbgk8vkg==}
+  '@icp-sdk/core@5.0.0':
+    resolution: {integrity: sha512-t6iRbdylHG57MicWRpR1uMTFXRW7GCzec6KAg55CBwDHbHLQDKikQ252lmlcEa80DrKa3LPvMKYZEUYjEq5XUQ==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -369,11 +383,11 @@ packages:
       '@junobuild/ic-client': ^8.1
       '@junobuild/utils': ^1
 
-  '@junobuild/config@2.15.1':
-    resolution: {integrity: sha512-UVVZQNe8pOjE6Vwo7YxN1E+iZ8aBwnEs9/E7DurW2yqs9aNH0V72ziNUi5/urEq/GE8zY8M9u2MF0uUKQyJcrA==}
+  '@junobuild/config@2.11.0':
+    resolution: {integrity: sha512-APzzQ8a8N52ZRGFD3VPIzhC/Ud7CvuYPFJX2ZR2ypaxPjhS2Jriz5aWRvQOE9RrEryHQXk2CQwzHNmzH4jcbkQ==}
     peerDependencies:
-      '@junobuild/schema': ^1.2
-      zod: ^4.3
+      '@dfinity/zod-schemas': ^3
+      zod: ^4
 
   '@junobuild/config@3.0.1':
     resolution: {integrity: sha512-ZJw78ITJlFat5x31aoBlT9Ug+MOBhNGQU4d6IH7gkPSTa2vVrCzrhY5HhFWq+2d7Ei7dcbCZTjz061GYFATtjQ==}
@@ -388,8 +402,8 @@ packages:
       '@icp-sdk/core': ^5
       '@junobuild/utils': ^1
 
-  '@junobuild/errors@0.2.8':
-    resolution: {integrity: sha512-n2rXof9nIqGDCARHZETXcicG3JH6+1JGB9iTuFzkziPZm7q/G1KSzh8gRJYzrFC3XrSGPRWvhX4hKEnoxAbisQ==}
+  '@junobuild/errors@0.2.0':
+    resolution: {integrity: sha512-DPNAPvKbeAJztJ3KrO1D1+Y817/K0aNZtHA39trFJjIWD1X2dcpKzAPJq30KwSeKCqSTejeGZ8LVBV72l9cibQ==}
 
   '@junobuild/ic-client@8.1.3':
     resolution: {integrity: sha512-vRgPiOaoezxn8KXz4FAn0hoyssP2yETIarIREMT+Dj8rA8ibuDZ1msEJAvufI085NLF+CAdyHVwIPJuAD39aOg==}
@@ -398,8 +412,8 @@ packages:
       '@junobuild/utils': ^1.0.2
       idb-keyval: ^6.2.2
 
-  '@junobuild/plugin-tools@4.6.1':
-    resolution: {integrity: sha512-t70XCqFyxn7l+oYx56v2UNXn4foyHohgIc8rAhI0YVDYz6uhNX7I+Xzd4YzBZmyClnDF1YgTtxZj/+4PH1+OKw==}
+  '@junobuild/plugin-tools@4.5.1':
+    resolution: {integrity: sha512-6m6e0AWfWlIeje0W9PyFdFwxBXUWXho7XPU2c1cxK4wHcmXccf4lFQvU93eM+KE2yvSRccutgTZal0HBf8bIvA==}
 
   '@junobuild/schema@1.2.4':
     resolution: {integrity: sha512-gMNYDIkLtXdkN8ahw5RXPIJT9IVkNrsoCkxwYyMq9/1rfl3p6IAjr5ywzf+tlR/lA6m35tiXyc5Nv630kSHngw==}
@@ -413,10 +427,10 @@ packages:
       '@junobuild/ic-client': ^8.1
       '@junobuild/utils': ^1
 
-  '@junobuild/utils@1.0.3':
-    resolution: {integrity: sha512-jeO1VthkesaT940cG7+Qjm13ndSynkQulx1JGxtXKKhR79ummxaWLAvFJqMPRQl/KsPT8LcPoJQximUuv84CZg==}
+  '@junobuild/utils@0.2.6':
+    resolution: {integrity: sha512-Xt9AtEvyU3UFVF3v9mQ64GE77zDhSxRzNsFWawoskGBUMWIOud8C7cyjJlv0A6A+qtNVN1vxE7t50/csG/UDXA==}
     peerDependencies:
-      '@icp-sdk/core': ^5
+      '@dfinity/utils': ^4.1
 
   '@junobuild/vite-plugin@4.7.1':
     resolution: {integrity: sha512-UwB4eCpP24SRxwGhlVv/I5SX7ggSbL1kOapNs9eq6kczQxUN4ZzAuhoOEmMd023Im18HK7SgBP759jQ/gqDWtg==}
@@ -834,10 +848,6 @@ packages:
     resolution: {integrity: sha512-1pHv8LX9CpKut1Zp4EXey7Z8OfH11ONNH6Dhi2WDUt31VVZFXZzKwXcysBgqSumFCmR+0dqjMK5v5JiFHzi0+g==}
     engines: {node: 20 || >=22}
 
-  brace-expansion@5.0.2:
-    resolution: {integrity: sha512-Pdk8c9poy+YhOgVWw1JNN22/HcivgKWwpxKq04M/jTmHyCZn12WPJebZxdjSa5TmBqISrUSgNYU3eRORljfCCw==}
-    engines: {node: 20 || >=22}
-
   brace-expansion@5.0.5:
     resolution: {integrity: sha512-VZznLgtwhn+Mact9tfiwx64fA9erHH/MCXEUfB/0bX/6Fz6ny5EGTXYltMocqg4xFAQZtnO3DHWWXi8RiuN7cQ==}
     engines: {node: 18 || 20 || >=22}
@@ -869,9 +879,9 @@ packages:
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
 
-  cookie@0.6.0:
-    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
-    engines: {node: '>= 0.6'}
+  cookie@1.1.1:
+    resolution: {integrity: sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==}
+    engines: {node: '>=18'}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -1041,8 +1051,8 @@ packages:
     resolution: {integrity: sha512-f7ccFPK3SXFHpx15UIGyRJ/FJQctuKZ0zVuN3frBo4HnK3cay9VEW0R6yPYFHC0AgqhukPzKjq22t5DmAyqGyw==}
     engines: {node: '>=16'}
 
-  flatted@3.3.1:
-    resolution: {integrity: sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw==}
+  flatted@3.4.2:
+    resolution: {integrity: sha512-PjDse7RzhcPkIJwy5t7KPWQSZ9cAbzQXcafsetQoD7sOJRQlGikNbx7yZp2OotDnJyrDcbyRq3Ttb18iYOqkxA==}
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
@@ -1246,10 +1256,6 @@ packages:
     resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
 
-  minimatch@10.2.2:
-    resolution: {integrity: sha512-+G4CpNBxa5MprY+04MbgOw1v7So6n5JY166pFi9KfYwT78fxScCeSNQSNzp6dpPSW2rONOps6Ocam1wFhCgoVw==}
-    engines: {node: 18 || 20 || >=22}
-
   minimatch@10.2.5:
     resolution: {integrity: sha512-MULkVLfKGYDFYejP07QOurDLLQpcjk7Fw+7jXS2R2czRQzR56yHRveU5NDJEOviH+hETZKSkIk5c+T23GjFUMg==}
     engines: {node: 18 || 20 || >=22}
@@ -1312,10 +1318,6 @@ packages:
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
-
-  picomatch@2.3.1:
-    resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
-    engines: {node: '>=8.6'}
 
   picomatch@4.0.4:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
@@ -1623,9 +1625,10 @@ packages:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
 
-  yaml@1.10.2:
-    resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}
-    engines: {node: '>= 6'}
+  yaml@2.8.3:
+    resolution: {integrity: sha512-AvbaCLOO2Otw/lW5bmh9d/WEdcDFdQp2Z2ZUH3pX9U2ihyUY0nvLv7J6TrWowklRGPYbB/IuIMfYgxaCPg5Bpg==}
+    engines: {node: '>= 14.6'}
+    hasBin: true
 
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
@@ -1634,8 +1637,8 @@ packages:
   zimmerframe@1.1.2:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
 
-  zod@4.3.6:
-    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+  zod@4.3.5:
+    resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -1644,10 +1647,14 @@ snapshots:
 
   '@dfinity/cbor@0.2.2': {}
 
-  '@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.3.0)(zod@4.3.6)':
+  '@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)':
     dependencies:
-      '@icp-sdk/core': 5.3.0
-      zod: 4.3.6
+      '@icp-sdk/core': 5.0.0
+
+  '@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5)':
+    dependencies:
+      '@icp-sdk/core': 5.0.0
+      zod: 4.3.5
 
   '@emnapi/core@1.9.2':
     dependencies:
@@ -1790,12 +1797,12 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@icp-sdk/auth@5.0.0(@icp-sdk/core@5.3.0)':
+  '@icp-sdk/auth@5.0.0(@icp-sdk/core@5.0.0)':
     dependencies:
-      '@icp-sdk/core': 5.3.0
+      '@icp-sdk/core': 5.0.0
       idb: 7.1.1
 
-  '@icp-sdk/core@5.3.0':
+  '@icp-sdk/core@5.0.0':
     dependencies:
       '@dfinity/cbor': 0.2.2
       '@noble/curves': 1.9.7
@@ -1830,72 +1837,72 @@ snapshots:
       ua-parser-js: 1.0.41
       web-vitals: 5.2.0
 
-  '@junobuild/auth@4.1.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))':
+  '@junobuild/auth@4.1.2(@icp-sdk/core@5.0.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2))(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))':
     dependencies:
-      '@icp-sdk/core': 5.3.0
-      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
-      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
+      '@icp-sdk/core': 5.0.0
+      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)
+      '@junobuild/utils': 0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))
 
-  '@junobuild/config@2.15.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)':
+  '@junobuild/config@2.11.0(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)':
     dependencies:
-      '@junobuild/schema': 1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6)
-      zod: 4.3.6
+      '@dfinity/zod-schemas': 3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5)
+      zod: 4.3.5
 
-  '@junobuild/config@3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)':
+  '@junobuild/config@3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)':
     dependencies:
-      '@junobuild/schema': 1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6)
-      zod: 4.3.6
+      '@junobuild/schema': 1.2.4(@icp-sdk/core@5.0.0)(zod@4.3.5)
+      zod: 4.3.5
 
-  '@junobuild/core@5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.3.0))(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)':
+  '@junobuild/core@5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.0.0))(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)':
     dependencies:
-      '@icp-sdk/auth': 5.0.0(@icp-sdk/core@5.3.0)
-      '@icp-sdk/core': 5.3.0
-      '@junobuild/auth': 4.1.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))
-      '@junobuild/errors': 0.2.8
-      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
-      '@junobuild/storage': 2.4.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))
-      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
+      '@icp-sdk/auth': 5.0.0(@icp-sdk/core@5.0.0)
+      '@icp-sdk/core': 5.0.0
+      '@junobuild/auth': 4.1.2(@icp-sdk/core@5.0.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2))(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))
+      '@junobuild/errors': 0.2.0
+      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)
+      '@junobuild/storage': 2.4.2(@icp-sdk/core@5.0.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2))(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))
+      '@junobuild/utils': 0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))
     transitivePeerDependencies:
       - idb-keyval
 
-  '@junobuild/errors@0.2.8': {}
+  '@junobuild/errors@0.2.0': {}
 
-  '@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)':
+  '@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)':
     dependencies:
-      '@icp-sdk/core': 5.3.0
-      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
+      '@icp-sdk/core': 5.0.0
+      '@junobuild/utils': 0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))
       idb-keyval: 6.2.2
 
-  '@junobuild/plugin-tools@4.6.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)':
+  '@junobuild/plugin-tools@4.5.1(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)':
     dependencies:
-      '@junobuild/config': 2.15.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)
+      '@junobuild/config': 2.11.0(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)
     transitivePeerDependencies:
-      - '@junobuild/schema'
+      - '@dfinity/zod-schemas'
       - zod
 
-  '@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6)':
+  '@junobuild/schema@1.2.4(@icp-sdk/core@5.0.0)(zod@4.3.5)':
     dependencies:
-      '@dfinity/zod-schemas': 3.2.0(@icp-sdk/core@5.3.0)(zod@4.3.6)
-      zod: 4.3.6
+      '@dfinity/zod-schemas': 3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5)
+      zod: 4.3.5
     transitivePeerDependencies:
       - '@icp-sdk/core'
 
-  '@junobuild/storage@2.4.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))':
+  '@junobuild/storage@2.4.2(@icp-sdk/core@5.0.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2))(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))':
     dependencies:
-      '@icp-sdk/core': 5.3.0
-      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
-      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
+      '@icp-sdk/core': 5.0.0
+      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)
+      '@junobuild/utils': 0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))
 
-  '@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0)':
+  '@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))':
     dependencies:
-      '@icp-sdk/core': 5.3.0
+      '@dfinity/utils': 4.1.0(@icp-sdk/core@5.0.0)
 
-  '@junobuild/vite-plugin@4.7.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0))(zod@4.3.6)':
+  '@junobuild/vite-plugin@4.7.1(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(zod@4.3.5)':
     dependencies:
-      '@junobuild/plugin-tools': 4.6.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)
-      vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)
+      '@junobuild/plugin-tools': 4.5.1(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)
+      vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
     transitivePeerDependencies:
-      - '@junobuild/schema'
+      - '@dfinity/zod-schemas'
       - zod
 
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)':
@@ -2082,18 +2089,18 @@ snapshots:
     dependencies:
       acorn: 8.16.0
 
-  '@sveltejs/adapter-static@3.0.10(@sveltejs/kit@2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)))':
+  '@sveltejs/adapter-static@3.0.10(@sveltejs/kit@2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)))':
     dependencies:
-      '@sveltejs/kit': 2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0))
+      '@sveltejs/kit': 2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))
 
-  '@sveltejs/kit@2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0))':
+  '@sveltejs/kit@2.57.1(@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)))(svelte@5.55.4(@typescript-eslint/types@8.58.2))(typescript@6.0.3)(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))':
     dependencies:
       '@standard-schema/spec': 1.0.0
       '@sveltejs/acorn-typescript': 1.0.5(acorn@8.16.0)
-      '@sveltejs/vite-plugin-svelte': 7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0))
+      '@sveltejs/vite-plugin-svelte': 7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))
       '@types/cookie': 0.6.0
       acorn: 8.16.0
-      cookie: 0.6.0
+      cookie: 1.1.1
       devalue: 5.7.1
       esm-env: 1.2.2
       kleur: 4.1.5
@@ -2102,18 +2109,18 @@ snapshots:
       set-cookie-parser: 3.0.1
       sirv: 3.0.0
       svelte: 5.55.4(@typescript-eslint/types@8.58.2)
-      vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)
+      vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
     optionalDependencies:
       typescript: 6.0.3
 
-  '@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0))':
+  '@sveltejs/vite-plugin-svelte@7.0.0(svelte@5.55.4(@typescript-eslint/types@8.58.2))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.1
       svelte: 5.55.4(@typescript-eslint/types@8.58.2)
-      vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)
-      vitefu: 1.1.3(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0))
+      vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
+      vitefu: 1.1.3(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
@@ -2222,7 +2229,7 @@ snapshots:
       '@typescript-eslint/types': 8.58.2
       '@typescript-eslint/visitor-keys': 8.58.2
       debug: 4.4.3
-      minimatch: 10.2.2
+      minimatch: 10.2.5
       semver: 7.7.3
       tinyglobby: 0.2.15
       ts-api-utils: 2.5.0(typescript@6.0.3)
@@ -2281,10 +2288,6 @@ snapshots:
 
   balanced-match@4.0.3: {}
 
-  brace-expansion@5.0.2:
-    dependencies:
-      balanced-match: 4.0.3
-
   brace-expansion@5.0.5:
     dependencies:
       balanced-match: 4.0.3
@@ -2312,7 +2315,7 @@ snapshots:
 
   comma-separated-tokens@2.0.3: {}
 
-  cookie@0.6.0: {}
+  cookie@1.1.1: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -2508,10 +2511,10 @@ snapshots:
 
   flat-cache@4.0.1:
     dependencies:
-      flatted: 3.3.1
+      flatted: 3.4.2
       keyv: 4.5.4
 
-  flatted@3.3.1: {}
+  flatted@3.4.2: {}
 
   fsevents@2.3.3:
     optional: true
@@ -2685,12 +2688,8 @@ snapshots:
   micromatch@4.0.8:
     dependencies:
       braces: 3.0.3
-      picomatch: 2.3.1
+      picomatch: 4.0.4
     optional: true
-
-  minimatch@10.2.2:
-    dependencies:
-      brace-expansion: 5.0.2
 
   minimatch@10.2.5:
     dependencies:
@@ -2744,15 +2743,12 @@ snapshots:
 
   picocolors@1.1.1: {}
 
-  picomatch@2.3.1:
-    optional: true
-
   picomatch@4.0.4: {}
 
   postcss-load-config@3.1.4(postcss@8.5.6):
     dependencies:
       lilconfig: 2.1.0
-      yaml: 1.10.2
+      yaml: 2.8.3
     optionalDependencies:
       postcss: 8.5.6
 
@@ -3017,7 +3013,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0):
+  vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3):
     dependencies:
       lightningcss: 1.32.0
       picomatch: 4.0.4
@@ -3029,10 +3025,11 @@ snapshots:
       esbuild: 0.27.2
       fsevents: 2.3.3
       sass: 1.99.0
+      yaml: 2.8.3
 
-  vitefu@1.1.3(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)):
+  vitefu@1.1.3(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)):
     optionalDependencies:
-      vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)
+      vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
 
   web-vitals@5.2.0: {}
 
@@ -3042,12 +3039,12 @@ snapshots:
 
   word-wrap@1.2.5: {}
 
-  yaml@1.10.2: {}
+  yaml@2.8.3: {}
 
   yocto-queue@0.1.0: {}
 
   zimmerframe@1.1.2: {}
 
-  zod@4.3.6: {}
+  zod@4.3.5: {}
 
   zwitch@2.0.4: {}

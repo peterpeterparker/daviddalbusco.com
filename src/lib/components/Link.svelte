@@ -42,6 +42,8 @@
 		&:hover {
 			background: var(--color-highlight);
 			color: var(--color-highlight-contrast);
+
+			text-decoration: none;
 		}
 
 		&:active {

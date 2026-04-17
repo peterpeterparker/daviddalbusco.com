@@ -26,13 +26,13 @@ importers:
         version: 10.0.1(eslint@10.2.0)
       '@junobuild/config':
         specifier: ^3.0.1
-        version: 3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)
+        version: 3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)
       '@junobuild/core':
         specifier: ^5.4.0
-        version: 5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.0.0))(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)
+        version: 5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.3.0))(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
       '@junobuild/vite-plugin':
         specifier: ^4.7.1
-        version: 4.7.1(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(zod@4.3.5)
+        version: 4.7.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(zod@4.3.6)
       '@shikijs/langs':
         specifier: ^4.0.2
         version: 4.0.2
@@ -113,11 +113,6 @@ packages:
 
   '@dfinity/cbor@0.2.2':
     resolution: {integrity: sha512-GPJpH73kDEKbUBdUjY80lz7cq9l0vm1h/7ppejPV6O0ZTqCLrYspssYvqjRmK4aNnJ/SKXsP0rg9LYX7zpegaA==}
-
-  '@dfinity/utils@4.1.0':
-    resolution: {integrity: sha512-dCtBW9lCW6TtgOoHig2/r7SqHL4KHsuiy+cOPcxPKnA+iyBASGZgRSA2/v4zZB9umfvLI0x5gbBW/va/7EwKDg==}
-    peerDependencies:
-      '@icp-sdk/core': ^5
 
   '@dfinity/zod-schemas@3.2.0':
     resolution: {integrity: sha512-xEmsHFETM3XFZj2QUVxzAYcwMn7uCX1VoAKqNygN8EZj4RdoWkdPdQjwTo5DACvmVRW+r+MlhfODsZWbBqqOGg==}
@@ -354,8 +349,8 @@ packages:
     peerDependencies:
       '@icp-sdk/core': ^5
 
-  '@icp-sdk/core@5.0.0':
-    resolution: {integrity: sha512-t6iRbdylHG57MicWRpR1uMTFXRW7GCzec6KAg55CBwDHbHLQDKikQ252lmlcEa80DrKa3LPvMKYZEUYjEq5XUQ==}
+  '@icp-sdk/core@5.3.0':
+    resolution: {integrity: sha512-wOGPY7shB2cCuC+yXrpVd36xD5/tWZCOI9Cthe8a4SY34evoAHNmxaUN5VP28AdxVv6AVH7cfgasx4hbgk8vkg==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -383,11 +378,11 @@ packages:
       '@junobuild/ic-client': ^8.1
       '@junobuild/utils': ^1
 
-  '@junobuild/config@2.11.0':
-    resolution: {integrity: sha512-APzzQ8a8N52ZRGFD3VPIzhC/Ud7CvuYPFJX2ZR2ypaxPjhS2Jriz5aWRvQOE9RrEryHQXk2CQwzHNmzH4jcbkQ==}
+  '@junobuild/config@2.15.1':
+    resolution: {integrity: sha512-UVVZQNe8pOjE6Vwo7YxN1E+iZ8aBwnEs9/E7DurW2yqs9aNH0V72ziNUi5/urEq/GE8zY8M9u2MF0uUKQyJcrA==}
     peerDependencies:
-      '@dfinity/zod-schemas': ^3
-      zod: ^4
+      '@junobuild/schema': ^1.2
+      zod: ^4.3
 
   '@junobuild/config@3.0.1':
     resolution: {integrity: sha512-ZJw78ITJlFat5x31aoBlT9Ug+MOBhNGQU4d6IH7gkPSTa2vVrCzrhY5HhFWq+2d7Ei7dcbCZTjz061GYFATtjQ==}
@@ -402,8 +397,8 @@ packages:
       '@icp-sdk/core': ^5
       '@junobuild/utils': ^1
 
-  '@junobuild/errors@0.2.0':
-    resolution: {integrity: sha512-DPNAPvKbeAJztJ3KrO1D1+Y817/K0aNZtHA39trFJjIWD1X2dcpKzAPJq30KwSeKCqSTejeGZ8LVBV72l9cibQ==}
+  '@junobuild/errors@0.2.8':
+    resolution: {integrity: sha512-n2rXof9nIqGDCARHZETXcicG3JH6+1JGB9iTuFzkziPZm7q/G1KSzh8gRJYzrFC3XrSGPRWvhX4hKEnoxAbisQ==}
 
   '@junobuild/ic-client@8.1.3':
     resolution: {integrity: sha512-vRgPiOaoezxn8KXz4FAn0hoyssP2yETIarIREMT+Dj8rA8ibuDZ1msEJAvufI085NLF+CAdyHVwIPJuAD39aOg==}
@@ -412,8 +407,8 @@ packages:
       '@junobuild/utils': ^1.0.2
       idb-keyval: ^6.2.2
 
-  '@junobuild/plugin-tools@4.5.1':
-    resolution: {integrity: sha512-6m6e0AWfWlIeje0W9PyFdFwxBXUWXho7XPU2c1cxK4wHcmXccf4lFQvU93eM+KE2yvSRccutgTZal0HBf8bIvA==}
+  '@junobuild/plugin-tools@4.6.1':
+    resolution: {integrity: sha512-t70XCqFyxn7l+oYx56v2UNXn4foyHohgIc8rAhI0YVDYz6uhNX7I+Xzd4YzBZmyClnDF1YgTtxZj/+4PH1+OKw==}
 
   '@junobuild/schema@1.2.4':
     resolution: {integrity: sha512-gMNYDIkLtXdkN8ahw5RXPIJT9IVkNrsoCkxwYyMq9/1rfl3p6IAjr5ywzf+tlR/lA6m35tiXyc5Nv630kSHngw==}
@@ -427,10 +422,10 @@ packages:
       '@junobuild/ic-client': ^8.1
       '@junobuild/utils': ^1
 
-  '@junobuild/utils@0.2.6':
-    resolution: {integrity: sha512-Xt9AtEvyU3UFVF3v9mQ64GE77zDhSxRzNsFWawoskGBUMWIOud8C7cyjJlv0A6A+qtNVN1vxE7t50/csG/UDXA==}
+  '@junobuild/utils@1.0.3':
+    resolution: {integrity: sha512-jeO1VthkesaT940cG7+Qjm13ndSynkQulx1JGxtXKKhR79ummxaWLAvFJqMPRQl/KsPT8LcPoJQximUuv84CZg==}
     peerDependencies:
-      '@dfinity/utils': ^4.1
+      '@icp-sdk/core': ^5
 
   '@junobuild/vite-plugin@4.7.1':
     resolution: {integrity: sha512-UwB4eCpP24SRxwGhlVv/I5SX7ggSbL1kOapNs9eq6kczQxUN4ZzAuhoOEmMd023Im18HK7SgBP759jQ/gqDWtg==}
@@ -1637,8 +1632,8 @@ packages:
   zimmerframe@1.1.2:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
 
-  zod@4.3.5:
-    resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
+  zod@4.3.6:
+    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -1647,14 +1642,10 @@ snapshots:
 
   '@dfinity/cbor@0.2.2': {}
 
-  '@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)':
+  '@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.3.0)(zod@4.3.6)':
     dependencies:
-      '@icp-sdk/core': 5.0.0
-
-  '@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5)':
-    dependencies:
-      '@icp-sdk/core': 5.0.0
-      zod: 4.3.5
+      '@icp-sdk/core': 5.3.0
+      zod: 4.3.6
 
   '@emnapi/core@1.9.2':
     dependencies:
@@ -1797,12 +1788,12 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@icp-sdk/auth@5.0.0(@icp-sdk/core@5.0.0)':
+  '@icp-sdk/auth@5.0.0(@icp-sdk/core@5.3.0)':
     dependencies:
-      '@icp-sdk/core': 5.0.0
+      '@icp-sdk/core': 5.3.0
       idb: 7.1.1
 
-  '@icp-sdk/core@5.0.0':
+  '@icp-sdk/core@5.3.0':
     dependencies:
       '@dfinity/cbor': 0.2.2
       '@noble/curves': 1.9.7
@@ -1837,72 +1828,72 @@ snapshots:
       ua-parser-js: 1.0.41
       web-vitals: 5.2.0
 
-  '@junobuild/auth@4.1.2(@icp-sdk/core@5.0.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2))(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))':
+  '@junobuild/auth@4.1.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))':
     dependencies:
-      '@icp-sdk/core': 5.0.0
-      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)
-      '@junobuild/utils': 0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))
+      '@icp-sdk/core': 5.3.0
+      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
+      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
 
-  '@junobuild/config@2.11.0(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)':
+  '@junobuild/config@2.15.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)':
     dependencies:
-      '@dfinity/zod-schemas': 3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5)
-      zod: 4.3.5
+      '@junobuild/schema': 1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6)
+      zod: 4.3.6
 
-  '@junobuild/config@3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)':
+  '@junobuild/config@3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)':
     dependencies:
-      '@junobuild/schema': 1.2.4(@icp-sdk/core@5.0.0)(zod@4.3.5)
-      zod: 4.3.5
+      '@junobuild/schema': 1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6)
+      zod: 4.3.6
 
-  '@junobuild/core@5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.0.0))(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)':
+  '@junobuild/core@5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.3.0))(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)':
     dependencies:
-      '@icp-sdk/auth': 5.0.0(@icp-sdk/core@5.0.0)
-      '@icp-sdk/core': 5.0.0
-      '@junobuild/auth': 4.1.2(@icp-sdk/core@5.0.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2))(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))
-      '@junobuild/errors': 0.2.0
-      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)
-      '@junobuild/storage': 2.4.2(@icp-sdk/core@5.0.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2))(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))
-      '@junobuild/utils': 0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))
+      '@icp-sdk/auth': 5.0.0(@icp-sdk/core@5.3.0)
+      '@icp-sdk/core': 5.3.0
+      '@junobuild/auth': 4.1.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))
+      '@junobuild/errors': 0.2.8
+      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
+      '@junobuild/storage': 2.4.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))
+      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
     transitivePeerDependencies:
       - idb-keyval
 
-  '@junobuild/errors@0.2.0': {}
+  '@junobuild/errors@0.2.8': {}
 
-  '@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)':
+  '@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)':
     dependencies:
-      '@icp-sdk/core': 5.0.0
-      '@junobuild/utils': 0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))
+      '@icp-sdk/core': 5.3.0
+      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
       idb-keyval: 6.2.2
 
-  '@junobuild/plugin-tools@4.5.1(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)':
+  '@junobuild/plugin-tools@4.6.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)':
     dependencies:
-      '@junobuild/config': 2.11.0(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)
+      '@junobuild/config': 2.15.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)
     transitivePeerDependencies:
-      - '@dfinity/zod-schemas'
+      - '@junobuild/schema'
       - zod
 
-  '@junobuild/schema@1.2.4(@icp-sdk/core@5.0.0)(zod@4.3.5)':
+  '@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6)':
     dependencies:
-      '@dfinity/zod-schemas': 3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5)
-      zod: 4.3.5
+      '@dfinity/zod-schemas': 3.2.0(@icp-sdk/core@5.3.0)(zod@4.3.6)
+      zod: 4.3.6
     transitivePeerDependencies:
       - '@icp-sdk/core'
 
-  '@junobuild/storage@2.4.2(@icp-sdk/core@5.0.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2))(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))':
+  '@junobuild/storage@2.4.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))':
     dependencies:
-      '@icp-sdk/core': 5.0.0
-      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.0.0)(@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0)))(idb-keyval@6.2.2)
-      '@junobuild/utils': 0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))
+      '@icp-sdk/core': 5.3.0
+      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
+      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
 
-  '@junobuild/utils@0.2.6(@dfinity/utils@4.1.0(@icp-sdk/core@5.0.0))':
+  '@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0)':
     dependencies:
-      '@dfinity/utils': 4.1.0(@icp-sdk/core@5.0.0)
+      '@icp-sdk/core': 5.3.0
 
-  '@junobuild/vite-plugin@4.7.1(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(zod@4.3.5)':
+  '@junobuild/vite-plugin@4.7.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(vite@8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3))(zod@4.3.6)':
     dependencies:
-      '@junobuild/plugin-tools': 4.5.1(@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.0.0)(zod@4.3.5))(zod@4.3.5)
+      '@junobuild/plugin-tools': 4.6.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)
       vite: 8.0.8(@types/node@25.6.0)(esbuild@0.27.2)(sass@1.99.0)(yaml@2.8.3)
     transitivePeerDependencies:
-      - '@dfinity/zod-schemas'
+      - '@junobuild/schema'
       - zod
 
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)':
@@ -3045,6 +3036,6 @@ snapshots:
 
   zimmerframe@1.1.2: {}
 
-  zod@4.3.5: {}
+  zod@4.3.6: {}
 
   zwitch@2.0.4: {}

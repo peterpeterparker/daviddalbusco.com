@@ -96,7 +96,7 @@
 	}
 
 	.container {
-		max-width: 1240px;
+		max-width: 1078px;
 		margin: 0 auto;
 	}
 </style>

@@ -15,7 +15,9 @@ In parallel, I helped build various prototypes, such as the [Voluntary Recycling
 
 Later, I worked extensively on [OISY Wallet](https://oisy.com/), a browser-based multi-chain wallet that supports ICP, Bitcoin, Ethereum, twin tokens on the IC, and more. I also created its signer library to enable secure communication between relying parties and wallets.
 
-Ultimately, in 2025, I continued supporting both the NNS dapp, OISY, and the broader ecosystem, but I was also sponsored to dedicate time to my own project [Juno](/portfolio/juno), an open source serverless platform which was beneficial to the Internet Computer.
+In 2025, I continued supporting both the NNS dapp, OISY, and the broader ecosystem, but I was also sponsored to dedicate time to my own project [Juno](/portfolio/juno), an open source serverless platform and developer tooling suite which was beneficial to the Internet Computer.
+
+We continued our collaboration for a few months in early 2026, as I was brought in to prototype, architect and develop the server-side rendered application of their at the time new project, "Cloud Engine".
 
 ---
 

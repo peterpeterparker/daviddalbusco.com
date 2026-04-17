@@ -14,6 +14,14 @@
 	<ul>
 		<li>
 			<a
+				href="https://www.meetup.com/barner-js-talks/events/313743608"
+				target="_blank"
+				rel="noopener noreferrer">BärnerJS</a
+			>
+			/ August 2026 <mark>Upcoming</mark> / Bern, Switzerland
+		</li>
+		<li>
+			<a
 				href="https://www.meetup.com/web-zurich/events/312842723"
 				target="_blank"
 				rel="noopener noreferrer">Web Zurich</a

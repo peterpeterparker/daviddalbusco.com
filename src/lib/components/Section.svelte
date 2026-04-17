@@ -79,7 +79,7 @@
 
 <style lang="scss">
 	section {
-		@media screen and (min-width: 1240px) {
+		@media screen and (min-width: 1078px) {
 			margin: 2.45rem auto;
 		}
 	}

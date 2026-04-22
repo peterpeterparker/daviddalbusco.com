@@ -24,7 +24,7 @@
 		products, and complete ecosystems from the ground up.
 	</p>
 
-	<p>Recent work includes large applications, developer tools, and platform ecosystems.</p>
+	<p>Recent work includes large applications, developer tools, and open-source platforms.</p>
 
 	<p>
 		My frontend experience covers <a

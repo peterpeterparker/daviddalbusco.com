@@ -13,9 +13,9 @@
 <Section>
 	<h2 id="about">Hi there! 👋</h2>
 
-	<p>I'm a freelance web developer based in Zürich, Switzerland.</p>
+	<p>I'm a freelance web engineer based in Zürich, Switzerland.</p>
 
-	<p>I build web apps that won't need a rewrite after a few months.</p>
+	<p>I build applications that last.</p>
 
 	<p class="link">
 		{#if loaded}

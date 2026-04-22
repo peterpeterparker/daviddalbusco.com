@@ -7,7 +7,7 @@ export default defineConfig({
 		},
 		hosting: {
 			source: 'build',
-			predeploy: ['pnpm run build'],
+			predeploy: ['pnpm run build']
 		},
 		storage: {
 			headers: [

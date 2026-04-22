@@ -1,6 +1,6 @@
 Hi 👋
 
-I'm [David Dal Busco], a freelance web developer, open source enthusiast, based in Zürich, Switzerland.
+I'm [David Dal Busco], a freelance web engineer, open source enthusiast, based in Zürich, Switzerland.
 
 This project is my personal website that showcases my portfolio and blog entries.
 

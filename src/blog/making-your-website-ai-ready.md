@@ -70,3 +70,25 @@ Link: </llms.txt>; rel="describedby"
 ```
 
 A few crawlers and tools already know to look for this, as I learned by using an assertion tool I'll share below in the last chapter.
+
+---
+
+## Skills
+
+[Agent Skills](https://agentskills.io) is another standard was originally created and introduced by Anthropic and since adopted by other platforms like OpenAI, Google Gemini, and GitHub Copilot.
+
+A skill is a folder containing a `SKILL.md` file with instructions, scripts, and resources that an AI agent can load dynamically to perform a specific task reliably and repeatedly — think of it as packaged know-how for agents which you typically share as a standalone GitHub repo or subfolder of your project.
+
+For Juno, I created one covering how to develop using its features, SDK, CLI, and how to interact with the platform. You can find it in the [junobuild/skills](https://github.com/junobuild/skills) repository.
+
+Once you have the files, you expose them at `.well-known/agent-skills/index.json` so agents visiting your site can discover them directly.
+
+HERE EXAMPLE
+
+TODO: it requires hash so script + github actions
+
+You should also register them on [skills.sh](https://skills.sh), a directory created by Vercel for broader discoverability. It also comes with a CLI that makes it easy for anyone to install your skills locally for any AI tool.
+
+```bash
+npx skills add junobuild/skills
+```

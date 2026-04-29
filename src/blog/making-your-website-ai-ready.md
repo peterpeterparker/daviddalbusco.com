@@ -19,16 +19,16 @@ The starting point is [llmstxt.org](https://llmstxt.org/), a proposal by Jeremy 
 
 ```txt
 # Juno
- 
+
 > Juno is a full-stack platform to develop, deploy, and run apps in WASM containers with zero DevOps.
- 
+
 ## Docs
- 
+
 - [Getting started](https://juno.build/docs/intro.md): Introduction and quick start
 - [CLI reference](https://juno.build/docs/cli.md): All CLI commands
- 
+
 ## Build
- 
+
 - [Functions](https://juno.build/docs/build/functions.md): Learn how to develop Serverless Functions
 ```
 
@@ -70,11 +70,3 @@ Link: </llms.txt>; rel="describedby"
 ```
 
 A few crawlers and tools already know to look for this, as I learned by using an assertion tool I'll share below in the last chapter.
- 
-
-
-
-
-
-
-

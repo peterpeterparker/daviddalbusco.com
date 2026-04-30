@@ -32,7 +32,7 @@ The starting point is [llmstxt.org](https://llmstxt.org/), a proposal by Jeremy 
 - [Functions](https://juno.build/docs/build/functions.md): Learn how to develop Serverless Functions
 ```
 
-> While the link descriptions are marked as optional in the spec, in practice I found that omitting them noticeably degraded the output of the tools I used to test my files.
+> While the link descriptions are marked as optional in the spec, in practice I found that omitting them degraded the output of the tools I used to test my files.
 
 ### llms-full.txt
 
@@ -70,6 +70,18 @@ Link: </llms.txt>; rel="describedby"
 ```
 
 A few crawlers and tools already know to look for this, as I learned by using an assertion tool I'll share below in the last chapter.
+
+### Summary
+
+In short, this is what you need for a `llms.txt` setup.
+
+| What                                 | Description                                |
+| ------------------------------------ | ------------------------------------------ |
+| `/llms.txt`                          | Curated entry point for AI agents          |
+| `/llms-full.txt`                     | Full content expanded in a single document |
+| `/your-page.md`                      | Clean prose version of each page           |
+| `<link rel="alternate">` in `<head>` | Signals a Markdown version is available    |
+| `Link` header on root page           | Points crawlers to your `llms.txt`         |
 
 ---
 

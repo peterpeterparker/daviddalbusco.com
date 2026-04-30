@@ -1,19 +1,13 @@
 deckgo-highlight-code {
 	border: 0.45rem solid black;
-
-	--deckgo-highlight-code-carbon-toolbar-display: none;
-	--deckgo-highlight-code-carbon-header-padding: 8px;
-	--deckgo-highlight-code-carbon-border-radius: 1px;
-	--deckgo-highlight-code-font-size: 0.9em;
-	--deckgo-highlight-code-line-height: 1em;
-	--deckgo-highlight-code-scroll: hidden;
 }
 
 p code,
-li code {
+li code,
+table code {
 	font-family: Menlo, monospace;
 	background: rgba(0, 0, 0, 0.05);
-	padding: 0.25rem 0.45rem;
+	padding: 0.15rem 0.45rem;
 }
 
 blockquote {
@@ -55,4 +49,28 @@ article h3 {
 
 article h4 {
 	padding: 0.5rem;
+}
+
+table {
+	border-spacing: 0;
+
+	--table-border: 1px solid black;
+}
+
+th {
+	background: black;
+	color: white;
+	border: var(--table-border);
+}
+
+tr > td:first-of-type {
+	border-right: none;
+}
+
+td {
+	border-left: var(--table-border);
+	border-right: var(--table-border);
+	border-bottom: var(--table-border);
+
+	padding: 0.25rem 0.45rem;
 }

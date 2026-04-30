@@ -89,18 +89,42 @@ In short, this is what you need for a `llms.txt` setup.
 
 [Agent Skills](https://agentskills.io) is another standard was originally created and introduced by Anthropic and since adopted by other platforms like OpenAI, Google Gemini, and GitHub Copilot.
 
+### Creating your skill
+
 A skill is a folder containing a `SKILL.md` file with instructions, scripts, and resources that an AI agent can load dynamically to perform a specific task reliably and repeatedly — think of it as packaged know-how for agents which you typically share as a standalone GitHub repo or subfolder of your project.
 
 For Juno, I created one covering how to develop using its features, SDK, CLI, and how to interact with the platform. You can find it in the [junobuild/skills](https://github.com/junobuild/skills) repository.
 
+### Linking your site
+
 Once you have the files, you expose them at `.well-known/agent-skills/index.json` so agents visiting your site can discover them directly.
 
-HERE EXAMPLE
+```json
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "juno",
+      "type": "skill-md",
+      "description": "Up-to-date knowledge about Juno's CLI, SDK, and serverless functions for AI coding agents.",
+      "url": "https://raw.githubusercontent.com/junobuild/skills/main/SKILL.md",
+      "digest": "sha256:18b7fec3e46664b67bdf5bd66f4f36fd9fca138a8749ddc2638f61fed4c23483"
+    }
+  ]
+}
+```
 
-TODO: it requires hash so script + github actions
+As you can notice, it defines the type and URL of the skill but also includes a digest of the `SKILL.md` file. What I did is recompute the hash on every build through a script and update the file automatically. I also set up a GitHub Action that runs the job once a week and on any PR to the documentation, so it should always stay up-to-date.
+
+- [Script](https://github.com/junobuild/docs/blob/main/scripts/ai.mjs)
+- [GitHub Action](https://github.com/junobuild/docs/blob/main/.github/workflows/update-ai.yml)
+
+### Installation and discoverability
 
 You should also register them on [skills.sh](https://skills.sh), a directory created by Vercel for broader discoverability. It also comes with a CLI that makes it easy for anyone to install your skills locally for any AI tool.
 
 ```bash
 npx skills add junobuild/skills
 ```
+
+---

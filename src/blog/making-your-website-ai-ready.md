@@ -101,16 +101,16 @@ Once you have the files, you expose them at `.well-known/agent-skills/index.json
 
 ```json
 {
-  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
-  "skills": [
-    {
-      "name": "juno",
-      "type": "skill-md",
-      "description": "Up-to-date knowledge about Juno's CLI, SDK, and serverless functions for AI coding agents.",
-      "url": "https://raw.githubusercontent.com/junobuild/skills/main/SKILL.md",
-      "digest": "sha256:18b7fec3e46664b67bdf5bd66f4f36fd9fca138a8749ddc2638f61fed4c23483"
-    }
-  ]
+	"$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+	"skills": [
+		{
+			"name": "juno",
+			"type": "skill-md",
+			"description": "Up-to-date knowledge about Juno's CLI, SDK, and serverless functions for AI coding agents.",
+			"url": "https://raw.githubusercontent.com/junobuild/skills/main/SKILL.md",
+			"digest": "sha256:18b7fec3e46664b67bdf5bd66f4f36fd9fca138a8749ddc2638f61fed4c23483"
+		}
+	]
 }
 ```
 
@@ -128,3 +128,64 @@ npx skills add junobuild/skills
 ```
 
 ---
+
+## Agent Readiness
+
+Cloudflare built a tool called [Is It Agent Ready?](https://isitagentready.com) that scans your site and checks it against a growing list of standards. Worth running on your site just to see where you stand.
+
+Here's what I ended up implementing based on its output.
+
+> You might be able to implement more recommendations. In my particular use case I was limited because Juno does not run on a conventional server.
+
+### robots.txt content signals
+
+Beyond the usual `User-agent: *` rules, there is now a convention for signaling how you want your content treated by AI crawlers. It's a Cloudflare initiative called [Content Signals](https://contentsignals.org):
+
+```txt
+User-agent: *
+Allow: /
+
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+```
+
+The three values are straightforward:
+
+- `search`: your content can be indexed and shown in search results
+- `ai-input`: your content can be used as real-time input to AI models, for example when an AI fetches your page to answer a question
+- `ai-train`: your content can be used to train or fine-tune AI models
+
+It's not enforced, but it's a signal. Whether you want to allow training, block it, or say nothing is your call. Being explicit is better than silence.
+
+And fun fact, for this website I actually set `ai-input` to `no` 😉.
+
+### API catalog in .well-known
+
+`/.well-known/api-catalog` is an [IETF standard (RFC 9727)](https://datatracker.ietf.org/doc/rfc9727/) for automated discovery of the APIs a publisher exposes. In Juno's case, there is no public REST API to list, but the format supports linking to service documentation, which I used to point to the AI guide:
+
+```json
+{
+	"linkset": [
+		{
+			"anchor": "https://juno.build",
+			"service-doc": [{ "href": "https://juno.build/docs/guides/ai" }]
+		}
+	]
+}
+```
+
+I also added a `Link` response header on the root page pointing to it:
+
+```
+Link: </.well-known/api-catalog>; rel="api-catalog"
+```
+
+The file needs to be served with `Content-Type: application/linkset+json`. How you set that depends on your hosting setup.
+
+---
+
+## Conclusion
+
+None of this is a silver bullet and you should definitely not just trust me bro. That said, most of it is low-effort to implement once you know these wild-wild-west conventions exist, this might potentially make your site more useful for AI tools. Worth a shot.
+
+Until next time!
+David

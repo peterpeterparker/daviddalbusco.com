@@ -38,7 +38,7 @@ export const load: PageServerLoad = async ({ locals, depends }) => {
 };
 ```
 
-As soon as you have ten pages, this falls apart. The `depends` call (which tells SvelteKit to re-run the load function when auth state changes), the JWT guard, and the error handling are copy-pasted everywhere. Fetching logic lives inside route files, making it untestable in isolation. Browser and SSR fetch calls look almost identical but behave differently, and nothing enforces that difference. A change to auth logic or error handling means touching every single load file.
+As soon as you have ten pages, this falls apart. The `depends` call (which tells SvelteKit to re-run the load function when auth state changes), the JWT guard, and the error handling are copy-pasted everywhere. The fetching logic lives inside the route files, coupling them together and making each one harder to test in isolation. On top of that, not all requests are SSR -- some happen on the client side and don't need the JWT forwarded as a header, so you end up with two flavors of the same API call with nothing enforcing the difference. And when you need to change your auth logic or error handling, you likely have to touch every single load file.
 
 ---
 
@@ -69,13 +69,13 @@ The one rule that holds the whole thing together: **route files contain no logic
 
 The second: `lib` **contains nothing SvelteKit-specific**. Keeping it that way makes your business logic agnostic of the presentation layer and potentially allows you to switch your UI, design or even framework without too much pain in the future.
 
-// --> TODO
-
 ---
 
 ## The Foundation: hooks.server.ts
 
-Before any load function runs, the JWT needs to land somewhere accessible. `hooks.server.ts` handles this (it runs on every request, before any load function):
+Our API (and I'm assuming yours too) requires a JWT to authenticate calls. Once issued after authentication, we can rely on [credentials: 'include'](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#including_credentials) on the client side, which instructs the browser to embed the cookie automatically. However, on the server side, there is no such API and the cookie has to be read manually to pass the JWT along as an HTTP header.
+
+That's why, to make the JWT easily accessible across the application via `locals` (an object specific to a single request which is available to any route), the first step is setting up a `hooks.server.ts` that runs every time the SvelteKit server receives a [request](https://svelte.dev/docs/kit/web-standards#Fetch-APIs-Request) and extracts it.
 
 ```ts
 // hooks.server.ts
@@ -100,15 +100,72 @@ declare global {
 }
 ```
 
-That's it. Everything else in the server layer reads from `locals.jwt` and can trust it's always there (or explicitly `undefined`).
-
 ---
 
 ## Layer 1: The API Split
 
-### Browser vs. SSR
+All APIs generally share common traits. In this case, they all have an `apiUrl` and a `throwError` method to handle exceptions, therefore they can live in a base class.
 
-When fetch runs in the browser, `credentials: 'include'` is enough, the browser handles the cookie automatically:
+> Note: I use the `_` prefix for filename as a convention for package-scoped modules that are not meant to be used directly outside their layer.
+
+```ts
+// lib/api/_api.ts
+export abstract class Api {
+	protected readonly apiUrl: string;
+
+	protected constructor({ apiUrl }: { apiUrl: string }) {
+		this.apiUrl = apiUrl;
+	}
+
+	protected async throwError({
+		message,
+		response
+	}: {
+		response: Response;
+		message: string;
+	}): Promise<never> {
+		switch (response.status) {
+			case 400:
+			case 500: {
+				const body = await response.json().catch(() => ({}));
+				throw new ApiError(`${message} (${response.status}): ${body.message}`, {
+					cause: response
+				});
+			}
+			default:
+				throw new ApiError(`${message} (${response.status})`, { cause: response });
+		}
+	}
+}
+```
+
+The `throwError` method tries to parse the response body as JSON for known error status codes (400, 500) because our API returns a structured error message in those cases. For anything else, it falls back to just the status code.
+
+As for SSR calls, they share one extra trait: the need to pass the JWT as an HTTP header. Another base class, `ApiSsr`, extends `Api` and takes the JWT at construction time, exposing a `cookieHeader()` helper:
+
+```ts
+// lib/api/_api.ssr.ts
+export abstract class ApiSsr extends Api {
+	readonly #jwt: string;
+
+	protected constructor({ apiUrl, jwt }: { apiUrl: string; jwt: string }) {
+		super({ apiUrl });
+		this.#jwt = jwt;
+	}
+
+	cookieHeader(): { cookie: `jwt=${string}` } {
+		return { cookie: `jwt=${this.#jwt}` };
+	}
+}
+```
+
+> Note: I use `.ssr.ts` rather than `.server.ts` - which was my first idea - because it seems that the latter is a globally reserved suffix for SvelteKit.
+
+With those two base classes in place, each resource gets two API classes: one for the browser, one for SSR.
+
+One might argue that a single class could behave differently depending on where it runs. When I implemented the solution, I felt like the explicit separation was cleaner but, fair enough, I would not be opposed to the alternative.
+
+With the base classes in place, a browser API implementation is straightforward:
 
 ```ts
 // lib/api/pizzas.api.ts
@@ -127,7 +184,7 @@ export class ApiPizzas extends Api {
 }
 ```
 
-When fetch runs on the server during SSR, there is no cookie jar. The JWT has to be forwarded explicitly:
+When fetch runs on the server, there is as explained no cookie jar. The JWT has to be forwarded explicitly via the `cookieHeader()` helper:
 
 ```ts
 // lib/api/pizzas.api.ssr.ts
@@ -148,55 +205,7 @@ export class ApiPizzasSsr extends ApiSsr {
 }
 ```
 
-### Why `.ssr.ts` and not `.server.ts`
-
-SvelteKit enforces that `.server.ts` files cannot be imported from client code, and this enforcement cascades. If an SSR API class imports a `.server.ts` utility, any file that imports the SSR API class also becomes restricted.
-
-Using `.ssr.ts` sidesteps this. The files are still server-only by convention and usage, but SvelteKit doesn't enforce it at compile time. This matters when you want to import SSR API classes from service files that are also used in tests.
-
-### Base classes
-
-```ts
-// lib/api/_api.ts
-export abstract class Api {
-	protected readonly apiUrl: string;
-
-	protected constructor({ apiUrl }: { apiUrl: string }) {
-		this.apiUrl = apiUrl;
-	}
-
-	protected async throwError({
-		message,
-		response
-	}: {
-		response: Response;
-		message: string;
-	}): Promise<never> {
-		const body = await response.json().catch(() => ({}));
-		throw new ApiError(`${message} (${response.status}): ${body.message}`, {
-			cause: response
-		});
-	}
-}
-```
-
-```ts
-// lib/api/_api.ssr.ts
-export abstract class ApiSsr extends Api {
-	readonly #jwt: string;
-
-	protected constructor({ apiUrl, jwt }: { apiUrl: string; jwt: string }) {
-		super({ apiUrl });
-		this.#jwt = jwt;
-	}
-
-	cookieHeader(): { cookie: `jwt=${string}` } {
-		return { cookie: `jwt=${this.#jwt}` };
-	}
-}
-```
-
-`ApiSsr` takes the JWT at construction time. You pass it once when creating the instance, not on every method call.
+In the above snippets you might have noticed the use of [Zod](https://zod.dev) for schema validation. Parsing the response ensures it matches the expected shape at runtime. Small tip: in this particular project, we used [orval](https://orval.dev) to generate the schemas automatically from the API.
 
 ---
 

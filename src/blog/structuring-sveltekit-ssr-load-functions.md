@@ -165,26 +165,33 @@ With those two base classes in place, each resource gets two API classes: one fo
 
 One might argue that a single class could behave differently depending on where it runs. When I implemented the solution, I felt like the explicit separation was cleaner but, fair enough, I would not be opposed to the alternative.
 
-With the base classes in place, a browser API implementation is straightforward:
+With the base classes in place, the two API classes serve different purposes. The browser API handles mutations — actions triggered by the user, like creating a pizza:
 
 ```ts
 // lib/api/pizzas.api.ts
 export class ApiPizzas extends Api {
-	list = async (): Promise<ListPizzasResponse> => {
+	create = async ({ body }: { body: CreatePizzaBody }): Promise<CreatePizzaResponse> => {
 		const response = await fetch(`${this.apiUrl}/pizzas`, {
-			credentials: "include"
+			method: "POST",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json"
+			},
+			body: CreatePizzaBodyCodec.decode(body)
 		});
 
 		if (!response.ok) {
-			return await this.throwError({ response, message: "Cannot get /pizzas" });
+			return await this.throwError({ response, message: "Cannot post /pizzas" });
 		}
 
-		return ApiPizzasSchema.ListPizzasResponse.parse(await response.json());
+		const result = await response.json();
+
+		return CreatePizzaResponse.parse(result);
 	};
 }
 ```
 
-When fetch runs on the server, there is as explained no cookie jar. The JWT has to be forwarded explicitly via the `cookieHeader()` helper:
+The SSR API handles reads — data fetched in load functions before the page renders. As explained, there is no cookie jar on the server, so the JWT has to be forwarded explicitly via the `cookieHeader()` helper:
 
 ```ts
 // lib/api/pizzas.api.ssr.ts
@@ -211,53 +218,56 @@ In the above snippets you might have noticed the use of [Zod](https://zod.dev) f
 
 ## Layer 2: Services
 
-Services sit between the API layer and the server classes. Pure functions, no SvelteKit imports, no `error()` throwing. They call one or more API methods and return a `Result<T>`:
+Services sit between the API layer and the page and layout servers. Their role is to act as a proxy that never throws. Instead, they catch errors and return a `Result<T>`, a discriminated union that should be handled by the caller. I find this pattern - really similar to Rust - more expressive and elegant to deal with potential errors.
 
 ```ts
 type Result<T> = { status: "success"; result: T } | { status: "error"; err: unknown };
 ```
 
+When there is additional logic to handle, services become more than a proxy, but the contract stays the same.
+
 ```ts
 // lib/services/pizzas.services.ts
-export const listPizzas = async ({
-	jwt
-}: {
-	jwt: string;
-}): Promise<Result<{ pizzas: Pizza[] }>> => {
+export const listPizzas = async (args: { jwt: string }): Promise<Result<{ pizzas: Pizza[] }>> => {
 	try {
-		const api = ApiPizzasSsr.create({ jwt });
-		const response = await api.list();
-		return { status: "success", result: { pizzas: response.pizzas } };
+		const api = ApiPizzasSsr.create(args);
+		const { pizzas } = await api.list();
+		return { status: "success", result: { pizzas } };
 	} catch (err) {
 		return { status: "error", err };
 	}
 };
 ```
 
-No framework coupling means you can unit test these by mocking `fetch`, without touching SvelteKit at all.
+A service for fetching a single pizza by ID - e.g. `getPizza` - would follow the same pattern, taking an additional `pizzaId` parameter alongside `jwt`.
 
 ---
 
 ## Layer 3: The ServerLoader
 
-This is where the repetitive stuff lives. `ServerLoader` is an abstract base class that centralises everything every load function needs:
+As mentioned in the introduction, the goal is to avoid duplicating logic and repetitive code across every load function used by our routes, respectively the layout and page server. `ServerLoader` is an abstract base class that centralises all of that in one place:
 
 ```ts
 // main/server/_server.ts
+import { error, type ServerLoadEvent } from "@sveltejs/kit";
+
 export abstract class ServerLoader {
 	readonly #context: string;
 
-	protected constructor({ context }: ServerLoaderInit) {
+	protected constructor({ context }: { context: string }) {
 		this.#context = context;
 	}
 
 	protected async _load<T>({
 		$event: { depends, locals },
-		loaderFn,
 		errorFallbackMsg,
-		onError
-	}: LoadParams<T>): Promise<Option<T>> {
-		depends(ReloadIdentifiers.Authentication);
+		loaderFn
+	}: {
+		$event: ServerLoadEvent;
+		errorFallbackMsg: string;
+		loaderFn: (params: { jwt: string }) => Promise<Result<T>>;
+	}): Promise<T | undefined> {
+		depends("main:auth");
 
 		if (isNullish(locals.jwt)) {
 			return undefined;
@@ -266,13 +276,8 @@ export abstract class ServerLoader {
 		const result = await loaderFn({ jwt: locals.jwt });
 
 		if (result.status === "error") {
-			this.#logError({ err: result.err });
-
-			if (onError !== undefined) {
-				return onError({ err: result.err });
-			}
-
-			this.#onError({ err: result.err, errorFallbackMsg });
+			console.error(`[${this.#context}]`, result.err);
+			error(500, result.err instanceof Error ? result.err.message : errorFallbackMsg);
 		}
 
 		return result.result;
@@ -280,20 +285,20 @@ export abstract class ServerLoader {
 
 	protected async _loadWithSlug<T>({
 		$event: { params, ...eventRest },
-		loaderWithSlugFn,
-		errorFallbackMsgs: { load: errorFallbackMsg, missingSlug: errorMissingSlug }
+		errorFallbackMsgs: { load: errorFallbackMsg, missingSlug: errorMissingSlug },
+		loaderWithSlugFn
 	}: {
 		$event: ServerLoadEvent;
-		loaderWithSlugFn: ServerLoaderWithSlugFn<T>;
 		errorFallbackMsgs: { load: string; missingSlug: string };
-	}): Promise<Option<T>> {
+		loaderWithSlugFn: (params: { jwt: string; slug: string }) => Promise<Result<T>>;
+	}): Promise<T | undefined> {
 		const { slug } = params;
 
 		if (isEmptyString(slug)) {
 			error(404, errorMissingSlug);
 		}
 
-		const loaderFn: ServerLoaderFn<T> = async (args) => await loaderWithSlugFn({ slug, ...args });
+		const loaderFn = async (args: { jwt: string }) => await loaderWithSlugFn({ slug, ...args });
 
 		return await this._load({
 			$event: { params, ...eventRest },
@@ -301,50 +306,30 @@ export abstract class ServerLoader {
 			errorFallbackMsg
 		});
 	}
-
-	#logError({ err }: { err: unknown }) {
-		console.error(`[${this.#context}]`, err);
-	}
-
-	#onError({ err, errorFallbackMsg }: { err: unknown; errorFallbackMsg: string }): never {
-		error(500, err instanceof Error ? err.message : errorFallbackMsg);
-	}
 }
 ```
 
-In one place, you get:
+The class exposes two protected methods. `_load` is the general one, meant to be called with a loader function that hooks into the service layer. `_loadWithSlug` is for dynamic routes where a slug is expected in the URL params.
 
-- `depends(ReloadIdentifiers.Authentication)` on every load, so the load function re-runs automatically when auth state changes (after login or logout via `invalidate`)
-- A JWT guard that returns `undefined` if unauthenticated (no throwing, the UI handles that state)
-- Error logging tagged with the `context` string, then a 500 via SvelteKit's `error()`
-- `_loadWithSlug` for routes with a dynamic param (extracts the slug, throws 404 if missing, delegates to `_load`)
+On error, both rely on SvelteKit's `error()` function — a function that never returns — to throw a 404 or 500 with a meaningful message.
 
-### The `onError` escape hatch
+Since the application has a sign-in and sign-out flow, every load registers a `depends('main:auth')` dependency. This tells SvelteKit to re-run the load function whenever `invalidate('main:auth')` is called, for example after a successful login or logout.
 
-The `LoadParams` type uses a discriminated union:
-
-```ts
-type LoadParams<T> = {
-	$event: ServerLoadEvent;
-	loaderFn: ServerLoaderFn<T>;
-} & (
-	| { errorFallbackMsg: string; onError?: never }
-	| { onError: (params: { err: unknown }) => undefined; errorFallbackMsg?: never }
-);
-```
-
-Most loaders use `errorFallbackMsg` and get a 500 on failure. But some data is optional (metrics, sidebar content, anything that shouldn't break the whole page if it's unavailable). Those loaders pass `onError: () => undefined` and return gracefully instead.
+Lastly, also related to authentication, the JWT guard returns `undefined` early if `locals.jwt` is not set. The UI is responsible for handling the unauthenticated state.
 
 ---
 
 ## Layer 4: Server Classes
 
-Server classes extend `ServerLoader`, pass a `context` string for log tagging, and expose typed public methods:
+Server classes are the concrete classes that the route files will instantiate. They extend `ServerLoader`, pass a `context` string for log tagging, and expose typed public methods:
 
 ```ts
 // main/server/pizzas.server.ts
+import type { ServerLoadEvent } from "@sveltejs/kit";
+import { listPizzas } from "$lib/services/pizzas.services";
+
 export class PizzasServer extends ServerLoader {
-	private constructor(init: ServerLoaderInit) {
+	private constructor(init: { context: string }) {
 		super(init);
 	}
 
@@ -352,14 +337,11 @@ export class PizzasServer extends ServerLoader {
 		return new PizzasServer({ context: "pizzas" });
 	}
 
-	async loadPizzas($event: ServerLoadEvent): Promise<Option<Pick<PagesServerLoad, "pizzas">>> {
-		const loaderFn: ServerLoaderFn<Pick<PagesServerLoad, "pizzas">> = async ({ jwt }) =>
-			await listPizzas({ jwt });
-
+	async listPizzas($event: ServerLoadEvent): Promise<{ pizzas: Pizza[] } | undefined> {
 		return await this._load({
 			$event,
-			loaderFn,
-			errorFallbackMsg: "Unexpected error while loading the pizzas"
+			errorFallbackMsg: "Unexpected error while loading the pizzas",
+			loaderFn: listPizzas
 		});
 	}
 }
@@ -369,24 +351,26 @@ For slug-based routes:
 
 ```ts
 // main/server/pizza.server.ts
+import type { ServerLoadEvent } from "@sveltejs/kit";
+import { getPizza } from "$lib/services/pizza.services";
+
 export class PizzaServer extends ServerLoader {
+	private constructor(init: { context: string }) {
+		super(init);
+	}
+
 	static create(): PizzaServer {
 		return new PizzaServer({ context: "pizza" });
 	}
 
-	async loadPizza($event: ServerLoadEvent): Promise<Option<Pick<PagesServerLoad, "pizza">>> {
-		const loaderWithSlugFn: ServerLoaderWithSlugFn<Pick<PagesServerLoad, "pizza">> = async ({
-			slug: pizzaId,
-			...rest
-		}) => await loadPizza({ pizzaId, ...rest });
-
+	async getPizza($event: ServerLoadEvent): Promise<{ pizza: Pizza } | undefined> {
 		return await this._loadWithSlug({
 			$event,
-			loaderWithSlugFn,
 			errorFallbackMsgs: {
 				load: "Unexpected error while loading the pizza",
 				missingSlug: "Pizza cannot be fetched, no pizza ID provided."
-			}
+			},
+			loaderWithSlugFn: async ({ slug: pizzaId, ...rest }) => await getPizza({ pizzaId, ...rest })
 		});
 	}
 }
@@ -400,69 +384,45 @@ With all the logic extracted, route files become one-liners:
 
 ```ts
 // routes/pizzas/+page.server.ts
-export const load: PageServerLoad = ($event) => PizzasServer.create().loadPizzas($event);
+import type { PageServerLoad } from "./$types";
+
+export const load: PageServerLoad = ($event) => PizzasServer.create().listPizzas($event);
 ```
 
 ```ts
 // routes/pizzas/[slug]/+page.server.ts
-export const load: PageServerLoad = ($event) => PizzaServer.create().loadPizza($event);
+import type { PageServerLoad } from "./$types";
+
+export const load: PageServerLoad = ($event) => PizzaServer.create().getPizza($event);
 ```
 
-```ts
-// routes/+layout.server.ts
-export const load: LayoutServerLoad = ($event) => UsersServer.create().loadUser($event);
-```
+With this architecture, a route file is just a declaration of intent.
 
-No logic to audit, no auth handling to trace, no fetch calls buried in a route file. A route file is just a declaration of intent.
+> Note that the same pattern works similarly for `LayoutServerLoad`.
 
 ---
 
 ## Testability
 
-The service layer and the server classes are independently testable.
-
-For services, mock `fetch` and assert on the `Result`:
-
-```ts
-it("returns error result on API failure", async () => {
-	mockFetch.mockResolvedValueOnce(mockResponse({ status: 503 }));
-
-	const result = await listPizzas({ jwt: "mock-jwt" });
-
-	expect(result.status).toBe("error");
-});
-```
-
-For server classes, build a minimal mock `ServerLoadEvent` and assert on the outcome:
-
-```ts
-it("throws 500 when service fails", async () => {
-	mockFetch.mockResolvedValueOnce(mockResponse({ status: 500 }));
-
-	await expect(PizzasServer.create().loadPizzas(mockEvent("mock-jwt"))).rejects.toMatchObject({
-		status: 500
-	});
-});
-
-it("returns undefined when JWT is missing", async () => {
-	const result = await PizzasServer.create().loadPizzas(mockEvent(undefined));
-	expect(result).toBeUndefined();
-});
-```
+Because each layer has no dependency on the others, testing is straightforward. The API layer, services, and server classes can all be tested independently by mocking `fetch` globally. The route file test is just a spy confirming delegation to the server class.
 
 ---
 
 ## Summary
 
-| Layer                     | Responsibility                            | SvelteKit imports? |
-| ------------------------- | ----------------------------------------- | ------------------ |
-| `_api.ts` / `_api.ssr.ts` | HTTP, cookie headers, error throwing      | No                 |
-| Services                  | Orchestrate API calls, return `Result<T>` | No                 |
-| `_server.ts`              | Auth guard, `depends`, error handling     | Yes                |
-| Server classes            | Typed load methods, slug extraction       | Yes                |
-| Route files               | One-line delegation                       | Yes                |
+| Layer               | Responsibility                               | SvelteKit imports? |
+| ------------------- | -------------------------------------------- | ------------------ |
+| `_api.ts`           | HTTP, error throwing                         | No                 |
+| `_api.ssr.ts`       | JWT cookie forwarding                        | No                 |
+| `pizzas.api.ts`     | Browser mutations (`credentials: 'include'`) | No                 |
+| `pizzas.api.ssr.ts` | SSR reads (JWT header)                       | No                 |
+| Services            | Proxy API calls, return `Result<T>`          | No                 |
+| `_server.ts`        | Auth guard, `depends`, error handling        | Yes                |
+| Server classes      | Concrete load methods                        | Yes                |
+| Route files         | One-line delegation                          | Yes                |
 
-Zero duplicated auth logic. Clean separation between what belongs to the server and what belongs to the browser. Adding a new authenticated route means writing one new method and one new line in a route file, which is about as boring as it should be.
+<br />
+Clean separation between layers, no duplicated logic, and adding a new route means writing one new method and one new line in a route file, which is about as boring as it should be.
 
 Until next time!
 David

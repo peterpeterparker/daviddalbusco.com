@@ -1,0 +1,25 @@
+name: Newsletter
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: peterpeterparker/blog-to-newsletter-action@main
+        with:
+          blog_posts_path: 'src/blog'
+          blog_base_url: 'https://daviddalbusco.com'
+          blog_author: "David"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          mailchimp_api_key: ${{ secrets.MAILCHIMP_API_KEY }}
+          mailchimp_reply_to: 'david.dalbusco@gmail.com'
+          mailchimp_list_id: '750613fe5f'
+          mailchimp_test_emails: 'david.dalbusco@gmail.com'
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          telegram_bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}

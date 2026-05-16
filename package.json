@@ -80,9 +80,10 @@
 	"dependencies": {
 		"@junobuild/analytics": "^0.2.15"
 	},
-	"packageManager": "pnpm@11.1.2",
 	"engines": {
 		"node": ">=24",
-		"pnpm": ">=10"
-	}
+		"npm": "please use pnpm",
+		"pnpm": ">=11"
+	},
+	"packageManager": "pnpm@11.1.2"
 }

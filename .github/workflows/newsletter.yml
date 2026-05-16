@@ -14,7 +14,7 @@ jobs:
         with:
           blog_posts_path: 'src/blog'
           blog_base_url: 'https://daviddalbusco.com'
-          blog_author: "David"
+          blog_author: 'David'
           github_token: ${{ secrets.GITHUB_TOKEN }}
           mailchimp_api_key: ${{ secrets.MAILCHIMP_API_KEY }}
           mailchimp_reply_to: 'david.dalbusco@gmail.com'

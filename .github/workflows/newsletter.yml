@@ -3,6 +3,8 @@ name: Newsletter
 on:
   push:
     branches: [main]
+    paths:
+      - 'src/blog/**'
 
 jobs:
   newsletter:

@@ -35,7 +35,7 @@
 
 <style lang="scss">
 	a {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		gap: 0.25rem;
 	}

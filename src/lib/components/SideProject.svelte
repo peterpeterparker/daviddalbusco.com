@@ -4,6 +4,7 @@
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 	import { base } from '$app/paths';
 	import IconSkull from '$lib/icons/IconSkull.svelte';
+	import IconFlask from '$lib/icons/IconFlask.svelte';
 
 	interface Props {
 		project: MarkdownData<PortfolioMetadata>;
@@ -18,12 +19,17 @@
 
 	let status = $derived(metadata.status);
 	let dead = $derived(status === 'archived' || status === 'maintenance');
+	let experiment = $derived(status === 'experiment');
 </script>
 
 <li>
 	<a href={`${base}/portfolio/${slug}`}>
 		<span>{title}</span>
-		{#if dead}<IconSkull />{/if}
+		{#if dead}
+			<IconSkull />
+		{:else if experiment}
+			<IconFlask />
+		{/if}
 	</a>
 </li>
 

@@ -2,7 +2,6 @@
 <script lang="ts">
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
-	import Card from '$lib/components/Card.svelte';
 	import { base } from '$app/paths';
 	import IconSkull from '$lib/icons/IconSkull.svelte';
 
@@ -15,10 +14,7 @@
 	let metadata = $derived(project.metadata);
 	let slug = $derived(project.slug);
 
-	let background = $derived(metadata.background);
 	let title = $derived(metadata.title);
-	let description = $derived(metadata.description);
-	let icon = $derived(metadata.icon);
 
 	let status = $derived(metadata.status);
 	let dead = $derived(status === 'archived' || status === 'maintenance');

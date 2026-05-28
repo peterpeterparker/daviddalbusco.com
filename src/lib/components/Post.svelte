@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { MarkdownData } from '$lib/types/markdown';
+	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
 	import type { BlogMetadata } from '$lib/types/blog';
 	import Card from '$lib/components/Card.svelte';
 	import { env } from '$env/dynamic/public';
 
 	interface Props {
-		post: MarkdownData<BlogMetadata>;
+		post: MarkdownDataWithoutContent<BlogMetadata>;
 	}
 
 	let { post }: Props = $props();

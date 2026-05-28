@@ -41,7 +41,9 @@ export default ts.config(
 				}
 			],
 			// The linter throws error for goto('/') but, also href="/" which is really annoying.
-			'svelte/no-navigation-without-resolve': ['off']
+			'svelte/no-navigation-without-resolve': ['off'],
+			// I own the content and do not parse any third party data
+			'svelte/no-at-html-tags': 'off'
 		}
 	}
 );

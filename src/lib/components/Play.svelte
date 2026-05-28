@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Projects from '$lib/components/Projects.svelte';
+	import SideProjects from '$lib/components/SideProjects.svelte';
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 
@@ -10,15 +10,18 @@
 	let { projects }: Props = $props();
 </script>
 
-<Projects {projects}>
-	<h2 id="projects">Personal Projects</h2>
+<SideProjects {projects}>
+	<h2 id="projects">Side Projects</h2>
 
-	<p>As an open-source enthusiast, I've built a number of projects. Here are some highlights:</p>
-</Projects>
+	<p>
+		I build things on the side. Some grew into real products, some are just tools I made for myself,
+		some were pure learning experiments.
+	</p>
+</SideProjects>
 
 <style lang="scss">
 	p {
-		margin: 0 0 3.25em;
+		margin: 0 0 1.25em;
 
 		@media screen and (max-width: 960px) {
 			display: none;

@@ -1,6 +1,6 @@
 <!-- source: https://lucide.dev/icons/skull -->
 <script lang="ts">
-    let { size = `24px` } = $props();
+	let { size = `24px` } = $props();
 </script>
 
 <svg

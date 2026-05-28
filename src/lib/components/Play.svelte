@@ -13,7 +13,10 @@
 <SideProjects {projects}>
 	<h2 id="projects">Side Projects</h2>
 
-	<p>I build things on the side. Some grew into real products, some are just tools I made for myself, some were pure learning experiments.</p>
+	<p>
+		I build things on the side. Some grew into real products, some are just tools I made for myself,
+		some were pure learning experiments.
+	</p>
 </SideProjects>
 
 <style lang="scss">

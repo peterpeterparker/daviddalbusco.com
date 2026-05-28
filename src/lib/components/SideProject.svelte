@@ -3,8 +3,8 @@
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 	import Card from '$lib/components/Card.svelte';
-	import {base} from "$app/paths";
-	import IconSkull from "$lib/icons/IconSkull.svelte";
+	import { base } from '$app/paths';
+	import IconSkull from '$lib/icons/IconSkull.svelte';
 
 	interface Props {
 		project: MarkdownData<PortfolioMetadata>;
@@ -21,12 +21,13 @@
 	let icon = $derived(metadata.icon);
 
 	let status = $derived(metadata.status);
-	let dead = $derived(status === "archived" || status === "maintenance");
+	let dead = $derived(status === 'archived' || status === 'maintenance');
 </script>
 
 <li>
 	<a href={`${base}/portfolio/${slug}`}>
-		<span>{title}</span> {#if dead}<IconSkull />{/if}
+		<span>{title}</span>
+		{#if dead}<IconSkull />{/if}
 	</a>
 </li>
 

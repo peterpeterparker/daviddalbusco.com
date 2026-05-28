@@ -9,7 +9,7 @@ export interface PortfolioMetadata {
 	background: string;
 	type: PortfolioType;
 	order?: string;
-	status?: 'active' | "maintenance" | "archived";
+	status?: 'active' | 'maintenance' | 'archived';
 }
 
 export interface Portfolio {

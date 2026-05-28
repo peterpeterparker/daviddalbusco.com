@@ -4,9 +4,12 @@ description: "A next-gen serverless platform to build, deploy, and run modern ap
 icon: "/images/portfolio/icons/juno-icon.png"
 background: "#c9cfff"
 type: "play"
+status: "maintenance"
 ---
 
 # Juno
+
+> This project is no longer actively developed.
 
 [Juno](https://juno.build) is an open source serverless platform for building and deploying modern web applications. It provides hosting, data storage, authentication, assets, serverless functions, and analytics, all running inside an isolated WebAssembly container.
 

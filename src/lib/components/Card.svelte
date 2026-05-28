@@ -4,8 +4,8 @@
 	interface Props {
 		path: string;
 		slug: string;
-		background: string;
-		image: string;
+		background?: string;
+		image?: string;
 		cover?: boolean;
 		children?: import('svelte').Snippet;
 	}
@@ -15,9 +15,11 @@
 
 <a href={`${base}/${path}/${slug}`}>
 	<article>
-		<div style="background: {background}">
-			<img alt="" aria-hidden="true" class:cover loading="lazy" role="presentation" src={image} />
-		</div>
+		{#if background !== undefined && image !== undefined}
+			<div style="background: {background}">
+				<img alt="" aria-hidden="true" class:cover loading="lazy" role="presentation" src={image} />
+			</div>
+		{/if}
 
 		{@render children?.()}
 	</article>

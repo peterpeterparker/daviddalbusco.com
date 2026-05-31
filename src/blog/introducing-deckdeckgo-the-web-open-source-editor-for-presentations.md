@@ -5,6 +5,7 @@ title: "Introducing DeckDeckGo: the web open source editor for presentations"
 description: "Introducing DeckDeckGo: the web open source editor for presentations"
 tags: "#webdev #showdev #opensource #motivation"
 image: "https://daviddalbusco.com/assets/images/1*TmZb15Yzu3mGVG7uMkHvHw.png"
+robots: "disallow"
 ---
 
 ![](https://daviddalbusco.com/assets/images/1*TmZb15Yzu3mGVG7uMkHvHw.png)

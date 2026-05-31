@@ -16,7 +16,7 @@ const config = {
 			precompress: false
 		}),
 		alias: {
-			$plugins: './src/plugins',
+			$plugins: './src/plugins'
 		},
 		version: {
 			name: version

@@ -48,14 +48,19 @@
 
 		&:focus,
 		&:hover {
-			transform: translateY(-1.5rem);
-
-			img:not(:global(.cover)) {
-				transform: scale(1.25);
-			}
-
 			div {
 				border: 0.75rem solid var(--color-highlight);
+			}
+		}
+
+		@media (hover: hover) and (pointer: fine) {
+			&:focus,
+			&:hover {
+				transform: translateY(-1rem);
+
+				img:not(:global(.cover)) {
+					transform: scale(1.25);
+				}
 			}
 		}
 	}

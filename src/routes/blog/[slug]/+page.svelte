@@ -14,17 +14,23 @@
 
 	let { data }: Props = $props();
 
-	let post: MarkdownData<BlogMetadata> = $derived(data.post);
+	let post = $derived<MarkdownData<BlogMetadata>>(data.post);
 
 	let slug: string = $derived(post.slug);
 	let content: string = $derived(post.content);
 	let metadata: BlogMetadata = $derived(post.metadata);
+
+	let noRobots = $derived(metadata.robots === 'disallow');
 
 	let { title, canonical, description, image, date: postDate, tags } = $derived(metadata);
 </script>
 
 <svelte:head>
 	<Seo {canonical} {description} {image} {title} url={`/blog/${slug}`} />
+
+	{#if noRobots}
+		<meta name="robots" content="noindex, nofollow" />
+	{/if}
 
 	<style lang="scss">
 		@use '../../../theme/_page.scss';

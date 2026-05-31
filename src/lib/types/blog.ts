@@ -5,4 +5,5 @@ export interface BlogMetadata {
 	tags: string;
 	image: string;
 	canonical: string;
+	robots?: 'disallow';
 }

@@ -6,7 +6,6 @@ export const prerender = true;
 
 const url = 'https://daviddalbusco.com/';
 
-
 export const GET = async (): Promise<Response> => {
 	const headers: Record<string, string> = {
 		'Cache-Control': 'max-age=3600',

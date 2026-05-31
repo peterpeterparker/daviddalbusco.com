@@ -19,29 +19,19 @@
 	</p>
 
 	<p>
-		My focus is building performant web applications with careful attention to both interface
-		quality and secure, scalable architectural foundations. Clients hire me to create prototypes,
-		products, and complete ecosystems from the ground up.
-	</p>
-
-	<p>Recent work includes large applications, developer tools, and open-source platforms.</p>
-
-	<p>
-		My frontend experience covers <a
-			href="https://svelte.dev/"
-			rel="noopener noreferrer"
-			target="_blank">Svelte</a
-		>,
-		<a href="https://angular.io" rel="noopener noreferrer" target="_blank">Angular</a>,
-		<a href="https://reactjs.org" rel="noopener noreferrer" target="_blank">React</a>
-		and
-		<a href="https://stenciljs.com" rel="noopener noreferrer" target="_blank">StencilJS</a>, though
-		I'm particularly passionate about framework-agnostic solutions using TypeScript.
+		My focus is building performant projects with careful attention to both interface quality and
+		secure, scalable architectural foundations, from TypeScript frontends to Bun or Rust backends,
+		you name it. Clients hire me to create prototypes, products, and complete ecosystems from the
+		ground up.
 	</p>
 
 	<p>
-		I hold degrees in Computer Engineering and an Executive Master's in Business Administration
-		(EMBA). I'm fluent in French, German, and English.
+		Recent work includes large applications, developer tools, pipelines, and open-source platforms.
+	</p>
+
+	<p>
+		Over the years I've also gathered startup experience launching products. I hold degrees in
+		Computer Engineering and an EMBA. I'm fluent in French, German, and English.
 	</p>
 
 	<p>When I'm not coding, you can find me running on mountain trails. 🏔️🏃</p>

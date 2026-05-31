@@ -15,6 +15,9 @@ const config = {
 		adapter: adapter({
 			precompress: false
 		}),
+		alias: {
+			$plugins: './src/plugins',
+		},
 		version: {
 			name: version
 		}

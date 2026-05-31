@@ -1,6 +1,6 @@
-import { getBlob } from '$lib/plugins/blog.plugin';
 import type { BlogMetadata } from '$lib/types/blog';
 import type { MarkdownData } from '$lib/types/markdown';
+import { getBlob } from '$plugins/blog.plugin';
 
 export const load = async ({
 	params

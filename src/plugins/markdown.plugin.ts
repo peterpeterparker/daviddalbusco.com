@@ -1,7 +1,7 @@
 import { env } from '$env/dynamic/public';
-import { listSlugs } from '$lib/plugins/slug.plugin';
 import type { MarkdownData } from '$lib/types/markdown';
 import type { Slug } from '$lib/types/slug';
+import { listSlugs } from '$plugins/slug.plugin';
 import bash from '@shikijs/langs/bash';
 import css from '@shikijs/langs/css';
 import html from '@shikijs/langs/html';

@@ -1,6 +1,6 @@
-import { listBlog } from '$lib/plugins/blog.plugin';
 import type { BlogMetadata } from '$lib/types/blog';
 import type { MarkdownData } from '$lib/types/markdown';
+import { listBlog } from '$plugins/blog.plugin';
 
 export const prerender = true;
 

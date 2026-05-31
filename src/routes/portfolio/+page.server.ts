@@ -1,6 +1,6 @@
-import { listPortfolio } from '$lib/plugins/portfolio.plugin';
 import type { MarkdownData } from '$lib/types/markdown';
 import type { PortfolioMetadata } from '$lib/types/portfolio';
+import { listPortfolio } from '$plugins/portfolio.plugin';
 
 export const load = async (): Promise<{
 	work: MarkdownData<PortfolioMetadata>[];

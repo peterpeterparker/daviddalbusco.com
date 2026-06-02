@@ -4,6 +4,8 @@ description: "A simple, open source and free time tracking app."
 icon: "/images/portfolio/icons/tietracker-icon.png"
 background: "#230f29"
 type: "play"
+status: "active"
+order: "6"
 ---
 
 # Tie Tracker

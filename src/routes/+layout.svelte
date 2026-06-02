@@ -5,6 +5,7 @@
 	import '../theme/iframe.scss';
 	import '../theme/variables.scss';
 	import '../theme/hr.scss';
+	import '../theme/blockquote.scss';
 
 	import { onMount } from 'svelte';
 	import { initAnalytics } from '$lib/services/analytics.services.js';
@@ -20,6 +21,8 @@
 
 <Header />
 
-{@render children?.()}
+<main>
+	{@render children?.()}
+</main>
 
 <Footer />

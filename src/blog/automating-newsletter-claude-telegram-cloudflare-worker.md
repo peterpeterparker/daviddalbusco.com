@@ -89,7 +89,7 @@ The action can be used out of the box with some configuration as for the worker,
 
 Both projects are written in TypeScript and designed to be extensible. Mailchimp, Claude, and Telegram are the current providers, but swapping any of them out should be straightforward. I also built the pipeline to be reusable beyond blog posts. One can imagine that something is committed and needs a boring task handled by AI but needs a human review before being pushed out to consumers.
 
-Each service is a class decorated with a provider interface (`@NewsletterProvider`, `@AIProvider`, etc.). The decorator enforces that the class implements the expected interface and exposes a static `create()` method, making the boundaries explicit and the implementation swappable. Mailchimp, Claude, and Telegram can all be replaced without touching the orchestration logic.
+Each service is a class decorated with a provider interface (`@NewsletterProvider`, `@AIProvider`, etc.). The decorator enforces that the class implements the expected interface and exposes a static `create()` method, making the boundaries explicit and the implementation swappable.
 
 > Fun fact: I could have used abstract classes instead, but abstract classes in TypeScript cannot enforce static methods. A decorator on a concrete class is the cleanest way to enforce both the instance interface and the static factory method at the same time.
 

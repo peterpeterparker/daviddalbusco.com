@@ -32,61 +32,109 @@ When a PR that adds a new blog post is merged to `main`, the action kicks in:
 
 Tapping a button hits the Cloudflare Worker, which calls the appropriate Mailchimp endpoint and edits the Telegram message to confirm.
 
+![Sequence diagram of the newsletter automation pipeline](https://daviddalbusco.com/assets/images/github-action-claude-telegram-cloudflare-worker.png)
+
+---
+
+## Usage
+
+In practice, here's how I set up the workflow on my blog:
+
+```yaml
+name: Newsletter
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/blog/**"
+
+jobs:
+  newsletter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - uses: peterpeterparker/blog-to-newsletter-action@main
+        with:
+          blog_posts_path: "src/blog"
+          blog_base_url: "https://daviddalbusco.com"
+          blog_author: "David"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          mailchimp_api_key: ${{ secrets.MAILCHIMP_API_KEY }}
+          mailchimp_reply_to: "hi@daviddalbusco.com"
+          mailchimp_list_id: "123456"
+          mailchimp_test_emails: "hi@daviddalbusco.com"
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          telegram_bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          telegram_chat_id: ${{ secrets.TELEGRAM_CHAT_ID }}
+```
+
 ---
 
 ## The infrastructure
 
-The action runs as a Docker container built with Bun and published to Docker Hub. GitHub Actions pulls the image when the workflow runs. The action is also listed on the GitHub Marketplace so it is easy to discover and reference by version.
+The GitHub Action runs as a Docker container that uses Bun as its runtime. It pulls the image from Docker Hub when the workflow runs. The action is also listed on the [GitHub Marketplace](https://github.com/marketplace/actions/blog-to-newsletter) so it is easy to discover and reference by version.
 
 The Cloudflare Worker handles the Telegram webhook callbacks. My first idea was to run this handler as a Docker container on a VPS alongside the action, but given how rarely I send newsletters, the cost of maintaining a server for something that fires maybe once a month felt hard to justify hence picking a free tier that fits.
 
-Both repo are open source. The action can be used out of the box with some configuration as for the worker, it has to be forked and deployed by yourself.
+The action can be used out of the box with some configuration as for the worker, it has to be forked and deployed by yourself.
 
 ---
 
 ## The architecture
 
-Both projects are designed to be extensible. Mailchimp, Claude, and Telegram are the current providers, but swapping any of them out should be straightforward. The orchestration logic should hopefully never need to change much. To some extent, I also designed the pipeline in a way that it can be reused for other tasks than blog posts. One can imagine that something is committed and needs a boring task handled by AI but needs a human review before being pushed out to consumers.
+Both projects are written in TypeScript and designed to be extensible. Mailchimp, Claude, and Telegram are the current providers, but swapping any of them out should be straightforward. I also built the pipeline to be reusable beyond blog posts. One can imagine that something is committed and needs a boring task handled by AI but needs a human review before being pushed out to consumers.
 
 Each service is a class decorated with a provider interface (`@NewsletterProvider`, `@AIProvider`, etc.). The decorator enforces that the class implements the expected interface and exposes a static `create()` method, making the boundaries explicit and the implementation swappable. Mailchimp, Claude, and Telegram can all be replaced without touching the orchestration logic.
 
-Worth noting: I could have used abstract classes instead, but abstract classes in TypeScript cannot enforce static methods. A decorator on a concrete class is the cleanest way to enforce both the instance interface and the static factory method at the same time.
+> Fun fact: I could have used abstract classes instead, but abstract classes in TypeScript cannot enforce static methods. A decorator on a concrete class is the cleanest way to enforce both the instance interface and the static factory method at the same time.
 
 Each `create()` method validates required env vars on instantiation, throwing immediately if anything is missing. For everything else, no function throws but always returns a result.
 
-> If you read my previous blog post, you know that's a pattern I inherited from Rust which I really like for its clarity.
-
 ```typescript
-static create(): Mailchimp {
-  const { MAILCHIMP_API_KEY } = process.env;
-  assertNotEmptyString(MAILCHIMP_API_KEY, "MAILCHIMP_API_KEY");
-  return new this({ apiKey: MAILCHIMP_API_KEY });
+@NewsletterProvider
+export class Mailchimp {
+	readonly #apiKey: string;
+
+	private constructor({ apiKey }: { apiKey: string }) {
+		this.#apiKey = apiKey;
+	}
+
+	static create(): Mailchimp {
+		const { MAILCHIMP_API_KEY } = process.env;
+
+		assertNotEmptyString(MAILCHIMP_API_KEY, "MAILCHIMP_API_KEY");
+
+		return new this({ apiKey: MAILCHIMP_API_KEY });
+	}
+
+	async generateNewsletter(blog: Blog): Promise<Result<NewsletterPayload>> {
+		const messageResult = await this.#createMessage(blog);
+
+		if (messageResult.status === "error") {
+			return messageResult;
+		}
+
+		const { result: messageResponse } = messageResult;
+
+		return this.#buildNewsletter(messageResponse);
+	}
 }
-```
-
-Finally, Zod codecs handle the mapping between domain types and API wire formats, keeping the API call sites clean:
-
-```typescript
-const response = await fetch(`${this.#apiUrl}/campaigns`, {
-	method: "POST",
-	headers: {
-		Authorization: `Bearer ${this.#apiKey}`,
-		"Content-Type": "application/json"
-	},
-	body: CreateCampaignCodec.decode({
-		settings: { ...this.#campaignSettings, subjectLine: subject, previewText },
-		recipients: this.#campaignRecipients
-	})
-});
 ```
 
 ---
 
 ### Security
 
-A few small things worth calling out. The Cloudflare Worker only accepts POST requests to `/telegram/<TELEGRAM_SECRET>`, where the secret is a random 32-character string set as a Worker secret. Anything hitting the wrong path gets a 403. The Telegram bot token and Mailchimp API key are stored as Worker secrets and never exposed in code or logs.
+A few small things worth calling out.
 
-On the action side, the `actions/checkout` step uses a pinned commit SHA and `persist-credentials: false`. The action itself is also pinned by SHA in the caller workflow, so a new release never silently changes behavior.
+1. The Cloudflare Worker only accepts POST requests to `/telegram/<TELEGRAM_SECRET>`, where the secret is a random 32-character string set as a Worker secret. Anything hitting the wrong path gets a 403.
+2. The Telegram bot token and Mailchimp API key are stored as Worker secrets and never exposed in code or logs.
+3. On the action side, the `actions/checkout` step uses a pinned commit SHA and `persist-credentials: false`. The action itself is also pinned by SHA in the caller workflow, so a new release never silently changes behavior.
 
 ### Lean dependencies
 
@@ -135,6 +183,36 @@ const raw = content
 	.trim();
 ````
 
+### Keeping fetch call sites readable with Zod codecs
+
+Instead of inlining `JSON.stringify` and `JSON.parse` directly in every `fetch` call, I used Zod codecs to handle serialization, deserialization, and validation in one place.
+
+For example:
+
+```typescript
+export const AnthropicMessageCodec = z.codec(AnthropicMessageSchema, z.string(), {
+	decode: ({ model, maxTokens, content }) =>
+		JSON.stringify({
+			model,
+			max_tokens: maxTokens,
+			messages: [{ role: "user", content }]
+		}),
+	encode: (json) => JSON.parse(json)
+});
+```
+
+Then the fetch call site just becomes:
+
+```typescript
+body: AnthropicMessageCodec.decode({
+	model: this.#model,
+	maxTokens: this.#maxTokens,
+	content
+});
+```
+
+The fetch call stays focused on the request logic. The codec owns the wire format and validates the input and output.
+
 ### Embedding test emails in the callback data
 
 The Telegram approval message optionally includes a Send Test Email button. That button needs to know which email addresses to send to, but the Cloudflare Worker has no access to the action's environment, by design. I did not want consumers to have to configure the same emails in two places, so the Worker only sees what Telegram sends it.
@@ -155,7 +233,7 @@ After sending a test email, I originally called `editMessage` to append a confir
 
 ## Conclusion
 
-If you publish a blog and send newsletters, feel free to fork [blog-to-newsletter-worker](https://github.com/peterpeterparker/blog-to-newsletter-worker) and drop [blog-to-newsletter-action](https://github.com/peterpeterparker/blog-to-newsletter-action) into your repo. It's been running on this site since this post was published.
+If you publish a blog and send newsletters, feel free to fork [blog-to-newsletter-worker](https://github.com/peterpeterparker/blog-to-newsletter-worker) and drop [blog-to-newsletter-action](https://github.com/peterpeterparker/blog-to-newsletter-action) into your repo. I'll be using it for "real" with this very first post.
 
 Until next time!
 David

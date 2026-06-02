@@ -1,13 +1,17 @@
 ---
-path: "/blog/automating-newsletter-ai-telegram-cloudflare-worker"
-date: "2026-05-16"
-title: "Automating My Newsletter with AI, Telegram, and a Cloudflare Worker"
-description: "How I built a GitHub Action that reads a new blog post, generates a newsletter draft with Claude, and sends it to Mailchimp after a Telegram approval tap."
-tags: "#ai #github-actions #cloudflare #telegram #mailchimp #typescript #bun"
-image: "https://daviddalbusco.com/assets/images/TODO.jpg"
+path: "/blog/automating-newsletter-claude-telegram-cloudflare-worker"
+date: "2026-06-02"
+title: "Automating My Newsletter with Claude, Telegram, and a Cloudflare Worker"
+description: "How I built a GitHub Action that reads a new blog post, generates a newsletter draft, and delivers it to subscribers after an approval tap."
+tags: "#github-actions #claude #ai  #cloudflare #telegram #mailchimp #typescript #bun"
+image: "https://daviddalbusco.com/assets/images/maxim-berg-TcE45yIzJA0-unsplash.jpg"
 ---
 
-Every time I publish a blog post, I want my newsletter subscribers to hear about it. The problem is I kept forgetting to actually send it. So I decided to automate the whole thing, but with a human-in-the-loop step before anything goes out.
+![](https://daviddalbusco.com/assets/images/maxim-berg-TcE45yIzJA0-unsplash.jpg)
+
+> Photo by [Maxim Berg](https://unsplash.com/fr/@maxberg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/motif-darriere-plan-TcE45yIzJA0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+Every time I publish a blog post, I want my newsletter subscribers to hear about it. The problem is I kept forgetting to actually send it and when I did remember, navigating Mailchimp's bloated UI felt like punishment. So I decided to automate the whole thing, but with a human-in-the-loop step before anything goes out.
 
 The result is two open-source projects:
 

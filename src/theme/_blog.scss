@@ -5,9 +5,9 @@ deckgo-highlight-code {
 p code,
 li code,
 table code {
-	font-family: Menlo, monospace;
+	font-size: 0.9rem;
 	background: rgba(0, 0, 0, 0.05);
-	padding: 0.15rem 0.45rem;
+	padding: 0 0.45rem;
 }
 
 article p:first-child img {

@@ -23,7 +23,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           mailchimp_api_key: ${{ secrets.MAILCHIMP_API_KEY }}
           mailchimp_reply_to: 'david.dalbusco@gmail.com'
-          mailchimp_list_id: '750613fe5f'
+          mailchimp_list_id: '3a584996fb'
           mailchimp_test_emails: 'david.dalbusco@gmail.com'
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           telegram_bot_token: ${{ secrets.TELEGRAM_BOT_TOKEN }}

@@ -67,3 +67,10 @@ td {
 
 	padding: 0.25rem 0.45rem;
 }
+
+article p:first-child:has(img) + blockquote {
+	width: fit-content;
+	margin: -0.25rem auto 3rem;
+	box-shadow: none;
+	font-size: 0.8rem;
+}

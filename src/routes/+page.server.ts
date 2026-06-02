@@ -14,5 +14,5 @@ export const load = async (): Promise<{
 
 	const { work, play } = portfolio;
 
-	return { work, play, blog: blog.slice(0, 4) };
+	return { work, play, blog: blog.slice(0, 6) };
 };

@@ -49,7 +49,7 @@
 		&:focus,
 		&:hover {
 			div {
-				border: 0.75rem solid var(--color-highlight);
+				border: 0.45rem solid var(--color-highlight);
 			}
 		}
 

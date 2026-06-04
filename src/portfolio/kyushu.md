@@ -40,6 +40,8 @@ Thanks to the polyfills, the worker supports a wide range of Node.js APIs out of
 
 ## Fact sheet
 
+**Website:** [Kyushu](https://kyushu.dev)
+
 **Technology:** [Rust](https://www.rust-lang.org/), [TypeScript](https://www.typescriptlang.org/) and [WebAssembly](https://webassembly.org/)
 
 ---

@@ -21,8 +21,8 @@
 	<p>
 		My focus is building performant projects with careful attention to both interface quality and
 		secure, scalable architectural foundations, from TypeScript frontends to Bun or Rust backends,
-		you name it. Clients hire me to create prototypes, products, and complete ecosystems from the
-		ground up.
+		you name it. Clients hire me to create prototypes, products, and complete ecosystems from
+		scratch.
 	</p>
 
 	<p>

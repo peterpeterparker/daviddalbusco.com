@@ -1,15 +1,17 @@
 ---
 path: "/blog/a-self-hostable-wasm-sandbox-for-javascript-workers"
-date: "2026-05-31"
+date: "2026-06-05"
 title: "A Self-Hostable Wasm Sandbox for JavaScript Workers"
-description: "A walkthrough of Kyushu's architecture: a self-hostable WebAssembly sandbox that runs JavaScript workers on a VPS or anywhere without Node.js, Bun, or Docker."
+description: "A walkthrough of the CLI I built to run JavaScript workers on a VPS without Node.js, Bun, or Docker."
 tags: "#webassembly #rust #javascript #typescript #wasm"
 image: "https://daviddalbusco.com/assets/images/TODO.jpg"
 ---
 
-I've been building [Juno](https://github.com/junobuild/juno) for a while, a platform where apps run in some sort of containers. I liked the concept. When I tried Cloudflare Workers, something clicked: a single function, sandboxed, handling HTTP. Kind of the same idea, but for a VPS or anywhere.
+I've been building [Juno](https://github.com/junobuild/juno) for a while, a platform where apps run in some sort of containers. For its authentication, I also built an API with Bun that runs on a VPS. So, needless to say, I like running my own sandboxes.
 
-So I started wondering: could I build something similar that runs without Node.js, Bun, or any JavaScript runtime installed on the host? No vendor dependency, no platform lock-in, no Docker, just a binary you drop on a server and run.
+When I recently tried Cloudflare Workers to build my ["blog to newsletter"](https://github.com/peterpeterparker/blog-to-newsletter-action) action pipeline, something clicked: a single function, sandboxed, handling HTTP, VPS... maybe there is something to experiment here?
+
+I started wondering: could I actually build something similar that runs on a VPS without Node.js, Bun, or even Docker installed on the host?
 
 That experiment is [Kyushu](https://github.com/peterpeterparker/kyushu).
 

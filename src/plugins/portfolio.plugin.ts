@@ -1,6 +1,6 @@
-import { get, list } from '$lib/plugins/markdown.plugin';
 import type { MarkdownData } from '$lib/types/markdown';
 import type { Portfolio, PortfolioMetadata } from '$lib/types/portfolio';
+import { get, list } from '$plugins/markdown.plugin';
 
 export const listPortfolio = async (): Promise<Portfolio> => {
 	const results: MarkdownData<PortfolioMetadata>[] = await list<PortfolioMetadata>({

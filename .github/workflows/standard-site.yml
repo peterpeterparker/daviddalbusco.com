@@ -7,7 +7,7 @@ on:
       - 'src/blog/**'
 
 jobs:
-  newsletter:
+  standard-site:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

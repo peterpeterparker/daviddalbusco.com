@@ -11,6 +11,7 @@ import markdown from '@shikijs/langs/markdown';
 import rust from '@shikijs/langs/rust';
 import sass from '@shikijs/langs/sass';
 import scss from '@shikijs/langs/scss';
+import toml from '@shikijs/langs/toml';
 import tsx from '@shikijs/langs/tsx';
 import typescript from '@shikijs/langs/typescript';
 import xml from '@shikijs/langs/xml';
@@ -38,7 +39,8 @@ const shiki = createHighlighterCoreSync({
 		sass,
 		xml,
 		tsx,
-		markdown
+		markdown,
+		toml
 	],
 	engine: createJavaScriptRegexEngine()
 });

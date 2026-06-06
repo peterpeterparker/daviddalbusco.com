@@ -9,7 +9,8 @@
 	"scripts": {
 		"assets": "bun serve.assets.ts",
 		"dev": "vite dev",
-		"build": "vite build",
+		"build:workaround": "node svelte.workaround.ts",
+		"build": "vite build && pnpm build:workaround",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync",

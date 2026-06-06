@@ -12,7 +12,7 @@ Standard.Site is an AT Protocol schema for publishing websites and blog posts, e
 
 I built this action after it started gaining traction on Bluesky. Instead of manually creating the decentralized records for each new blog post, I automated the whole thing.
 
-When I merge a pull request adding a new blog post on this website, the action detects the new file, creates a `site.standard.document` record on the AT Protocol network, and opens a pull request to update the post's frontmatter with the record URI. Once merged, the blog post renders a `<link rel="site.standard.document">` tag, enabling the Standard.Site preview card on Bluesky.
+When I merge a pull request adding a new blog post on this website, the action detects the new file, creates a `site.standard.document` record on the AT Protocol network, and opens a pull request to update the post's frontmatter with the record URI. Once merged, the blog post renders a link meta tag, enabling the Standard.Site preview card on Bluesky.
 
 ---
 
@@ -22,8 +22,4 @@ When I merge a pull request adding a new blog post on this website, the action d
 
 **Platforms:** [Bluesky](https://bsky.app) and [AT Protocol](https://atproto.com)
 
----
-
-## Open source
-
-This project is open source and available on GitHub: [blog-to-standard-site-action](https://github.com/peterpeterparker/blog-to-standard-site-action)
+**GitHub:** [blog-to-standard-site-action](https://github.com/peterpeterparker/blog-to-standard-site-action)

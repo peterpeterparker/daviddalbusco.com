@@ -31,8 +31,4 @@ Features
 
 **Technology:** [StencilJS](https://stenciljs.com/)
 
----
-
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/papyrs/stylo)
+**GitHub:** [stylo](https://github.com/papyrs/stylo)

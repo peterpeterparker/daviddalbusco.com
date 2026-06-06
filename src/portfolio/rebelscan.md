@@ -37,6 +37,4 @@ I called the prototype [Rebel Scan](https://rebelscan.com/) because, it is just 
 
 **Infrastructure:** [Vercel](https://vercel.com/)
 
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/peterpeterparker/rebelscan)
+**GitHub:** [rebelscan](https://github.com/peterpeterparker/rebelscan)

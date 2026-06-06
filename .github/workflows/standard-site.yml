@@ -15,7 +15,7 @@ jobs:
         with:
           persist-credentials: false
 
-      - uses: peterpeterparker/blog-to-standard-site@feat/local-docker
+      - uses: peterpeterparker/blog-to-standard-site-action@main
         with:
           blog_posts_path: 'src/blog'
           github_token: ${{ secrets.GITHUB_TOKEN }}

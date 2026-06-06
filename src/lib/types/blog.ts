@@ -6,4 +6,5 @@ export interface BlogMetadata {
 	image: string;
 	canonical: string;
 	robots?: 'disallow';
+	standard_site?: string;
 }

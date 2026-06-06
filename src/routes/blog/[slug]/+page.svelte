@@ -16,13 +16,21 @@
 
 	let post = $derived<MarkdownData<BlogMetadata>>(data.post);
 
-	let slug: string = $derived(post.slug);
-	let content: string = $derived(post.content);
-	let metadata: BlogMetadata = $derived(post.metadata);
+	let slug = $derived(post.slug);
+	let content = $derived(post.content);
+	let metadata = $derived(post.metadata);
 
 	let noRobots = $derived(metadata.robots === 'disallow');
 
-	let { title, canonical, description, image, date: postDate, tags } = $derived(metadata);
+	let {
+		title,
+		canonical,
+		description,
+		image,
+		date: postDate,
+		tags,
+		standard_site: standardSite
+	} = $derived(metadata);
 </script>
 
 <svelte:head>
@@ -30,6 +38,10 @@
 
 	{#if noRobots}
 		<meta name="robots" content="noindex, nofollow" />
+	{/if}
+
+	{#if standardSite !== undefined && standardSite !== ''}
+		<link rel="site.standard.document external" href={standardSite} />
 	{/if}
 
 	<style lang="scss">

@@ -5,7 +5,7 @@ icon: "/images/portfolio/icons/juno-icon.png"
 background: "#c9cfff"
 type: "play"
 status: "maintenance"
-order: "3"
+order: "2"
 ---
 
 # Juno

@@ -3,7 +3,7 @@ title: "tsdoc-markdown"
 description: "Generate markdown documentation from TypeScript source code."
 type: "play"
 status: "active"
-order: "7"
+order: "8"
 ---
 
 # tsdoc-markdown

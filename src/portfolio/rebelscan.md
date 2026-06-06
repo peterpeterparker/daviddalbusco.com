@@ -5,7 +5,7 @@ icon: "/images/portfolio/icons/rebelscan-icon.png"
 background: "linear-gradient(135deg, #00a5cf, #9fffcb)"
 type: "play"
 status: "experiment"
-order: "9"
+order: "10"
 ---
 
 # Rebel Scan

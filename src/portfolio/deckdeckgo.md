@@ -5,7 +5,7 @@ icon: "/images/portfolio/icons/deckdeckgo-icon.png"
 background: "#3a81fe"
 type: "play"
 status: "archived"
-order: "8"
+order: "9"
 ---
 
 # DeckDeckGo

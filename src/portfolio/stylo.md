@@ -5,7 +5,7 @@ icon: "/images/portfolio/icons/stylo-icon.png"
 background: "#ff65a9"
 type: "play"
 status: "archived"
-order: "5"
+order: "6"
 ---
 
 # Stylo

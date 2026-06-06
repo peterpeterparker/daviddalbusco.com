@@ -28,12 +28,8 @@ Think of it as **Vercel + Firebase + Self-Hosting** - without the compromises.
 
 **Website:** [Juno](https://juno.build)
 
-**Technology:** [TypeScript](https://www.typescriptlang.org/), [SvelteKit](https://kit.svelte.dev/), [Rust](https://www.rust-lang.org/) and [Docker](https://www.docker.com/).
+**Technology:** [TypeScript](https://www.typescriptlang.org/), [SvelteKit](https://kit.svelte.dev/), [Rust](https://www.rust-lang.org/) and [Docker](https://www.docker.com/)
 
-**Infrastructure:** [Internet Computer](https://internetcomputer.org/).
+**Infrastructure:** [Internet Computer](https://internetcomputer.org/)
 
----
-
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/junobuild/juno)
+**GitHub:** [junobuild/juno](https://github.com/junobuild/juno)

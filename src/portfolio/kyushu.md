@@ -44,8 +44,4 @@ Thanks to the polyfills, the worker supports a wide range of Node.js APIs out of
 
 **Technology:** [Rust](https://www.rust-lang.org/), [TypeScript](https://www.typescriptlang.org/) and [WebAssembly](https://webassembly.org/)
 
----
-
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/peterpeterparker/kyushu)
+**GitHub:** [kyushu](https://github.com/peterpeterparker/kyushu)

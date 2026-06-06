@@ -18,8 +18,4 @@ It parses TSDoc comments from source files using the TypeScript compiler API and
 
 **Technology:** [TypeScript](https://www.typescriptlang.org/)
 
----
-
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/peterpeterparker/tsdoc-markdown)
+**GitHub:** [tsdoc-markdown](https://github.com/peterpeterparker/tsdoc-markdown)

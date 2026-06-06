@@ -26,8 +26,4 @@ I built this simple, open-source time tracking app ⏱️ while learning React a
 
 **Database:** Offline with [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
 
----
-
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/peterpeterparker/tietracker)
+**GitHub:** [tietracker](https://github.com/peterpeterparker/tietracker)

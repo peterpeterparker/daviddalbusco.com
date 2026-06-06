@@ -24,6 +24,4 @@ DeckDeckGo was an open-source alternative to PowerPoint and Google Slides which 
 
 **Infrastructure:** [Google Cloud](https://firebase.google.com/) and [Amazon AWS](https://aws.amazon.com/) service.
 
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/deckgo/deckdeckgo)
+**GitHub:** [deckgo/deckdeckgo](https://github.com/deckgo/deckdeckgo)

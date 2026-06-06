@@ -28,8 +28,6 @@ The application primarily worked offline and could therefore be used by anyone o
 
 **Technology:** [SvelteKit](https://kit.svelte.dev/) and [StencilJS](https://stenciljs.com/) for the frontend dapp. [Rust](https://www.rust-lang.org/) and Motoko for the smart contracts.
 
-**Infrastructure:** 100% on blockchain [Internet Computer](https://internetcomputer.org/).
+**Infrastructure:** [Internet Computer](https://internetcomputer.org/)
 
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/papyrs/papyrs)
+**GitHub:** [papyrs/papyrs](https://github.com/papyrs/papyrs)

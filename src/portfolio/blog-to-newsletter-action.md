@@ -22,8 +22,4 @@ Fun fact: I coded it mostly in Shinkansen's trips during a month-long holiday in
 
 **Platforms:** [Claude](https://anthropic.com), [Mailchimp](https://mailchimp.com/), [Telegram](https://telegram.org/) and [Cloudflare Workers](https://workers.cloudflare.com/)
 
----
-
-## Open source
-
-This project is open source and available on GitHub: [blog-to-newsletter-action](https://github.com/peterpeterparker/blog-to-newsletter-action) and [blog-to-newsletter-worker](https://github.com/peterpeterparker/blog-to-newsletter-worker)
+**GitHub:** [blog-to-newsletter-action](https://github.com/peterpeterparker/blog-to-newsletter-action) and [blog-to-newsletter-worker](https://github.com/peterpeterparker/blog-to-newsletter-worker)

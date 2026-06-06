@@ -26,4 +26,4 @@ When I merge a pull request adding a new blog post on this website, the action d
 
 ## Open source
 
-This project is open source and available on GitHub: [blog-to-standard-site](https://github.com/peterpeterparker/blog-to-standard-site)
+This project is open source and available on GitHub: [blog-to-standard-site-action](https://github.com/peterpeterparker/blog-to-standard-site-action)

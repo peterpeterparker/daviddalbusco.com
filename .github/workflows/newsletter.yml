@@ -1,10 +1,7 @@
 name: Newsletter
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'src/blog/**'
+  workflow_dispatch:
 
 jobs:
   newsletter:

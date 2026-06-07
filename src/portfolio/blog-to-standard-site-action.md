@@ -8,7 +8,7 @@ order: "4"
 
 # Blog to Standard.Site
 
-Standard.Site is an AT Protocol schema for publishing websites and blog posts, enabling rich preview cards on Bluesky and other Atmosphere-powered platforms.
+[Standard.Site](https://standard.site/) is an AT Protocol schema for publishing websites and blog posts, enabling rich preview cards on [Bluesky](https://bsky.app/profile/daviddalbusco.com) and other Atmosphere-powered platforms.
 
 I built this action after it started gaining traction on Bluesky. Instead of manually creating the decentralized records for each new blog post, I automated the whole thing.
 
@@ -20,6 +20,6 @@ When I merge a pull request adding a new blog post on this website, the action d
 
 **Technology:** [TypeScript](https://www.typescriptlang.org/), [Bun](https://bun.sh), [Docker](https://www.docker.com/) and [GitHub Actions](https://github.com/features/actions)
 
-**Platforms:** [Bluesky](https://bsky.app) and [AT Protocol](https://atproto.com)
+**Protocol:** [AT Protocol](https://atproto.com)
 
 **GitHub:** [blog-to-standard-site-action](https://github.com/peterpeterparker/blog-to-standard-site-action)

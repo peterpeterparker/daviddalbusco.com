@@ -1,12 +1,12 @@
 <script lang="ts">
-	import '../../../theme/_blog.scss';
-
 	import type { PageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
 	import type { BlogMetadata } from '$lib/types/blog';
 	import type { MarkdownData } from '$lib/types/markdown';
 	import Section from '$lib/components/Section.svelte';
 	import Link from '$lib/components/Link.svelte';
+	import '../../../theme/_blog.scss';
+	import '../../../theme/_code.scss';
 
 	interface Props {
 		data: PageData;

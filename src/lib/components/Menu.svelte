@@ -40,7 +40,7 @@
 			>
 
 			<a
-				href="http://eepurl.com/giun5j"
+				href="http://eepurl.com/iXHDy2"
 				target="_blank"
 				onclick={navigate}
 				rel="external noopener noreferrer"

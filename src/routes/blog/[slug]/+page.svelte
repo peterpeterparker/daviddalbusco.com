@@ -71,7 +71,7 @@
 
 		<a
 			class="newsletter"
-			href="http://eepurl.com/giun5j"
+			href="http://eepurl.com/iXHDy2"
 			target="_blank"
 			rel="external noopener noreferrer">Subscribe to my newsletter</a
 		>

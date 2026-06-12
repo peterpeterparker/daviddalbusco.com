@@ -5,6 +5,7 @@ title: "Type-Safe Server-Sent Events Pub/Sub"
 description: "A typed singleton wrapper around the browser's EventSource API with discriminated union callbacks."
 tags: "#typescript #sse #webdev #zod"
 image: "https://daviddalbusco.com/assets/images/richard-horvath-cPccYbPrF-A-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3mo37f2j76f2r"
 ---
 
 ![](https://daviddalbusco.com/assets/images/richard-horvath-cPccYbPrF-A-unsplash.jpg)

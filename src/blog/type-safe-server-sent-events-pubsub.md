@@ -1,6 +1,6 @@
 ---
 path: "/blog/type-safe-server-sent-events-pubsub"
-date: "2026-12-06"
+date: "2026-06-12"
 title: "Type-Safe Server-Sent Events Pub/Sub"
 description: "A typed singleton wrapper around the browser's EventSource API with discriminated union callbacks."
 tags: "#typescript #sse #webdev #zod"

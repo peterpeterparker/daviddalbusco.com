@@ -29,8 +29,4 @@ In addition, I supported the team in their technical decisions and also develope
 
 **Database:** [Google Firestore](https://firebase.google.com/docs/firestore)
 
----
-
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/project-owlly/)
+**GitHub:** [project-owlly](https://github.com/project-owlly)

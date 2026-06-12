@@ -5,6 +5,7 @@ title: "We are developing an open source editor for presentations"
 description: "We are developing DeckDeckGo, the open source editor for presentations"
 tags: "#showdev #opensource #motivation"
 image: "https://daviddalbusco.com/assets/images/1*zuqx73hjAWNnmwRpjJ06Zw.jpeg"
+robots: "disallow"
 ---
 
 ![](https://daviddalbusco.com/assets/images/1*zuqx73hjAWNnmwRpjJ06Zw.jpeg)

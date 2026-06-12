@@ -1,7 +1,7 @@
 import { env } from '$env/dynamic/public';
-import { listSlugs } from '$lib/plugins/slug.plugin';
 import type { MarkdownData } from '$lib/types/markdown';
 import type { Slug } from '$lib/types/slug';
+import { listSlugs } from '$plugins/slug.plugin';
 import bash from '@shikijs/langs/bash';
 import css from '@shikijs/langs/css';
 import html from '@shikijs/langs/html';
@@ -11,6 +11,7 @@ import markdown from '@shikijs/langs/markdown';
 import rust from '@shikijs/langs/rust';
 import sass from '@shikijs/langs/sass';
 import scss from '@shikijs/langs/scss';
+import toml from '@shikijs/langs/toml';
 import tsx from '@shikijs/langs/tsx';
 import typescript from '@shikijs/langs/typescript';
 import xml from '@shikijs/langs/xml';
@@ -38,7 +39,8 @@ const shiki = createHighlighterCoreSync({
 		sass,
 		xml,
 		tsx,
-		markdown
+		markdown,
+		toml
 	],
 	engine: createJavaScriptRegexEngine()
 });

@@ -3,11 +3,11 @@
 	import Menu from '$lib/components/Menu.svelte';
 
 	let open = $state(false);
-	let hamburger: Hamburger = $state();
+	let hamburger = $state<Hamburger | undefined>();
 
 	const onStateChange = ({ detail }: CustomEvent<boolean>) => (open = detail);
 
-	const close = () => hamburger.close();
+	const close = () => hamburger?.close();
 </script>
 
 <header>

@@ -7,9 +7,9 @@
 	<h2 id="newsletter">Newsletter</h2>
 
 	<p>
-		I rarely send out a newsletter, but when I do, it highlights the exciting side projects I
-		develop for fun, along with my latest blog posts. Stay in the loop with my journey!
+		Get an email whenever I publish a new blog post, plus updates on the side projects I'm building
+		for fun.
 	</p>
 
-	<Link href="http://eepurl.com/giun5j" external>Sign up</Link>
+	<Link href="http://eepurl.com/iXHDy2" external>Sign up</Link>
 </Section>

@@ -1,12 +1,12 @@
 <script lang="ts">
-	import '../../../theme/_blog.scss';
-
 	import type { PageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
 	import type { BlogMetadata } from '$lib/types/blog';
 	import type { MarkdownData } from '$lib/types/markdown';
 	import Section from '$lib/components/Section.svelte';
 	import Link from '$lib/components/Link.svelte';
+	import '../../../theme/_blog.scss';
+	import '../../../theme/_code.scss';
 
 	interface Props {
 		data: PageData;
@@ -14,17 +14,35 @@
 
 	let { data }: Props = $props();
 
-	let post: MarkdownData<BlogMetadata> = $derived(data.post);
+	let post = $derived<MarkdownData<BlogMetadata>>(data.post);
 
-	let slug: string = $derived(post.slug);
-	let content: string = $derived(post.content);
-	let metadata: BlogMetadata = $derived(post.metadata);
+	let slug = $derived(post.slug);
+	let content = $derived(post.content);
+	let metadata = $derived(post.metadata);
 
-	let { title, canonical, description, image, date: postDate, tags } = $derived(metadata);
+	let noRobots = $derived(metadata.robots === 'disallow');
+
+	let {
+		title,
+		canonical,
+		description,
+		image,
+		date: postDate,
+		tags,
+		standard_site: standardSite
+	} = $derived(metadata);
 </script>
 
 <svelte:head>
 	<Seo {canonical} {description} {image} {title} url={`/blog/${slug}`} />
+
+	{#if noRobots}
+		<meta name="robots" content="noindex, nofollow" />
+	{/if}
+
+	{#if standardSite !== undefined && standardSite !== ''}
+		<link rel="site.standard.document external" href={standardSite} />
+	{/if}
 
 	<style lang="scss">
 		@use '../../../theme/_page.scss';

@@ -51,10 +51,6 @@
 
 		transition: transform 0.25s ease-out;
 
-		svg {
-			transition: transform 0.5s ease-out;
-		}
-
 		&:last-of-type {
 			margin-right: 0;
 		}
@@ -62,10 +58,6 @@
 		&:focus,
 		&:hover {
 			transform: translateY(-0.25rem);
-
-			svg {
-				transform: scale(1.25);
-			}
 		}
 	}
 </style>

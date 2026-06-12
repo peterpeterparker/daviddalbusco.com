@@ -6,6 +6,7 @@
 	import type { MarkdownData } from '$lib/types/markdown';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 	import Section from '$lib/components/Section.svelte';
+	import '../../../theme/_code.scss';
 
 	interface Props {
 		data: PageData;

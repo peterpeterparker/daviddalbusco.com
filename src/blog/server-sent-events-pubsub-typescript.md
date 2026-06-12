@@ -1,13 +1,17 @@
 ---
-path: "/blog/server-sent-events-pubsub-typescript"
-date: "2026-05-06"
-title: "Server-Sent Events with Pub/Sub in TypeScript"
+path: "/blog/type-safe-server-sent-events-pubsub"
+date: "2026-12-06"
+title: "Type-Safe Server-Sent Events Pub/Sub"
 description: "A typed singleton wrapper around the browser's EventSource API with discriminated union callbacks."
 tags: "#typescript #sse #webdev #zod"
-image: "https://daviddalbusco.com/assets/images/TODO.jpg"
+image: "https://daviddalbusco.com/assets/images/richard-horvath-cPccYbPrF-A-unsplash.jpg"
 ---
 
-Server-Sent Events (SSE) - a browser API for receiving a stream of updates from a server over a single HTTP connection - are deceptively simple. Open a connection, listen for messages, done. The tricky part is when multiple parts of your app subscribe to the same stream but care about different event types, and you want TypeScript to know exactly what each subscriber will receive.
+![](https://daviddalbusco.com/assets/images/richard-horvath-cPccYbPrF-A-unsplash.jpg)
+
+> Photo by [Richard Horvath](https://unsplash.com/fr/@ricvath?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/formes-ondulantes-bleues-et-turquoise-cPccYbPrF-A?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+Server-Sent Events ([SSE](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)) - a browser API for receiving a stream of updates from a server over a single HTTP connection - are simple on the surface. Open a connection, listen for messages, done. The tricky part is when multiple parts of your app subscribe to the same stream but care about different event types, and you want TypeScript to know exactly what each subscriber will receive.
 
 This post walks through how I solved that. To keep things concrete, let's pretend we're building a pizza shop dashboard. 🍕
 
@@ -18,6 +22,17 @@ This post walks through how I solved that. To keep things concrete, let's preten
 Our dashboard streams real-time updates from the backend: order status changes and delivery tracking events. Both flow through the same SSE endpoint, but a component showing order status shouldn't have to deal with delivery events and vice versa.
 
 The naive solution is to dump everything into one callback and sort it out at the consumer level. It works, but TypeScript can't help you much. Every subscriber gets `unknown` and you're back to casting.
+
+```typescript
+eventSource.onmessage = (event) => {
+	const data: unknown = JSON.parse(event.data);
+
+	// Every subscriber gets `unknown`, cast and hope
+	if ((data as { type: string }).type === "order") {
+		handleOrder(data as OrderEvent);
+	}
+};
+```
 
 What I wanted instead: subscribe with a key that encodes what you care about, and get a callback typed to exactly that payload.
 
@@ -95,7 +110,7 @@ The discriminated union on `key` is what makes it work. When you call `subscribe
 
 ## The stream
 
-With the types in place, the stream class is mostly plumbing.
+With the types in place, the stream class is mostly plumbing with few things worth watching for that I'll share with you after the code.
 
 ```typescript
 type Unsubscriber = () => void;
@@ -182,8 +197,13 @@ export class PizzaStream {
 	}
 
 	#dispatch = ($event: MessageEvent<string | unknown>) => {
+		// The backend sends each message as a 2-element tuple
+		// [orderEvents[], deliveryEvents[]], in that fixed order (either may be empty)
+		// Which we represent with a schema for validation.
+		const PizzaEventSchema = z.tuple([z.array(OrderEventSchema), z.array(DeliveryEventSchema)]);
+
 		const parsed =
-			nonNullish($event.data) && typeof $event.data === "string"
+			$event.data !== undefined && typeof $event.data === "string"
 				? PizzaEventSchema.safeParse(JSON.parse($event.data))
 				: undefined;
 
@@ -210,19 +230,23 @@ export class PizzaStream {
 }
 ```
 
-A few things worth noting:
-
-The singleton pattern keeps one connection per app, not one per component. Components subscribe and unsubscribe, but the underlying `EventSource` is shared. The goal is to avoid opening one connection per component and overloading the backend. It's not a guarantee, but it's a good-faith effort on the client side.
+I used a singleton to keep one connection per app, not one per component. Components subscribe and unsubscribe, but the underlying `EventSource` is shared. The goal is to avoid opening one connection per component and overloading the backend. It's not a guarantee, but it's a good-faith effort on the client side.
 
 The `subscribe` overloads are how TypeScript knows which callback type to expect. The implementation signature accepts the union, but callers get the specific type based on what they pass in.
 
 `Result<T>` instead of throwing makes error handling explicit at the call site. The stream either worked or it didn't, and the caller decides what to do.
 
+Before acting, `open()` and `close()` check the connection's `readyState`. Calling `open()` twice, for example, returns a typed error instead of silently doing nothing.
+
+Finally, rather than looking up a single event, `#dispatch` loops over arrays of order and delivery events, since a single SSE message can batch multiple updates of each type.
+
 ---
 
-## Using it in a Svelte component
+## Using it in the UI
 
-Rather than wiring up the subscription in every component that needs it, we can create a wrapper component that handles the lifecycle and passes the data down to its children. The example below is for orders, but delivery would look fairly similar.
+Rather than wiring up the subscription in every component that needs it, I created a wrapper component that handles the lifecycle and passes the data down to its children. The example below is for orders, but delivery would look fairly similar.
+
+> I used Svelte here, but the same idea applies in any framework. The code I shared above is agnostic.
 
 ```javascript
 <script lang="ts">
@@ -271,7 +295,11 @@ Rather than wiring up the subscription in every component that needs it, we can 
 {@render children()}
 ```
 
+And that covers it.
+
 ---
+
+## Conclusion
 
 The pattern scales well. Adding a new event type means adding a new schema, a new callback type, and a new overload. But the bigger takeaway is the single streamer for the entire app. Any component can subscribe to what it cares about, unsubscribe when it's done, and share the same underlying connection. No coordination needed, no duplicated setup.
 

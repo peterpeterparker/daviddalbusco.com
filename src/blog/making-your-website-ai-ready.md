@@ -5,6 +5,7 @@ title: Making Your Website AI-Ready
 description: "A few tips to help your site become LLM-friendly (or not)."
 tags: "#ai #llms #skills #webdev"
 image: "https://daviddalbusco.com/assets/images/maxim-berg-qsDfqZyTCAE-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3mokjqz7v3w2z"
 ---
 
 ![](https://daviddalbusco.com/assets/images/maxim-berg-qsDfqZyTCAE-unsplash.jpg)

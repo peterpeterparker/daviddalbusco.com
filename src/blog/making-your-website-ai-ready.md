@@ -1,21 +1,25 @@
 ---
 path: "/blog/making-your-website-ai-ready"
-date: "2026-06-01"
+date: "2026-06-18"
 title: Making Your Website AI-Ready
-description: "What I implemented on my site to make it discoverable and useful for AI agents — llms.txt, skills, and agent readiness signals."
-tags: "#ai #llms #skills #webdev #sveltekit #javascript"
-image: "https://daviddalbusco.com/assets/images/logan-voss-1QlMVjKbJrY-unsplash.jpg"
+description: "A few tips to help your site become LLM-friendly (or not)."
+tags: "#ai #llms #skills #webdev"
+image: "https://daviddalbusco.com/assets/images/maxim-berg-qsDfqZyTCAE-unsplash.jpg"
 ---
 
-I've been gradually making the documentation of my hobby project, [Juno](https://juno.build), more AI-friendly. Not in a buzzword-chasing sense, but because I noticed that tools like Claude, ChatGPT, and AI-powered search engines increasingly try to read websites directly. And when they do, they often land on HTML which I assume, is suboptimal.
+![](https://daviddalbusco.com/assets/images/maxim-berg-qsDfqZyTCAE-unsplash.jpg)
 
-So I spent some time implementing a few things that make the docs cleaner and more useful for their agents while trying to find my way in the variety of specifications because it seems we live in a time where every major corporation just goes "yolo here are our standards". So, here's what I did, hoping it might help you too.
+> Photo by [Maxim Berg](https://unsplash.com/fr/@maxberg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/un-fond-multicolore-avec-des-lignes-de-differentes-couleurs-qsDfqZyTCAE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
+I've been gradually trying to make my project, [Juno](https://juno.build), more AI-friendly. One might argue I failed since it's now deprecated (#yolo), but since I navigated a whole bunch of various pseudo-standard specifications (spoiler alert: every major corporation just goes "here are our standards"), I figured I'd share what I found, hoping it might help you too.
 
 ---
 
 ## llms.txt
 
-The starting point is [llmstxt.org](https://llmstxt.org/), a proposal by Jeremy Howard that defines a `/llms.txt` file living at the root of your site. Think of it like `sitemap.xml`, but for AI tools rather than search crawlers: a structured Markdown document that gives agents a curated entry point to understand your site, what it is, what it covers, and where to find the important pages.
+The starting point is [llmstxt.org](https://llmstxt.org/), a proposal by Jeremy Howard that defines a `/llms.txt` file living at the root of your site. Think of it like `sitemap.xml`, but for AI tools rather than search crawlers: a structured Markdown document that gives agents a curated entry point to your site.
+
+That said, it's worth noting that it recently started to be challenged. Astro notably removed it, arguing they didn't notice much traffic requesting those files (see PR [#13538](https://github.com/withastro/docs/pull/13538)). So I'm not really sure if LLMs are still considering it nowadays.
 
 ```txt
 # Juno
@@ -36,9 +40,7 @@ The starting point is [llmstxt.org](https://llmstxt.org/), a proposal by Jeremy 
 
 ### llms-full.txt
 
-You can (even should, probably) also generate a companion `llms-full.txt` that expands all those links into a single document with the full content, handy when you want to give an AI everything at once rather than making it follow links.
-
-Relatively simple so far. But we didn't stop there.
+When implementing this standard, you can (or should, probably) also generate a companion `llms-full.txt` that expands all those links into a single document with the full content, handy when you want to give an AI everything at once rather than making it follow links.
 
 ### Markdown versions of each page
 
@@ -54,7 +56,7 @@ While I did not find it in the spec, I noticed other sites were also adding a `<
 
 No one is going to maintain those files by hand, right? The common approach is to use an existing plugin for your documentation framework that takes care of generating them on each build.
 
-In my case, I ended up writing my own Docusaurus plugin. Firstly because I always pay attention to tech debt, preferring doing it myself when the ratio effort/costs feels better on the long term and, it gave me the flexibility to control the output with the fine grain I wanted. For example, I decided not to include blog posts in `llms.txt` since they would duplicate snippets already covered by the documentation. Whether that actually matters to an AI is anyone's guess, but it felt cleaner.
+In my case, I ended up writing my own Docusaurus plugin, because I always pay attention to tech debt, preferring to do it myself when the effort/cost ratio makes sense long term, and it gave me the flexibility to control the output with the fine grain I wanted. For example, I decided not to include blog posts in `llms.txt` since they would duplicate snippets already covered by the documentation. Whether that actually matters to an AI is anyone's guess, but it felt cleaner.
 
 Since the files are generated at build time, I also set up a GitHub Action that commits a snapshot of them to the repo on each run. That way, on every PR, I can visually check whether the changes were applied as expected.
 
@@ -85,57 +87,11 @@ In short, this is what you need for a `llms.txt` setup.
 
 ---
 
-## Skills
-
-[Agent Skills](https://agentskills.io) is another standard was originally created and introduced by Anthropic and since adopted by other platforms like OpenAI, Google Gemini, and GitHub Copilot.
-
-### Creating your skill
-
-A skill is a folder containing a `SKILL.md` file with instructions, scripts, and resources that an AI agent can load dynamically to perform a specific task reliably and repeatedly — think of it as packaged know-how for agents which you typically share as a standalone GitHub repo or subfolder of your project.
-
-For Juno, I created one covering how to develop using its features, SDK, CLI, and how to interact with the platform. You can find it in the [junobuild/skills](https://github.com/junobuild/skills) repository.
-
-### Linking your site
-
-Once you have the files, you expose them at `.well-known/agent-skills/index.json` so agents visiting your site can discover them directly.
-
-```json
-{
-	"$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
-	"skills": [
-		{
-			"name": "juno",
-			"type": "skill-md",
-			"description": "Up-to-date knowledge about Juno's CLI, SDK, and serverless functions for AI coding agents.",
-			"url": "https://raw.githubusercontent.com/junobuild/skills/main/SKILL.md",
-			"digest": "sha256:18b7fec3e46664b67bdf5bd66f4f36fd9fca138a8749ddc2638f61fed4c23483"
-		}
-	]
-}
-```
-
-As you can notice, it defines the type and URL of the skill but also includes a digest of the `SKILL.md` file. What I did is recompute the hash on every build through a script and update the file automatically. I also set up a GitHub Action that runs the job once a week and on any PR to the documentation, so it should always stay up-to-date.
-
-- [Script](https://github.com/junobuild/docs/blob/main/scripts/ai.mjs)
-- [GitHub Action](https://github.com/junobuild/docs/blob/main/.github/workflows/update-ai.yml)
-
-### Installation and discoverability
-
-You should also register them on [skills.sh](https://skills.sh), a directory created by Vercel for broader discoverability. It also comes with a CLI that makes it easy for anyone to install your skills locally for any AI tool.
-
-```bash
-npx skills add junobuild/skills
-```
-
----
-
 ## Agent Readiness
 
-Cloudflare built a tool called [Is It Agent Ready?](https://isitagentready.com) that scans your site and checks it against a growing list of standards. Worth running on your site just to see where you stand.
+While I discovered llms.txt last year, more recently I stumbled upon [Is It Agent Ready?](https://isitagentready.com), a tool by Cloudflare that scans your site against a growing list of standards. So, it's worth running it to see where you stand.
 
-Here's what I ended up implementing based on its output.
-
-> You might be able to implement more recommendations. In my particular use case I was limited because Juno does not run on a conventional server.
+This platform gives you both results and guidance on how to fix things, so I won't repeat all that here, but here's what I ended up implementing based on its suggestions.
 
 ### robots.txt content signals
 
@@ -183,9 +139,55 @@ The file needs to be served with `Content-Type: application/linkset+json`. How y
 
 ---
 
+## Skills
+
+[Agent Skills](https://agentskills.io) is another standard, originally created and introduced by Anthropic and since adopted by other platforms like OpenAI, Google Gemini, and GitHub Copilot.
+
+This one is more niche though: you only need it if you have a product or library that developers might build with. If it's just a personal site or blog, you can skip this section.
+
+### Creating your skill
+
+A skill is a folder containing a `SKILL.md` file with instructions, scripts, and resources that an AI agent can load dynamically to perform a specific task reliably and repeatedly - think of it as packaged know-how for agents which you typically share as a standalone GitHub repo or subfolder of your project.
+
+For Juno, I created one covering how to develop using its features, SDK, CLI, and how to interact with the platform. You can find it in the [junobuild/skills](https://github.com/junobuild/skills) repository.
+
+### Linking your site
+
+Once you have the files, you expose them at `.well-known/agent-skills/index.json` so agents visiting your site can discover them directly.
+
+```json
+{
+	"$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+	"skills": [
+		{
+			"name": "juno",
+			"type": "skill-md",
+			"description": "Up-to-date knowledge about Juno's CLI, SDK, and serverless functions for AI coding agents.",
+			"url": "https://raw.githubusercontent.com/junobuild/skills/main/SKILL.md",
+			"digest": "sha256:18b7fec3e46664b67bdf5bd66f4f36fd9fca138a8749ddc2638f61fed4c23483"
+		}
+	]
+}
+```
+
+As you can see, it defines the type and URL of the skill but also includes a digest of the `SKILL.md` file. What I did is recompute the hash on every build through a script and update the file automatically. I also set up a GitHub Action that runs the job once a week and on any PR to the documentation, so it should always stay up-to-date.
+
+- [Script](https://github.com/junobuild/docs/blob/main/scripts/ai.mjs)
+- [GitHub Action](https://github.com/junobuild/docs/blob/main/.github/workflows/update-ai.yml)
+
+### Installation and discoverability
+
+You should also register them on [skills.sh](https://skills.sh), a directory created by Vercel for broader discoverability. It also comes with a CLI that makes it easy for anyone to install your skills locally for any AI tool.
+
+```bash
+npx skills add junobuild/skills
+```
+
+---
+
 ## Conclusion
 
-None of this is a silver bullet and you should definitely not just trust me bro. That said, most of it is low-effort to implement once you know these wild-wild-west conventions exist, this might potentially make your site more useful for AI tools. Worth a shot.
+None of this is a silver bullet and you should definitely not just trust me bro. That said, most of it is low-effort to implement once you know these wild wild west conventions exist. It might make your site more useful for AI tools.
 
 Until next time!
 David

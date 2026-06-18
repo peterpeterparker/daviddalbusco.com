@@ -1,4 +1,5 @@
 import { initOrbiter } from '@junobuild/analytics';
+import { init } from 'yawa-tracker';
 
 export const initAnalytics = async () => {
 	const prod = import.meta.env.PROD;
@@ -6,6 +7,10 @@ export const initAnalytics = async () => {
 	if (!prod) {
 		return;
 	}
+
+	init({
+		serverUrl: 'https://analytics.fluster.io'
+	});
 
 	initOrbiter();
 };

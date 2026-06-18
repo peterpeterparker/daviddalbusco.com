@@ -20,6 +20,9 @@ importers:
       '@junobuild/analytics':
         specifier: ^0.2.15
         version: 0.2.15
+      yawa-tracker:
+        specifier: 0.0.3
+        version: 0.0.3
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -1596,6 +1599,9 @@ packages:
   web-vitals@5.2.0:
     resolution: {integrity: sha512-i2z98bEmaCqSDiHEDu+gHl/dmR4Q+TxFmG3/13KkMO+o8UxQzCqWaDRCiLgEa41nlO4VpXSI0ASa1xWmO9sBlA==}
 
+  web-vitals@5.3.0:
+    resolution: {integrity: sha512-q6LWsLatGYZp5VGBIOvbTj6JBV2nOmC8KvWztXBmwJcfFAzhwKwbOxhUH306XY3CcaZDUlSmSuNPBsCn0bFu+g==}
+
   which@2.0.2:
     resolution: {integrity: sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA==}
     engines: {node: '>= 8'}
@@ -1609,6 +1615,9 @@ packages:
     resolution: {integrity: sha512-AvbaCLOO2Otw/lW5bmh9d/WEdcDFdQp2Z2ZUH3pX9U2ihyUY0nvLv7J6TrWowklRGPYbB/IuIMfYgxaCPg5Bpg==}
     engines: {node: '>= 14.6'}
     hasBin: true
+
+  yawa-tracker@0.0.3:
+    resolution: {integrity: sha512-gf0WtCSvYE05VuoHCjBsoMCcxLl23CYqGBRSsTDXLr2aIEYoxODDqSbKe6plIZlNnoP3ErZitisRkgiPMvzx1g==}
 
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
@@ -3007,6 +3016,8 @@ snapshots:
 
   web-vitals@5.2.0: {}
 
+  web-vitals@5.3.0: {}
+
   which@2.0.2:
     dependencies:
       isexe: 2.0.0
@@ -3014,6 +3025,10 @@ snapshots:
   word-wrap@1.2.5: {}
 
   yaml@2.8.3: {}
+
+  yawa-tracker@0.0.3:
+    dependencies:
+      web-vitals: 5.3.0
 
   yocto-queue@0.1.0: {}
 

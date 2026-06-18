@@ -24,7 +24,7 @@ You have one registered site:
 │ 019ed922-33e5-7b9e-a072-963680861c6f │ yourdomain.com │ active │
 └──────────────────────────────────────┴────────────────┴────────┘
 
-❯ What are my top pages this week?
+❯ what are my top pages this week?
 
 Top pages this week (Jun 15–18):
 

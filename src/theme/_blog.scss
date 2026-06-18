@@ -1,22 +1,3 @@
-deckgo-highlight-code {
-	border: 0.45rem solid black;
-}
-
-p code,
-li code,
-table code {
-	font-family: Menlo, monospace;
-	background: rgba(0, 0, 0, 0.05);
-	padding: 0.15rem 0.45rem;
-}
-
-blockquote {
-	box-shadow: black 3px 0 0 0 inset;
-	padding-left: 0.75rem;
-	margin: 1.25rem 0;
-	font-style: italic;
-}
-
 article p:first-child img {
 	box-shadow: 3px 3px black;
 	border: 1px solid black;
@@ -73,4 +54,11 @@ td {
 	border-bottom: var(--table-border);
 
 	padding: 0.25rem 0.45rem;
+}
+
+article p:first-child:has(img) + blockquote {
+	width: fit-content;
+	margin: -0.25rem auto 3rem;
+	box-shadow: none;
+	font-size: 0.8rem;
 }

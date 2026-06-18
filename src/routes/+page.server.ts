@@ -1,8 +1,8 @@
-import { listBlog } from '$lib/plugins/blog.plugin';
-import { listPortfolio } from '$lib/plugins/portfolio.plugin';
 import type { BlogMetadata } from '$lib/types/blog';
 import type { MarkdownData } from '$lib/types/markdown';
 import type { Portfolio, PortfolioMetadata } from '$lib/types/portfolio';
+import { listBlog } from '$plugins/blog.plugin';
+import { listPortfolio } from '$plugins/portfolio.plugin';
 
 export const load = async (): Promise<{
 	work: MarkdownData<PortfolioMetadata>[];
@@ -14,5 +14,5 @@ export const load = async (): Promise<{
 
 	const { work, play } = portfolio;
 
-	return { work, play, blog: blog.slice(0, 4) };
+	return { work, play, blog: blog.slice(0, 6) };
 };

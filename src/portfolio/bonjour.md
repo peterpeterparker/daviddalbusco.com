@@ -9,7 +9,7 @@ order: "7"
 
 # Bonjour Foundation
 
-I develop several components and applications for the [Bonjour Foundation](https://bonjour.help) together with [customfuture SA](https://www.customfuture.com/).
+I develop several components and applications for the [Bonjour Foundation](https://bonjour.help) together with [customfuture SA](https://www.customfuture.com/)
 
 "Bonjour" is a charity "Think-and-do Tank" projects, an incubator for idea, tools and impulse for a better self-determined life.
 
@@ -29,8 +29,4 @@ Their goal is to work together for a better future.
 
 **Database:** [Google Firestore](https://firebase.google.com/docs/firestore)
 
----
-
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/bonjour-foundation/)
+**GitHub:** [bonjour-foundation](https://github.com/bonjour-foundation)

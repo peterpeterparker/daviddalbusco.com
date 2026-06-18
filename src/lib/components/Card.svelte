@@ -4,8 +4,8 @@
 	interface Props {
 		path: string;
 		slug: string;
-		background: string;
-		image: string;
+		background?: string;
+		image?: string;
 		cover?: boolean;
 		children?: import('svelte').Snippet;
 	}
@@ -15,9 +15,11 @@
 
 <a href={`${base}/${path}/${slug}`}>
 	<article>
-		<div style="background: {background}">
-			<img alt="" aria-hidden="true" class:cover loading="lazy" role="presentation" src={image} />
-		</div>
+		{#if background !== undefined && image !== undefined}
+			<div style="background: {background}">
+				<img alt="" aria-hidden="true" class:cover loading="lazy" role="presentation" src={image} />
+			</div>
+		{/if}
 
 		{@render children?.()}
 	</article>
@@ -46,14 +48,19 @@
 
 		&:focus,
 		&:hover {
-			transform: translateY(-1.5rem);
-
-			img:not(:global(.cover)) {
-				transform: scale(1.25);
-			}
-
 			div {
-				border: 0.75rem solid var(--color-highlight);
+				border: 0.45rem solid var(--color-highlight);
+			}
+		}
+
+		@media (hover: hover) and (pointer: fine) {
+			&:focus,
+			&:hover {
+				transform: translateY(-1rem);
+
+				img:not(:global(.cover)) {
+					transform: scale(1.25);
+				}
 			}
 		}
 	}

@@ -3,7 +3,7 @@ title: "Blog to Newsletter"
 description: "A GitHub Actions pipeline that turns blog posts into newsletters."
 type: "play"
 status: "active"
-order: "3"
+order: "4"
 ---
 
 # Blog to Newsletter

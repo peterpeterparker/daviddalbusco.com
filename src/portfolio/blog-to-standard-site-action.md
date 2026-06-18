@@ -3,7 +3,7 @@ title: "Blog to Standard.Site"
 description: "A GitHub Action that automates the creation of AT Protocol records for blog posts."
 type: "play"
 status: "active"
-order: "4"
+order: "5"
 ---
 
 # Blog to Standard.Site

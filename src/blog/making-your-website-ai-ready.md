@@ -187,7 +187,7 @@ npx skills add junobuild/skills
 
 ## Conclusion
 
-None of this is a silver bullet and you should definitely not just trust me bro. That said, most of it is low-effort to implement once you know these wild wild west conventions exist. It might make your site more useful for AI tools.
+None of this is a silver bullet and you should definitely not just trust me bro. That said, most of it is low-effort to implement once you know these wild wild west conventions exist. It might make your site more useful for LLMs.
 
 Until next time!
 David

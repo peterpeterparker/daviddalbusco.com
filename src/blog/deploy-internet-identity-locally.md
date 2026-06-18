@@ -124,7 +124,7 @@ npm init ic
 
 ## 4. Game Changer
 
-I am working on a new secret side project that aims to reduce the gap for web2 developer on the IC early 2023 (🤯). Join my [newsletter](http://eepurl.com/giun5j) to keep hearing about it or reach me out on [Twitter](https://twitter.com/daviddalbusco) to get to know more!
+I am working on a new secret side project that aims to reduce the gap for web2 developer on the IC early 2023 (🤯). Join my [newsletter](http://eepurl.com/iXHDy2) to keep hearing about it or reach me out on [Twitter](https://twitter.com/daviddalbusco) to get to know more!
 
 To infinity and beyond  
 David

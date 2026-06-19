@@ -16,8 +16,8 @@ importers:
         specifier: ^0.2.15
         version: 0.2.15
       yawa-tracker:
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -1622,8 +1622,8 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
-  yawa-tracker@0.0.3:
-    resolution: {integrity: sha512-gf0WtCSvYE05VuoHCjBsoMCcxLl23CYqGBRSsTDXLr2aIEYoxODDqSbKe6plIZlNnoP3ErZitisRkgiPMvzx1g==}
+  yawa-tracker@0.0.4:
+    resolution: {integrity: sha512-o9Bc6SnE6HL7iQ8fM3ASuvRTru54fMJJr5+o5OvxGROQz4PTT2z7q77RwLpXVz/efkGxunAIGS9pXiT97TNbEw==}
 
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
@@ -3039,7 +3039,7 @@ snapshots:
   yaml@2.8.3:
     optional: true
 
-  yawa-tracker@0.0.3:
+  yawa-tracker@0.0.4:
     dependencies:
       web-vitals: 5.3.0
 

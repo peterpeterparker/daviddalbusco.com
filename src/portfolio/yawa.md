@@ -44,6 +44,8 @@ Your homepage leads, with the blog close behind.
 
 ## Fact sheet
 
+**Website:** [Yet Another Web Analytics](https://yetanotherwebanalytics.dev)
+
 **Technology:** [TypeScript](https://www.typescriptlang.org/), [DuckDB](https://duckdb.org/) and [MCP](https://modelcontextprotocol.io/)
 
 **GitHub:** [yawa](https://github.com/peterpeterparker/yawa)

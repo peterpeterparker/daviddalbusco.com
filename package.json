@@ -79,7 +79,6 @@
 		"cookie": "^0.7.0"
 	},
 	"dependencies": {
-		"@junobuild/analytics": "^0.2.15",
 		"yawa-tracker": "0.0.4"
 	},
 	"engines": {

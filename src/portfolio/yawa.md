@@ -44,10 +44,8 @@ Your homepage leads, with the blog close behind.
 
 ## Fact sheet
 
+**Website:** [yetanotherwebanalytics.dev](https://yetanotherwebanalytics.dev)
+
 **Technology:** [TypeScript](https://www.typescriptlang.org/), [DuckDB](https://duckdb.org/) and [MCP](https://modelcontextprotocol.io/)
 
----
-
-## Open source
-
-This project is open source and available on [GitHub](https://github.com/peterpeterparker/yawa)
+**GitHub:** [yawa](https://github.com/peterpeterparker/yawa)

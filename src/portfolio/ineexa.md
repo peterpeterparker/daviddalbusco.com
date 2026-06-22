@@ -17,6 +17,6 @@ In addition to the development, I also designed the UI and defined the UX of the
 
 ## Fact sheet
 
-**Technology:** [React](https://reactjs.org/)
+**Website:** [ineexa.ch](https://ineexa.ch/)
 
-**Website:** [Ineexa](https://ineexa.ch/)
+**Technology:** [React](https://reactjs.org/)

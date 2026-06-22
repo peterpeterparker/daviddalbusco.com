@@ -18,7 +18,7 @@ I built this simple, open-source time tracking app ⏱️ while learning React a
 
 ## Fact sheet
 
-**Available:** [Progressive Web Apps](https://tietracker.com/), [Apple Store](https://itunes.apple.com/app/id1493399075) and [Google Play](https://play.google.com/store/apps/details?id=com.tietracker.app)
+**Stores:** [App Store](https://itunes.apple.com/app/id1493399075) and [Google Play](https://play.google.com/store/apps/details?id=com.tietracker.app)
 
 **Technology:** [Ionic](https://ionicframework.com/), [React](https://reactjs.org/) and [Capacitor](https://capacitor.ionicframework.com/)
 

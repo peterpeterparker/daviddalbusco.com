@@ -19,8 +19,8 @@ Together we develop new Angular applications (SPA) and libraries which were inte
 
 ## Fact sheet
 
-**Technology:** [Angular](https://angular.io/), [RxJS](https://rxjs.dev/) and [ngrx](https://ngrx.io/)
+**Website:** [mobiliar.ch](https://www.mobiliar.ch/)
 
-**Website:** [Die Mobiliar](https://www.mobiliar.ch/)
+**Technology:** [Angular](https://angular.io/), [RxJS](https://rxjs.dev/) and [ngrx](https://ngrx.io/)
 
 **Infrastructure:** Die Mobiliar provides its own IT-Services solution

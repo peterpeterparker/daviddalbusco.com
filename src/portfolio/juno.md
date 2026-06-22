@@ -26,7 +26,7 @@ Think of it as **Vercel + Firebase + Self-Hosting** - without the compromises.
 
 ## Fact sheet
 
-**Website:** [Juno](https://juno.build)
+**Website:** [juno.build](https://juno.build)
 
 **Technology:** [TypeScript](https://www.typescriptlang.org/), [SvelteKit](https://kit.svelte.dev/), [Rust](https://www.rust-lang.org/) and [Docker](https://www.docker.com/)
 

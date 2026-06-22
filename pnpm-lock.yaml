@@ -12,12 +12,9 @@ importers:
 
   .:
     dependencies:
-      '@junobuild/analytics':
-        specifier: ^0.2.15
-        version: 0.2.15
       yawa-tracker:
-        specifier: 0.0.3
-        version: 0.0.3
+        specifier: 0.0.4
+        version: 0.0.4
     devDependencies:
       '@eslint/js':
         specifier: ^10.0.1
@@ -212,9 +209,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
-
-  '@junobuild/analytics@0.2.15':
-    resolution: {integrity: sha512-mrMU2OnrBqucACCYYEibiUSKwQx6I6aAQm+2Sycx5wyoDrPDABrTG/JbD36989Olv+l1wj81/r6aQ/79CRe9Gg==}
 
   '@junobuild/auth@4.1.2':
     resolution: {integrity: sha512-AR6qDeg6cUN4YabM92kD8P0oDK5NeP1ZA8kD/E5WAknUpDIyqSIE8/AXXj9YJlb6WUgrHhDK8JhRaTxlRdRRVw==}
@@ -960,10 +954,6 @@ packages:
   is-reference@3.0.3:
     resolution: {integrity: sha512-ixkJoqQvAP88E6wLydLGGqCJsrFUnqoH6HnaczB8XmDH1oaWU+xxdptvikTgaEhtZ53Ky6YXiBuUI2WXLMCwjw==}
 
-  isbot@5.1.39:
-    resolution: {integrity: sha512-obH0yYahGXdzNxo+djmHhBYThUKDkz565cxkIlt2L9hXfv1NlaLKoDBHo6KxXsYrIXx2RK3x5vY36CfZcobxEw==}
-    engines: {node: '>=18'}
-
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
@@ -1119,11 +1109,6 @@ packages:
   nanoid@3.3.12:
     resolution: {integrity: sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
-  nanoid@5.1.9:
-    resolution: {integrity: sha512-ZUvP7KeBLe3OZ1ypw6dI/TzYJuvHP77IM4Ry73waSQTLn8/g8rpdjfyVAh7t1/+FjBtG4lCP42MEbDxOsRpBMw==}
-    engines: {node: ^18 || >=20}
     hasBin: true
 
   natural-compare@1.4.0:
@@ -1510,10 +1495,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  ua-parser-js@1.0.41:
-    resolution: {integrity: sha512-LbBDqdIC5s8iROCUjMbW1f5dJQTEFB1+KO9ogbvlb3nm9n4YHa5p4KTvFPWvh2Hs8gZMBuiB1/8+pdfe/tDPug==}
-    hasBin: true
-
   undici-types@7.24.6:
     resolution: {integrity: sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==}
 
@@ -1598,9 +1579,6 @@ packages:
       vite:
         optional: true
 
-  web-vitals@5.2.0:
-    resolution: {integrity: sha512-i2z98bEmaCqSDiHEDu+gHl/dmR4Q+TxFmG3/13KkMO+o8UxQzCqWaDRCiLgEa41nlO4VpXSI0ASa1xWmO9sBlA==}
-
   web-vitals@5.3.0:
     resolution: {integrity: sha512-q6LWsLatGYZp5VGBIOvbTj6JBV2nOmC8KvWztXBmwJcfFAzhwKwbOxhUH306XY3CcaZDUlSmSuNPBsCn0bFu+g==}
 
@@ -1622,8 +1600,8 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
-  yawa-tracker@0.0.3:
-    resolution: {integrity: sha512-gf0WtCSvYE05VuoHCjBsoMCcxLl23CYqGBRSsTDXLr2aIEYoxODDqSbKe6plIZlNnoP3ErZitisRkgiPMvzx1g==}
+  yawa-tracker@0.0.4:
+    resolution: {integrity: sha512-o9Bc6SnE6HL7iQ8fM3ASuvRTru54fMJJr5+o5OvxGROQz4PTT2z7q77RwLpXVz/efkGxunAIGS9pXiT97TNbEw==}
 
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
@@ -1744,13 +1722,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
-
-  '@junobuild/analytics@0.2.15':
-    dependencies:
-      isbot: 5.1.39
-      nanoid: 5.1.9
-      ua-parser-js: 1.0.41
-      web-vitals: 5.2.0
 
   '@junobuild/auth@4.1.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))':
     dependencies:
@@ -2460,8 +2431,6 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.8
 
-  isbot@5.1.39: {}
-
   isexe@2.0.0: {}
 
   json-buffer@3.0.1: {}
@@ -2586,8 +2555,6 @@ snapshots:
   nanoid@3.3.11: {}
 
   nanoid@3.3.12: {}
-
-  nanoid@5.1.9: {}
 
   natural-compare@1.4.0: {}
 
@@ -2961,8 +2928,6 @@ snapshots:
 
   typescript@6.0.3: {}
 
-  ua-parser-js@1.0.41: {}
-
   undici-types@7.24.6: {}
 
   unist-util-is@6.0.1:
@@ -3024,8 +2989,6 @@ snapshots:
     optionalDependencies:
       vite: 8.0.16(@types/node@25.9.3)(sass-embedded@1.100.0)(sass@1.100.0)(yaml@2.8.3)
 
-  web-vitals@5.2.0: {}
-
   web-vitals@5.3.0: {}
 
   which@2.0.2:
@@ -3039,7 +3002,7 @@ snapshots:
   yaml@2.8.3:
     optional: true
 
-  yawa-tracker@0.0.3:
+  yawa-tracker@0.0.4:
     dependencies:
       web-vitals: 5.3.0
 

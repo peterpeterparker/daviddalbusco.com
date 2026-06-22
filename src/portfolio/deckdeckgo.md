@@ -18,7 +18,7 @@ DeckDeckGo was an open-source alternative to PowerPoint and Google Slides which 
 
 ## Fact sheet
 
-**Website:** [DeckDeckGo](https://deckdeckgo.com/)
+**Website:** [deckdeckgo.com](https://deckdeckgo.com/)
 
 **Technology:** Mostly [StencilJS](https://stenciljs.com/) and lots of TypeScript/JavaScript.
 

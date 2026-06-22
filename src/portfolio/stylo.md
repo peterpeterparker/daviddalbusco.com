@@ -27,7 +27,7 @@ Features
 
 ## Fact sheet
 
-**Website:** [Stylo](https://stylojs.com/)
+**Website:** [stylojs.com](https://stylojs.com/)
 
 **Technology:** [StencilJS](https://stenciljs.com/)
 

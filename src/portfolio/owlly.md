@@ -19,9 +19,9 @@ In addition, I supported the team in their technical decisions and also develope
 
 ## Fact sheet
 
-**Technology:** [StencilJS](https://stenciljs.com/), [Angular](https://angular.io/) and [Tailwind CSS](https://tailwindcss.com/)
+**Website:** [owlly.ch](https://owlly.ch/)
 
-**Website:** [Owlly](https://owlly.ch/)
+**Technology:** [StencilJS](https://stenciljs.com/), [Angular](https://angular.io/) and [Tailwind CSS](https://tailwindcss.com/)
 
 **Documentation:** [docs.owlly](https://docs.owlly.ch/) made with [Storybook](https://storybook.js.org/)
 

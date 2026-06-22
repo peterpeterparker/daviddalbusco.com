@@ -19,9 +19,9 @@ The project's scope was the development of a new process which had an influence 
 
 ## Fact sheet
 
-**Technology:** [Java](https://www.java.com/), [Jakarta EE](https://jakarta.ee/) and [PrimeFaces](https://www.primefaces.org/)
+**Website:** [dvbern.ch](https://dvbern.ch/)
 
-**Website:** [DV Bern](https://dvbern.ch/)
+**Technology:** [Java](https://www.java.com/), [Jakarta EE](https://jakarta.ee/) and [PrimeFaces](https://www.primefaces.org/)
 
 **Infrastructure:** DV Bern AG provides its own IT-Services solution
 

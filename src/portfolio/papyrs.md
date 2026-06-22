@@ -24,8 +24,6 @@ The application primarily worked offline and could therefore be used by anyone o
 
 ## Fact sheet
 
-**Website:** [Papyrs](https://papy.rs/)
-
 **Technology:** [SvelteKit](https://kit.svelte.dev/) and [StencilJS](https://stenciljs.com/) for the frontend dapp. [Rust](https://www.rust-lang.org/) and Motoko for the smart contracts.
 
 **Infrastructure:** [Internet Computer](https://internetcomputer.org/)

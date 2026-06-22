@@ -21,9 +21,9 @@ Their goal is to work together for a better future.
 
 ## Fact sheet
 
-**Technology:** [Ionic](https://ionicframework.com/), [StencilJS](https://stenciljs.com/), [Angular](https://angular.io/), [Capacitor](https://capacitorjs.com/) and [Cordova](https://cordova.apache.org/)
+**Website:** [bonjour.help](https://bonjour.help/)
 
-**Website:** [Bonjour.help](https://bonjour.help/)
+**Technology:** [Ionic](https://ionicframework.com/), [StencilJS](https://stenciljs.com/), [Angular](https://angular.io/), [Capacitor](https://capacitorjs.com/) and [Cordova](https://cordova.apache.org/)
 
 **Infrastructure:** [Google Cloud Firebase](https://firebase.google.com/)
 

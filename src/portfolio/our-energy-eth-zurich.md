@@ -21,9 +21,9 @@ This app was notably used as a support for a 2-week energy challenge in June 201
 
 ## Fact sheet
 
-**Available:** [Progressive Web Apps](https://ourenergy.ch/), [Apple Store](https://itunes.apple.com/app/id1453497591) and [Google Play](https://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy)
-
 **Website:** [iA, Chair of Information Architecture, ETH Zürich](https://www.ia.arch.ethz.ch/our-energy/)
+
+**Stores:** [App Store](https://itunes.apple.com/app/id1453497591) and [Google Play](https://play.google.com/store/apps/details?id=ch.ourenergy.ourenergy)
 
 **Technology:** [Ionic](https://ionicframework.com/), [Angular](https://angular.io/) and [Cordova](https://cordova.apache.org/)
 

@@ -82,22 +82,28 @@ At the root of the repo there is the traditional zillion of configuration files 
 
 Most of the implementation was straightforward, and I'll be honest, I also used an LLM to help generate repetitive patterns under my supervision, I'm not that much of a caveman. But there were a few challenges and interesting gotchas I thought, or I hope, are worth sharing.
 
----- TODO ----
-
 ### The CLI and the internal API
 
-One thing I found elegant: the CLI does not talk to the database directly. Instead, it talks to a second Hono app running on port 9999, bound to `127.0.0.1` only, never exposed outside the container.
+[DuckDB only allows a single read-write process to connect to a database file at a time](https://duckdb.org/docs/current/connect/concurrency). If the CLI opened the database directly while the server was running, it would hit a file lock error.
 
-This keeps the CLI stateless. It just fires HTTP requests. The server handles the DB. And since the internal API runs inside the same process as the public API, it shares the same database connection - no connection pooling, no coordination, just one DuckDB instance.
+The solution is to keep DuckDB exclusively owned by the server process. The CLI never touches the database directly — instead, it talks to a second Hono app running on port 9999, bound to `127.0.0.1` only, never exposed outside the container.
 
 ```
-yawa-cli → POST http://localhost:9999/tokens → yawa-app (internal)
-                                                      → DuckDB
+yawa-cli → POST http://localhost:9999/tokens → yawa-app (internal) → DuckDB
+```
+
+The internal API runs inside the same process as the public API, so they share the same database connection. No locking issues, no coordination needed.
+
+The "internal" part is enforced at the network level. The public API (port 3000) binds to `0.0.0.0` and is exposed through the Docker port mapping. The internal API (port 9999) binds to `127.0.0.1` only and is never mapped in `docker-compose.yml`, so it is only reachable from inside the container. The CLI runs inside the container via `docker exec`, which is the only way to reach it.
+
+```ts
+Bun.serve({ port: 3000, fetch: appFetch, hostname: "0.0.0.0" });      // public
+Bun.serve({ port: 9999, fetch: internalFetch, hostname: "127.0.0.1" }); // internal only
 ```
 
 ### DB migrations
 
-DuckDB does not ship with a migration tool, so I wrote one. On startup, `openDb` creates the database directory, runs any pending migrations in order, and records each applied migration in a `yawa_admin.migrations` table. It is small but enough for the use case.
+Tools like Drizzle ORM and Prisma do not support DuckDB yet, so I wrote a small custom migration runner. On startup, `openDb` creates the database directory, runs any pending SQL migrations in order, and records each applied migration in a `yawa_admin.migrations` table.
 
 ```ts
 const dbResult = await openDb({ path: YAWA_DATA_DIR });
@@ -121,58 +127,94 @@ The salt rotates daily so sessions do not persist across days. The secret (`YAWA
 
 ### DuckDB in Docker
 
-This one was annoying. `bun build --compile` produces a single binary, which is great for deployment. But DuckDB uses native `.node` bindings, and the bundler tries to resolve all platform variants at build time - darwin, linux, win32, arm64, x64, musl.
+This one took a while to figure out. [DuckDB uses native `.node` bindings](https://github.com/duckdb/duckdb-node-neo/issues/231), which causes multiple issues when bundling with Bun.
 
-The fix was a small build script that detects the current platform and marks every other platform's bindings as external:
+The first problem: building locally fails because Bun tries to resolve all platform variants at build time, including Windows bindings that are not installed on macOS.
+
+The second problem: using `bun build --compile` to produce a single binary fails at runtime in Docker with `libduckdb.so: cannot open shared object file`. The native `.so` file simply cannot be embedded in the compiled binary.
+
+The third problem: setting only the OS-specific platform bindings as external is not enough. `@duckdb/node-api` and `@duckdb/node-bindings` themselves must also be external, otherwise the bundled output fails to resolve the native module at runtime.
+
+The solution is to drop `--compile` entirely, use a regular bundle with `outdir`, set all DuckDB packages as external, and copy `node_modules` into the Docker release image:
 
 ```ts
-// Building DuckDB with Bun does not work out of the box.
-// See https://github.com/duckdb/duckdb-node-neo/issues/231
+const duckdbBindings = ["@duckdb/node-api", "@duckdb/node-bindings"];
 
-const platform = os.platform();
-const arch = os.arch();
-
-const current = `@duckdb/node-bindings-${
-	platform === "win32" ? "win32" : platform === "darwin" ? "darwin" : "linux"
-}-${arch === "x64" ? "x64" : "arm64"}`;
-
-const external = duckdbPlatformBindings.filter((binding) => binding !== current);
+const platformSpecificExternals = duckdbPlatformBindings.filter(
+  (binding) => binding !== current
+);
 
 await Bun.build({
-	entrypoints: ["./src/index.ts"],
-	compile: { outfile: "./build/app" },
-	target: "bun",
-	minify: true,
-	external
+  entrypoints: ["./src/index.ts"],
+  outdir: "./build",
+  target: "bun",
+  minify: true,
+  external: [...duckdbBindings, ...platformSpecificExternals],
 });
 ```
 
-Since `oven/bun` (the Docker base image) is Debian-based, musl is not a concern. The binary runs fine with the correct Linux binding present in `node_modules/.bun`, which gets copied into the release image.
+And in the Dockerfile:
 
-### The MCP Accept header bug
+```dockerfile
+# copy native bindings (e.g. DuckDB) from prod node_modules
+COPY --from=install /temp/prod/node_modules ./node_modules
+COPY --from=prerelease /usr/src/app/packages/app/build/index.js ./index.js
 
-Claude Code was silently failing to connect to the MCP server. After some digging, I found a known bug: Claude Code omits the `Accept: application/json, text/event-stream` header required by the Streamable HTTP spec. The `@hono/mcp` middleware was returning 406, which Claude Code misinterpreted as an auth failure.
+CMD ["bun", "index.js"]
+```
 
-The fix was a small middleware that patches the header before auth runs:
+Since `oven/bun` is Debian-based, musl is not a concern. I also posted [these findings on the DuckDB issue tracker](https://github.com/duckdb/duckdb-node-neo/issues/231) in case they help someone else.
+
+### Handler typing
+
+Hono [recommends against Rails-style controllers](https://hono.dev/docs/guides/best-practices) because extracting handlers into separate functions loses type inference — path params, validated body, and env variables all become untyped `Context`.
+
+For a project with a few routes this is fine, but yawa has two separate apps (public and internal), each with their own middleware-injected env types. Inlining everything would get messy. I wanted named, importable handlers.
+
+The trick, found via [this Stack Overflow answer](https://stackoverflow.com/a/79300489/5404186), is to type the handler with the input schema shape that `zValidator` produces:
 
 ```ts
-// Workaround for Claude Code omitting the Accept header.
-// See: https://github.com/anthropics/claude-code/issues/42470
-export const patchAcceptHeaderMiddleware = createMiddleware(async (c, next) => {
-	const accept = c.req.header("Accept") ?? "";
-	if (!accept.includes("application/json") || !accept.includes("text/event-stream")) {
-		c.req.raw = new Request(c.req.raw, {
-			headers: new Headers([
-				...Array.from(c.req.raw.headers.entries()),
-				["Accept", "application/json, text/event-stream"]
-			])
-		});
-	}
-	await next();
-});
+type JsonInputSchema<T extends z.ZodType> = {
+  in: { json: z.input<T> };
+  out: { json: z.infer<T> };
+};
+
+export type DefineHandler<T extends z.ZodType, Env extends ApiEnv = ApiEnv> = (
+  context: Context<Env, string, JsonInputSchema<T>>,
+) => Promise<Option<Response>>;
 ```
 
-This has since been fixed in `@hono/mcp`, but the middleware stays as a belt-and-suspenders guard.
+Given a schema like:
+
+```ts
+const CreateSiteRequestSchema = z.object({ hostname: z.string() });
+```
+
+A handler becomes:
+
+```ts
+export const defineCreateSite: DefineHandler
+  typeof CreateSiteRequestSchema
+> = async (context) => {
+  const { req, var: { db: { connection } } } = context;
+
+  const { hostname } = req.valid("json"); // fully typed
+
+  // ...
+};
+```
+
+Registered as:
+
+```ts
+app.post(
+  "/sites",
+  zValidator("json", CreateSiteRequestSchema),
+  defineCreateSite,
+);
+```
+
+`req.valid("json")` is fully typed, the env variables are typed, and the handler is cleanly importable. For handlers with no JSON body, `DefineHandler<never>` works as a fallback.
 
 ---
 

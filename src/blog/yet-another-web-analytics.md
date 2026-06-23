@@ -2,7 +2,7 @@
 path: "/blog/yet-another-web-analytics"
 date: "2026-06-22"
 title: "Yet Another Web Analytics"
-description: "A deep dive into yawa, a self-hosted analytics platform I built with an MCP instead of a UI."
+description: "A deep dive into yawa, a self-hosted analytics tool I built with an MCP instead of a UI."
 tags: "#analytics #mcp #typescript #bun #duckdb"
 image: "https://daviddalbusco.com/assets/images/boliviainteligente-uiJNYtAbfVU-unsplash.jpg"
 ---

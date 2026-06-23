@@ -4,8 +4,12 @@ date: "2026-06-22"
 title: "Yet Another Web Analytics"
 description: "A deep dive into yawa, a self-hosted analytics platform I built with an MCP instead of a UI."
 tags: "#analytics #mcp #typescript #bun #duckdb"
-image: "https://daviddalbusco.com/assets/images/li-zhang-K-DwbsTXliY-unsplash.jpg"
+image: "https://daviddalbusco.com/assets/images/boliviainteligente-uiJNYtAbfVU-unsplash.jpg"
 ---
+
+![](https://daviddalbusco.com/assets/images/boliviainteligente-uiJNYtAbfVU-unsplash.jpg)
+
+> Photo by [BoliviaInteligente](https://unsplash.com/fr/@boliviainteligente?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/un-fond-abstrait-colore-avec-des-lignes-ondulees-uiJNYtAbfVU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 I've been building [Juno](https://github.com/junobuild/juno) for a few years, a platform I ultimately deprecated recently. As a result, I needed to move my projects away from it, including the analytics of my own website, which were baked into the platform.
 
@@ -67,14 +71,14 @@ One might argue I overengineered it, to which I would answer: I build tools that
 
 For example, the database layer is intentionally isolated. If I ever swap [Bun](https://bun.sh) or the [Hono](https://hono.dev) API engine, I won't have to rewrite the entire data layer.
 
-- `app` - the server with two sub-apps: a public API (`/events/*`, `/mcp`) for collecting events and providing analytics data, and an internal API available solely within the container (see next chapter)
-- `cli` - the admin CLI for token and site management
-- `db` - DuckDB instance management, queries, and migrations (yes, I had to write that part too)
-- `schema` - shared Zod schemas and types
-- `common` - shared utilities (`Result`, `Option`, error helpers)
-- `tracker` - the JavaScript library for your frontend, published to npm
+- [app](https://github.com/peterpeterparker/yawa/tree/main/packages/app) - the server with two sub-apps: a public API (`/events/*`, `/mcp`) for collecting events and providing analytics data, and an internal API available solely within the container (see next chapter)
+- [cli](https://github.com/peterpeterparker/yawa/tree/main/packages/cli) - the admin CLI for token and site management
+- [db](https://github.com/peterpeterparker/yawa/tree/main/packages/db) - DuckDB instance management, queries, and migrations (yes, I had to write that part too)
+- [schema](https://github.com/peterpeterparker/yawa/tree/main/packages/schema) - shared Zod schemas and types
+- [common](https://github.com/peterpeterparker/yawa/tree/main/packages/common) - shared utilities (`Result`, `Option`, error helpers)
+- [tracker](https://github.com/peterpeterparker/yawa/tree/main/packages/tracker) - the JavaScript library for your frontend, published to npm
 
-At the root of the repo there is the traditional zillion of configuration files any project requires nowadays, plus the Dockerfile used to bundle and publish the image to Docker Hub.
+At the root of the repo there is the traditional zillion of configuration files any project requires nowadays, plus the [Dockerfile](https://github.com/peterpeterparker/yawa/blob/main/Dockerfile.app) used to bundle and publish the image to [Docker Hub](https://hub.docker.com/r/peterpeterparker/yawa).
 
 ---
 

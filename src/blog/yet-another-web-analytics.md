@@ -84,137 +84,221 @@ Most of the implementation was straightforward, and I'll be honest, I also used 
 
 ### The CLI and the internal API
 
-[DuckDB only allows a single read-write process to connect to a database file at a time](https://duckdb.org/docs/current/connect/concurrency). If the CLI opened the database directly while the server was running, it would hit a file lock error.
+DuckDB allows only one read-write connection at a time (see [documentation](https://duckdb.org/docs/current/connect/concurrency)). Since the CLI and the server run simultaneously (that's just normal usage), having the CLI open the database directly would cause a file lock error. So I had to figure out a way to work around the limitation.
 
-The solution is to keep DuckDB exclusively owned by the server process. The CLI never touches the database directly — instead, it talks to a second Hono app running on port 9999, bound to `127.0.0.1` only, never exposed outside the container.
+The solution: don't instantiate the database in the CLI at all. Instead, have it talk to the server, which owns the database exclusively.
 
 ```
-yawa-cli → POST http://localhost:9999/tokens → yawa-app (internal) → DuckDB
+yawa-cli → POST /tokens → yawa-app → DuckDB
 ```
 
-The internal API runs inside the same process as the public API, so they share the same database connection. No locking issues, no coordination needed.
+That raised another question though: exposing CLI endpoints in the API would open private features to the world. Not great.
 
-The "internal" part is enforced at the network level. The public API (port 3000) binds to `0.0.0.0` and is exposed through the Docker port mapping. The internal API (port 9999) binds to `127.0.0.1` only and is never mapped in `docker-compose.yml`, so it is only reachable from inside the container. The CLI runs inside the container via `docker exec`, which is the only way to reach it.
+That's where the idea of having an internal API came in, one that shares the same process as the public API and by extension the same database connection.
 
-```ts
-Bun.serve({ port: 3000, fetch: appFetch, hostname: "0.0.0.0" });      // public
+I set up a second Hono app that runs on port 9999 but bound to `127.0.0.1` via `Bun.serve`'s [hostname](https://bun.sh/docs/runtime/http/server#changing-the-port-and-hostname) option. That way, no external requests can reach it. To make this even more explicit, the docs show a `docker-compose.yml` that never maps the port, and a Caddy config that never proxies it.
+
+```
+public   → https://yourdomain:3000 → yawa-app (public)   ─┐
+                                                          ├→ DuckDB
+yawa-cli → http://localhost:9999   → yawa-app (internal) ─┘
+```
+
+Since both run together and the CLI accesses it through plain fetch requests, the locking and coordination problem was solved.
+
+```typescript
+Bun.serve({ port: 3000, fetch: appFetch, hostname: "0.0.0.0" }); // public
 Bun.serve({ port: 9999, fetch: internalFetch, hostname: "127.0.0.1" }); // internal only
 ```
 
 ### DB migrations
 
-Tools like Drizzle ORM and Prisma do not support DuckDB yet, so I wrote a small custom migration runner. On startup, `openDb` creates the database directory, runs any pending SQL migrations in order, and records each applied migration in a `yawa_admin.migrations` table.
+Unfortunately, neither Drizzle nor Prisma support DuckDB yet. Since the schema will obviously evolve over time, I had to write a small migration runner myself, which you can find [here](https://github.com/peterpeterparker/yawa/blob/main/packages/db/src/migrate.ts).
 
-```ts
-const dbResult = await openDb({ path: YAWA_DATA_DIR });
-```
+The script runs each time the app starts and looks for plain SQL files in a directory, files that create schemas, tables, add new columns, etc.
 
-Migrations live as plain SQL files. Nothing fancy. It works.
+It then sorts and filters out the files that have already been applied by comparing them against those recorded in the database. To keep track of migrations, I created a table that lists the scripts that were used to terraform it.
+
+It applies the remaining scripts and records them.
+
+Nothing fancy, but it does the job.
 
 ### Session hashing without cookies
 
-For privacy-friendly visitor counting, I looked at how [Umami](https://umami.is) does it. The approach is to hash a combination of site ID, IP address, user agent, and a daily salt into a deterministic session ID. Same visitor, same day, same session. No cookie required.
+For privacy-friendly visitor counting, I looked at how [Umami](https://umami.is) does it (e.g. [source](https://github.com/umami-software/umami/blob/c0ea3aefbee7a3429ee2f824b06dc4a9dbe0b7e1/src/app/api/send/route.ts#L311)). The approach is to hash a combination of site ID, IP address, user agent, and a daily salt into a deterministic session ID. Same visitor, same day, same session. No cookie required.
 
-```ts
-const { hash: salt } = hash({ input: startOfDay(new Date()).toISOString() });
-const { hash: sessionHash } = hash({
-	input: `${site_id}|${ip}|${user_agent}|${salt}|${secret}`
+The IP address is extracted from the request headers, checking a list of known CDN headers and notably `x-forwarded-for` included by [Caddy](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy#defaults)), the reverse-proxy I used to expose the API with a custom domain.
+
+The session ID itself is computed like this:
+
+```typescript
+import { CryptoHasher } from "bun";
+
+const hash = ({ input }: { input: string }): { hash: string } => ({
+	hash: new CryptoHasher("sha256").update(input).digest("hex")
 });
+
+const { hash: salt } = hash({ input: startOfDay(new Date()).toISOString() });
+
+const { hash: sessionHash } = hash({
+	input: `${site_id}|${ip}|${user_agent}|${salt}|${sessionSecret}`
+});
+
 const sessionId = Bun.randomUUIDv5(sessionHash, "dns");
 ```
 
-The salt rotates daily so sessions do not persist across days. The secret (`YAWA_SESSION_SECRET`) adds an extra layer so the hash cannot be reverse-engineered. If the secret is not set, it falls back to random UUIDs - less accurate visitor counting, but the app still works.
+The salt rotates daily so sessions do not persist across days. The secret (`YAWA_SESSION_SECRET`) adds an extra layer so the hash cannot be reverse-engineered. If not set, it falls back to random UUIDs, which means less accurate visitor counting, but the app still works. Handy for development.
 
-### DuckDB in Docker
+From an architecture point of view, both the IP and session ID are injected into the request context via middlewares, so route handlers never have to extract them manually, and errors are handled before the handler is ever reached.
 
-This one took a while to figure out. [DuckDB uses native `.node` bindings](https://github.com/duckdb/duckdb-node-neo/issues/231), which causes multiple issues when bundling with Bun.
+For example:
 
-The first problem: building locally fails because Bun tries to resolve all platform variants at build time, including Windows bindings that are not installed on macOS.
+```typescript
+export const extractIpMiddleware = createMiddleware<AnalyticsApiEnv>(async (context, next) => {
+	const {
+		req: {
+			raw: { headers }
+		}
+	} = context;
 
-The second problem: using `bun build --compile` to produce a single binary fails at runtime in Docker with `libduckdb.so: cannot open shared object file`. The native `.so` file simply cannot be embedded in the compiled binary.
+	context.set("ip", getIp({ headers }));
 
-The third problem: setting only the OS-specific platform bindings as external is not enough. `@duckdb/node-api` and `@duckdb/node-bindings` themselves must also be external, otherwise the bundled output fails to resolve the native module at runtime.
-
-The solution is to drop `--compile` entirely, use a regular bundle with `outdir`, set all DuckDB packages as external, and copy `node_modules` into the Docker release image:
-
-```ts
-const duckdbBindings = ["@duckdb/node-api", "@duckdb/node-bindings"];
-
-const platformSpecificExternals = duckdbPlatformBindings.filter(
-  (binding) => binding !== current
-);
-
-await Bun.build({
-  entrypoints: ["./src/index.ts"],
-  outdir: "./build",
-  target: "bun",
-  minify: true,
-  external: [...duckdbBindings, ...platformSpecificExternals],
+	await next();
 });
 ```
 
-And in the Dockerfile:
+### Bun and Docker issue with DuckDB bindings
+
+This one took a while to figure out. DuckDB uses native `.node` bindings, which causes multiple issues when bundling with Bun and run in Docker. I ended up posting my findings on the [issue](https://github.com/duckdb/duckdb-node-neo/issues/231) tracker, but here's the summary.
+
+**1. Building locally fails** because Bun tries to resolve all platform variants at build time, including Windows bindings not installed on my macOS. The fix is to mark every binding that doesn't match the current platform as external.
+
+**2. Using `--compile` fails at runtime in Docker** with `libduckdb.so: cannot open shared object file`. The native `.so` simply cannot be embedded in the compiled binary. The only solution was to drop `--compile` entirely.
+
+**3. Only marking platform-specific bindings as external is not enough.** `@duckdb/node-api` and `@duckdb/node-bindings` themselves must also be external, otherwise the bundled output fails to resolve the native module at runtime.
+
+**4. In a monorepo, DuckDB must be a root dependency.** If it lives only in a workspace package, Docker won't resolve the bindings correctly.
+
+In other words, I needed a custom build script for Bun:
+
+```typescript
+import os from "node:os";
+
+// Building duckdb with Bun does not work.
+// see https://github.com/duckdb/duckdb-node-neo/issues/231
+
+const platform = os.platform();
+const arch = os.arch();
+
+// https://github.com/duckdb/duckdb-node-neo#documentation
+const duckdbPlatformBindings = [
+	"@duckdb/node-bindings-darwin-arm64",
+	"@duckdb/node-bindings-darwin-x64",
+	"@duckdb/node-bindings-linux-arm64",
+	"@duckdb/node-bindings-linux-arm64-musl",
+	"@duckdb/node-bindings-linux-x64",
+	"@duckdb/node-bindings-linux-x64-musl",
+	"@duckdb/node-bindings-win32-arm64",
+	"@duckdb/node-bindings-win32-x64"
+];
+
+// We need to set all bindings as external and Bun should not use the --compile option.
+// Furthermore, the node_modules need to be copied in Docker.
+const duckdbBindings = ["@duckdb/node-api", "@duckdb/node-bindings"];
+
+// oven/bun is Debian-based so musl is not needed in Docker and I develop on Mac.
+// If its support is needed in the future, e.g. detect-libc could be used to detect it.
+const current = `@duckdb/node-bindings-${platform === "win32" ? "win32" : platform === "darwin" ? "darwin" : "linux"}-${arch === "x64" ? "x64" : "arm64"}`;
+
+const platformSpecificExternals = duckdbPlatformBindings.filter((binding) => binding !== current);
+
+await Bun.build({
+	entrypoints: ["./src/index.ts"],
+	outdir: "./build",
+	target: "bun",
+	minify: true,
+	external: [...duckdbBindings, ...platformSpecificExternals]
+});
+```
+
+And the relevant Dockerfile snippet:
 
 ```dockerfile
-# copy native bindings (e.g. DuckDB) from prod node_modules
+...
+# build final image
+FROM base AS release
+
+# We need to copy native bindings (e.g. DuckDB) from prod node_modules
+# otherwise we cannot start the db.
+# error: libduckdb.so: cannot open shared object file: No such file or directory
 COPY --from=install /temp/prod/node_modules ./node_modules
+
 COPY --from=prerelease /usr/src/app/packages/app/build/index.js ./index.js
+
+...
 
 CMD ["bun", "index.js"]
 ```
 
-Since `oven/bun` is Debian-based, musl is not a concern. I also posted [these findings on the DuckDB issue tracker](https://github.com/duckdb/duckdb-node-neo/issues/231) in case they help someone else.
-
 ### Handler typing
 
-Hono [recommends against Rails-style controllers](https://hono.dev/docs/guides/best-practices) because extracting handlers into separate functions loses type inference — path params, validated body, and env variables all become untyped `Context`.
+Hono recommends against [Rails-style controllers](https://hono.dev/docs/guides/best-practices#don-t-make-controllers-when-possible) because extracting handlers into separate functions loses type inference - path params, validated body, and env variables all become untyped `Context`.
 
-For a project with a few routes this is fine, but yawa has two separate apps (public and internal), each with their own middleware-injected env types. Inlining everything would get messy. I wanted named, importable handlers.
+For a project with a few routes this is fine, but yawa has two separate apps (public and internal), each with their own middleware-injected env types. Inlining everything would get messy and, generally speaking, I find it cleaner to have separate controllers. Furthermore, it makes testing easier. So I wanted named, importable handlers.
 
 The trick, found via [this Stack Overflow answer](https://stackoverflow.com/a/79300489/5404186), is to type the handler with the input schema shape that `zValidator` produces:
 
-```ts
+```typescript
 type JsonInputSchema<T extends z.ZodType> = {
-  in: { json: z.input<T> };
-  out: { json: z.infer<T> };
+	in: { json: z.input<T> };
+	out: { json: z.infer<T> };
 };
 
-export type DefineHandler<T extends z.ZodType, Env extends ApiEnv = ApiEnv> = (
-  context: Context<Env, string, JsonInputSchema<T>>,
+export type DefineHandler<T extends z.ZodType> = (
+	context: Context<Env, string, JsonInputSchema<T>>
 ) => Promise<Option<Response>>;
 ```
 
 Given a schema like:
 
-```ts
+```typescript
 const CreateSiteRequestSchema = z.object({ hostname: z.string() });
 ```
 
 A handler becomes:
 
-```ts
-export const defineCreateSite: DefineHandler
-  typeof CreateSiteRequestSchema
-> = async (context) => {
-  const { req, var: { db: { connection } } } = context;
+```typescript
+export const defineCreateSite: DefineHandler<typeof CreateSiteRequestSchema> = async (context) => {
+	const {
+		req,
+		var: {
+			db: { connection }
+		}
+	} = context;
 
-  const { hostname } = req.valid("json"); // fully typed
+	const { hostname } = req.valid("json"); // fully typed
 
-  // ...
+	// ...
 };
 ```
 
 Registered as:
 
-```ts
-app.post(
-  "/sites",
-  zValidator("json", CreateSiteRequestSchema),
-  defineCreateSite,
-);
+```typescript
+app.post("/sites", zValidator("json", CreateSiteRequestSchema), defineCreateSite);
 ```
 
 `req.valid("json")` is fully typed, the env variables are typed, and the handler is cleanly importable. For handlers with no JSON body, `DefineHandler<never>` works as a fallback.
+
+As for the variables injected by middlewares, they can be declared by extending the environment.
+
+```typescript
+export type ApiEnv = { Variables: { db: { connection: DbConnection } } };
+
+export type DefineHandler<T extends z.ZodType, Env extends ApiEnv = ApiEnv> = (
+	context: Context<Env, string, JsonInputSchema<T>>
+) => Promise<Option<Response>>;
+```
 
 ---
 

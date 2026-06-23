@@ -304,6 +304,26 @@ export type DefineHandler<T extends z.ZodType, Env extends ApiEnv = ApiEnv> = (
 ) => Promise<Option<Response>>;
 ```
 
+### The tracker script
+
+My first version of the tracker was only available as an npm package, which made sense for apps using a bundler. But when I started writing the yawa docs with Astro, I realized the idiomatic way to add analytics there was a plain `<script>` tag. I looked at how other analytics platforms handle this and most indeed default to such a script.
+
+I didn't want to drop the npm package, but I also didn't want to duplicate the tracker logic. So, my solution was to add an API route that dynamically generates a small bootstrap script, which imports and initializes the tracker from the server's own static assets:
+
+```typescript
+const script = `import { init } from '${serverUrl}/static/yawa/dist/index.js';init({serverUrl:"${serverUrl}"});`;
+
+return context.text(script, 200, {
+	"Content-Type": "application/javascript; charset=utf-8",
+	"x-content-type-options": "nosniff",
+	"Cache-Control": "public, max-age=604800"
+});
+```
+
+The tracker itself is then built and bundled into the Docker container, without forgetting to precompress its resources with Brotli for best performance at runtime.
+
+This way, everything remains self-hosted including the client side script.
+
 ---
 
 ## Conclusion

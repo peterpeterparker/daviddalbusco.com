@@ -302,34 +302,11 @@ export type DefineHandler<T extends z.ZodType, Env extends ApiEnv = ApiEnv> = (
 
 ---
 
-## A real session
-
-Here is what querying yawa actually looks like. After connecting Claude Code to the MCP server:
-
-```
-List my analytics sites
-> You have one registered site: localhost (active), ID: 019ed077-...
-
-Were there any tracked events on my site this week?
-> Yes, one tracked event this week on localhost:
-> hello — 4 times, 4 unique visitors
-
-Show me web vitals summary for localhost this month
-> LCP: avg 1234ms, p75 1456ms, p90 1789ms (good)
-> CLS: avg 0.02, p75 0.03, p90 0.04 (good)
-```
-
-It just works. And because the MCP tools return structured data with `outputSchema`, Claude understands the shape of the response without guessing.
-
----
-
 ## Conclusion
 
-yawa is something I built for myself. My requirements are simple: page views, top pages, referrers, Web Vitals, custom events. I do not plan to implement features like user journeys or funnels because I do not need them personally, and other solutions handle that well.
+I'm a bit amazed this all works after only a few days of development. The various issues, from the MCP server setup to the DuckDB build pipeline, were good learning experiences. But what I'm most curious about is the UX. This way of interacting with statistics is genuinely interesting, and even if I still sometimes catch myself thinking "it would be nice to have a dashboard", I'm really curious to see if over time that feeling will disappear.
 
-If you want to try it: the source is on [GitHub](https://github.com/peterpeterparker/yawa) and the Docker image is on Docker Hub.
-
-If you want features I have not built, feel free to contribute - or [hire me](https://daviddalbusco.com) if you need something specific.
+As for the project itself, I built it for myself but feel free to use it. The source is on [GitHub](https://github.com/peterpeterparker/yawa) and the Docker image is on Docker Hub. I don't plan to add features like user journeys or funnels because I simply don't need them, but feel free to contribute with non-sloppy PRs, or [hire me](https://daviddalbusco.com) if you need something more specific.
 
 Until next time!
 David

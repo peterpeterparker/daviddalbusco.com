@@ -306,7 +306,7 @@ export type DefineHandler<T extends z.ZodType, Env extends ApiEnv = ApiEnv> = (
 
 I'm a bit amazed this all works after only a few days of development. The various issues, from the MCP server setup to the DuckDB build pipeline, were good learning experiences. But what I'm most curious about is the UX. This way of interacting with statistics is genuinely interesting, and even if I still sometimes catch myself thinking "it would be nice to have a dashboard", I'm really curious to see if over time that feeling will disappear.
 
-As for the project itself, I built it for myself but feel free to use it. The source is on [GitHub](https://github.com/peterpeterparker/yawa) and the Docker image is on Docker Hub. I don't plan to add features like user journeys or funnels because I simply don't need them, but feel free to contribute with non-sloppy PRs, or [hire me](https://daviddalbusco.com) if you need something more specific.
+As for the project itself, I built it for myself but feel free to use it. The source is on [GitHub](https://github.com/peterpeterparker/yawa) and the Docker image is on Docker Hub. I don't plan to add features like user journeys or funnels because I simply don't need them, but feel free to contribute, or [hire me](https://daviddalbusco.com) if you need something more specific.
 
 Until next time!
 David

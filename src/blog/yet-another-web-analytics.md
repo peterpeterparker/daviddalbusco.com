@@ -5,6 +5,7 @@ title: "Yet Another Web Analytics"
 description: "A deep dive into yawa, a self-hosted analytics tool I built with an MCP instead of a UI."
 tags: "#analytics #mcp #self-hosting #duckdb #bun #docker"
 image: "https://daviddalbusco.com/assets/images/boliviainteligente-uiJNYtAbfVU-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3mozx27c5jx2h"
 ---
 
 ![](https://daviddalbusco.com/assets/images/boliviainteligente-uiJNYtAbfVU-unsplash.jpg)

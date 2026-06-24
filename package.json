@@ -2,7 +2,7 @@
 	"name": "daviddalbusco.com",
 	"private": true,
 	"description": "David Dal Busco - Freelance Web Engineer",
-	"version": "4.8.0",
+	"version": "4.9.0",
 	"author": "David Dal Busco <david@fluster.io>",
 	"license": "MIT",
 	"type": "module",
@@ -51,23 +51,6 @@
 		"typescript-eslint": "^8.61.1",
 		"vite": "^8.0.16"
 	},
-	"keywords": [
-		"freelance",
-		"freelancer",
-		"contractor",
-		"development",
-		"web development",
-		"web",
-		"PWA",
-		"Progressive Web Apps",
-		"Mobile",
-		"iOS",
-		"Android",
-		"Project management",
-		"UX",
-		"IT",
-		"Consulting"
-	],
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/peterpeterparker/daviddalbusco.com"

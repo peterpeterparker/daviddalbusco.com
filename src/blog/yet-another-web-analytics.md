@@ -1,6 +1,6 @@
 ---
 path: "/blog/yet-another-web-analytics"
-date: "2026-06-22"
+date: "2026-06-24"
 title: "Yet Another Web Analytics"
 description: "A deep dive into yawa, a self-hosted analytics tool I built with an MCP instead of a UI."
 tags: "#analytics #mcp #typescript #bun #duckdb"
@@ -49,7 +49,7 @@ In practice, that last step looks like this:
 ├───────────────────────────────────────────────────────────────┼──────────┼───────────┤
 │ /blog/                                                        │ 14       │ 14        │
 ├───────────────────────────────────────────────────────────────┼──────────┼───────────┤
-│ /blog/automating-newsletter-claude-telegram-cloudflare-worker │ 10       │ 11        │
+│ /blog/automating-newsletter-claude-telegram-cloudflare-worker  │ 10       │ 11        │
 ├───────────────────────────────────────────────────────────────┼──────────┼───────────┤
 │ /blog/making-your-website-ai-ready/                           │ 10       │ 11        │
 ├───────────────────────────────────────────────────────────────┼──────────┼───────────┤

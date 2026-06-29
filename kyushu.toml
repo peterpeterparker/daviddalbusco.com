@@ -6,3 +6,7 @@ dir = "build"
 
 [scripts]
 prebuild = ["pnpm build"]
+
+[[worker.mounts]]
+host = "./assets"
+guest = "/assets"

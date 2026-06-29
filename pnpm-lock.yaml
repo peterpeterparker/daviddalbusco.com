@@ -62,8 +62,8 @@ importers:
         specifier: ^17.7.0
         version: 17.7.0
       kyushu-types:
-        specifier: 0.1.1
-        version: 0.1.1
+        specifier: 0.2.1
+        version: 0.2.1
       prettier:
         specifier: ^3.9.3
         version: 3.9.3
@@ -862,8 +862,8 @@ packages:
   known-css-properties@0.37.0:
     resolution: {integrity: sha512-JCDrsP4Z1Sb9JwG0aJ8Eo2r7k4Ou5MwmThS/6lcIe1ICyb7UBJKGRIUUdqc2ASdE/42lgz6zFUnzAIhtXnBVrQ==}
 
-  kyushu-types@0.1.1:
-    resolution: {integrity: sha512-98t8Pme0BeiJIg/2vDj4PCgzKSdlkdWTIiTXFcAIjyWAw6bYh9o02Gyogr8VOs4X8AjNlB0DIQgTJRj0FXzeKw==}
+  kyushu-types@0.2.1:
+    resolution: {integrity: sha512-S8dGYwG9TNajY4eCbvJanve34s52TWZ/xq+v7qJpHt6uayr7xhCIzFxE+97WQT3ZejLyfdZXMk57PWkXWxIdgQ==}
 
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -1479,8 +1479,8 @@ packages:
   zimmerframe@1.1.2:
     resolution: {integrity: sha512-rAbqEGa8ovJy4pyBxZM70hg4pE6gDgaQ0Sl9M3enG3I0d6H4XSAM3GeNGLKnsBpuijUow064sf7ww1nutC5/3w==}
 
-  zod@4.3.6:
-    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+  zod@4.4.3:
+    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -2194,9 +2194,9 @@ snapshots:
 
   known-css-properties@0.37.0: {}
 
-  kyushu-types@0.1.1:
+  kyushu-types@0.2.1:
     dependencies:
-      zod: 4.3.6
+      zod: 4.4.3
 
   levn@0.4.1:
     dependencies:
@@ -2742,6 +2742,6 @@ snapshots:
 
   zimmerframe@1.1.2: {}
 
-  zod@4.3.6: {}
+  zod@4.4.3: {}
 
   zwitch@2.0.4: {}

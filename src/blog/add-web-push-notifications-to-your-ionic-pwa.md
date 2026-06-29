@@ -74,7 +74,7 @@ async ngOnInit() {
 }
 ```
 
-_Note: pay attention to the import of Firebase. If you are using an editor which add automatically the import, it might resolves _`import * as firebase from 'firebase'`_ instead of _`import {firebase} from '@firebase/app'`_ which would lead to loading all the libraries, which obviously we don’t want. Furthermore, if you do so, the library itself will displays a warning in the console to ask you to correct the import for production._
+_Note: pay attention to the import of Firebase. If you are using an editor which add automatically the import, it might resolves *`import * as firebase from 'firebase'`* instead of *`import {firebase} from '@firebase/app'`* which would lead to loading all the libraries, which obviously we don’t want. Furthermore, if you do so, the library itself will displays a warning in the console to ask you to correct the import for production._
 
 ### Configure Google Fire Cloud Messaging
 
@@ -291,7 +291,7 @@ To build the application, run the following command in your terminal:
 ionic build --prod
 ```
 
-_Note that we are running the command with the option _`--prod`_ as per default the service worker will only be included in your application by the Angular CLI in case of that production build._
+_Note that we are running the command with the option *`--prod`* as per default the service worker will only be included in your application by the Angular CLI in case of that production build._
 
 Once built, if you already have your hosting solution, just drop the content of the `www` folder of your application on your web server. If not, I would then suggest you to use the [Google Firebase Hosting] (https://console.firebase.google.com/project/web-push-notifications-medium/hosting) solution as we are already using their solution for the purpose of this tutorial. If you never used before such a solution, just go back to your Firebase console and click “Get started” in the menu “Hosting”.
 

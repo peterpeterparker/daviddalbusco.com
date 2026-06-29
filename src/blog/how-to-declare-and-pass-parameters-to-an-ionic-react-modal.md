@@ -44,7 +44,7 @@ export const Tab1: React.FC = () => {
 export default Tab1;
 ```
 
-_Note that I have used the _`tab`_ starter kit to develop this article, that’s why the above page’s name is _`Tab1`_ ._
+_Note that I have used the *`tab`* starter kit to develop this article, that’s why the above page’s name is *`Tab1`* ._
 
 ### Create A Component
 

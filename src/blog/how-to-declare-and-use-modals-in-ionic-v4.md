@@ -86,7 +86,7 @@ import {DatePickerModalModule} from '../../../../modals/core/date-picker/date-pi
 export class NewAdStepAvailabilityModule {}
 ```
 
-_Note: About lazy loading and this particular example, the modal is loaded in the same time as the module _`NewAdStepAvailabilityModule`_ respectively, in our browser, we would be able to observe that the javascript code of the modal is loaded in the same time as the javascript code of this particular module._
+_Note: About lazy loading and this particular example, the modal is loaded in the same time as the module *`NewAdStepAvailabilityModule`* respectively, in our browser, we would be able to observe that the javascript code of the modal is loaded in the same time as the javascript code of this particular module._
 
 #### Calling the modal and passing parameters
 

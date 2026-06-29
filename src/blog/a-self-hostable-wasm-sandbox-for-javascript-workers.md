@@ -4,10 +4,10 @@ date: "2026-06-05"
 title: "A Self-Hostable Wasm Sandbox for JavaScript Workers"
 description: "A walkthrough of the CLI I built to run JavaScript workers on a VPS without Node.js, Bun, or Docker."
 tags: "#webassembly #rust #javascript #typescript"
-image: "https://daviddalbusco.com/assets/images/li-zhang-K-DwbsTXliY-unsplash.jpg"
+image: "https://daviddalbusco.com/images/blog/li-zhang-K-DwbsTXliY-unsplash.jpg"
 ---
 
-![](https://daviddalbusco.com/assets/images/li-zhang-K-DwbsTXliY-unsplash.jpg)
+![](https://daviddalbusco.com/images/blog/li-zhang-K-DwbsTXliY-unsplash.jpg)
 
 > Photo by [Li Zhang](https://unsplash.com/fr/@sunx?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/un-fond-abstrait-rouge-et-orange-avec-des-courbes-K-DwbsTXliY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

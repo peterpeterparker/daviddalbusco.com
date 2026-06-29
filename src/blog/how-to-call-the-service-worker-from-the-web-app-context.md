@@ -4,11 +4,11 @@ date: "2020-03-16"
 title: "How To Call The Service Worker From The Web App Context"
 description: "How To Call The Service Worker From The Web App Context #OneTrickADay-34"
 tags: "#motivation #javascript #tutorial"
-image: "https://daviddalbusco.com/assets/images/1*4H2Zo7JLHzdfoDc-ltuy3A.png"
+image: "https://daviddalbusco.com/images/blog/1*4H2Zo7JLHzdfoDc-ltuy3A.png"
 canonical: "https://medium.com/@david.dalbusco/one-trick-a-day-d-34-469a0336a07e"
 ---
 
-![Photo by [Arindam Saha](https://unsplash.com/@flux_culture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/day-1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](https://daviddalbusco.com/assets/images/1*4H2Zo7JLHzdfoDc-ltuy3A.png)_Photo by [Arindam Saha](https://unsplash.com/@flux_culture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/day-1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
+![Photo by [Arindam Saha](https://unsplash.com/@flux_culture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/day-1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](https://daviddalbusco.com/images/blog/1*4H2Zo7JLHzdfoDc-ltuy3A.png)_Photo by [Arindam Saha](https://unsplash.com/@flux_culture?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/day-1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I literally just had such a bad idea I already know I might not make it, but well, it is worth a try 😅.
 

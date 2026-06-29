@@ -4,11 +4,11 @@ date: "2024-01-28"
 title: "My Docker Cheat Sheet: A Newbie’s Toolkit"
 description: "Simple Docker Commands for Everyday Development on a MacBook M2."
 tags: "#programming #webdev #showdev"
-image: "https://daviddalbusco.com/assets/images/1*Ryeo2D3AbYwp-vOhW5aDWQ.png"
+image: "https://daviddalbusco.com/images/blog/1*Ryeo2D3AbYwp-vOhW5aDWQ.png"
 canonical: "https://daviddalbusco.medium.com/my-docker-cheat-sheet-a-newbies-toolkit-d8ee930bca5a"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*Ryeo2D3AbYwp-vOhW5aDWQ.png)
+![](https://daviddalbusco.com/images/blog/1*Ryeo2D3AbYwp-vOhW5aDWQ.png)
 
 ---
 

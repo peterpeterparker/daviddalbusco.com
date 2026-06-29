@@ -4,11 +4,11 @@ date: "2022-11-27"
 title: "Deploy Internet Identity locally"
 description: "How to deploy the blockchain authentication system for the Internet Computer locally."
 tags: "#blockchain #programming #webdevelopment #technology"
-image: "https://daviddalbusco.com/assets/images/1*E9xLy3n5oiiTp91mKI6TfA.png"
+image: "https://daviddalbusco.com/images/blog/1*E9xLy3n5oiiTp91mKI6TfA.png"
 canonical: "https://daviddalbusco.medium.com/deploy-internet-identity-locally-8a0ac2c891eb"
 ---
 
-![social-image.png](https://daviddalbusco.com/assets/images/1*E9xLy3n5oiiTp91mKI6TfA.png)
+![social-image.png](https://daviddalbusco.com/images/blog/1*E9xLy3n5oiiTp91mKI6TfA.png)
 
 _Image source: [DFINITY foundation](https://dfinity.org/)_
 

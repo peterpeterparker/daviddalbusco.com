@@ -4,11 +4,11 @@ date: "2026-06-12"
 title: "Type-Safe Server-Sent Events Pub/Sub"
 description: "A typed singleton wrapper around the browser's EventSource API with discriminated union callbacks."
 tags: "#typescript #sse #webdev #zod"
-image: "https://daviddalbusco.com/assets/images/richard-horvath-cPccYbPrF-A-unsplash.jpg"
+image: "https://daviddalbusco.com/images/blog/richard-horvath-cPccYbPrF-A-unsplash.jpg"
 standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3mo37f2j76f2r"
 ---
 
-![](https://daviddalbusco.com/assets/images/richard-horvath-cPccYbPrF-A-unsplash.jpg)
+![](https://daviddalbusco.com/images/blog/richard-horvath-cPccYbPrF-A-unsplash.jpg)
 
 > Photo by [Richard Horvath](https://unsplash.com/fr/@ricvath?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/formes-ondulantes-bleues-et-turquoise-cPccYbPrF-A?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

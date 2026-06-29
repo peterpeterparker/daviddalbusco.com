@@ -4,11 +4,11 @@ date: "2020-04-12"
 title: "JavaScript Useful Functions"
 description: "A couple of useful JavaScript functions such as unifying events, debouncing or detecting mobile browsers"
 tags: "#javascript #webdev #programming #tools"
-image: "https://daviddalbusco.com/assets/images/1*qvaNuuGMVDesVbjYY_fdoQ.png"
+image: "https://daviddalbusco.com/images/blog/1*qvaNuuGMVDesVbjYY_fdoQ.png"
 canonical: "https://medium.com/@david.dalbusco/javascript-useful-functions-2d9d3a9b603f"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*qvaNuuGMVDesVbjYY_fdoQ.png)
+![](https://daviddalbusco.com/images/blog/1*qvaNuuGMVDesVbjYY_fdoQ.png)
 
 _Photo by [Sam Moqadam](https://unsplash.com/@sammoqadam?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

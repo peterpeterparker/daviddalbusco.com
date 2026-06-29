@@ -4,10 +4,10 @@ date: "2026-02-14"
 title: Better Type Safety in Svelte Guard Components
 description: "Leveraging snippet parameters to make async data guard components properly type-safe."
 tags: "#svelte #typescript #snippets #type-safety #patterns"
-image: "https://daviddalbusco.com/assets/images/maxim-berg-ANuuRuCRRAc-unsplash.jpg"
+image: "https://daviddalbusco.com/images/blog/maxim-berg-ANuuRuCRRAc-unsplash.jpg"
 ---
 
-![](https://daviddalbusco.com/assets/images/maxim-berg-ANuuRuCRRAc-unsplash.jpg)
+![](https://daviddalbusco.com/images/blog/maxim-berg-ANuuRuCRRAc-unsplash.jpg)
 
 > Photo by [Maxim Berg](https://medium.com/r/?url=https%3A%2F%2Funsplash.com%2Ffr%2F%40maxberg%3Futm_source%3Dunsplash%26utm_medium%3Dreferral%26utm_content%3DcreditCopyText) on [Unsplash](https://unsplash.com/fr/photos/un-fond-bleu-et-violet-avec-des-lignes-verticales-ANuuRuCRRAc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

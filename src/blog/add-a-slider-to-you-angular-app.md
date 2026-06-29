@@ -4,11 +4,11 @@ date: "2020-03-31"
 title: "Add A Slider To You Angular App"
 description: "Use our core Web Component to add a slider to your application developed with Angular"
 tags: "#angular #webdev #javascript #showdev"
-image: "https://daviddalbusco.com/assets/images/1*fscs8H-c-4EwHK_3wDN1ow.png"
+image: "https://daviddalbusco.com/images/blog/1*fscs8H-c-4EwHK_3wDN1ow.png"
 canonical: "https://medium.com/@david.dalbusco/add-a-slider-to-you-angular-app-ef997363399c"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*fscs8H-c-4EwHK_3wDN1ow.png)
+![](https://daviddalbusco.com/images/blog/1*fscs8H-c-4EwHK_3wDN1ow.png)
 
 _Photo by [Persnickety Prints](https://unsplash.com/@persnicketyprints?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -28,7 +28,7 @@ Probably not 😉.
 
 That’s why I’m going to display in this blog post, as for example, how you can do so in an application developed with [Angular](https://angular.io).
 
-![](https://daviddalbusco.com/assets/images/1*GywaedPi6bBVACpbGrZ5tA.gif)
+![](https://daviddalbusco.com/images/blog/1*GywaedPi6bBVACpbGrZ5tA.gif)
 
 _Add a slider to your application_
 
@@ -114,7 +114,7 @@ Our components are installed and configured, we can add the slider which is noth
 
 And that’s it, the slider is in place 🎉.
 
-![](https://daviddalbusco.com/assets/images/1*CpmsgBb-IK33HOxkJA-eNw.gif)
+![](https://daviddalbusco.com/images/blog/1*CpmsgBb-IK33HOxkJA-eNw.gif)
 
 _Our slider is ready_
 
@@ -134,7 +134,7 @@ A pager is useful for a presentation but most probably not for a slider in an ap
 <deckgo-deck style="--pager-display: none;"> </deckgo-deck>
 ```
 
-![](https://daviddalbusco.com/assets/images/1*GywaedPi6bBVACpbGrZ5tA.gif)
+![](https://daviddalbusco.com/images/blog/1*GywaedPi6bBVACpbGrZ5tA.gif)
 
 _Hidden pager_
 
@@ -148,7 +148,7 @@ You might want to use another transition effect. Our core doesn’t handle yet a
 <deckgo-deck style="--pager-display: none;" transition="fade"> </deckgo-deck>
 ```
 
-![](https://daviddalbusco.com/assets/images/1*ZHlq-pmWawTDVYDKUxG8og.gif)
+![](https://daviddalbusco.com/images/blog/1*ZHlq-pmWawTDVYDKUxG8og.gif)
 
 _Fade transition_
 
@@ -235,7 +235,7 @@ export class AppComponent {
 
 And that’s it, it works out 😁.
 
-![](https://daviddalbusco.com/assets/images/1*r1I_EPMYsMgQxoGMA4Uk8Q.gif)
+![](https://daviddalbusco.com/images/blog/1*r1I_EPMYsMgQxoGMA4Uk8Q.gif)
 
 _Navigation with our core_
 

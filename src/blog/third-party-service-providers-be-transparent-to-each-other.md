@@ -4,11 +4,11 @@ date: "2020-04-06"
 title: "Third Party Service Providers. Be transparent to each other!"
 description: "Call to display your third party providers."
 tags: "#motivation #data #opensource #communication"
-image: "https://daviddalbusco.com/assets/images/1*5qdXAhgCLQUv5yxL_wiDaQ.png"
+image: "https://daviddalbusco.com/images/blog/1*5qdXAhgCLQUv5yxL_wiDaQ.png"
 canonical: "https://medium.com/@david.dalbusco/third-party-service-providers-transparency-6092764d078f"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*5qdXAhgCLQUv5yxL_wiDaQ.png)
+![](https://daviddalbusco.com/images/blog/1*5qdXAhgCLQUv5yxL_wiDaQ.png)
 
 _Photo by [Elijah O’Donnell](https://unsplash.com/@elijahsad?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

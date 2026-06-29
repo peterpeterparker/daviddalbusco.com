@@ -4,11 +4,11 @@ date: "2023-10-27"
 title: "$: npm publish -if-needed"
 description: "Publish a new version of your libraries on NPM only if changes have been made."
 tags: "#npm #javascript #programming #ci"
-image: "https://daviddalbusco.com/assets/images/1*KYD5_FMmuJCIbp2--hBcvA.jpeg"
+image: "https://daviddalbusco.com/images/blog/1*KYD5_FMmuJCIbp2--hBcvA.jpeg"
 canonical: "https://daviddalbusco.medium.com/npm-publish-if-needed-bfeaa781dfd0"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*KYD5_FMmuJCIbp2--hBcvA.jpeg)
+![](https://daviddalbusco.com/images/blog/1*KYD5_FMmuJCIbp2--hBcvA.jpeg)
 
 Photo by [Milad Fakurian](https://unsplash.com/fr/@fakurian?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) on [Unsplash](https://unsplash.com/fr/photos/tableau-abstrait-rose-vert-et-bleu-UYgrVfIhBec?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 

@@ -4,11 +4,11 @@ date: "2020-04-04"
 title: "More JSX For Angular Developers"
 description: "A follow up introduction to JSX in Stencil or React for Angular developers"
 tags: "#angular #stencil #react #webdev"
-image: "https://daviddalbusco.com/assets/images/1*3SoWAzehzRTddHWjP-apUg.png"
+image: "https://daviddalbusco.com/images/blog/1*3SoWAzehzRTddHWjP-apUg.png"
 canonical: "https://medium.com/@david.dalbusco/more-jsx-for-angular-developers-9c6367b06503"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*3SoWAzehzRTddHWjP-apUg.png)
+![](https://daviddalbusco.com/images/blog/1*3SoWAzehzRTddHWjP-apUg.png)
 
 _Photo by [Luyi Yang](https://unsplash.com/@louieomelet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 

@@ -4,11 +4,11 @@ date: "2024-04-01"
 title: "Make AI-generated image (kind of) from drawing"
 description: "How to create SVG images with ChatGPT from hand-drawn sketches."
 tags: "#openai #chatgpt #programming #tutorial"
-image: "https://daviddalbusco.com/assets/images/1*MtSx1X7gJiyWtTSrxL6Tdg.png"
+image: "https://daviddalbusco.com/images/blog/1*MtSx1X7gJiyWtTSrxL6Tdg.png"
 canonical: "https://daviddalbusco.medium.com/make-ai-generated-image-kind-of-from-drawing-192275bcaa6f"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*MtSx1X7gJiyWtTSrxL6Tdg.png)
+![](https://daviddalbusco.com/images/blog/1*MtSx1X7gJiyWtTSrxL6Tdg.png)
 
 ---
 
@@ -261,6 +261,6 @@ This function invokes the call function, which communicates with the OpenAI API 
 
 And there you have it — the entirety of our solution, from concept to completion. If you’ve followed along and implemented this on your side, you should see results similar to the one in the screenshot I’m sharing below, which demonstrates the transformation of a hand-drawn pineapple into a refined SVG.
 
-![](https://daviddalbusco.com/assets/images/1*GcCuymVorJx5AuxUlNLtPQ.png)
+![](https://daviddalbusco.com/images/blog/1*GcCuymVorJx5AuxUlNLtPQ.png)
 
 Thank you for reading! I hope it inspires you to explore further intersections of art, technology, and AI in your projects.

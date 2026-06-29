@@ -4,11 +4,11 @@ date: "2023-08-05"
 title: "Passing an Async Function as a Parameter in Rust"
 description: "Learn to pass async functions as callbacks in Rust, exploring traits like Fn, FnMut, and FnOnce"
 tags: "#rust #programming #beginner"
-image: "https://daviddalbusco.com/assets/images/1*2N4KeE8ZJ5laOIibPW7a4g.jpeg"
+image: "https://daviddalbusco.com/images/blog/1*2N4KeE8ZJ5laOIibPW7a4g.jpeg"
 canonical: "https://daviddalbusco.medium.com/passing-an-async-function-as-a-parameter-in-rust-6366ba6a8578"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*2N4KeE8ZJ5laOIibPW7a4g.jpeg)
+![](https://daviddalbusco.com/images/blog/1*2N4KeE8ZJ5laOIibPW7a4g.jpeg)
 
 Photo by [Cris DiNoto](https://unsplash.com/fr/@crisdinoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/z-lh7Mz7wFQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

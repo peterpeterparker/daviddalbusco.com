@@ -4,11 +4,11 @@ date: "2019-04-29"
 title: "We are developing an open source editor for presentations"
 description: "We are developing DeckDeckGo, the open source editor for presentations"
 tags: "#showdev #opensource #motivation"
-image: "https://daviddalbusco.com/assets/images/1*zuqx73hjAWNnmwRpjJ06Zw.jpeg"
+image: "https://daviddalbusco.com/images/blog/1*zuqx73hjAWNnmwRpjJ06Zw.jpeg"
 robots: "disallow"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*zuqx73hjAWNnmwRpjJ06Zw.jpeg)
+![](https://daviddalbusco.com/images/blog/1*zuqx73hjAWNnmwRpjJ06Zw.jpeg)
 <span class="figcaption_hack">_Lisbon is a beautiful city. Hopefully, I’m a better engineer than a photographer_ 😅</span>
 
 I’m currently sitting in a plane between Lisbon and Zürich, back from a family trip, and I thought that I could use my travel time to write a non-technical blog post (something new to me) about our project [DeckDeckGo](https://deckdeckgo.com), the open source editor for presentations. In this post I’ll try to summarize who we are, why we are developing this project and where do we stand in the development’s progress.

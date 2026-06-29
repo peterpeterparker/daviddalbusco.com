@@ -4,10 +4,10 @@ date: "2026-02-23"
 title: Building a GitHub Actions Integration with OIDC Authentication
 description: "How I replaced secrets with short-lived tokens for deploying with GitHub Actions."
 tags: "#github-actions #oidc #cicd #rust #javascript #deployment #authentication #security"
-image: "https://daviddalbusco.com/assets/images/anatoliy-shostak-MzEB7zNqXCo-unsplash.jpg"
+image: "https://daviddalbusco.com/images/blog/anatoliy-shostak-MzEB7zNqXCo-unsplash.jpg"
 ---
 
-![](https://daviddalbusco.com/assets/images/anatoliy-shostak-MzEB7zNqXCo-unsplash.jpg)
+![](https://daviddalbusco.com/images/blog/anatoliy-shostak-MzEB7zNqXCo-unsplash.jpg)
 
 > Photo by [Anatoliy Shostak](https://unsplash.com/fr/@photogolic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/un-fond-bleu-fonce-avec-des-feux-dartifice-rouges-et-blancs-MzEB7zNqXCo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -33,7 +33,7 @@ That's what makes the implementation a bit particular, and why the flow ultimate
 
 To give you an idea, the diagram below summarizes the flow, from the moment a GitHub Actions workflow is triggered to the moment the ephemeral access key is approved for use.
 
-![Sequence diagram showing the full GitHub Actions OIDC authentication flow, from workflow trigger to ephemeral access key approval](https://daviddalbusco.com/assets/images/github-actions-with-oidc-authentication-flow.png)
+![Sequence diagram showing the full GitHub Actions OIDC authentication flow, from workflow trigger to ephemeral access key approval](https://daviddalbusco.com/images/blog/github-actions-with-oidc-authentication-flow.png)
 
 Before any deployment happens, the Actions workflow generates an identity — a key-pair, a nonce, and their corresponding salt. It then exchanges the nonce with GitHub's API to obtain a signed JWT that also contains information about the repository, actor, and workflow.
 

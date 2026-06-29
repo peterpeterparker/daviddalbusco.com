@@ -20,7 +20,7 @@ Each application runs in its own container under full ownership and control. Jun
 
 Think of it as **Vercel + Firebase + Self-Hosting** - without the compromises.
 
-<img src="https://juno.build/assets/images/light-1640px-dcdfd8f7a8ac9cc64243251d73eacaee.webp" alt="A screenshot of the Juno Console" />
+<img src="https://juno.build/images/blog/light-1640px-dcdfd8f7a8ac9cc64243251d73eacaee.webp" alt="A screenshot of the Juno Console" />
 
 ---
 

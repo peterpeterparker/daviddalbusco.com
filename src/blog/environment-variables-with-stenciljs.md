@@ -4,10 +4,10 @@ date: "2019-03-03"
 title: "Environment variables with StencilJS"
 description: "How to handle environment variables in projects developed with StencilJS or the Ionic PWA Toolkit"
 tags: "#webcomponents #stencil #javascript #html"
-image: "https://daviddalbusco.com/assets/images/1*Q-lN05mJu76_smkG8Qc4aw.jpeg"
+image: "https://daviddalbusco.com/images/blog/1*Q-lN05mJu76_smkG8Qc4aw.jpeg"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*Q-lN05mJu76_smkG8Qc4aw.jpeg)
+![](https://daviddalbusco.com/images/blog/1*Q-lN05mJu76_smkG8Qc4aw.jpeg)
 
 I noticed that the question regarding how to handle environment variables in [Stencil’s](https://stenciljs.com) projects or projects created with the [Ionic PWA toolkit](https://ionicframework.com/pwa/toolkit) often pops up 🤔
 

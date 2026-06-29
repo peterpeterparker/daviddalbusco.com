@@ -4,11 +4,11 @@ date: "2020-04-10"
 title: "React, Web Workers, IndexedDB and ExcelJS"
 description: "How to generate an Excel spreadsheet with IndexedDB data and a Web Worker within a React application"
 tags: "#react #showdev #webdev #javascript"
-image: "https://daviddalbusco.com/assets/images/1*KfXCp8tFOBqrJDS6BUIkYQ.png"
+image: "https://daviddalbusco.com/images/blog/1*KfXCp8tFOBqrJDS6BUIkYQ.png"
 canonical: "https://medium.com/@david.dalbusco/react-web-workers-indexeddb-and-exceljs-2439ff1341ff"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*KfXCp8tFOBqrJDS6BUIkYQ.png)
+![](https://daviddalbusco.com/images/blog/1*KfXCp8tFOBqrJDS6BUIkYQ.png)
 
 _Photo by [Dan Gold](https://unsplash.com/@danielcgold?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/free?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -99,7 +99,7 @@ export default Page;
 
 At this point it does not do much because the Web Worker to handle the “Export” action is not yet ready and we are also not yet using its potential result, but, it should looks like the following.
 
-![](https://daviddalbusco.com/assets/images/1*-nowDWxwoaRF8H2TUuLRMw.gif)
+![](https://daviddalbusco.com/images/blog/1*-nowDWxwoaRF8H2TUuLRMw.gif)
 
 ---
 
@@ -326,7 +326,7 @@ function download(blob: Blob) {
 
 And voilà, our Excel spreadsheet generated with a Web Worker using ExcelJS is downloaded 🎉.
 
-![](https://daviddalbusco.com/assets/images/1*9M_Bym_ORTCaMQx1P0kUdg.gif)
+![](https://daviddalbusco.com/images/blog/1*9M_Bym_ORTCaMQx1P0kUdg.gif)
 
 In case you would need it, here is the component enhanced with the `download` function.
 

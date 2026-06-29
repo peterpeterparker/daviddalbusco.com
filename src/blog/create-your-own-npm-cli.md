@@ -4,11 +4,11 @@ date: "2020-04-05"
 title: "Create Your Own NPM Cli"
 description: "How to create your own npm init command for your project"
 tags: "#webdev #showdev #devops #npm"
-image: "https://daviddalbusco.com/assets/images/1*QchuRONVGccKfb0imrxMig.png"
+image: "https://daviddalbusco.com/images/blog/1*QchuRONVGccKfb0imrxMig.png"
 canonical: "https://medium.com/@david.dalbusco/create-your-own-npm-cli-fbe9e3d4fce"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*QchuRONVGccKfb0imrxMig.png)
+![](https://daviddalbusco.com/images/blog/1*QchuRONVGccKfb0imrxMig.png)
 
 _Photo by [Michele Feola](https://unsplash.com/@smikefeola?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
@@ -180,7 +180,7 @@ npm run build && npm run start
 
 If everything works as expected, you should notice a “Hello World” printed out in your terminal.
 
-![](https://daviddalbusco.com/assets/images/1*YvNBHjvEjfv0dzCuZKE_Cw.png)
+![](https://daviddalbusco.com/images/blog/1*YvNBHjvEjfv0dzCuZKE_Cw.png)
 
 ---
 
@@ -219,7 +219,7 @@ run();
 
 We can test the above while running the command line `npm run build && npm run start -- --help` . Note that the double `--` are only needed as we are trying out locally our bundle.
 
-![](https://daviddalbusco.com/assets/images/1*pW72fAU534R3ujl3fusJfg.png)
+![](https://daviddalbusco.com/images/blog/1*pW72fAU534R3ujl3fusJfg.png)
 
 ---
 
@@ -239,7 +239,7 @@ run();
 
 Have a look to this beautiful magenta color, isn’t that more user friendly happy?
 
-![](https://daviddalbusco.com/assets/images/1*C1WKqoLBbBty0UbOvf7vqQ.png)
+![](https://daviddalbusco.com/images/blog/1*C1WKqoLBbBty0UbOvf7vqQ.png)
 
 ---
 
@@ -275,7 +275,7 @@ run();
 
 Obviously if I run the above I will answer yes 😁.
 
-![](https://daviddalbusco.com/assets/images/1*1YsJnUuPSaca7PFp3wHhlQ.png)
+![](https://daviddalbusco.com/images/blog/1*1YsJnUuPSaca7PFp3wHhlQ.png)
 
 ---
 

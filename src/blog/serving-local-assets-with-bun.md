@@ -4,10 +4,10 @@ date: "2026-04-17"
 title: Serving Local Assets with Bun
 description: "A minimal Bun script to serve static files locally without extra dependencies."
 tags: "#bun #javascript #typescript #static-assets #local-development"
-image: "https://daviddalbusco.com/assets/images/logan-voss-1QlMVjKbJrY-unsplash.jpg"
+image: "https://daviddalbusco.com/images/blog/logan-voss-1QlMVjKbJrY-unsplash.jpg"
 ---
 
-![](https://daviddalbusco.com/assets/images/logan-voss-1QlMVjKbJrY-unsplash.jpg)
+![](https://daviddalbusco.com/images/blog/logan-voss-1QlMVjKbJrY-unsplash.jpg)
 
 > Photo by [Logan Voss](https://unsplash.com/fr/@loganvoss?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/lignes-et-graphiques-abstraits-aux-teintes-bleues-et-roses-1QlMVjKbJrY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

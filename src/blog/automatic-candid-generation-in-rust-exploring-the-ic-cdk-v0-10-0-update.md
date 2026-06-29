@@ -4,11 +4,11 @@ date: "2023-07-21"
 title: "Automatic Candid Generation in Rust: Exploring the ic_cdk v0.10.0 Update"
 description: "How to Automatically Generate Candid from Rust on the IC and Migrate Your Existing Project to Utilize the Latest Version of ic_cdk."
 tags: "#rust #internetcomputer #candid"
-image: "https://daviddalbusco.com/assets/images/1*BJliLFjN_gUXOpMLsCQ1tQ.jpeg"
+image: "https://daviddalbusco.com/images/blog/1*BJliLFjN_gUXOpMLsCQ1tQ.jpeg"
 canonical: "https://daviddalbusco.medium.com/automatic-candid-generation-in-rust-exploring-the-ic-cdk-v0-10-0-update-d1ad76bd4f69"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*BJliLFjN_gUXOpMLsCQ1tQ.jpeg)
+![](https://daviddalbusco.com/images/blog/1*BJliLFjN_gUXOpMLsCQ1tQ.jpeg)
 
 Photo by [Bilal O.](https://unsplash.com/@lightcircle?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/ljXekphwr40?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 

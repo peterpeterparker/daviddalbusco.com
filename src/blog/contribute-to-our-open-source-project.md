@@ -4,10 +4,10 @@ date: "2019-07-26"
 title: "Contribute to our open source project"
 description: "Are you looking to contribute to a new open source project? Or want to get started with technologies like Web Components and StencilJS ? Contribute to our open source project DeckDeckGo"
 tags: "#opensource #beginners #motivation #webdev"
-image: "https://daviddalbusco.com/assets/images/1*5Fjoye88JFo3hqnenly5UQ.jpeg"
+image: "https://daviddalbusco.com/images/blog/1*5Fjoye88JFo3hqnenly5UQ.jpeg"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*5Fjoye88JFo3hqnenly5UQ.jpeg)
+![](https://daviddalbusco.com/images/blog/1*5Fjoye88JFo3hqnenly5UQ.jpeg)
 _Photo by [Álvaro Serrano](https://unsplash.com/@alvaroserrano?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 Are you looking to contribute to a new open source project? Or want to get started with technologies like Web Components and [StencilJS](https://stenciljs.com) ?
@@ -28,7 +28,7 @@ The presentations developed with DeckDeckGo are based on predefined templates. T
 
 A couple of months ago, I went to a meetup where the organizer kept telling “we are beginning in 10 minutes” followed by “we are beginning in 5 minutes” and then in “now in 2 minutes” etc. I thought, specially if there is a large crowd, that it would be maybe cool to just display the information on the big screen. That’s why I came to the idea of having a template where the user could just pass a date and time as parameter and DeckDeckGo takes care or rendering a count down on screen 😁
 
-![](https://daviddalbusco.com/assets/images/1*voVxknfmRH_le-JkDvJD2Q.png)
+![](https://daviddalbusco.com/images/blog/1*voVxknfmRH_le-JkDvJD2Q.png)
 
 _Our remote control has a “timer” feature, maybe its design could be use as inspiration_
 
@@ -38,7 +38,7 @@ Interested? 👉 [Issue #45: [core] the countdown slide template](https://github
 
 The “only” transition effect currently happening when swiping between slides is a “slide” effect (current slide is dragged away of the window and the new one is dragged in).
 
-![](https://daviddalbusco.com/assets/images/1*kEdSJGj91MbKjl3as1w7FA.gif)
+![](https://daviddalbusco.com/images/blog/1*kEdSJGj91MbKjl3as1w7FA.gif)
 
 _Current “slide” effect_
 
@@ -65,7 +65,7 @@ Interested? 👉 [Issue #204: [core] Handle Youtube short URL](https://github.co
 
 With our Web Component to format and highlight code, which use [Prism.js](https://prismjs.com)under the hood, it is already possible to highlight specific lines. I was thinking that adding an option to add automatically line numbers at the begin of each lines would be a nice add-ons. I could think that these numbers could be useful when the speaker want to reference a line while talking or also when the component would be use in a web page, might help if needed to make references more clear.
 
-![](https://daviddalbusco.com/assets/images/1*fv8n52dHip5HUJABheKN2w.png)
+![](https://daviddalbusco.com/images/blog/1*fv8n52dHip5HUJABheKN2w.png)
 
 _A sneak peek of this component in our upcoming editor for presentations_
 

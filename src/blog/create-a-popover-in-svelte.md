@@ -4,7 +4,7 @@ date: "2022-06-23"
 title: "Create A Popover In Svelte"
 description: "How to create a popover in Svelte without any other libraries or dependencies."
 tags: "#svelte #javascript #programming #tutorial"
-image: "https://daviddalbusco.com/assets/images/0*7fX6Ojn4lPRXVlXu.jpg"
+image: "https://daviddalbusco.com/images/blog/0*7fX6Ojn4lPRXVlXu.jpg"
 canonical: "https://daviddalbusco.medium.com/create-a-popover-in-svelte-fe7dd2eeebb1"
 ---
 

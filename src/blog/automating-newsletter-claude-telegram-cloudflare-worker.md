@@ -4,10 +4,10 @@ date: "2026-06-02"
 title: "Automating My Newsletter with Claude, Telegram, and a Cloudflare Worker"
 description: "How I built a GitHub Action that reads a new blog post, generates a newsletter draft, and delivers it to subscribers after an approval tap."
 tags: "#github-actions #claude #ai  #cloudflare #telegram #mailchimp #typescript #bun"
-image: "https://daviddalbusco.com/assets/images/maxim-berg-TcE45yIzJA0-unsplash.jpg"
+image: "https://daviddalbusco.com/images/blog/maxim-berg-TcE45yIzJA0-unsplash.jpg"
 ---
 
-![](https://daviddalbusco.com/assets/images/maxim-berg-TcE45yIzJA0-unsplash.jpg)
+![](https://daviddalbusco.com/images/blog/maxim-berg-TcE45yIzJA0-unsplash.jpg)
 
 > Photo by [Maxim Berg](https://unsplash.com/fr/@maxberg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/motif-darriere-plan-TcE45yIzJA0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -32,7 +32,7 @@ When a PR that adds a new blog post is merged to `main`, the action kicks in:
 
 Tapping a button hits the Cloudflare Worker, which calls the appropriate Mailchimp endpoint and edits the Telegram message to confirm.
 
-![Sequence diagram of the newsletter automation pipeline](https://daviddalbusco.com/assets/images/github-action-claude-telegram-cloudflare-worker.png)
+![Sequence diagram of the newsletter automation pipeline](https://daviddalbusco.com/images/blog/github-action-claude-telegram-cloudflare-worker.png)
 
 ---
 

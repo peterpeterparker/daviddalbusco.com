@@ -4,14 +4,14 @@ date: "2018-08-23"
 title: "Preloading modules in Ionic v4"
 description: "Preloading modules in Ionic v4"
 tags: "#ionic #angular"
-image: "https://daviddalbusco.com/assets/images/1*6gmGYZk8Cgx2WNqOMERlLA.jpeg"
+image: "https://daviddalbusco.com/images/blog/1*6gmGYZk8Cgx2WNqOMERlLA.jpeg"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*6gmGYZk8Cgx2WNqOMERlLA.jpeg)
+![](https://daviddalbusco.com/images/blog/1*6gmGYZk8Cgx2WNqOMERlLA.jpeg)
 
 I’m currently migrating my mobile application [Fluster](https://fluster.io/) from [Ionic](https://ionicframework.com/) v3 to v4. As you could see in the following video, the very first time a user would access the detail page, he/she would face a small delay 😔 The reason behind this is simple, the remaining (or not loaded yet) modules of the **lazy-loaded Angular** route still have to be loaded
 
-![](https://daviddalbusco.com/assets/images/1*Uu2ONN9g4VTqkcfzmV5sXw.gif)
+![](https://daviddalbusco.com/images/blog/1*Uu2ONN9g4VTqkcfzmV5sXw.gif)
 <span class="figcaption_hack">A small delay</span>
 
 Fortunately, [Angular](https://angular.io/) v6 offers the ability to preload all or selected modules. This has been described many times, like for example in the interesting article of [Adrian Fâciu](https://medium.com/@adrianfaciu/custom-preloading-strategy-for-angular-modules-b3b5c873681a)

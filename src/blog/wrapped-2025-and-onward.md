@@ -4,10 +4,10 @@ date: "2025-12-19"
 title: Wrapped (2025) & Onward
 description: "Extending collaboration, Juno's reality check, and some ideas for 2026."
 tags: "#yearinreview"
-image: "https://daviddalbusco.com/assets/images/rene-bohmer-YeUVDKZWSZ4-unsplash.webp"
+image: "https://daviddalbusco.com/images/blog/rene-bohmer-YeUVDKZWSZ4-unsplash.webp"
 ---
 
-![Cover photo from Unsplash by Rene Böhmer](https://daviddalbusco.com/assets/images/rene-bohmer-YeUVDKZWSZ4-unsplash.webp)
+![Cover photo from Unsplash by Rene Böhmer](https://daviddalbusco.com/images/blog/rene-bohmer-YeUVDKZWSZ4-unsplash.webp)
 
 > Photo by [Rene Böhmer](https://unsplash.com/fr/@qrenep?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/a-very-long-line-of-yellow-lines-on-a-black-background-YeUVDKZWSZ4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
@@ -85,7 +85,7 @@ There was a nice push in September, so hopefully it will continue that way. And 
 
 👉 [https://github.com/junobuild/juno](https://github.com/junobuild/juno)
 
-![343 stars on Github on Dec 19, 2025](https://daviddalbusco.com/assets/images/20251219-juno-github-stars.png)
+![343 stars on Github on Dec 19, 2025](https://daviddalbusco.com/images/blog/20251219-juno-github-stars.png)
 
 ---
 

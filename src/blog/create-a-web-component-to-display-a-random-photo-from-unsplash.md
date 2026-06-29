@@ -4,15 +4,15 @@ date: "2019-05-29"
 title: "Create a Web Component to display a random photo from Unsplash"
 description: "A tutorial to create with StencilJS your own Web Component which display a random photo from Unsplash"
 tags: "#webdev #javascript #showdev #stencil"
-image: "https://daviddalbusco.com/assets/images/1*TlvBM-zGT1x7SmVMlKyAuQ.jpeg"
+image: "https://daviddalbusco.com/images/blog/1*TlvBM-zGT1x7SmVMlKyAuQ.jpeg"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*TlvBM-zGT1x7SmVMlKyAuQ.jpeg)
+![](https://daviddalbusco.com/images/blog/1*TlvBM-zGT1x7SmVMlKyAuQ.jpeg)
 _Photo by [Mat Reding](https://unsplash.com/photos/QdqK4doOzcQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)_
 
 I recently integrated the [Unsplash](https://unsplash.com) API to our upcoming open source web editor for presentations, [DeckDeckGo](https://deckdeckgo.com), and I thought that sharing my small learning experience in a new blog post might maybe, who knows, help someone in the future 😉 Therefore, in the following article, I will show you how to create your own Web Component to display a random photo from Unsplash.
 
-![](https://daviddalbusco.com/assets/images/1*xjFa1A-sWUNKUnn9Lyh1kg.gif)
+![](https://daviddalbusco.com/images/blog/1*xjFa1A-sWUNKUnn9Lyh1kg.gif)
 _Our goal is to create such a component which fetch a new random photo on each browser refresh_
 
 ### Web Components with StencilJS
@@ -83,7 +83,7 @@ Unsplash provide wrappers for their API in various languages. For Javascript the
 
 #### ⚠️ **Important** ⚠️
 
-![](https://daviddalbusco.com/assets/images/1*0rzkOPaCAk3buGtKj5ysjQ.gif)
+![](https://daviddalbusco.com/images/blog/1*0rzkOPaCAk3buGtKj5ysjQ.gif)
 
 For the purpose of this tutorial, I will display pieces of code where the Unsplash API is queried directly (https://api.unsplash.com/). **DO NOT** do that in any applications, real or not, that you would upload online. Your Unplash access key has to remain secret. Furthermore, don’t “forget” to give back [credits](https://unsplash.com/documentation#guidelines--crediting) to the authors of the photos.
 
@@ -158,7 +158,7 @@ That’s it, our component is ready 🎉
 
 #### All together
 
-![](https://daviddalbusco.com/assets/images/1*IV5q7-l-VsZMkuKUiZ1giA.gif)
+![](https://daviddalbusco.com/images/blog/1*IV5q7-l-VsZMkuKUiZ1giA.gif)
 
 Before trying it out, let me just summarize all the component code’s at once:
 
@@ -229,13 +229,13 @@ export class MyComponent {
 
 Good we are ready to test our component. StencilJS comes with a handy local test server, therefore just run `npm run start` in a command line and open your browser at the address `http://localhost:3333`. If everything works as expected, a random stock photo should be displayed and a new one should be fetched each time you would refresh your page.
 
-![](https://daviddalbusco.com/assets/images/1*xjFa1A-sWUNKUnn9Lyh1kg.gif)
+![](https://daviddalbusco.com/images/blog/1*xjFa1A-sWUNKUnn9Lyh1kg.gif)
 
 ### Cherry on the cake 🍒🎂
 
 As I said in my introduction, we have integrated the Unsplash API in [DeckDeckGo](https://deckdeckgo.com), our upcoming open source web editor for presentations, to ease the integration of stock photos. This implementation isn’t really that different from what we implemented in this tutorial (instead of a random photo, we are just fetching a list). Therefore, as we are open source, if you are looking for a real example of implementation, you could just have a look at our [source code](https://github.com/deckgo/deckdeckgo) 😃
 
-![](https://daviddalbusco.com/assets/images/1*nCyubS5I7eIwuIB7_DseLQ.gif)
+![](https://daviddalbusco.com/images/blog/1*nCyubS5I7eIwuIB7_DseLQ.gif)
 
 To infinity and beyond 🚀
 

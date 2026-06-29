@@ -4,11 +4,11 @@ date: "2020-03-11"
 title: "Introducing: Tie Tracker. A simple, open source and free time tracking app ⏱️"
 description: "Introducing: Tie Tracker. A simple, open source and free time tracking app ⏱️"
 tags: "#webdev #showdev #javascript #react"
-image: "https://daviddalbusco.com/assets/images/1*jjeZp6_jbltdQSeOcTGdlg.png"
+image: "https://daviddalbusco.com/images/blog/1*jjeZp6_jbltdQSeOcTGdlg.png"
 canonical: "https://medium.com/@david.dalbusco/introducing-tie-tracker-e407daec4121"
 ---
 
-![](https://daviddalbusco.com/assets/images/1*jjeZp6_jbltdQSeOcTGdlg.png)
+![](https://daviddalbusco.com/images/blog/1*jjeZp6_jbltdQSeOcTGdlg.png)
 
 I’m happy to share with you [Tie Tracker](https://tietracker.app.link): a simple, open source and free time tracking app ⏱️.
 

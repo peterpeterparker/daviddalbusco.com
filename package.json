@@ -22,9 +22,6 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
-		"@junobuild/config": "^3.0.1",
-		"@junobuild/core": "^5.4.0",
-		"@junobuild/vite-plugin": "^4.7.1",
 		"@shikijs/langs": "^4.3.0",
 		"@shikijs/themes": "^4.3.0",
 		"@sveltejs/adapter-static": "^3.0.10",

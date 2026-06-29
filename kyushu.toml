@@ -6,6 +6,7 @@ dir = "build"
 
 [scripts]
 prebuild = ["pnpm build"]
+precompress = ["brotli"]
 
 [[worker.mounts]]
 host = "./assets"

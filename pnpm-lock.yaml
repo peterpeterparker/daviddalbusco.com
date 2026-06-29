@@ -19,15 +19,6 @@ importers:
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.6.0)
-      '@junobuild/config':
-        specifier: ^3.0.1
-        version: 3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)
-      '@junobuild/core':
-        specifier: ^5.4.0
-        version: 5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.3.0))(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
-      '@junobuild/vite-plugin':
-        specifier: ^4.7.1
-        version: 4.7.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(vite@8.1.0(@types/node@26.0.1)(sass-embedded@1.100.0)(sass@1.100.0)(yaml@2.8.3))(zod@4.3.6)
       '@shikijs/langs':
         specifier: ^4.3.0
         version: 4.3.0
@@ -112,15 +103,6 @@ packages:
   '@bufbuild/protobuf@2.12.0':
     resolution: {integrity: sha512-B/XlCaFIP8LOwzo+bz5uFzATYokcwCKQcghqnlfwSmM5eX/qTkvDBnDPs+gXtX/RyjxJ4DRikECcPJbyALA8FA==}
 
-  '@dfinity/cbor@0.2.2':
-    resolution: {integrity: sha512-GPJpH73kDEKbUBdUjY80lz7cq9l0vm1h/7ppejPV6O0ZTqCLrYspssYvqjRmK4aNnJ/SKXsP0rg9LYX7zpegaA==}
-
-  '@dfinity/zod-schemas@3.2.0':
-    resolution: {integrity: sha512-xEmsHFETM3XFZj2QUVxzAYcwMn7uCX1VoAKqNygN8EZj4RdoWkdPdQjwTo5DACvmVRW+r+MlhfODsZWbBqqOGg==}
-    peerDependencies:
-      '@icp-sdk/core': '*'
-      zod: ^4
-
   '@emnapi/core@1.11.1':
     resolution: {integrity: sha512-RSvbQmHzdKzNsLYa/wHrbc3KN4sYLKAdPZxqiM2HATqv/SBk2/ENSHpvXGaLOMcsAyz0poEGqkmmKYG3OWiJEQ==}
 
@@ -189,14 +171,6 @@ packages:
     resolution: {integrity: sha512-xeO57FpIu4p1Ri3Jq/EXq4ClRm86dVF2z/+kvFnyqVYRavTZmaFaUBbWCOuuTh0o/g7DSsk6kc2vrS4Vl5oPOQ==}
     engines: {node: '>=18.18'}
 
-  '@icp-sdk/auth@5.0.0':
-    resolution: {integrity: sha512-TaPfdaELT7s0vTIFOmCnlCmhPdL7kABA7+2Q0YNAUWIa/FFiwq6ffGPLvr0U0+2zFLaLQ4l7UCB2zf7vo6PFPQ==}
-    peerDependencies:
-      '@icp-sdk/core': ^5
-
-  '@icp-sdk/core@5.3.0':
-    resolution: {integrity: sha512-wOGPY7shB2cCuC+yXrpVd36xD5/tWZCOI9Cthe8a4SY34evoAHNmxaUN5VP28AdxVv6AVH7cfgasx4hbgk8vkg==}
-
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
 
@@ -213,80 +187,11 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@junobuild/auth@4.1.2':
-    resolution: {integrity: sha512-AR6qDeg6cUN4YabM92kD8P0oDK5NeP1ZA8kD/E5WAknUpDIyqSIE8/AXXj9YJlb6WUgrHhDK8JhRaTxlRdRRVw==}
-    peerDependencies:
-      '@icp-sdk/core': ^5
-      '@junobuild/ic-client': ^8.1
-      '@junobuild/utils': ^1
-
-  '@junobuild/config@2.15.1':
-    resolution: {integrity: sha512-UVVZQNe8pOjE6Vwo7YxN1E+iZ8aBwnEs9/E7DurW2yqs9aNH0V72ziNUi5/urEq/GE8zY8M9u2MF0uUKQyJcrA==}
-    peerDependencies:
-      '@junobuild/schema': ^1.2
-      zod: ^4.3
-
-  '@junobuild/config@3.0.1':
-    resolution: {integrity: sha512-ZJw78ITJlFat5x31aoBlT9Ug+MOBhNGQU4d6IH7gkPSTa2vVrCzrhY5HhFWq+2d7Ei7dcbCZTjz061GYFATtjQ==}
-    peerDependencies:
-      '@junobuild/schema': ^1.2.4
-      zod: ^4.3
-
-  '@junobuild/core@5.4.0':
-    resolution: {integrity: sha512-XW2O8S7HxNt8zPM9loxhd5z6st+ISY7ffGiYRdk2rzQsjlzGDlNdKdTjFcZqEC7mStnQJjsypJyFHhEzj81C8A==}
-    peerDependencies:
-      '@icp-sdk/auth': ^5
-      '@icp-sdk/core': ^5
-      '@junobuild/utils': ^1
-
-  '@junobuild/errors@0.2.8':
-    resolution: {integrity: sha512-n2rXof9nIqGDCARHZETXcicG3JH6+1JGB9iTuFzkziPZm7q/G1KSzh8gRJYzrFC3XrSGPRWvhX4hKEnoxAbisQ==}
-
-  '@junobuild/ic-client@8.1.3':
-    resolution: {integrity: sha512-vRgPiOaoezxn8KXz4FAn0hoyssP2yETIarIREMT+Dj8rA8ibuDZ1msEJAvufI085NLF+CAdyHVwIPJuAD39aOg==}
-    peerDependencies:
-      '@icp-sdk/core': ^5
-      '@junobuild/utils': ^1.0.2
-      idb-keyval: ^6.2.2
-
-  '@junobuild/plugin-tools@4.6.1':
-    resolution: {integrity: sha512-t70XCqFyxn7l+oYx56v2UNXn4foyHohgIc8rAhI0YVDYz6uhNX7I+Xzd4YzBZmyClnDF1YgTtxZj/+4PH1+OKw==}
-
-  '@junobuild/schema@1.2.4':
-    resolution: {integrity: sha512-gMNYDIkLtXdkN8ahw5RXPIJT9IVkNrsoCkxwYyMq9/1rfl3p6IAjr5ywzf+tlR/lA6m35tiXyc5Nv630kSHngw==}
-    peerDependencies:
-      zod: ^4.3
-
-  '@junobuild/storage@2.4.2':
-    resolution: {integrity: sha512-2rI2S/P8pCW7h8FtQjeKDzJ/OSFrdqWDMuAIxCkqjzhmUwS05TMmQJ5JUqBBS2DnwnlVj5rpOxEHNfT4ISVvmQ==}
-    peerDependencies:
-      '@icp-sdk/core': ^5
-      '@junobuild/ic-client': ^8.1
-      '@junobuild/utils': ^1
-
-  '@junobuild/utils@1.0.3':
-    resolution: {integrity: sha512-jeO1VthkesaT940cG7+Qjm13ndSynkQulx1JGxtXKKhR79ummxaWLAvFJqMPRQl/KsPT8LcPoJQximUuv84CZg==}
-    peerDependencies:
-      '@icp-sdk/core': ^5
-
-  '@junobuild/vite-plugin@4.7.1':
-    resolution: {integrity: sha512-UwB4eCpP24SRxwGhlVv/I5SX7ggSbL1kOapNs9eq6kczQxUN4ZzAuhoOEmMd023Im18HK7SgBP759jQ/gqDWtg==}
-    peerDependencies:
-      vite: '>=4.0.0'
-
   '@napi-rs/wasm-runtime@1.1.6':
     resolution: {integrity: sha512-ZLv/JdUfkvOy9eCnnBaGfiO+XimbjebAeO+MRQqD/B+FR1tnRN0tpKSJHRbE8sFfS6aqsXZ67TQjfwfsxULVbg==}
     peerDependencies:
       '@emnapi/core': ^1.7.1
       '@emnapi/runtime': ^1.7.1
-
-  '@noble/curves@1.9.7':
-    resolution: {integrity: sha512-gbKGcRUYIjA3/zCCNaWDciTMFI0dCkvou3TL8Zmy5Nc7sJ47a0jtOeZoTaMxkuqRo9cRhjOdZJXegxYE5FN/xw==}
-    engines: {node: ^14.21.3 || >=16}
-
-  '@noble/hashes@1.8.0':
-    resolution: {integrity: sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A==}
-    engines: {node: ^14.21.3 || >=16}
 
   '@oxc-project/types@0.137.0':
     resolution: {integrity: sha512-WT+Gb24i8hmvo85AIv2oEYouEXkRlKAlT9WaCa3TfLgNCN+GhrJOGZuIlMouAh38Qe4QOx26eUOVsq70qXrywA==}
@@ -480,15 +385,6 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@scure/base@1.2.6':
-    resolution: {integrity: sha512-g/nm5FgUa//MCj1gV09zTJTaM6KBAHqLN907YVQqf7zC49+DcO4B1so4ZX07Ef10Twr6nuqYEH9GEggFXA4Fmg==}
-
-  '@scure/bip32@1.7.0':
-    resolution: {integrity: sha512-E4FFX/N3f4B80AKWp5dP6ow+flD1LQZo/w8UnLGYZO674jS6YnYeepycOOksv+vLPSpgN35wgKgy+ybfTb2SMw==}
-
-  '@scure/bip39@1.6.0':
-    resolution: {integrity: sha512-+lF0BbLiJNwVlev4eKelw1WWLaiKXw7sSl8T6FvBlWkdX+94aGJ4o8XjUdlyhTCjd8c+B3KT3JfS8P0bLRNU6A==}
-
   '@shikijs/core@4.3.0':
     resolution: {integrity: sha512-EooU3i9F6IAE8kEu+AnGf9DFZWkQBZ+hJn3tLVbsH+61mtQiva5biai66fAA6nvFPXkLgvrh7BrR7YcJU83xQQ==}
     engines: {node: '>=20'}
@@ -681,10 +577,6 @@ packages:
   aria-query@5.3.1:
     resolution: {integrity: sha512-Z/ZeOgVl7bcSYZ/u/rh0fOpvEpq//LZmdbkXyc7syVzjPAhfOa9ebsdTSjEBDU4vs5nC98Kfduj1uFo0qyET3g==}
     engines: {node: '>= 0.4'}
-
-  asn1js@3.0.7:
-    resolution: {integrity: sha512-uLvq6KJu04qoQM6gvBfKFjlh6Gl0vOKQuR5cJMDHQkmwfMOQeN3F3SHCv9SNYSL+CRoHvOGFfllDlVz03GQjvQ==}
-    engines: {node: '>=12.0.0'}
 
   autolinker@3.16.2:
     resolution: {integrity: sha512-JiYl7j2Z19F9NdTmirENSUUIIL/9MytEWtmzhfmsKPCp9E+G35Y0UNCMoM9tFigxT59qSc8Ml2dlZXOCVTYwuA==}
@@ -921,12 +813,6 @@ packages:
 
   html-void-elements@3.0.0:
     resolution: {integrity: sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==}
-
-  idb-keyval@6.2.2:
-    resolution: {integrity: sha512-yjD9nARJ/jb1g+CvD0tlhUHOrJ9Sy0P8T9MF3YaLlHnSRpwPfpTX0XIvpmw3gAJUmEu3FiICLBDPXVwyEvrleg==}
-
-  idb@7.1.1:
-    resolution: {integrity: sha512-gchesWBzyvGHRO9W8tzUWFDycow5gwjvFKfyV9FF32Y7F50yZMp7mP+T2mJIWFx49zicqyC4uefHM17o6xKIVQ==}
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -1215,13 +1101,6 @@ packages:
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
-
-  pvtsutils@1.3.6:
-    resolution: {integrity: sha512-PLgQXQ6H2FWCaeRak8vvk1GW462lMxB5s3Jm673N82zI4vqtVUPuZdffdZbPDFRoU8kAhItWFtPCWiPpp4/EDg==}
-
-  pvutils@1.1.5:
-    resolution: {integrity: sha512-KTqnxsgGiQ6ZAzZCVlJH5eOjSnvlyEgx1m8bkRJfOhmGRqfo5KLvmAlACQkrjEtOQ4B7wF9TdSLIs9O90MX9xA==}
-    engines: {node: '>=16.0.0'}
 
   readdirp@4.0.2:
     resolution: {integrity: sha512-yDMz9g+VaZkqBYS/ozoBJwaBhTbZo3UNYQHNRw1D3UFQB8oHB4uS/tAODO+ZLjGWmUbKnIlOWO+aaIiAxrUWHA==}
@@ -1610,13 +1489,6 @@ snapshots:
 
   '@bufbuild/protobuf@2.12.0': {}
 
-  '@dfinity/cbor@0.2.2': {}
-
-  '@dfinity/zod-schemas@3.2.0(@icp-sdk/core@5.3.0)(zod@4.3.6)':
-    dependencies:
-      '@icp-sdk/core': 5.3.0
-      zod: 4.3.6
-
   '@emnapi/core@1.11.1':
     dependencies:
       '@emnapi/wasi-threads': 1.2.2
@@ -1680,20 +1552,6 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.2': {}
 
-  '@icp-sdk/auth@5.0.0(@icp-sdk/core@5.3.0)':
-    dependencies:
-      '@icp-sdk/core': 5.3.0
-      idb: 7.1.1
-
-  '@icp-sdk/core@5.3.0':
-    dependencies:
-      '@dfinity/cbor': 0.2.2
-      '@noble/curves': 1.9.7
-      '@noble/hashes': 1.8.0
-      '@scure/bip32': 1.7.0
-      '@scure/bip39': 1.6.0
-      asn1js: 3.0.7
-
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.5
@@ -1713,86 +1571,12 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@junobuild/auth@4.1.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))':
-    dependencies:
-      '@icp-sdk/core': 5.3.0
-      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
-      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
-
-  '@junobuild/config@2.15.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)':
-    dependencies:
-      '@junobuild/schema': 1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6)
-      zod: 4.3.6
-
-  '@junobuild/config@3.0.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)':
-    dependencies:
-      '@junobuild/schema': 1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6)
-      zod: 4.3.6
-
-  '@junobuild/core@5.4.0(@icp-sdk/auth@5.0.0(@icp-sdk/core@5.3.0))(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)':
-    dependencies:
-      '@icp-sdk/auth': 5.0.0(@icp-sdk/core@5.3.0)
-      '@icp-sdk/core': 5.3.0
-      '@junobuild/auth': 4.1.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))
-      '@junobuild/errors': 0.2.8
-      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
-      '@junobuild/storage': 2.4.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))
-      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
-    transitivePeerDependencies:
-      - idb-keyval
-
-  '@junobuild/errors@0.2.8': {}
-
-  '@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)':
-    dependencies:
-      '@icp-sdk/core': 5.3.0
-      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
-      idb-keyval: 6.2.2
-
-  '@junobuild/plugin-tools@4.6.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)':
-    dependencies:
-      '@junobuild/config': 2.15.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)
-    transitivePeerDependencies:
-      - '@junobuild/schema'
-      - zod
-
-  '@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6)':
-    dependencies:
-      '@dfinity/zod-schemas': 3.2.0(@icp-sdk/core@5.3.0)(zod@4.3.6)
-      zod: 4.3.6
-    transitivePeerDependencies:
-      - '@icp-sdk/core'
-
-  '@junobuild/storage@2.4.2(@icp-sdk/core@5.3.0)(@junobuild/ic-client@8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2))(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))':
-    dependencies:
-      '@icp-sdk/core': 5.3.0
-      '@junobuild/ic-client': 8.1.3(@icp-sdk/core@5.3.0)(@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0))(idb-keyval@6.2.2)
-      '@junobuild/utils': 1.0.3(@icp-sdk/core@5.3.0)
-
-  '@junobuild/utils@1.0.3(@icp-sdk/core@5.3.0)':
-    dependencies:
-      '@icp-sdk/core': 5.3.0
-
-  '@junobuild/vite-plugin@4.7.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(vite@8.1.0(@types/node@26.0.1)(sass-embedded@1.100.0)(sass@1.100.0)(yaml@2.8.3))(zod@4.3.6)':
-    dependencies:
-      '@junobuild/plugin-tools': 4.6.1(@junobuild/schema@1.2.4(@icp-sdk/core@5.3.0)(zod@4.3.6))(zod@4.3.6)
-      vite: 8.1.0(@types/node@26.0.1)(sass-embedded@1.100.0)(sass@1.100.0)(yaml@2.8.3)
-    transitivePeerDependencies:
-      - '@junobuild/schema'
-      - zod
-
   '@napi-rs/wasm-runtime@1.1.6(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.1)':
     dependencies:
       '@emnapi/core': 1.11.1
       '@emnapi/runtime': 1.11.1
       '@tybys/wasm-util': 0.10.3
     optional: true
-
-  '@noble/curves@1.9.7':
-    dependencies:
-      '@noble/hashes': 1.8.0
-
-  '@noble/hashes@1.8.0': {}
 
   '@oxc-project/types@0.137.0': {}
 
@@ -1909,19 +1693,6 @@ snapshots:
     optional: true
 
   '@rolldown/pluginutils@1.0.1': {}
-
-  '@scure/base@1.2.6': {}
-
-  '@scure/bip32@1.7.0':
-    dependencies:
-      '@noble/curves': 1.9.7
-      '@noble/hashes': 1.8.0
-      '@scure/base': 1.2.6
-
-  '@scure/bip39@1.6.0':
-    dependencies:
-      '@noble/hashes': 1.8.0
-      '@scure/base': 1.2.6
 
   '@shikijs/core@4.3.0':
     dependencies:
@@ -2156,12 +1927,6 @@ snapshots:
 
   aria-query@5.3.1: {}
 
-  asn1js@3.0.7:
-    dependencies:
-      pvtsutils: 1.3.6
-      pvutils: 1.1.5
-      tslib: 2.8.1
-
   autolinker@3.16.2:
     dependencies:
       tslib: 2.8.1
@@ -2395,10 +2160,6 @@ snapshots:
 
   html-void-elements@3.0.0: {}
 
-  idb-keyval@6.2.2: {}
-
-  idb@7.1.1: {}
-
   ignore@5.3.2: {}
 
   ignore@7.0.5: {}
@@ -2627,12 +2388,6 @@ snapshots:
   property-information@7.1.0: {}
 
   punycode@2.3.1: {}
-
-  pvtsutils@1.3.6:
-    dependencies:
-      tslib: 2.8.1
-
-  pvutils@1.1.5: {}
 
   readdirp@4.0.2: {}
 

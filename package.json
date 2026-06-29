@@ -7,7 +7,6 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"assets": "bun serve.assets.ts",
 		"dev": "vite dev",
 		"build:workaround": "node svelte.workaround.ts",
 		"build": "vite build && pnpm build:workaround",

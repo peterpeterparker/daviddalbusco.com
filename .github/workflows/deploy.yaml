@@ -15,6 +15,9 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Prepare
+        uses: ./.github/actions/prepare
+
       - name: Install kyu
         run: |
           curl -fsSL https://kyushu.dev/install | bash

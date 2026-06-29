@@ -75,7 +75,7 @@ function toggleFullScreen() {
 }
 ```
 
-_Note that I found the above code in the _[Google Web Fundamentals](https://developers.google.com/web/fundamentals/native-hardware/fullscreen)_._
+_Note that I found the above code in the *[Google Web Fundamentals](https://developers.google.com/web/fundamentals/native-hardware/fullscreen)*._
 
 ---
 

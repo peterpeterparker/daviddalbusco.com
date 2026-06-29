@@ -62,7 +62,7 @@ callbacks: {
 },
 ```
 
-_Note that I opened an issue to ask how it was possible to access the token using TypeScript and the cast to _`OAuthCredential`_ was provided as [answer](https://github.com/firebase/firebaseui-web/issues/743)._
+_Note that I opened an issue to ask how it was possible to access the token using TypeScript and the cast to *`OAuthCredential`* was provided as [answer](https://github.com/firebase/firebaseui-web/issues/743)._
 
 ---
 

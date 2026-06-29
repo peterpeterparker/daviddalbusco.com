@@ -136,7 +136,7 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 	const imageRule = () => (tokens, idx, options, _env) => {
 		const url = utils
 			.escapeHtml(tokens[idx].src)
-			.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS);
+			.replaceAll('https://daviddalbusco.com/images/blog', env.PUBLIC_BLOG_IMAGES);
 
 		const src = ' src="' + url + '"';
 		const title = tokens[idx].title

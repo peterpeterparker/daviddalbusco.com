@@ -16,7 +16,7 @@
 	let title = $derived(metadata.title);
 	let description = $derived(metadata.description);
 	let image = $derived(
-		metadata.image.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
+		metadata.image.replaceAll('https://daviddalbusco.com/images/blog', env.PUBLIC_BLOG_IMAGES)
 	);
 	let postDate = $derived(metadata.date);
 </script>

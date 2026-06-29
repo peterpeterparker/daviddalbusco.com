@@ -15,3 +15,4 @@ Thumbs.db
 .svelte-kit/
 build/
 package/
+worker/

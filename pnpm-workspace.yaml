@@ -6,10 +6,11 @@ onlyBuiltDependencies:
 minimumReleaseAge: 2880 # ignore dependency updates released less than 2 days ago
 
 minimumReleaseAgeExclude:
-  - yawa-tracker@0.0.4
-  - '@sveltejs/kit@2.65.2'
+  - yawa-tracker@0.0.5
+  - '@sveltejs/kit@2.68.0'
   - cookie@0.7.0
   - brace-expansion@5.0.6
+  - prettier@3.9.3
 
 overrides:
   brace-expansion@>=5.0.0 <5.0.6: ^5.0.6

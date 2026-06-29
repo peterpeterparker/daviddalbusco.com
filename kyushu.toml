@@ -3,10 +3,10 @@ src = "src/server.ts"
 
 [assets]
 dir = "build"
+precompress = ["brotli"]
 
 [scripts]
 prebuild = ["pnpm build"]
-precompress = ["brotli"]
 
 [[worker.mounts]]
 host = "./assets"

@@ -1,0 +1,8 @@
+[input]
+src = "src/server.ts"
+
+[assets]
+dir = "build"
+
+[scripts]
+prebuild = ["pnpm build"]

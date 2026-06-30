@@ -5,13 +5,15 @@
 		href: string;
 		external?: boolean;
 		children?: import('svelte').Snippet;
+		onclick?: () => void;
 	}
 
-	let { href, external = false, children }: Props = $props();
+	let { href, onclick, external = false, children }: Props = $props();
 </script>
 
 <a
 	{href}
+	{onclick}
 	target={external ? '_blank' : undefined}
 	rel={external ? 'external noopener noreferrer' : undefined}
 >

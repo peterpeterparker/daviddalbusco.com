@@ -2,12 +2,17 @@
 	import Section from '$lib/components/Section.svelte';
 	import Link from '$lib/components/Link.svelte';
 	import { onMount } from 'svelte';
+	import { track } from '$lib/services/analytics.services';
 
 	// Do not prerender to prevent spam
 	// See 2.6 - https://spencermortensen.com/articles/email-obfuscation/
 	let loaded = $state(false);
 
 	onMount(() => (loaded = true));
+
+	const trackEvent = () => {
+		track({ name: 'contact-hero' });
+	};
 </script>
 
 <Section>
@@ -19,7 +24,7 @@
 
 	<p class="link">
 		{#if loaded}
-			<Link href="mailto:hi@daviddalbusco.com">Hire me!</Link>
+			<Link href="mailto:hi@daviddalbusco.com" onclick={trackEvent}>Hire me!</Link>
 		{/if}
 	</p>
 </Section>

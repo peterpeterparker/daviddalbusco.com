@@ -2,6 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import { createEventDispatcher } from 'svelte';
 	import IconOpen from '$lib/icons/IconOpen.svelte';
+	import { track } from '$lib/services/analytics.services';
 
 	interface Props {
 		open: boolean;
@@ -13,6 +14,11 @@
 
 	const navigate = () => {
 		dispatch('close');
+	};
+
+	const navigateAndTrackEvent = () => {
+		track({ name: 'contact-menu' });
+		navigate();
 	};
 </script>
 
@@ -49,7 +55,7 @@
 
 			<a href="/blog" onclick={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
 
-			<a href="/#contact" onclick={navigate} rel="external"
+			<a href="/#contact" onclick={navigateAndTrackEvent} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
 			>
 		</div>

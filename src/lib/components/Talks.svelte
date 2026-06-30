@@ -1,6 +1,11 @@
 <script lang="ts">
 	import Section from '$lib/components/Section.svelte';
 	import Link from '$lib/components/Link.svelte';
+	import { track } from '$lib/services/analytics.services';
+
+	const trackEvent = () => {
+		track({ name: 'contact-talks' });
+	};
 </script>
 
 <Section background="var(--color-tertiary)" color="var(--color-tertiary-contrast)">
@@ -66,5 +71,5 @@
 		great to have me in your lineup!
 	</p>
 
-	<Link href="#contact">Contact</Link>
+	<Link href="#contact" onclick={trackEvent}>Contact</Link>
 </Section>

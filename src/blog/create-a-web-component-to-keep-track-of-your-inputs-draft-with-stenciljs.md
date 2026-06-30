@@ -16,7 +16,7 @@ Long story short, [James Turner](https://twitter.com/MrTurnerj) is clever and ha
 
 I thought that this discovery was really interesting, specially because I always assumed that this was a browser feature and not something which needed implementation, but also because I thought that this could be an interesting use case for a new [Web Component](https://developer.mozilla.org/en-US/docs/Web/Web_Components) compatible with any modern frameworks, or even without, and that’s why I’m writing this article.
 
-_For the purpose of this tutorial, I selected _[StencilJS](https://stenciljs.com/)_ as a compiler, mostly because I’m a bit more experienced with it, as I developed my pet project _[DeckDeckGo](https://deckdeckgo.com/)* with, but also, to be truly honest, just because I’m in *❤️* with Stencil *😉
+_For the purpose of this tutorial, I selected _[StencilJS](https://stenciljs.com/)_ as a compiler, mostly because I’m a bit more experienced with it, as I developed my pet project _[DeckDeckGo](https://deckdeckgo.com/)* with, but also, to be truly honest, just because I’m in _❤️_ with Stencil *😉
 
 ### Let’s get started
 
@@ -73,7 +73,7 @@ As James Turner discovered, the trick consists of saving your inputs before the 
 
 Furthermore to this, in order to retrieve the current value of our `textarea`, we could use the Stencil’s reference `Element` to perform a query on the DOM elements of the host and save its value in the `sessionStorage`.
 
-_Per default, see your component definition _`@Component`_ , the component is going to be shadowed, that’s why we are going to use the selector _`shadowRoot`_ in our query._
+_Per default, see your component definition *`@Component`* , the component is going to be shadowed, that’s why we are going to use the selector *`shadowRoot`* in our query._
 
 ```
 import {Component, Element} from '@stencil/core';

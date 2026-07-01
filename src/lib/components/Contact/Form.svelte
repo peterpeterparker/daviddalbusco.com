@@ -1,16 +1,31 @@
 <script lang="ts">
 	import Button from '$lib/components/Button.svelte';
+	import { sendMessage, type FormData } from '$lib/services/contact.services';
+	import { fade } from 'svelte/transition';
 
-	let formData = $state({
+	const DEFAULT_FORM_DATA: FormData = {
 		name: '',
 		email: '',
 		msg: ''
-	});
+	};
+
+	let formData = $state(DEFAULT_FORM_DATA);
+
+	let sendResult = $state<'ok' | 'error' | undefined>(undefined);
 
 	const onsubmit = async ($event: SubmitEvent) => {
 		$event.preventDefault();
 
-		console.log(formData);
+		const result = await sendMessage({ data: $state.snapshot(formData) });
+
+		if (result.status === 'error') {
+			console.error(result.err);
+			sendResult = 'error';
+			return;
+		}
+
+		sendResult = 'ok';
+		formData = DEFAULT_FORM_DATA;
 	};
 </script>
 
@@ -73,6 +88,16 @@
 	</fieldset>
 </form>
 
+{#if sendResult !== undefined}
+	<p in:fade class="result" class:error={sendResult === 'error'}>
+		{#if sendResult === 'error'}
+			Hmm, something went wrong. Mind trying again or just emailing me?
+		{:else}
+			Got it, thanks! I'll get back to you soon. 👍
+		{/if}
+	</p>
+{/if}
+
 <style lang="scss">
 	.hidden {
 		display: none;
@@ -85,7 +110,7 @@
 		grid-row-gap: 1.75rem;
 
 		border: none;
-		padding: 2.45rem 0;
+		padding: 2.45rem 0 0.45rem;
 
 		@media screen and (min-width: 576px) {
 			grid-template-columns: 1fr 1fr;
@@ -126,5 +151,13 @@
 			box-shadow: 3px 3px var(--color-highlight);
 			border: 1px solid var(--color-highlight);
 		}
+	}
+
+	.result {
+		font-weight: bolder;
+	}
+
+	.error {
+		color: var(--color-highlight);
 	}
 </style>

@@ -14,8 +14,8 @@
 	</h2>
 
 	<p>
-		I'm David, a freelance web developer based in Zürich, available for project-based work and
-		contract positions.
+		I'm David, a freelance developer based in Zürich, available for project-based work and contract
+		positions.
 	</p>
 
 	<p>

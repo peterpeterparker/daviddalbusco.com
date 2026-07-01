@@ -17,8 +17,8 @@
 	};
 
 	const navigateAndTrackEvent = () => {
-		track({ name: 'contact-menu' });
 		navigate();
+		track({ name: 'contact-menu' });
 	};
 </script>
 
@@ -55,7 +55,7 @@
 
 			<a href="/blog" onclick={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
 
-			<a href="/#contact" onclick={navigateAndTrackEvent} rel="external"
+			<a href="/contact" onclick={navigateAndTrackEvent}
 				><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
 			>
 		</div>

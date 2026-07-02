@@ -5,6 +5,7 @@ title: A Progress Bar for Blog Posts
 description: "Displaying how much of an article is left to read with a small Svelte component."
 tags: "#webdev #svelte #javascript #css"
 image: "https://daviddalbusco.com/assets/images/and-machines-8gqqtZstztc-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3mpnqqtjnkx2c"
 ---
 
 ![](https://daviddalbusco.com/assets/images/and-machines-8gqqtZstztc-unsplash.jpg)

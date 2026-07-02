@@ -7,6 +7,7 @@
 	import Link from '$lib/components/Link.svelte';
 	import '../../../theme/_blog.scss';
 	import '../../../theme/_code.scss';
+	import Progress from '$lib/components/Progress.svelte';
 
 	interface Props {
 		data: PageData;
@@ -31,6 +32,8 @@
 		tags,
 		standard_site: standardSite
 	} = $derived(metadata);
+
+	let anchor = $state<HTMLElement | undefined>(undefined);
 </script>
 
 <svelte:head>
@@ -51,6 +54,10 @@
 	</style>
 </svelte:head>
 
+{#if anchor !== undefined}
+	<Progress {anchor} />
+{/if}
+
 <Section>
 	<h1>{title}</h1>
 	<h3>{description}</h3>
@@ -66,7 +73,7 @@
 		{@html content}
 	</article>
 
-	<div class="actions">
+	<div class="actions" bind:this={anchor}>
 		<Link href="/blog">Continue reading</Link>
 
 		<a

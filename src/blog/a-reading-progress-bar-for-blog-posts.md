@@ -1,8 +1,8 @@
 ---
-path: "/blog/a-reading-progress-bar-for-blog-posts"
+path: "/blog/a-progress-bar-for-blog-posts"
 date: "2026-07-02"
-title: "A Reading Progress Bar for Blog Posts"
-description: "Showing how much of an article is left to read with a small Svelte component"
+title: A Progress Bar for Blog Posts
+description: "Displaying how much of an article is left to read with a small Svelte component"
 tags: "#webdev #svelte #javascript #css"
 image: "https://daviddalbusco.com/assets/images/and-machines-8gqqtZstztc-unsplash.jpg"
 ---
@@ -43,7 +43,7 @@ To add this new element to the blog I created a component. I might not reuse it 
 </style>
 ```
 
-A few details are worth a closer look.
+With the scene set, let's look at a few of the details.
 
 ---
 
@@ -55,7 +55,7 @@ Svelte has a built-in way to bind to `scrollY` ([doc](https://svelte.dev/docs/sv
 <svelte:window bind:scrollY={y} />
 ```
 
-It doesn't let you pass `passive: true` to the underlying listener. I took a quick look at the source and it doesn't seem to use it either, though I'm not entirely sure. What I do know for sure is that using a passive listener for scroll is generally a performance best practice, even if in this particular case there isn't much to worry about. That's why I went with a custom event listener instead.
+AFAIK it doesn't let you pass `passive: true` to the underlying listener. I took a quick look at the source and it doesn't seem to use it either, though I'm not entirely sure. What I do know for sure is that using a passive listener for scroll is generally a performance best practice, even if in this particular case one might argue there isn't much to worry about. That's why I went with a custom event listener instead.
 
 ```ts
 $effect(() => {
@@ -67,7 +67,7 @@ $effect(() => {
 });
 ```
 
-One subtlety you might notice: `removeEventListener` doesn't pass the same options as `addEventListener`, which is generally required to correctly match and remove a listener. That was my assumption too, but TypeScript warned me those options weren't accepted. I looked into why and it turns out that's expected (see this [TypeScript issue](https://github.com/microsoft/TypeScript/issues/32912)). [MDN's docs on matching listeners for removal](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener#matching_event_listeners_for_removal) explain it well: only `capture` matters for matching, not `passive`, so passing `false` here is just being explicit about `capture` rather than relying on its default.
+In this effect I add and remove a scroll listener but you might notice a subtlety: `removeEventListener` doesn't pass the same options as `addEventListener`, which is generally required to correctly match and remove a listener. That was my assumption too, but TypeScript warned me those options weren't accepted. I looked into why and it turns out that's expected (see this [issue](https://github.com/microsoft/TypeScript/issues/32912)). Searching further I figured out [MDN's docs](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener#matching_event_listeners_for_removal) explain it well: only `capture` matters for removal matching, not `passive`, so passing `false` here is just being explicit about `capture` rather than relying on its default.
 
 ---
 
@@ -77,7 +77,7 @@ It's common to see these bars track the full page scroll, but I wanted it to ref
 
 So instead I pass an `anchor` element (the end of the article), and compute how much of the scroll is "left" once you get there:
 
-```ts
+```javascript
 const delta = document.documentElement.scrollHeight - anchor.offsetTop;
 const scrollLength = anchor.offsetTop - delta;
 const y = (window.scrollY * 100) / scrollLength;
@@ -85,11 +85,17 @@ const y = (window.scrollY * 100) / scrollLength;
 
 `delta` is everything below the anchor (footer included). Subtracting it from `anchor.offsetTop` gives the actual scroll distance that corresponds to "reading the article", so the bar hits 100% right when you reach the end, not somewhere before it because of the footer.
 
+Once I got the percentage of the progression (`y`), I could apply it to the state value of the `progress` element while capping it to avoid overflow.
+
+```javascript
+value = Math.min(100, Math.floor(y));
+```
+
 ---
 
 ## Styling
 
-I used a native `<progress>` element instead of a styled `div`. Free accessibility semantics, and it already looks like a progress bar. I would have expected `accent-color` to be enough to style it, but it wasn't. I found the solution on [Stack Overflow](https://stackoverflow.com/a/76860350/5404186), which I tailored for my website:
+I used a native `<progress>` element instead of a styled `div`. Free accessibility semantics, and it, well, looks like a progress bar. I would have expected `accent-color` to be enough to style it, but it wasn't. I found the solution on [Stack Overflow](https://stackoverflow.com/a/76860350/5404186), which I tailored for my website:
 
 ```scss
 progress {

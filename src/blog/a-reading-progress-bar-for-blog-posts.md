@@ -2,7 +2,7 @@
 path: "/blog/a-progress-bar-for-blog-posts"
 date: "2026-07-02"
 title: A Progress Bar for Blog Posts
-description: "Displaying how much of an article is left to read with a small Svelte component"
+description: "Displaying how much of an article is left to read with a small Svelte component."
 tags: "#webdev #svelte #javascript #css"
 image: "https://daviddalbusco.com/assets/images/and-machines-8gqqtZstztc-unsplash.jpg"
 ---

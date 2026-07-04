@@ -1,6 +1,4 @@
 <script lang="ts">
-	import '../../theme/_grid.scss';
-
 	import type { PageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
 	import Work from '$lib/components/Work.svelte';

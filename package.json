@@ -19,10 +19,17 @@
 		"lint": "prettier --check . && eslint .",
 		"lint:fix": "prettier --check . && eslint . --fix",
 		"format": "prettier --write .",
-		"fmt": "pnpm run format"
+		"fmt": "pnpm run format",
+		"e2e": "NODE_ENV=development playwright test",
+		"e2e:ci": "playwright test --reporter=html",
+		"e2e:snapshots": "playwright test --update-snapshots --reporter=list",
+		"e2e:snapshots:local": "NODE_ENV=development playwright test --update-snapshots --reporter=list",
+		"e2e:report": "playwright show-report",
+		"e2e:playwright:install": "playwright install chromium --with-deps"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@playwright/test": "^1.61.1",
 		"@shikijs/langs": "^4.3.0",
 		"@shikijs/themes": "^4.3.0",
 		"@sveltejs/adapter-static": "^3.0.10",

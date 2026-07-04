@@ -51,9 +51,7 @@ const shiki = createHighlighterCoreSync({
 const metadataRegex = /^---((.|\n)*?)---/g;
 
 export const list = <T>({ path }: { path: 'portfolio' | 'blog' }): Promise<MarkdownData<T>[]> => {
-	const promises: Promise<MarkdownData<T>>[] = listSlugs({ path }).map(({ slug }: Slug) =>
-		get({ slug, path })
-	);
+	const promises = listSlugs({ path }).map(({ slug }: Slug) => get<T>({ slug, path }));
 
 	return Promise.all(promises);
 };
@@ -65,7 +63,7 @@ export const get = async <T>({
 	slug: string;
 	path: 'portfolio' | 'blog';
 }): Promise<MarkdownData<T>> => {
-	const metadata: T = buildMetadata({ slug, path }) || ({} as T);
+	const metadata = buildMetadata<T>({ slug, path }) || ({} as T);
 	const content = renderHTML({ slug, path });
 	return { metadata, content, slug };
 };
@@ -77,14 +75,14 @@ const buildMetadata = <T>({
 	slug: string;
 	path: 'portfolio' | 'blog';
 }): T | undefined => {
-	const content: string = readFile({ path, slug });
+	const content = readFile({ path, slug });
 
-	const rawMetdata: string[] | undefined = metadataRegex
+	const rawMetdata = metadataRegex
 		.exec(content)?.[1]
 		?.split('\n')
 		?.filter((value: string) => value !== '');
 
-	return rawMetdata?.reduce((acc: T, value: string) => {
+	return rawMetdata?.reduce<T>((acc: T, value: string) => {
 		const [key, ...rest]: string[] = value.split(':');
 
 		const obj: Record<string, string> = {};

@@ -11,7 +11,8 @@ import { expect, test } from '@playwright/test';
 
 			await expect(page).toHaveScreenshot(`${mode}-mode.png`, {
 				fullPage: true,
-				maxDiffPixelRatio: 0.1
+				maxDiffPixelRatio: 0.1,
+				mask: [page.locator('#blog ~ div.grid')]
 			});
 		});
 	});

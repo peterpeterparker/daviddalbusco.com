@@ -8,7 +8,7 @@
 	};
 </script>
 
-<Section background="var(--color-tertiary)" color="var(--color-tertiary-contrast)">
+<Section background="var(--color-primary)" color="var(--color-primary-contrast)">
 	<h2 id="talks">Talks</h2>
 
 	<p>

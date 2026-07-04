@@ -22,7 +22,7 @@
 
 	const onScroll = () => {
 		const scrolledSize =
-			window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+			window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop ?? 0;
 
 		if (scrolledSize > 0) {
 			return;

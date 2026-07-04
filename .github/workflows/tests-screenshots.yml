@@ -13,11 +13,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Build
-        run: pnpm build
-
       - name: Prepare
         uses: ./.github/actions/prepare
+
+      - name: Build # Required to run pnpm preview
+        run: pnpm build
 
       - name: Prepare Playwright
         run: pnpm run e2e:playwright:install

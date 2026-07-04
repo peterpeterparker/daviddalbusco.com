@@ -11,7 +11,7 @@
 	}
 
 	let { data }: Props = $props();
-	let posts: MarkdownDataWithoutContent<BlogMetadata>[] = $derived(data.posts);
+	let posts = $derived<MarkdownDataWithoutContent<BlogMetadata>[]>(data.posts);
 </script>
 
 <svelte:head>

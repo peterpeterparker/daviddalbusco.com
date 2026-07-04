@@ -1,6 +1,6 @@
 import { env } from '$env/dynamic/public';
 import type { MarkdownData } from '$lib/types/markdown';
-import type { Slug } from '$lib/types/slug';
+import type { Slug, SlugPath } from '$lib/types/slug';
 import { listSlugs } from '$plugins/slug.plugin';
 import bash from '@shikijs/langs/bash';
 import css from '@shikijs/langs/css';
@@ -50,7 +50,7 @@ const shiki = createHighlighterCoreSync({
 // Remove frontmatter YAML - https://stackoverflow.com/a/33537453/5404186
 const metadataRegex = /^---((.|\n)*?)---/g;
 
-export const list = <T>({ path }: { path: 'portfolio' | 'blog' }): Promise<MarkdownData<T>[]> => {
+export const list = <T>({ path }: { path: SlugPath }): Promise<MarkdownData<T>[]> => {
 	const promises = listSlugs({ path }).map(({ slug }: Slug) => get<T>({ slug, path }));
 
 	return Promise.all(promises);
@@ -61,20 +61,14 @@ export const get = async <T>({
 	path
 }: {
 	slug: string;
-	path: 'portfolio' | 'blog';
+	path: SlugPath;
 }): Promise<MarkdownData<T>> => {
 	const metadata = buildMetadata<T>({ slug, path }) || ({} as T);
 	const content = renderHTML({ slug, path });
 	return { metadata, content, slug };
 };
 
-const buildMetadata = <T>({
-	slug,
-	path
-}: {
-	slug: string;
-	path: 'portfolio' | 'blog';
-}): T | undefined => {
+const buildMetadata = <T>({ slug, path }: { slug: string; path: SlugPath }): T | undefined => {
 	const content = readFile({ path, slug });
 
 	const rawMetdata = metadataRegex
@@ -92,7 +86,7 @@ const buildMetadata = <T>({
 	}, {} as T);
 };
 
-const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }): string => {
+const renderHTML = ({ slug, path }: { slug: string; path: SlugPath }): string => {
 	const md: Remarkable = new Remarkable({
 		html: true,
 		xhtmlOut: true,
@@ -159,7 +153,7 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 	return md.render(cleanContent);
 };
 
-const readFile = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }): string => {
+const readFile = ({ slug, path }: { slug: string; path: SlugPath }): string => {
 	const buffer = readFileSync(`src/${path}/${slug}.md`);
 	return buffer.toString('utf-8');
 };

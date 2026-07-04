@@ -16,3 +16,11 @@ Thumbs.db
 build/
 package/
 worker/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+tmp/

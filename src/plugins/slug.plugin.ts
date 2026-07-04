@@ -1,8 +1,8 @@
-import type { Slug } from '$lib/types/slug';
+import type { Slug, SlugPath } from '$lib/types/slug';
 import { readdirSync } from 'fs';
 import { parse } from 'path';
 
-export const listSlugs = ({ path }: { path: 'portfolio' | 'blog' }): Slug[] => {
+export const listSlugs = ({ path }: { path: SlugPath }): Slug[] => {
 	return readdirSync(`src/${path}`)
 		.filter((fileName) => /.+\.md$/.test(fileName))
 		.map((fileName) => ({

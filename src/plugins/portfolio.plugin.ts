@@ -3,12 +3,12 @@ import type { Portfolio, PortfolioMetadata } from '$lib/types/portfolio';
 import { get, list } from '$plugins/markdown.plugin';
 
 export const listPortfolio = async (): Promise<Portfolio> => {
-	const results: MarkdownData<PortfolioMetadata>[] = await list<PortfolioMetadata>({
+	const results = await list<PortfolioMetadata>({
 		path: 'portfolio'
 	});
 
-	const portfolio: Portfolio = results.reduce(
-		(acc: Portfolio, data: MarkdownData<PortfolioMetadata>) => {
+	return results.reduce<Portfolio>(
+		(acc, data) => {
 			const { metadata } = data;
 			const { type } = metadata;
 
@@ -36,11 +36,9 @@ export const listPortfolio = async (): Promise<Portfolio> => {
 			play: []
 		}
 	);
-
-	return portfolio;
 };
 
-export const getPortfolio = async ({
+export const getPortfolio = ({
 	slug
 }: Record<string, string>): Promise<MarkdownData<PortfolioMetadata>> =>
 	get<PortfolioMetadata>({ slug, path: 'portfolio' });

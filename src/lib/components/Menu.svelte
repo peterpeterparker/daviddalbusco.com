@@ -55,6 +55,8 @@
 
 			<a href="/blog" onclick={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Blog</h2></a>
 
+			<a href="/trails" onclick={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Trails</h2></a>
+
 			<a href="/#contact" onclick={navigateAndTrackEvent} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
 			>

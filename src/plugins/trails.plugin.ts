@@ -1,6 +1,6 @@
 import type { MarkdownData } from '$lib/types/markdown';
-import { get, list } from '$plugins/markdown.plugin';
 import type { TrailMetadata } from '$lib/types/trail';
+import { get, list } from '$plugins/markdown.plugin';
 
 export const listTrails = async (): Promise<MarkdownData<TrailMetadata>[]> => {
 	const results = await list<TrailMetadata>({ path: 'trails' });

@@ -36,8 +36,15 @@
 		const map = new mapkit.Map(anchor);
 
 		const markers = annotations.map(
-			({ lat, lon, title }) =>
-				new mapkit.MarkerAnnotation(new mapkit.Coordinate(lat, lon), { title })
+			({ location: {lat, lon}, title, pathname }) =>
+				new mapkit.MarkerAnnotation(new mapkit.Coordinate(lat, lon), { title, callout: {
+                        calloutContentForAnnotation: () => {
+                            const link = document.createElement('a');
+                            link.href = pathname;
+                            link.textContent = `View ${title}`;
+                            return link;
+                        }
+                    } })
 		);
 
 		map.addAnnotations(markers);

@@ -13,7 +13,7 @@
 	let { trails }: Props = $props();
 
 	let annotations = $derived<MapAnnotation[]>(
-		trails.map(({ metadata: { title, location } }) => ({ title, ...location }))
+		trails.map(({ slug, metadata: { title, location } }) => ({ title, location, pathname: slug }))
 	);
 </script>
 

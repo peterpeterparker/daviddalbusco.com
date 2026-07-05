@@ -1,5 +1,5 @@
 ---
-path: "/blog/5-lake-pizol-plus"
+path: "/trails/trail/5-lake-pizol-plus"
 date: "2026-07-03"
 title: "5-lake Pizol+"
 sport: trail

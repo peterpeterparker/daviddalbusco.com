@@ -1,9 +1,9 @@
 import type { DateString } from '$lib/types/date';
-import type { MapAnnotation } from '$lib/types/map';
+import type { MapLocation } from '$lib/types/map';
 
 export type Sport = 'trail' | 'bike' | 'gravel';
 
-export type TrailStartLocation = Omit<MapAnnotation, 'title'>;
+export type TrailStartLocation = MapLocation;
 
 export interface TrailMetadata {
 	title: string;

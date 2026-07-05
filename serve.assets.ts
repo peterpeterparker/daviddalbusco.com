@@ -9,7 +9,9 @@ Bun.serve({
 		const { pathname } = new URL(url);
 		const filePath = join(BASE_PATH, pathname);
 		const file = Bun.file(filePath);
-		return new Response(file);
+		return new Response(file, {headers: {
+			"Access-Control-Allow-Origin":"*"
+			}});
 	},
 	error(error) {
 		return new Response(`Error: ${error.message}`, { status: 404 });

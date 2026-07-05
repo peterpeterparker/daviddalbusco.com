@@ -9,6 +9,9 @@
 	import Progress from '$lib/components/Progress.svelte';
 	import { formatDate } from '$lib/utils/date.utils';
 	import { env } from '$env/dynamic/public';
+	import type {MapGpxPoints} from "$lib/types/map";
+	import {onMount} from "svelte";
+	import {loadGpx} from "$lib/services/trails.services";
 
 	interface Props {
 		data: PageData;
@@ -32,6 +35,21 @@
 	let image = $derived(
 			metadata.photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
 	);
+
+	let gpxPoints = $state<MapGpxPoints | undefined | null>(undefined);
+
+	onMount(async () => {
+		const result = await loadGpx(metadata);
+
+		if (result.status === "error") {
+			console.error(result.err);
+
+			gpxPoints = null;
+			return;
+		}
+
+		gpxPoints = result.result;
+	});
 </script>
 
 <svelte:head>

@@ -1,0 +1,42 @@
+import type { MapGpxPoint, MapGpxPoints } from '$lib/types/map';
+import type { TrailMetadata } from '$lib/types/trail';
+import { env } from '$env/dynamic/public';
+import {safeExec, type Result} from '$lib/utils/fn.utils';
+
+export const loadGpx = async (data: Pick<TrailMetadata, "gpx">): Promise<Result<MapGpxPoints>> => {
+		return await safeExec(async () => {
+			return await load(data);
+		});
+};
+
+const load = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<MapGpxPoints> => {
+	const response = await fetch(
+		gpx.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
+	);
+
+	if (!response.ok) {
+		throw new Error("Cannot fetch GPX data.");
+	}
+
+	const text = await response.text();
+
+	const parser = new DOMParser();
+	const doc = parser.parseFromString(text, 'text/xml');
+
+	const nodes = doc.querySelectorAll('trkpt');
+
+	const points: Partial<MapGpxPoint>[] = [...nodes.values()].map((node) => {
+		const lat = node.getAttribute('lat');
+		const lon = node.getAttribute('lon');
+		const ele = node.querySelector('ele')?.textContent ?? null;
+
+		return {
+			lat: lat !== null && lat.trim() !== '' ? parseFloat(lat) : undefined,
+			lon: lon !== null && lon.trim() !== '' ? parseFloat(lon) : undefined,
+			ele: ele !== null && ele.trim() !== '' ? parseFloat(ele) : undefined
+		};
+	});
+
+
+	return points.filter(({lat, lon, ele}) => lat !== undefined && lon !== undefined && ele !== undefined) as MapGpxPoints;
+};

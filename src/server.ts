@@ -24,6 +24,8 @@ export default {
 		const { pathname } = URL.parse(request.url) ?? { pathname: undefined };
 		const cache = pathname !== undefined ? ADDITIONAL_HEADERS[extname(pathname)] : undefined;
 
+		// TODO: Access-Control-Allow-Origin for GPX
+
 		return {
 			...rest,
 			headers: {

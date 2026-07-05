@@ -3,6 +3,7 @@
 	import type { BlogMetadata } from '$lib/types/blog';
 	import Card from '$lib/components/Card.svelte';
 	import { env } from '$env/dynamic/public';
+	import { formatDate } from '$lib/utils/date.utils';
 
 	interface Props {
 		post: MarkdownDataWithoutContent<BlogMetadata>;
@@ -25,11 +26,7 @@
 	<h3>{title}</h3>
 	<p>{description}</p>
 
-	<p class="date">
-		{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(
-			new Date(postDate)
-		)}
-	</p>
+	<p class="date">{formatDate(postDate)}</p>
 </Card>
 
 <style lang="scss">

@@ -1,7 +1,9 @@
+import type { DateString } from '$lib/types/date';
+
 export interface BlogMetadata {
 	title: string;
 	description: string;
-	date: string;
+	date: DateString;
 	tags: string;
 	image: string;
 	canonical: string;

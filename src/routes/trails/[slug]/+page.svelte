@@ -9,9 +9,10 @@
 	import Progress from '$lib/components/Progress.svelte';
 	import { formatDate } from '$lib/utils/date.utils';
 	import { env } from '$env/dynamic/public';
-	import type {MapGpxPoints} from "$lib/types/map";
-	import {onMount} from "svelte";
-	import {loadGpx} from "$lib/services/trails.services";
+	import type { MapGpxPoints } from '$lib/types/map';
+	import { onMount } from 'svelte';
+	import { loadGpx } from '$lib/services/trails.services';
+	import Map from "$lib/components/Map.svelte";
 
 	interface Props {
 		data: PageData;
@@ -25,15 +26,12 @@
 	let content = $derived(post.content);
 	let metadata = $derived(post.metadata);
 
-	let {
-		title,
-		date: trailDate,
-	} = $derived(metadata);
+	let { title, date: trailDate } = $derived(metadata);
 
 	let anchor = $state<HTMLElement | undefined>(undefined);
 
 	let image = $derived(
-			metadata.photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
+		metadata.photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
 	);
 
 	let gpxPoints = $state<MapGpxPoints | undefined | null>(undefined);
@@ -41,7 +39,7 @@
 	onMount(async () => {
 		const result = await loadGpx(metadata);
 
-		if (result.status === "error") {
+		if (result.status === 'error') {
 			console.error(result.err);
 
 			gpxPoints = null;
@@ -70,6 +68,8 @@
 	<h1>{title}</h1>
 
 	<p class="date">{formatDate(trailDate)}</p>
+
+	<Map points={gpxPoints}/>
 
 	<article>
 		{@html content}

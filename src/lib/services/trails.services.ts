@@ -1,12 +1,12 @@
+import { env } from '$env/dynamic/public';
 import type { MapGpxPoint, MapGpxPoints } from '$lib/types/map';
 import type { TrailMetadata } from '$lib/types/trail';
-import { env } from '$env/dynamic/public';
-import {safeExec, type Result} from '$lib/utils/fn.utils';
+import { safeExec, type Result } from '$lib/utils/fn.utils';
 
-export const loadGpx = async (data: Pick<TrailMetadata, "gpx">): Promise<Result<MapGpxPoints>> => {
-		return await safeExec(async () => {
-			return await load(data);
-		});
+export const loadGpx = async (data: Pick<TrailMetadata, 'gpx'>): Promise<Result<MapGpxPoints>> => {
+	return await safeExec(async () => {
+		return await load(data);
+	});
 };
 
 const load = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<MapGpxPoints> => {
@@ -15,7 +15,7 @@ const load = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<MapGpxPoints> 
 	);
 
 	if (!response.ok) {
-		throw new Error("Cannot fetch GPX data.");
+		throw new Error('Cannot fetch GPX data.');
 	}
 
 	const text = await response.text();
@@ -37,6 +37,7 @@ const load = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<MapGpxPoints> 
 		};
 	});
 
-
-	return points.filter(({lat, lon, ele}) => lat !== undefined && lon !== undefined && ele !== undefined) as MapGpxPoints;
+	return points.filter(
+		({ lat, lon, ele }) => lat !== undefined && lon !== undefined && ele !== undefined
+	) as MapGpxPoints;
 };

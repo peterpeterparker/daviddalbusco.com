@@ -8,6 +8,7 @@
 	import '../../../theme/_blog.scss';
 	import '../../../theme/_code.scss';
 	import Progress from '$lib/components/Progress.svelte';
+	import { formatDate } from '$lib/utils/date.utils';
 
 	interface Props {
 		data: PageData;
@@ -62,11 +63,7 @@
 	<h1>{title}</h1>
 	<h3>{description}</h3>
 
-	<p class="date">
-		{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(
-			new Date(postDate)
-		)}
-	</p>
+	<p class="date">{formatDate(postDate)}</p>
 	<p>{tags}</p>
 
 	<article>

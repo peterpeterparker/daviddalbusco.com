@@ -5,6 +5,6 @@ export type Sport = 'trail' | 'bike' | 'gravel';
 export interface TrailMetadata {
 	title: string;
 	date: DateString;
-	image: string;
+	photos: [string, ...string[]];
 	sport: Sport;
 }

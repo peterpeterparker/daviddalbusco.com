@@ -3,7 +3,9 @@ path: "/blog/5-lake-pizol-plus"
 date: "2026-07-03"
 title: "5-lake Pizol+"
 sport: trail
-image: "https://daviddalbusco.com/assets/images/logan-voss-1QlMVjKbJrY-unsplash.jpg"
+photos: 
+  - "https://daviddalbusco.com/assets/images/logan-voss-1QlMVjKbJrY-unsplash.jpg"
+  - "https://daviddalbusco.com/assets/images/boliviainteligente-uiJNYtAbfVU-unsplash.jpg"
 ---
 
 So, I spent the day in the fog 😄. I might redo it some day, the all view should be amazing, the lake and foggy scenery was already great.

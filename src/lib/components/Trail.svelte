@@ -16,7 +16,7 @@
 
 	let title = $derived(metadata.title);
 	let image = $derived(
-		metadata.image.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
+		metadata.photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
 	);
 	let trailDate = $derived(metadata.date);
 </script>

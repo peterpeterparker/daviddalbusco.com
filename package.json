@@ -43,6 +43,7 @@
 		"eslint": "^10.6.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.20.0",
+		"fast-xml-parser": "^5.9.3",
 		"globals": "^17.7.0",
 		"kyushu-types": "0.2.1",
 		"prettier": "^3.9.3",

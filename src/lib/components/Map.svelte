@@ -2,10 +2,17 @@
 	import type { Attachment } from 'svelte/attachments';
 	import { load } from '@apple/mapkit-loader';
 	import { env } from '$env/dynamic/public';
+	import type { MapAnnotation } from '$lib/types/map';
 
 	// References:
 	// https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/
 	// https://github.com/apple/mapkit-loader/blob/main/src/index.ts
+
+	interface Props {
+		annotations: MapAnnotation[];
+	}
+
+	let { annotations }: Props = $props();
 
 	// https://developer.apple.com/documentation/mapkitjs/loading-the-latest-version-of-mapkit-js#Select-MapKit-JS-libraries
 	type Libraries =
@@ -26,14 +33,19 @@
 			token: env.PUBLIC_MAPKIT_TOKEN
 		});
 
-		const map = new mapkit.Map(anchor, {
-			center: new mapkit.Coordinate(37.7456, -119.5936),
-			cameraDistance: 28000
-		});
+		const map = new mapkit.Map(anchor);
+
+		const markers = annotations.map(
+			({ lat, lon, title }) =>
+				new mapkit.MarkerAnnotation(new mapkit.Coordinate(lat, lon), { title })
+		);
+
+		map.addAnnotations(markers);
+		map.showItems(markers);
 	};
 
 	const attachMap: Attachment<HTMLElement> = (element) => {
-		// Unawated promise. @attach does not support promises but, not relevant here
+		// Unawaited promise. @attach does not support promises but, not relevant here
 		loadMap({ anchor: element });
 	};
 </script>

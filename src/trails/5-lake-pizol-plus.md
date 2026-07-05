@@ -3,7 +3,8 @@ path: "/blog/5-lake-pizol-plus"
 date: "2026-07-03"
 title: "5-lake Pizol+"
 sport: trail
-photos: 
+gpx: "https://daviddalbusco.com/assets/gpx/5_lake_Pizol_.gpx"
+photos:
   - "https://daviddalbusco.com/assets/photos/CAyvjKKVc1WKL1xBJeilLO9DIR4akZ8kB3Rlnj_s4lI-2048x1397.jpg"
   - "https://daviddalbusco.com/assets/photos/0csHjVPXC6juHd_Al5WEoJ9qJ8YhLj-86kuuZCNm90w-2048x1536.jpg"
   - "https://daviddalbusco.com/assets/photos/7Y5H77AvRMJKbaZPJ0uzHv1p0McPP-delhMP1b3QfMc-2048x1536.jpg"

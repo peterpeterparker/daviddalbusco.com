@@ -93,7 +93,7 @@ const buildMetadata = <T>({ slug, path }: { slug: string; path: SlugPath }): T |
 	for (const line of rawMetdata ?? []) {
 		const [key, ...rest] = line.split(':');
 
-		if (toValue(rest) === "") {
+		if (toValue(rest) === '') {
 			arrayKey = key;
 		} else if (arrayKey !== undefined) {
 			const arrayItemMatch = line.match(/^\s*-\s*(.+)$/);
@@ -110,7 +110,7 @@ const buildMetadata = <T>({ slug, path }: { slug: string; path: SlugPath }): T |
 	// Optimistically typed. irl I would use e.g. Zod here.
 	return {
 		...basicMetadata,
-		...arrayMetadata,
+		...arrayMetadata
 	} as T;
 };
 

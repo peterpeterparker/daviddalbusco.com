@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
 	import Trails from '$lib/components/Trails.svelte';
-	import type {MarkdownDataWithoutContent} from "$lib/types/markdown";
+	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
 	import type { PageData } from './$types';
-	import type {TrailMetadata} from "$lib/types/trail";
+	import type { TrailMetadata } from '$lib/types/trail';
 
 	interface Props {
 		data: PageData;

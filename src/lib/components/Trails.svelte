@@ -1,15 +1,20 @@
 <script lang="ts">
 	import Map from '$lib/components/Map.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import type {MarkdownDataWithoutContent} from "$lib/types/markdown";
-	import type {TrailMetadata} from "$lib/types/trail";
-	import Trail from "$lib/components/Trail.svelte";
+	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
+	import type { TrailMetadata } from '$lib/types/trail';
+	import Trail from '$lib/components/Trail.svelte';
+	import type { MapAnnotation } from '$lib/types/map';
 
 	interface Props {
 		trails: MarkdownDataWithoutContent<TrailMetadata>[];
 	}
 
-	let {trails}: Props = $props();
+	let { trails }: Props = $props();
+
+	let annotations = $derived<MapAnnotation[]>(
+		trails.map(({ metadata: { title, location } }) => ({ title, ...location }))
+	);
 </script>
 
 <Section background="var(--color-primary)" color="var(--color-primary-contrast)">
@@ -23,7 +28,7 @@
 	</p>
 
 	<div class="map">
-		<Map />
+		<Map {annotations} />
 	</div>
 
 	<div class="grid">

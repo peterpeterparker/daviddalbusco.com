@@ -2,8 +2,8 @@
 	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
 	import Card from '$lib/components/Card.svelte';
 	import { env } from '$env/dynamic/public';
-	import type {TrailMetadata} from "$lib/types/trail";
-	import {formatDate} from "$lib/utils/date.utils";
+	import type { TrailMetadata } from '$lib/types/trail';
+	import { formatDate } from '$lib/utils/date.utils';
 
 	interface Props {
 		trail: MarkdownDataWithoutContent<TrailMetadata>;

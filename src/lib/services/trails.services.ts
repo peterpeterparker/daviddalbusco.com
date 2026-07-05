@@ -1,8 +1,8 @@
 import { env } from '$env/dynamic/public';
 import type { MapGpxPoint, MapGpxPoints } from '$lib/types/map';
 import type { TrailMetadata } from '$lib/types/trail';
+import { calculateDistance } from '$lib/utils/distance.utils';
 import { safeExec, type Result } from '$lib/utils/fn.utils';
-import {calculateDistance} from "$lib/utils/distance.utils";
 
 export const loadGpx = async (data: Pick<TrailMetadata, 'gpx'>): Promise<Result<MapGpxPoints>> => {
 	return await safeExec(async () => {
@@ -26,7 +26,7 @@ const load = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<MapGpxPoints> 
 
 	const nodes = doc.querySelectorAll('trkpt');
 
-	const points: Partial<MapGpxPoint>[] = [...nodes.values()].map((node) => {
+	const rawPoints: Partial<MapGpxPoint>[] = [...nodes.values()].map((node) => {
 		const lat = node.getAttribute('lat');
 		const lon = node.getAttribute('lon');
 		const ele = node.querySelector('ele')?.textContent ?? null;
@@ -38,12 +38,11 @@ const load = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<MapGpxPoints> 
 		};
 	});
 
-	const pointsWithoutDistance = points.filter(
+	const points = rawPoints.filter(
 		({ lat, lon, ele }) => lat !== undefined && lon !== undefined && ele !== undefined
-	) as Omit<MapGpxPoint, "distance">[];
+	) as Omit<MapGpxPoint, 'distance'>[];
 
-
-	const withDistance = (points: Omit<MapGpxPoint, 'distance'>[]): MapGpxPoints => {
+	const extendGpxPoints = (points: Omit<MapGpxPoint, 'distance'>[]): MapGpxPoints => {
 		let total = 0;
 
 		return points.map((point, i) => {
@@ -53,9 +52,9 @@ const load = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<MapGpxPoints> 
 					endWaypoint: point
 				});
 			}
-			return { ...point, distance: total };
+			return { ...point, id: window.crypto.randomUUID(), distance: total };
 		});
 	};
 
-	return withDistance(pointsWithoutDistance);
+	return extendGpxPoints(points);
 };

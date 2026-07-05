@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
-	import { load, type Map, type MapKit } from '@apple/mapkit-loader';
+	import { load, type Map, type MapKit, type MarkerAnnotation } from '@apple/mapkit-loader';
 	import { env } from '$env/dynamic/public';
-    import type {MapAnnotation, MapGpxPoints} from '$lib/types/map';
+	import type { MapAnnotation, MapGpxPointId, MapGpxPoints } from '$lib/types/map';
+	import { untrack } from 'svelte';
 
 	// References:
 	// https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/
@@ -10,10 +11,11 @@
 
 	interface Props {
 		annotations?: MapAnnotation[];
-        points?: MapGpxPoints | null;
+		points?: MapGpxPoints | null;
+		selectedPointId?: MapGpxPointId;
 	}
 
-	let { annotations, points }: Props = $props();
+	let { annotations, points, selectedPointId }: Props = $props();
 
 	// https://developer.apple.com/documentation/mapkitjs/loading-the-latest-version-of-mapkit-js#Select-MapKit-JS-libraries
 	type Libraries =
@@ -54,15 +56,15 @@
 			return;
 		}
 
-        const {mapkit, map} = kit;
+		const { mapkit, map } = kit;
 
 		if (map.annotations !== null) {
 			map.removeAnnotations(map.annotations);
 		}
 
-        if (annotations === undefined) {
-            return;
-        }
+		if (annotations === undefined) {
+			return;
+		}
 
 		const markers = annotations.map(
 			({ location: { lat, lon }, title, pathname }) =>
@@ -81,53 +83,101 @@
 
 		map.addAnnotations(markers);
 
-        centerMap();
+		centerMap();
 	});
 
-    $effect(() => {
-        if (kit === undefined) {
-            return;
-        }
+	$effect(() => {
+		if (kit === undefined) {
+			return;
+		}
 
-        if (points === undefined || points === null) {
-            return;
-        }
+		if (points === undefined || points === null) {
+			return;
+		}
 
-        const {mapkit, map} = kit;
+		const { mapkit, map } = kit;
 
-        if (map.overlays !== null) {
-            map.removeOverlays(map.overlays);
-        }
+		if (map.overlays !== null) {
+			map.removeOverlays(map.overlays);
+		}
 
-        const coordinates = points.map(({ lat, lon }) => new mapkit.Coordinate(lat, lon));
+		const coordinates = points.map(({ lat, lon }) => new mapkit.Coordinate(lat, lon));
 
-        const route = new mapkit.PolylineOverlay(coordinates, {
-            style: new mapkit.Style({
-                lineWidth: 4,
-                strokeColor: '#ff65a9',
-                lineJoin: 'round',
-                lineCap: 'round'
-            })
-        });
+		const route = new mapkit.PolylineOverlay(coordinates, {
+			style: new mapkit.Style({
+				lineWidth: 4,
+				strokeColor: '#ff65a9',
+				lineJoin: 'round',
+				lineCap: 'round'
+			})
+		});
 
-        map.addOverlay(route);
+		map.addOverlay(route);
 
-        centerMap();
-    });
+		centerMap();
+	});
 
-    const centerMap = () => {
-        if (kit === undefined) {
-            return;
-        }
+	// Not a state on purpose. Used for logic not rendering.
+	let selectedPoint: MarkerAnnotation | undefined | null = undefined;
 
-        const { map } = kit;
+	$effect(() => {
+		if (kit === undefined) {
+			return;
+		}
 
-        const items = [...(map.annotations ?? []), ...(map.overlays ?? [])];
+		if (points === undefined || points === null) {
+			return;
+		}
 
-        if (items.length > 0) {
-            map.showItems(items);
-        }
-    }
+		const { mapkit, map } = kit;
+
+		const clear = () => {
+			if (selectedPoint !== undefined && selectedPoint !== null) {
+				map.removeAnnotation(selectedPoint);
+				selectedPoint = null;
+			}
+		};
+
+		if (selectedPointId === undefined) {
+			clear();
+			return;
+		}
+
+		const point = points.find(({ id }) => id === selectedPointId);
+
+		if (point === undefined) {
+			return;
+		}
+
+		const coordinate = new mapkit.Coordinate(point.lat, point.lon);
+
+		if (selectedPoint === undefined || selectedPoint === null) {
+			selectedPoint = new mapkit.MarkerAnnotation(coordinate, {
+				color: '#ff65a9',
+				glyphText: '●'
+			});
+
+			map.addAnnotation(selectedPoint);
+
+			return;
+		}
+
+		selectedPoint.coordinate = coordinate;
+	});
+
+	const centerMap = () => {
+		if (kit === undefined) {
+			return;
+		}
+
+		const { map } = kit;
+
+		const items = [...(map.annotations ?? []), ...(map.overlays ?? [])];
+
+		if (items.length > 0) {
+			map.showItems(items);
+		}
+	};
 </script>
 
 <article {@attach attachMap}></article>

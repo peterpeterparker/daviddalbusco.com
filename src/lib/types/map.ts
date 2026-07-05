@@ -3,7 +3,9 @@ export interface MapLocation {
 	lon: number;
 }
 
-export type MapGpxPoint = MapLocation & { ele: number, distance: number };
+export type MapGpxPointId = `${string}-${string}-${string}-${string}-${string}`;
+
+export type MapGpxPoint = MapLocation & { id: MapGpxPointId; ele: number; distance: number };
 
 export type MapGpxPoints = MapGpxPoint[];
 

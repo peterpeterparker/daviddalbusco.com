@@ -9,11 +9,11 @@
 	import Progress from '$lib/components/Progress.svelte';
 	import { formatDate } from '$lib/utils/date.utils';
 	import { env } from '$env/dynamic/public';
-	import type { MapGpxPoints } from '$lib/types/map';
+	import type { MapGpxPointId, MapGpxPoints } from '$lib/types/map';
 	import { onMount } from 'svelte';
 	import { loadGpx } from '$lib/services/trails.services';
-	import Map from "$lib/components/Map.svelte";
-	import GpxChart from "$lib/components/GpxChart.svelte";
+	import Map from '$lib/components/Map.svelte';
+	import GpxChart from '$lib/components/GpxChart.svelte';
 
 	interface Props {
 		data: PageData;
@@ -36,6 +36,7 @@
 	);
 
 	let gpxPoints = $state<MapGpxPoints | undefined | null>(undefined);
+	let gpxPointId = $state<MapGpxPointId | undefined>(undefined);
 
 	onMount(async () => {
 		const result = await loadGpx(metadata);
@@ -70,9 +71,9 @@
 
 	<p class="date">{formatDate(trailDate)}</p>
 
-	<Map points={gpxPoints}/>
+	<Map points={gpxPoints} selectedPointId={gpxPointId} />
 
-	<GpxChart gpxPoints={gpxPoints ?? []} />
+	<GpxChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
 
 	<article>
 		{@html content}

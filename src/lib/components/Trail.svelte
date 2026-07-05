@@ -21,7 +21,7 @@
 	let trailDate = $derived(metadata.date);
 </script>
 
-<Card background="transparent" cover={true} {image} path="blog" {slug}>
+<Card background="transparent" cover={true} {image} path="trails" {slug}>
 	<p>{title}</p>
 
 	<p class="date">{formatDate(trailDate)}</p>

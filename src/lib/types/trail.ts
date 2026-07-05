@@ -1,7 +1,7 @@
 import type { DateString } from '$lib/types/date';
 import type { MapLocation } from '$lib/types/map';
 
-export type Sport = 'trail' | 'bike' | 'gravel';
+export type Sport = 'trail-running' | 'cycling' | 'gravel';
 
 export type TrailStartLocation = MapLocation;
 

@@ -6,4 +6,4 @@ export interface MapLocation {
 export type MapAnnotation = {
 	location: MapLocation;
 	title: string;
-} & Pick<URL, "pathname">;
+} & Pick<URL, 'pathname'>;

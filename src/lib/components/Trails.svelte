@@ -21,10 +21,16 @@
 	<h2>Trails</h2>
 
 	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eleifend risus odio. Sed
-		nisl metus, accumsan a augue at, convallis aliquam lectus. Nulla facilisi. Aliquam cursus
-		vulputate fermentum. Proin congue id nisi sed condimentum. Vestibulum porttitor nisi leo. Donec
-		justo justo, fringilla a tristique vel, dapibus et est.
+		I'm a bit of a workaholic, but I've always been relatively sporty. It keeps the balance, I
+		guess. A few years ago I started running in the Alps 🏔️. I'm a hobbyist, so don't expect ultra
+		distances, marathon is about as far as I go. Sometimes I run elsewhere too as I bring my passion
+		with me when I (rarely) travel. Recently I also got into cycling (and, by extension, becoming a
+		mechanic apprentice 😅).
+	</p>
+
+	<p>
+		These are my trails: the GPX tracks, elevation, photos, and the occasional detour that wasn't
+		part of the plan.
 	</p>
 
 	<div class="map">

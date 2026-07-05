@@ -3,6 +3,7 @@
 	import Card from '$lib/components/Card.svelte';
 	import { env } from '$env/dynamic/public';
 	import type {TrailMetadata} from "$lib/types/trail";
+	import {formatDate} from "$lib/utils/date.utils";
 
 	interface Props {
 		trail: MarkdownDataWithoutContent<TrailMetadata>;
@@ -17,17 +18,13 @@
 	let image = $derived(
 		metadata.image.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
 	);
-	let postDate = $derived(metadata.date);
+	let trailDate = $derived(metadata.date);
 </script>
 
 <Card background="transparent" cover={true} {image} path="blog" {slug}>
 	<p>{title}</p>
 
-	<p class="date">
-		{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(
-			new Date(postDate)
-		)}
-	</p>
+	<p class="date">{formatDate(trailDate)}</p>
 </Card>
 
 <style lang="scss">

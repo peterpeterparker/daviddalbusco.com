@@ -3,11 +3,7 @@ export interface MapLocation {
 	lon: number;
 }
 
-export interface MapElevation {
-	ele: number;
-}
-
-export type MapGpxPoint = MapLocation & MapElevation;
+export type MapGpxPoint = MapLocation & { ele: number, distance: number };
 
 export type MapGpxPoints = MapGpxPoint[];
 

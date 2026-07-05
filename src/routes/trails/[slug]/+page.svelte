@@ -13,6 +13,7 @@
 	import { onMount } from 'svelte';
 	import { loadGpx } from '$lib/services/trails.services';
 	import Map from "$lib/components/Map.svelte";
+	import GpxChart from "$lib/components/GpxChart.svelte";
 
 	interface Props {
 		data: PageData;
@@ -70,6 +71,8 @@
 	<p class="date">{formatDate(trailDate)}</p>
 
 	<Map points={gpxPoints}/>
+
+	<GpxChart gpxPoints={gpxPoints ?? []} />
 
 	<article>
 		{@html content}

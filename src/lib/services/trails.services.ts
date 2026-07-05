@@ -2,6 +2,7 @@ import { env } from '$env/dynamic/public';
 import type { MapGpxPoint, MapGpxPoints } from '$lib/types/map';
 import type { TrailMetadata } from '$lib/types/trail';
 import { safeExec, type Result } from '$lib/utils/fn.utils';
+import {calculateDistance} from "$lib/utils/distance.utils";
 
 export const loadGpx = async (data: Pick<TrailMetadata, 'gpx'>): Promise<Result<MapGpxPoints>> => {
 	return await safeExec(async () => {
@@ -37,7 +38,24 @@ const load = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<MapGpxPoints> 
 		};
 	});
 
-	return points.filter(
+	const pointsWithoutDistance = points.filter(
 		({ lat, lon, ele }) => lat !== undefined && lon !== undefined && ele !== undefined
-	) as MapGpxPoints;
+	) as Omit<MapGpxPoint, "distance">[];
+
+
+	const withDistance = (points: Omit<MapGpxPoint, 'distance'>[]): MapGpxPoints => {
+		let total = 0;
+
+		return points.map((point, i) => {
+			if (i > 0) {
+				total += calculateDistance({
+					startWaypoint: points[i - 1],
+					endWaypoint: point
+				});
+			}
+			return { ...point, distance: total };
+		});
+	};
+
+	return withDistance(pointsWithoutDistance);
 };

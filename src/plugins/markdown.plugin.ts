@@ -76,14 +76,42 @@ const buildMetadata = <T>({ slug, path }: { slug: string; path: SlugPath }): T |
 		?.split('\n')
 		?.filter((value: string) => value !== '');
 
-	return rawMetdata?.reduce<T>((acc: T, value: string) => {
-		const [key, ...rest]: string[] = value.split(':');
+	const toValue = (rest: string[]): string => rest.join(':').replace(/"/g, '').trim();
+
+	const basicMetadata = rawMetdata?.reduce<Partial<T>>((acc, value) => {
+		const [key, ...rest] = value.split(':');
 
 		const obj: Record<string, string> = {};
-		obj[key] = rest.join(':').replace(/"/g, '').trim();
+		obj[key] = toValue(rest);
 
 		return { ...acc, ...obj };
-	}, {} as T);
+	}, {});
+
+	const arrayMetadata: Record<string, string[]> = {};
+	let arrayKey: string | undefined;
+
+	for (const line of rawMetdata ?? []) {
+		const [key, ...rest] = line.split(':');
+
+		if (toValue(rest) === '') {
+			arrayKey = key;
+		} else if (arrayKey !== undefined) {
+			const arrayItemMatch = line.match(/^\s*-\s*(.+)$/);
+
+			if (arrayItemMatch !== null) {
+				arrayMetadata[arrayKey] = [
+					...(arrayMetadata[arrayKey] ?? []),
+					toValue([arrayItemMatch[1]])
+				];
+			}
+		}
+	}
+
+	// Optimistically typed. irl I would use e.g. Zod here.
+	return {
+		...basicMetadata,
+		...arrayMetadata
+	} as T;
 };
 
 const renderHTML = ({ slug, path }: { slug: string; path: SlugPath }): string => {

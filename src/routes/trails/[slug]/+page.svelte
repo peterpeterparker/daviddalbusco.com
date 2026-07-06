@@ -16,6 +16,7 @@
 	import TrackChart from '$lib/components/TrackChart.svelte';
 	import TrackStats from '$lib/components/TrackStats.svelte';
 	import Sport from '$lib/components/Sport.svelte';
+	import TrailPhotos from "$lib/components/TrailPhotos.svelte";
 
 	interface Props {
 		data: ServerPageData;
@@ -30,12 +31,12 @@
 	let metadata = $derived(trail.metadata.metadata);
 	let track = $derived(trail.metadata.track);
 
-	let { title, date: trailDate, sport } = $derived(metadata);
+	let { title, date: trailDate, sport, photos } = $derived(metadata);
 
 	let anchor = $state<HTMLElement | undefined>(undefined);
 
 	let image = $derived(
-		metadata.photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
+		photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
 	);
 
 	let gpxPoints = $state<MapGpxPoints | undefined | null>(undefined);
@@ -77,6 +78,8 @@
 	<article>
 		{@html content}
 	</article>
+
+	<TrailPhotos {photos} />
 
 	<div class="actions">
 		<Link href="/trails">View all trails</Link>

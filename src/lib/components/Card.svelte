@@ -41,10 +41,6 @@
 			&:focus,
 			&:hover {
 				transform: translateY(-1rem);
-
-				img:not(:global(.cover)) {
-					transform: scale(1.25);
-				}
 			}
 		}
 	}

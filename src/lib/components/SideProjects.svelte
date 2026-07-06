@@ -1,11 +1,11 @@
 <script lang="ts">
 	import SideProject from '$lib/components/SideProject.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import type { MarkdownData } from '$lib/types/markdown';
+	import type { PageData } from '$lib/types/page';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 
 	interface Props {
-		projects: MarkdownData<PortfolioMetadata>[];
+		projects: PageData<PortfolioMetadata>[];
 		children?: import('svelte').Snippet;
 	}
 

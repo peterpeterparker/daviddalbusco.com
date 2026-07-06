@@ -1,10 +1,10 @@
 <script lang="ts">
 	import SideProjects from '$lib/components/SideProjects.svelte';
-	import type { MarkdownData } from '$lib/types/markdown';
+	import type { PageData } from '$lib/types/page';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 
 	interface Props {
-		projects: MarkdownData<PortfolioMetadata>[];
+		projects: PageData<PortfolioMetadata>[];
 	}
 
 	let { projects }: Props = $props();

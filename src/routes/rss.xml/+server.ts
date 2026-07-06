@@ -1,5 +1,5 @@
 import type { BlogMetadata } from '$lib/types/blog';
-import type { MarkdownData } from '$lib/types/markdown';
+import type { PageData } from '$lib/types/page';
 import { listBlog } from '$plugins/blog.plugin';
 
 export const prerender = true;
@@ -32,8 +32,8 @@ export const GET = async (): Promise<Response> => {
 	);
 };
 
-const blog = async ({ posts }: { posts: MarkdownData<BlogMetadata>[] }): Promise<string[]> => {
-	return posts.map(({ metadata, slug, content }: MarkdownData<BlogMetadata>) => {
+const blog = async ({ posts }: { posts: PageData<BlogMetadata>[] }): Promise<string[]> => {
+	return posts.map(({ metadata, slug, content }: PageData<BlogMetadata>) => {
 		const { title, description, date } = metadata;
 
 		return `

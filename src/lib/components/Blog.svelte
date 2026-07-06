@@ -2,11 +2,11 @@
 	import Link from '$lib/components/Link.svelte';
 	import Post from '$lib/components/Post.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
+	import type { PageDataWithoutContent } from '$lib/types/page';
 	import type { BlogMetadata } from '$lib/types/blog';
 
 	interface Props {
-		posts: MarkdownDataWithoutContent<BlogMetadata>[];
+		posts: PageDataWithoutContent<BlogMetadata>[];
 		more?: boolean;
 	}
 

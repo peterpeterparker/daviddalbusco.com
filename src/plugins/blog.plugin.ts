@@ -1,8 +1,8 @@
 import type { BlogMetadata } from '$lib/types/blog';
-import type { MarkdownData } from '$lib/types/markdown';
+import type { PageData } from '$lib/types/page';
 import { get, list } from '$plugins/markdown.plugin';
 
-export const listBlog = async (): Promise<MarkdownData<BlogMetadata>[]> => {
+export const listBlog = async (): Promise<PageData<BlogMetadata>[]> => {
 	const results = await list<BlogMetadata>({ path: 'blog' });
 
 	return results.sort(({ metadata: { date: dateA } }, { metadata: { date: dateB } }) => {
@@ -13,5 +13,5 @@ export const listBlog = async (): Promise<MarkdownData<BlogMetadata>[]> => {
 	});
 };
 
-export const getBlob = ({ slug }: Record<string, string>): Promise<MarkdownData<BlogMetadata>> =>
+export const getBlob = ({ slug }: Record<string, string>): Promise<PageData<BlogMetadata>> =>
 	get<BlogMetadata>({ slug, path: 'blog' });

@@ -1,4 +1,4 @@
-import type { MarkdownData } from '$lib/types/markdown';
+import type { PageData } from '$lib/types/page';
 import type { Portfolio, PortfolioMetadata } from '$lib/types/portfolio';
 import { get, list } from '$plugins/markdown.plugin';
 
@@ -15,8 +15,8 @@ export const listPortfolio = async (): Promise<Portfolio> => {
 			const { work, play } = acc;
 
 			const order = (
-				{ metadata: { order: orderA } }: MarkdownData<PortfolioMetadata>,
-				{ metadata: { order: orderB } }: MarkdownData<PortfolioMetadata>
+				{ metadata: { order: orderA } }: PageData<PortfolioMetadata>,
+				{ metadata: { order: orderB } }: PageData<PortfolioMetadata>
 			) => parseInt(orderA ?? '0') - parseInt(orderB ?? '0');
 
 			if (type === 'work') {
@@ -40,5 +40,5 @@ export const listPortfolio = async (): Promise<Portfolio> => {
 
 export const getPortfolio = ({
 	slug
-}: Record<string, string>): Promise<MarkdownData<PortfolioMetadata>> =>
+}: Record<string, string>): Promise<PageData<PortfolioMetadata>> =>
 	get<PortfolioMetadata>({ slug, path: 'portfolio' });

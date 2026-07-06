@@ -1,8 +1,8 @@
 import type { BlogMetadata } from '$lib/types/blog';
-import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
+import type { PageDataWithoutContent } from '$lib/types/page';
 import { listBlog } from '$plugins/blog.plugin';
 
-export const load = async (): Promise<{ posts: MarkdownDataWithoutContent<BlogMetadata>[] }> => {
+export const load = async (): Promise<{ posts: PageDataWithoutContent<BlogMetadata>[] }> => {
 	const posts = await listBlog();
 	return { posts: posts.map(({ content: _, ...rest }) => rest) };
 };

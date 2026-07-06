@@ -80,7 +80,7 @@
 	<TrailPhotos {photos} />
 
 	<div class="actions">
-		<Link href="/trails">View all trails</Link>
+		<Link href="/trails">View more trails...</Link>
 	</div>
 </Section>
 

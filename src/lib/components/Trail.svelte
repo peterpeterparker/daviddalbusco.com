@@ -5,6 +5,7 @@
 	import type { Trail } from '$lib/types/trail';
 	import { formatDate } from '$lib/utils/date.utils';
 	import Sport from '$lib/components/Sport.svelte';
+	import { assetUrl } from '$lib/utils/assets.utils';
 
 	interface Props {
 		trail: PageDataWithoutContent<Trail>;
@@ -16,9 +17,7 @@
 	let slug = $derived(trail.slug);
 
 	let title = $derived(metadata.metadata.title);
-	let image = $derived(
-		metadata.metadata.photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
-	);
+	let image = $derived(assetUrl(metadata.metadata.photos[0]));
 	let trailDate = $derived(metadata.metadata.date);
 	let sport = $derived(metadata.metadata.sport);
 </script>

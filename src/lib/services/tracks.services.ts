@@ -1,6 +1,6 @@
-import { env } from '$env/dynamic/public';
 import type { MapGpxPoint, MapGpxPoints } from '$lib/types/map';
 import type { TrailMetadata } from '$lib/types/trail';
+import { assetUrl } from '$lib/utils/assets.utils';
 import { calculateDistance } from '$lib/utils/distance.utils';
 import { safeExec, type Result } from '$lib/utils/fn.utils';
 
@@ -13,9 +13,7 @@ export const loadTrack = async (
 };
 
 const load = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<MapGpxPoints> => {
-	const response = await fetch(
-		gpx.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
-	);
+	const response = await fetch(assetUrl(gpx));
 
 	if (!response.ok) {
 		throw new Error('Cannot fetch GPX data.');

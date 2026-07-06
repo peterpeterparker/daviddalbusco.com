@@ -16,7 +16,8 @@
 	import TrackChart from '$lib/components/TrackChart.svelte';
 	import TrackStats from '$lib/components/TrackStats.svelte';
 	import Sport from '$lib/components/Sport.svelte';
-	import TrailPhotos from "$lib/components/TrailPhotos.svelte";
+	import TrailPhotos from '$lib/components/TrailPhotos.svelte';
+	import { assetUrl } from '$lib/utils/assets.utils';
 
 	interface Props {
 		data: ServerPageData;
@@ -35,9 +36,7 @@
 
 	let anchor = $state<HTMLElement | undefined>(undefined);
 
-	let image = $derived(
-		photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
-	);
+	let image = $derived(assetUrl(photos[0]));
 
 	let gpxPoints = $state<MapGpxPoints | undefined | null>(undefined);
 	let gpxPointId = $state<MapGpxPointId | undefined>(undefined);
@@ -104,7 +103,7 @@
 	.actions {
 		display: flex;
 		gap: 0.75rem;
-		margin-top: 2.45rem;
+		margin-top: 1.45rem;
 	}
 
 	section {

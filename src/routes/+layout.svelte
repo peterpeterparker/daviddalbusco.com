@@ -6,6 +6,8 @@
 	import '../theme/variables.scss';
 	import '../theme/hr.scss';
 	import '../theme/blockquote.scss';
+	import '../theme/scrollbar.scss';
+	import '../theme/selection.scss';
 
 	import { onMount } from 'svelte';
 	import { initAnalytics } from '$lib/services/analytics.services.js';

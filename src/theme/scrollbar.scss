@@ -1,0 +1,18 @@
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--section-color, black) transparent;
+}
+
+::-webkit-scrollbar {
+	width: 0.45rem;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 0;
+	background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 0;
+	background: var(--section-color, black);
+}

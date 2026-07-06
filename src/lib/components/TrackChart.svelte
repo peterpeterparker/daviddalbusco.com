@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { AreaChart, defaultChartPadding, Tooltip, type ChartState } from 'layerchart';
 	import type { MapGpxPoint, MapGpxPointId, MapGpxPoints } from '$lib/types/map';
+	import {formatDistance, formatElevation} from "$lib/utils/track.utils";
 
 	interface Props {
 		gpxPoints: MapGpxPoints;
@@ -33,8 +34,8 @@
 		{#snippet tooltip()}
 			<Tooltip.Root>
 				{#snippet children({ data }: { data: MapGpxPoint })}
-					<Tooltip.Item label="Elevation" value={`${Math.round(data.ele)}m`} />
-					<Tooltip.Item label="Distance" value={`${data.distance.toFixed(2)}km`} />
+					<Tooltip.Item label="Elevation" value={formatElevation(data.ele)} />
+					<Tooltip.Item label="Distance" value={formatDistance(data.distance)} />
 				{/snippet}
 			</Tooltip.Root>
 		{/snippet}

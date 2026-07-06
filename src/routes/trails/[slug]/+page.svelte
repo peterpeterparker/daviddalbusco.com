@@ -14,6 +14,7 @@
 	import { loadTrack } from '$lib/services/tracks.services';
 	import Map from '$lib/components/Map.svelte';
 	import TrackChart from '$lib/components/TrackChart.svelte';
+	import TrackStats from "$lib/components/TrackStats.svelte";
 
 	interface Props {
 		data: ServerPageData;
@@ -26,6 +27,7 @@
 	let slug = $derived(trail.slug);
 	let content = $derived(trail.content);
 	let metadata = $derived(trail.metadata.metadata);
+	let track = $derived(trail.metadata.track);
 
 	let { title, date: trailDate } = $derived(metadata);
 
@@ -71,9 +73,13 @@
 
 	<p class="date">{formatDate(trailDate)}</p>
 
-	<Map points={gpxPoints} selectedPointId={gpxPointId} />
+	<div class="trail">
+		<Map points={gpxPoints} selectedPointId={gpxPointId} />
 
-	<TrackChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
+		<TrackStats {track} />
+
+		<TrackChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
+	</div>
 
 	<article>
 		{@html content}
@@ -89,5 +95,18 @@
 		display: flex;
 		gap: 0.75rem;
 		margin-top: 2.45rem;
+	}
+
+	.trail {
+		display: flex;
+		flex-direction: column;
+		gap: 1.75rem;
+
+		@media screen and (min-width: 996px) {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			grid-column-gap: 1.75rem;
+			grid-row-gap: 2.5rem;
+		}
 	}
 </style>

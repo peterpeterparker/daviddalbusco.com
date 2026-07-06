@@ -97,7 +97,7 @@ const computeElevation = ({
 	}
 
 	return {
-		gain: Math.round(gain),
-		loss: Math.round(loss)
+		gain,
+		loss
 	};
 };

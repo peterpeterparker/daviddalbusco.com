@@ -16,7 +16,13 @@ export class WebsitePage {
 	}
 
 	async waitForImages() {
-		// https://github.com/microsoft/playwright/issues/6046#issuecomment-3641164427
+		// https://github.com/microsoft/playwright/issues/6046
+		const lazyImages = await this.#page.locator('img[loading="lazy"]').all();
+
+		for (const lazyImage of lazyImages) {
+			await lazyImage.scrollIntoViewIfNeeded();
+		}
+
 		await this.#page.waitForFunction(() => {
 			return Array.from(document.querySelectorAll('img')).every(
 				(img) => img.complete && img.naturalWidth > 0

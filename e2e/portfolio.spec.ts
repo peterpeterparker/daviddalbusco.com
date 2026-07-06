@@ -13,13 +13,13 @@ import { expect, test } from '@playwright/test';
 	{ title: 'Bonjour Foundation', path: 'bonjour' },
 	{ title: 'Owlly' }
 ].forEach(({ title, path }) => {
-	const client = path ?? title.toLowerCase().replace(' ', '-');
+	const client = path ?? title.toLowerCase().replaceAll(' ', '-');
 
 	test.describe(title, () => {
 		test('match screenshot', async ({ page }) => {
 			await page.goto(`/portfolio/${client}`);
 
-			await expect(page.getByText(title)).toBeVisible();
+			await expect(page.getByRole('heading', { name: title })).toBeVisible();
 
 			await expect(page).toHaveScreenshot(`${client}.png`, {
 				fullPage: true,

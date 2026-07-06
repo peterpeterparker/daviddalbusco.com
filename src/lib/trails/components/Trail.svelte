@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { PageDataWithoutContent } from '$lib/types/page';
 	import Card from '$lib/components/Card.svelte';
-	import type { Trail } from '$lib/types/trail';
+	import type { Trail } from '$lib/trails/types/trail';
 	import { formatDate } from '$lib/utils/date.utils';
-	import Sport from '$lib/components/Sport.svelte';
+	import Sport from '$lib/trails/components/Sport.svelte';
 	import { assetUrl } from '$lib/utils/assets.utils';
 
 	interface Props {

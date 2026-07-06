@@ -2,7 +2,7 @@
 	import type { Attachment } from 'svelte/attachments';
 	import { load, type Map, type MapKit, type MarkerAnnotation } from '@apple/mapkit-loader';
 	import { env } from '$env/dynamic/public';
-	import type { MapAnnotation, MapGpxPointId, MapGpxPoints } from '$lib/types/map';
+	import type { MapAnnotation, MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
 
 	// References:
 	// https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { TrailMetadata } from '$lib/types/trail';
+	import type { TrailMetadata } from '$lib/trails/types/trail';
 	import { assetUrl } from '$lib/utils/assets.utils';
 	import CardCover from '$lib/components/CardCover.svelte';
 	import type { Attachment } from 'svelte/attachments';

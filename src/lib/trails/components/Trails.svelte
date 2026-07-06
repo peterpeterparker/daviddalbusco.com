@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Map from '$lib/components/Map.svelte';
+	import Map from '$lib/trails/components/Map.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
-	import type { Trail as TrailType } from '$lib/types/trail';
-	import Trail from '$lib/components/Trail.svelte';
-	import type { MapAnnotation } from '$lib/types/map';
+	import type { Trail as TrailType } from '$lib/trails/types/trail';
+	import Trail from '$lib/trails/components/Trail.svelte';
+	import type { MapAnnotation } from '$lib/trails/types/map';
 
 	interface Props {
 		trails: MarkdownDataWithoutContent<TrailType>[];
@@ -58,7 +58,7 @@
 </Section>
 
 <style lang="scss">
-	@use '../../theme/_grid.scss';
+	@use '../../../theme/grid';
 
 	.grid {
 		margin: 0 0 2.25em;

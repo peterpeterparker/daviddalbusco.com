@@ -1,4 +1,4 @@
-import type { MapLocation } from '$lib/types/map';
+import type { MapLocation } from '$lib/trails/types/map';
 
 const toRad = (value: number): number => (value * Math.PI) / 180;
 

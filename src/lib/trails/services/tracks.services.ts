@@ -1,7 +1,7 @@
-import type { MapGpxPoint, MapGpxPoints } from '$lib/types/map';
-import type { TrailMetadata } from '$lib/types/trail';
+import type { MapGpxPoint, MapGpxPoints } from '$lib/trails/types/map';
+import type { TrailMetadata } from '$lib/trails/types/trail';
+import { calculateDistance } from '$lib/trails/utils/distance.utils';
 import { assetUrl } from '$lib/utils/assets.utils';
-import { calculateDistance } from '$lib/utils/distance.utils';
 import { safeExec, type Result } from '$lib/utils/fn.utils';
 
 export const loadTrack = async (

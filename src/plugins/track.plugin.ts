@@ -1,7 +1,7 @@
-import type { MapGpxPoint } from '$lib/types/map';
-import type { TrailElevation, TrailMetadata, TrailTrack } from '$lib/types/trail';
+import type { MapGpxPoint } from '$lib/trails/types/map';
+import type { TrailElevation, TrailMetadata, TrailTrack } from '$lib/trails/types/trail';
+import { calculateDistance } from '$lib/trails/utils/distance.utils';
 import { last } from '$lib/utils/array.utils';
-import { calculateDistance } from '$lib/utils/distance.utils';
 import { XMLParser } from 'fast-xml-parser';
 import { readFile } from 'node:fs/promises';
 

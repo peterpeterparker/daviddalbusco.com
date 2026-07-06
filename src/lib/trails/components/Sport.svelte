@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Sport } from '$lib/types/trail';
+	import type { Sport } from '$lib/trails/types/trail';
 
 	interface Props {
 		sport: Sport;

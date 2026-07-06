@@ -1,21 +1,21 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
-	import type { Trail } from '$lib/types/trail';
+	import type { Trail } from '$lib/trails/types/trail';
 	import type { PageData } from '$lib/types/page';
 	import Section from '$lib/components/Section.svelte';
 	import Link from '$lib/components/Link.svelte';
 	import '../../../theme/_code.scss';
 	import Progress from '$lib/components/Progress.svelte';
 	import { formatDate } from '$lib/utils/date.utils';
-	import type { MapGpxPointId, MapGpxPoints } from '$lib/types/map';
+	import type { MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
 	import { onMount } from 'svelte';
-	import { loadTrack } from '$lib/services/tracks.services';
-	import Map from '$lib/components/Map.svelte';
-	import TrackChart from '$lib/components/TrackChart.svelte';
-	import TrackStats from '$lib/components/TrackStats.svelte';
-	import Sport from '$lib/components/Sport.svelte';
-	import TrailPhotos from '$lib/components/TrailPhotos.svelte';
+	import { loadTrack } from '$lib/trails/services/tracks.services';
+	import Map from '$lib/trails/components/Map.svelte';
+	import TrackChart from '$lib/trails/components/TrackChart.svelte';
+	import TrackStats from '$lib/trails/components/TrackStats.svelte';
+	import Sport from '$lib/trails/components/Sport.svelte';
+	import TrailPhotos from '$lib/trails/components/TrailPhotos.svelte';
 	import { assetUrl } from '$lib/utils/assets.utils';
 
 	interface Props {

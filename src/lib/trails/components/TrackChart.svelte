@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { AreaChart, Tooltip, type ChartState } from 'layerchart';
-	import type { MapGpxPoint, MapGpxPointId, MapGpxPoints } from '$lib/types/map';
-	import { formatDistance, formatElevation } from '$lib/utils/track.utils';
+	import type { MapGpxPoint, MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
+	import { formatDistance, formatElevation } from '$lib/trails/utils/track.utils';
 
 	interface Props {
 		gpxPoints: MapGpxPoints;

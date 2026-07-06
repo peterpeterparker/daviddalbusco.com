@@ -13,16 +13,18 @@ import { expect, test } from '@playwright/test';
 	{ title: 'Bonjour Foundation', path: 'bonjour' },
 	{ title: 'Owlly' }
 ].forEach(({ title, path }) => {
-	test('match screenshot', async ({ page }) => {
-		const routePath = path ?? title.toLowerCase().replace(' ', '-');
+	const client = path ?? title.toLowerCase().replace(' ', '-');
 
-		await page.goto(`/portfolio/${routePath}`);
+	test.describe(title, () => {
+		test('match screenshot', async ({ page }) => {
+			await page.goto(`/portfolio/${client}`);
 
-		await expect(page.getByText(title)).toBeVisible();
+			await expect(page.getByText(title)).toBeVisible();
 
-		await expect(page).toHaveScreenshot(`${routePath}.png`, {
-			fullPage: true,
-			maxDiffPixelRatio: 0.1
+			await expect(page).toHaveScreenshot(`${client}.png`, {
+				fullPage: true,
+				maxDiffPixelRatio: 0.1
+			});
 		});
 	});
 });

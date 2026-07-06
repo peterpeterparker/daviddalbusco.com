@@ -14,11 +14,13 @@ import { expect, test } from '@playwright/test';
 	{ title: 'Owlly' }
 ].forEach(({ title, path }) => {
 	test('match screenshot', async ({ page }) => {
-		await page.goto(`/portfolio/${path ?? title.toLowerCase().replace(' ', '-')}`);
+		const routePath = path ?? title.toLowerCase().replace(' ', '-');
+
+		await page.goto(`/portfolio/${routePath}`);
 
 		await expect(page.getByText(title)).toBeVisible();
 
-		await expect(page).toHaveScreenshot({
+		await expect(page).toHaveScreenshot(`${routePath}.png`, {
 			fullPage: true,
 			maxDiffPixelRatio: 0.1
 		});

@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { WebsitePage } from './_page';
 
 [
 	{ title: 'DFINITY' },
@@ -16,10 +17,15 @@ import { expect, test } from '@playwright/test';
 	const client = path ?? title.toLowerCase().replaceAll(' ', '-');
 
 	test.describe(title, () => {
-		test('match screenshot', async ({ page }) => {
+		test('match screenshot', async (args) => {
+			const portfolio = new WebsitePage(args);
+			const { page } = portfolio;
+
 			await page.goto(`/portfolio/${client}`);
 
 			await expect(page.getByRole('heading', { name: title })).toBeVisible();
+
+			await portfolio.waitForImages();
 
 			await expect(page).toHaveScreenshot(`${client}.png`, {
 				fullPage: true,

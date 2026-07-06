@@ -1,16 +1,15 @@
 import { expect, test } from '@playwright/test';
+import { WebsitePage } from './_page';
 
-test('match screenshot', async ({ page }) => {
+test('match screenshot', async (args) => {
+	const blog = new WebsitePage(args);
+	const { page } = blog;
+
 	await page.goto('/blog/making-your-website-ai-ready');
 
 	await expect(page.getByText('Making Your Website AI-Ready')).toBeVisible();
 
-	// https://github.com/microsoft/playwright/issues/6046#issuecomment-3641164427
-	await page.waitForFunction(() => {
-		return Array.from(document.querySelectorAll('img')).every(
-			(img) => img.complete && img.naturalWidth > 0
-		);
-	});
+	await blog.waitForImages();
 
 	await expect(page).toHaveScreenshot({
 		fullPage: true,

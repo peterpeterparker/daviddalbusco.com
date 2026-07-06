@@ -4,7 +4,7 @@
 	import { env } from '$env/dynamic/public';
 	import type { Trail } from '$lib/types/trail';
 	import { formatDate } from '$lib/utils/date.utils';
-	import Sport from "$lib/components/Sport.svelte";
+	import Sport from '$lib/components/Sport.svelte';
 
 	interface Props {
 		trail: PageDataWithoutContent<Trail>;
@@ -36,7 +36,8 @@
 		margin: 0 0 0.45rem;
 	}
 
-	.date, .sport {
+	.date,
+	.sport {
 		font-size: 0.8rem;
 		margin: 0;
 	}

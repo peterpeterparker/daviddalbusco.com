@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { TrailTrack } from '$lib/types/trail';
-    import {formatDistance, formatElevation} from "$lib/utils/track.utils";
-    import {secondsToDuration} from "$lib/utils/date.utils";
+	import { formatDistance, formatElevation } from '$lib/utils/track.utils';
+	import { secondsToDuration } from '$lib/utils/date.utils';
 
 	interface Props {
 		track: TrailTrack;
@@ -11,7 +11,7 @@
 
 	let distance = $derived(track.distance);
 	let elevation = $derived(track.elevation);
-    let duration = $derived(track.duration);
+	let duration = $derived(track.duration);
 </script>
 
 <article>
@@ -27,11 +27,11 @@
 		<dt>Elevation loss</dt>
 		<dd>{formatElevation(elevation.loss)}</dd>
 
-        <dt>Max elevation</dt>
-        <dd>{formatElevation(elevation.max)}</dd>
+		<dt>Max elevation</dt>
+		<dd>{formatElevation(elevation.max)}</dd>
 
-        <dt>Time</dt>
-        <dd>{secondsToDuration({seconds: BigInt(duration)})}</dd>
+		<dt>Time</dt>
+		<dd>{secondsToDuration({ seconds: BigInt(duration) })}</dd>
 	</dl>
 </article>
 
@@ -41,7 +41,7 @@
 		padding: 1rem 1.25rem;
 	}
 
-    dd {
-      margin: 0 0 0.75rem;
-    }
+	dd {
+		margin: 0 0 0.75rem;
+	}
 </style>

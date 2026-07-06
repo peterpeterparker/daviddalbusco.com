@@ -14,8 +14,8 @@
 	import { loadTrack } from '$lib/services/tracks.services';
 	import Map from '$lib/components/Map.svelte';
 	import TrackChart from '$lib/components/TrackChart.svelte';
-	import TrackStats from "$lib/components/TrackStats.svelte";
-	import Sport from "$lib/components/Sport.svelte";
+	import TrackStats from '$lib/components/TrackStats.svelte';
+	import Sport from '$lib/components/Sport.svelte';
 
 	interface Props {
 		data: ServerPageData;
@@ -78,7 +78,7 @@
 		{@html content}
 	</article>
 
-	<div class="actions" bind:this={anchor}>
+	<div class="actions">
 		<Link href="/trails">View all trails</Link>
 	</div>
 </Section>
@@ -93,6 +93,8 @@
 	<div class="chart">
 		<TrackChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
 	</div>
+
+	<div aria-hidden="true" bind:this={anchor}></div>
 </section>
 
 <style lang="scss">
@@ -124,7 +126,8 @@
 		}
 	}
 
-	.chart, .stats {
+	.chart,
+	.stats {
 		background: #fafafa;
 		color: black;
 	}

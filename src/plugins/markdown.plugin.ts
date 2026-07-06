@@ -1,4 +1,3 @@
-import { env } from '$env/dynamic/public';
 import type { PageData } from '$lib/types/page';
 import type { Slug, SlugPath } from '$lib/types/slug';
 import { listSlugs } from '$plugins/slug.plugin';
@@ -23,6 +22,7 @@ import { createHighlighterCoreSync } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
 // @ts-expect-error Type definition incorrect
+import { assetUrl } from '$lib/utils/assets.utils';
 import { Remarkable, utils } from 'remarkable';
 
 const shiki = createHighlighterCoreSync({
@@ -126,9 +126,7 @@ const renderHTML = ({ slug, path }: { slug: string; path: SlugPath }): string =>
 
 	// @ts-expect-error We are fine without types.
 	const imageRule = () => (tokens, idx, options, _env) => {
-		const url = utils
-			.escapeHtml(tokens[idx].src)
-			.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS);
+		const url = assetUrl(utils.escapeHtml(tokens[idx].src));
 
 		const src = ' src="' + url + '"';
 		const title = tokens[idx].title

@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gpx creator="Wikiloc - https://www.wikiloc.com" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-  <metadata>
-    <name>Wikiloc - 5-lake Pizol+</name>
-    <link href="https://www.wikiloc.com/trail-running-trails/5-lake-pizol-272318088">
-      <text>5-lake Pizol+ - Wikiloc on Wikiloc</text>
-    </link>
-    <time>2026-07-03T13:30:25Z</time>
-  </metadata>
+<gpx version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <trk>
-    <name>5-lake Pizol+ - Wikiloc</name>
-    <cmt>So, I spent the day in the fog 😄. I might redo it some day, the all view should be amazing, the lake and foggy scenery was already great. 
- 
-The Pizol 5 lakes (5-Seen-Wanderung Pizol) is super popular, therefore best during the week if you don't want to slalom between hikers. 
- 
-Passing the summit was alright but snowy. Likely a trail best suited towards the end of summer. 
- 
-Oh, worth noting, had no phone signal most of the day.</cmt>
-    <desc>So, I spent the day in the fog 😄. I might redo it some day, the all view should be amazing, the lake and foggy scenery was already great. 
- 
-The Pizol 5 lakes (5-Seen-Wanderung Pizol) is super popular, therefore best during the week if you don't want to slalom between hikers. 
- 
-Passing the summit was alright but snowy. Likely a trail best suited towards the end of summer. 
- 
-Oh, worth noting, had no phone signal most of the day.</desc>
     <trkseg>
       <trkpt lat="46.989102" lon="9.342905">
         <ele>1001.949</ele>

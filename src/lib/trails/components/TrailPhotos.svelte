@@ -130,7 +130,7 @@
 		overflow-x: auto;
 
 		margin: 0;
-		padding: 0.75rem 0 0;
+		padding: 0;
 
 		min-height: 275px;
 	}

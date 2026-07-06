@@ -77,8 +77,6 @@
 		{@html content}
 	</article>
 
-	<TrailPhotos {photos} />
-
 	<div class="actions">
 		<Link href="/trails">View more trails...</Link>
 	</div>
@@ -93,6 +91,10 @@
 
 	<div class="chart">
 		<TrackChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
+	</div>
+
+	<div class="photos">
+		<TrailPhotos {photos} />
 	</div>
 
 	<div aria-hidden="true" bind:this={anchor}></div>
@@ -133,7 +135,7 @@
 		color: black;
 	}
 
-	.chart {
+	.chart, .photos {
 		@media screen and (min-width: 996px) {
 			grid-column: 1/3;
 		}

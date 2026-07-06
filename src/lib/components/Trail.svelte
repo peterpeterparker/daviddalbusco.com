@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
+	import type { PageDataWithoutContent } from '$lib/types/page';
 	import Card from '$lib/components/Card.svelte';
 	import { env } from '$env/dynamic/public';
 	import type { Trail } from '$lib/types/trail';
 	import { formatDate } from '$lib/utils/date.utils';
 
 	interface Props {
-		trail: MarkdownDataWithoutContent<Trail>;
+		trail: PageDataWithoutContent<Trail>;
 	}
 
 	let { trail }: Props = $props();

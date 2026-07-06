@@ -17,9 +17,8 @@ import { WebsitePage } from './_page';
 	const client = path ?? title.toLowerCase().replaceAll(' ', '-');
 
 	test.describe(title, () => {
-		test('match screenshot', async (args) => {
-			const portfolio = new WebsitePage(args);
-			const { page } = portfolio;
+		test('match screenshot', async ({ page }) => {
+			const portfolio = new WebsitePage({ page });
 
 			await page.goto(`/portfolio/${client}`);
 

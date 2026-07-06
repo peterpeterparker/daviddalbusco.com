@@ -1,9 +1,8 @@
 import { expect, test } from '@playwright/test';
 import { WebsitePage } from './_page';
 
-test('match screenshot', async (args) => {
-	const blog = new WebsitePage(args);
-	const { page } = blog;
+test('match screenshot', async ({ page }) => {
+	const blog = new WebsitePage({ page });
 
 	await page.goto('/blog/making-your-website-ai-ready');
 

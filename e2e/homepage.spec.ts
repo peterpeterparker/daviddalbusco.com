@@ -5,9 +5,8 @@ import { WebsitePage } from './_page';
 	test.describe(`${mode} mode`, () => {
 		test.use({ colorScheme: mode });
 
-		test('match screenshot', async (args) => {
-			const home = new WebsitePage(args);
-			const { page } = home;
+		test('match screenshot', async ({ page }) => {
+			const home = new WebsitePage({ page });
 
 			await page.goto('/');
 

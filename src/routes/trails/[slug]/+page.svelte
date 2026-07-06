@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
-	import type { TrailMetadata } from '$lib/types/trail';
+	import type { Trail } from '$lib/types/trail';
 	import type { PageData } from '$lib/types/page';
 	import Section from '$lib/components/Section.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -21,11 +21,11 @@
 
 	let { data }: Props = $props();
 
-	let trail = $derived<PageData<TrailMetadata>>(data.trail);
+	let trail = $derived<PageData<Trail>>(data.trail);
 
 	let slug = $derived(trail.slug);
 	let content = $derived(trail.content);
-	let metadata = $derived(trail.metadata);
+	let metadata = $derived(trail.metadata.metadata);
 
 	let { title, date: trailDate } = $derived(metadata);
 

@@ -1,30 +1,12 @@
 import type { PageData } from '$lib/types/page';
-import type { Trail, TrailMetadata, TrailTrack } from '$lib/types/trail';
+import type { Trail, TrailMetadata } from '$lib/types/trail';
 import { get, list } from '$plugins/markdown.plugin';
-import { XMLParser } from 'fast-xml-parser';
-import { readFile } from 'node:fs/promises';
+import { getTrack } from '$plugins/track.plugin';
 
 export const listTrails = async (): Promise<PageData<Trail>[]> => {
 	const trails = await list<TrailMetadata>({ path: 'trails' });
 
-	const populate = async ({
-		metadata,
-		...rest
-	}: PageData<TrailMetadata>): Promise<PageData<Trail>> => {
-		const { location } = await getStartLocation(metadata);
-
-		return {
-			...rest,
-			metadata: {
-				metadata,
-				track: {
-					location
-				}
-			}
-		};
-	};
-
-	const results = await Promise.all(trails.map(populate));
+	const results = await Promise.all(trails.map(populateMetadata));
 
 	return results.sort(
 		(
@@ -47,48 +29,22 @@ export const listTrails = async (): Promise<PageData<Trail>[]> => {
 	);
 };
 
-export const getTrail = ({ slug }: Record<string, string>): Promise<PageData<TrailMetadata>> =>
-	get<TrailMetadata>({ slug, path: 'trails' });
+export const getTrail = async ({ slug }: Record<string, string>): Promise<PageData<Trail>> => {
+	const metadata = await get<TrailMetadata>({ slug, path: 'trails' });
+	return await populateMetadata(metadata);
+};
 
-const getStartLocation = async ({
-	gpx
-}: Pick<TrailMetadata, 'gpx'>): Promise<Pick<TrailTrack, 'location'>> => {
-	const xmlStr = await readFile(
-		gpx.replaceAll('https://daviddalbusco.com/assets', './assets'),
-		'utf-8'
-	);
-
-	type GpxTrackPoint = {
-		lat: string;
-		lon: string;
-	};
-
-	type Gpx = {
-		gpx: {
-			trk: {
-				trkseg: {
-					trkpt: GpxTrackPoint[];
-				};
-			};
-		};
-	};
-
-	const parser = new XMLParser({
-		ignoreAttributes: false,
-		attributeNamePrefix: ''
-	});
-	const {
-		gpx: {
-			trk: {
-				trkseg: { trkpt }
-			}
-		}
-	}: Gpx = parser.parse(xmlStr);
-
-	// Optimistic. I could likely ignore gpx coordinates undefined but, I trust the data I provide.
-	const { lat, lon } = trkpt[0];
+const populateMetadata = async ({
+	metadata,
+	...rest
+}: PageData<TrailMetadata>): Promise<PageData<Trail>> => {
+	const track = await getTrack(metadata);
 
 	return {
-		location: { lat: parseFloat(lat), lon: parseFloat(lon) }
+		...rest,
+		metadata: {
+			metadata,
+			track
+		}
 	};
 };

@@ -3,7 +3,11 @@ import type { MapLocation } from '$lib/types/map';
 
 export type Sport = 'trail-running' | 'cycling' | 'gravel';
 
-export type TrailStartLocation = MapLocation;
+type TrailStartLocation = MapLocation;
+export interface TrailElevation {
+	gain: number;
+	loss: number;
+}
 
 export interface TrailMetadata {
 	title: string;
@@ -15,6 +19,8 @@ export interface TrailMetadata {
 
 export interface TrailTrack {
 	location: TrailStartLocation;
+	distance: number;
+	elevation: TrailElevation;
 }
 
 export interface Trail {

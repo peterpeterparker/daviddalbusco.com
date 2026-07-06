@@ -70,6 +70,7 @@
 	},
 	"dependencies": {
 		"@apple/mapkit-loader": "^1.0.0",
+		"layerchart": "^2.0.1",
 		"yawa-tracker": "0.0.5"
 	},
 	"engines": {

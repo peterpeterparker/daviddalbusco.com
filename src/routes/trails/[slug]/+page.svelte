@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData as ServerPageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
 	import type { TrailMetadata } from '$lib/types/trail';
-	import type { MarkdownData } from '$lib/types/markdown';
+	import type { PageData } from '$lib/types/page';
 	import Section from '$lib/components/Section.svelte';
 	import Link from '$lib/components/Link.svelte';
 	import '../../../theme/_code.scss';
@@ -16,12 +16,12 @@
 	import TrackChart from '$lib/components/TrackChart.svelte';
 
 	interface Props {
-		data: PageData;
+		data: ServerPageData;
 	}
 
 	let { data }: Props = $props();
 
-	let trail = $derived<MarkdownData<TrailMetadata>>(data.trail);
+	let trail = $derived<PageData<TrailMetadata>>(data.trail);
 
 	let slug = $derived(trail.slug);
 	let content = $derived(trail.content);

@@ -1,16 +1,16 @@
 <script lang="ts">
 	import Seo from '$lib/components/Seo.svelte';
 	import Trails from '$lib/components/Trails.svelte';
-	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
-	import type { PageData } from './$types';
+	import type { PageDataWithoutContent } from '$lib/types/page';
+	import type { PageData as ServerPageData } from './$types';
 	import type { Trail } from '$lib/types/trail';
 
 	interface Props {
-		data: PageData;
+		data: ServerPageData;
 	}
 
 	let { data }: Props = $props();
-	let trails = $derived<MarkdownDataWithoutContent<Trail>[]>(data.trails);
+	let trails = $derived<PageDataWithoutContent<Trail>[]>(data.trails);
 </script>
 
 <svelte:head>

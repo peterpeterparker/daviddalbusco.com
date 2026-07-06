@@ -1,16 +1,16 @@
-import type { MarkdownData } from '$lib/types/markdown';
+import type { PageData } from '$lib/types/page';
 import type { Trail, TrailMetadata, TrailTrack } from '$lib/types/trail';
 import { get, list } from '$plugins/markdown.plugin';
 import { XMLParser } from 'fast-xml-parser';
 import { readFile } from 'node:fs/promises';
 
-export const listTrails = async (): Promise<MarkdownData<Trail>[]> => {
+export const listTrails = async (): Promise<PageData<Trail>[]> => {
 	const trails = await list<TrailMetadata>({ path: 'trails' });
 
 	const populate = async ({
 		metadata,
 		...rest
-	}: MarkdownData<TrailMetadata>): Promise<MarkdownData<Trail>> => {
+	}: PageData<TrailMetadata>): Promise<PageData<Trail>> => {
 		const { location } = await getStartLocation(metadata);
 
 		return {
@@ -47,7 +47,7 @@ export const listTrails = async (): Promise<MarkdownData<Trail>[]> => {
 	);
 };
 
-export const getTrail = ({ slug }: Record<string, string>): Promise<MarkdownData<TrailMetadata>> =>
+export const getTrail = ({ slug }: Record<string, string>): Promise<PageData<TrailMetadata>> =>
 	get<TrailMetadata>({ slug, path: 'trails' });
 
 const getStartLocation = async ({

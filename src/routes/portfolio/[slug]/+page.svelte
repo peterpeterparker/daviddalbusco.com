@@ -3,7 +3,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import { goto } from '$app/navigation';
-	import type { MarkdownData } from '$lib/types/markdown';
+	import type { PageData } from '$lib/types/page';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 	import Section from '$lib/components/Section.svelte';
 	import '../../../theme/_code.scss';
@@ -14,7 +14,7 @@
 
 	let { data }: Props = $props();
 
-	let portfolio: MarkdownData<PortfolioMetadata> = $derived(data.portfolio);
+	let portfolio: PageData<PortfolioMetadata> = $derived(data.portfolio);
 
 	let content: string = $derived(portfolio.content);
 

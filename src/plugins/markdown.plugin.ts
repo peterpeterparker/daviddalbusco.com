@@ -1,5 +1,5 @@
 import { env } from '$env/dynamic/public';
-import type { MarkdownData } from '$lib/types/markdown';
+import type { PageData } from '$lib/types/page';
 import type { Slug, SlugPath } from '$lib/types/slug';
 import { listSlugs } from '$plugins/slug.plugin';
 import bash from '@shikijs/langs/bash';
@@ -50,7 +50,7 @@ const shiki = createHighlighterCoreSync({
 // Remove frontmatter YAML - https://stackoverflow.com/a/33537453/5404186
 const metadataRegex = /^---((.|\n)*?)---/g;
 
-export const list = <T>({ path }: { path: SlugPath }): Promise<MarkdownData<T>[]> => {
+export const list = <T>({ path }: { path: SlugPath }): Promise<PageData<T>[]> => {
 	const promises = listSlugs({ path }).map(({ slug }: Slug) => get<T>({ slug, path }));
 
 	return Promise.all(promises);
@@ -62,7 +62,7 @@ export const get = async <T>({
 }: {
 	slug: string;
 	path: SlugPath;
-}): Promise<MarkdownData<T>> => {
+}): Promise<PageData<T>> => {
 	const metadata = buildMetadata<T>({ slug, path }) || ({} as T);
 	const content = renderHTML({ slug, path });
 	return { metadata, content, slug };

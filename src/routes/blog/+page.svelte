@@ -3,14 +3,14 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import Blog from '$lib/components/Blog.svelte';
 	import type { BlogMetadata } from '$lib/types/blog';
-	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
+	import type { PageDataWithoutContent } from '$lib/types/page';
 
 	interface Props {
 		data: PageData;
 	}
 
 	let { data }: Props = $props();
-	let posts = $derived<MarkdownDataWithoutContent<BlogMetadata>[]>(data.posts);
+	let posts = $derived<PageDataWithoutContent<BlogMetadata>[]>(data.posts);
 </script>
 
 <svelte:head>

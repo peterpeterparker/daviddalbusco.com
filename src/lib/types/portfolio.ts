@@ -1,4 +1,4 @@
-import type { MarkdownData } from '$lib/types/markdown';
+import type { PageData } from '$lib/types/page';
 
 export type PortfolioType = 'work' | 'play';
 
@@ -13,6 +13,6 @@ export interface PortfolioMetadata {
 }
 
 export interface Portfolio {
-	work: MarkdownData<PortfolioMetadata>[];
-	play: MarkdownData<PortfolioMetadata>[];
+	work: PageData<PortfolioMetadata>[];
+	play: PageData<PortfolioMetadata>[];
 }

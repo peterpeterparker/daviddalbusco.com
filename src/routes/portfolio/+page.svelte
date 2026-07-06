@@ -4,15 +4,15 @@
 	import Work from '$lib/components/Work.svelte';
 	import Play from '$lib/components/Play.svelte';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
-	import type { MarkdownData } from '$lib/types/markdown';
+	import type { PageData } from '$lib/types/page';
 
 	interface Props {
 		data: PageData;
 	}
 
 	let { data }: Props = $props();
-	let work: MarkdownData<PortfolioMetadata>[] = $derived(data.work);
-	let play: MarkdownData<PortfolioMetadata>[] = $derived(data.play);
+	let work: PageData<PortfolioMetadata>[] = $derived(data.work);
+	let play: PageData<PortfolioMetadata>[] = $derived(data.play);
 </script>
 
 <svelte:head>

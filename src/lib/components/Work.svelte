@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Projects from '$lib/components/Projects.svelte';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
-	import type { MarkdownData } from '$lib/types/markdown';
+	import type { PageData } from '$lib/types/page';
 
 	interface Props {
-		projects: MarkdownData<PortfolioMetadata>[];
+		projects: PageData<PortfolioMetadata>[];
 	}
 
 	let { projects }: Props = $props();

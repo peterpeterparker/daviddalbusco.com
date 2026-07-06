@@ -69,6 +69,7 @@
 		"cookie": "^0.7.0"
 	},
 	"dependencies": {
+		"@apple/mapkit-loader": "^1.0.0",
 		"yawa-tracker": "0.0.5"
 	},
 	"engines": {

@@ -41,9 +41,9 @@
 
 				const applyStyle = ({ prop, value }: { prop: string; value: string | undefined }) => {
 					if (value) {
-						document.body.style.setProperty(prop, value);
+						document.documentElement.style.setProperty(prop, value);
 					} else {
-						document.body.style.removeProperty(prop);
+						document.documentElement.style.removeProperty(prop);
 					}
 				};
 

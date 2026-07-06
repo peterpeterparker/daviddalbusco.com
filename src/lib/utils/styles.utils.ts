@@ -1,4 +1,4 @@
 export const cleanBodyStyles = () => {
-	document.body.style.removeProperty('--section-color');
-	document.body.style.removeProperty('--section-background');
+	document.documentElement.style.removeProperty('--section-color');
+	document.documentElement.style.removeProperty('--section-background');
 };

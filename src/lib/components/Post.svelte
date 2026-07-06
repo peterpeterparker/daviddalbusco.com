@@ -2,8 +2,8 @@
 	import type { PageDataWithoutContent } from '$lib/types/page';
 	import type { BlogMetadata } from '$lib/types/blog';
 	import Card from '$lib/components/Card.svelte';
-	import { env } from '$env/dynamic/public';
 	import { formatDate } from '$lib/utils/date.utils';
+	import { assetUrl } from '$lib/utils/assets.utils';
 
 	interface Props {
 		post: PageDataWithoutContent<BlogMetadata>;
@@ -16,9 +16,7 @@
 
 	let title = $derived(metadata.title);
 	let description = $derived(metadata.description);
-	let image = $derived(
-		metadata.image.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
-	);
+	let image = $derived(assetUrl(metadata.image));
 	let postDate = $derived(metadata.date);
 </script>
 

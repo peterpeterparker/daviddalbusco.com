@@ -23,17 +23,58 @@
 
 	const resetPhoto = () => (selectedPhotoIndex = null);
 
+    const showNextPhoto = () => {
+        if (selectedPhotoIndex === undefined || selectedPhotoIndex === null) {
+            return;
+        }
+
+        if (selectedPhotoIndex >= photos.length - 1) {
+            return;
+        }
+
+        selectPhotoIndex(selectedPhotoIndex + 1)
+    }
+
+    const showPreviousPhoto = () => {
+        if (selectedPhotoIndex === undefined || selectedPhotoIndex === null) {
+            return;
+        }
+
+        if (selectedPhotoIndex <= 0) {
+            return;
+        }
+
+        selectPhotoIndex(selectedPhotoIndex - 1)
+    }
+
 	const photoDialogAttachment: Attachment = (element) => {
-		const handleToggle = (event: Event) => {
-			if (event instanceof ToggleEvent && event.newState === 'closed') {
+		const handleToggle = ($event: Event) => {
+			if ($event instanceof ToggleEvent && $event.newState === 'closed') {
 				resetPhoto();
 			}
 		};
 
+        const handleKeydown = ($event: Event) => {
+            if ($event instanceof KeyboardEvent) {
+                switch ($event.key) {
+                    case 'ArrowRight':
+                        $event.preventDefault();
+                        showNextPhoto();
+                        break;
+                    case 'ArrowLeft':
+                        $event.preventDefault();
+                        showPreviousPhoto();
+                        break;
+                }
+            }
+        };
+
 		element.addEventListener('toggle', handleToggle);
+        document.addEventListener('keydown', handleKeydown);
 
 		return () => {
 			element.removeEventListener('toggle', handleToggle);
+            document.removeEventListener('keydown', handleKeydown);
 		};
 	};
 </script>
@@ -60,7 +101,7 @@
 
 		{#if selectedPhotoIndex < photos.length - 1}
 			<button
-				onclick={() => selectPhotoIndex((selectedPhotoIndex ?? 0) + 1)}
+				onclick={showNextPhoto}
 				class="btn-dialog btn-next"
 				aria-label="Next photo"><IconArrowForward /></button
 			>
@@ -68,7 +109,7 @@
 
 		{#if selectedPhotoIndex > 0}
 			<button
-				onclick={() => selectPhotoIndex((selectedPhotoIndex ?? 1) - 1)}
+				onclick={showPreviousPhoto}
 				class="btn-dialog btn-previous"
 				aria-label="Previous photo"><IconArrowBack /></button
 			>

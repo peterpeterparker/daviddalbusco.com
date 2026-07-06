@@ -3,8 +3,9 @@ import type { TrailElevation, TrailMetadata, TrailTrack } from '$lib/types/trail
 import { calculateDistance } from '$lib/utils/distance.utils';
 import { XMLParser } from 'fast-xml-parser';
 import { readFile } from 'node:fs/promises';
+import { last } from '$lib/utils/array.utils';
 
-type ServerMapGpxPoints = Omit<MapGpxPoint, 'distance' | 'id'>[];
+type ServerMapGpxPoints = (Omit<MapGpxPoint, 'distance' | 'id'> & {time: string})[];
 
 export const getTrack = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<TrailTrack> => {
 	const xmlStr = await readFile(
@@ -43,10 +44,10 @@ export const getTrack = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<Tra
 	}: Gpx = parser.parse(xmlStr);
 
 	const mapGpxPoints = (): ServerMapGpxPoints =>
-		trkpt.map(({ lat, lon, ele }) => ({
+		trkpt.map(({ lat, lon, ...rest }) => ({
+			...rest,
 			lat: parseFloat(lat),
 			lon: parseFloat(lon),
-			ele
 		}));
 
 	const points = mapGpxPoints();
@@ -57,7 +58,8 @@ export const getTrack = async ({ gpx }: Pick<TrailMetadata, 'gpx'>): Promise<Tra
 	return {
 		location: { lat, lon },
 		distance: sumDistance({ points }),
-		elevation: computeElevation({ points })
+		elevation: computeElevation({ points }),
+		duration: computeDuration({ points }),
 	};
 };
 
@@ -76,13 +78,31 @@ const sumDistance = ({ points }: { points: ServerMapGpxPoints }): number => {
 	return total;
 };
 
-const computeElevation = ({
+const computeElevation = (args: { points: ServerMapGpxPoints }): TrailElevation => ({
+	...computeElevationTotal(args),
+	...computeElevationRange(args)
+});
+
+const computeElevationRange = ({
+																 points,
+															 }: {
+	points: ServerMapGpxPoints;
+}): Pick<TrailElevation, "max" | "min"> => {
+	const elevations = points.map(({ ele }) => ele);
+
+	return {
+		max: Math.round(Math.max(...elevations)),
+		min: Math.round(Math.min(...elevations))
+	};
+}
+
+const computeElevationTotal = ({
 	points,
 	threshold = 2
 }: {
 	points: ServerMapGpxPoints;
 	threshold?: number;
-}): TrailElevation => {
+}): Pick<TrailElevation, "gain" | "loss"> => {
 	let gain = 0;
 	let loss = 0;
 
@@ -100,4 +120,14 @@ const computeElevation = ({
 		gain,
 		loss
 	};
+};
+
+const computeDuration = ({ points }: { points: ServerMapGpxPoints }): TrailTrack["duration"] => {
+	const [firstPoint] = points;
+	const lastPoint = last(points);
+
+	const start = new Date(firstPoint.time).getTime();
+	const end = new Date((lastPoint ?? firstPoint).time).getTime();
+
+	return Math.round((end - start) / 1000);
 };

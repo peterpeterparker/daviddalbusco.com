@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { PageDataWithoutContent } from '$lib/types/page';
 	import Card from '$lib/components/Card.svelte';
-	import { env } from '$env/dynamic/public';
 	import type { Trail } from '$lib/types/trail';
 	import { formatDate } from '$lib/utils/date.utils';
 	import Sport from '$lib/components/Sport.svelte';

@@ -23,29 +23,29 @@
 
 	const resetPhoto = () => (selectedPhotoIndex = null);
 
-    const showNextPhoto = () => {
-        if (selectedPhotoIndex === undefined || selectedPhotoIndex === null) {
-            return;
-        }
+	const showNextPhoto = () => {
+		if (selectedPhotoIndex === undefined || selectedPhotoIndex === null) {
+			return;
+		}
 
-        if (selectedPhotoIndex >= photos.length - 1) {
-            return;
-        }
+		if (selectedPhotoIndex >= photos.length - 1) {
+			return;
+		}
 
-        selectPhotoIndex(selectedPhotoIndex + 1)
-    }
+		selectPhotoIndex(selectedPhotoIndex + 1);
+	};
 
-    const showPreviousPhoto = () => {
-        if (selectedPhotoIndex === undefined || selectedPhotoIndex === null) {
-            return;
-        }
+	const showPreviousPhoto = () => {
+		if (selectedPhotoIndex === undefined || selectedPhotoIndex === null) {
+			return;
+		}
 
-        if (selectedPhotoIndex <= 0) {
-            return;
-        }
+		if (selectedPhotoIndex <= 0) {
+			return;
+		}
 
-        selectPhotoIndex(selectedPhotoIndex - 1)
-    }
+		selectPhotoIndex(selectedPhotoIndex - 1);
+	};
 
 	const photoDialogAttachment: Attachment = (element) => {
 		const handleToggle = ($event: Event) => {
@@ -54,27 +54,27 @@
 			}
 		};
 
-        const handleKeydown = ($event: Event) => {
-            if ($event instanceof KeyboardEvent) {
-                switch ($event.key) {
-                    case 'ArrowRight':
-                        $event.preventDefault();
-                        showNextPhoto();
-                        break;
-                    case 'ArrowLeft':
-                        $event.preventDefault();
-                        showPreviousPhoto();
-                        break;
-                }
-            }
-        };
+		const handleKeydown = ($event: Event) => {
+			if ($event instanceof KeyboardEvent) {
+				switch ($event.key) {
+					case 'ArrowRight':
+						$event.preventDefault();
+						showNextPhoto();
+						break;
+					case 'ArrowLeft':
+						$event.preventDefault();
+						showPreviousPhoto();
+						break;
+				}
+			}
+		};
 
 		element.addEventListener('toggle', handleToggle);
-        document.addEventListener('keydown', handleKeydown);
+		document.addEventListener('keydown', handleKeydown);
 
 		return () => {
 			element.removeEventListener('toggle', handleToggle);
-            document.removeEventListener('keydown', handleKeydown);
+			document.removeEventListener('keydown', handleKeydown);
 		};
 	};
 </script>
@@ -100,10 +100,8 @@
 		/>
 
 		{#if selectedPhotoIndex < photos.length - 1}
-			<button
-				onclick={showNextPhoto}
-				class="btn-dialog btn-next"
-				aria-label="Next photo"><IconArrowForward /></button
+			<button onclick={showNextPhoto} class="btn-dialog btn-next" aria-label="Next photo"
+				><IconArrowForward /></button
 			>
 		{/if}
 

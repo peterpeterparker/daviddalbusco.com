@@ -8,7 +8,6 @@
 	import '../../../theme/_code.scss';
 	import Progress from '$lib/components/Progress.svelte';
 	import { formatDate } from '$lib/utils/date.utils';
-	import { env } from '$env/dynamic/public';
 	import type { MapGpxPointId, MapGpxPoints } from '$lib/types/map';
 	import { onMount } from 'svelte';
 	import { loadTrack } from '$lib/services/tracks.services';

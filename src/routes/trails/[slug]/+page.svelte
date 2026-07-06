@@ -15,6 +15,7 @@
 	import Map from '$lib/components/Map.svelte';
 	import TrackChart from '$lib/components/TrackChart.svelte';
 	import TrackStats from "$lib/components/TrackStats.svelte";
+	import Sport from "$lib/components/Sport.svelte";
 
 	interface Props {
 		data: ServerPageData;
@@ -29,7 +30,7 @@
 	let metadata = $derived(trail.metadata.metadata);
 	let track = $derived(trail.metadata.track);
 
-	let { title, date: trailDate } = $derived(metadata);
+	let { title, date: trailDate, sport } = $derived(metadata);
 
 	let anchor = $state<HTMLElement | undefined>(undefined);
 
@@ -71,7 +72,7 @@
 <Section>
 	<h1>{title}</h1>
 
-	<p class="date">{formatDate(trailDate)}</p>
+	<p><Sport {sport} /> {formatDate(trailDate)}</p>
 
 	<article>
 		{@html content}

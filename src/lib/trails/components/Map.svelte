@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
-	import { load, type Map, type MapKit, type MarkerAnnotation } from '@apple/mapkit-loader';
-	import { env } from '$env/dynamic/public';
+	import type { MarkerAnnotation } from '@apple/mapkit-loader';
 	import type { MapAnnotation, MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
+	import { loadMap, type MapKit } from '$lib/trails/services/map.services';
 
 	// References:
 	// https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/
@@ -16,38 +16,18 @@
 
 	let { annotations, points, selectedPointId }: Props = $props();
 
-	// https://developer.apple.com/documentation/mapkitjs/loading-the-latest-version-of-mapkit-js#Select-MapKit-JS-libraries
-	type Libraries =
-		| 'services'
-		| 'full-map'
-		| 'map'
-		| 'overlays'
-		| 'annotations'
-		| 'geojson'
-		| 'user-location'
-		| 'look-around';
-
-	const LIBRARIES: [Libraries, ...Libraries[]] = ['map', 'annotations', 'overlays'];
-
-	let kit = $state<{ mapkit: MapKit; map: Map } | undefined>(undefined);
-
-	const loadMap = async ({ anchor }: { anchor: HTMLElement }) => {
-		const mapkit = await load({
-			libraries: LIBRARIES,
-			token: env.PUBLIC_MAPKIT_TOKEN
-		});
-
-		const map = new mapkit.Map(anchor);
-
-		kit = {
-			mapkit,
-			map
-		};
-	};
+	let kit = $state<MapKit | undefined>(undefined);
 
 	const attachMap: Attachment<HTMLElement> = (element) => {
 		// Unawaited promise. @attach does not support promises but, not relevant here
-		loadMap({ anchor: element });
+		loadMap({ anchor: element }).then((result) => {
+			if (result.status === 'error') {
+				console.error('Unexpected error while loading the map', result.err);
+				return;
+			}
+
+			kit = result.result;
+		});
 	};
 
 	$effect(() => {

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Map from '$lib/trails/components/Map.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
+	import type { PageDataWithoutContent } from '$lib/types/page';
 	import type { Trail as TrailType } from '$lib/trails/types/trail';
 	import Trail from '$lib/trails/components/Trail.svelte';
 	import type { MapAnnotation } from '$lib/trails/types/map';
 
 	interface Props {
-		trails: MarkdownDataWithoutContent<TrailType>[];
+		trails: PageDataWithoutContent<TrailType>[];
 	}
 
 	let { trails }: Props = $props();
@@ -25,7 +25,7 @@
 	);
 </script>
 
-<Section background="var(--color-primary)" color="var(--color-primary-contrast)">
+<Section>
 	<h2>Trails</h2>
 
 	<p>

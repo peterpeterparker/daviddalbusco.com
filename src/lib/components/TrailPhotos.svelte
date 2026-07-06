@@ -4,6 +4,8 @@
 	import CardCover from '$lib/components/CardCover.svelte';
 	import type { Attachment } from 'svelte/attachments';
 	import IconClose from '$lib/icons/IconClose.svelte';
+	import IconArrowForward from '$lib/icons/IconArrowForward.svelte';
+	import IconArrowBack from '$lib/icons/IconArrowBack.svelte';
 
 	interface Props {
 		photos: TrailMetadata['photos'];
@@ -11,13 +13,15 @@
 
 	let { photos }: Props = $props();
 
-    let selectedPhoto = $state<string | undefined | null>(undefined);
+	let images = $derived(photos.map((photo) => assetUrl(photo)));
 
-	const selectPhoto = (photo: string) => {
-		selectedPhoto = photo;
+	let selectedPhotoIndex = $state<number | undefined | null>(undefined);
+
+	const selectPhotoIndex = (index: number) => {
+		selectedPhotoIndex = index;
 	};
 
-	const resetPhoto = () => (selectedPhoto = null);
+	const resetPhoto = () => (selectedPhotoIndex = null);
 
 	const photoDialogAttachment: Attachment = (element) => {
 		const handleToggle = (event: Event) => {
@@ -35,11 +39,9 @@
 </script>
 
 <ul>
-	{#each photos as photo, i (i)}
-		{@const image = assetUrl(photo)}
-
+	{#each images as image, i (i)}
 		<li>
-			<button class="btn-img" popovertarget="photo-dialog" onclick={() => selectPhoto(image)}>
+			<button class="btn-img" popovertarget="photo-dialog" onclick={() => selectPhotoIndex(i)}>
 				<CardCover background="var(--color-light)" {image} cover={true} />
 			</button>
 		</li>
@@ -47,12 +49,34 @@
 </ul>
 
 <dialog id="photo-dialog" popover {@attach photoDialogAttachment}>
-	{#if selectedPhoto !== null || selectedPhoto !== undefined}
-		<img alt="" aria-hidden="true" loading="lazy" role="presentation" src={selectedPhoto} />
+	{#if selectedPhotoIndex !== null && selectedPhotoIndex !== undefined}
+		<img
+			alt=""
+			aria-hidden="true"
+			loading="lazy"
+			role="presentation"
+			src={images[selectedPhotoIndex]}
+		/>
+
+		{#if selectedPhotoIndex < photos.length - 1}
+			<button
+				onclick={() => selectPhotoIndex((selectedPhotoIndex ?? 0) + 1)}
+				class="btn-dialog btn-next"
+				aria-label="Next photo"><IconArrowForward /></button
+			>
+		{/if}
+
+		{#if selectedPhotoIndex > 0}
+			<button
+				onclick={() => selectPhotoIndex((selectedPhotoIndex ?? 1) - 1)}
+				class="btn-dialog btn-previous"
+				aria-label="Previous photo"><IconArrowBack /></button
+			>
+		{/if}
 	{/if}
 
 	<button
-		class="btn-close"
+		class="btn-dialog btn-close"
 		popovertarget="photo-dialog"
 		popovertargetaction="hide"
 		aria-label="Close photo"><IconClose /></button
@@ -82,20 +106,60 @@
 		padding: 0;
 	}
 
-	.btn-close {
-		display: block;
-
+	.btn-dialog {
 		position: absolute;
-		top: 0;
-		right: 0;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		background: white;
+
+		aspect-ratio: 1/1;
+
+		transition: border 0.25s ease-out;
+
+		border: 0.15rem solid black;
+
+		:global(svg) {
+			transition: transform 0.5s ease-out;
+		}
+
+		&:focus,
+		&:hover {
+			border: 0.15rem solid var(--color-highlight);
+
+			:global(svg) {
+				transform: scale(1.25);
+			}
+		}
+	}
+
+	.btn-close {
+		top: 0.45rem;
+		right: 0.45rem;
+	}
+
+	.btn-next {
+		top: 50%;
+		right: 0.45rem;
+		transform: translate(0, -50%);
+	}
+
+	.btn-previous {
+		top: 50%;
+		left: 0.45rem;
+		transform: translate(0, -50%);
 	}
 
 	img {
-		max-height: calc(100vh - 8rem);
+		display: flex;
+		width: calc(100vw - 2rem);
+		max-width: 1078px;
+		aspect-ratio: 16/10;
 	}
 
 	dialog {
-		display: inline-flex;
 		padding: 0;
 
 		&::backdrop {

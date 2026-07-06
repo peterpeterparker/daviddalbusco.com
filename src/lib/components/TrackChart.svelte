@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AreaChart, defaultChartPadding, Tooltip, type ChartState } from 'layerchart';
+	import { AreaChart, Tooltip, type ChartState } from 'layerchart';
 	import type { MapGpxPoint, MapGpxPointId, MapGpxPoints } from '$lib/types/map';
 	import {formatDistance, formatElevation} from "$lib/utils/track.utils";
 
@@ -29,8 +29,6 @@
 			xAxis: { format: (v: number) => `${v}km` },
 			yAxis: { format: (v: number) => `${v}m` }
 		}}
-		axis="x"
-		grid={false}
 	>
 		{#snippet tooltip()}
 			<Tooltip.Root>
@@ -53,5 +51,9 @@
 
 	article :global(svg) {
 		overflow: visible;
+	}
+
+	article :global(line) {
+		stroke: var(--color-light);
 	}
 </style>

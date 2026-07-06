@@ -6,7 +6,7 @@ export const load = async ({
 	params
 }: {
 	params: Record<string, string>;
-}): Promise<{ post: MarkdownData<TrailMetadata> }> => {
-	const post = await getTrail(params);
-	return { post };
+}): Promise<{ trail: MarkdownData<TrailMetadata> }> => {
+	const trail = await getTrail(params);
+	return { trail };
 };

@@ -1,35 +1,50 @@
 import type { MarkdownData } from '$lib/types/markdown';
-import type { TrailMetadata, TrailMetadataWithoutStartLocation } from '$lib/types/trail';
+import type { Trail, TrailMetadata, TrailTrack } from '$lib/types/trail';
 import { get, list } from '$plugins/markdown.plugin';
 import { XMLParser } from 'fast-xml-parser';
 import { readFile } from 'node:fs/promises';
 
-export const listTrails = async (): Promise<MarkdownData<TrailMetadata>[]> => {
-	const trails = await list<TrailMetadataWithoutStartLocation>({ path: 'trails' });
+export const listTrails = async (): Promise<MarkdownData<Trail>[]> => {
+	const trails = await list<TrailMetadata>({ path: 'trails' });
 
 	const populate = async ({
 		metadata,
 		...rest
-	}: MarkdownData<TrailMetadataWithoutStartLocation>): Promise<MarkdownData<TrailMetadata>> => {
+	}: MarkdownData<TrailMetadata>): Promise<MarkdownData<Trail>> => {
 		const { location } = await getStartLocation(metadata);
 
 		return {
 			...rest,
 			metadata: {
-				...metadata,
-				location
+				metadata,
+				track: {
+					location
+				}
 			}
 		};
 	};
 
 	const results = await Promise.all(trails.map(populate));
 
-	return results.sort(({ metadata: { date: dateA } }, { metadata: { date: dateB } }) => {
-		const timeA = new Date(dateA).getTime();
-		const timeB = new Date(dateB).getTime();
+	return results.sort(
+		(
+			{
+				metadata: {
+					metadata: { date: dateA }
+				}
+			},
+			{
+				metadata: {
+					metadata: { date: dateB }
+				}
+			}
+		) => {
+			const timeA = new Date(dateA).getTime();
+			const timeB = new Date(dateB).getTime();
 
-		return timeB - timeA;
-	});
+			return timeB - timeA;
+		}
+	);
 };
 
 export const getTrail = ({ slug }: Record<string, string>): Promise<MarkdownData<TrailMetadata>> =>
@@ -37,7 +52,7 @@ export const getTrail = ({ slug }: Record<string, string>): Promise<MarkdownData
 
 const getStartLocation = async ({
 	gpx
-}: Pick<TrailMetadataWithoutStartLocation, 'gpx'>): Promise<Pick<TrailMetadata, 'location'>> => {
+}: Pick<TrailMetadata, 'gpx'>): Promise<Pick<TrailTrack, 'location'>> => {
 	const xmlStr = await readFile(
 		gpx.replaceAll('https://daviddalbusco.com/assets', './assets'),
 		'utf-8'

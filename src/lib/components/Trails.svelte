@@ -2,18 +2,26 @@
 	import Map from '$lib/components/Map.svelte';
 	import Section from '$lib/components/Section.svelte';
 	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
-	import type { TrailMetadata } from '$lib/types/trail';
+	import type { Trail as TrailType } from '$lib/types/trail';
 	import Trail from '$lib/components/Trail.svelte';
 	import type { MapAnnotation } from '$lib/types/map';
 
 	interface Props {
-		trails: MarkdownDataWithoutContent<TrailMetadata>[];
+		trails: MarkdownDataWithoutContent<TrailType>[];
 	}
 
 	let { trails }: Props = $props();
 
 	let annotations = $derived<MapAnnotation[]>(
-		trails.map(({ slug, metadata: { title, location } }) => ({ title, location, pathname: slug }))
+		trails.map(
+			({
+				slug,
+				metadata: {
+					metadata: { title },
+					track: { location }
+				}
+			}) => ({ title, location, pathname: slug })
+		)
 	);
 </script>
 

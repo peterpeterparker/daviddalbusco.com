@@ -10,8 +10,14 @@ export interface TrailMetadata {
 	date: DateString;
 	photos: [string, ...string[]];
 	gpx: string;
-	location: TrailStartLocation;
 	sport: Sport;
 }
 
-export type TrailMetadataWithoutStartLocation = Omit<TrailMetadata, 'location'>;
+export interface TrailTrack {
+	location: TrailStartLocation;
+}
+
+export interface Trail {
+	metadata: TrailMetadata;
+	track: TrailTrack;
+}

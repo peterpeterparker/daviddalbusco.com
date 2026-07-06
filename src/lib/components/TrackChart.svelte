@@ -7,6 +7,7 @@
 		gpxPointId: MapGpxPointId | undefined;
 	}
 
+	// eslint-disable-next-line no-useless-assignment
 	let { gpxPoints, gpxPointId = $bindable(undefined) }: Props = $props();
 
 	let context = $state<ChartState>();

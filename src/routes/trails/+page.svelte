@@ -3,14 +3,14 @@
 	import Trails from '$lib/components/Trails.svelte';
 	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
 	import type { PageData } from './$types';
-	import type { TrailMetadata } from '$lib/types/trail';
+	import type { Trail } from '$lib/types/trail';
 
 	interface Props {
 		data: PageData;
 	}
 
 	let { data }: Props = $props();
-	let trails = $derived<MarkdownDataWithoutContent<TrailMetadata>[]>(data.trails);
+	let trails = $derived<MarkdownDataWithoutContent<Trail>[]>(data.trails);
 </script>
 
 <svelte:head>

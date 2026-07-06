@@ -11,9 +11,9 @@
 	import { env } from '$env/dynamic/public';
 	import type { MapGpxPointId, MapGpxPoints } from '$lib/types/map';
 	import { onMount } from 'svelte';
-	import { loadGpx } from '$lib/services/trails.services';
+	import { loadTrack } from '$lib/services/tracks.services';
 	import Map from '$lib/components/Map.svelte';
-	import GpxChart from '$lib/components/GpxChart.svelte';
+	import TrackChart from '$lib/components/TrackChart.svelte';
 
 	interface Props {
 		data: PageData;
@@ -21,11 +21,11 @@
 
 	let { data }: Props = $props();
 
-	let post = $derived<MarkdownData<TrailMetadata>>(data.post);
+	let trail = $derived<MarkdownData<TrailMetadata>>(data.trail);
 
-	let slug = $derived(post.slug);
-	let content = $derived(post.content);
-	let metadata = $derived(post.metadata);
+	let slug = $derived(trail.slug);
+	let content = $derived(trail.content);
+	let metadata = $derived(trail.metadata);
 
 	let { title, date: trailDate } = $derived(metadata);
 
@@ -39,7 +39,7 @@
 	let gpxPointId = $state<MapGpxPointId | undefined>(undefined);
 
 	onMount(async () => {
-		const result = await loadGpx(metadata);
+		const result = await loadTrack(metadata);
 
 		if (result.status === 'error') {
 			console.error(result.err);
@@ -73,7 +73,7 @@
 
 	<Map points={gpxPoints} selectedPointId={gpxPointId} />
 
-	<GpxChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
+	<TrackChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
 
 	<article>
 		{@html content}

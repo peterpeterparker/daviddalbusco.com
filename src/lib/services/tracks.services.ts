@@ -4,7 +4,9 @@ import type { TrailMetadata } from '$lib/types/trail';
 import { calculateDistance } from '$lib/utils/distance.utils';
 import { safeExec, type Result } from '$lib/utils/fn.utils';
 
-export const loadGpx = async (data: Pick<TrailMetadata, 'gpx'>): Promise<Result<MapGpxPoints>> => {
+export const loadTrack = async (
+	data: Pick<TrailMetadata, 'gpx'>
+): Promise<Result<MapGpxPoints>> => {
 	return await safeExec(async () => {
 		return await load(data);
 	});

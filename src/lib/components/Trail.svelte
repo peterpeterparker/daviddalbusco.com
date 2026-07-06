@@ -2,11 +2,11 @@
 	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
 	import Card from '$lib/components/Card.svelte';
 	import { env } from '$env/dynamic/public';
-	import type { TrailMetadata } from '$lib/types/trail';
+	import type { Trail } from '$lib/types/trail';
 	import { formatDate } from '$lib/utils/date.utils';
 
 	interface Props {
-		trail: MarkdownDataWithoutContent<TrailMetadata>;
+		trail: MarkdownDataWithoutContent<Trail>;
 	}
 
 	let { trail }: Props = $props();
@@ -14,11 +14,11 @@
 	let metadata = $derived(trail.metadata);
 	let slug = $derived(trail.slug);
 
-	let title = $derived(metadata.title);
+	let title = $derived(metadata.metadata.title);
 	let image = $derived(
-		metadata.photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
+		metadata.metadata.photos[0].replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
 	);
-	let trailDate = $derived(metadata.date);
+	let trailDate = $derived(metadata.metadata.date);
 </script>
 
 <Card background="transparent" cover={true} {image} path="trails" {slug}>

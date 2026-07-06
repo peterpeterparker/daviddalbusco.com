@@ -130,18 +130,24 @@
 		overflow-x: auto;
 
 		margin: 0;
-		padding: 0.45rem 0 0;
+		padding: 0.75rem 0 0;
+
+		min-height: 275px;
 	}
 
 	li {
 		min-width: 300px;
-		--cover-img-height: 100%;
+
 		list-style: none;
+
+		--cover-img-height: 100%;
+		--cover-img-border: 0.25rem solid black;
 	}
 
 	.btn-img {
 		display: block;
 		height: 100%;
+		min-width: 300px;
 		padding: 0;
 	}
 

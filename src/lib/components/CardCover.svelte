@@ -41,7 +41,7 @@
 		width: 100%;
 		height: var(--cover-img-height, 15rem);
 
-		border: 0.75rem solid black;
+		border: var(--cover-img-border, 0.75rem solid black);
 
 		margin-bottom: 1em;
 

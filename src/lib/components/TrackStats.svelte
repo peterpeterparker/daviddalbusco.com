@@ -38,7 +38,7 @@
 <style lang="scss">
 	article {
 		border: 0.25rem solid black;
-		padding: 1rem;
+		padding: 1rem 1.25rem;
 	}
 
     dd {

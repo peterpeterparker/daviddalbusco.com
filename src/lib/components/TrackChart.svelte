@@ -24,12 +24,13 @@
 		data={gpxPoints}
 		x="distance"
 		y="ele"
-		padding={defaultChartPadding({ right: 10 })}
 		height={200}
 		props={{
 			xAxis: { format: (v: number) => `${v}km` },
 			yAxis: { format: (v: number) => `${v}m` }
 		}}
+		axis="x"
+		grid={false}
 	>
 		{#snippet tooltip()}
 			<Tooltip.Root>
@@ -44,7 +45,13 @@
 
 <style lang="scss">
 	article {
-		min-height: 225px;
+		min-height: 275px;
 		--color-primary: var(--color-highlight);
+		padding: 2.25rem 1.25rem 0;
+		border: 0.25rem solid black;
+	}
+
+	article :global(svg) {
+		overflow: visible;
 	}
 </style>

@@ -73,22 +73,26 @@
 
 	<p class="date">{formatDate(trailDate)}</p>
 
-	<div class="trail">
-		<Map points={gpxPoints} selectedPointId={gpxPointId} />
-
-		<TrackStats {track} />
-
-		<TrackChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
-	</div>
-
 	<article>
 		{@html content}
 	</article>
 
 	<div class="actions" bind:this={anchor}>
-		<Link href="/trails">Continue to the trails</Link>
+		<Link href="/trails">View all trails</Link>
 	</div>
 </Section>
+
+<section class="trail">
+	<Map points={gpxPoints} selectedPointId={gpxPointId} />
+
+	<div class="stats">
+		<TrackStats {track} />
+	</div>
+
+	<div class="chart">
+		<TrackChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
+	</div>
+</section>
 
 <style lang="scss">
 	.actions {
@@ -97,16 +101,36 @@
 		margin-top: 2.45rem;
 	}
 
+	section {
+		background: transparent;
+		border-color: transparent;
+		max-width: calc(1078px + 0.25rem + 0.25rem);
+	}
+
 	.trail {
 		display: flex;
 		flex-direction: column;
 		gap: 1.75rem;
 
+		padding: 0;
+
 		@media screen and (min-width: 996px) {
 			display: grid;
 			grid-template-columns: 1fr auto;
-			grid-column-gap: 1.75rem;
-			grid-row-gap: 2.5rem;
+			grid-gap: 1rem;
+
+			--map-aspect-ratio: auto;
+		}
+	}
+
+	.chart, .stats {
+		background: #fafafa;
+		color: black;
+	}
+
+	.chart {
+		@media screen and (min-width: 996px) {
+			grid-column: 1/3;
 		}
 	}
 </style>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData as ServerPageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
 	import Button from '$lib/components/Button.svelte';
 	import { goto } from '$app/navigation';
@@ -9,7 +9,7 @@
 	import '../../../theme/_code.scss';
 
 	interface Props {
-		data: PageData;
+		data: ServerPageData;
 	}
 
 	let { data }: Props = $props();

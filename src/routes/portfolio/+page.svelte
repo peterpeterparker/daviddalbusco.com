@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData as ServerPageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
 	import Work from '$lib/components/Work.svelte';
 	import Play from '$lib/components/Play.svelte';
@@ -7,7 +7,7 @@
 	import type { PageData } from '$lib/types/page';
 
 	interface Props {
-		data: PageData;
+		data: ServerPageData;
 	}
 
 	let { data }: Props = $props();

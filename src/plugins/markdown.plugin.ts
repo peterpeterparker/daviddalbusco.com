@@ -1,5 +1,6 @@
 import type { PageData } from '$lib/types/page';
 import type { Slug, SlugPath } from '$lib/types/slug';
+import { assetUrl } from '$lib/utils/assets.utils';
 import { listSlugs } from '$plugins/slug.plugin';
 import bash from '@shikijs/langs/bash';
 import css from '@shikijs/langs/css';
@@ -22,7 +23,6 @@ import { createHighlighterCoreSync } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
 // @ts-expect-error Type definition incorrect
-import { assetUrl } from '$lib/utils/assets.utils';
 import { Remarkable, utils } from 'remarkable';
 
 const shiki = createHighlighterCoreSync({

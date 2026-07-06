@@ -14,6 +14,11 @@ import { WebsitePage } from './_page';
 
 			await home.waitForImages();
 
+			// Scroll back to top for background color
+			await page.evaluate(() => window.scrollTo(0, 0));
+			// Wait background css animation to get back the main color
+			await page.waitForTimeout(500);
+
 			await expect(page).toHaveScreenshot(`${mode}-mode.png`, {
 				fullPage: true,
 				maxDiffPixelRatio: 0.1,

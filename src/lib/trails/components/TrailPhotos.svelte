@@ -82,7 +82,12 @@
 <ul>
 	{#each images as image, i (i)}
 		<li>
-			<button class="btn-img" popovertarget="photo-dialog" onclick={() => selectPhotoIndex(i)}>
+			<button
+				class="btn-img"
+				popovertarget="photo-dialog"
+				aria-label={`View trail photo n°${i + 1}`}
+				onclick={() => selectPhotoIndex(i)}
+			>
 				<CardCover background="var(--color-light)" {image} cover={true} />
 			</button>
 		</li>
@@ -93,9 +98,9 @@
 	{#if selectedPhotoIndex !== null && selectedPhotoIndex !== undefined}
 		<img
 			alt=""
-			aria-hidden="true"
 			loading="lazy"
 			role="presentation"
+			aria-label={`Trail photo n°${selectedPhotoIndex + 1}`}
 			src={images[selectedPhotoIndex]}
 		/>
 

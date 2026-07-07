@@ -16,6 +16,8 @@
 	const close = () => hamburger?.close();
 </script>
 
+<Menu onclose={close} {open} />
+
 <header>
 	<div class="title">
 		<a href="/" aria-label="Go to daviddalbusco.com home page"
@@ -25,8 +27,6 @@
 
 	<div class="menu"><Hamburger bind:this={hamburger} on:state={onStateChange} /></div>
 </header>
-
-<Menu onclose={close} {open} />
 
 <style lang="scss">
 	header {

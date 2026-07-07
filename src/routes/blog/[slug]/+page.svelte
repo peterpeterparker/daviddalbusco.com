@@ -9,6 +9,7 @@
 	import '../../../theme/_code.scss';
 	import Progress from '$lib/core/components/Progress.svelte';
 	import { formatDate } from '$lib/core/utils/date.utils';
+	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 
 	interface Props {
 		data: ServerPageData;
@@ -58,6 +59,8 @@
 {#if anchor !== undefined}
 	<Progress {anchor} />
 {/if}
+
+<Breadcrumb route={{ title: 'Blog', path: '/blog' }} page={{ title }} />
 
 <Section>
 	<h1>{title}</h1>

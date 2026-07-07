@@ -3,14 +3,30 @@ footer,
 section {
 	margin: 2.45em;
 
+	@media screen and (max-width: 576px) {
+		margin: 1em;
+	}
+}
+
+header:has(+ main > nav) {
+	margin-bottom: 0.75em;
+}
+
+nav {
+	margin: 0 2.45em;
+
+	@media screen and (max-width: 576px) {
+		margin: 0 1em;
+	}
+}
+
+header,
+footer,
+section {
 	background: #fafafa;
 	color: black;
 
 	border: 0.25rem solid black;
-
-	@media screen and (max-width: 576px) {
-		margin: 1em;
-	}
 }
 
 footer,
@@ -22,14 +38,25 @@ section {
 	}
 }
 
+nav,
 header,
 footer,
 section {
 	position: relative;
 	max-width: 1078px;
+}
 
+header,
+footer,
+section {
 	@media screen and (min-width: 1078px) {
 		margin: 2.45rem auto;
+	}
+}
+
+nav {
+	@media screen and (min-width: 1078px) {
+		margin: 0 auto;
 	}
 }
 

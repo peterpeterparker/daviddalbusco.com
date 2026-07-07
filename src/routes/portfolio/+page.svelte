@@ -5,6 +5,7 @@
 	import Play from '$lib/portfolio/components/Play.svelte';
 	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
 	import type { PageData } from '$lib/core/types/page';
+	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 
 	interface Props {
 		data: ServerPageData;
@@ -24,6 +25,8 @@
 		@include page.tertiary;
 	</style>
 </svelte:head>
+
+<Breadcrumb route={{ title: 'Portfolio', path: '/portfolio' }} />
 
 <Work projects={work} />
 

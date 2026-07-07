@@ -7,6 +7,7 @@
 	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
 	import Section from '$lib/core/components/Section.svelte';
 	import '../../../theme/_code.scss';
+	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 
 	interface Props {
 		data: ServerPageData;
@@ -14,7 +15,7 @@
 
 	let { data }: Props = $props();
 
-	let portfolio: PageData<PortfolioMetadata> = $derived(data.portfolio);
+	let portfolio = $derived<PageData<PortfolioMetadata>>(data.portfolio);
 
 	let content: string = $derived(portfolio.content);
 
@@ -30,6 +31,11 @@
 		@include page.light;
 	</style>
 </svelte:head>
+
+<Breadcrumb
+	route={{ title: 'Portfolio', path: '/portfolio' }}
+	page={{ title: portfolio.metadata.title }}
+/>
 
 <Section>
 	{@html content}

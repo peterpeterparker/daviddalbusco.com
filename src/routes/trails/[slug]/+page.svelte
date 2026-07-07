@@ -16,6 +16,7 @@
 	import Sport from '$lib/trails/components/Sport.svelte';
 	import TrailPhotos from '$lib/trails/components/TrailPhotos.svelte';
 	import { assetUrl } from '$lib/core/utils/assets.utils';
+	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 
 	interface Props {
 		data: ServerPageData;
@@ -60,6 +61,8 @@
 		@include page.light;
 	</style>
 </svelte:head>
+
+<Breadcrumb route={{ title: 'Trails', path: '/trails' }} page={{ title }} />
 
 <Section>
 	<h1>{title}</h1>

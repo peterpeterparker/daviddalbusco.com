@@ -4,6 +4,7 @@
 	import Blog from '$lib/blog/components/Blog.svelte';
 	import type { BlogMetadata } from '$lib/blog/types/blog';
 	import type { PageDataWithoutContent } from '$lib/core/types/page';
+	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 
 	interface Props {
 		data: ServerPageData;
@@ -22,5 +23,7 @@
 		@include page.tertiary;
 	</style>
 </svelte:head>
+
+<Breadcrumb route={{ title: 'Blog', path: '/blog' }} />
 
 <Blog {posts} />

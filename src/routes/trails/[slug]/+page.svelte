@@ -135,7 +135,8 @@
 		color: black;
 	}
 
-	.chart, .photos {
+	.chart,
+	.photos {
 		@media screen and (min-width: 996px) {
 			grid-column: 1/3;
 		}

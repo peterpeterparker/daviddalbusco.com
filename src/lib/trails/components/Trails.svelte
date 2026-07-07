@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Map from '$lib/trails/components/Map.svelte';
-	import Section from '$lib/components/Section.svelte';
-	import type { PageDataWithoutContent } from '$lib/types/page';
+	import Section from '$lib/core/components/Section.svelte';
+	import type { PageDataWithoutContent } from '$lib/core/types/page';
 	import type { Trail as TrailType } from '$lib/trails/types/trail';
 	import Trail from '$lib/trails/components/Trail.svelte';
 	import type { MapAnnotation } from '$lib/trails/types/map';

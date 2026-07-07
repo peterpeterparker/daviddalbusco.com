@@ -1,14 +1,14 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/components/Seo.svelte';
-	import type { BlogMetadata } from '$lib/types/blog';
-	import type { PageData } from '$lib/types/page';
-	import Section from '$lib/components/Section.svelte';
-	import Link from '$lib/components/Link.svelte';
+	import Seo from '$lib/core/components/Seo.svelte';
+	import type { BlogMetadata } from '$lib/blog/types/blog';
+	import type { PageData } from '$lib/core/types/page';
+	import Section from '$lib/core/components/Section.svelte';
+	import Link from '$lib/core/components/Link.svelte';
 	import '../../../theme/_blog.scss';
 	import '../../../theme/_code.scss';
-	import Progress from '$lib/components/Progress.svelte';
-	import { formatDate } from '$lib/utils/date.utils';
+	import Progress from '$lib/core/components/Progress.svelte';
+	import { formatDate } from '$lib/core/utils/date.utils';
 
 	interface Props {
 		data: ServerPageData;

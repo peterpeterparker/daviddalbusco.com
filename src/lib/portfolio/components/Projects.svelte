@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Project from '$lib/components/Project.svelte';
-	import Section from '$lib/components/Section.svelte';
-	import type { PageData } from '$lib/types/page';
-	import type { PortfolioMetadata } from '$lib/types/portfolio';
+	import Project from '$lib/portfolio/components/Project.svelte';
+	import Section from '$lib/core/components/Section.svelte';
+	import type { PageData } from '$lib/core/types/page';
+	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
 
 	interface Props {
 		projects: PageData<PortfolioMetadata>[];
@@ -23,7 +23,7 @@
 </Section>
 
 <style lang="scss">
-	@use '../../theme/_grid.scss';
+	@use '../../../theme/_grid.scss';
 
 	.grid {
 		@include grid.panel;

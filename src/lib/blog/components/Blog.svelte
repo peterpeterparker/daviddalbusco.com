@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Link from '$lib/components/Link.svelte';
-	import Post from '$lib/components/Post.svelte';
-	import Section from '$lib/components/Section.svelte';
-	import type { PageDataWithoutContent } from '$lib/types/page';
-	import type { BlogMetadata } from '$lib/types/blog';
+	import Link from '$lib/core/components/Link.svelte';
+	import Post from '$lib/blog/components/Post.svelte';
+	import Section from '$lib/core/components/Section.svelte';
+	import type { PageDataWithoutContent } from '$lib/core/types/page';
+	import type { BlogMetadata } from '$lib/blog/types/blog';
 
 	interface Props {
 		posts: PageDataWithoutContent<BlogMetadata>[];
@@ -34,7 +34,7 @@
 </Section>
 
 <style lang="scss">
-	@use '../../theme/_grid.scss';
+	@use '../../../theme/_grid';
 
 	.grid {
 		margin: 0 0 2.25em;

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Section from '$lib/components/Section.svelte';
-	import Link from '$lib/components/Link.svelte';
+	import Section from '$lib/core/components/Section.svelte';
+	import Link from '$lib/core/components/Link.svelte';
 	import { onMount } from 'svelte';
-	import { track } from '$lib/services/analytics.services';
+	import { track } from '$lib/core/services/analytics.services';
 
 	// Do not prerender to prevent spam
 	// See 2.6 - https://spencermortensen.com/articles/email-obfuscation/

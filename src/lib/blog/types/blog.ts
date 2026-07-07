@@ -1,4 +1,4 @@
-import type { DateString } from '$lib/types/date';
+import type { DateString } from '$lib/core/types/date';
 
 export interface BlogMetadata {
 	title: string;

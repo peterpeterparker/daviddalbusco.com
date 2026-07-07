@@ -1,5 +1,5 @@
-import type { BlogMetadata } from '$lib/types/blog';
-import type { PageData } from '$lib/types/page';
+import type { BlogMetadata } from '$lib/blog/types/blog';
+import type { PageData } from '$lib/core/types/page';
 import { getBlob } from '$plugins/blog.plugin';
 
 export const load = async ({

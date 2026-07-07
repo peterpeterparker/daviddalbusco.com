@@ -1,5 +1,5 @@
+import type { PageData } from '$lib/core/types/page';
 import type { Trail, TrailMetadata } from '$lib/trails/types/trail';
-import type { PageData } from '$lib/types/page';
 import { get, list } from '$plugins/markdown.plugin';
 import { getTrack } from '$plugins/track.plugin';
 

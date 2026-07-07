@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Hamburger from '$lib/components/Hamburger.svelte';
-	import Menu from '$lib/components/Menu.svelte';
+	import Hamburger from '$lib/core/components/Hamburger.svelte';
+	import Menu from '$lib/core/components/Menu.svelte';
 
 	interface Props {
 		tag: 'h1' | 'h3';

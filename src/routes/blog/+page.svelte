@@ -1,9 +1,9 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/components/Seo.svelte';
-	import Blog from '$lib/components/Blog.svelte';
-	import type { BlogMetadata } from '$lib/types/blog';
-	import type { PageDataWithoutContent } from '$lib/types/page';
+	import Seo from '$lib/core/components/Seo.svelte';
+	import Blog from '$lib/blog/components/Blog.svelte';
+	import type { BlogMetadata } from '$lib/blog/types/blog';
+	import type { PageDataWithoutContent } from '$lib/core/types/page';
 
 	interface Props {
 		data: ServerPageData;

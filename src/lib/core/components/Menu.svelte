@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import IconOpen from '$lib/icons/IconOpen.svelte';
-	import { track } from '$lib/services/analytics.services';
+	import IconOpen from '$lib/core/icons/IconOpen.svelte';
+	import { track } from '$lib/core/services/analytics.services';
 
 	interface Props {
 		open: boolean;

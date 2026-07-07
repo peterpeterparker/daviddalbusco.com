@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Projects from '$lib/components/Projects.svelte';
-	import type { PortfolioMetadata } from '$lib/types/portfolio';
-	import type { PageData } from '$lib/types/page';
+	import Projects from '$lib/portfolio/components/Projects.svelte';
+	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+	import type { PageData } from '$lib/core/types/page';
 
 	interface Props {
 		projects: PageData<PortfolioMetadata>[];

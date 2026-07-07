@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import CardCover from '$lib/components/CardCover.svelte';
+	import CardCover from '$lib/core/components/CardCover.svelte';
 
 	interface Props {
 		path: string;

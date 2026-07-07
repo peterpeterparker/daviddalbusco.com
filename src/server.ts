@@ -7,6 +7,10 @@ const ADDITIONAL_HEADERS: Record<string, [string, ...string[]]> = {
 	'.jpg': ['public', 'max-age=31536000', 'immutable']
 };
 
+const ALLOWED_ORIGINS: Record<string, [string, ...string[]]> = {
+	'.gpx': ['https://daviddalbusco.com', 'https://www.daviddalbusco.com']
+};
+
 const fetchAsset: ExportedHandler['fetch'] = async (request, env) => {
 	const responseFromMemory = await env.ASSETS.fetch(request);
 
@@ -24,13 +28,20 @@ export default {
 		const { pathname } = URL.parse(request.url) ?? { pathname: undefined };
 		const cache = pathname !== undefined ? ADDITIONAL_HEADERS[extname(pathname)] : undefined;
 
-		// TODO: Access-Control-Allow-Origin for GPX
+		const origin = request.headers?.origin;
+		const allowedOrigin =
+			origin !== undefined && pathname !== undefined
+				? ALLOWED_ORIGINS[extname(pathname)]?.includes(origin) === true
+					? origin
+					: undefined
+				: undefined;
 
 		return {
 			...rest,
 			headers: {
 				...headers,
-				...(cache !== undefined && { 'cache-control': cache.join(', ') })
+				...(cache !== undefined && { 'cache-control': cache.join(', ') }),
+				...(allowedOrigin !== undefined && { 'access-control-allow-origin': allowedOrigin })
 			}
 		};
 	}

@@ -133,6 +133,7 @@
 		gap: 0.75rem;
 
 		overflow-x: auto;
+		overflow-y: hidden;
 
 		margin: 0;
 		padding: 0;

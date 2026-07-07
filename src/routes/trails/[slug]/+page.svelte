@@ -64,7 +64,8 @@
 <Section>
 	<h1>{title}</h1>
 
-	<p><Sport {sport} /> {formatDate(trailDate)}</p>
+	<p class="date">{formatDate(trailDate)}</p>
+	<p><Sport {sport} /></p>
 
 	<article>
 		{@html content}
@@ -92,6 +93,10 @@
 </section>
 
 <style lang="scss">
+	.date {
+		margin: 0;
+	}
+
 	.actions {
 		display: flex;
 		gap: 0.75rem;

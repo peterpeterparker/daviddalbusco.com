@@ -62,6 +62,8 @@
 	.grid {
 		margin: 0 0 2.25em;
 
+		--cover-img-border: 0.25rem solid black;
+
 		@include grid.panel;
 	}
 

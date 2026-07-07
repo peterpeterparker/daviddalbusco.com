@@ -24,14 +24,14 @@
 <Card background="transparent" cover={true} {image} path="trails" {slug}>
 	<h3>{title}</h3>
 
-	<p class="sport"><Sport {sport} /></p>
 	<p class="date">{formatDate(trailDate)}</p>
+	<p class="sport"><Sport {sport} /></p>
 </Card>
 
 <style lang="scss">
 	h3 {
 		font-size: 1rem;
-		margin: 0 0 0.45rem;
+		margin: 0;
 	}
 
 	.date,

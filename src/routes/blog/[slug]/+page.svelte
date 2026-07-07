@@ -4,7 +4,6 @@
 	import type { BlogMetadata } from '$lib/blog/types/blog';
 	import type { PageData } from '$lib/core/types/page';
 	import Section from '$lib/core/components/Section.svelte';
-	import Link from '$lib/core/components/Link.svelte';
 	import '../../../theme/_blog.scss';
 	import '../../../theme/_code.scss';
 	import Progress from '$lib/core/components/Progress.svelte';
@@ -74,8 +73,6 @@
 	</article>
 
 	<div class="actions" bind:this={anchor}>
-		<Link href="/blog">Continue reading</Link>
-
 		<a
 			class="newsletter"
 			href="http://eepurl.com/iXHDy2"
@@ -96,8 +93,6 @@
 	}
 
 	.actions {
-		display: flex;
-		gap: 0.75rem;
 		margin-top: 2.45rem;
 	}
 

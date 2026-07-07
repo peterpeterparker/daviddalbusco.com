@@ -34,7 +34,9 @@
 		Computer Engineering and an EMBA. I'm fluent in French, German, and English.
 	</p>
 
-	<p>When I'm not coding, you can find me running on mountain trails. 🏔️🏃</p>
+	<p>
+		When I'm not working, you can find me running <a href="/trails">trails</a> or cycling. 🏔️🏃🚴
+	</p>
 
 	<p>
 		If you have a project in mind or need some help, <a href="#contact" rel="noopener noreferrer"

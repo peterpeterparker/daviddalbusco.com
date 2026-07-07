@@ -1,21 +1,22 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData as ServerPageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
 	import type { BlogMetadata } from '$lib/types/blog';
-	import type { MarkdownData } from '$lib/types/markdown';
+	import type { PageData } from '$lib/types/page';
 	import Section from '$lib/components/Section.svelte';
 	import Link from '$lib/components/Link.svelte';
 	import '../../../theme/_blog.scss';
 	import '../../../theme/_code.scss';
 	import Progress from '$lib/components/Progress.svelte';
+	import { formatDate } from '$lib/utils/date.utils';
 
 	interface Props {
-		data: PageData;
+		data: ServerPageData;
 	}
 
 	let { data }: Props = $props();
 
-	let post = $derived<MarkdownData<BlogMetadata>>(data.post);
+	let post = $derived<PageData<BlogMetadata>>(data.post);
 
 	let slug = $derived(post.slug);
 	let content = $derived(post.content);
@@ -62,11 +63,7 @@
 	<h1>{title}</h1>
 	<h3>{description}</h3>
 
-	<p class="date">
-		{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(
-			new Date(postDate)
-		)}
-	</p>
+	<p class="date">{formatDate(postDate)}</p>
 	<p>{tags}</p>
 
 	<article>

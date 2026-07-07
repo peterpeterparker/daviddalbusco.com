@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import type { PageData as ServerPageData } from './$types';
 	import Seo from '$lib/components/Seo.svelte';
 	import Blog from '$lib/components/Blog.svelte';
 	import Work from '$lib/components/Work.svelte';
@@ -11,7 +11,7 @@
 	import Hero from '$lib/components/Hero.svelte';
 
 	interface Props {
-		data: PageData;
+		data: ServerPageData;
 	}
 
 	let { data }: Props = $props();
@@ -22,7 +22,7 @@
 
 	const onScroll = () => {
 		const scrolledSize =
-			window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+			window.pageYOffset ?? document.documentElement.scrollTop ?? document.body.scrollTop ?? 0;
 
 		if (scrolledSize > 0) {
 			return;

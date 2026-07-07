@@ -1,11 +1,12 @@
 <script lang="ts">
-	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
+	import type { PageDataWithoutContent } from '$lib/types/page';
 	import type { BlogMetadata } from '$lib/types/blog';
 	import Card from '$lib/components/Card.svelte';
-	import { env } from '$env/dynamic/public';
+	import { formatDate } from '$lib/utils/date.utils';
+	import { assetUrl } from '$lib/utils/assets.utils';
 
 	interface Props {
-		post: MarkdownDataWithoutContent<BlogMetadata>;
+		post: PageDataWithoutContent<BlogMetadata>;
 	}
 
 	let { post }: Props = $props();
@@ -15,9 +16,7 @@
 
 	let title = $derived(metadata.title);
 	let description = $derived(metadata.description);
-	let image = $derived(
-		metadata.image.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS)
-	);
+	let image = $derived(assetUrl(metadata.image));
 	let postDate = $derived(metadata.date);
 </script>
 
@@ -25,11 +24,7 @@
 	<h3>{title}</h3>
 	<p>{description}</p>
 
-	<p class="date">
-		{new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(
-			new Date(postDate)
-		)}
-	</p>
+	<p class="date">{formatDate(postDate)}</p>
 </Card>
 
 <style lang="scss">

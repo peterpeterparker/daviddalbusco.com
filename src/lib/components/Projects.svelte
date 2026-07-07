@@ -1,13 +1,11 @@
 <script lang="ts">
-	import '../../theme/_grid.scss';
-
 	import Project from '$lib/components/Project.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import type { MarkdownData } from '$lib/types/markdown';
+	import type { PageData } from '$lib/types/page';
 	import type { PortfolioMetadata } from '$lib/types/portfolio';
 
 	interface Props {
-		projects: MarkdownData<PortfolioMetadata>[];
+		projects: PageData<PortfolioMetadata>[];
 		children?: import('svelte').Snippet;
 	}
 
@@ -23,3 +21,11 @@
 		{/each}
 	</div>
 </Section>
+
+<style lang="scss">
+	@use '../../theme/_grid.scss';
+
+	.grid {
+		@include grid.panel;
+	}
+</style>

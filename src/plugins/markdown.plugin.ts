@@ -1,6 +1,6 @@
-import { env } from '$env/dynamic/public';
-import type { MarkdownData } from '$lib/types/markdown';
-import type { Slug } from '$lib/types/slug';
+import type { PageData } from '$lib/types/page';
+import type { Slug, SlugPath } from '$lib/types/slug';
+import { assetUrl } from '$lib/utils/assets.utils';
 import { listSlugs } from '$plugins/slug.plugin';
 import bash from '@shikijs/langs/bash';
 import css from '@shikijs/langs/css';
@@ -50,10 +50,8 @@ const shiki = createHighlighterCoreSync({
 // Remove frontmatter YAML - https://stackoverflow.com/a/33537453/5404186
 const metadataRegex = /^---((.|\n)*?)---/g;
 
-export const list = <T>({ path }: { path: 'portfolio' | 'blog' }): Promise<MarkdownData<T>[]> => {
-	const promises: Promise<MarkdownData<T>>[] = listSlugs({ path }).map(({ slug }: Slug) =>
-		get({ slug, path })
-	);
+export const list = <T>({ path }: { path: SlugPath }): Promise<PageData<T>[]> => {
+	const promises = listSlugs({ path }).map(({ slug }: Slug) => get<T>({ slug, path }));
 
 	return Promise.all(promises);
 };
@@ -63,38 +61,60 @@ export const get = async <T>({
 	path
 }: {
 	slug: string;
-	path: 'portfolio' | 'blog';
-}): Promise<MarkdownData<T>> => {
-	const metadata: T = buildMetadata({ slug, path }) || ({} as T);
+	path: SlugPath;
+}): Promise<PageData<T>> => {
+	const metadata = buildMetadata<T>({ slug, path }) || ({} as T);
 	const content = renderHTML({ slug, path });
 	return { metadata, content, slug };
 };
 
-const buildMetadata = <T>({
-	slug,
-	path
-}: {
-	slug: string;
-	path: 'portfolio' | 'blog';
-}): T | undefined => {
-	const content: string = readFile({ path, slug });
+const buildMetadata = <T>({ slug, path }: { slug: string; path: SlugPath }): T | undefined => {
+	const content = readFile({ path, slug });
 
-	const rawMetdata: string[] | undefined = metadataRegex
+	const rawMetdata = metadataRegex
 		.exec(content)?.[1]
 		?.split('\n')
 		?.filter((value: string) => value !== '');
 
-	return rawMetdata?.reduce((acc: T, value: string) => {
-		const [key, ...rest]: string[] = value.split(':');
+	const toValue = (rest: string[]): string => rest.join(':').replace(/"/g, '').trim();
+
+	const basicMetadata = rawMetdata?.reduce<Partial<T>>((acc, value) => {
+		const [key, ...rest] = value.split(':');
 
 		const obj: Record<string, string> = {};
-		obj[key] = rest.join(':').replace(/"/g, '').trim();
+		obj[key] = toValue(rest);
 
 		return { ...acc, ...obj };
-	}, {} as T);
+	}, {});
+
+	const arrayMetadata: Record<string, string[]> = {};
+	let arrayKey: string | undefined;
+
+	for (const line of rawMetdata ?? []) {
+		const [key, ...rest] = line.split(':');
+
+		if (toValue(rest) === '') {
+			arrayKey = key;
+		} else if (arrayKey !== undefined) {
+			const arrayItemMatch = line.match(/^\s*-\s*(.+)$/);
+
+			if (arrayItemMatch !== null) {
+				arrayMetadata[arrayKey] = [
+					...(arrayMetadata[arrayKey] ?? []),
+					toValue([arrayItemMatch[1]])
+				];
+			}
+		}
+	}
+
+	// Optimistically typed. irl I would use e.g. Zod here.
+	return {
+		...basicMetadata,
+		...arrayMetadata
+	} as T;
 };
 
-const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }): string => {
+const renderHTML = ({ slug, path }: { slug: string; path: SlugPath }): string => {
 	const md: Remarkable = new Remarkable({
 		html: true,
 		xhtmlOut: true,
@@ -134,9 +154,7 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 
 	// @ts-expect-error We are fine without types.
 	const imageRule = () => (tokens, idx, options, _env) => {
-		const url = utils
-			.escapeHtml(tokens[idx].src)
-			.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS);
+		const url = assetUrl(utils.escapeHtml(tokens[idx].src));
 
 		const src = ' src="' + url + '"';
 		const title = tokens[idx].title
@@ -161,7 +179,7 @@ const renderHTML = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }
 	return md.render(cleanContent);
 };
 
-const readFile = ({ slug, path }: { slug: string; path: 'portfolio' | 'blog' }): string => {
+const readFile = ({ slug, path }: { slug: string; path: SlugPath }): string => {
 	const buffer = readFileSync(`src/${path}/${slug}.md`);
 	return buffer.toString('utf-8');
 };

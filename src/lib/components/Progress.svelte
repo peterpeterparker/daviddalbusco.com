@@ -5,25 +5,21 @@
 
 	let { anchor }: Props = $props();
 
+	let scrollY = $state(0);
 	let value = $state(0);
 
 	const onscroll = () => {
 		const delta = document.documentElement.scrollHeight - anchor.offsetTop;
 		const scrollLength = anchor.offsetTop - delta;
 
-		const y = (window.scrollY * 100) / scrollLength;
+		const y = (scrollY * 100) / scrollLength;
 		value = Math.min(100, Math.floor(y));
 	};
 
-	$effect(() => {
-		window.addEventListener('scroll', onscroll, { passive: true });
-
-		return () => {
-			// https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener#matching_event_listeners_for_removal
-			window.removeEventListener('scroll', onscroll, false);
-		};
-	});
+	$effect(onscroll);
 </script>
+
+<svelte:window bind:scrollY />
 
 <progress {value} max="100"></progress>
 

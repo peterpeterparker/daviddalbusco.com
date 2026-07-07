@@ -19,10 +19,17 @@
 		"lint": "prettier --check . && eslint .",
 		"lint:fix": "prettier --check . && eslint . --fix",
 		"format": "prettier --write .",
-		"fmt": "pnpm run format"
+		"fmt": "pnpm run format",
+		"e2e": "NODE_ENV=development playwright test",
+		"e2e:ci": "playwright test --reporter=html",
+		"e2e:snapshots": "playwright test --update-snapshots --reporter=list",
+		"e2e:snapshots:local": "NODE_ENV=development playwright test --update-snapshots --reporter=list",
+		"e2e:report": "playwright show-report",
+		"e2e:playwright:install": "playwright install chromium --with-deps"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@playwright/test": "^1.61.1",
 		"@shikijs/langs": "^4.3.0",
 		"@shikijs/themes": "^4.3.0",
 		"@sveltejs/adapter-static": "^3.0.10",
@@ -36,6 +43,7 @@
 		"eslint": "^10.6.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.20.0",
+		"fast-xml-parser": "^5.9.3",
 		"globals": "^17.7.0",
 		"kyushu-types": "0.2.1",
 		"prettier": "^3.9.3",
@@ -61,6 +69,8 @@
 		"cookie": "^0.7.0"
 	},
 	"dependencies": {
+		"@apple/mapkit-loader": "^1.0.0",
+		"layerchart": "^2.0.1",
 		"yawa-tracker": "0.0.5"
 	},
 	"engines": {

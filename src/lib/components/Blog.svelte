@@ -1,14 +1,12 @@
 <script lang="ts">
-	import '../../theme/_grid.scss';
-
 	import Link from '$lib/components/Link.svelte';
 	import Post from '$lib/components/Post.svelte';
 	import Section from '$lib/components/Section.svelte';
-	import type { MarkdownDataWithoutContent } from '$lib/types/markdown';
+	import type { PageDataWithoutContent } from '$lib/types/page';
 	import type { BlogMetadata } from '$lib/types/blog';
 
 	interface Props {
-		posts: MarkdownDataWithoutContent<BlogMetadata>[];
+		posts: PageDataWithoutContent<BlogMetadata>[];
 		more?: boolean;
 	}
 
@@ -36,8 +34,12 @@
 </Section>
 
 <style lang="scss">
+	@use '../../theme/_grid.scss';
+
 	.grid {
 		margin: 0 0 2.25em;
+
+		@include grid.panel;
 	}
 
 	p {

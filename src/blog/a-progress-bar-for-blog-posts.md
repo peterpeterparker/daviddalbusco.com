@@ -58,6 +58,8 @@ Svelte has a built-in way to bind to `scrollY` ([doc](https://svelte.dev/docs/sv
 
 AFAIK it doesn't let you pass `passive: true` to the underlying listener. I took a quick look at the source and it doesn't seem to use it either, though I'm not entirely sure. What I do know for sure is that using a passive listener for scroll is generally a performance best practice, even if in this particular case one might argue there isn't much to worry about. That's why I went with a custom event listener instead.
 
+> **Update:** turns out `passive` isn't actually needed here anyway. As pointed out in [this thread](https://bsky.app/profile/antleth.fr/post/3mpqhzxheyk2a) and confirmed by [MDN](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#using_passive_listeners), the `scroll` event can't be canceled, so a listener can't block page rendering regardless of `passive`.
+
 ```ts
 $effect(() => {
 	window.addEventListener("scroll", onscroll, { passive: true });

@@ -56,4 +56,8 @@
 	article :global(line) {
 		stroke: var(--color-light);
 	}
+
+	:global(.lc-tooltip-container) {
+		background-color: white;
+	}
 </style>

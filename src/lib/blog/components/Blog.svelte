@@ -34,7 +34,7 @@
 </Section>
 
 <style lang="scss">
-	@use '../../../theme/grid';
+	@use '../../../theme/_grid';
 
 	.grid {
 		margin: 0 0 2.25em;

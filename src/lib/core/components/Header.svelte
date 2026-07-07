@@ -18,7 +18,7 @@
 
 <header>
 	<div class="title">
-		<a href="/static" aria-label="Go to daviddalbusco.com home page"
+		<a href="/" aria-label="Go to daviddalbusco.com home page"
 			><svelte:element this={tag} class="title-text">David Dal Busco</svelte:element></a
 		>
 	</div>

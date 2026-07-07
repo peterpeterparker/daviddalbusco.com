@@ -11,3 +11,11 @@ prebuild = ["pnpm build"]
 [[worker.mounts]]
 host = "./assets"
 guest = "/assets"
+
+[[worker.env]]
+key = "MAPKIT_TOKEN_ROOT"
+value = ""
+
+[[worker.env]]
+key = "MAPKIT_TOKEN_WWW"
+value = ""

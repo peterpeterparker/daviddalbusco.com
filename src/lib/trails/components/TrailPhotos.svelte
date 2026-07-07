@@ -136,13 +136,9 @@
 
 		margin: 0;
 		padding: 0;
-
-		min-height: 275px;
 	}
 
 	li {
-		min-width: 300px;
-
 		list-style: none;
 
 		--cover-img-height: 100%;
@@ -153,11 +149,12 @@
 		display: block;
 		height: 100%;
 		min-width: 300px;
+		max-height: 225px;
 		padding: 0;
 	}
 
 	.btn-dialog {
-		position: absolute;
+		position: fixed;
 
 		display: flex;
 		justify-content: center;
@@ -204,9 +201,9 @@
 
 	img {
 		display: flex;
-		width: calc(100vw - 2rem);
-		max-width: 1078px;
-		aspect-ratio: 16/10;
+		width: 100%;
+		max-height: 90vh;
+		object-fit: cover;
 	}
 
 	dialog {

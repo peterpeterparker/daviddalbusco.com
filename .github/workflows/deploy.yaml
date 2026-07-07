@@ -57,5 +57,5 @@ jobs:
 
       - name: Deploy
         run: |
-          rsync -avz ./worker ./assets ./kyushu.toml deploy-daviddalbuscocom@${{ secrets.KYUSHU_HOST }}:/opt/daviddalbuscocom/
+          rsync -avz ./worker ./assets deploy-daviddalbuscocom@${{ secrets.KYUSHU_HOST }}:/opt/daviddalbuscocom/
           ssh deploy-daviddalbuscocom@${{ secrets.KYUSHU_HOST }} "sudo systemctl restart daviddalbuscocom"

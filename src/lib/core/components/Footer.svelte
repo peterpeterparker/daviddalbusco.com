@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Contact from '$lib/components/Contact.svelte';
-	import IconTwitter from '$lib/icons/IconTwitter.svelte';
-	import IconLinkedIn from '$lib/icons/IconLinkedIn.svelte';
-	import IconGitHub from '$lib/icons/IconGitHub.svelte';
-	import IconBsky from '$lib/icons/IconBsky.svelte';
+	import Contact from '$lib/core/components/Contact.svelte';
+	import IconTwitter from '$lib/core/icons/IconTwitter.svelte';
+	import IconLinkedIn from '$lib/core/icons/IconLinkedIn.svelte';
+	import IconGitHub from '$lib/core/icons/IconGitHub.svelte';
+	import IconBsky from '$lib/core/icons/IconBsky.svelte';
 </script>
 
 <footer>

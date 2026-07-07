@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import IconOpen from '$lib/icons/IconOpen.svelte';
-	import { track } from '$lib/services/analytics.services';
+	import IconOpen from '$lib/core/icons/IconOpen.svelte';
+	import { track } from '$lib/core/services/analytics.services';
 
 	interface Props {
 		open: boolean;
@@ -23,23 +23,23 @@
 <div class:open class="menu" onscroll={($event) => $event.stopPropagation()}>
 	{#if open}
 		<div class="container">
-			<a href="/" data-sveltekit-reload onclick={navigate}
+			<a href="/static" data-sveltekit-reload onclick={navigate}
 				><h2 in:fly={{ y: 100, duration: 500 }}>Home</h2></a
 			>
 
-			<a href="/#portfolio" onclick={navigate} rel="external"
+			<a href="/static#portfolio" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Portfolio</h2></a
 			>
 
-			<a href="/#projects" onclick={navigate} rel="external"
+			<a href="/static#projects" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Projects</h2></a
 			>
 
-			<a href="/#about" onclick={navigate} rel="external"
+			<a href="/static#about" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>About</h2></a
 			>
 
-			<a href="/#talks" onclick={navigate} rel="external"
+			<a href="/static#talks" onclick={navigate} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Talks</h2></a
 			>
 
@@ -55,7 +55,7 @@
 
 			<a href="/trails" onclick={navigate}><h2 in:fly={{ y: 100, duration: 500 }}>Trails</h2></a>
 
-			<a href="/#contact" onclick={navigateAndTrackEvent} rel="external"
+			<a href="/static#contact" onclick={navigateAndTrackEvent} rel="external"
 				><h2 in:fly={{ y: 100, duration: 500 }}>Contact</h2></a
 			>
 		</div>

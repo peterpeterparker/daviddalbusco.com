@@ -1,4 +1,4 @@
-import type { Slug } from '$lib/types/slug';
+import type { Slug } from '$lib/core/types/slug';
 import { listSlugs } from '$plugins/slug.plugin';
 
 export const prerender = true;

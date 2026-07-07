@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Hamburger from '$lib/components/Hamburger.svelte';
-	import Menu from '$lib/components/Menu.svelte';
+	import Hamburger from '$lib/core/components/Hamburger.svelte';
+	import Menu from '$lib/core/components/Menu.svelte';
 
 	interface Props {
 		tag: 'h1' | 'h3';
@@ -18,7 +18,7 @@
 
 <header>
 	<div class="title">
-		<a href="/" aria-label="Go to daviddalbusco.com home page"
+		<a href="/static" aria-label="Go to daviddalbusco.com home page"
 			><svelte:element this={tag} class="title-text">David Dal Busco</svelte:element></a
 		>
 	</div>

@@ -1,5 +1,5 @@
-import type { PageData } from '$lib/types/page';
-import type { PortfolioMetadata } from '$lib/types/portfolio';
+import type { PageData } from '$lib/core/types/page';
+import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
 import { getPortfolio } from '$plugins/portfolio.plugin';
 
 export const load = async ({

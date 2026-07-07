@@ -1,12 +1,12 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/components/Seo.svelte';
+	import Seo from '$lib/core/components/Seo.svelte';
 	import type { Trail } from '$lib/trails/types/trail';
-	import type { PageData } from '$lib/types/page';
-	import Section from '$lib/components/Section.svelte';
-	import Link from '$lib/components/Link.svelte';
+	import type { PageData } from '$lib/core/types/page';
+	import Section from '$lib/core/components/Section.svelte';
+	import Link from '$lib/core/components/Link.svelte';
 	import '../../../theme/_code.scss';
-	import { formatDate } from '$lib/utils/date.utils';
+	import { formatDate } from '$lib/core/utils/date.utils';
 	import type { MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
 	import { onMount } from 'svelte';
 	import { loadTrack } from '$lib/trails/services/tracks.services';
@@ -15,7 +15,7 @@
 	import TrackStats from '$lib/trails/components/TrackStats.svelte';
 	import Sport from '$lib/trails/components/Sport.svelte';
 	import TrailPhotos from '$lib/trails/components/TrailPhotos.svelte';
-	import { assetUrl } from '$lib/utils/assets.utils';
+	import { assetUrl } from '$lib/core/utils/assets.utils';
 
 	interface Props {
 		data: ServerPageData;

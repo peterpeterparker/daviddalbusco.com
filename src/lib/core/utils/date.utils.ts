@@ -1,4 +1,4 @@
-import type { DateString } from '$lib/types/date';
+import type { DateString } from '$lib/core/types/date';
 
 export const formatDate = (dateStr: DateString): string =>
 	new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' }).format(

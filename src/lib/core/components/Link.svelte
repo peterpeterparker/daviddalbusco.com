@@ -1,5 +1,5 @@
 <script lang="ts">
-	import IconOpen from '$lib/icons/IconOpen.svelte';
+	import IconOpen from '$lib/core/icons/IconOpen.svelte';
 
 	interface Props {
 		href: string;

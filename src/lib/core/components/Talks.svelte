@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Section from '$lib/components/Section.svelte';
-	import Link from '$lib/components/Link.svelte';
-	import { track } from '$lib/services/analytics.services';
+	import Section from '$lib/core/components/Section.svelte';
+	import Link from '$lib/core/components/Link.svelte';
+	import { track } from '$lib/core/services/analytics.services';
 
 	const trackEvent = () => {
 		track({ name: 'contact-talks' });

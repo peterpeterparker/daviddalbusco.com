@@ -1,10 +1,10 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/components/Seo.svelte';
-	import Work from '$lib/components/Work.svelte';
-	import Play from '$lib/components/Play.svelte';
-	import type { PortfolioMetadata } from '$lib/types/portfolio';
-	import type { PageData } from '$lib/types/page';
+	import Seo from '$lib/core/components/Seo.svelte';
+	import Work from '$lib/portfolio/components/Work.svelte';
+	import Play from '$lib/portfolio/components/Play.svelte';
+	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+	import type { PageData } from '$lib/core/types/page';
 
 	interface Props {
 		data: ServerPageData;

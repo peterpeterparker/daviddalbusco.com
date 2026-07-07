@@ -1,8 +1,8 @@
 <!-- @migration-task Error while migrating Svelte code: Encountered an export declaration pattern that is not supported for automigration. -->
 <script lang="ts">
-	import type { PageData } from '$lib/types/page';
-	import type { PortfolioMetadata } from '$lib/types/portfolio';
-	import Card from '$lib/components/Card.svelte';
+	import type { PageData } from '$lib/core/types/page';
+	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+	import Card from '$lib/core/components/Card.svelte';
 
 	interface Props {
 		project: PageData<PortfolioMetadata>;

@@ -1,6 +1,6 @@
+import type { BlogMetadata } from '$lib/blog/types/blog';
+import type { PageData } from '$lib/core/types/page';
 import type { Trail } from '$lib/trails/types/trail';
-import type { BlogMetadata } from '$lib/types/blog';
-import type { PageData } from '$lib/types/page';
 import { listBlog } from '$plugins/blog.plugin';
 import { listTrails } from '$plugins/trails.plugin';
 

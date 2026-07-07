@@ -1,4 +1,4 @@
-import type { PageData } from '$lib/types/page';
+import type { PageData } from '$lib/core/types/page';
 
 export type PortfolioType = 'work' | 'play';
 

@@ -7,13 +7,8 @@ const ADDITIONAL_HEADERS: Record<string, [string, ...string[]]> = {
 	'.jpg': ['public', 'max-age=31536000', 'immutable']
 };
 
-const MAPKIT_TOKENS: Record<string, string | undefined> = {
-	'daviddalbusco.com': process.env.MAPKIT_TOKEN_ROOT,
-	'www.daviddalbusco.com': process.env.MAPKIT_TOKEN_WWW
-};
-
 const ALLOWED_ASSETS_CORS: Record<string, [string, ...string[]]> = {
-	'.gpx': Object.keys(MAPKIT_TOKENS) as [string, ...string[]]
+	'.gpx': ['daviddalbusco.com', 'www.daviddalbusco.com']
 };
 
 const resolveHost = (request: WorkerRequest): string | undefined =>
@@ -38,6 +33,11 @@ const fetchMapkitToken: ExportedHandler['fetch'] = async (request) => {
 			body: 'Method Not Allowed'
 		};
 	}
+
+	const MAPKIT_TOKENS: Record<string, string | undefined> = {
+		'daviddalbusco.com': process.env.MAPKIT_TOKEN_ROOT,
+		'www.daviddalbusco.com': process.env.MAPKIT_TOKEN_WWW
+	};
 
 	const token = MAPKIT_TOKENS[host];
 

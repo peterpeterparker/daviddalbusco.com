@@ -1,19 +1,17 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import { createEventDispatcher } from 'svelte';
 	import IconOpen from '$lib/icons/IconOpen.svelte';
 	import { track } from '$lib/services/analytics.services';
 
 	interface Props {
 		open: boolean;
+		onclose: () => void;
 	}
 
-	let { open }: Props = $props();
-
-	const dispatch = createEventDispatcher();
+	let { open, onclose }: Props = $props();
 
 	const navigate = () => {
-		dispatch('close');
+		onclose();
 	};
 
 	const navigateAndTrackEvent = () => {
@@ -22,7 +20,7 @@
 	};
 </script>
 
-<div class:open class="menu">
+<div class:open class="menu" onscroll={($event) => $event.stopPropagation()}>
 	{#if open}
 		<div class="container">
 			<a href="/" data-sveltekit-reload onclick={navigate}
@@ -79,10 +77,11 @@
 		bottom: 0;
 
 		background: #fafafa;
+		color: black;
 
 		z-index: 2;
 
-		color: black;
+		overflow-y: auto;
 
 		&.open {
 			pointer-events: all;

@@ -22,14 +22,21 @@ export interface MapKit {
 
 export const loadMap = async (args: { anchor: HTMLElement }): Promise<Result<MapKit>> => {
 	return await safeExec(async () => {
-		return await loadMapKit(args);
+		const token = await initToken();
+		return await loadMapKit({ ...args, token });
 	});
 };
 
-const loadMapKit = async ({ anchor }: { anchor: HTMLElement }): Promise<MapKit> => {
+const loadMapKit = async ({
+	anchor,
+	token
+}: {
+	anchor: HTMLElement;
+	token: string;
+}): Promise<MapKit> => {
 	const mapkit = await load({
 		libraries: LIBRARIES,
-		token: env.PUBLIC_MAPKIT_TOKEN
+		token
 	});
 
 	const map = new mapkit.Map(anchor);
@@ -38,4 +45,29 @@ const loadMapKit = async ({ anchor }: { anchor: HTMLElement }): Promise<MapKit> 
 		mapkit,
 		map
 	};
+};
+
+interface ApiMapKitToken {
+	token: string;
+}
+
+const initToken = async (): Promise<string> => {
+	// e.g. for local development
+	if (env.PUBLIC_MAPKIT_TOKEN !== undefined) {
+		return env.PUBLIC_MAPKIT_TOKEN;
+	}
+
+	const { token } = await loadToken();
+	return token;
+};
+
+const loadToken = async (): Promise<ApiMapKitToken> => {
+	const response = await fetch('/api/mapkit-token');
+
+	if (!response.ok) {
+		const text = await response.text();
+		throw new Error(`${response.status} ${text}`);
+	}
+
+	return await response.json();
 };

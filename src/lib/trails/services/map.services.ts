@@ -61,7 +61,7 @@ const initToken = async (): Promise<ApiMapKitToken> => {
 };
 
 const loadToken = async (): Promise<ApiMapKitToken> => {
-	const response = await fetch('/api/mapkit-token');
+	const response = await fetch('/api/mapkit/token');
 
 	if (!response.ok) {
 		const text = await response.text();

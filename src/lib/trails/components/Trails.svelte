@@ -29,8 +29,7 @@
 	<h2>Trails</h2>
 
 	<p>
-		I'm a bit of a workaholic, but I've always been relatively sporty. It keeps the balance, I
-		guess. A few years ago I started running in the Alps 🏔️. I'm a hobbyist, so don't expect ultra
+		A few years ago I started running in the Alps 🏔️. I'm a hobbyist, so don't expect ultra
 		distances, marathon is about as far as I go. Sometimes I run elsewhere too as I bring my passion
 		with me when I (rarely) travel. Recently I also got into cycling (and, by extension, becoming a
 		mechanic apprentice 😅).

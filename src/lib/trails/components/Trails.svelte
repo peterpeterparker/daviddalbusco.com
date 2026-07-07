@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Map from '$lib/trails/components/Map.svelte';
-	import Section from '$lib/components/Section.svelte';
-	import type { PageDataWithoutContent } from '$lib/types/page';
+	import Section from '$lib/core/components/Section.svelte';
+	import type { PageDataWithoutContent } from '$lib/core/types/page';
 	import type { Trail as TrailType } from '$lib/trails/types/trail';
 	import Trail from '$lib/trails/components/Trail.svelte';
 	import type { MapAnnotation } from '$lib/trails/types/map';
@@ -29,8 +29,7 @@
 	<h2>Trails</h2>
 
 	<p>
-		I'm a bit of a workaholic, but I've always been relatively sporty. It keeps the balance, I
-		guess. A few years ago I started running in the Alps 🏔️. I'm a hobbyist, so don't expect ultra
+		A few years ago I started running in the Alps 🏔️. I'm a hobbyist, so don't expect ultra
 		distances, marathon is about as far as I go. Sometimes I run elsewhere too as I bring my passion
 		with me when I (rarely) travel. Recently I also got into cycling (and, by extension, becoming a
 		mechanic apprentice 😅).
@@ -62,6 +61,8 @@
 
 	.grid {
 		margin: 0 0 2.25em;
+
+		--cover-img-border: 0.25rem solid black;
 
 		@include grid.panel;
 	}

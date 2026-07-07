@@ -1,11 +1,11 @@
 <script lang="ts">
 	import type { TrailMetadata } from '$lib/trails/types/trail';
-	import { assetUrl } from '$lib/utils/assets.utils';
-	import CardCover from '$lib/components/CardCover.svelte';
+	import { assetUrl } from '$lib/core/utils/assets.utils';
+	import CardCover from '$lib/core/components/CardCover.svelte';
 	import type { Attachment } from 'svelte/attachments';
-	import IconClose from '$lib/icons/IconClose.svelte';
-	import IconArrowForward from '$lib/icons/IconArrowForward.svelte';
-	import IconArrowBack from '$lib/icons/IconArrowBack.svelte';
+	import IconClose from '$lib/core/icons/IconClose.svelte';
+	import IconArrowForward from '$lib/core/icons/IconArrowForward.svelte';
+	import IconArrowBack from '$lib/core/icons/IconArrowBack.svelte';
 
 	interface Props {
 		photos: TrailMetadata['photos'];
@@ -133,17 +133,15 @@
 		gap: 0.75rem;
 
 		overflow-x: auto;
+		overflow-y: hidden;
 
 		margin: 0;
 		padding: 0;
-
-		min-height: 275px;
 	}
 
 	li {
-		min-width: 300px;
-
 		list-style: none;
+		width: min-content;
 
 		--cover-img-height: 100%;
 		--cover-img-border: 0.25rem solid black;
@@ -153,11 +151,12 @@
 		display: block;
 		height: 100%;
 		min-width: 300px;
+		max-height: 225px;
 		padding: 0;
 	}
 
 	.btn-dialog {
-		position: absolute;
+		position: fixed;
 
 		display: flex;
 		justify-content: center;
@@ -204,9 +203,9 @@
 
 	img {
 		display: flex;
-		width: calc(100vw - 2rem);
-		max-width: 1078px;
-		aspect-ratio: 16/10;
+		width: 100%;
+		max-height: 90vh;
+		object-fit: cover;
 	}
 
 	dialog {

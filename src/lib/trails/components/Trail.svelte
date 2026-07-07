@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { PageDataWithoutContent } from '$lib/types/page';
-	import Card from '$lib/components/Card.svelte';
+	import type { PageDataWithoutContent } from '$lib/core/types/page';
+	import Card from '$lib/core/components/Card.svelte';
 	import type { Trail } from '$lib/trails/types/trail';
-	import { formatDate } from '$lib/utils/date.utils';
+	import { formatDate } from '$lib/core/utils/date.utils';
 	import Sport from '$lib/trails/components/Sport.svelte';
-	import { assetUrl } from '$lib/utils/assets.utils';
+	import { assetUrl } from '$lib/core/utils/assets.utils';
 
 	interface Props {
 		trail: PageDataWithoutContent<Trail>;
@@ -24,14 +24,14 @@
 <Card background="transparent" cover={true} {image} path="trails" {slug}>
 	<h3>{title}</h3>
 
-	<p class="sport"><Sport {sport} /></p>
 	<p class="date">{formatDate(trailDate)}</p>
+	<p class="sport"><Sport {sport} /></p>
 </Card>
 
 <style lang="scss">
 	h3 {
 		font-size: 1rem;
-		margin: 0 0 0.45rem;
+		margin: 0;
 	}
 
 	.date,

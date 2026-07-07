@@ -1,4 +1,4 @@
-import type { ExportedHandler } from 'kyushu-types';
+import type { ExportedHandler, WorkerRequest } from 'kyushu-types';
 import { extname } from 'node:path';
 
 const ADDITIONAL_HEADERS: Record<string, [string, ...string[]]> = {
@@ -7,14 +7,12 @@ const ADDITIONAL_HEADERS: Record<string, [string, ...string[]]> = {
 	'.jpg': ['public', 'max-age=31536000', 'immutable']
 };
 
-const MAPKIT_TOKENS: Record<string, string | undefined> = {
-	'daviddalbusco.com': process.env.MAPKIT_TOKEN_ROOT,
-	'www.daviddalbusco.com': process.env.MAPKIT_TOKEN_WWW
+const ALLOWED_ASSETS_CORS: Record<string, [string, ...string[]]> = {
+	'.gpx': ['daviddalbusco.com', 'www.daviddalbusco.com']
 };
 
-const ALLOWED_ASSETS_CORS: Record<string, [string, ...string[]]> = {
-	'.gpx': Object.keys(MAPKIT_TOKENS) as [string, ...string[]]
-};
+const resolveHost = (request: WorkerRequest): string | undefined =>
+	request.headers?.['x-forwarded-host'] ?? request.headers?.host;
 
 const fetchAsset: ExportedHandler['fetch'] = async (request, env) => {
 	const responseFromMemory = await env.ASSETS.fetch(request);
@@ -27,7 +25,7 @@ const fetchAsset: ExportedHandler['fetch'] = async (request, env) => {
 };
 
 const fetchMapkitToken: ExportedHandler['fetch'] = async (request) => {
-	const host = request.headers?.host;
+	const host = resolveHost(request);
 
 	if (host === undefined) {
 		return {
@@ -35,6 +33,11 @@ const fetchMapkitToken: ExportedHandler['fetch'] = async (request) => {
 			body: 'Method Not Allowed'
 		};
 	}
+
+	const MAPKIT_TOKENS: Record<string, string | undefined> = {
+		'daviddalbusco.com': process.env.MAPKIT_TOKEN_ROOT,
+		'www.daviddalbusco.com': process.env.MAPKIT_TOKEN_WWW
+	};
 
 	const token = MAPKIT_TOKENS[host];
 
@@ -70,7 +73,7 @@ export default {
 
 		const cache = pathname !== undefined ? ADDITIONAL_HEADERS[extname(pathname)] : undefined;
 
-		const host = request.headers?.host;
+		const host = resolveHost(request);
 		const allowedHost =
 			host !== undefined && pathname !== undefined
 				? ALLOWED_ASSETS_CORS[extname(pathname)]?.includes(host) === true

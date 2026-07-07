@@ -1,6 +1,6 @@
-import type { PageData } from '$lib/types/page';
-import type { Slug, SlugPath } from '$lib/types/slug';
-import { assetUrl } from '$lib/utils/assets.utils';
+import type { PageData } from '$lib/core/types/page';
+import type { Slug, SlugPath } from '$lib/core/types/slug';
+import { assetUrl } from '$lib/core/utils/assets.utils';
 import { listSlugs } from '$plugins/slug.plugin';
 import bash from '@shikijs/langs/bash';
 import css from '@shikijs/langs/css';

@@ -1,5 +1,5 @@
+import type { DateString } from '$lib/core/types/date';
 import type { MapLocation } from '$lib/trails/types/map';
-import type { DateString } from '$lib/types/date';
 
 export type Sport = 'trail-running' | 'cycling' | 'gravel';
 

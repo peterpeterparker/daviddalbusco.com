@@ -1,14 +1,14 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/components/Seo.svelte';
-	import type { BlogMetadata } from '$lib/types/blog';
-	import type { PageData } from '$lib/types/page';
-	import Section from '$lib/components/Section.svelte';
-	import Link from '$lib/components/Link.svelte';
+	import Seo from '$lib/core/components/Seo.svelte';
+	import type { BlogMetadata } from '$lib/blog/types/blog';
+	import type { PageData } from '$lib/core/types/page';
+	import Section from '$lib/core/components/Section.svelte';
 	import '../../../theme/_blog.scss';
 	import '../../../theme/_code.scss';
-	import Progress from '$lib/components/Progress.svelte';
-	import { formatDate } from '$lib/utils/date.utils';
+	import Progress from '$lib/core/components/Progress.svelte';
+	import { formatDate } from '$lib/core/utils/date.utils';
+	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 
 	interface Props {
 		data: ServerPageData;
@@ -59,6 +59,8 @@
 	<Progress {anchor} />
 {/if}
 
+<Breadcrumb route={{ title: 'Blog', path: '/blog' }} page={{ title }} />
+
 <Section>
 	<h1>{title}</h1>
 	<h3>{description}</h3>
@@ -71,8 +73,6 @@
 	</article>
 
 	<div class="actions" bind:this={anchor}>
-		<Link href="/blog">Continue reading</Link>
-
 		<a
 			class="newsletter"
 			href="http://eepurl.com/iXHDy2"
@@ -93,8 +93,6 @@
 	}
 
 	.actions {
-		display: flex;
-		gap: 0.75rem;
 		margin-top: 2.45rem;
 	}
 

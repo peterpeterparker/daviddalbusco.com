@@ -1,5 +1,5 @@
+import type { PageData } from '$lib/core/types/page';
 import type { Trail } from '$lib/trails/types/trail';
-import type { PageData } from '$lib/types/page';
 import { getTrail } from '$plugins/trails.plugin';
 
 export const load = async ({

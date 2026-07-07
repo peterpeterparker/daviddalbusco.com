@@ -1,6 +1,8 @@
-import type { BlogMetadata } from '$lib/types/blog';
-import type { PageData } from '$lib/types/page';
+import type { BlogMetadata } from '$lib/blog/types/blog';
+import type { PageData } from '$lib/core/types/page';
+import type { Trail } from '$lib/trails/types/trail';
 import { listBlog } from '$plugins/blog.plugin';
+import { listTrails } from '$plugins/trails.plugin';
 
 export const prerender = true;
 
@@ -12,10 +14,29 @@ export const GET = async (): Promise<Response> => {
 		'Content-Type': 'application/xml'
 	};
 
-	const posts = await listBlog();
+	const [posts, trailsList] = await Promise.all([listBlog(), listTrails()]);
+
+	type Item =
+		| { type: 'post'; date: Date; item: PageData<BlogMetadata> }
+		| { type: 'trail'; date: Date; item: PageData<Trail> };
+
+	const items: Item[] = [
+		...posts.map((post) => ({
+			type: 'post' as const,
+			date: new Date(post.metadata.date),
+			item: post
+		})),
+		...trailsList.map((trail) => ({
+			type: 'trail' as const,
+			date: new Date(trail.metadata.metadata.date),
+			item: trail
+		}))
+	].sort(({ date: dateA }, { date: dateB }) => {
+		return dateB.getTime() - dateA.getTime();
+	});
 
 	// We do not know here whe the site was built but, we can know when last blog post was published
-	const lastBuildDate = new Date(posts[0].metadata.date).toUTCString();
+	const lastBuildDate = items[0].date.toUTCString();
 
 	return new Response(
 		`<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
@@ -25,18 +46,17 @@ export const GET = async (): Promise<Response> => {
             <link>${url}</link>
             <lastBuildDate>${lastBuildDate}</lastBuildDate>
             
-            ${(await blog({ posts })).join('')}
+            ${items.map((item) => (item.type === 'post' ? post({ post: item.item }) : trail({ trail: item.item }))).join('')}
         </channel>
     </rss>`,
 		{ headers: headers }
 	);
 };
 
-const blog = async ({ posts }: { posts: PageData<BlogMetadata>[] }): Promise<string[]> => {
-	return posts.map(({ metadata, slug, content }: PageData<BlogMetadata>) => {
-		const { title, description, date } = metadata;
+const post = ({ post: { metadata, slug, content } }: { post: PageData<BlogMetadata> }): string => {
+	const { title, description, date } = metadata;
 
-		return `
+	return `
         <item>
           <title><![CDATA[${title}]]></title>
           <description><![CDATA[${description}]]></description>
@@ -45,5 +65,19 @@ const blog = async ({ posts }: { posts: PageData<BlogMetadata>[] }): Promise<str
           <content:encoded><![CDATA[${content}]]></content:encoded>
         </item>
       `;
-	});
+};
+
+const trail = ({ trail: { metadata, slug, content } }: { trail: PageData<Trail> }): string => {
+	const {
+		metadata: { title, date }
+	} = metadata;
+
+	return `
+        <item>
+          <title><![CDATA[${title}]]></title>
+          <link>${url}trails/${slug}/</link>
+          <pubDate>${new Date(date).toUTCString()}</pubDate>
+          <content:encoded><![CDATA[${content}]]></content:encoded>
+        </item>
+      `;
 };

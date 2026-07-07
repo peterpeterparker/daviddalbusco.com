@@ -1,9 +1,10 @@
 <script lang="ts">
-	import Seo from '$lib/components/Seo.svelte';
+	import Seo from '$lib/core/components/Seo.svelte';
 	import Trails from '$lib/trails/components/Trails.svelte';
-	import type { PageDataWithoutContent } from '$lib/types/page';
+	import type { PageDataWithoutContent } from '$lib/core/types/page';
 	import type { PageData as ServerPageData } from './$types';
 	import type { Trail } from '$lib/trails/types/trail';
+	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 
 	interface Props {
 		data: ServerPageData;
@@ -22,5 +23,7 @@
 		@include page.tertiary;
 	</style>
 </svelte:head>
+
+<Breadcrumb route={{ title: 'Trails', path: '/trails' }} />
 
 <Trails {trails} />

@@ -6,7 +6,7 @@ test('match screenshot', async ({ page }) => {
 
 	await page.goto('/blog/making-your-website-ai-ready');
 
-	await expect(page.getByText('Making Your Website AI-Ready')).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Making Your Website AI-Ready' })).toBeVisible();
 
 	await blog.waitForImages();
 

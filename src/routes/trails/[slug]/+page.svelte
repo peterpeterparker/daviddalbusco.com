@@ -6,7 +6,6 @@
 	import Section from '$lib/components/Section.svelte';
 	import Link from '$lib/components/Link.svelte';
 	import '../../../theme/_code.scss';
-	import Progress from '$lib/components/Progress.svelte';
 	import { formatDate } from '$lib/utils/date.utils';
 	import type { MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
 	import { onMount } from 'svelte';
@@ -32,8 +31,6 @@
 	let track = $derived(trail.metadata.track);
 
 	let { title, date: trailDate, sport, photos } = $derived(metadata);
-
-	let anchor = $state<HTMLElement | undefined>(undefined);
 
 	let image = $derived(assetUrl(photos[0]));
 
@@ -64,10 +61,6 @@
 	</style>
 </svelte:head>
 
-{#if anchor !== undefined}
-	<Progress {anchor} />
-{/if}
-
 <Section>
 	<h1>{title}</h1>
 
@@ -96,8 +89,6 @@
 	<div class="photos">
 		<TrailPhotos {photos} />
 	</div>
-
-	<div aria-hidden="true" bind:this={anchor}></div>
 </section>
 
 <style lang="scss">

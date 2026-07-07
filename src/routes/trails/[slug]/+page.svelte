@@ -4,7 +4,6 @@
 	import type { Trail } from '$lib/trails/types/trail';
 	import type { PageData } from '$lib/core/types/page';
 	import Section from '$lib/core/components/Section.svelte';
-	import Link from '$lib/core/components/Link.svelte';
 	import '../../../theme/_code.scss';
 	import { formatDate } from '$lib/core/utils/date.utils';
 	import type { MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
@@ -73,10 +72,6 @@
 	<article>
 		{@html content}
 	</article>
-
-	<div class="actions">
-		<Link href="/trails">View more trails...</Link>
-	</div>
 </Section>
 
 <section class="trail">
@@ -98,12 +93,6 @@
 <style lang="scss">
 	.date {
 		margin: 0;
-	}
-
-	.actions {
-		display: flex;
-		gap: 0.75rem;
-		margin-top: 1.45rem;
 	}
 
 	section {

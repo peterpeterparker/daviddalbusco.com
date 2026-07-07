@@ -23,7 +23,7 @@ export interface MapKit {
 export const loadMap = async (args: { anchor: HTMLElement }): Promise<Result<MapKit>> => {
 	return await safeExec(async () => {
 		const token = await initToken();
-		return await loadMapKit({ ...args, token });
+		return await loadMapKit({ ...args, ...token });
 	});
 };
 
@@ -51,14 +51,13 @@ interface ApiMapKitToken {
 	token: string;
 }
 
-const initToken = async (): Promise<string> => {
+const initToken = async (): Promise<ApiMapKitToken> => {
 	// e.g. for local development
 	if (env.PUBLIC_MAPKIT_TOKEN !== undefined) {
-		return env.PUBLIC_MAPKIT_TOKEN;
+		return { token: env.PUBLIC_MAPKIT_TOKEN };
 	}
 
-	const { token } = await loadToken();
-	return token;
+	return await loadToken();
 };
 
 const loadToken = async (): Promise<ApiMapKitToken> => {

@@ -26,7 +26,7 @@
 	<div class="menu"><Hamburger bind:this={hamburger} on:state={onStateChange} /></div>
 </header>
 
-<Menu on:close={close} {open} />
+<Menu onclose={close} {open} />
 
 <style lang="scss">
 	header {

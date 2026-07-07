@@ -11,7 +11,7 @@ Bun.serve({
 		const file = Bun.file(filePath);
 		return new Response(file, {
 			headers: {
-				'Access-Control-Allow-Origin': '*'
+				'Access-Control-Allow-Origin': 'http://localhost:5173'
 			}
 		});
 	},

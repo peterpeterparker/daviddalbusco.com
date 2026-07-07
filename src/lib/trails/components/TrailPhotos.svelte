@@ -140,6 +140,7 @@
 
 	li {
 		list-style: none;
+		width: min-content;
 
 		--cover-img-height: 100%;
 		--cover-img-border: 0.25rem solid black;

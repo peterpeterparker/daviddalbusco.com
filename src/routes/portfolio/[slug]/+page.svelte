@@ -36,9 +36,3 @@
 <Section>
 	{@html content}
 </Section>
-
-<style lang="scss">
-	.action {
-		margin: 3.45em 0 0;
-	}
-</style>

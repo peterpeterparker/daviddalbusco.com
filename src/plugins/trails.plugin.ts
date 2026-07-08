@@ -1,10 +1,12 @@
 import type { PageData } from '$lib/core/types/page';
 import type { Trail, TrailMetadata } from '$lib/trails/types/trail';
-import { get, list } from '$plugins/markdown.plugin';
+import { get, type GetPageData, list } from '$plugins/markdown.plugin';
 import { getTrack } from '$plugins/track.plugin';
 
-export const listTrails = async (): Promise<PageData<Trail>[]> => {
-	const trails = await list<TrailMetadata>({ path: 'trails' });
+export const listTrails = async (
+	{ year }: { year: string | undefined } = { year: undefined }
+): Promise<PageData<Trail>[]> => {
+	const trails = await list<TrailMetadata>({ path: 'trails', subPath: year });
 
 	const results = await Promise.all(trails.map(populateMetadata));
 
@@ -29,8 +31,10 @@ export const listTrails = async (): Promise<PageData<Trail>[]> => {
 	);
 };
 
-export const getTrail = async ({ slug }: Record<string, string>): Promise<PageData<Trail>> => {
-	const metadata = await get<TrailMetadata>({ slug, path: 'trails' });
+export const getTrail = async (
+	args: Pick<GetPageData, 'slug' | 'group'>
+): Promise<PageData<Trail>> => {
+	const metadata = await get<TrailMetadata>({ ...args, path: 'trails' });
 	return await populateMetadata(metadata);
 };
 

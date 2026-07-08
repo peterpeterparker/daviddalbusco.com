@@ -1,8 +1,10 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
+
 	interface Props {
 		action?: (() => void) | undefined;
 		type?: 'submit' | 'button';
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 	}
 
 	let { action = undefined, type = 'button', children }: Props = $props();

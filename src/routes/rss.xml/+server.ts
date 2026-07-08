@@ -1,5 +1,6 @@
 import type { BlogMetadata } from '$lib/blog/types/blog';
 import type { PageData } from '$lib/core/types/page';
+import { toSlugPath } from '$lib/core/utils/slug.utils';
 import type { Trail } from '$lib/trails/types/trail';
 import { listBlog } from '$plugins/blog.plugin';
 import { listTrails } from '$plugins/trails.plugin';
@@ -60,7 +61,7 @@ const post = ({ post: { metadata, slug, content } }: { post: PageData<BlogMetada
         <item>
           <title><![CDATA[${title}]]></title>
           <description><![CDATA[${description}]]></description>
-          <link>${url}blog/${slug}/</link>
+          <link>${url}blog/${toSlugPath(slug)}/</link>
           <pubDate>${new Date(date).toUTCString()}</pubDate>
           <content:encoded><![CDATA[${content}]]></content:encoded>
         </item>
@@ -75,7 +76,7 @@ const trail = ({ trail: { metadata, slug, content } }: { trail: PageData<Trail> 
 	return `
         <item>
           <title><![CDATA[${title}]]></title>
-          <link>${url}trails/${slug}/</link>
+          <link>${url}trails/${toSlugPath(slug)}/</link>
           <pubDate>${new Date(date).toUTCString()}</pubDate>
           <content:encoded><![CDATA[${content}]]></content:encoded>
         </item>

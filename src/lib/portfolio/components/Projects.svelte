@@ -3,10 +3,11 @@
 	import Section from '$lib/core/components/Section.svelte';
 	import type { PageData } from '$lib/core/types/page';
 	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		projects: PageData<PortfolioMetadata>[];
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 	}
 
 	let { projects, children }: Props = $props();
@@ -16,7 +17,7 @@
 	{@render children?.()}
 
 	<div class="grid">
-		{#each projects as project (project.slug)}
+		{#each projects as project (project.slug.name)}
 			<Project {project} />
 		{/each}
 	</div>

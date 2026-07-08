@@ -1,20 +1,23 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import CardCover from '$lib/core/components/CardCover.svelte';
+	import type { Slug } from '$lib/core/types/slug';
+	import { toSlugPath } from '$lib/core/utils/slug.utils';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		path: string;
-		slug: string;
+		slug: Slug;
 		background?: string;
 		image?: string;
 		cover?: boolean;
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 	}
 
 	let { path, slug, background, image, cover = false, children }: Props = $props();
 </script>
 
-<a href={`${base}/${path}/${slug}`}>
+<a href={`${base}/${path}/${toSlugPath(slug)}`}>
 	<article>
 		{#if background !== undefined && image !== undefined}
 			<CardCover {background} {image} {cover} />
@@ -40,7 +43,7 @@
 		@media (hover: hover) and (pointer: fine) {
 			&:focus,
 			&:hover {
-				transform: translateY(-1rem);
+				transform: translateY(var(--card-hover-transform, -1rem));
 			}
 		}
 	}

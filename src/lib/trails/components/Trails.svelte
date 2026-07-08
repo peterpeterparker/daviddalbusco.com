@@ -5,6 +5,7 @@
 	import type { Trail as TrailType } from '$lib/trails/types/trail';
 	import Trail from '$lib/trails/components/Trail.svelte';
 	import type { MapAnnotation } from '$lib/trails/types/map';
+	import { toSlugPath } from '$lib/core/utils/slug.utils';
 
 	interface Props {
 		trails: PageDataWithoutContent<TrailType>[];
@@ -20,7 +21,7 @@
 					metadata: { title },
 					track: { location }
 				}
-			}) => ({ title, location, pathname: slug })
+			}) => ({ title, location, pathname: toSlugPath(slug) })
 		)
 	);
 </script>
@@ -63,6 +64,7 @@
 		margin: 0 0 2.25em;
 
 		--cover-img-border: 0.25rem solid black;
+		--card-hover-transform: 0;
 
 		@include grid.panel;
 	}

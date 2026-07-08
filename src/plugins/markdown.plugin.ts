@@ -1,5 +1,5 @@
 import type { PageData } from '$lib/core/types/page';
-import type { Slug, SlugPath } from '$lib/core/types/slug';
+import type { SlugPath } from '$lib/core/types/slug';
 import { assetUrl } from '$lib/core/utils/assets.utils';
 import { listSlugs } from '$plugins/slug.plugin';
 import bash from '@shikijs/langs/bash';
@@ -19,6 +19,7 @@ import xml from '@shikijs/langs/xml';
 import yaml from '@shikijs/langs/yaml';
 import theme from '@shikijs/themes/dracula';
 import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { createHighlighterCoreSync } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
@@ -50,26 +51,34 @@ const shiki = createHighlighterCoreSync({
 // Remove frontmatter YAML - https://stackoverflow.com/a/33537453/5404186
 const metadataRegex = /^---((.|\n)*?)---/g;
 
-export const list = <T>({ path }: { path: SlugPath }): Promise<PageData<T>[]> => {
-	const promises = listSlugs({ path }).map(({ slug }: Slug) => get<T>({ slug, path }));
+export const list = <T>({
+	path,
+	subPath
+}: {
+	path: SlugPath;
+	subPath?: string;
+}): Promise<PageData<T>[]> => {
+	const promises = listSlugs({ path, subPath }).map(({ name: slug, group }) =>
+		get<T>({ slug, group, path })
+	);
 
 	return Promise.all(promises);
 };
 
-export const get = async <T>({
-	slug,
-	path
-}: {
-	slug: string;
+export interface GetPageData {
 	path: SlugPath;
-}): Promise<PageData<T>> => {
-	const metadata = buildMetadata<T>({ slug, path }) || ({} as T);
-	const content = renderHTML({ slug, path });
-	return { metadata, content, slug };
+	slug: string;
+	group?: string;
+}
+
+export const get = async <T>({ slug, group, ...rest }: GetPageData): Promise<PageData<T>> => {
+	const metadata = buildMetadata<T>({ slug, group, ...rest }) || ({} as T);
+	const content = renderHTML({ slug, group, ...rest });
+	return { metadata, content, slug: { name: slug, group } };
 };
 
-const buildMetadata = <T>({ slug, path }: { slug: string; path: SlugPath }): T | undefined => {
-	const content = readFile({ path, slug });
+const buildMetadata = <T>({ slug, group, path }: GetPageData): T | undefined => {
+	const content = readFile({ path, slug, group });
 
 	const rawMetdata = metadataRegex
 		.exec(content)?.[1]
@@ -114,7 +123,7 @@ const buildMetadata = <T>({ slug, path }: { slug: string; path: SlugPath }): T |
 	} as T;
 };
 
-const renderHTML = ({ slug, path }: { slug: string; path: SlugPath }): string => {
+const renderHTML = ({ slug, path, group }: GetPageData): string => {
 	const md: Remarkable = new Remarkable({
 		html: true,
 		xhtmlOut: true,
@@ -172,14 +181,15 @@ const renderHTML = ({ slug, path }: { slug: string; path: SlugPath }): string =>
 
 	md.renderer.rules.image = imageRule();
 
-	const content: string = readFile({ path, slug });
+	const content = readFile({ path, group, slug });
 
-	const cleanContent: string = content.replace(metadataRegex, '');
+	const cleanContent = content.replace(metadataRegex, '');
 
 	return md.render(cleanContent);
 };
 
-const readFile = ({ slug, path }: { slug: string; path: SlugPath }): string => {
-	const buffer = readFileSync(`src/${path}/${slug}.md`);
+const readFile = ({ slug, path, group }: GetPageData): string => {
+	const filePath = join('src', path, group ?? '', `${slug}.md`);
+	const buffer = readFileSync(filePath);
 	return buffer.toString('utf-8');
 };

@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		color?: string | undefined;
 		background?: string | undefined;
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 	}
 
 	let { color = undefined, background = undefined, children }: Props = $props();

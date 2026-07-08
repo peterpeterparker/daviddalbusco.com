@@ -55,10 +55,12 @@
 		part of the plan.
 	</p>
 
-	<p>
-		Most routes I follow are convenient for day trips from Zürich. If you'd like to follow any of
-		them and have questions, reach out!
-	</p>
+	<blockquote>
+		<p>
+			Most routes I follow are convenient for day trips from Zürich. If you'd like to follow any of
+			them and have questions, reach out!
+		</p>
+	</blockquote>
 
 	<div class="map">
 		<Map {annotations} {showItemsBoundary} />

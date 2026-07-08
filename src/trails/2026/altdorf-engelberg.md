@@ -1,9 +1,9 @@
 ---
-path: "/trails/altdorf-engelberg-2026"
+path: "/trails/altdorf-engelberg"
 date: "2026-06-27"
 title: "Altdorf - Engelberg"
 sport: trail-running
-gpx: "https://daviddalbusco.com/assets/gpx/altdorf-engelberg-2026.gpx"
+gpx: "https://daviddalbusco.com/assets/gpx/2026/altdorf-engelberg.gpx"
 photos:
   - "https://daviddalbusco.com/assets/photos/1Da-R9gzpL4j6MddBsykC0_apFVM_C2VA17nIczWtyU-2048x1536.jpg"
   - "https://daviddalbusco.com/assets/photos/YXnl6_zzpC3soHNdZ5CPxZcC1J4tB7cXDaUW42yKMjY-2048x1536.jpg"

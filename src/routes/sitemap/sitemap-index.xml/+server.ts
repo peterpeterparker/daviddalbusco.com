@@ -1,4 +1,3 @@
-import type { Slug } from '$lib/core/types/slug';
 import { listSlugs } from '$plugins/slug.plugin';
 
 export const prerender = true;
@@ -42,12 +41,12 @@ export const GET = async (): Promise<Response> => {
 };
 
 const pages = (): string[] => {
-	const blog: Slug[] = listSlugs({ path: 'blog' });
-	const portfolio: Slug[] = listSlugs({ path: 'portfolio' });
+	const blog = listSlugs({ path: 'blog' });
+	const portfolio = listSlugs({ path: 'portfolio' });
 
 	return [
 		...staticPages,
-		...blog.map(({ slug }: Slug) => `blog/${slug}`),
-		...portfolio.map(({ slug }: Slug) => `portfolio/${slug}`)
+		...blog.map(({ name: slug }) => `blog/${slug}`),
+		...portfolio.map(({ name: slug }) => `portfolio/${slug}`)
 	];
 };

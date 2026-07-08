@@ -18,7 +18,7 @@
 
 	let post = $derived<PageData<BlogMetadata>>(data.post);
 
-	let slug = $derived(post.slug);
+	let slug = $derived(post.slug.name);
 	let content = $derived(post.content);
 	let metadata = $derived(post.metadata);
 

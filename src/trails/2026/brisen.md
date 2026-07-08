@@ -1,9 +1,9 @@
 ---
-path: "/trails/brisen-2026"
+path: "/trails/brisen"
 date: "2026-06-20"
 title: "Brisen"
 sport: trail-running
-gpx: "https://daviddalbusco.com/assets/gpx/brisen.gpx"
+gpx: "https://daviddalbusco.com/assets/gpx/2026/brisen.gpx"
 photos:
   - "https://daviddalbusco.com/assets/photos/157018348.jpg"
   - "https://daviddalbusco.com/assets/photos/157018353.jpg"

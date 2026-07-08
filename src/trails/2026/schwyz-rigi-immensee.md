@@ -1,9 +1,9 @@
 ---
-path: "/trails/schwyz-rigi-immensee-2026"
+path: "/trails/schwyz-rigi-immensee"
 date: "2026-06-8"
 title: "Schwyz - Rigi - Immensee"
 sport: trail-running
-gpx: "https://daviddalbusco.com/assets/gpx/schwyz-rigi-immensee-2026.gpx"
+gpx: "https://daviddalbusco.com/assets/gpx/2026/schwyz-rigi-immensee.gpx"
 photos:
   - "https://daviddalbusco.com/assets/photos/156135496.jpg"
   - "https://daviddalbusco.com/assets/photos/156135499.jpg"

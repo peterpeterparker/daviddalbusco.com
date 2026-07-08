@@ -13,7 +13,7 @@
 	let { project }: Props = $props();
 
 	let metadata = $derived(project.metadata);
-	let slug = $derived(project.slug);
+	let slug = $derived(project.slug.name);
 
 	let title = $derived(metadata.title);
 

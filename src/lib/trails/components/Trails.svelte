@@ -6,6 +6,7 @@
 	import Trail from '$lib/trails/components/Trail.svelte';
 	import type { MapAnnotation } from '$lib/trails/types/map';
 	import { toSlugPath } from '$lib/core/utils/slug.utils';
+	import { sportColor } from '$lib/trails/utils/sport.utils';
 
 	interface Props {
 		trails: PageDataWithoutContent<TrailType>[];
@@ -18,10 +19,18 @@
 			({
 				slug,
 				metadata: {
-					metadata: { title },
+					metadata: { title, sport },
 					track: { location }
 				}
-			}) => ({ title: { hidden: true, value: title }, location, pathname: toSlugPath(slug) })
+			}) => ({
+				title: { hidden: true, value: title },
+				colors: {
+					background: sportColor(sport),
+					glyph: '#ffffff'
+				},
+				location,
+				pathname: toSlugPath(slug)
+			})
 		)
 	);
 

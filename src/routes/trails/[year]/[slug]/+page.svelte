@@ -18,6 +18,7 @@
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 	import { toSlugPath } from '$lib/core/utils/slug.utils';
 	import { capitalize } from '$lib/core/utils/text.utils';
+	import { generateTrailDescription } from '$lib/trails/utils/seo.utils';
 
 	interface Props {
 		data: ServerPageData;
@@ -33,6 +34,8 @@
 	let track = $derived(trail.metadata.track);
 
 	let { title, date: trailDate, sport, photos } = $derived(metadata);
+
+	let description = $derived(generateTrailDescription({ trail: trail.metadata }));
 
 	let image = $derived(assetUrl(photos[0]));
 
@@ -54,7 +57,7 @@
 </script>
 
 <svelte:head>
-	<Seo {image} {title} url={`/trails/${toSlugPath(slug)}`} />
+	<Seo {image} {title} {description} url={`/trails/${toSlugPath(slug)}`} />
 
 	<style lang="scss">
 		@use '../../../../theme/page';

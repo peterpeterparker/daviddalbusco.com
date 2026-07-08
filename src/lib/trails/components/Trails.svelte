@@ -7,6 +7,7 @@
 	import type { MapAnnotation } from '$lib/trails/types/map';
 	import { toSlugPath } from '$lib/core/utils/slug.utils';
 	import { sportColor } from '$lib/trails/utils/sport.utils';
+	import Email from '$lib/core/components/Email.svelte';
 
 	interface Props {
 		trails: PageDataWithoutContent<TrailType>[];
@@ -58,7 +59,7 @@
 	<blockquote>
 		<p>
 			Most routes I follow are convenient for day trips from Zürich. If you'd like to follow any of
-			them and have questions, reach out!
+			them and have questions, drop me a mail at <Email />!
 		</p>
 	</blockquote>
 

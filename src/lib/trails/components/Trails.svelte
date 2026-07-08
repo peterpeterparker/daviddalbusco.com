@@ -1,11 +1,13 @@
 <script lang="ts">
-	import Map from '$lib/trails/components/Map.svelte';
+	import Map, { type ShowItemsBoundary } from '$lib/trails/components/Map.svelte';
 	import Section from '$lib/core/components/Section.svelte';
 	import type { PageDataWithoutContent } from '$lib/core/types/page';
 	import type { Trail as TrailType } from '$lib/trails/types/trail';
 	import Trail from '$lib/trails/components/Trail.svelte';
 	import type { MapAnnotation } from '$lib/trails/types/map';
 	import { toSlugPath } from '$lib/core/utils/slug.utils';
+	import { sportColor } from '$lib/trails/utils/sport.utils';
+	import Email from '$lib/core/components/Email.svelte';
 
 	interface Props {
 		trails: PageDataWithoutContent<TrailType>[];
@@ -18,12 +20,26 @@
 			({
 				slug,
 				metadata: {
-					metadata: { title },
+					metadata: { title, sport },
 					track: { location }
 				}
-			}) => ({ title, location, pathname: toSlugPath(slug) })
+			}) => ({
+				title: { hidden: true, value: title },
+				colors: {
+					background: sportColor(sport),
+					glyph: '#ffffff'
+				},
+				location,
+				pathname: toSlugPath(slug)
+			})
 		)
 	);
+
+	// Focus Switzerland
+	const showItemsBoundary: ShowItemsBoundary = {
+		min: { lat: 45.8167, lon: 5.95 },
+		max: { lat: 47.8, lon: 10.4833 }
+	};
 </script>
 
 <Section>
@@ -41,13 +57,15 @@
 		part of the plan.
 	</p>
 
-	<p>
-		Most routes I follow are convenient for day trips from Zürich. If you'd like to follow any of
-		them and have questions, reach out!
-	</p>
+	<blockquote>
+		<p>
+			Most routes I follow are convenient for day trips from Zürich. If you'd like to follow any of
+			them and have questions, drop me a mail at <Email />!
+		</p>
+	</blockquote>
 
 	<div class="map">
-		<Map {annotations} />
+		<Map {annotations} {showItemsBoundary} />
 	</div>
 
 	<div class="grid">
@@ -70,6 +88,6 @@
 	}
 
 	.map {
-		margin: 0 0 1.45em;
+		margin: 2.45rem 0 3.25rem;
 	}
 </style>

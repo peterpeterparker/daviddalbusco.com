@@ -1,18 +1,6 @@
 <script lang="ts">
 	import Section from '$lib/core/components/Section.svelte';
-	import Link from '$lib/core/components/Link.svelte';
-	import { onMount } from 'svelte';
-	import { track } from '$lib/core/services/analytics.services';
-
-	// Do not prerender to prevent spam
-	// See 2.6 - https://spencermortensen.com/articles/email-obfuscation/
-	let loaded = $state(false);
-
-	onMount(() => (loaded = true));
-
-	const trackEvent = () => {
-		track({ name: 'contact-hero' });
-	};
+	import ContactBtn from '$lib/core/components/ContactBtn.svelte';
 </script>
 
 <Section>
@@ -23,9 +11,7 @@
 	<p>I build software that lasts.</p>
 
 	<p class="link">
-		{#if loaded}
-			<Link href="mailto:hi@daviddalbusco.com" onclick={trackEvent}>Hire me!</Link>
-		{/if}
+		<ContactBtn eventName="contact-hero">Hire me!</ContactBtn>
 	</p>
 </Section>
 

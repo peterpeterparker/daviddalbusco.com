@@ -12,7 +12,7 @@ export const initAnalytics = async () => {
 	});
 };
 
-type TrackEvent = { name: 'contact-hero' } | { name: 'contact-talks' } | { name: 'contact-menu' };
+type TrackEvent = { name: 'contact-hero' } | { name: 'contact-about' } | { name: 'contact-menu' };
 
 export const track = async ($event: TrackEvent) => {
 	const prod = import.meta.env.PROD;

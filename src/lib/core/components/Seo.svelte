@@ -1,8 +1,5 @@
 <script lang="ts">
-	let defaultUrl = 'https://daviddalbusco.com';
-	let defaultImage = `${defaultUrl}/images/social-image-v6.jpg`;
-	let defaultTitle = 'David Dal Busco';
-	let defaultDescription = 'Freelance Software Engineer';
+	import { SITE_DESCRIPTION, SITE_SOCIAL_IMAGE, SITE_TITLE, SITE_URL } from '$lib/core/constants';
 
 	interface Props {
 		url?: string;
@@ -13,7 +10,7 @@
 	}
 
 	let {
-		url = defaultUrl,
+		url = SITE_URL,
 		canonical = undefined,
 		image = undefined,
 		title = undefined,
@@ -21,16 +18,16 @@
 	}: Props = $props();
 </script>
 
-<title>{title ?? defaultTitle}</title>
+<title>{title ?? SITE_TITLE}</title>
 <link href={canonical ?? url} rel="canonical" />
-<meta content={description ?? defaultDescription} name="description" />
-<meta content={title ?? defaultTitle} property="og:title" />
-<meta content={description ?? defaultDescription} property="og:description" />
+<meta content={description ?? SITE_DESCRIPTION} name="description" />
+<meta content={title ?? SITE_TITLE} property="og:title" />
+<meta content={description ?? SITE_DESCRIPTION} property="og:description" />
 <meta content="website" property="og:type" />
 <meta content={url} property="og:url" />
-<meta content={image ?? defaultImage} property="og:image" />
+<meta content={image ?? SITE_SOCIAL_IMAGE} property="og:image" />
 <meta content="summary_large_image" name="twitter:card" />
-<meta content={title ?? defaultTitle} name="twitter:title" />
-<meta content={description ?? defaultDescription} name="twitter:description" />
-<meta content={image ?? defaultImage} name="twitter:image" />
+<meta content={title ?? SITE_TITLE} name="twitter:title" />
+<meta content={description ?? SITE_DESCRIPTION} name="twitter:description" />
+<meta content={image ?? SITE_SOCIAL_IMAGE} name="twitter:image" />
 <meta content="@daviddalbusco" name="twitter:creator" />

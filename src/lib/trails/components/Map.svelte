@@ -1,8 +1,23 @@
+<script lang="ts" module>
+	import type { MapLocation, MapGpxPoints } from '$lib/trails/types/map';
+
+	export interface ShowItemsBoundary {
+		min: MapLocation;
+		max: MapLocation;
+	}
+
+	export interface MapOverlay {
+		points: MapGpxPoints;
+		color: string;
+	}
+</script>
+
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
-	import type { MarkerAnnotation } from '@apple/mapkit-loader';
-	import type { MapAnnotation, MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
+	import type { MarkerAnnotation, Annotation } from '@apple/mapkit-loader';
+	import type { MapAnnotation, MapGpxPointId } from '$lib/trails/types/map';
 	import { loadMap, type MapKit } from '$lib/trails/services/map.services';
+	import { notEmptyString } from '$lib/core/utils/nullish.utils';
 
 	// References:
 	// https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/
@@ -10,11 +25,12 @@
 
 	interface Props {
 		annotations?: MapAnnotation[];
-		points?: MapGpxPoints | null;
+		overlay?: MapOverlay | null;
 		selectedPointId?: MapGpxPointId;
+		showItemsBoundary?: ShowItemsBoundary;
 	}
 
-	let { annotations, points, selectedPointId }: Props = $props();
+	let { annotations, overlay, selectedPointId, showItemsBoundary }: Props = $props();
 
 	let kit = $state<MapKit | undefined>(undefined);
 
@@ -46,14 +62,23 @@
 		}
 
 		const markers = annotations.map(
-			({ location: { lat, lon }, title, pathname }) =>
+			({
+				location: { lat, lon },
+				title: { value: title, hidden: titleHidden },
+				pathname,
+				colors
+			}) =>
 				new mapkit.MarkerAnnotation(new mapkit.Coordinate(lat, lon), {
 					title,
+					...(titleHidden === true && { titleVisibility: mapkit.FeatureVisibility.Hidden }),
+					...(notEmptyString(colors?.background) && { color: colors.background }),
+					...(notEmptyString(colors?.glyph) && { glyphColor: colors.glyph }),
 					callout: {
 						calloutContentForAnnotation: () => {
 							const link = document.createElement('a');
 							link.href = pathname;
-							link.textContent = `View ${title}`;
+							link.textContent = title;
+							link.setAttribute('aria-label', `View ${title}`);
 							return link;
 						}
 					}
@@ -62,7 +87,7 @@
 
 		map.addAnnotations(markers);
 
-		centerMap();
+		focusItems();
 	});
 
 	$effect(() => {
@@ -70,9 +95,11 @@
 			return;
 		}
 
-		if (points === undefined || points === null) {
+		if (overlay === undefined || overlay === null) {
 			return;
 		}
+
+		const { points, color } = overlay;
 
 		const { mapkit, map } = kit;
 
@@ -82,18 +109,18 @@
 
 		const coordinates = points.map(({ lat, lon }) => new mapkit.Coordinate(lat, lon));
 
-		const route = new mapkit.PolylineOverlay(coordinates, {
+		const routeOverlay = new mapkit.PolylineOverlay(coordinates, {
 			style: new mapkit.Style({
 				lineWidth: 4,
-				strokeColor: '#ff65a9',
+				strokeColor: color,
 				lineJoin: 'round',
 				lineCap: 'round'
 			})
 		});
 
-		map.addOverlay(route);
+		map.addOverlay(routeOverlay);
 
-		centerMap();
+		focusItems();
 	});
 
 	// Not a state on purpose. Used for logic not rendering.
@@ -104,7 +131,7 @@
 			return;
 		}
 
-		if (points === undefined || points === null) {
+		if (overlay === undefined || overlay === null) {
 			return;
 		}
 
@@ -122,6 +149,8 @@
 			return;
 		}
 
+		const { points, color } = overlay;
+
 		const point = points.find(({ id }) => id === selectedPointId);
 
 		if (point === undefined) {
@@ -132,7 +161,7 @@
 
 		if (selectedPoint === undefined || selectedPoint === null) {
 			selectedPoint = new mapkit.MarkerAnnotation(coordinate, {
-				color: '#ff65a9',
+				color: color,
 				glyphText: '●'
 			});
 
@@ -144,14 +173,21 @@
 		selectedPoint.coordinate = coordinate;
 	});
 
-	const centerMap = () => {
+	const focusItems = () => {
 		if (kit === undefined) {
 			return;
 		}
 
 		const { map } = kit;
 
-		const items = [...(map.annotations ?? []), ...(map.overlays ?? [])];
+		const filterAnnotations = (annotation: Annotation): boolean =>
+			showItemsBoundary === undefined ||
+			(annotation.coordinate.latitude >= showItemsBoundary.min.lat &&
+				annotation.coordinate.latitude <= showItemsBoundary.max.lat &&
+				annotation.coordinate.longitude >= showItemsBoundary.min.lon &&
+				annotation.coordinate.longitude <= showItemsBoundary.max.lon);
+
+		const items = [...(map.annotations ?? []).filter(filterAnnotations), ...(map.overlays ?? [])];
 
 		if (items.length > 0) {
 			map.showItems(items);
@@ -164,7 +200,12 @@
 <style lang="scss">
 	article {
 		width: 100%;
-		aspect-ratio: var(--map-aspect-ratio, 16/9);
+		aspect-ratio: var(--map-aspect-ratio, 1 / 1);
+
+		@media screen and (min-width: 576px) {
+			aspect-ratio: var(--map-aspect-ratio, 16/9);
+		}
+
 		background: rgba(var(--color-primary-rgb), 0.2);
 		border: 0.25rem solid black;
 	}

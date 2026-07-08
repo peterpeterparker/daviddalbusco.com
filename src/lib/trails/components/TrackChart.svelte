@@ -44,7 +44,6 @@
 <style lang="scss">
 	article {
 		min-height: 275px;
-		--color-primary: var(--color-highlight);
 		padding: 2.25rem 1.25rem 0;
 		border: 0.25rem solid black;
 	}

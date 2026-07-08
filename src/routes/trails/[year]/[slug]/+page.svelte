@@ -9,7 +9,7 @@
 	import type { MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
 	import { onMount } from 'svelte';
 	import { loadTrack } from '$lib/trails/services/tracks.services';
-	import Map from '$lib/trails/components/Map.svelte';
+	import Map, { type MapOverlay } from '$lib/trails/components/Map.svelte';
 	import TrackChart from '$lib/trails/components/TrackChart.svelte';
 	import TrackStats from '$lib/trails/components/TrackStats.svelte';
 	import Sport from '$lib/trails/components/Sport.svelte';
@@ -19,6 +19,7 @@
 	import { toSlugPath } from '$lib/core/utils/slug.utils';
 	import { capitalize } from '$lib/core/utils/text.utils';
 	import { generateTrailDescription } from '$lib/trails/utils/seo.utils';
+	import { sportColor } from '$lib/trails/utils/sport.utils';
 
 	interface Props {
 		data: ServerPageData;
@@ -54,6 +55,15 @@
 
 		gpxPoints = result.result;
 	});
+
+	let overlay = $derived<MapOverlay | undefined | null>(
+		gpxPoints !== undefined && gpxPoints !== null
+			? {
+					points: gpxPoints,
+					color: sportColor(sport)
+				}
+			: gpxPoints
+	);
 </script>
 
 <svelte:head>
@@ -84,13 +94,13 @@
 </Section>
 
 <section class="trail">
-	<Map points={gpxPoints} selectedPointId={gpxPointId} />
+	<Map {overlay} selectedPointId={gpxPointId} />
 
 	<div class="stats">
 		<TrackStats {track} />
 	</div>
 
-	<div class="chart">
+	<div class="chart" style={`--color-primary: ${sportColor(sport)}`}>
 		<TrackChart gpxPoints={gpxPoints ?? []} bind:gpxPointId />
 	</div>
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-	let defaultUrl = 'https://daviddalbusco.com';
-	let defaultImage = `${defaultUrl}/images/social-image-v6.jpg`;
-	let defaultTitle = 'David Dal Busco';
-	let defaultDescription = 'Freelance Software Engineer';
+	const defaultUrl = 'https://daviddalbusco.com';
+    const defaultImage = `${defaultUrl}/images/social-image-v6.jpg`;
+    const defaultTitle = 'David Dal Busco';
+    const defaultDescription = 'Freelance Software Engineer';
 
 	interface Props {
 		url?: string;

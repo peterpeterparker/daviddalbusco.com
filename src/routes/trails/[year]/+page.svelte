@@ -9,6 +9,8 @@
 	import { capitalize } from '$lib/core/utils/text.utils';
 	import { page } from '$app/state';
 	import { notEmptyString } from '$lib/core/utils/nullish.utils';
+	import { TRAILS_DESCRIPTION, TRAILS_SOCIAL_IMAGE, TRAILS_TITLE } from '$lib/trails/constants';
+	import { SITE_URL } from '$lib/core/constants';
 
 	interface Props {
 		data: ServerPageData;
@@ -19,7 +21,12 @@
 </script>
 
 <svelte:head>
-	<Seo />
+	<Seo
+		image={TRAILS_SOCIAL_IMAGE}
+		title={TRAILS_TITLE}
+		description={TRAILS_DESCRIPTION}
+		url={`${SITE_URL}/trails${notEmptyString(page.params.year) ? `/${page.params.year}` : ''}`}
+	/>
 
 	<style lang="scss">
 		@use '../../../theme/_page.scss';

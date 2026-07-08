@@ -12,4 +12,5 @@ export type MapGpxPoints = MapGpxPoint[];
 export type MapAnnotation = {
 	location: MapLocation;
 	title: string;
+	titleHidden?: boolean;
 } & Pick<URL, 'pathname'>;

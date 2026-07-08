@@ -4,7 +4,7 @@
 	import type { Trail } from '$lib/trails/types/trail';
 	import type { PageData } from '$lib/core/types/page';
 	import Section from '$lib/core/components/Section.svelte';
-	import '../../../theme/_code.scss';
+	import '../../../../theme/_code.scss';
 	import { formatDate } from '$lib/core/utils/date.utils';
 	import type { MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
 	import { onMount } from 'svelte';
@@ -16,6 +16,7 @@
 	import TrailPhotos from '$lib/trails/components/TrailPhotos.svelte';
 	import { assetUrl } from '$lib/core/utils/assets.utils';
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
+	import { toSlugPath } from '$lib/core/utils/slug.utils';
 
 	interface Props {
 		data: ServerPageData;
@@ -52,10 +53,10 @@
 </script>
 
 <svelte:head>
-	<Seo {image} {title} url={`/trails/${slug}`} />
+	<Seo {image} {title} url={`/trails/${toSlugPath(slug)}`} />
 
 	<style lang="scss">
-		@use '../../../theme/_page.scss';
+		@use '../../../../theme/page';
 
 		@include page.light;
 	</style>

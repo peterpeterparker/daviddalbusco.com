@@ -23,7 +23,7 @@
 	</p>
 
 	<div class="grid">
-		{#each posts as post (post.slug)}
+		{#each posts as post (post.slug.name)}
 			<Post {post} />
 		{/each}
 	</div>

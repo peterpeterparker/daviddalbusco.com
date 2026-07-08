@@ -1,9 +1,9 @@
 ---
-path: "/trails/klingenstock-klingenstock-fronalpstock-2026"
+path: "/trails/klingenstock-klingenstock-fronalpstock"
 date: "2026-06-13"
 title: "Klingenstock - Klingenstock - Fronalpstock"
 sport: trail-running
-gpx: "https://daviddalbusco.com/assets/gpx/klingenstock-klingenstock-fronalpstock.gpx"
+gpx: "https://daviddalbusco.com/assets/gpx/2026/klingenstock-klingenstock-fronalpstock.gpx"
 photos:
   - "https://daviddalbusco.com/assets/photos/156491948.jpg"
   - "https://daviddalbusco.com/assets/photos/156491952.jpg"

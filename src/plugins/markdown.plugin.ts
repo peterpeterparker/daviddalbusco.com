@@ -19,11 +19,11 @@ import xml from '@shikijs/langs/xml';
 import yaml from '@shikijs/langs/yaml';
 import theme from '@shikijs/themes/dracula';
 import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { createHighlighterCoreSync } from 'shiki/core';
 import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
 
 // @ts-expect-error Type definition incorrect
-import { join } from 'node:path';
 import { Remarkable, utils } from 'remarkable';
 
 const shiki = createHighlighterCoreSync({

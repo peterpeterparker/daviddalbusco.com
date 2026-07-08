@@ -1,8 +1,9 @@
 import type { PageData } from '$lib/core/types/page';
 import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
 import { listPortfolio } from '$plugins/portfolio.plugin';
+import type { PageServerLoad } from './$types';
 
-export const load = async (): Promise<{
+export const load: PageServerLoad = async (): Promise<{
 	work: PageData<PortfolioMetadata>[];
 	play: PageData<PortfolioMetadata>[];
 }> => {

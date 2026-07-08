@@ -3,11 +3,10 @@ import { isEmptyString } from '$lib/core/utils/nullish.utils';
 import type { Trail } from '$lib/trails/types/trail';
 import { getTrail } from '$plugins/trails.plugin';
 import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
-export const load = async ({
+export const load: PageServerLoad = async ({
 	params: { slug, year }
-}: {
-	params: Record<string, string>;
 }): Promise<{ trail: PageData<Trail> }> => {
 	if (isEmptyString(year)) {
 		error(404, 'Not found');

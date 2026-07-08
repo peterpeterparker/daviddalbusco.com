@@ -1,6 +1,6 @@
 import type { PageData } from '$lib/core/types/page';
 import type { Portfolio, PortfolioMetadata } from '$lib/portfolio/types/portfolio';
-import { get, list } from '$plugins/markdown.plugin';
+import { get, type GetPageData, list } from '$plugins/markdown.plugin';
 
 export const listPortfolio = async (): Promise<Portfolio> => {
 	const results = await list<PortfolioMetadata>({
@@ -40,5 +40,5 @@ export const listPortfolio = async (): Promise<Portfolio> => {
 
 export const getPortfolio = ({
 	slug
-}: Record<string, string>): Promise<PageData<PortfolioMetadata>> =>
+}: Pick<GetPageData, 'slug'>): Promise<PageData<PortfolioMetadata>> =>
 	get<PortfolioMetadata>({ slug, path: 'portfolio' });

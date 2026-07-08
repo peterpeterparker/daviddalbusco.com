@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Section from '$lib/core/components/Section.svelte';
+	import ContactBtn from '$lib/core/components/ContactBtn.svelte';
 </script>
 
 <Section background="var(--color-primary)" color="var(--color-primary-contrast)">
@@ -38,11 +39,9 @@
 		When I'm not working, you can find me running <a href="/trails">trails</a> or cycling. 🏔️🏃🚴
 	</p>
 
-	<p>
-		If you have a project in mind or need some help, <a href="#contact" rel="noopener noreferrer"
-			>get in touch!</a
-		>
-	</p>
+	<p>If you have a project in mind or need some help, get in touch!</p>
+
+	<ContactBtn eventName="contact-about">Say hello 👋</ContactBtn>
 </Section>
 
 <style lang="scss">

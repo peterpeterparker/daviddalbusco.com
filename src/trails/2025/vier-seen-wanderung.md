@@ -29,4 +29,4 @@ Waypoints:
 
 Tips:
 
-There's only one bus per hour from Melchtal Dorf (today it was at :48). When you pass Stöckalp (about 3 km before Melchtal), check the time. If you're close to the next bus, I suggest catching it there. The wait in Melchtal isn’t really worth the extra few kilometers — they’re okay, but nothing spectacular. 
+There's only one bus per hour from Melchtal Dorf (today it was at :48). When you pass Stöckalp (about 3 km before Melchtal), check the time. If you're close to the next bus, I suggest catching it there. The wait in Melchtal isn’t really worth the extra few kilometers — they’re okay, but nothing spectacular.

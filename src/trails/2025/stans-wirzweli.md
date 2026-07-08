@@ -13,4 +13,4 @@ photos:
 
 Easy run from Stans to Wirzweli, going up the Stanserhorn and the Gräfimattstand.
 
-In Wirzweli, I took the cable car down. It’s probably possible to run down to Dallenwil to continue the trail, but I figured it would be nice to take the car at least once this year, today being likely the last day of summer 😉 
+In Wirzweli, I took the cable car down. It’s probably possible to run down to Dallenwil to continue the trail, but I figured it would be nice to take the car at least once this year, today being likely the last day of summer 😉

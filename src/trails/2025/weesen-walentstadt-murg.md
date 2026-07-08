@@ -25,4 +25,4 @@ Waypoints:
 
 The start and finish are both public transport friendly. After reaching Walenstadt (22km), the rest is on asphalt and a bit boring, so you might as well stop there. You can also return to Weesen and complete the full loop. It’s about 42km in total, I did it a few years ago, so it's doable.
 
-In Walenstadt, there's a fountain for refills, and nearby on the lake side, a self-service restaurant, handy to get other types of refreshment. 
+In Walenstadt, there's a fountain for refills, and nearby on the lake side, a self-service restaurant, handy to get other types of refreshment.

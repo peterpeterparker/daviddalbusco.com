@@ -12,4 +12,4 @@ My third participation in the Transruinaulta trail marathon - such an amazing ev
 
 Fun fact: even though it felt like I pushed harder than in previous years, I somehow finished with almost the exact same time as last year 🤷‍♂️
 
-And the weather couldn’t have been better ☀️ 
+And the weather couldn’t have been better ☀️

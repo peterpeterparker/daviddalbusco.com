@@ -17,4 +17,4 @@ I wouldn't recommend following my exact trace though, I lost track once or twice
 
 Better option: check out the official route of these two day-hikes combined into one day’s trail on their website.
 
-👉 https://appenzellerland.ch/de/erleben/wandern-bewegen/sommer/wanderrouten/appenzeller-alpenweg.html 
+👉 https://appenzellerland.ch/de/erleben/wandern-bewegen/sommer/wanderrouten/appenzeller-alpenweg.html

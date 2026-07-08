@@ -8,4 +8,4 @@ photos:
   - "https://daviddalbusco.com/assets/photos/126575074.jpg"
 ---
 
-Preseason classic. 
+Preseason classic.

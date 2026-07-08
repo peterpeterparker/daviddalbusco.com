@@ -1,22 +1,34 @@
 <script lang="ts">
 	import IconArrowForward from '$lib/core/icons/IconArrowForward.svelte';
 
+	interface BreadcrumbRoute {
+		title: string;
+		path: string;
+	}
+
 	interface Props {
-		route: { title: string; path: string };
+		route: BreadcrumbRoute;
+		group?: BreadcrumbRoute;
 		page?: { title: string };
 	}
 
-	let { route, page }: Props = $props();
+	let { route, page, group }: Props = $props();
 </script>
 
 <nav aria-label="Navigation breadcrumb">
 	<ul>
 		<li><a href="/">Home</a><IconArrowForward size="12px" /></li>
 		<li>
-			{#if page !== undefined}<a href={route.path}>{route.title}</a><IconArrowForward
-					size="12px"
-				/>{:else}{route.title}{/if}
+			{#if page !== undefined || group !== undefined}<a href={route.path}>{route.title}</a
+				><IconArrowForward size="12px" />{:else}{route.title}{/if}
 		</li>
+		{#if group !== undefined}
+			<li>
+				{#if page !== undefined}<a href={group.path}>{group.title}</a><IconArrowForward
+						size="12px"
+					/>{:else}{group.title}{/if}
+			</li>
+		{/if}
 		{#if page !== undefined}<li><span class="title">{page.title}</span></li>{/if}
 	</ul>
 </nav>

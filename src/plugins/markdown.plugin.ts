@@ -51,8 +51,14 @@ const shiki = createHighlighterCoreSync({
 // Remove frontmatter YAML - https://stackoverflow.com/a/33537453/5404186
 const metadataRegex = /^---((.|\n)*?)---/g;
 
-export const list = <T>({ path }: { path: SlugPath }): Promise<PageData<T>[]> => {
-	const promises = listSlugs({ path }).map(({ name: slug, group }) =>
+export const list = <T>({
+	path,
+	subPath
+}: {
+	path: SlugPath;
+	subPath?: string;
+}): Promise<PageData<T>[]> => {
+	const promises = listSlugs({ path, subPath }).map(({ name: slug, group }) =>
 		get<T>({ slug, group, path })
 	);
 

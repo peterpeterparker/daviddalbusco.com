@@ -6,6 +6,7 @@
 	import type { Trail } from '$lib/trails/types/trail';
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 	import { TRAILS_DESCRIPTION, TRAILS_SOCIAL_IMAGE, TRAILS_TITLE } from '$lib/trails/constants';
+	import { SITE_URL } from '$lib/core/constants';
 
 	interface Props {
 		data: ServerPageData;
@@ -16,7 +17,12 @@
 </script>
 
 <svelte:head>
-	<Seo image={TRAILS_SOCIAL_IMAGE} title={TRAILS_TITLE} description={TRAILS_DESCRIPTION} />
+	<Seo
+		image={TRAILS_SOCIAL_IMAGE}
+		title={TRAILS_TITLE}
+		description={TRAILS_DESCRIPTION}
+		url={`${SITE_URL}/trails`}
+	/>
 
 	<style lang="scss">
 		@use '../../theme/_page.scss';

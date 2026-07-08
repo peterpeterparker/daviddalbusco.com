@@ -17,6 +17,7 @@
 	import { assetUrl } from '$lib/core/utils/assets.utils';
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 	import { toSlugPath } from '$lib/core/utils/slug.utils';
+	import { capitalize } from '$lib/core/utils/text.utils';
 
 	interface Props {
 		data: ServerPageData;
@@ -62,7 +63,11 @@
 	</style>
 </svelte:head>
 
-<Breadcrumb route={{ title: 'Trails', path: '/trails' }} page={{ title }} />
+<Breadcrumb
+	route={{ title: 'Trails', path: '/trails' }}
+	group={slug.group !== undefined ? { title: capitalize(slug.group), path: slug.group } : undefined}
+	page={{ title }}
+/>
 
 <Section>
 	<h1>{title}</h1>

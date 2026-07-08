@@ -32,6 +32,7 @@
 	h3 {
 		font-size: 1rem;
 		margin: 0;
+		padding: 0;
 	}
 
 	.date,

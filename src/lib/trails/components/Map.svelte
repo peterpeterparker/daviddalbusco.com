@@ -1,17 +1,23 @@
 <script lang="ts" module>
-	import type { MapLocation } from '$lib/trails/types/map';
+	import type { MapLocation, MapGpxPoints } from '$lib/trails/types/map';
 
 	export interface ShowItemsBoundary {
 		min: MapLocation;
 		max: MapLocation;
+	}
+
+	export interface MapOverlay {
+		points: MapGpxPoints;
+		color: string;
 	}
 </script>
 
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
 	import type { MarkerAnnotation, Annotation } from '@apple/mapkit-loader';
-	import type { MapAnnotation, MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
+	import type { MapAnnotation, MapGpxPointId } from '$lib/trails/types/map';
 	import { loadMap, type MapKit } from '$lib/trails/services/map.services';
+	import { notEmptyString } from '$lib/core/utils/nullish.utils';
 
 	// References:
 	// https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/
@@ -19,12 +25,12 @@
 
 	interface Props {
 		annotations?: MapAnnotation[];
-		points?: MapGpxPoints | null;
+		overlay?: MapOverlay | null;
 		selectedPointId?: MapGpxPointId;
 		showItemsBoundary?: ShowItemsBoundary;
 	}
 
-	let { annotations, points, selectedPointId, showItemsBoundary }: Props = $props();
+	let { annotations, overlay, selectedPointId, showItemsBoundary }: Props = $props();
 
 	let kit = $state<MapKit | undefined>(undefined);
 
@@ -56,10 +62,17 @@
 		}
 
 		const markers = annotations.map(
-			({ location: { lat, lon }, title: { value: title, hidden: titleHidden }, pathname }) =>
+			({
+				location: { lat, lon },
+				title: { value: title, hidden: titleHidden },
+				pathname,
+				colors
+			}) =>
 				new mapkit.MarkerAnnotation(new mapkit.Coordinate(lat, lon), {
 					title,
 					...(titleHidden === true && { titleVisibility: mapkit.FeatureVisibility.Hidden }),
+					...(notEmptyString(colors?.background) && { color: colors.background }),
+					...(notEmptyString(colors?.glyph) && { glyphColor: colors.glyph }),
 					callout: {
 						calloutContentForAnnotation: () => {
 							const link = document.createElement('a');
@@ -82,9 +95,11 @@
 			return;
 		}
 
-		if (points === undefined || points === null) {
+		if (overlay === undefined || overlay === null) {
 			return;
 		}
+
+		const { points, color } = overlay;
 
 		const { mapkit, map } = kit;
 
@@ -94,16 +109,16 @@
 
 		const coordinates = points.map(({ lat, lon }) => new mapkit.Coordinate(lat, lon));
 
-		const route = new mapkit.PolylineOverlay(coordinates, {
+		const routeOverlay = new mapkit.PolylineOverlay(coordinates, {
 			style: new mapkit.Style({
 				lineWidth: 4,
-				strokeColor: '#ff65a9',
+				strokeColor: color,
 				lineJoin: 'round',
 				lineCap: 'round'
 			})
 		});
 
-		map.addOverlay(route);
+		map.addOverlay(routeOverlay);
 
 		focusItems();
 	});
@@ -116,7 +131,7 @@
 			return;
 		}
 
-		if (points === undefined || points === null) {
+		if (overlay === undefined || overlay === null) {
 			return;
 		}
 
@@ -134,6 +149,8 @@
 			return;
 		}
 
+		const { points, color } = overlay;
+
 		const point = points.find(({ id }) => id === selectedPointId);
 
 		if (point === undefined) {
@@ -144,7 +161,7 @@
 
 		if (selectedPoint === undefined || selectedPoint === null) {
 			selectedPoint = new mapkit.MarkerAnnotation(coordinate, {
-				color: '#ff65a9',
+				color: color,
 				glyphText: '●'
 			});
 

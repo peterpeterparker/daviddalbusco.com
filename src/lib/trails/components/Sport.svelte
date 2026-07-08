@@ -8,7 +8,7 @@
 	let { sport }: Props = $props();
 </script>
 
-<mark>
+<mark class={sport}>
 	{#if sport === 'trail-running'}
 		Trail Running
 	{:else if sport === 'gravel'}
@@ -17,3 +17,15 @@
 		Road Bike
 	{/if}
 </mark>
+
+<style lang="scss">
+	.cycling {
+		background: #009fb7;
+		color: #ffffff;
+	}
+
+	.gravel {
+		background: #5f00ba;
+		color: #ffffff;
+	}
+</style>

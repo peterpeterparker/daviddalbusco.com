@@ -1,5 +1,5 @@
 ---
-path: "/trails/lake-zurich"
+path: "/trails/2026/lake-zurich"
 date: "2026-07-07"
 title: "Lake Zurich"
 sport: cycling

@@ -1,5 +1,5 @@
 ---
-path: "/trails/altdorf-engelberg"
+path: "/trails/2026/altdorf-engelberg"
 date: "2026-06-27"
 title: "Altdorf - Engelberg"
 sport: trail-running

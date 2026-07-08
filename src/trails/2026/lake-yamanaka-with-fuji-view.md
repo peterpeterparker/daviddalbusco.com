@@ -1,5 +1,5 @@
 ---
-path: "/trails/lake-yamanaka-with-fuji-view"
+path: "/trails/2026/lake-yamanaka-with-fuji-view"
 date: "2026-05-20"
 title: "Lake Yamanaka (with Fuji View)"
 sport: trail-running

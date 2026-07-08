@@ -1,5 +1,5 @@
 ---
-path: "/trails/osaka-mount-ikoma"
+path: "/trails/2026/osaka-mount-ikoma"
 date: "2026-05-3"
 title: "Osaka - Mount Ikoma"
 sport: trail-running

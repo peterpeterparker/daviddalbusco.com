@@ -1,5 +1,5 @@
 ---
-path: "/trails/greifensee"
+path: "/trails/2026/greifensee"
 date: "2026-06-30"
 title: "Greifensee"
 sport: cycling

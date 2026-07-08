@@ -1,5 +1,5 @@
 ---
-path: "/trails/mount-kuju"
+path: "/trails/2026/mount-kuju"
 date: "2026-05-10"
 title: "Mount Kujū"
 sport: trail-running

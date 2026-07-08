@@ -1,5 +1,5 @@
 ---
-path: "/trails/schwyz-rigi-immensee"
+path: "/trails/2026/schwyz-rigi-immensee"
 date: "2026-06-8"
 title: "Schwyz - Rigi - Immensee"
 sport: trail-running

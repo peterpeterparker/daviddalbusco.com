@@ -1,5 +1,5 @@
 ---
-path: "/trails/klingenstock-klingenstock-fronalpstock"
+path: "/trails/2026/klingenstock-klingenstock-fronalpstock"
 date: "2026-06-13"
 title: "Klingenstock - Klingenstock - Fronalpstock"
 sport: trail-running

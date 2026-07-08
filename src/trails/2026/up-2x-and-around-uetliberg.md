@@ -1,5 +1,5 @@
 ---
-path: "/trails/up-2x-and-around-uetliberg"
+path: "/trails/2026/up-2x-and-around-uetliberg"
 date: "2026-04-24"
 title: "Up (2x) and around Uetliberg"
 sport: trail-running

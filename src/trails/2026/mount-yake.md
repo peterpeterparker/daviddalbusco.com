@@ -1,5 +1,5 @@
 ---
-path: "/trails/mount-yake"
+path: "/trails/2026/mount-yake"
 date: "2026-05-17"
 title: "Mount Yake"
 sport: trail-running

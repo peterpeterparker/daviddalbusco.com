@@ -1,5 +1,5 @@
 ---
-path: "/trails/zurich-baden-loop"
+path: "/trails/2026/zurich-baden-loop"
 date: "2026-06-24"
 title: "Zurich - Baden loop"
 sport: gravel

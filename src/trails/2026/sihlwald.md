@@ -1,5 +1,5 @@
 ---
-path: "/trails/sihlwald"
+path: "/trails/2026/sihlwald"
 date: "2026-06-17"
 title: "Sihlwald"
 sport: gravel

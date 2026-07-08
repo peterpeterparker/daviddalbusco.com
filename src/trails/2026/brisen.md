@@ -1,5 +1,5 @@
 ---
-path: "/trails/brisen"
+path: "/trails/2026/brisen"
 date: "2026-06-20"
 title: "Brisen"
 sport: trail-running

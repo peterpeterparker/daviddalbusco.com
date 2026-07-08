@@ -1,5 +1,5 @@
 ---
-path: "/trails/weesen-walenstadt-murg"
+path: "/trails/2026/weesen-walenstadt-murg"
 date: "2026-05-31"
 title: "Weesen - Walenstadt - Murg"
 sport: trail-running

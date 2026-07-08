@@ -84,6 +84,6 @@
 	}
 
 	.map {
-		margin: 0 0 1.45em;
+		margin: 2.45rem 0 3.25rem;
 	}
 </style>

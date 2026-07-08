@@ -200,7 +200,12 @@
 <style lang="scss">
 	article {
 		width: 100%;
-		aspect-ratio: var(--map-aspect-ratio, 16/9);
+		aspect-ratio: var(--map-aspect-ratio, 1 / 1);
+
+		@media screen and (min-width: 576px) {
+			aspect-ratio: var(--map-aspect-ratio, 16/9);
+		}
+
 		background: rgba(var(--color-primary-rgb), 0.2);
 		border: 0.25rem solid black;
 	}

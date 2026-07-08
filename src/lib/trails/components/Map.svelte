@@ -1,6 +1,15 @@
+<script lang="ts" module>
+	import type { MapLocation } from '$lib/trails/types/map';
+
+	export interface ShowItemsBoundary {
+		min: MapLocation;
+		max: MapLocation;
+	}
+</script>
+
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
-	import type { MarkerAnnotation } from '@apple/mapkit-loader';
+	import type { MarkerAnnotation, Annotation } from '@apple/mapkit-loader';
 	import type { MapAnnotation, MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
 	import { loadMap, type MapKit } from '$lib/trails/services/map.services';
 
@@ -12,9 +21,10 @@
 		annotations?: MapAnnotation[];
 		points?: MapGpxPoints | null;
 		selectedPointId?: MapGpxPointId;
+		showItemsBoundary?: ShowItemsBoundary;
 	}
 
-	let { annotations, points, selectedPointId }: Props = $props();
+	let { annotations, points, selectedPointId, showItemsBoundary }: Props = $props();
 
 	let kit = $state<MapKit | undefined>(undefined);
 
@@ -62,7 +72,7 @@
 
 		map.addAnnotations(markers);
 
-		centerMap();
+		focusItems();
 	});
 
 	$effect(() => {
@@ -93,7 +103,7 @@
 
 		map.addOverlay(route);
 
-		centerMap();
+		focusItems();
 	});
 
 	// Not a state on purpose. Used for logic not rendering.
@@ -144,14 +154,21 @@
 		selectedPoint.coordinate = coordinate;
 	});
 
-	const centerMap = () => {
+	const focusItems = () => {
 		if (kit === undefined) {
 			return;
 		}
 
 		const { map } = kit;
 
-		const items = [...(map.annotations ?? []), ...(map.overlays ?? [])];
+		const filterAnnotations = (annotation: Annotation): boolean =>
+			showItemsBoundary === undefined ||
+			(annotation.coordinate.latitude >= showItemsBoundary.min.lat &&
+				annotation.coordinate.latitude <= showItemsBoundary.max.lat &&
+				annotation.coordinate.longitude >= showItemsBoundary.min.lon &&
+				annotation.coordinate.longitude <= showItemsBoundary.max.lon);
+
+		const items = [...(map.annotations ?? []).filter(filterAnnotations), ...(map.overlays ?? [])];
 
 		if (items.length > 0) {
 			map.showItems(items);

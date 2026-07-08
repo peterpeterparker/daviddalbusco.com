@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Map from '$lib/trails/components/Map.svelte';
+	import Map, { type ShowItemsBoundary } from '$lib/trails/components/Map.svelte';
 	import Section from '$lib/core/components/Section.svelte';
 	import type { PageDataWithoutContent } from '$lib/core/types/page';
 	import type { Trail as TrailType } from '$lib/trails/types/trail';
@@ -24,6 +24,11 @@
 			}) => ({ title, location, pathname: toSlugPath(slug) })
 		)
 	);
+
+	const showItemsBoundary: ShowItemsBoundary = {
+		min: { lat: 45.8167, lon: 5.95 },
+		max: { lat: 47.8, lon: 10.4833 }
+	};
 </script>
 
 <Section>
@@ -47,7 +52,7 @@
 	</p>
 
 	<div class="map">
-		<Map {annotations} />
+		<Map {annotations} {showItemsBoundary} />
 	</div>
 
 	<div class="grid">

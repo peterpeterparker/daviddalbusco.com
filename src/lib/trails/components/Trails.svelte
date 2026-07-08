@@ -21,7 +21,7 @@
 					metadata: { title },
 					track: { location }
 				}
-			}) => ({ title, titleHidden: true, location, pathname: toSlugPath(slug) })
+			}) => ({ title: { hidden: true, value: title }, location, pathname: toSlugPath(slug) })
 		)
 	);
 

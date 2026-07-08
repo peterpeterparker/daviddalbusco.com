@@ -56,7 +56,7 @@
 		}
 
 		const markers = annotations.map(
-			({ location: { lat, lon }, title, pathname, titleHidden }) =>
+			({ location: { lat, lon }, title: { value: title, hidden: titleHidden }, pathname }) =>
 				new mapkit.MarkerAnnotation(new mapkit.Coordinate(lat, lon), {
 					title,
 					...(titleHidden === true && { titleVisibility: mapkit.FeatureVisibility.Hidden }),

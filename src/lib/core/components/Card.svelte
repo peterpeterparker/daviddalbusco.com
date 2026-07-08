@@ -43,7 +43,7 @@
 		@media (hover: hover) and (pointer: fine) {
 			&:focus,
 			&:hover {
-				transform: translateY(-1rem);
+				transform: translateY(var(--card-hover-transform, -1rem));
 			}
 		}
 	}

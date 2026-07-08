@@ -1,10 +1,11 @@
 <script lang="ts">
 	import IconOpen from '$lib/core/icons/IconOpen.svelte';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		href: string;
 		external?: boolean;
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 		onclick?: () => void;
 	}
 

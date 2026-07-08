@@ -3,6 +3,7 @@
 	import CardCover from '$lib/core/components/CardCover.svelte';
 	import type { Slug } from '$lib/core/types/slug';
 	import { toSlugPath } from '$lib/core/utils/slug.utils';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		path: string;
@@ -10,7 +11,7 @@
 		background?: string;
 		image?: string;
 		cover?: boolean;
-		children?: import('svelte').Snippet;
+		children?: Snippet;
 	}
 
 	let { path, slug, background, image, cover = false, children }: Props = $props();

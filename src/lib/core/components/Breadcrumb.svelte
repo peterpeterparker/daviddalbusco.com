@@ -24,9 +24,8 @@
 		</li>
 		{#if group !== undefined}
 			<li>
-				{#if page !== undefined}<a href={group.path}>{group.title}</a><IconArrowForward
-						size="12px"
-					/>{:else}{group.title}{/if}
+				{#if page !== undefined}<a href={`${route.path}/${group.path}`}>{group.title}</a
+					><IconArrowForward size="12px" />{:else}{group.title}{/if}
 			</li>
 		{/if}
 		{#if page !== undefined}<li><span class="title">{page.title}</span></li>{/if}

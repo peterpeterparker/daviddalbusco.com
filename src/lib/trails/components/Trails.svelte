@@ -30,7 +30,7 @@
 					glyph: '#ffffff'
 				},
 				location,
-				pathname: toSlugPath(slug)
+				pathname: `/trails/${toSlugPath(slug)}`
 			})
 		)
 	);

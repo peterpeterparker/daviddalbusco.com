@@ -1,11 +1,5 @@
 <script lang="ts">
 	import Section from '$lib/core/components/Section.svelte';
-	import Link from '$lib/core/components/Link.svelte';
-	import { track } from '$lib/core/services/analytics.services';
-
-	const trackEvent = () => {
-		track({ name: 'contact-talks' });
-	};
 </script>
 
 <Section background="var(--color-primary)" color="var(--color-primary-contrast)">
@@ -65,11 +59,4 @@
 			> / May 2023 / Miami, USA
 		</li>
 	</ul>
-
-	<p>
-		I’m always pumped by new opportunities, so don’t hesitate to reach out if you think it would be
-		great to have me in your lineup!
-	</p>
-
-	<Link href="#contact" onclick={trackEvent}>Contact</Link>
 </Section>

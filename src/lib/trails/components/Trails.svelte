@@ -35,6 +35,7 @@
 		)
 	);
 
+	// Focus Switzerland
 	const showItemsBoundary: ShowItemsBoundary = {
 		min: { lat: 45.8167, lon: 5.95 },
 		max: { lat: 47.8, lon: 10.4833 }

@@ -56,14 +56,17 @@
 		}
 
 		const markers = annotations.map(
-			({ location: { lat, lon }, title, pathname }) =>
+			({ location: { lat, lon }, title, pathname, titleHidden }) =>
 				new mapkit.MarkerAnnotation(new mapkit.Coordinate(lat, lon), {
 					title,
+					...(titleHidden === true && { titleVisibility: mapkit.FeatureVisibility.Hidden }),
 					callout: {
 						calloutContentForAnnotation: () => {
 							const link = document.createElement('a');
 							link.href = pathname;
-							link.textContent = `View ${title}`;
+							link.textContent = title;
+							link.setAttribute('aria-label', `View ${title}`);
+
 							return link;
 						}
 					}

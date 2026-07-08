@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { MapAnnotation } from '$lib/trails/types/map';
+	import type { MapLocation } from '$lib/trails/types/map';
 
 	export interface ShowItemsBoundary {
 		min: MapLocation;
@@ -10,7 +10,7 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
 	import type { MarkerAnnotation, Annotation } from '@apple/mapkit-loader';
-	import type { MapGpxPointId, MapGpxPoints, MapLocation } from '$lib/trails/types/map';
+	import type { MapAnnotation, MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
 	import { loadMap, type MapKit } from '$lib/trails/services/map.services';
 
 	// References:

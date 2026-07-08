@@ -17,7 +17,7 @@
 
 <nav aria-label="Navigation breadcrumb">
 	<ul>
-		<li><a href="/">Home</a><IconArrowForward size="12px" /></li>
+		<li><span class="square">￭</span><a href="/">Home</a><IconArrowForward size="12px" /></li>
 		<li>
 			{#if page !== undefined || group !== undefined}<a href={route.path}>{route.title}</a
 				><IconArrowForward size="12px" />{:else}{route.title}{/if}
@@ -69,5 +69,11 @@
 
 			max-width: 470px;
 		}
+	}
+
+	.square {
+		font-style: initial;
+		margin: 0 0.5rem 0 0;
+		vertical-align: text-bottom;
 	}
 </style>

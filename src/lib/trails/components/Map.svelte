@@ -66,7 +66,6 @@
 							link.href = pathname;
 							link.textContent = title;
 							link.setAttribute('aria-label', `View ${title}`);
-
 							return link;
 						}
 					}

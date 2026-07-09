@@ -5,6 +5,7 @@ title: Building a Trails Section With Maps
 description: "Turns out 'just add a map' is a bigger question than it sounds."
 tags: "#webdev #map #svelte #javascript"
 image: "https://daviddalbusco.com/assets/images/nenad-novakovic-mHX5e1gFQVo-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3mq7r332zwe2o"
 ---
 
 ![](https://daviddalbusco.com/assets/images/nenad-novakovic-mHX5e1gFQVo-unsplash.jpg)

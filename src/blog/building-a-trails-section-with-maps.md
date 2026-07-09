@@ -122,7 +122,9 @@ The `libraries` are the [list of services](https://developer.apple.com/documenta
 
 Each trail on the site needs a starting point marked on the map. A visual hint of where the trail begins, but also something a visitor can click to actually open the trail page from the map itself.
 
-The former is a `mapkit.MarkerAnnotation`, adding an annotation is what gets a point displayed. The latter, the link, is resolved with a custom callout shown in a bubble:
+![A screenshot of the website trails map with markers](https://daviddalbusco.com/assets/images/building-a-trails-section-map.png)
+
+A marker is a `mapkit.MarkerAnnotation`, adding an annotation is what gets a point displayed. The popover, the link, is resolved with a custom callout shown in a bubble:
 
 ```typescript
 const markers = annotations.map(
@@ -158,7 +160,11 @@ There's more to configure than that, colors, custom glyphs, visibility of the ti
 
 ### Drawing the route
 
-Displaying a Trails section has two components: a list and a details page. While showing all the trails with markers could be resolved by the previous chapter, on the details page I wanted to go a step further by drawing the route, the actual trace I followed when I ran or biked. This can be resolved by mapping all the points of a track to coordinates and joining those through an overlay.
+Displaying a Trails section has two components: a list and a details page. While showing all the trails with markers could be resolved by the previous chapter, on the details page I wanted to go a step further by drawing the route, the actual trace I followed when I ran or biked.
+
+![A screenshot of the website trail detail map with its route](https://daviddalbusco.com/assets/images/building-a-trails-section-route.png)
+
+This can be resolved by mapping all the points of a track to coordinates and joining those through an overlay.
 
 ```ts
 const coordinates = points.map(({ lat, lon }) => new mapkit.Coordinate(lat, lon));
@@ -202,6 +208,8 @@ Worth noting my site doesn't load anything in the maps dynamically at runtime, s
 ### Syncing a point
 
 On the details page, I also render an elevation chart (maybe a topic for another blog post). Similarly to what Wikiloc and Strava do, I wanted the map to show the point corresponding to the elevation the user is hovering over on the chart.
+
+![A screenshot of the chart hovered with the related map point displayed](https://daviddalbusco.com/assets/images/building-a-trails-section-hover.png)
 
 This can be achieved by getting some metadata through a hover callback on the chart, most charting libraries support this, I used [LayerChart](https://www.layerchart.com/). In this case, the metadata is the unique id of the point, and I update the map whenever the value changes.
 

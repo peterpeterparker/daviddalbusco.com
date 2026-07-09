@@ -156,7 +156,7 @@ I could have gone further and even extended the interface exposed by the library
 
 There's more to configure than that, colors, custom glyphs, visibility of the title, and so on.
 
-## Drawing the route
+### Drawing the route
 
 Displaying a Trails section has two components: a list and a details page. While showing all the trails with markers could be resolved by the previous chapter, on the details page I wanted to go a step further by drawing the route, the actual trace I followed when I ran or biked. This can be resolved by mapping all the points of a track to coordinates and joining those through an overlay.
 
@@ -249,18 +249,158 @@ For the Svelte lovers, here's the [full implementation](https://github.com/peter
 
 ---
 
-TODO
+## Going to production
 
-## Going to production: tokens, twice
+I mentioned earlier that loading the map requires a token, and that it can be scoped to a specific domain. So when I was ready to go live, that's exactly what I did, generated a real token. Or rather, tokens, plural, since I actually needed two: my site is reachable both on `daviddalbusco.com` and [www.daviddalbusco.com](https://www.daviddalbusco.com), and Apple only lets you scope a token to one domain at a time, not both at once.
 
-MapKit JS tokens can be scoped to specific domains, which is good practice, but Apple assigns a separate token per listed domain rather than one token covering several. Since my site is reachable as both `daviddalbusco.com` and `www.daviddalbusco.com`, that means two tokens, not one.
+Once I created those two tokens, I had to integrate them into my website. Since it is prerendered, the simplest approach would have been to use two environment variables and drop the tokens in a `.env` file. Even if the repo is public, that's not really a big deal, the tokens end up on the frontend anyway, on the client side, and are de facto public regardless.
 
-The simplest fix would have been to bake both into `PUBLIC_*` env vars, commit `.env.production` (the token is domain-restricted anyway, so it's not really a secret), and pick the right one client-side based on `window.location.hostname`. That works, but it means rotating a token requires a rebuild and redeploy.
+```
+# .env
+PUBLIC_MAPKIT_TOKEN_ROOT=...
+PUBLIC_MAPKIT_TOKEN_WWW=...
+```
 
-Since I self-host the site through Kyushu, I went with a small backend route instead: the frontend calls `/api/mapkit/token`, and Kyushu picks the right token based on the request's `Host` header, reading it from a live environment variable rather than something baked into the static build. Rotating a token is then just changing an env var and restarting the process, no rebuild required.
+Still, it felt nicer, or cleaner, to keep them out of the repo. Instead, I could have used GitHub Actions secrets and referenced them in the build workflow:
 
-It also turned out to be a nice, small proof that Kyushu's request-handling function isn't just for serving static assets, it's a real place to put small bits of server logic, which is a use case I hadn't tried until this.
+```yaml
+- name: Build
+  run: npm run build
+  env:
+    PUBLIC_MAPKIT_TOKEN_ROOT: ${{ secrets.MAPKIT_TOKEN_ROOT }}
+    PUBLIC_MAPKIT_TOKEN_WWW: ${{ secrets.MAPKIT_TOKEN_WWW }}
+```
 
-## The result
+I was about to do exactly that, but then I thought, why not build something a bit more fun instead 🤪.
 
-You can see the whole thing in action on the [Trails](/trails) page, elevation chart, map, and a marker that follows your cursor between the two. If you spot something worth fixing or have questions about any of the pieces above, reach out.
+Since I self-host the site with [Kyushu](https://kyushu.dev), I have a backend worker that serves the assets on the web, but it can do more than that. The same function can also act as an API and supports env vars. So why not extend it to also serve the token, by adding a `/api/mapkit/token` route that responds to `GET` requests 💡:
+
+```ts
+export default {
+	async fetch(request, env) {
+		const { pathname } = URL.parse(request.url) ?? { pathname: undefined };
+ 
+		if (request.method === 'GET' && pathname === '/api/mapkit/token') {
+			return // TODO returning the token
+		}
+ 
+		return await fetchAsset(request, env);
+	}
+} satisfies ExportedHandler;
+```
+
+Returning the token is relatively straightforward, it's basically just about identifying the `GET` request and providing back an adequate JSON body, but there were two tricks I had to work out.
+
+Given there are two tokens, one for the root domain and one for www, the function needs to know which domain it's actually being called from, since there's just one function serving both. Locally, reading the `Host` header would have been enough, but in production I run Caddy as a reverse proxy in front of it, and that value no longer matches. Fortunately, I found out I could use `x-forwarded-host`, the header that carries the original host that was requested.
+
+Aside from this, my first implementation didn't work either, because I declared the record holding the environment variables globally. Since Kyushu freezes the worker's memory and only evaluates variables at runtime, those ended up undefined. That's why I had to move the reading of those variables inside the function itself, so they're evaluated at request time.
+
+```typescript
+const resolveHost = (request: WorkerRequest): string | undefined =>
+	request.headers?.['x-forwarded-host'] ?? request.headers?.host;
+ 
+const fetchMapkitToken: ExportedHandler['fetch'] = async (request) => {
+	const host = resolveHost(request);
+ 
+	if (host === undefined) {
+		return {
+			status: 405,
+			body: 'Method Not Allowed'
+		};
+	}
+ 
+	const MAPKIT_TOKENS: Record<string, string | undefined> = {
+		'daviddalbusco.com': process.env.MAPKIT_TOKEN_ROOT,
+		'www.daviddalbusco.com': process.env.MAPKIT_TOKEN_WWW
+	};
+ 
+	const token = MAPKIT_TOKENS[host];
+ 
+	if (token === undefined) {
+		return {
+			status: 403,
+			body: 'Forbidden'
+		};
+	}
+ 
+	return {
+		status: 200,
+		headers: {
+			'content-type': 'application/json',
+			'cache-control': 'no-store'
+		},
+		body: JSON.stringify({ token })
+	};
+};
+```
+
+Lastly, on the client side, I modified the loading of the map to pre-fetch the token first before using it to load the map (instead of the plain hardcoded value from the earlier chapter):
+
+```typescript
+export interface MapKit {
+	mapkit: AppleMapKit;
+	map: Map;
+}
+ 
+export const loadMap = async (args: { anchor: HTMLElement }): Promise<Result<MapKit>> => {
+	return await safeExec(async () => {
+		const token = await loadToken();
+		return await loadMapKit({ ...args, ...token });
+	});
+};
+
+const loadMapKit = async ({
+	anchor,
+	token
+}: {
+	anchor: HTMLElement;
+	token: string;
+}): Promise<MapKit> => {
+	const mapkit = await load({
+        libraries: ['map', 'annotations', 'overlays'],
+		token
+	});
+ 
+	const map = new mapkit.Map(anchor);
+ 
+	return {
+		mapkit,
+		map
+	};
+};
+ 
+const loadToken = async (): Promise<{token: string}> => {
+	const response = await fetch('/api/mapkit/token');
+ 
+	if (!response.ok) {
+		const text = await response.text();
+		throw new Error(`${response.status} ${text}`);
+	}
+ 
+	return await response.json();
+};
+```
+
+Unrelated but somehow related note, you may notice in the snippet above that I used a `safeExec` function and a `Result` type. Those are tiny helpers I use across my projects, as I came to the realization that relying on throwing exceptions results in try/catch scattered everywhere, and can also, to some extent, result in uncaught issues. That's why I prefer to use a pattern like this, likely inherited from my work with Rust 🦀😃.
+
+```typescript
+export type Result<T> = { status: 'success'; result: T } | { status: 'error'; err: unknown };
+ 
+export const safeExec = async <T>(fn: () => Promise<T>): Promise<Result<T>> => {
+	try {
+		const result = await fn();
+		return { status: 'success', result };
+	} catch (err: unknown) {
+		return { status: 'error', err };
+	}
+};
+```
+
+---
+
+## Conclusion
+
+I'm a hobbyist, so don't expect ultra distances, marathon is about as far as I go, but if you are curious about the result you can see them live on the [Trails](/trails) page. Most routes I follow are convenient for day trips from Zürich. If you'd like to follow any of them and have questions, reach out!
+
+Until next time!
+David

@@ -4,7 +4,6 @@ I'm [David Dal Busco], a freelance software engineer, open source enthusiast, ba
 
 This project is my personal website that showcases my portfolio and blog entries.
 
-
 ## Table of contents
 
 - [Getting Started](#getting-started)

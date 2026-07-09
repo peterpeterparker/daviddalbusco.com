@@ -19,7 +19,7 @@ Building it was also a good excuse to take a look at the map landscape nowadays.
 
 ## Finding a map
 
-Whatever library you pick to render a map, Leaflet, MapLibre, or anything else, it draws what you give it. You need your data but, you also need a source of tiles (raster images or vector geometry) to actually see a map, and that's the part that turns "add a map" into a real decision.
+Whatever library you pick to render a map, Leaflet, MapLibre, or anything else, it draws what you give it. You need your data, but you also need a source of tiles (raster images or vector geometry) to actually see a map, and that's the part that turns "add a map" into a real decision.
 
 ### The options
 
@@ -47,7 +47,7 @@ I was tempted, but since I also wanted to show off (brag 😅) the mountains I r
 
 Ultimately I opened up to the idea of using a third-party cloud provider, [MapTiler](https://www.maptiler.com/) (was pleased to learn they're also based in Switzerland, at least part of it, it seems) and [Carto](https://carto.com) looked like solid options. Both work as a drop-in source for Leaflet or MapLibre, and have a free tier. MapTiler even ships an "Outdoor" style with trails, contour lines, and hillshading built in, exactly the Strava/Wikiloc look I had in mind. The catch is that free tiers come with quotas, though generous enough for a website like mine. Carto even seems to have an unlimited free tier, but to be honest with you, their tagline "The Agentic GIS Platform" just ruled them out.
 
-There is also [mapbox](https://www.mapbox.com/), which felt too commercial and [Google Maps API](https://mapsplatform.google.com/lp/maps-apis/) was not even an option.
+There is also [Mapbox](https://www.mapbox.com/), which felt too commercial and [Google Maps API](https://mapsplatform.google.com/lp/maps-apis/) was not even an option.
 
 While browsing further, I noticed at some point that Wikiloc actually displayed an "Apple" footer in their maps. I told myself: wait, Apple is also an option?
 
@@ -90,25 +90,25 @@ Lastly, you end up holding two separate entities in your state if you want to ma
 Anyway, I could have rewritten the loader but couldn't really influence the rest, so I just went with it.
 
 ```typescript
-import { load, type MapKit as AppleMapKit, type Map } from '@apple/mapkit-loader';
+import { load, type MapKit as AppleMapKit, type Map } from "@apple/mapkit-loader";
 
 export interface MapKit {
-    mapkit: AppleMapKit;
-    map: Map;
+	mapkit: AppleMapKit;
+	map: Map;
 }
 
 export const loadMap = async ({ anchor }: { anchor: HTMLElement }): Promise<MapKit> => {
-    const mapkit = await load({
-        libraries: ['map', 'annotations', 'overlays'],
-        token: 'YOUR_TOKEN'
-    });
+	const mapkit = await load({
+		libraries: ["map", "annotations", "overlays"],
+		token: "YOUR_TOKEN"
+	});
 
-    const map = new mapkit.Map(anchor);
+	const map = new mapkit.Map(anchor);
 
-    return {
-        mapkit,
-        map
-    };
+	return {
+		mapkit,
+		map
+	};
 };
 ```
 
@@ -129,16 +129,16 @@ const markers = annotations.map(
 			title,
 			callout: {
 				calloutContentForAnnotation: () => {
-					const link = document.createElement('a');
+					const link = document.createElement("a");
 					link.href = pathname;
 					link.textContent = title;
-					link.setAttribute('aria-label', `View ${title}`);
+					link.setAttribute("aria-label", `View ${title}`);
 					return link;
 				}
 			}
 		})
 );
- 
+
 map.addAnnotations(markers);
 ```
 
@@ -186,11 +186,11 @@ const focusItems = () => {
 	if (kit === undefined) {
 		return;
 	}
- 
+
 	const { map } = kit;
- 
+
 	const items = [...(map.annotations ?? []), ...(map.overlays ?? [])];
- 
+
 	if (items.length > 0) {
 		map.showItems(items);
 	}
@@ -228,7 +228,7 @@ $effect(() => {
 
 	if (selectedPoint === undefined || selectedPoint === null) {
 		selectedPoint = new mapkit.MarkerAnnotation(coordinate, {
-			color,
+			color: "#ff65a9",
 			glyphText: "●"
 		});
 		map.addAnnotation(selectedPoint);
@@ -279,11 +279,11 @@ Since I self-host the site with [Kyushu](https://kyushu.dev), I have a backend w
 export default {
 	async fetch(request, env) {
 		const { pathname } = URL.parse(request.url) ?? { pathname: undefined };
- 
-		if (request.method === 'GET' && pathname === '/api/mapkit/token') {
-			return // TODO returning the token
+
+		if (request.method === "GET" && pathname === "/api/mapkit/token") {
+			return; // TODO returning the token
 		}
- 
+
 		return await fetchAsset(request, env);
 	}
 } satisfies ExportedHandler;
@@ -291,43 +291,43 @@ export default {
 
 Returning the token is relatively straightforward, it's basically just about identifying the `GET` request and providing back an adequate JSON body, but there were two tricks I had to work out.
 
-Given there are two tokens, one for the root domain and one for www, the function needs to know which domain it's actually being called from, since there's just one function serving both. Locally, reading the `Host` header would have been enough, but in production I run Caddy as a reverse proxy in front of it, and that value no longer matches. Fortunately, I found out I could use `x-forwarded-host`, the header that carries the original host that was requested.
+Given there are two tokens, one for the root domain and one for www, the function needs to know which domain it's actually being called from, since there's just one function serving both. Locally, reading the `Host` header would have been enough, but in production I run Caddy as a reverse proxy in front of it, and that value no longer matches. Fortunately, I found out I could use [x-forwarded-host](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Forwarded-Host), the header that carries the original host that was requested.
 
 Aside from this, my first implementation didn't work either, because I declared the record holding the environment variables globally. Since Kyushu freezes the worker's memory and only evaluates variables at runtime, those ended up undefined. That's why I had to move the reading of those variables inside the function itself, so they're evaluated at request time.
 
 ```typescript
 const resolveHost = (request: WorkerRequest): string | undefined =>
-	request.headers?.['x-forwarded-host'] ?? request.headers?.host;
- 
-const fetchMapkitToken: ExportedHandler['fetch'] = async (request) => {
+	request.headers?.["x-forwarded-host"] ?? request.headers?.host;
+
+const fetchMapkitToken: ExportedHandler["fetch"] = async (request) => {
 	const host = resolveHost(request);
- 
+
 	if (host === undefined) {
 		return {
 			status: 405,
-			body: 'Method Not Allowed'
+			body: "Method Not Allowed"
 		};
 	}
- 
+
 	const MAPKIT_TOKENS: Record<string, string | undefined> = {
-		'daviddalbusco.com': process.env.MAPKIT_TOKEN_ROOT,
-		'www.daviddalbusco.com': process.env.MAPKIT_TOKEN_WWW
+		"daviddalbusco.com": process.env.MAPKIT_TOKEN_ROOT,
+		"www.daviddalbusco.com": process.env.MAPKIT_TOKEN_WWW
 	};
- 
+
 	const token = MAPKIT_TOKENS[host];
- 
+
 	if (token === undefined) {
 		return {
 			status: 403,
-			body: 'Forbidden'
+			body: "Forbidden"
 		};
 	}
- 
+
 	return {
 		status: 200,
 		headers: {
-			'content-type': 'application/json',
-			'cache-control': 'no-store'
+			"content-type": "application/json",
+			"cache-control": "no-store"
 		},
 		body: JSON.stringify({ token })
 	};
@@ -341,7 +341,7 @@ export interface MapKit {
 	mapkit: AppleMapKit;
 	map: Map;
 }
- 
+
 export const loadMap = async (args: { anchor: HTMLElement }): Promise<Result<MapKit>> => {
 	return await safeExec(async () => {
 		const token = await loadToken();
@@ -357,26 +357,26 @@ const loadMapKit = async ({
 	token: string;
 }): Promise<MapKit> => {
 	const mapkit = await load({
-        libraries: ['map', 'annotations', 'overlays'],
+		libraries: ["map", "annotations", "overlays"],
 		token
 	});
- 
+
 	const map = new mapkit.Map(anchor);
- 
+
 	return {
 		mapkit,
 		map
 	};
 };
- 
-const loadToken = async (): Promise<{token: string}> => {
-	const response = await fetch('/api/mapkit/token');
- 
+
+const loadToken = async (): Promise<{ token: string }> => {
+	const response = await fetch("/api/mapkit/token");
+
 	if (!response.ok) {
 		const text = await response.text();
 		throw new Error(`${response.status} ${text}`);
 	}
- 
+
 	return await response.json();
 };
 ```
@@ -384,14 +384,14 @@ const loadToken = async (): Promise<{token: string}> => {
 Unrelated but somehow related note, you may notice in the snippet above that I used a `safeExec` function and a `Result` type. Those are tiny helpers I use across my projects, as I came to the realization that relying on throwing exceptions results in try/catch scattered everywhere, and can also, to some extent, result in uncaught issues. That's why I prefer to use a pattern like this, likely inherited from my work with Rust 🦀😃.
 
 ```typescript
-export type Result<T> = { status: 'success'; result: T } | { status: 'error'; err: unknown };
- 
+export type Result<T> = { status: "success"; result: T } | { status: "error"; err: unknown };
+
 export const safeExec = async <T>(fn: () => Promise<T>): Promise<Result<T>> => {
 	try {
 		const result = await fn();
-		return { status: 'success', result };
+		return { status: "success", result };
 	} catch (err: unknown) {
-		return { status: 'error', err };
+		return { status: "error", err };
 	}
 };
 ```

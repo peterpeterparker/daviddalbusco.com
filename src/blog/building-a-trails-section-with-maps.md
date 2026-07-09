@@ -2,18 +2,18 @@
 path: "/blog/building-a-trails-section-with-maps"
 date: "2026-07-09"
 title: Building a Trails Section With Maps
-description: "Turns out 'just add a map' is a bigger question than it sounds. Here's what I looked at, and what I ended up with."
+description: "Turns out 'just add a map' is a bigger question than it sounds."
 tags: "#webdev #map #svelte #javascript"
-image: "https://daviddalbusco.com/assets/images/and-machines-8gqqtZstztc-unsplash.jpg"
+image: "https://daviddalbusco.com/assets/images/nenad-novakovic-mHX5e1gFQVo-unsplash.jpg"
 ---
 
-![](https://daviddalbusco.com/assets/images/and-machines-8gqqtZstztc-unsplash.jpg)
+![](https://daviddalbusco.com/assets/images/nenad-novakovic-mHX5e1gFQVo-unsplash.jpg)
 
-> Photo by [and machines](https://unsplash.com/fr/@and_machines?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/fond-peint-degrade-bleu-avec-une-lueur-rose-8gqqtZstztc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+> Photo by [Nenad Novaković](https://unsplash.com/fr/@nnx0r?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/un-fond-bleu-et-vert-avec-des-lignes-ondulees-mHX5e1gFQVo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-I've been running the Alps for a few years now, and recently got into cycling too. At some point I wanted my own record of it, not just a Strava feed, but something on my own site. So I started building a [Trails](/trails) section with the GPX tracks and photos of my "adventures".
+I've been running the Alps for a few years now. At some point I wanted my own record of it, not just a Strava feed, but something on my own site. So I started building a [Trails](/trails) section with the GPX tracks and photos of my "adventures".
 
-Building it was also a good excuse to take a look at the map landscape nowadays. Turns out "just add a map" is a bit of a bigger question than it sounds. I developed it like this.
+Building it was also a good excuse to take a look at the map landscape nowadays, and it turned out that "just add a map" was a bit of a bigger question than it sounds. So, I developed it like this.
 
 ---
 
@@ -27,7 +27,7 @@ I went looking, and from what I understood, those are the options I had to gathe
 
 #### Self-hosting
 
-Since I already self-host my website, my analytics, and other tools, checking whether I could self-host the map tiles too was my first instinct. I found [Protomaps](https://protomaps.com/), which publishes pre-built vector tile archives you can just serve as static files, minimal setup, exactly my kind of thing. However, looking at the actual rendering, it wasn't quite the look I wanted. Since I'm displaying trails in the mountains, I wanted some relief, not a flat design.
+Since I already self-host my website, my analytics, and other tools, checking whether I could self-host the map tiles too was my first instinct. I found [Protomaps](https://protomaps.com/), which publishes pre-built vector tile archives you can just serve as static files. Minimal setup, exactly my kind of thing. However, looking at the actual rendering, it wasn't quite the look I wanted. Since I'm displaying trails in the mountains, I wanted some relief, not a flat design.
 
 I then came across a project called [Mapterhorn](https://mapterhorn.com), mentioned in Protomaps' [blog](https://protomaps.com/blog/mapterhorn-terrain/), meant to provide exactly that kind of elevation data, but I wasn't exactly sure how to put all the pieces together, nor whether it was still in development or production ready. It would have been cool to use, as it seems to be developed in Zurich.
 
@@ -37,7 +37,7 @@ Long story short, I got lost in limbo.
 
 #### Regional data
 
-Since I mostly run in Switzerland, I then checked if swisstopo, the national mapping agency, had an API.
+Since I mostly run in Switzerland, I then checked if [swisstopo](https://www.swisstopo.admin.ch), the national mapping agency, had an API.
 
 Spoiler alert: they do, and it's a really interesting [service](https://www.geo.admin.ch/fr/interface-de-programmation-api). They serve their own tiles, satellite imagery included, for free, no signup, no API key, just a fair-use policy.
 
@@ -45,29 +45,29 @@ I was tempted, but since I also wanted to show off (brag 😅) the mountains I r
 
 #### Commercial providers
 
-Ultimately I opened up to the idea of using a third-party cloud provider, [MapTiler](https://www.maptiler.com/) (was pleased to learn they're also based in Switzerland, at least part of it, it seems) and [Carto](https://carto.com) looked like solid options. Both work as a drop-in source for Leaflet or MapLibre, and have a free tier. MapTiler even ships an "Outdoor" style with trails, contour lines, and hillshading built in, exactly the Strava/Wikiloc look I had in mind. The catch is that free tiers come with quotas, though generous enough for a website like mine. Carto even seems to have an unlimited free tier, but to be honest with you, their tagline "The Agentic GIS Platform" just ruled them out.
+Ultimately I opened up to the idea of using a third-party cloud provider, [MapTiler](https://www.maptiler.com/) (was pleased to learn they're also based in Switzerland, at least part of it, it seems) and [Carto](https://carto.com) looked like solid options. Both work as a drop-in source for Leaflet or MapLibre, and have a free tier. MapTiler even ships an "Outdoor" style with trails built in, exactly the look I had in mind.
+
+The catch is that free tiers come with quotas, though generous enough for a website like mine. Carto even seems to have an unlimited free tier, but to be honest with you, their tagline "The Agentic GIS Platform" just ruled them out.
 
 There is also [Mapbox](https://www.mapbox.com/), which felt too commercial and [Google Maps API](https://mapsplatform.google.com/lp/maps-apis/) was not even an option.
 
-While browsing further, I noticed at some point that Wikiloc actually displayed an "Apple" footer in their maps. I told myself: wait, Apple is also an option?
-
-Turns out it was. Apple has its own closed map renderer, exposed as a JS library (the loader itself is open source), and they'd just released a [newest version](https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/). If you already have an Apple Developer Program membership ($99/year), it's "free" to use, with a daily quota of 250,000 map views and 25,000 service calls.
+While browsing further, I noticed that Wikiloc actually displayed an "Apple" footer in their maps. I told myself: wait, Apple is also a map provider?
 
 ### What I picked
 
-I ended up going with the last option, Apple. I already have a developer membership, since I publish a few app updates to their store each year, and it always felt like a bit of a scam to pay for it every year as it does not seem worth the money. So I figured, why not get some value back out of it by actually using it for something. Plus, their free tier should easily cover the little traffic of my website.
+I ended up going with the last option. Apple has its own closed map renderer, exposed as a JS library for the web, and they'd just released a [newest version](https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/). If you already have an Apple Developer Program membership ($99/year), it's "free" to use, with a daily quota of 250,000 map views and 25,000 service calls.
+
+That's my case, since I publish a few app updates to their store each year, and it always felt like a bit of a scam to pay for it every year as it does not seem worth the money. So I figured, why not get some value back out of it by actually using it for something. Plus, their free tier should easily cover the little traffic of my website.
 
 ---
 
 ## Building it
 
-Here's how I actually wired it into the Trails page.
+Here's how I actually wired it into the [Trails](/trails) page.
 
 ### Getting started
 
 To show anything on a map, you need points. In my case, those come from parsing the GPX data of each trail. I'll skip that part here for brevity, but each point ends up looking like this: a coordinate (latitude and longitude) and a unique id.
-
-The id is optional but useful when you want to manipulate the points on the UI side, for example when hovering a point on the map.
 
 ```typescript
 interface MapGpxPoint {
@@ -76,6 +76,8 @@ interface MapGpxPoint {
 	lon: number;
 }
 ```
+
+The id is optional but useful when you want to manipulate the points on the UI side, for example when hovering a point on the map.
 
 ### Loading the map
 
@@ -151,8 +153,6 @@ interface MapAnnotation {
 	pathname: string;
 }
 ```
-
-I could have gone further and even extended the interface exposed by the library, but kept it simple.
 
 There's more to configure than that, colors, custom glyphs, visibility of the title, and so on.
 
@@ -251,7 +251,7 @@ For the Svelte lovers, here's the [full implementation](https://github.com/peter
 
 ## Going to production
 
-I mentioned earlier that loading the map requires a token, and that it can be scoped to a specific domain. So when I was ready to go live, that's exactly what I did, generated a real token. Or rather, tokens, plural, since I actually needed two: my site is reachable both on `daviddalbusco.com` and [www.daviddalbusco.com](https://www.daviddalbusco.com), and Apple only lets you scope a token to one domain at a time, not both at once.
+I mentioned earlier that loading the map requires a token, and that it can be scoped to a specific domain. So when I was ready to go live, that's exactly what I did, generated a real token. Or rather, tokens, plural, since I actually needed two: my site is reachable both on [daviddalbusco.com](https://daviddalbusco.com) and [www.daviddalbusco.com](https://www.daviddalbusco.com), and Apple only lets you scope a token to one domain at a time, not both at once.
 
 Once I created those two tokens, I had to integrate them into my website. Since it is prerendered, the simplest approach would have been to use two environment variables and drop the tokens in a `.env` file. Even if the repo is public, that's not really a big deal, the tokens end up on the frontend anyway, on the client side, and are de facto public regardless.
 
@@ -381,7 +381,7 @@ const loadToken = async (): Promise<{ token: string }> => {
 };
 ```
 
-Unrelated but somehow related note, you may notice in the snippet above that I used a `safeExec` function and a `Result` type. Those are tiny helpers I use across my projects, as I came to the realization that relying on throwing exceptions results in try/catch scattered everywhere, and can also, to some extent, result in uncaught issues. That's why I prefer to use a pattern like this, likely inherited from my work with Rust 🦀😃.
+Unrelated but somehow related note, you may notice in the snippet above that I used a `safeExec` function and a `Result` type. Those are tiny helpers I use across my projects, as I came to the realization that relying on throwing exceptions results in try/catch scattered everywhere, and can also, to some extent, result in uncaught issues. That's why I prefer to use a pattern like this, likely inherited from my work with Rust 🦀.
 
 ```typescript
 export type Result<T> = { status: "success"; result: T } | { status: "error"; err: unknown };

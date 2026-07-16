@@ -1,15 +1,15 @@
 ---
 path: "/blog/structuring-sveltekit-ssr-load-functions"
-date: "2026-06-01"
-title: Structuring SvelteKit SSR Load Functions
-description: "An architecture pattern for keeping SvelteKit load functions clean, testable, and free of duplicated auth logic as your app grows."
+date: "2026-07-16"
+title: Structuring SvelteKit Load Functions
+description: "An architecture for loading data that's isolated, testable, and free of copy-pasted auth logic."
 tags: "#sveltekit #typescript #ssr #webdev #architecture"
 image: "https://daviddalbusco.com/assets/images/logan-voss-1QlMVjKbJrY-unsplash.jpg"
 ---
 
-Most SvelteKit tutorials show you how to write a `+page.server.ts` load function (a server-side function that runs before a page renders and fetches the data it needs), but what happens when you have dozens of them, they all need authentication, and you want to keep things maintainable?
+Earlier this year I built a server-side rendered app. I developed it with SvelteKit and dozens of `+page.server.ts` [load functions](https://svelte.dev/docs/kit/load) that run before pages render. They all needed authentication, and keeping things maintainable quickly became a real challenge.
 
-In this post, I'll walk you through an architecture I put together while working on a SvelteKit app. To keep the examples concrete, let's pretend we're building an online pizza shop. 🍕
+In this post, I'll walk you through the architecture I ended up creating. To keep the examples concrete, let's pretend we're building an online pizza shop. 🍕
 
 ---
 
@@ -38,7 +38,7 @@ export const load: PageServerLoad = async ({ locals, depends }) => {
 };
 ```
 
-As soon as you have ten pages, this falls apart. The `depends` call (which tells SvelteKit to re-run the load function when auth state changes), the JWT guard, and the error handling are copy-pasted everywhere. The fetching logic lives inside the route files, coupling them together and making each one harder to test in isolation. On top of that, not all requests are SSR -- some happen on the client side and don't need the JWT forwarded as a header, so you end up with two flavors of the same API call with nothing enforcing the difference. And when you need to change your auth logic or error handling, you likely have to touch every single load file.
+As soon as you have ten pages, this falls apart. The [`depends`](https://svelte.dev/docs/kit/@sveltejs-kit#LoadEvent) call (which tells SvelteKit to re-run the load function when auth state changes), the JWT guard, and the error handling are copy-pasted everywhere. The fetching logic lives inside the route files, coupling them together and making each one harder to test in isolation. On top of that, not all requests are SSR. Some happen on the client side and don't need the JWT forwarded as a header, so you end up with two flavors of the same API call with nothing enforcing the difference. And when you need to change your auth logic or error handling, you likely have to touch every single load file.
 
 ---
 
@@ -75,7 +75,7 @@ The second: `lib` **contains nothing SvelteKit-specific**. Keeping it that way m
 
 Our API (and I'm assuming yours too) requires a JWT to authenticate calls. Once issued after authentication, we can rely on [credentials: 'include'](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#including_credentials) on the client side, which instructs the browser to embed the cookie automatically. However, on the server side, there is no such API and the cookie has to be read manually to pass the JWT along as an HTTP header.
 
-That's why, to make the JWT easily accessible across the application via `locals` (an object specific to a single request which is available to any route), the first step is setting up a `hooks.server.ts` that runs every time the SvelteKit server receives a [request](https://svelte.dev/docs/kit/web-standards#Fetch-APIs-Request) and extracts it.
+That's why, to make the JWT easily accessible across the application via [`locals`](https://svelte.dev/docs/kit/hooks#Server-hooks-locals) (an object specific to a single request which is available to any route), the first step is setting up a `hooks.server.ts` that runs every time the SvelteKit server receives a [request](https://svelte.dev/docs/kit/web-standards#Fetch-APIs-Request) and extracts it.
 
 ```ts
 // hooks.server.ts
@@ -212,7 +212,7 @@ export class ApiPizzasSsr extends ApiSsr {
 }
 ```
 
-In the above snippets you might have noticed the use of [Zod](https://zod.dev) for schema validation. Parsing the response ensures it matches the expected shape at runtime. Small tip: in this particular project, we used [orval](https://orval.dev) to generate the schemas automatically from the API.
+In the above snippets you might have noticed the use of [Zod](https://zod.dev) for schema validation. Parsing the response ensures it matches the expected shape at runtime.
 
 ---
 
@@ -311,7 +311,7 @@ export abstract class ServerLoader {
 
 The class exposes two protected methods. `_load` is the general one, meant to be called with a loader function that hooks into the service layer. `_loadWithSlug` is for dynamic routes where a slug is expected in the URL params.
 
-On error, both rely on SvelteKit's `error()` function — a function that never returns — to throw a 404 or 500 with a meaningful message.
+On error, both rely on SvelteKit's [`error()`](https://svelte.dev/docs/kit/@sveltejs-kit#error) function — a function that never returns — to throw a 404 or 500 with a meaningful message.
 
 Since the application has a sign-in and sign-out flow, every load registers a `depends('main:auth')` dependency. This tells SvelteKit to re-run the load function whenever `invalidate('main:auth')` is called, for example after a successful login or logout.
 
@@ -421,8 +421,11 @@ Because each layer has no dependency on the others, testing is straightforward. 
 | Server classes      | Concrete load methods                        | Yes                |
 | Route files         | One-line delegation                          | Yes                |
 
-<br />
-Clean separation between layers, no duplicated logic, and adding a new route means writing one new method and one new line in a route file, which is about as boring as it should be.
+---
+
+## Conclusion
+
+With this architecture, layers are clearly separated and logic isn't duplicated. Adding a new route means writing one new method and one new line in a route file, which is about as boring as it should be even for your LLM.
 
 Until next time!
 David

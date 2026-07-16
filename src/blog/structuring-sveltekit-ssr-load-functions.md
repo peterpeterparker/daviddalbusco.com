@@ -42,7 +42,15 @@ export const load: PageServerLoad = async ({ locals, depends }) => {
 };
 ```
 
-As soon as you have ten pages, this falls apart. The [`depends`](https://svelte.dev/docs/kit/@sveltejs-kit#LoadEvent) call (which tells SvelteKit to re-run the load function when auth state changes), the JWT guard, and the error handling are copy-pasted everywhere. The fetching logic lives inside the route files, coupling them together and making each one harder to test in isolation. On top of that, not all requests are SSR. Some happen on the client side and don't need the JWT forwarded as a header, so you end up with two flavors of the same API call with nothing enforcing the difference. And when you need to change your auth logic or error handling, you likely have to touch every single load file.
+As soon as you have ten pages, this falls apart.
+
+The [`depends`](https://svelte.dev/docs/kit/@sveltejs-kit#LoadEvent) call (which tells SvelteKit to re-run the load function when auth state changes), the JWT guard, and the error handling are copy-pasted everywhere.
+
+The fetching logic lives inside the route files, coupling them together and making each one harder to test in isolation.
+
+On top of that, not all requests are SSR. Some happen on the client side and don't need the JWT forwarded as a header, so you end up with two flavors of the same API call with nothing enforcing the difference.
+
+And when you need to change your auth logic or error handling, you likely have to touch every single load file.
 
 ---
 

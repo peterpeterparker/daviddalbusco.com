@@ -3,9 +3,13 @@ path: "/blog/structuring-sveltekit-ssr-load-functions"
 date: "2026-07-16"
 title: Structuring SvelteKit Load Functions
 description: "An architecture for loading data that's isolated, testable, and free of copy-pasted auth logic."
-tags: "#sveltekit #typescript #ssr #webdev #architecture"
-image: "https://daviddalbusco.com/assets/images/logan-voss-1QlMVjKbJrY-unsplash.jpg"
+tags: "#webdev #architecture #sveltekit #ssr"
+image: "https://daviddalbusco.com/assets/images/jr-korpa-9XngoIpxcEo-unsplash.jpg"
 ---
+
+![](https://daviddalbusco.com/assets/images/jr-korpa-9XngoIpxcEo-unsplash.jpg)
+
+> Photo by [Jr Korpa](https://unsplash.com/fr/@jrkorpa?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/particules-de-lumiere-rose-neon-et-violette-9XngoIpxcEo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Earlier this year I built a server-side rendered app. I developed it with SvelteKit and dozens of `+page.server.ts` [load functions](https://svelte.dev/docs/kit/load) that run before pages render. They all needed authentication, and keeping things maintainable quickly became a real challenge.
 

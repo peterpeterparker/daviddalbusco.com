@@ -5,6 +5,7 @@ title: Structuring SvelteKit Load Functions
 description: "An architecture for loading data that's isolated, testable, and free of copy-pasted auth logic."
 tags: "#webdev #architecture #sveltekit #ssr"
 image: "https://daviddalbusco.com/assets/images/jr-korpa-9XngoIpxcEo-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3mqr3sql53b2n"
 ---
 
 ![](https://daviddalbusco.com/assets/images/jr-korpa-9XngoIpxcEo-unsplash.jpg)

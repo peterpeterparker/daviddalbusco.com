@@ -1,5 +1,5 @@
 ---
-path: "/blog/structuring-sveltekit-ssr-load-functions"
+path: "/blog/structuring-sveltekit-load-functions"
 date: "2026-07-16"
 title: Structuring SvelteKit Load Functions
 description: "An architecture for loading data that's isolated, testable, and free of copy-pasted auth logic."

@@ -7,7 +7,7 @@
 		image?: string | undefined;
 		title?: string | undefined;
 		description?: string | undefined;
-        noRobots?: boolean;
+		noRobots?: boolean;
 	}
 
 	let {
@@ -16,7 +16,7 @@
 		image = undefined,
 		title = undefined,
 		description = undefined,
-        noRobots = false,
+		noRobots = false
 	}: Props = $props();
 </script>
 
@@ -35,5 +35,5 @@
 <meta content="@daviddalbusco" name="twitter:creator" />
 
 {#if noRobots}
-    <meta name="robots" content="noindex, nofollow" />
+	<meta name="robots" content="noindex, nofollow" />
 {/if}

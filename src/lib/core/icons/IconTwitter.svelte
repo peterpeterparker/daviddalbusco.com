@@ -1,21 +1,16 @@
 <script lang="ts">
 	interface Props {
-		size: string;
+		height: number;
 	}
 
-	let { size }: Props = $props();
+	let { height }: Props = $props();
+
+	let width = $derived((height * 448) / 512);
 </script>
 
-<svg
-	width={size}
-	height={size}
-	viewBox="0 0 1200 1227"
-	fill="none"
-	xmlns="http://www.w3.org/2000/svg"
-	class="twitter"
->
-	<path
-		d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" {width} {height}
+	><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path
 		fill="currentColor"
-	/>
-</svg>
+		d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"
+	/></svg
+>

@@ -27,7 +27,21 @@
 	</div>
 </footer>
 
+<address aria-label="My company address">
+	<strong>Fluster GmbH</strong>
+	<span>Sihlquai 131</span>
+	<span>8005 Zürich</span>
+</address>
+
 <style lang="scss">
+	footer {
+		margin: 1em 1em 1.45rem;
+
+		@media screen and (min-width: 1078px) {
+			margin: 2.45rem auto 1.45rem;
+		}
+	}
+
 	.social {
 		display: flex;
 		flex-direction: column;
@@ -59,5 +73,14 @@
 		&:hover {
 			transform: translateY(-0.25rem);
 		}
+	}
+
+	address {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 0.6rem;
+		gap: 0.5rem;
+		margin: 0 0 2.45rem;
 	}
 </style>

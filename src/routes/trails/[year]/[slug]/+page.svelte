@@ -20,6 +20,7 @@
 	import { capitalize } from '$lib/core/utils/text.utils';
 	import { generateTrailDescription } from '$lib/trails/utils/seo.utils';
 	import { sportColor } from '$lib/trails/utils/sport.utils';
+	import { SITE_URL } from '$lib/core/constants';
 
 	interface Props {
 		data: ServerPageData;
@@ -67,7 +68,7 @@
 </script>
 
 <svelte:head>
-	<Seo {image} {title} {description} url={`/trails/${toSlugPath(slug)}`} />
+	<Seo {image} {title} {description} url={`${SITE_URL}/trails/${toSlugPath(slug)}`} />
 
 	<style lang="scss">
 		@use '../../../../theme/page';

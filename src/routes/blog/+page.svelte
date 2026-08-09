@@ -5,6 +5,8 @@
 	import type { BlogMetadata } from '$lib/blog/types/blog';
 	import type { PageDataWithoutContent } from '$lib/core/types/page';
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
+	import { SITE_URL } from '$lib/core/constants';
+	import { BLOG_DESCRIPTION, BLOG_TITLE } from '$lib/blog/constants';
 
 	interface Props {
 		data: ServerPageData;
@@ -15,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<Seo />
+	<Seo title={BLOG_TITLE} description={BLOG_DESCRIPTION} url={`${SITE_URL}/blog`} />
 
 	<style lang="scss">
 		@use '../../theme/_page.scss';

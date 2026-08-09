@@ -6,6 +6,8 @@
 	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
 	import type { PageData } from '$lib/core/types/page';
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
+	import { SITE_URL } from '$lib/core/constants';
+	import { PORTFOLIO_DESCRIPTION, PORTFOLIO_TITLE } from '$lib/portfolio/constants';
 
 	interface Props {
 		data: ServerPageData;
@@ -17,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<Seo />
+	<Seo title={PORTFOLIO_TITLE} description={PORTFOLIO_DESCRIPTION} url={`${SITE_URL}/portfolio`} />
 
 	<style lang="scss">
 		@use '../../theme/_page.scss';

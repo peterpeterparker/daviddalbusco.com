@@ -15,14 +15,17 @@
 
 	let portfolio = $derived<PageData<PortfolioMetadata>>(data.portfolio);
 
+	let slug = $derived(portfolio.slug.name);
+
 	let content = $derived(portfolio.content);
 	let metadata = $derived(portfolio.metadata);
 
 	let noRobots = $derived(metadata.robots === 'disallow');
+	let { title, description } = $derived(metadata);
 </script>
 
 <svelte:head>
-	<Seo {noRobots} />
+	<Seo {title} {description} {noRobots} url={`/portfolio/${slug}`} />
 
 	<style lang="scss">
 		@use '../../../theme/_page.scss';

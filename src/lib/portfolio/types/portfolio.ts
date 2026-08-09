@@ -10,6 +10,7 @@ export interface PortfolioMetadata {
 	type: PortfolioType;
 	order?: string;
 	status?: 'active' | 'maintenance' | 'archived' | 'experiment';
+	robots?: 'disallow';
 }
 
 export interface Portfolio {

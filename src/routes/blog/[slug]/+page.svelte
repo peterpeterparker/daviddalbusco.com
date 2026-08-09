@@ -41,11 +41,7 @@
 <svelte:window onddbCopySnippet={onCopySnippet} />
 
 <svelte:head>
-	<Seo {canonical} {description} {image} {title} url={`/blog/${slug}`} />
-
-	{#if noRobots}
-		<meta name="robots" content="noindex, nofollow" />
-	{/if}
+	<Seo {canonical} {description} {image} {title} url={`/blog/${slug}`} {noRobots} />
 
 	{#if standardSite !== undefined && standardSite !== ''}
 		<link rel="site.standard.document external" href={standardSite} />

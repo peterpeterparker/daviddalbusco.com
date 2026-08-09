@@ -1,6 +1,6 @@
 ---
-title: "Ineexa: Digital Costing Tool for Construction"
-description: "Designed and developed a web app that automates material costing and offer creation for the construction industry, with a web-shop style UX."
+title: "ineexa"
+description: "ineexa is a digital solution for the construction industry."
 icon: "/images/portfolio/icons/ineexa-icon.png"
 background: "#f3f3f3"
 type: "work"

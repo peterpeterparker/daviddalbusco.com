@@ -1,6 +1,6 @@
 ---
-title: "DV Bern AG"
-description: "DV Bern is more than a normal IT company. They describe the company as an older lady who still runs especially when it comes to the digital future."
+title: "DV Bern AG: Commercial Register Software for Switzerland"
+description: "Developed a new process for Switzerland's commercial register ERP system, impacting both public-facing workflows and internal register staff operations."
 icon: "/images/portfolio/icons/dvb-icon.png"
 background: "#2e4051"
 type: "work"

@@ -1,6 +1,6 @@
 ---
-title: "DFINITY: Web3 & Blockchain Development on the Internet Computer"
-description: "Multi-year collaboration with DFINITY on core Internet Computer products, from governance tooling to a multi-chain wallet used by thousands."
+title: "DFINITY"
+description: "The DFINITY Foundation develops the Internet Computer, a public blockchain network platform based on the Internet Computer Protocol (ICP)."
 icon: "/images/portfolio/icons/dfinity-icon.png"
 background: "#ffffff"
 type: "work"

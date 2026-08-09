@@ -9,6 +9,7 @@
 	import Progress from '$lib/core/components/Progress.svelte';
 	import { formatDate } from '$lib/core/utils/date.utils';
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
+	import { onCopySnippet } from '$lib/core/utils/copy.utils';
 
 	interface Props {
 		data: ServerPageData;
@@ -36,6 +37,8 @@
 
 	let anchor = $state<HTMLElement | undefined>(undefined);
 </script>
+
+<svelte:window onddbCopySnippet={onCopySnippet} />
 
 <svelte:head>
 	<Seo {canonical} {description} {image} {title} url={`/blog/${slug}`} />

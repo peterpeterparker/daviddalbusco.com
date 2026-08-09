@@ -132,13 +132,17 @@ const renderHTML = ({ slug, path, group }: GetPageData): string => {
 
 	// @ts-expect-error We are fine without types.
 	const codeRule = () => (tokens, idx, _options, _env) => {
-		return shiki.codeToHtml(tokens[idx].content.trim(), {
+		const code = shiki.codeToHtml(tokens[idx].content.trim(), {
 			lang: tokens[idx].params ? tokens[idx].params : 'javascript',
 			theme: 'dracula',
 			colorReplacements: {
 				'#282a36': '#000000'
 			}
 		});
+
+		const copyBtn = `<button onclick="this.dispatchEvent(new CustomEvent('ddbCopySnippet', { bubbles: true }))" aria-label="Copy code snippet"><img alt="" aria-hidden="true" loading="lazy" src="/assets/icon-copy.svg"/></button>`;
+
+		return `<div class="code-snippet">${code}${copyBtn}</div>`;
 	};
 
 	md.renderer.rules.fence = codeRule();

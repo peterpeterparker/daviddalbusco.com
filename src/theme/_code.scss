@@ -5,3 +5,35 @@ table code {
 	background: rgba(0, 0, 0, 0.05);
 	padding: 0 0.45rem;
 }
+
+.code-snippet {
+	position: relative;
+
+	& > button {
+		position: absolute;
+		top: 1.45rem;
+		right: 1.45rem;
+
+		width: 1.45rem;
+		height: 1.45rem;
+
+		padding: 4px;
+
+		border-radius: 1px;
+
+		transition: all 0.25s ease-out;
+
+		color: #f8f8f2;
+		border: 1px solid rgba(248, 248, 248, 0.15);
+
+		&:focus,
+		&:hover {
+			background: rgba(248, 248, 248, 0.15);
+			border: 1px solid #f8f8f2;
+		}
+
+		&:active {
+			background: rgba(248, 248, 248, 0.8);
+		}
+	}
+}

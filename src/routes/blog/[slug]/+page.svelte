@@ -10,6 +10,7 @@
 	import { formatDate } from '$lib/core/utils/date.utils';
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 	import { onCopySnippet } from '$lib/core/utils/copy.utils';
+	import { SITE_URL } from '$lib/core/constants';
 
 	interface Props {
 		data: ServerPageData;
@@ -41,7 +42,7 @@
 <svelte:window onddbCopySnippet={onCopySnippet} />
 
 <svelte:head>
-	<Seo {canonical} {description} {image} {title} url={`/blog/${slug}`} {noRobots} />
+	<Seo {canonical} {description} {image} {title} url={`${SITE_URL}/blog/${slug}`} {noRobots} />
 
 	{#if standardSite !== undefined && standardSite !== ''}
 		<link rel="site.standard.document external" href={standardSite} />

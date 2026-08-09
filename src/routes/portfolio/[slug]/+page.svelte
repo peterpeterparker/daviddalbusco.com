@@ -6,6 +6,7 @@
 	import Section from '$lib/core/components/Section.svelte';
 	import '../../../theme/_code.scss';
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
+	import { SITE_URL } from '$lib/core/constants';
 
 	interface Props {
 		data: ServerPageData;
@@ -25,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<Seo {title} {description} {noRobots} url={`/portfolio/${slug}`} />
+	<Seo {title} {description} {noRobots} url={`${SITE_URL}/portfolio/${slug}`} />
 
 	<style lang="scss">
 		@use '../../../theme/_page.scss';

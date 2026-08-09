@@ -1,6 +1,6 @@
 ---
-title: "ETH Library Lab: Tech Consulting for Research Innovation"
-description: "Providing engineering consulting to ETH Zürich's Library Lab on project planning, technical strategy, UX, and open source practices for research tools."
+title: "ETH Library Lab"
+description: "ETH Library Lab strives to advance information infrastructure and services for science, research and education. By boosting related ideas, practices and strategies, the initiative contributes to future scientific work environments."
 icon: "/images/portfolio/icons/eth-library-lab-icon.png"
 background: "#bbc3cc"
 type: "work"

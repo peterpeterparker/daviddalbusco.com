@@ -1,6 +1,6 @@
 ---
-title: "Owlly: E-Signing for Swiss Referendums & Initiatives"
-description: "Built a web component and supported technical decisions for Owlly, an open source platform enabling secure electronic signing for Swiss democracy."
+title: "Owlly"
+description: "Owlly enables digital democracy by holistically promoting the collection of electronic signatures for popular initiatives and referendums."
 icon: "/images/portfolio/icons/owlly-icon.png"
 background: "linear-gradient(155deg, #00a6d4 0%, #81bc4f)"
 type: "work"

@@ -1,6 +1,6 @@
 ---
-title: "Our Energy - ETH Zürich"
-description: "Our Energy was a project that had for goal to analyse the impact of self-consumption of electricity produced by a simulated photovoltaic system in Swiss households."
+title: "Our Energy: Solar App for ETH Zürich"
+description: "Developed a mobile and web app for ETH Zürich researchers, helping citizens learn to use community solar power, piloted in a Swiss energy challenge."
 icon: "/images/portfolio/icons/ourenergy-icon.png"
 background: "#f2f2f2"
 type: "work"

@@ -1,6 +1,6 @@
 ---
-title: "Bonjour Foundation"
-description: "Bonjour inspires the interface between low-threshold technologies, design and social issues for older people and those who want to become one."
+title: "Bonjour Foundation: Mobile Tools for Self-Determined Living"
+description: "Building mobile apps and tools for the Bonjour Foundation, helping older people and those with support needs live a more self-determined life."
 icon: "/images/portfolio/icons/bonjour-icon.png"
 background: "#ffd664"
 type: "work"

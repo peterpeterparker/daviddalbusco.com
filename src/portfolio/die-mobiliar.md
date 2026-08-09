@@ -1,6 +1,6 @@
 ---
-title: "Die Mobiliar"
-description: "Die Mobiliar is the oldest private Swiss insurance group."
+title: "Die Mobiliar: Internal Tools for a Swiss Insurance Leader"
+description: "Two-year engagement as an external developer at Die Mobiliar, building applications and libraries integrated into the internal systems of a major Swiss insurer."
 icon: "/images/portfolio/icons/mobi-icon.png"
 background: "#DA2323"
 type: "work"

@@ -16,10 +16,13 @@
 	let portfolio = $derived<PageData<PortfolioMetadata>>(data.portfolio);
 
 	let content = $derived(portfolio.content);
+	let metadata = $derived(portfolio.metadata);
+
+	let noRobots = $derived(metadata.robots === 'disallow');
 </script>
 
 <svelte:head>
-	<Seo />
+	<Seo {noRobots} />
 
 	<style lang="scss">
 		@use '../../../theme/_page.scss';

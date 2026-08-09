@@ -7,6 +7,7 @@
 		image?: string | undefined;
 		title?: string | undefined;
 		description?: string | undefined;
+		noRobots?: boolean;
 	}
 
 	let {
@@ -14,7 +15,8 @@
 		canonical = undefined,
 		image = undefined,
 		title = undefined,
-		description = undefined
+		description = undefined,
+		noRobots = false
 	}: Props = $props();
 </script>
 
@@ -31,3 +33,7 @@
 <meta content={description ?? SITE_DESCRIPTION} name="twitter:description" />
 <meta content={image ?? SITE_SOCIAL_IMAGE} name="twitter:image" />
 <meta content="@daviddalbusco" name="twitter:creator" />
+
+{#if noRobots}
+	<meta name="robots" content="noindex, nofollow" />
+{/if}

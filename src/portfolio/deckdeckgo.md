@@ -6,6 +6,7 @@ background: "#3a81fe"
 type: "play"
 status: "archived"
 order: "10"
+robots: "disallow"
 ---
 
 # DeckDeckGo

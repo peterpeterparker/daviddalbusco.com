@@ -15,10 +15,10 @@
 				<IconBsky height={26} />
 			</a>
 			<a aria-label="Follow me on X / Twitter" href="https://twitter.com/daviddalbusco/">
-				<IconTwitter size="24px" />
+				<IconTwitter height={32} />
 			</a>
 			<a aria-label="Context me on Linkedin" href="https://www.linkedin.com/in/david-dal-busco/">
-				<IconLinkedIn size="30px" />
+				<IconLinkedIn height={34} />
 			</a>
 			<a aria-label="Checkout my work on GitHub" href="https://github.com/peterpeterparker">
 				<IconGitHub size="32px" />

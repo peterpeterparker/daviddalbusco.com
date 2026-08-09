@@ -43,7 +43,7 @@
 />
 
 {#if trails.length > 0}
-	<Trails {trails} />
+	<Trails {trails} year={page.params.year} />
 {:else}
 	<NoTrails />
 {/if}

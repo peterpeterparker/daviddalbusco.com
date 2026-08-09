@@ -8,12 +8,14 @@
 	import { toSlugPath } from '$lib/core/utils/slug.utils';
 	import { sportColor } from '$lib/trails/utils/sport.utils';
 	import Email from '$lib/core/components/Email.svelte';
+	import { notEmptyString } from '$lib/core/utils/nullish.utils';
 
 	interface Props {
 		trails: PageDataWithoutContent<TrailType>[];
+		year?: string;
 	}
 
-	let { trails }: Props = $props();
+	let { trails, year }: Props = $props();
 
 	let annotations = $derived<MapAnnotation[]>(
 		trails.map(
@@ -53,8 +55,8 @@
 	</p>
 
 	<p>
-		These are my trails: the GPX tracks, elevation, photos, and the occasional detour that wasn't
-		part of the plan.
+		These are my {notEmptyString(year) ? `${year} ` : ''}trails: the GPX tracks, elevation, photos,
+		and the occasional detour that wasn't part of the plan.
 	</p>
 
 	<blockquote>

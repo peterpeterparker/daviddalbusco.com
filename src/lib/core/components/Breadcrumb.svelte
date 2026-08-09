@@ -15,20 +15,33 @@
 	let { route, page, group }: Props = $props();
 </script>
 
+{#snippet home()}
+	<li><span class="square">￭</span><a href="/">Home</a><IconArrowForward size="12px" /></li>
+{/snippet}
+
+{#snippet routeStep()}
+	<li>
+		{#if page !== undefined || group !== undefined}<a href={route.path}>{route.title}</a
+			><IconArrowForward size="12px" />{:else}{route.title}{/if}
+	</li>
+{/snippet}
+
+{#snippet groupStep()}
+	{#if group !== undefined}<li>
+			{#if page !== undefined}<a href={`${route.path}/${group.path}`}>{group.title}</a
+				><IconArrowForward size="12px" />{:else}{group.title}{/if}
+		</li>{/if}
+{/snippet}
+
+{#snippet pageStep()}
+	{#if page !== undefined}<li><span class="title">{page.title}</span></li>{/if}
+{/snippet}
+
 <nav aria-label="Navigation breadcrumb">
 	<ul>
-		<li><span class="square">￭</span><a href="/">Home</a><IconArrowForward size="12px" /></li>
-		<li>
-			{#if page !== undefined || group !== undefined}<a href={route.path}>{route.title}</a
-				><IconArrowForward size="12px" />{:else}{route.title}{/if}
-		</li>
-		{#if group !== undefined}
-			<li>
-				{#if page !== undefined}<a href={`${route.path}/${group.path}`}>{group.title}</a
-					><IconArrowForward size="12px" />{:else}{group.title}{/if}
-			</li>
-		{/if}
-		{#if page !== undefined}<li><span class="title">{page.title}</span></li>{/if}
+		{#each [home, routeStep, groupStep, pageStep] as s, i (i)}
+			{@render s()}
+		{/each}
 	</ul>
 </nav>
 

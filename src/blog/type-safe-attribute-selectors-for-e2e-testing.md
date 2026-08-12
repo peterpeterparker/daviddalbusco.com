@@ -5,6 +5,7 @@ title: Type-Safe Attribute Selectors for E2E Testing
 description: "A small pattern to keep test IDs consistent, typed, and out of production builds."
 tags: "#webdev #testing #e2e #typescript"
 image: "https://daviddalbusco.com/assets/images/martin-martz-Sjp4w1dYpoc-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3msuoy5tgnw2r"
 ---
 
 ![](https://daviddalbusco.com/assets/images/martin-martz-Sjp4w1dYpoc-unsplash.jpg)

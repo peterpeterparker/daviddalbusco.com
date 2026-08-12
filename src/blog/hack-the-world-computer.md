@@ -271,6 +271,7 @@ And voilà. I committed everything in a repo and sent it to my friend, telling h
 
 I'm definitely not a hacker and this ain't a hack but, it definitely felt like I was one! 😃
 
-Hope you found the little story entertaining. Until next time.
+Hope you found the little story entertaining.
 
+Until next time!
 David

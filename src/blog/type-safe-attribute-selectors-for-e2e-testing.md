@@ -34,7 +34,7 @@ The general idea of my setup is the following: I declare types to structure the 
 
 ---
 
-### 1. The type
+## 1. The type
 
 The core of it is a template literal type that forces every test ID to follow a `{category}-{action}` shape:
 
@@ -61,7 +61,7 @@ The `TestIds` type is a two-level record: one entry per "suite" (usually a page 
 
 ---
 
-### 2. The shared constant
+## 2. The shared constant
 
 With the type in place, the actual list of test IDs live in a single constant, one entry per page or feature or whatever grouping that matches your app:
 
@@ -89,7 +89,7 @@ The `satisfies TestIds` is what does the actual enforcement. Try to add `'toggle
 
 ---
 
-### 3. Not leaking the IDs
+## 3. Not leaking the IDs
 
 As mentioned in the introduction, my opinion is that test IDs, or rather the related DOM attribute `data-testid`, must not exist in production. I resolve this requirement by conditionally rendering them, using a small utils that takes care of spreading the attribute conditionally:
 
@@ -128,7 +128,7 @@ There's no particular rule here, it's just that in this particular app, I decide
 
 ---
 
-### 4. Wiring into the test suite
+## 4. Wiring into the test suite
 
 From there, `getByTestId` just works with the same typed values used in the components:
 

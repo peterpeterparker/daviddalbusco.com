@@ -35,7 +35,11 @@
 
 <style lang="scss">
 	footer {
-		margin: 1em 1em 1.45rem;
+		margin: 1em 2.45em 1.45rem;
+
+		@media screen and (max-width: 576px) {
+			margin: 1em 1em 1.45rem;
+		}
 
 		@media screen and (min-width: 1078px) {
 			margin: 2.45rem auto 1.45rem;

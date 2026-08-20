@@ -1,3 +1,4 @@
+import { notEmptyString } from '$lib/core/utils/nullish.utils';
 import { toSlugPath } from '$lib/core/utils/slug.utils';
 import { listSlugs } from '$plugins/slug.plugin';
 
@@ -5,7 +6,7 @@ export const prerender = true;
 
 const url = 'https://daviddalbusco.com/';
 
-const staticPages: string[] = ['blog', 'portfolio'];
+const staticPages: string[] = ['blog', 'portfolio', 'trails'];
 
 export const GET = async (): Promise<Response> => {
 	const headers: Record<string, string> = {
@@ -45,11 +46,13 @@ const pages = (): string[] => {
 	const blog = listSlugs({ path: 'blog' });
 	const portfolio = listSlugs({ path: 'portfolio' });
 	const trails = listSlugs({ path: 'trails' });
+	const trailYears = [...new Set(trails.map(({ group }) => group).filter(notEmptyString))];
 
 	return [
 		...staticPages,
 		...blog.map(({ name: slug }) => `blog/${slug}`),
 		...portfolio.map(({ name: slug }) => `portfolio/${slug}`),
+		...trailYears.map((year) => `trails/${year}`),
 		...trails.map((slug) => `trails/${toSlugPath(slug)}`)
 	];
 };

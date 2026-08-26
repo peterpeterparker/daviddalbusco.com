@@ -17,7 +17,7 @@
 				target="_blank"
 				rel="noopener noreferrer">BärnerJS</a
 			>
-			/ August 2026 <mark>Upcoming</mark> / Bern, Switzerland
+			/ August 2026 / Bern, Switzerland
 		</li>
 		<li>
 			<a

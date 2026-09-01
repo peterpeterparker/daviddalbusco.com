@@ -1,6 +1,6 @@
 ---
 path: "/trails/2026/schwyz-rigi-immensee"
-date: "2026-06-8"
+date: "2026-06-08"
 title: "Schwyz - Rigi - Immensee"
 sport: trail-running
 gpx: "https://daviddalbusco.com/assets/gpx/2026/schwyz-rigi-immensee.gpx"

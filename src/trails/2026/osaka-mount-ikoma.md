@@ -1,6 +1,6 @@
 ---
 path: "/trails/2026/osaka-mount-ikoma"
-date: "2026-05-3"
+date: "2026-05-03"
 title: "Osaka - Mount Ikoma"
 sport: trail-running
 gpx: "https://daviddalbusco.com/assets/gpx/2026/osaka-mount-ikoma.gpx"

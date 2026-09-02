@@ -4,6 +4,8 @@
 	import IconLinkedIn from '$lib/core/icons/IconLinkedIn.svelte';
 	import IconGitHub from '$lib/core/icons/IconGitHub.svelte';
 	import IconBsky from '$lib/core/icons/IconBsky.svelte';
+	import IconRss from '$lib/core/icons/IconRss.svelte';
+	import { SITE_URL } from '$lib/core/constants';
 </script>
 
 <footer>
@@ -20,8 +22,15 @@
 			<a aria-label="Context me on Linkedin" href="https://www.linkedin.com/in/david-dal-busco/">
 				<IconLinkedIn height={34} />
 			</a>
-			<a aria-label="Checkout my work on GitHub" href="https://github.com/peterpeterparker">
+			<a
+				aria-label="Checkout my work on GitHub"
+				href="https://github.com/peterpeterparker"
+				class="github"
+			>
 				<IconGitHub size="32px" />
+			</a>
+			<a aria-label="Subscribe to my website RSS feed" href={`${SITE_URL}/rss.xml`} class="rss">
+				<IconRss size="34px" />
 			</a>
 		</div>
 	</div>
@@ -61,12 +70,10 @@
 	.social-content {
 		display: flex;
 		align-items: center;
-		gap: 0.5rem;
+		gap: 0.75rem;
 	}
 
 	a {
-		margin: 0 0.15rem;
-
 		transition: transform 0.25s ease-out;
 
 		&:last-of-type {
@@ -86,5 +93,13 @@
 		font-size: 0.6rem;
 		gap: 0.5rem;
 		margin: 0 0 2.45rem;
+	}
+
+	.github {
+		margin: 0 -0.1rem;
+	}
+
+	.rss {
+		margin: 0 -0.25rem;
 	}
 </style>

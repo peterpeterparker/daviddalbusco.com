@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gpx creator="Wikiloc - https://www.wikiloc.com" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-  <metadata>
-    <name>Wikiloc - Pfäffikersee</name>
-    <link href="https://www.wikiloc.com/cycling-trails/pfaffikersee-283739699">
-      <text>Pfäffikersee - Wikiloc on Wikiloc</text>
-    </link>
-    <time>2026-09-03T11:34:09Z</time>
-  </metadata>
+<gpx version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <trk>
-    <name>Pfäffikersee - Wikiloc</name>
-    <cmt>I've seen things in my life, but a horde of swans eating corn straight from the field, that was a first 😆</cmt>
-    <desc>I've seen things in my life, but a horde of swans eating corn straight from the field, that was a first 😆</desc>
     <trkseg>
       <trkpt lat="47.387291" lon="8.527511">
         <ele>469.085</ele>

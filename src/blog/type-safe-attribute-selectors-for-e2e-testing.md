@@ -10,7 +10,7 @@ standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3ms
 
 ![](https://daviddalbusco.com/assets/images/martin-martz-Sjp4w1dYpoc-unsplash.jpg)
 
-> Photo by [Martin Martz](https://unsplash.com/fr/@martz90?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](<[[https://unsplash.com/fr/photos/particules-de-lumiere-rose-neon-et-violette-9XngoIpxcEo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText](https://unsplash.com/fr/photos/formes-abstraites-courbes-violettes-et-roses-FAlYVtV1kRg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](https://unsplash.com/fr/photos/formes-abstraites-courbes-bleues-et-violettes-Sjp4w1dYpoc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)>)
+> Photo by [Martin Martz](https://unsplash.com/fr/@martz90?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/formes-abstraites-courbes-bleues-et-violettes-Sjp4w1dYpoc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 I generally don't rely on the DOM structure nor CSS selectors to target elements for E2E testing purposes. Instead, I bet on test IDs, for stability and readability.
 

@@ -3,7 +3,7 @@ path: "/blog/tiny-utils-for-the-result-pattern"
 date: "2026-09-07"
 title: Two Tiny Utils for the Result Pattern
 description: "A bit of Rust, a bit of TypeScript, and two small helpers to turn exceptions into results."
-tags: "#webdev #testing #e2e #typescript"
+tags: "#typescript #rust #pattern"
 image: "https://daviddalbusco.com/assets/images/sean-sinclair-FQ7cRFUU1y0-unsplash.jpg"
 ---
 

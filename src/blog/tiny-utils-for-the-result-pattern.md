@@ -11,7 +11,7 @@ image: "https://daviddalbusco.com/assets/images/sean-sinclair-FQ7cRFUU1y0-unspla
 
 > Photo by [Sean Sinclair](https://unsplash.com/fr/@seanwsinclair?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/une-image-floue-dun-arriere-plan-de-couleur-arc-en-ciel-FQ7cRFUU1y0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-Likely because I developed my fair share of projects in Rust over the last few years, I've become quite a fan of using a `Result` pattern over multiplying `try` and `catch` blocks. Not every blog post needs to be about shipping rockets to outer space, so I thought I'd quickly share two small helpers I now bring with me everywhere.
+Likely because I developed my fair share of projects in Rust over the last few years, I've become quite a fan of using a `Result` pattern over multiplying `try` and `catch` blocks in TypeScript. Not every blog post needs to be about shipping rockets to outer space, so I thought I'd quickly share two small helpers I now bring with me everywhere.
 
 ---
 

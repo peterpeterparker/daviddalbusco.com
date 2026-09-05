@@ -1,15 +1,15 @@
 ---
 path: "/blog/tiny-utils-for-the-result-pattern"
-date: "2026-08-12"
+date: "2026-09-07"
 title: Two Tiny Utils for the Result Pattern
-description: "A bit of Rust, a bit of JavaScript. I bring those helpers with me everywhere to turn exceptions into explicit results."
+description: "A bit of Rust, a bit of TypeScript, and two small helpers to turn exceptions into results."
 tags: "#webdev #testing #e2e #typescript"
-image: "https://daviddalbusco.com/assets/images/martin-martz-Sjp4w1dYpoc-unsplash.jpg"
+image: "https://daviddalbusco.com/assets/images/sean-sinclair-FQ7cRFUU1y0-unsplash.jpg"
 ---
 
-![](https://daviddalbusco.com/assets/images/martin-martz-Sjp4w1dYpoc-unsplash.jpg)
+![](https://daviddalbusco.com/assets/images/sean-sinclair-FQ7cRFUU1y0-unsplash.jpg)
 
-> Photo by [Martin Martz](https://unsplash.com/fr/@martz90?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](<[[https://unsplash.com/fr/photos/particules-de-lumiere-rose-neon-et-violette-9XngoIpxcEo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText](https://unsplash.com/fr/photos/formes-abstraites-courbes-violettes-et-roses-FAlYVtV1kRg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)](https://unsplash.com/fr/photos/formes-abstraites-courbes-bleues-et-violettes-Sjp4w1dYpoc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)>)
+> Photo by [Sean Sinclair](https://unsplash.com/fr/@seanwsinclair?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/une-image-floue-dun-arriere-plan-de-couleur-arc-en-ciel-FQ7cRFUU1y0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Likely because I developed my fair share of projects in Rust over the last few years, I've become quite a fan of using a `Result` pattern over multiplying `try` and `catch` blocks. Not every blog post needs to be about shipping rockets to outer space, so I thought I'd quickly share two small helpers I now bring with me everywhere.
 

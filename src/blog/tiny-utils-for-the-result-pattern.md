@@ -65,7 +65,7 @@ With this in mind, let's move to TypeScript.
 
 The TypeScript version I use isn't quite that strict. I type the error as `unknown` rather than using a generic. One might argue that I lose a static guarantee about what went wrong, to which I'd say that I'd end up widening it to `unknown` anyway, because anything, anywhere, can always break in JavaScript. #trustnoone
 
-```ts
+```typescript
 type Result<T> = { status: "success"; result: T } | { status: "error"; err: unknown };
 ```
 
@@ -117,7 +117,7 @@ As for the core, I mostly let errors bubble up. Partly to avoid too much boilerp
 
 If the service layer is the one responsible for catching everything, you can imagine it quickly gets overwhelmed with `try`/`catch` blocks everywhere.
 
-```ts
+```typescript
 export const listPizzas = async (): Promise<Result<Pizza[]>> => {
 	try {
 		const pizzas = await api.list();
@@ -145,7 +145,7 @@ export const getPizza = async (id: string): Promise<Result<Pizza>> => {
 
 I guess I don't really need to argue that this is quite redundant. That's why one of the first utilities I created, and which I now use actively, is a helper that executes a function, in this case a promise, and wraps both the success and the error into a `Result`.
 
-```ts
+```typescript
 export const tryCatch = async <T>(fn: () => Promise<T>): Promise<Result<T>> => {
 	try {
 		const result = await fn();
@@ -158,7 +158,7 @@ export const tryCatch = async <T>(fn: () => Promise<T>): Promise<Result<T>> => {
 
 That way I can just use `tryCatch` everywhere, way cleaner:
 
-```ts
+```typescript
 export const listPizzas = (): Promise<Result<Pizza[]>> => tryCatch(api.list);
 
 export const getPizza = (id: string): Promise<Result<Pizza>> =>
@@ -179,7 +179,7 @@ Whatever the reason, sometimes I want a guarantee that a function I call **does 
 
 So, I created the following helper:
 
-```ts
+```typescript
 export const safeExec = async <T>(fn: () => Promise<Result<T>>): Promise<Result<T>> => {
 	try {
 		return await fn();

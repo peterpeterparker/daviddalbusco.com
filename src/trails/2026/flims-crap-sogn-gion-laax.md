@@ -1,6 +1,6 @@
 ---
 path: "/trails/2026/flims-crap-sogn-gion-laax"
-date: "2026-09-07"
+date: "2026-09-06"
 title: "Flims - Crap Sogn Gion (Laax)"
 sport: trail-running
 gpx: "https://daviddalbusco.com/assets/gpx/2026/flims-crap-sogn-gion-laax.gpx"

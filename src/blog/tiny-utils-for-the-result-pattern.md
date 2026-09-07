@@ -5,6 +5,7 @@ title: Two Tiny Utils for the Result Pattern
 description: "A bit of Rust, a bit of TypeScript, and two small helpers to turn exceptions into results."
 tags: "#typescript #rust #pattern"
 image: "https://daviddalbusco.com/assets/images/sean-sinclair-FQ7cRFUU1y0-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3muwh5bebft26"
 ---
 
 ![](https://daviddalbusco.com/assets/images/sean-sinclair-FQ7cRFUU1y0-unsplash.jpg)

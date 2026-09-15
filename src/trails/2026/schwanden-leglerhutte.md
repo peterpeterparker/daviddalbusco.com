@@ -1,6 +1,6 @@
 ---
 path: "/trails/2026/schwanden-leglerhutte"
-date: "2026-09-06"
+date: "2026-09-15"
 title: "Schwanden - Leglerhütte"
 sport: trail-running
 gpx: "https://daviddalbusco.com/assets/gpx/2026/schwanden-leglerhutte.gpx"

@@ -21,3 +21,4 @@ Bun.serve({
 });
 
 console.log(`Assets served from ${BASE_PATH} on http://localhost:${PORT}`);
+

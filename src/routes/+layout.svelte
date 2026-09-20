@@ -6,6 +6,7 @@
 	import '../theme/variables.scss';
 	import '../theme/hr.scss';
 	import '../theme/blockquote.scss';
+	import '../theme/cursor.scss';
 	import '../theme/scrollbar.scss';
 	import '../theme/selection.scss';
 

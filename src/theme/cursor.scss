@@ -1,0 +1,16 @@
+:root {
+	cursor: url("/icons/cursor-default.png"), auto;
+}
+
+a,
+button,
+[role="button"],
+summary,
+label[for],
+select,
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"] {
+	cursor: url("/icons/cursor-pointer.png"), pointer;
+}

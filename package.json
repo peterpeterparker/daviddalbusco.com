@@ -51,6 +51,7 @@
 		"prettier-plugin-svelte": "^4.1.1",
 		"remarkable": "^2.0.1",
 		"sass-embedded": "^1.104.1",
+		"schema-dts": "^2.0.0",
 		"shiki": "^4.4.3",
 		"svelte": "^5.57.1",
 		"svelte-check": "^4.7.6",

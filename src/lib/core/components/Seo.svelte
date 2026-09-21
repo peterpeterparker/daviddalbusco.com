@@ -1,5 +1,11 @@
 <script lang="ts">
-	import { SITE_DESCRIPTION, SITE_SOCIAL_IMAGE, SITE_TITLE, SITE_URL } from '$lib/core/constants';
+	import {
+		SITE_DESCRIPTION,
+		SITE_SOCIAL_IMAGE,
+		SITE_TITLE,
+		SITE_URL,
+	} from '$lib/core/constants';
+	import {SITE_LINKED_DATA_SCRIPT} from "$lib/core/linked-data";
 
 	interface Props {
 		url?: string;
@@ -18,6 +24,7 @@
 		description = undefined,
 		noRobots = false
 	}: Props = $props();
+
 </script>
 
 <title>{title ?? SITE_TITLE}</title>
@@ -37,3 +44,5 @@
 {#if noRobots}
 	<meta name="robots" content="noindex, nofollow" />
 {/if}
+
+{@html SITE_LINKED_DATA_SCRIPT}

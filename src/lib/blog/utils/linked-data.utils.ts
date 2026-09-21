@@ -21,7 +21,7 @@ export const toLinkedData = ({
 	keywords: tags,
 	inLanguage: 'en',
 	url: canonical,
-	mainEntityOfPage: { '@type': 'WebPage', '@id': SITE_URL },
+	mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
 	isPartOf: { '@id': BLOG_URL },
 	author: AUTHOR_LINKED_DATA
 });

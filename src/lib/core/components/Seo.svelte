@@ -1,11 +1,8 @@
 <script lang="ts">
-	import {
-		SITE_DESCRIPTION,
-		SITE_SOCIAL_IMAGE,
-		SITE_TITLE,
-		SITE_URL,
-	} from '$lib/core/constants';
-	import {SITE_LINKED_DATA_SCRIPT} from "$lib/core/linked-data";
+	import { SITE_DESCRIPTION, SITE_SOCIAL_IMAGE, SITE_TITLE, SITE_URL } from '$lib/core/constants';
+	import type { Thing } from 'schema-dts';
+	import { renderJsonLDScriptTag } from '$lib/core/utils/linked-data.utils';
+	import { SITE_LINKED_DATA } from '$lib/core/linked-data';
 
 	interface Props {
 		url?: string;
@@ -14,6 +11,7 @@
 		title?: string | undefined;
 		description?: string | undefined;
 		noRobots?: boolean;
+		linkedData?: Thing;
 	}
 
 	let {
@@ -22,9 +20,11 @@
 		image = undefined,
 		title = undefined,
 		description = undefined,
-		noRobots = false
+		noRobots = false,
+		linkedData = SITE_LINKED_DATA
 	}: Props = $props();
 
+	let linkedDataScript = $derived(renderJsonLDScriptTag(linkedData));
 </script>
 
 <title>{title ?? SITE_TITLE}</title>
@@ -45,4 +45,4 @@
 	<meta name="robots" content="noindex, nofollow" />
 {/if}
 
-{@html SITE_LINKED_DATA_SCRIPT}
+{@html linkedDataScript}

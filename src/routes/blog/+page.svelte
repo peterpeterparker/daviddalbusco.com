@@ -7,6 +7,7 @@
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 	import { SITE_URL } from '$lib/core/constants';
 	import { BLOG_DESCRIPTION, BLOG_TITLE } from '$lib/blog/constants';
+	import { BLOG_LINKED_DATA } from '$lib/blog/linked-data';
 
 	interface Props {
 		data: ServerPageData;
@@ -17,7 +18,12 @@
 </script>
 
 <svelte:head>
-	<Seo title={BLOG_TITLE} description={BLOG_DESCRIPTION} url={`${SITE_URL}/blog`} />
+	<Seo
+		title={BLOG_TITLE}
+		description={BLOG_DESCRIPTION}
+		url={`${SITE_URL}/blog`}
+		linkedData={BLOG_LINKED_DATA}
+	/>
 
 	<style lang="scss">
 		@use '../../theme/_page.scss';

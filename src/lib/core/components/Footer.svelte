@@ -5,7 +5,7 @@
 	import IconGitHub from '$lib/core/icons/IconGitHub.svelte';
 	import IconBsky from '$lib/core/icons/IconBsky.svelte';
 	import IconRss from '$lib/core/icons/IconRss.svelte';
-	import {BSKY_URL, LINKEDIN_URL, SITE_URL, TWITTER_URL} from '$lib/core/constants';
+	import { BSKY_URL, LINKEDIN_URL, SITE_URL, TWITTER_URL } from '$lib/core/constants';
 </script>
 
 <footer>

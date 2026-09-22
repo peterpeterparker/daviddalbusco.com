@@ -21,6 +21,7 @@
 	import { generateTrailDescription } from '$lib/trails/utils/seo.utils';
 	import { sportColor } from '$lib/trails/utils/sport.utils';
 	import { SITE_URL } from '$lib/core/constants';
+	import { trailToLinkedData } from '$lib/trails/linked-data';
 
 	interface Props {
 		data: ServerPageData;
@@ -40,6 +41,10 @@
 	let description = $derived(generateTrailDescription({ trail: trail.metadata }));
 
 	let image = $derived(assetUrl(photos[0]));
+
+	let canonical = $derived(`${SITE_URL}/trails/${toSlugPath(slug)}`);
+
+	let linkedData = $derived(trailToLinkedData({ canonical, image, description, ...metadata }));
 
 	let gpxPoints = $state<MapGpxPoints | undefined | null>(undefined);
 	let gpxPointId = $state<MapGpxPointId | undefined>(undefined);
@@ -68,7 +73,7 @@
 </script>
 
 <svelte:head>
-	<Seo {image} {title} {description} url={`${SITE_URL}/trails/${toSlugPath(slug)}`} />
+	<Seo {image} {title} {description} url={canonical} {linkedData} />
 
 	<style lang="scss">
 		@use '../../../../theme/page';

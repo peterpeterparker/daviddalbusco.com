@@ -7,6 +7,7 @@
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 	import { TRAILS_DESCRIPTION, TRAILS_SOCIAL_IMAGE, TRAILS_TITLE } from '$lib/trails/constants';
 	import { SITE_URL } from '$lib/core/constants';
+	import { TRAILS_LINKED_DATA } from '$lib/trails/linked-data';
 
 	interface Props {
 		data: ServerPageData;
@@ -22,6 +23,7 @@
 		title={TRAILS_TITLE}
 		description={TRAILS_DESCRIPTION}
 		url={`${SITE_URL}/trails`}
+		linkedData={TRAILS_LINKED_DATA}
 	/>
 
 	<style lang="scss">

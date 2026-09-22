@@ -11,6 +11,7 @@
 	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
 	import { onCopySnippet } from '$lib/core/utils/copy.utils';
 	import { SITE_URL } from '$lib/core/constants';
+	import { blogPostToLinkedData } from '$lib/blog/linked-data';
 
 	interface Props {
 		data: ServerPageData;
@@ -37,12 +38,22 @@
 	} = $derived(metadata);
 
 	let anchor = $state<HTMLElement | undefined>(undefined);
+
+	let linkedData = $derived(blogPostToLinkedData(metadata));
 </script>
 
 <svelte:window onddbCopySnippet={onCopySnippet} />
 
 <svelte:head>
-	<Seo {canonical} {description} {image} {title} url={`${SITE_URL}/blog/${slug}`} {noRobots} />
+	<Seo
+		{canonical}
+		{description}
+		{image}
+		{title}
+		url={`${SITE_URL}/blog/${slug}`}
+		{noRobots}
+		{linkedData}
+	/>
 
 	{#if standardSite !== undefined && standardSite !== ''}
 		<link rel="site.standard.document external" href={standardSite} />

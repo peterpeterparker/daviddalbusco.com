@@ -5,7 +5,7 @@
 	import IconGitHub from '$lib/core/icons/IconGitHub.svelte';
 	import IconBsky from '$lib/core/icons/IconBsky.svelte';
 	import IconRss from '$lib/core/icons/IconRss.svelte';
-	import { SITE_URL } from '$lib/core/constants';
+	import { BSKY_URL, LINKEDIN_URL, SITE_URL, TWITTER_URL } from '$lib/core/constants';
 </script>
 
 <footer>
@@ -13,13 +13,13 @@
 
 	<div class="social">
 		<div class="social-content">
-			<a aria-label="Follow me on Bluesky" href="https://bsky.app/profile/daviddalbusco.com">
+			<a aria-label="Follow me on Bluesky" href={BSKY_URL}>
 				<IconBsky height={26} />
 			</a>
-			<a aria-label="Follow me on X / Twitter" href="https://twitter.com/daviddalbusco/">
+			<a aria-label="Follow me on X / Twitter" href={TWITTER_URL}>
 				<IconTwitter height={32} />
 			</a>
-			<a aria-label="Context me on Linkedin" href="https://www.linkedin.com/in/david-dal-busco/">
+			<a aria-label="Context me on Linkedin" href={LINKEDIN_URL}>
 				<IconLinkedIn height={34} />
 			</a>
 			<a

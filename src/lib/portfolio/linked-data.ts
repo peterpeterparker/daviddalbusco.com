@@ -1,7 +1,7 @@
-import { PORTFOLIO_DESCRIPTION, PORTFOLIO_TITLE, PORTFOLIO_URL } from '$lib/portfolio/constants';
-import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
 import { AUTHOR_URL, SITE_URL } from '$lib/core/constants';
 import { AUTHOR_LINKED_DATA } from '$lib/core/linked-data';
+import { PORTFOLIO_DESCRIPTION, PORTFOLIO_TITLE, PORTFOLIO_URL } from '$lib/portfolio/constants';
+import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
 import type { Article, CollectionPage } from 'schema-dts';
 
 export const PORTFOLIO_LINKED_DATA: CollectionPage = {
@@ -20,7 +20,7 @@ export const PORTFOLIO_LINKED_DATA: CollectionPage = {
 export const portfolioToLinkedData = ({
 	title,
 	description,
-	canonical,
+	canonical
 }: PortfolioMetadata & { canonical: string }): Article => ({
 	'@type': 'Article',
 	'@id': canonical,

@@ -44,9 +44,7 @@
 
 	let canonical = $derived(`${SITE_URL}/trails/${toSlugPath(slug)}`);
 
-	let linkedData = $derived(
-		trailToLinkedData({ canonical, image, description, ...metadata })
-	);
+	let linkedData = $derived(trailToLinkedData({ canonical, image, description, ...metadata }));
 
 	let gpxPoints = $state<MapGpxPoints | undefined | null>(undefined);
 	let gpxPointId = $state<MapGpxPointId | undefined>(undefined);

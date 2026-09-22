@@ -27,7 +27,7 @@
 
 	let canonical = $derived(`${SITE_URL}/portfolio/${slug}`);
 
-	let linkedData = $derived(portfolioToLinkedData({...metadata, canonical}));
+	let linkedData = $derived(portfolioToLinkedData({ ...metadata, canonical }));
 </script>
 
 <svelte:head>

@@ -1,23 +1,25 @@
 ---
 path: "/blog/you-better-screenshot-test-your-website"
-date: "2026-09-24"
+date: "2026-09-25"
 title: You Better Screenshot Test Your Website
-description: "Trust no one and make sure your site looks exactly as it should, in light and dark mode."
+description: "Trust no one and make sure your site always looks exactly as it should."
 tags: "#webdev #testing #e2e #playwright"
-image: "https://daviddalbusco.com/assets/images/TODO.jpg"
+image: "https://daviddalbusco.com/assets/images/hao-wang-pVq6YhmDPtk-unsplash.jpg"
 ---
 
-![](https://daviddalbusco.com/assets/images/TODO.jpg)
+![](https://daviddalbusco.com/assets/images/hao-wang-pVq6YhmDPtk-unsplash.jpg)
 
-> Photo by [TODO](https://unsplash.com) on [Unsplash](https://unsplash.com)
+> Photo by [hao wang](https://unsplash.com/fr/@danranwanghao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/oeuvre-de-griffonnage-rouge-et-bleu-sur-fond-noir-pVq6YhmDPtk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
 Have you ever updated a few libraries or the framework of your website, had a quick look, pushed to main and deployed it straight to production, because who cares, it's just your personal website, only to figure out weeks later, out of nowhere, that some colors were suddenly off or that some layout issue had popped up?
 
 You might say no, at least publicly, but I bet it happened to you a few times. Or I'm a weirdo, as it actually happened to me a few times in the past.
 
-When I build serious projects, I of course set up various test suites, notably screenshot tests, but so far I never did so for my own website. Then this summer it happened again, and: "Enough is enough! I have had it with these monkey-fighting bugs on this Monday-to-Friday site!" So I finally set up a test and the pipelines.
+When I build serious projects, I of course set up various test suites, notably screenshot tests, but so far I never did so for my own website. Then this summer it happened again, and:
 
-Here's my recipe: a Playwright test that covers light and dark mode, a trick to ignore dynamic content, and the two GitHub Actions workflows that make it work. Everything you need to start validating your website, because trust me, you should!
+> Enough is enough! I have had it with these monkey-fighting bugs on this Monday-to-Friday site!
+
+So I finally set it up, and here's my recipe: a Playwright test that covers light and dark mode, a trick to ignore dynamic content, and the two GitHub Actions workflows that make it work. Everything you need to start validating your website, because trust me, you should!
 
 ---
 
@@ -103,11 +105,12 @@ import { WebsitePage } from "./_page";
 });
 ```
 
-`colorScheme` emulates `prefers-color-scheme`, so if your theme follows the OS setting, your test should inherit the proper attributes. In my case, the website looks the same in dark and light mode so, basically, what I'm asserting is that it indeed looks the same regardless of the OS preferences. Told you, trust no one ;)
+`colorScheme` emulates `prefers-color-scheme`, so if your theme follows the OS setting, your test should inherit the proper attributes. In my case, the website looks the same in dark and light mode so, basically, what I'm asserting is that it indeed looks the same regardless of the OS preferences. Told you, trust no one 😉.
 
 `maxDiffPixelRatio` allows a bit of tolerance, so anti-aliasing noise doesn't turn into a failing build.
 
-As for the mask, I'll explain it in the next chapter.
+As for the `mask`, I'll explain it in the next chapter.
+
 ---
 
 ## 3. Hiding dynamic content
@@ -187,7 +190,7 @@ To make this practical, I wrapped the various commands in scripts in the `packag
 "e2e:playwright:install": "playwright install chromium --with-deps"
 ```
 
-Which brings us to the workflows.
+Which brings us to the CI.
 
 ---
 
@@ -333,7 +336,7 @@ The `if` condition is a small safety net: the workflow never commits to `main` d
 
 Nothing fancy I guess but, hope it can save you too from having a website whose design doesn't look right without you knowing.
 
-And if you didn't get the memo yet: trust no one, screenshot everything! 😉
+And if you didn't get the memo yet: trust no one, screenshot everything! 😆
 
 Until next time!
 David

@@ -20,14 +20,16 @@
 	</p>
 
 	<p>
-		My focus is building performant projects with careful attention to both interface quality and
-		secure, scalable architectural foundations, from TypeScript frontends to Bun or Rust backends,
-		you name it. Clients hire me to create prototypes, products, and complete ecosystems from
-		scratch.
+		My focus is building performant projects with careful attention to both interface quality,
+		security and scalable architecture. Clients hire me to create prototypes, products, and complete
+		ecosystems from scratch.
 	</p>
 
 	<p>
-		Recent work includes large applications, developer tools, pipelines, and open-source platforms.
+		Recent work includes large applications, developer tools, CLIs, pipelines, and open-source
+		platforms. I'm familiar with React, Svelte, Angular, Astro or plain TypeScript for anything
+		frontend and rely on Node, Bun or Rust for backend and tooling. I've got a thing for type-safety
+		and abstracted architecture.
 	</p>
 
 	<p>

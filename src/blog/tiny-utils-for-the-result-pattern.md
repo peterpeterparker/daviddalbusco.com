@@ -8,6 +8,7 @@ image: "https://daviddalbusco.com/assets/images/sean-sinclair-FQ7cRFUU1y0-unspla
 standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3muwh5bebft26"
 ---
 
+
 ![](https://daviddalbusco.com/assets/images/sean-sinclair-FQ7cRFUU1y0-unsplash.jpg)
 
 > Photo by [Sean Sinclair](https://unsplash.com/fr/@seanwsinclair?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/une-image-floue-dun-arriere-plan-de-couleur-arc-en-ciel-FQ7cRFUU1y0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)

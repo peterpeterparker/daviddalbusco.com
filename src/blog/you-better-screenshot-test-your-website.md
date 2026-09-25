@@ -3,7 +3,7 @@ path: "/blog/you-better-screenshot-test-your-website"
 date: "2026-09-25"
 title: You Better Screenshot Test Your Website
 description: "Trust no one and make sure your site always looks exactly as it should."
-tags: "#webdev #testing #e2e #playwright"
+tags: "#testing #e2e #playwright"
 image: "https://daviddalbusco.com/assets/images/hao-wang-pVq6YhmDPtk-unsplash.jpg"
 ---
 

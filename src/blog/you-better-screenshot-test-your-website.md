@@ -5,6 +5,7 @@ title: You Better Screenshot Test Your Website
 description: "Trust no one and make sure your site always looks exactly as it should."
 tags: "#testing #e2e #playwright"
 image: "https://daviddalbusco.com/assets/images/hao-wang-pVq6YhmDPtk-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3mwd6vquias2z"
 ---
 
 ![](https://daviddalbusco.com/assets/images/hao-wang-pVq6YhmDPtk-unsplash.jpg)

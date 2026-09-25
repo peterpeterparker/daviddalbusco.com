@@ -4,3 +4,11 @@ blockquote {
 	margin: 1.25rem 0;
 	font-style: italic;
 }
+
+blockquote.pullquote {
+	box-shadow: none;
+	max-width: 70%;
+	margin: 3.45rem auto;
+	font-size: 1.2rem;
+	font-weight: bold;
+}

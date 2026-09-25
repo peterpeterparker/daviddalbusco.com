@@ -18,7 +18,9 @@ You might say no, at least publicly, but I bet it happened to you a few times. O
 
 When I build serious projects, I of course set up various test suites, notably screenshot tests, but so far I never did so for my own website. Then this summer it happened again, and:
 
-> Enough is enough! I have had it with these monkey-fighting bugs on this Monday-to-Friday site!
+<blockquote class="pullquote">
+    <p>Enough is enough! I have had it with these monkey-fighting bugs on this Monday-to-Friday site!</p>
+</blockquote>
 
 So I finally set it up, and here's my recipe: a Playwright test that covers light and dark mode, a trick to ignore dynamic content, and the two GitHub Actions workflows that make it work. Everything you need to start validating your website, because trust me, you should!
 

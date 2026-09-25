@@ -11,9 +11,9 @@ image: "https://daviddalbusco.com/assets/images/hao-wang-pVq6YhmDPtk-unsplash.jp
 
 > Photo by [hao wang](https://unsplash.com/fr/@danranwanghao?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/fr/photos/oeuvre-de-griffonnage-rouge-et-bleu-sur-fond-noir-pVq6YhmDPtk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-Have you ever updated a few libraries or the framework of your website, had a quick look, pushed to main and deployed it straight to production, because who cares, it's just your personal website, only to figure out weeks later, out of nowhere, that some colors were suddenly off or that some layout issue had popped up?
+Have you ever updated your website's dependencies, had a quick look, pushed to main and deployed it straight to production, because who cares, it's just your personal website, only to figure out weeks later that some colors were suddenly weirdly off or that some minor layout issue had popped up?
 
-You might say no, at least publicly, but I bet it happened to you a few times. Or I'm a weirdo, as it actually happened to me a few times in the past.
+You might say no, at least publicly, but I bet it happened to you a few times. Or am I a weirdo? Because it actually happened to me in the past.
 
 When I build serious projects, I of course set up various test suites, notably screenshot tests, but so far I never did so for my own website. Then this summer it happened again, and:
 
@@ -286,7 +286,7 @@ runs:
 
 ## 6. Recreating the snapshots
 
-The very first time, there are no references at all. Playwright then fails the test and only writes the actual screenshot, so they have to be generated once. Same thing whenever I add a new test or there is an intended change that updates the design.
+The very first time the test runs, there are no references at all - i.e. there are no snapshots to compare against yet. Playwright then fails the test and only writes the actual screenshot, so they have to be generated once. Same thing whenever I add a new test or there is an intended change that updates the design.
 
 Either way, it has to happen on CI, for the reason explained above.
 

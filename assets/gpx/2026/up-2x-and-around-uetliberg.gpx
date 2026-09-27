@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<gpx creator="Wikiloc - https://www.wikiloc.com" version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
-  <metadata>
-    <name>Wikiloc - Up (2x) and around Uetliberg (2026)</name>
-    <link href="https://www.wikiloc.com/trail-running-trails/up-2x-and-around-uetliberg-2026-260895480">
-      <text>Up (2x) and around Uetliberg (2026) - Wikiloc on Wikiloc</text>
-    </link>
-    <time>2026-04-24T12:13:07Z</time>
-  </metadata>
+<gpx version="1.1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
   <trk>
-    <name>Up (2x) and around Uetliberg (2026) - Wikiloc</name>
-    <cmt></cmt>
-    <desc></desc>
     <trkseg>
       <trkpt lat="47.366237" lon="8.524920">
         <ele>414.026</ele>

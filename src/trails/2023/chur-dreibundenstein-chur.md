@@ -34,4 +34,4 @@ There is an alternative path at the top which adds a few meters by going through
 
 It is also possible to not go back to Chur and avoid going down too much by taking the cable car back.
 
-Such an alternative trail run is provided by the city of Chur: https://www.chur.graubuenden.ch/de/touren-planer/trailrun-langa
+Such an alternative trail run is provided by the city of Chur: [https://www.chur.graubuenden.ch/de/touren-planer/trailrun-langa](https://www.chur.graubuenden.ch/de/touren-planer/trailrun-langa)

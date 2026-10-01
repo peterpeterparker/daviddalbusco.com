@@ -1,16 +1,20 @@
-:root {
-	cursor: url("/icons/cursor-default.png"), auto;
-}
+// Safari does not support rendering custom cursor on scroll 🤷‍♂️
+// Source for (not) targeting Safari: https://wojtek.im/journal/targeting-safari-with-css-media-query
+@supports not ((hanging-punctuation: first) and (font: -apple-system-body)) {
+	:root {
+		cursor: url("/icons/cursor-default.png"), auto;
+	}
 
-a,
-button,
-[role="button"],
-summary,
-label[for],
-select,
-input[type="submit"],
-input[type="button"],
-input[type="checkbox"],
-input[type="radio"] {
-	cursor: url("/icons/cursor-pointer.png"), pointer;
+	a,
+	button,
+	[role="button"],
+	summary,
+	label[for],
+	select,
+	input[type="submit"],
+	input[type="button"],
+	input[type="checkbox"],
+	input[type="radio"] {
+		cursor: url("/icons/cursor-pointer.png"), pointer;
+	}
 }

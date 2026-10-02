@@ -1,4 +1,4 @@
-import type { Slug, SlugPath } from '$lib/core/types/slug';
+import type { Slug, SlugPath } from '#lib/core/types/slug.js';
 import { readdirSync } from 'node:fs';
 import { parse } from 'node:path';
 

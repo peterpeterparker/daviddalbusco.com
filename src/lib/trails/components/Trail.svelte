@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { PageDataWithoutContent } from '$lib/core/types/page';
-	import Card from '$lib/core/components/Card.svelte';
-	import type { Trail } from '$lib/trails/types/trail';
-	import { formatDate } from '$lib/core/utils/date.utils';
-	import Sport from '$lib/trails/components/Sport.svelte';
-	import { assetUrl } from '$lib/core/utils/assets.utils';
+	import type { PageDataWithoutContent } from '#lib/core/types/page.js';
+	import Card from '#lib/core/components/Card.svelte';
+	import type { Trail } from '#lib/trails/types/trail.js';
+	import { formatDate } from '#lib/core/utils/date.utils.js';
+	import Sport from '#lib/trails/components/Sport.svelte';
+	import { assetUrl } from '#lib/core/utils/assets.utils.js';
 
 	interface Props {
 		trail: PageDataWithoutContent<Trail>;

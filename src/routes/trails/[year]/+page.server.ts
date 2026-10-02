@@ -1,6 +1,6 @@
-import type { PageDataWithoutContent } from '$lib/core/types/page';
-import { isEmptyString } from '$lib/core/utils/nullish.utils';
-import type { Trail } from '$lib/trails/types/trail';
+import type { PageDataWithoutContent } from '#lib/core/types/page.js';
+import { isEmptyString } from '#lib/core/utils/nullish.utils.js';
+import type { Trail } from '#lib/trails/types/trail.js';
 import { listTrails } from '$plugins/trails.plugin';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';

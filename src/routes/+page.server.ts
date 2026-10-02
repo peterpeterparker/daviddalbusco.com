@@ -1,6 +1,6 @@
-import type { BlogMetadata } from '$lib/blog/types/blog';
-import type { PageData } from '$lib/core/types/page';
-import type { Portfolio, PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+import type { BlogMetadata } from '#lib/blog/types/blog.js';
+import type { PageData } from '#lib/core/types/page.js';
+import type { Portfolio, PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
 import { listBlog } from '$plugins/blog.plugin';
 import { listPortfolio } from '$plugins/portfolio.plugin';
 import type { PageServerLoad } from './$types';

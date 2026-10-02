@@ -1,11 +1,11 @@
 <script lang="ts">
-	import type { TrailMetadata } from '$lib/trails/types/trail';
-	import { assetUrl } from '$lib/core/utils/assets.utils';
-	import CardCover from '$lib/core/components/CardCover.svelte';
+	import type { TrailMetadata } from '#lib/trails/types/trail.js';
+	import { assetUrl } from '#lib/core/utils/assets.utils.js';
+	import CardCover from '#lib/core/components/CardCover.svelte';
 	import type { Attachment } from 'svelte/attachments';
-	import IconClose from '$lib/core/icons/IconClose.svelte';
-	import IconArrowForward from '$lib/core/icons/IconArrowForward.svelte';
-	import IconArrowBack from '$lib/core/icons/IconArrowBack.svelte';
+	import IconClose from '#lib/core/icons/IconClose.svelte';
+	import IconArrowForward from '#lib/core/icons/IconArrowForward.svelte';
+	import IconArrowBack from '#lib/core/icons/IconArrowBack.svelte';
 
 	interface Props {
 		photos: TrailMetadata['photos'];

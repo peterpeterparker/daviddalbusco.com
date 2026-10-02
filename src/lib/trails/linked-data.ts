@@ -1,7 +1,7 @@
-import { AUTHOR_URL, SITE_URL } from '$lib/core/constants';
-import { AUTHOR_LINKED_DATA } from '$lib/core/linked-data';
-import { TRAILS_DESCRIPTION, TRAILS_TITLE, TRAILS_URL } from '$lib/trails/constants';
-import type { TrailMetadata } from '$lib/trails/types/trail';
+import { AUTHOR_URL, SITE_URL } from '#lib/core/constants.js';
+import { AUTHOR_LINKED_DATA } from '#lib/core/linked-data.js';
+import { TRAILS_DESCRIPTION, TRAILS_TITLE, TRAILS_URL } from '#lib/trails/constants.js';
+import type { TrailMetadata } from '#lib/trails/types/trail.js';
 import type { Article, CollectionPage } from 'schema-dts';
 
 export const TRAILS_LINKED_DATA: CollectionPage = {

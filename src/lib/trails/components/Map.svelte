@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { MapLocation, MapGpxPoints } from '$lib/trails/types/map';
+	import type { MapLocation, MapGpxPoints } from '#lib/trails/types/map.js';
 
 	export interface ShowItemsBoundary {
 		min: MapLocation;
@@ -15,9 +15,9 @@
 <script lang="ts">
 	import type { Attachment } from 'svelte/attachments';
 	import type { MarkerAnnotation, Annotation } from '@apple/mapkit-loader';
-	import type { MapAnnotation, MapGpxPointId } from '$lib/trails/types/map';
-	import { loadMap, type MapKit } from '$lib/trails/services/map.services';
-	import { notEmptyString } from '$lib/core/utils/nullish.utils';
+	import type { MapAnnotation, MapGpxPointId } from '#lib/trails/types/map.js';
+	import { loadMap, type MapKit } from '#lib/trails/services/map.services.js';
+	import { notEmptyString } from '#lib/core/utils/nullish.utils.js';
 
 	// References:
 	// https://webkit.org/blog/18027/discover-mapkit-js-6-rebuilt-for-todays-web-developer/

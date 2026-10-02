@@ -1,14 +1,14 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/core/components/Seo.svelte';
-	import Work from '$lib/portfolio/components/Work.svelte';
-	import Play from '$lib/portfolio/components/Play.svelte';
-	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
-	import type { PageData } from '$lib/core/types/page';
-	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
-	import { SITE_URL } from '$lib/core/constants';
-	import { PORTFOLIO_DESCRIPTION, PORTFOLIO_TITLE } from '$lib/portfolio/constants';
-	import { PORTFOLIO_LINKED_DATA } from '$lib/portfolio/linked-data';
+	import Seo from '#lib/core/components/Seo.svelte';
+	import Work from '#lib/portfolio/components/Work.svelte';
+	import Play from '#lib/portfolio/components/Play.svelte';
+	import type { PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
+	import type { PageData } from '#lib/core/types/page.js';
+	import Breadcrumb from '#lib/core/components/Breadcrumb.svelte';
+	import { SITE_URL } from '#lib/core/constants.js';
+	import { PORTFOLIO_DESCRIPTION, PORTFOLIO_TITLE } from '#lib/portfolio/constants.js';
+	import { PORTFOLIO_LINKED_DATA } from '#lib/portfolio/linked-data.js';
 
 	interface Props {
 		data: ServerPageData;

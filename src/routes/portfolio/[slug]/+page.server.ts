@@ -1,6 +1,6 @@
-import type { PageData } from '$lib/core/types/page';
-import { isEmptyString } from '$lib/core/utils/nullish.utils';
-import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+import type { PageData } from '#lib/core/types/page.js';
+import { isEmptyString } from '#lib/core/utils/nullish.utils.js';
+import type { PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
 import { getPortfolio } from '$plugins/portfolio.plugin';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';

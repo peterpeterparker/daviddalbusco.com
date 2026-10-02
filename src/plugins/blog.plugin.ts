@@ -1,6 +1,6 @@
 import type { BlogMetadata } from '#lib/blog/types/blog.js';
 import type { PageData } from '#lib/core/types/page.js';
-import { get, type GetPageData, list } from '$plugins/markdown.plugin';
+import { get, type GetPageData, list } from '#plugins/markdown.plugin.js';
 
 export const listBlog = async (): Promise<PageData<BlogMetadata>[]> => {
 	const results = await list<BlogMetadata>({ path: 'blog' });

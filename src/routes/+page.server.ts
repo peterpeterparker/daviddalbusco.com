@@ -1,8 +1,8 @@
 import type { BlogMetadata } from '#lib/blog/types/blog.js';
 import type { PageData } from '#lib/core/types/page.js';
 import type { Portfolio, PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
-import { listBlog } from '$plugins/blog.plugin';
-import { listPortfolio } from '$plugins/portfolio.plugin';
+import { listBlog } from '#plugins/blog.plugin.js';
+import { listPortfolio } from '#plugins/portfolio.plugin.js';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (): Promise<{

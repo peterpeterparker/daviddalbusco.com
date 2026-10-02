@@ -1,6 +1,6 @@
 import type { PageData } from '#lib/core/types/page.js';
 import type { PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
-import { listPortfolio } from '$plugins/portfolio.plugin';
+import { listPortfolio } from '#plugins/portfolio.plugin.js';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (): Promise<{

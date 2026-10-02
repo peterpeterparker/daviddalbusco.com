@@ -2,8 +2,8 @@ import type { BlogMetadata } from '#lib/blog/types/blog.js';
 import type { PageData } from '#lib/core/types/page.js';
 import { toSlugPath } from '#lib/core/utils/slug.utils.js';
 import type { Trail } from '#lib/trails/types/trail.js';
-import { listBlog } from '$plugins/blog.plugin';
-import { listTrails } from '$plugins/trails.plugin';
+import { listBlog } from '#plugins/blog.plugin.js';
+import { listTrails } from '#plugins/trails.plugin.js';
 
 export const prerender = true;
 

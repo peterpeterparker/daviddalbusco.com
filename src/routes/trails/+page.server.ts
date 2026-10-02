@@ -1,6 +1,6 @@
 import type { PageDataWithoutContent } from '#lib/core/types/page.js';
 import type { Trail } from '#lib/trails/types/trail.js';
-import { listTrails } from '$plugins/trails.plugin';
+import { listTrails } from '#plugins/trails.plugin.js';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (): Promise<{

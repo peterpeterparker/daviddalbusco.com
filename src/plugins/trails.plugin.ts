@@ -1,7 +1,7 @@
 import type { PageData } from '#lib/core/types/page.js';
 import type { Trail, TrailMetadata } from '#lib/trails/types/trail.js';
-import { get, type GetPageData, list } from '$plugins/markdown.plugin';
-import { getTrack } from '$plugins/track.plugin';
+import { get, type GetPageData, list } from '#plugins/markdown.plugin.js';
+import { getTrack } from '#plugins/track.plugin.js';
 
 export const listTrails = async (
 	{ year }: { year: string | undefined } = { year: undefined }

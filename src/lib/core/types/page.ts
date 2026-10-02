@@ -1,4 +1,4 @@
-import type { Slug } from '$lib/core/types/slug';
+import type { Slug } from '#lib/core/types/slug.js';
 
 export interface PageData<T> {
 	content: string;

@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { PageDataWithoutContent } from '$lib/core/types/page';
-	import type { BlogMetadata } from '$lib/blog/types/blog';
-	import Card from '$lib/core/components/Card.svelte';
-	import { formatDate } from '$lib/core/utils/date.utils';
-	import { assetUrl } from '$lib/core/utils/assets.utils';
+	import type { PageDataWithoutContent } from '#lib/core/types/page.js';
+	import type { BlogMetadata } from '#lib/blog/types/blog.js';
+	import Card from '#lib/core/components/Card.svelte';
+	import { formatDate } from '#lib/core/utils/date.utils.js';
+	import { assetUrl } from '#lib/core/utils/assets.utils.js';
 
 	interface Props {
 		post: PageDataWithoutContent<BlogMetadata>;

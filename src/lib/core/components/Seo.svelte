@@ -1,8 +1,13 @@
 <script lang="ts">
-	import { SITE_DESCRIPTION, SITE_SOCIAL_IMAGE, SITE_TITLE, SITE_URL } from '$lib/core/constants';
+	import {
+		SITE_DESCRIPTION,
+		SITE_SOCIAL_IMAGE,
+		SITE_TITLE,
+		SITE_URL
+	} from '#lib/core/constants.js';
 	import type { Thing } from 'schema-dts';
-	import { renderJsonLDScriptTag } from '$lib/core/utils/linked-data.utils';
-	import { SITE_LINKED_DATA } from '$lib/core/linked-data';
+	import { renderJsonLDScriptTag } from '#lib/core/utils/linked-data.utils.js';
+	import { SITE_LINKED_DATA } from '#lib/core/linked-data.js';
 
 	interface Props {
 		url?: string;

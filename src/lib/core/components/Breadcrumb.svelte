@@ -1,5 +1,5 @@
 <script lang="ts">
-	import IconArrowForward from '$lib/core/icons/IconArrowForward.svelte';
+	import IconArrowForward from '#lib/core/icons/IconArrowForward.svelte';
 
 	interface BreadcrumbRoute {
 		title: string;

@@ -1,7 +1,7 @@
-import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL } from '$lib/blog/constants';
-import type { BlogMetadata } from '$lib/blog/types/blog';
-import { AUTHOR_URL, SITE_URL } from '$lib/core/constants';
-import { AUTHOR_LINKED_DATA } from '$lib/core/linked-data';
+import { BLOG_DESCRIPTION, BLOG_TITLE, BLOG_URL } from '#lib/blog/constants.js';
+import type { BlogMetadata } from '#lib/blog/types/blog.js';
+import { AUTHOR_URL, SITE_URL } from '#lib/core/constants.js';
+import { AUTHOR_LINKED_DATA } from '#lib/core/linked-data.js';
 import type { Blog, BlogPosting } from 'schema-dts';
 
 export const BLOG_LINKED_DATA: Blog = {

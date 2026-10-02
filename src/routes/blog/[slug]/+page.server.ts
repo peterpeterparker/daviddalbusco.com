@@ -1,6 +1,6 @@
-import type { BlogMetadata } from '$lib/blog/types/blog';
-import type { PageData } from '$lib/core/types/page';
-import { isEmptyString } from '$lib/core/utils/nullish.utils';
+import type { BlogMetadata } from '#lib/blog/types/blog.js';
+import type { PageData } from '#lib/core/types/page.js';
+import { isEmptyString } from '#lib/core/utils/nullish.utils.js';
 import { getBlob } from '$plugins/blog.plugin';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';

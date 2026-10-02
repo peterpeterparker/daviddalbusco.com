@@ -1,13 +1,13 @@
 <script lang="ts">
-	import Seo from '$lib/core/components/Seo.svelte';
-	import Trails from '$lib/trails/components/Trails.svelte';
-	import type { PageDataWithoutContent } from '$lib/core/types/page';
+	import Seo from '#lib/core/components/Seo.svelte';
+	import Trails from '#lib/trails/components/Trails.svelte';
+	import type { PageDataWithoutContent } from '#lib/core/types/page.js';
 	import type { PageData as ServerPageData } from './$types';
-	import type { Trail } from '$lib/trails/types/trail';
-	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
-	import { TRAILS_DESCRIPTION, TRAILS_SOCIAL_IMAGE, TRAILS_TITLE } from '$lib/trails/constants';
-	import { SITE_URL } from '$lib/core/constants';
-	import { TRAILS_LINKED_DATA } from '$lib/trails/linked-data';
+	import type { Trail } from '#lib/trails/types/trail.js';
+	import Breadcrumb from '#lib/core/components/Breadcrumb.svelte';
+	import { TRAILS_DESCRIPTION, TRAILS_SOCIAL_IMAGE, TRAILS_TITLE } from '#lib/trails/constants.js';
+	import { SITE_URL } from '#lib/core/constants.js';
+	import { TRAILS_LINKED_DATA } from '#lib/trails/linked-data.js';
 
 	interface Props {
 		data: ServerPageData;

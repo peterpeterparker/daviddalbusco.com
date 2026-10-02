@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Contact from '$lib/core/components/Contact.svelte';
-	import IconTwitter from '$lib/core/icons/IconTwitter.svelte';
-	import IconLinkedIn from '$lib/core/icons/IconLinkedIn.svelte';
-	import IconGitHub from '$lib/core/icons/IconGitHub.svelte';
-	import IconBsky from '$lib/core/icons/IconBsky.svelte';
-	import IconRss from '$lib/core/icons/IconRss.svelte';
-	import { BSKY_URL, LINKEDIN_URL, SITE_URL, TWITTER_URL } from '$lib/core/constants';
+	import Contact from '#lib/core/components/Contact.svelte';
+	import IconTwitter from '#lib/core/icons/IconTwitter.svelte';
+	import IconLinkedIn from '#lib/core/icons/IconLinkedIn.svelte';
+	import IconGitHub from '#lib/core/icons/IconGitHub.svelte';
+	import IconBsky from '#lib/core/icons/IconBsky.svelte';
+	import IconRss from '#lib/core/icons/IconRss.svelte';
+	import { BSKY_URL, LINKEDIN_URL, SITE_URL, TWITTER_URL } from '#lib/core/constants.js';
 </script>
 
 <footer>

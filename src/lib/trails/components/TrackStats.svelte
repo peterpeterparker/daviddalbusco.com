@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { TrailTrack } from '$lib/trails/types/trail';
-	import { formatDistance, formatElevation } from '$lib/trails/utils/track.utils';
-	import { secondsToDuration } from '$lib/core/utils/date.utils';
+	import type { TrailTrack } from '#lib/trails/types/trail.js';
+	import { formatDistance, formatElevation } from '#lib/trails/utils/track.utils.js';
+	import { secondsToDuration } from '#lib/core/utils/date.utils.js';
 
 	interface Props {
 		track: TrailTrack;

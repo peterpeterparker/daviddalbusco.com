@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import CardCover from '$lib/core/components/CardCover.svelte';
-	import type { Slug } from '$lib/core/types/slug';
-	import { toSlugPath } from '$lib/core/utils/slug.utils';
+	import CardCover from '#lib/core/components/CardCover.svelte';
+	import type { Slug } from '#lib/core/types/slug.js';
+	import { toSlugPath } from '#lib/core/utils/slug.utils.js';
 	import type { Snippet } from 'svelte';
 
 	interface Props {

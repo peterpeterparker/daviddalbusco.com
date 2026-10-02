@@ -1,4 +1,4 @@
-import { SITE_URL } from '$lib/core/constants';
+import { SITE_URL } from '#lib/core/constants.js';
 
 export const PORTFOLIO_TITLE = 'Portfolio: Freelance Software Engineering Projects';
 export const PORTFOLIO_DESCRIPTION =

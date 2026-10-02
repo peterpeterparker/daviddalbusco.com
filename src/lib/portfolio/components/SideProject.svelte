@@ -1,10 +1,10 @@
 <!-- @migration-task Error while migrating Svelte code: Encountered an export declaration pattern that is not supported for automigration. -->
 <script lang="ts">
-	import type { PageData } from '$lib/core/types/page';
-	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+	import type { PageData } from '#lib/core/types/page.js';
+	import type { PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
 	import { base } from '$app/paths';
-	import IconSkull from '$lib/core/icons/IconSkull.svelte';
-	import IconFlask from '$lib/core/icons/IconFlask.svelte';
+	import IconSkull from '#lib/core/icons/IconSkull.svelte';
+	import IconFlask from '#lib/core/icons/IconFlask.svelte';
 
 	interface Props {
 		project: PageData<PortfolioMetadata>;

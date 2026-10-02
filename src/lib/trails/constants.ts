@@ -1,4 +1,4 @@
-import { SITE_URL } from '$lib/core/constants';
+import { SITE_URL } from '#lib/core/constants.js';
 
 export const TRAILS_SOCIAL_IMAGE = `${SITE_URL}/images/trails-social-image-v1.jpg`;
 export const TRAILS_TITLE = 'Trails, David Dal Busco';

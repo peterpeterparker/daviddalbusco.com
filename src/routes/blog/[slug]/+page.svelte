@@ -1,17 +1,17 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/core/components/Seo.svelte';
-	import type { BlogMetadata } from '$lib/blog/types/blog';
-	import type { PageData } from '$lib/core/types/page';
-	import Section from '$lib/core/components/Section.svelte';
+	import Seo from '#lib/core/components/Seo.svelte';
+	import type { BlogMetadata } from '#lib/blog/types/blog.js';
+	import type { PageData } from '#lib/core/types/page.js';
+	import Section from '#lib/core/components/Section.svelte';
 	import '../../../theme/_blog.scss';
 	import '../../../theme/_code.scss';
-	import Progress from '$lib/core/components/Progress.svelte';
-	import { formatDate } from '$lib/core/utils/date.utils';
-	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
-	import { onCopySnippet } from '$lib/core/utils/copy.utils';
-	import { SITE_URL } from '$lib/core/constants';
-	import { blogPostToLinkedData } from '$lib/blog/linked-data';
+	import Progress from '#lib/core/components/Progress.svelte';
+	import { formatDate } from '#lib/core/utils/date.utils.js';
+	import Breadcrumb from '#lib/core/components/Breadcrumb.svelte';
+	import { onCopySnippet } from '#lib/core/utils/copy.utils.js';
+	import { SITE_URL } from '#lib/core/constants.js';
+	import { blogPostToLinkedData } from '#lib/blog/linked-data.js';
 
 	interface Props {
 		data: ServerPageData;

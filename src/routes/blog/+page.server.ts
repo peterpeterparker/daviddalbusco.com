@@ -1,5 +1,5 @@
-import type { BlogMetadata } from '$lib/blog/types/blog';
-import type { PageDataWithoutContent } from '$lib/core/types/page';
+import type { BlogMetadata } from '#lib/blog/types/blog.js';
+import type { PageDataWithoutContent } from '#lib/core/types/page.js';
 import { listBlog } from '$plugins/blog.plugin';
 import type { PageServerLoad } from './$types';
 

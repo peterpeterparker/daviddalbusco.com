@@ -1,4 +1,4 @@
-import { SITE_URL } from '$lib/core/constants';
+import { SITE_URL } from '#lib/core/constants.js';
 
 export const BLOG_TITLE = "David's Blog: Notes from Work and Side Projects";
 export const BLOG_DESCRIPTION =

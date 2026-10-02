@@ -1,5 +1,5 @@
-import type { PageDataWithoutContent } from '$lib/core/types/page';
-import type { Trail } from '$lib/trails/types/trail';
+import type { PageDataWithoutContent } from '#lib/core/types/page.js';
+import type { Trail } from '#lib/trails/types/trail.js';
 import { listTrails } from '$plugins/trails.plugin';
 import type { PageServerLoad } from './$types';
 

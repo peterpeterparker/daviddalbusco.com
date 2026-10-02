@@ -1,5 +1,5 @@
 <script lang="ts">
-	import IconOpen from '$lib/core/icons/IconOpen.svelte';
+	import IconOpen from '#lib/core/icons/IconOpen.svelte';
 	import type { Snippet } from 'svelte';
 
 	interface Props {

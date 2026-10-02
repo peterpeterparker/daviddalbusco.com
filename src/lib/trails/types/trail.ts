@@ -1,5 +1,5 @@
-import type { DateString } from '$lib/core/types/date';
-import type { MapLocation } from '$lib/trails/types/map';
+import type { DateString } from '#lib/core/types/date.js';
+import type { MapLocation } from '#lib/trails/types/map.js';
 
 export type Sport = 'trail-running' | 'cycling' | 'gravel';
 

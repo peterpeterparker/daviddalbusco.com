@@ -1,6 +1,6 @@
-import { secondsToDuration } from '$lib/core/utils/date.utils';
-import type { Trail } from '$lib/trails/types/trail';
-import { formatDistance, formatElevation } from '$lib/trails/utils/track.utils';
+import { secondsToDuration } from '#lib/core/utils/date.utils.js';
+import type { Trail } from '#lib/trails/types/trail.js';
+import { formatDistance, formatElevation } from '#lib/trails/utils/track.utils.js';
 
 export const generateTrailDescription = ({
 	trail: { metadata, track }

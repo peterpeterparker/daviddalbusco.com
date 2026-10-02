@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Map, { type ShowItemsBoundary } from '$lib/trails/components/Map.svelte';
-	import Section from '$lib/core/components/Section.svelte';
-	import type { PageDataWithoutContent } from '$lib/core/types/page';
-	import type { Trail as TrailType } from '$lib/trails/types/trail';
-	import Trail from '$lib/trails/components/Trail.svelte';
-	import type { MapAnnotation } from '$lib/trails/types/map';
-	import { toSlugPath } from '$lib/core/utils/slug.utils';
-	import { sportColor } from '$lib/trails/utils/sport.utils';
-	import Email from '$lib/core/components/Email.svelte';
-	import { notEmptyString } from '$lib/core/utils/nullish.utils';
+	import Map, { type ShowItemsBoundary } from '#lib/trails/components/Map.svelte';
+	import Section from '#lib/core/components/Section.svelte';
+	import type { PageDataWithoutContent } from '#lib/core/types/page.js';
+	import type { Trail as TrailType } from '#lib/trails/types/trail.js';
+	import Trail from '#lib/trails/components/Trail.svelte';
+	import type { MapAnnotation } from '#lib/trails/types/map.js';
+	import { toSlugPath } from '#lib/core/utils/slug.utils.js';
+	import { sportColor } from '#lib/trails/utils/sport.utils.js';
+	import Email from '#lib/core/components/Email.svelte';
+	import { notEmptyString } from '#lib/core/utils/nullish.utils.js';
 
 	interface Props {
 		trails: PageDataWithoutContent<TrailType>[];

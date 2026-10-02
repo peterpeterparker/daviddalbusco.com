@@ -1,5 +1,5 @@
-import { notEmptyString } from '$lib/core/utils/nullish.utils';
-import { toSlugPath } from '$lib/core/utils/slug.utils';
+import { notEmptyString } from '#lib/core/utils/nullish.utils.js';
+import { toSlugPath } from '#lib/core/utils/slug.utils.js';
 import { listSlugs } from '$plugins/slug.plugin';
 
 export const prerender = true;

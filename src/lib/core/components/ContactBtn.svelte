@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Link from '$lib/core/components/Link.svelte';
+	import Link from '#lib/core/components/Link.svelte';
 	import { onMount, type Snippet } from 'svelte';
-	import { track } from '$lib/core/services/analytics.services';
+	import { track } from '#lib/core/services/analytics.services.js';
 
 	interface Props {
 		eventName: 'contact-hero' | 'contact-about';

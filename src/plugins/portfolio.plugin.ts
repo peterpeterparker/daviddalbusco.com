@@ -1,5 +1,5 @@
-import type { PageData } from '$lib/core/types/page';
-import type { Portfolio, PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+import type { PageData } from '#lib/core/types/page.js';
+import type { Portfolio, PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
 import { get, type GetPageData, list } from '$plugins/markdown.plugin';
 
 export const listPortfolio = async (): Promise<Portfolio> => {

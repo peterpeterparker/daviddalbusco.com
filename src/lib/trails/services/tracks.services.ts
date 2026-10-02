@@ -1,8 +1,8 @@
-import { assetUrl } from '$lib/core/utils/assets.utils';
-import { safeExec, type Result } from '$lib/core/utils/fn.utils';
-import type { MapGpxPoint, MapGpxPoints } from '$lib/trails/types/map';
-import type { TrailMetadata } from '$lib/trails/types/trail';
-import { calculateDistance } from '$lib/trails/utils/distance.utils';
+import { assetUrl } from '#lib/core/utils/assets.utils.js';
+import { safeExec, type Result } from '#lib/core/utils/fn.utils.js';
+import type { MapGpxPoint, MapGpxPoints } from '#lib/trails/types/map.js';
+import type { TrailMetadata } from '#lib/trails/types/trail.js';
+import { calculateDistance } from '#lib/trails/utils/distance.utils.js';
 
 export const loadTrack = async (
 	data: Pick<TrailMetadata, 'gpx'>

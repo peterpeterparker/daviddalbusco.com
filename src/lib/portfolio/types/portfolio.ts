@@ -1,4 +1,4 @@
-import type { PageData } from '$lib/core/types/page';
+import type { PageData } from '#lib/core/types/page.js';
 
 export type PortfolioType = 'work' | 'play';
 

@@ -1,13 +1,13 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/core/components/Seo.svelte';
-	import Blog from '$lib/blog/components/Blog.svelte';
-	import type { BlogMetadata } from '$lib/blog/types/blog';
-	import type { PageDataWithoutContent } from '$lib/core/types/page';
-	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
-	import { SITE_URL } from '$lib/core/constants';
-	import { BLOG_DESCRIPTION, BLOG_TITLE } from '$lib/blog/constants';
-	import { BLOG_LINKED_DATA } from '$lib/blog/linked-data';
+	import Seo from '#lib/core/components/Seo.svelte';
+	import Blog from '#lib/blog/components/Blog.svelte';
+	import type { BlogMetadata } from '#lib/blog/types/blog.js';
+	import type { PageDataWithoutContent } from '#lib/core/types/page.js';
+	import Breadcrumb from '#lib/core/components/Breadcrumb.svelte';
+	import { SITE_URL } from '#lib/core/constants.js';
+	import { BLOG_DESCRIPTION, BLOG_TITLE } from '#lib/blog/constants.js';
+	import { BLOG_LINKED_DATA } from '#lib/blog/linked-data.js';
 
 	interface Props {
 		data: ServerPageData;

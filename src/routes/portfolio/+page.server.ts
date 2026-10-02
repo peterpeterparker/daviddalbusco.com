@@ -1,5 +1,5 @@
-import type { PageData } from '$lib/core/types/page';
-import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+import type { PageData } from '#lib/core/types/page.js';
+import type { PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
 import { listPortfolio } from '$plugins/portfolio.plugin';
 import type { PageServerLoad } from './$types';
 

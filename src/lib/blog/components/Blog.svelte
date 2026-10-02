@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Link from '$lib/core/components/Link.svelte';
-	import Post from '$lib/blog/components/Post.svelte';
-	import Section from '$lib/core/components/Section.svelte';
-	import type { PageDataWithoutContent } from '$lib/core/types/page';
-	import type { BlogMetadata } from '$lib/blog/types/blog';
+	import Link from '#lib/core/components/Link.svelte';
+	import Post from '#lib/blog/components/Post.svelte';
+	import Section from '#lib/core/components/Section.svelte';
+	import type { PageDataWithoutContent } from '#lib/core/types/page.js';
+	import type { BlogMetadata } from '#lib/blog/types/blog.js';
 
 	interface Props {
 		posts: PageDataWithoutContent<BlogMetadata>[];

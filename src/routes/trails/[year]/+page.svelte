@@ -1,16 +1,16 @@
 <script lang="ts">
-	import Seo from '$lib/core/components/Seo.svelte';
-	import Trails from '$lib/trails/components/Trails.svelte';
-	import type { PageDataWithoutContent } from '$lib/core/types/page';
+	import Seo from '#lib/core/components/Seo.svelte';
+	import Trails from '#lib/trails/components/Trails.svelte';
+	import type { PageDataWithoutContent } from '#lib/core/types/page.js';
 	import type { PageData as ServerPageData } from './$types';
-	import type { Trail } from '$lib/trails/types/trail';
-	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
-	import NoTrails from '$lib/trails/components/NoTrails.svelte';
-	import { capitalize } from '$lib/core/utils/text.utils';
+	import type { Trail } from '#lib/trails/types/trail.js';
+	import Breadcrumb from '#lib/core/components/Breadcrumb.svelte';
+	import NoTrails from '#lib/trails/components/NoTrails.svelte';
+	import { capitalize } from '#lib/core/utils/text.utils.js';
 	import { page } from '$app/state';
-	import { notEmptyString } from '$lib/core/utils/nullish.utils';
-	import { TRAILS_DESCRIPTION, TRAILS_SOCIAL_IMAGE, TRAILS_TITLE } from '$lib/trails/constants';
-	import { SITE_URL } from '$lib/core/constants';
+	import { notEmptyString } from '#lib/core/utils/nullish.utils.js';
+	import { TRAILS_DESCRIPTION, TRAILS_SOCIAL_IMAGE, TRAILS_TITLE } from '#lib/trails/constants.js';
+	import { SITE_URL } from '#lib/core/constants.js';
 
 	interface Props {
 		data: ServerPageData;

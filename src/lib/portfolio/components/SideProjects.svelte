@@ -1,8 +1,8 @@
 <script lang="ts">
-	import SideProject from '$lib/portfolio/components/SideProject.svelte';
-	import Section from '$lib/core/components/Section.svelte';
-	import type { PageData } from '$lib/core/types/page';
-	import type { PortfolioMetadata } from '$lib/portfolio/types/portfolio';
+	import SideProject from '#lib/portfolio/components/SideProject.svelte';
+	import Section from '#lib/core/components/Section.svelte';
+	import type { PageData } from '#lib/core/types/page.js';
+	import type { PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
 	import type { Snippet } from 'svelte';
 
 	interface Props {

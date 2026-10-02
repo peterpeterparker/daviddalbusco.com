@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Section from '$lib/core/components/Section.svelte';
-	import ContactBtn from '$lib/core/components/ContactBtn.svelte';
+	import Section from '#lib/core/components/Section.svelte';
+	import ContactBtn from '#lib/core/components/ContactBtn.svelte';
 </script>
 
 <Section>

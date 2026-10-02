@@ -1,14 +1,14 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/core/components/Seo.svelte';
-	import Blog from '$lib/blog/components/Blog.svelte';
-	import Work from '$lib/portfolio/components/Work.svelte';
-	import Play from '$lib/portfolio/components/Play.svelte';
-	import About from '$lib/core/components/About.svelte';
-	import Talks from '$lib/core/components/Talks.svelte';
-	import Newsletter from '$lib/core/components/Newsletter.svelte';
-	import { cleanBodyStyles } from '$lib/core/utils/styles.utils';
-	import Hero from '$lib/core/components/Hero.svelte';
+	import Seo from '#lib/core/components/Seo.svelte';
+	import Blog from '#lib/blog/components/Blog.svelte';
+	import Work from '#lib/portfolio/components/Work.svelte';
+	import Play from '#lib/portfolio/components/Play.svelte';
+	import About from '#lib/core/components/About.svelte';
+	import Talks from '#lib/core/components/Talks.svelte';
+	import Newsletter from '#lib/core/components/Newsletter.svelte';
+	import { cleanBodyStyles } from '#lib/core/utils/styles.utils.js';
+	import Hero from '#lib/core/components/Hero.svelte';
 
 	interface Props {
 		data: ServerPageData;

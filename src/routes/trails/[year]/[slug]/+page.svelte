@@ -1,27 +1,27 @@
 <script lang="ts">
 	import type { PageData as ServerPageData } from './$types';
-	import Seo from '$lib/core/components/Seo.svelte';
-	import type { Trail } from '$lib/trails/types/trail';
-	import type { PageData } from '$lib/core/types/page';
-	import Section from '$lib/core/components/Section.svelte';
+	import Seo from '#lib/core/components/Seo.svelte';
+	import type { Trail } from '#lib/trails/types/trail.js';
+	import type { PageData } from '#lib/core/types/page.js';
+	import Section from '#lib/core/components/Section.svelte';
 	import '../../../../theme/_code.scss';
-	import { formatDate } from '$lib/core/utils/date.utils';
-	import type { MapGpxPointId, MapGpxPoints } from '$lib/trails/types/map';
+	import { formatDate } from '#lib/core/utils/date.utils.js';
+	import type { MapGpxPointId, MapGpxPoints } from '#lib/trails/types/map.js';
 	import { onMount } from 'svelte';
-	import { loadTrack } from '$lib/trails/services/tracks.services';
-	import Map, { type MapOverlay } from '$lib/trails/components/Map.svelte';
-	import TrackChart from '$lib/trails/components/TrackChart.svelte';
-	import TrackStats from '$lib/trails/components/TrackStats.svelte';
-	import Sport from '$lib/trails/components/Sport.svelte';
-	import TrailPhotos from '$lib/trails/components/TrailPhotos.svelte';
-	import { assetUrl } from '$lib/core/utils/assets.utils';
-	import Breadcrumb from '$lib/core/components/Breadcrumb.svelte';
-	import { toSlugPath } from '$lib/core/utils/slug.utils';
-	import { capitalize } from '$lib/core/utils/text.utils';
-	import { generateTrailDescription } from '$lib/trails/utils/seo.utils';
-	import { sportColor } from '$lib/trails/utils/sport.utils';
-	import { SITE_URL } from '$lib/core/constants';
-	import { trailToLinkedData } from '$lib/trails/linked-data';
+	import { loadTrack } from '#lib/trails/services/tracks.services.js';
+	import Map, { type MapOverlay } from '#lib/trails/components/Map.svelte';
+	import TrackChart from '#lib/trails/components/TrackChart.svelte';
+	import TrackStats from '#lib/trails/components/TrackStats.svelte';
+	import Sport from '#lib/trails/components/Sport.svelte';
+	import TrailPhotos from '#lib/trails/components/TrailPhotos.svelte';
+	import { assetUrl } from '#lib/core/utils/assets.utils.js';
+	import Breadcrumb from '#lib/core/components/Breadcrumb.svelte';
+	import { toSlugPath } from '#lib/core/utils/slug.utils.js';
+	import { capitalize } from '#lib/core/utils/text.utils.js';
+	import { generateTrailDescription } from '#lib/trails/utils/seo.utils.js';
+	import { sportColor } from '#lib/trails/utils/sport.utils.js';
+	import { SITE_URL } from '#lib/core/constants.js';
+	import { trailToLinkedData } from '#lib/trails/linked-data.js';
 
 	interface Props {
 		data: ServerPageData;

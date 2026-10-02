@@ -11,9 +11,9 @@
 	import '../theme/selection.scss';
 
 	import { onMount } from 'svelte';
-	import { initAnalytics } from '$lib/core/services/analytics.services.js';
-	import Header from '$lib/core/components/Header.svelte';
-	import Footer from '$lib/core/components/Footer.svelte';
+	import { initAnalytics } from '#lib/core/services/analytics.services.js';
+	import Header from '#lib/core/components/Header.svelte';
+	import Footer from '#lib/core/components/Footer.svelte';
 	import { page } from '$app/state';
 
 	let { children } = $props();

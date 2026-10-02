@@ -6,7 +6,7 @@ import {
 	SITE_TITLE,
 	SITE_URL,
 	TWITTER_URL
-} from '$lib/core/constants';
+} from '#lib/core/constants.js';
 import type { Person, WebSite } from 'schema-dts';
 
 export const AUTHOR_LINKED_DATA: Person = {

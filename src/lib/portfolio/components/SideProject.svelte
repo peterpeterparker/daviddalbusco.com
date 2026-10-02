@@ -2,7 +2,7 @@
 <script lang="ts">
 	import type { PageData } from '#lib/core/types/page.js';
 	import type { PortfolioMetadata } from '#lib/portfolio/types/portfolio.js';
-	import { base } from '$app/paths';
+	import { resolve } from '$app/paths';
 	import IconSkull from '#lib/core/icons/IconSkull.svelte';
 	import IconFlask from '#lib/core/icons/IconFlask.svelte';
 
@@ -23,7 +23,7 @@
 </script>
 
 <li>
-	<a href={`${base}/portfolio/${slug}`}>
+	<a href={resolve(`portfolio/${slug}/`)}>
 		<span>{title}</span>
 		{#if dead}
 			<IconSkull />

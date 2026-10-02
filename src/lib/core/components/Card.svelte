@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import CardCover from '#lib/core/components/CardCover.svelte';
 	import type { Slug } from '#lib/core/types/slug.js';
 	import { toSlugPath } from '#lib/core/utils/slug.utils.js';
@@ -17,7 +16,7 @@
 	let { path, slug, background, image, cover = false, children }: Props = $props();
 </script>
 
-<a href={`${base}/${path}/${toSlugPath(slug)}`}>
+<a href={`/${path}/${toSlugPath(slug)}`}>
 	<article>
 		{#if background !== undefined && image !== undefined}
 			<CardCover {background} {image} {cover} />

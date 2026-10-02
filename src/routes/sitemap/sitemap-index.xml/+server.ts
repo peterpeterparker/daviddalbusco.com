@@ -1,6 +1,6 @@
 import { notEmptyString } from '#lib/core/utils/nullish.utils.js';
 import { toSlugPath } from '#lib/core/utils/slug.utils.js';
-import { listSlugs } from '$plugins/slug.plugin';
+import { listSlugs } from '#plugins/slug.plugin.js';
 
 export const prerender = true;
 

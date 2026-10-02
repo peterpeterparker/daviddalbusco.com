@@ -14,7 +14,6 @@ export default defineConfig({
 		sveltekit({
 			preprocess: vitePreprocess(),
 			adapter: adapter({ precompress: false }),
-			alias: { $plugins: './src/plugins' },
 			version: { name: version }
 		})
 	]

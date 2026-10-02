@@ -1,7 +1,7 @@
 import type { PageData } from '#lib/core/types/page.js';
 import { isEmptyString } from '#lib/core/utils/nullish.utils.js';
 import type { Trail } from '#lib/trails/types/trail.js';
-import { getTrail } from '$plugins/trails.plugin';
+import { getTrail } from '#plugins/trails.plugin.js';
 import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 

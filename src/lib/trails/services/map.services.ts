@@ -1,5 +1,5 @@
-import { env } from '$env/dynamic/public';
 import { type Result, safeExec } from '#lib/core/utils/fn.utils.js';
+import { PUBLIC_MAPKIT_TOKEN } from '$app/env/public';
 import { type MapKit as AppleMapKit, load, type Map } from '@apple/mapkit-loader';
 
 // https://developer.apple.com/documentation/mapkitjs/loading-the-latest-version-of-mapkit-js#Select-MapKit-JS-libraries
@@ -53,8 +53,8 @@ interface ApiMapKitToken {
 
 const initToken = async (): Promise<ApiMapKitToken> => {
 	// e.g. for local development
-	if (env.PUBLIC_MAPKIT_TOKEN !== undefined) {
-		return { token: env.PUBLIC_MAPKIT_TOKEN };
+	if (PUBLIC_MAPKIT_TOKEN !== undefined) {
+		return { token: PUBLIC_MAPKIT_TOKEN };
 	}
 
 	return await loadToken();

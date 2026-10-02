@@ -1,4 +1,4 @@
-import { env } from '$env/dynamic/public';
+import { PUBLIC_ASSETS } from '$app/env/public';
 
 export const assetUrl = (url: string): string =>
-	url.replaceAll('https://daviddalbusco.com/assets', env.PUBLIC_ASSETS);
+	url.replaceAll('https://daviddalbusco.com/assets', PUBLIC_ASSETS);

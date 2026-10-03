@@ -1,6 +1,6 @@
 ---
 path: "/trails/2026/fluelen-muotathal"
-date: "2026-10-02"
+date: "2026-10-03"
 title: "Flüelen - Muotathal"
 sport: trail-running
 gpx: "https://daviddalbusco.com/assets/gpx/2026/fluelen-muotathal.gpx"

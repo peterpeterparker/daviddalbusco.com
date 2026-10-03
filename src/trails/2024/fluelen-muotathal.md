@@ -15,4 +15,4 @@ photos:
 
 Easy run from Flüelen to Muotathal through Chinzigpass. I'm still not exactly sure what the waypoints were, as I checked the Swisstopo map on my phone far more often than I should admit, but overall, I had a really lovely day. There weren’t that many people, and there were enough alpine restaurants to get a refill or drink something. Today was sunny and 28°C, therefore it was really welcome.
 
-Worth noting that after a few kilometers, the route actually joins the first stage of the Tell Trail: https://www.schwyz-tourismus.ch/de/detail/poitype/outdooractivetour/poi/tell-trail-etappe-1-altdorf-muotatal-1/
+Worth noting that after a few kilometers, the route actually joins the [first stage of the Tell Trail](https://www.luzern.com/fr/tour/tell-trail-etape-1-altdorf-muotathal).

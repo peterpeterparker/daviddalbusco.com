@@ -61,7 +61,7 @@ const post = ({ post: { metadata, slug, content } }: { post: PageData<BlogMetada
         <item>
           <title><![CDATA[${title}]]></title>
           <description><![CDATA[${description}]]></description>
-          <link>${url}blog/${toSlugPath(slug)}/</link>
+          <link>${url}blog/${toSlugPath(slug)}</link>
           <pubDate>${new Date(date).toUTCString()}</pubDate>
           <content:encoded><![CDATA[${content}]]></content:encoded>
         </item>
@@ -76,7 +76,7 @@ const trail = ({ trail: { metadata, slug, content } }: { trail: PageData<Trail> 
 	return `
         <item>
           <title><![CDATA[${title}]]></title>
-          <link>${url}trails/${toSlugPath(slug)}/</link>
+          <link>${url}trails/${toSlugPath(slug)}</link>
           <pubDate>${new Date(date).toUTCString()}</pubDate>
           <content:encoded><![CDATA[${content}]]></content:encoded>
         </item>

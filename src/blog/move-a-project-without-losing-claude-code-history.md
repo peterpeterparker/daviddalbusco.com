@@ -5,6 +5,7 @@ title: Move a Project Without Losing Your Claude Code History
 description: "Claude Code saves sessions with absolute paths. Here is how to move or rename a repo without losing your conversations."
 tags: "#claudecode #ai #bash"
 image: "https://daviddalbusco.com/assets/images/christopher-burns-Kj2SaNHG-hg-unsplash.jpg"
+standard_site: "at://did:plc:fxmgj7lnas3ewnc3hmpx2vg6/site.standard.document/3my2ru6hwly2w"
 ---
 
 ![](https://daviddalbusco.com/assets/images/christopher-burns-Kj2SaNHG-hg-unsplash.jpg)

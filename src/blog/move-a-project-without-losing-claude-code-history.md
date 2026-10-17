@@ -23,7 +23,7 @@ So this morning, enjoying my coffee, I decided to reflect those choices by movin
 
 The mono-repo contains several AGENTS.md files, so the instructions would survive the move, but I wasn't sure about my chat history.
 
-> Note: if you didn't know, Claude Code now supports AGENTS.md as a fallback for CLAUDE.md, so you don't need the latter in your repo.
+> Btw, Claude Code now supports AGENTS.md as a fallback for CLAUDE.md, so you don't need the latter in your repo.
 
 After prompting and Googling, I learned that one cannot just move a folder and hope Claude Code remembers everything, because it saves its conversations based on the path of the project. There are a few [issues](https://github.com/anthropics/claude-code/issues/27473) about it, as well as some scripts or gists that should take care of such a migration. But, as usual, I rather wanted to understand what needed to change and how, and it turned out to require only a few steps.
 
@@ -33,11 +33,11 @@ Since I might have to go through the same process again in the future, I thought
 
 ## How Claude Code stores sessions
 
-> Note: obviously, this and the entire article might not be up-to-date anymore by the time you read it, so double check before following it.
+> Obviously, this and the entire article might not be up-to-date anymore by the time you read it, so double check before following it.
 
 From what I understood, Claude Code doesn't identify a project by its name or its Git remote, but by its absolute path on the machine. Each project gets a folder under `~/.claude/projects/`, named after that path with every `/` and `.` replaced by a `-`.
 
-So, for example, for `/Users/daviddalbusco/opensource/my-project`, I get:
+For example, for `/Users/daviddalbusco/opensource/my-project`, I get:
 
 ```
 ~/.claude/projects/
@@ -53,7 +53,7 @@ Furthermore, there is also a `~/.claude/history.jsonl` file, which similarly con
 
 If I had moved my repo without updating those references, Claude Code would have computed a new key when resuming, found no folder for it, and the old sessions would not have been found - i.e. I would have restarted with a blank history.
 
-So, here are the few steps I followed to move everything over.
+Here are the few steps I followed to move everything over.
 
 ---
 
@@ -120,7 +120,7 @@ For example, if you allow readable paths, update those to reflect the change, ot
 
 While steps 2 and 4 can be done manually as they do not require much work, updating all `.jsonl` files might require a bit more time.
 
-So, here's a script that takes care of those steps:
+Here's a script that takes care of those steps:
 
 > ⚠️ The script is kept short so that you can easily review it. I hate those long gists where you don't know whether they'll inject some malicious code or not. As with the rest of this article, double check before executing it.
 

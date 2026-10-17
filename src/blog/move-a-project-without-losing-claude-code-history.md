@@ -13,17 +13,17 @@ image: "https://daviddalbusco.com/assets/images/christopher-burns-Kj2SaNHG-hg-un
 
 I've been working on a rather large personal project for two months now - which I aim to open-source soon.
 
-I spent the first weeks defining its patterns and architecture, and started recently using Claude Code more extensively. This process required a certain investment but, now that the foundations are strictly defined, I can use the LLM assistant to generate boilerplate without too many mistakes. It creates little slop, almost no duplication, while reusing all the patterns and abstractions I put together. I still review every contribution, because a few times a week it takes a decision that could have quite a cost in the future, like requiring a large migration, but I have to say, it pays off.
+I spent the first weeks defining its patterns and architecture, and recently started using Claude Code more extensively. This process required a certain investment but, now that the foundations are strictly defined, I can use the LLM assistant to generate boilerplate without too many mistakes. It creates little slop, almost no duplication, while reusing all the patterns and abstractions I put together. I still review every contribution, because a few times a week it takes a decision that could have quite a cost in the future, like requiring a large migration, but I have to say, it pays off.
 
 As per usual, when I started the project I had neither its branding nor its name, so I used a work in progress name which, fun fact - and not kidding - was something like "fckthissolution". I'm building a tool that aims to replace something I've used for several years and about which I'm quite critical (to say the least 😆).
 
-This week, I finally settled on a name. I bought the domains, actually six of them 😅, reserved the GitHub and npm organizations, and even an X handle (even though I don't plan to use it).
+This week, I finally settled on a name. I bought the domains, actually six of them 😅, reserved the GitHub and npm organizations, and even an X handle (though I don't plan to use it).
 
-So this morning, enjoying my coffee, I decided to reflect those choices by moving and renaming the workspace on my machine. Kind of an important milestone, it means the project isn't something that may or may not be published anymore, but something that will soon be "real".
+So this morning, enjoying my coffee, I decided to reflect those choices by moving and renaming the workspace on my machine. Kind of an important milestone: it means the project isn't something that may or may not be published anymore, but something that will soon be "real".
 
-The mono-repo contains several AGENTS.md files, so the instructions would survive the move, but I wasn’t sure about my chat history.
+The mono-repo contains several AGENTS.md files, so the instructions would survive the move, but I wasn't sure about my chat history.
 
-> Note: if you didn't know, Claude Code now supports AGENTS.md as a fallback for CLAUDE.md, so you don't need the latter in your repo
+> Note: if you didn't know, Claude Code now supports AGENTS.md as a fallback for CLAUDE.md, so you don't need the latter in your repo.
 
 After prompting and Googling, I learned that one cannot just move a folder and hope Claude Code remembers everything, because it saves its conversations based on the path of the project. There are a few [issues](https://github.com/anthropics/claude-code/issues/27473) about it, as well as some scripts or gists that should take care of such a migration. But, as usual, I rather wanted to understand what needed to change and how, and it turned out to require only a few steps.
 
@@ -71,7 +71,7 @@ Not sure about it but, maybe make sure Claude Code isn't running while you do th
 
 ## 2. Rename the sessions folder
 
-> As for the next two chapters, the script I share below takes care of the renaming.
+> As with the next two chapters, the script I share below takes care of this step.
 
 Rename the matching folder under `~/.claude/projects/` so its name follows the new path:
 
@@ -159,5 +159,5 @@ That's it. Run `claude --resume` from your project root, pick your previous sess
 
 Hope it saves your history too.
 
-Until next time!
+Until next time!  
 David

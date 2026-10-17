@@ -124,6 +124,8 @@ While steps 2 and 4 can be done manually as they do not require much work, updat
 Here's a script that takes care of those steps:
 
 > ⚠️ The script is kept short so that you can easily review it. I hate those long gists where you don't know whether they'll inject some malicious code or not. As with the rest of this article, double check before executing it.
+>
+> You might also want to back up your `~/.claude/projects` before running it and make sure your new key does not collide with an existing folder.
 
 ```bash
 #!/bin/bash

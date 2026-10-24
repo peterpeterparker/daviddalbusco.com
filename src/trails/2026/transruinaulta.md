@@ -1,7 +1,7 @@
 ---
 path: "/trails/2026/transruinaulta"
 date: "2026-10-24"
-title: "Transruinaulta"
+title: "Transruinaulta 2026"
 sport: trail-running
 gpx: "https://daviddalbusco.com/assets/gpx/2026/transruinaulta.gpx"
 photos:

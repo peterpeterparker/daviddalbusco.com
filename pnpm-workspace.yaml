@@ -7,7 +7,7 @@ minimumReleaseAge: 2880 # ignore dependency updates released less than 2 days ag
 
 minimumReleaseAgeExclude:
   - yawa-tracker@0.0.5
-  - '@sveltejs/kit@2.68.0'
+  - '@sveltejs/kit@2.68.0 || 3.0.0'
   - kyushu-types@0.2.1
   - '@sveltejs/vite-plugin-svelte@7.3.0'
   - cookie@0.7.0
@@ -19,9 +19,9 @@ minimumReleaseAgeExclude:
   - '@humanfs/node@0.16.8'
   - '@types/node@26.6.2'
   - eslint@10.11.0
-  - svelte@5.57.1
-  - '@sveltejs/adapter-static@4.0.0'
-  - '@sveltejs/kit@3.0.0'
+  - svelte@5.57.3
+  - '@sveltejs/adapter-static@4.0.1'
+  - layerchart@2.9.2
 
 overrides:
   '@humanfs/node@<0.16.8': ^0.16.8

@@ -8,7 +8,7 @@
 
 	<p>I'm a freelance engineer based in Zürich, Switzerland.</p>
 
-	<p>I build software that lasts.</p>
+	<p>I help you build software that lasts.</p>
 
 	<p class="link">
 		<ContactBtn eventName="contact-hero">Hire me!</ContactBtn>

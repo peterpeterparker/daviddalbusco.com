@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <h2 id="contact">Get in touch</h2>
 
 <p>Want to collaborate or just say hi?</p>

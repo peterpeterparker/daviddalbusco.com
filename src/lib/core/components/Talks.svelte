@@ -6,7 +6,7 @@
 	<h2 id="talks">Talks</h2>
 
 	<p>
-		Over the past few years, I’ve had the opportunity to speak at and run workshops at several
+		Over the past few years, I've had the opportunity to speak at and run workshops at several
 		conferences:
 	</p>
 

@@ -15,33 +15,15 @@
 	</h2>
 
 	<p>
-		I'm David, a freelance developer based in Zürich, available for project-based work and contract
+		I'm David, a freelance engineer based in Zürich, available for project-based work and contract
 		positions.
-	</p>
-
-	<p>
-		My focus is building performant projects with careful attention to both interface quality,
-		security and scalable architecture. Clients hire me to create prototypes, products, and complete
-		ecosystems from scratch.
-	</p>
-
-	<p>
-		Recent work includes large applications, developer tools, CLIs, pipelines, and open-source
-		platforms. I'm familiar with React, Svelte, Angular, Astro or plain TypeScript for anything
-		frontend and rely on Node, Bun or Rust for backend and tooling. I've got a thing for type-safety
-		and abstracted architecture.
-	</p>
-
-	<p>
-		Over the years I've also gathered startup experience launching products. I hold degrees in
-		Computer Engineering and an EMBA. I'm fluent in French, German, and English.
 	</p>
 
 	<p>
 		When I'm not working, you can find me running <a href="/trails">trails</a> or cycling. 🏔️🏃🚴
 	</p>
 
-	<p>If you have a project in mind or need some help, get in touch!</p>
+	<p>Have a project in mind or need some help? Get in touch!</p>
 
 	<ContactBtn eventName="contact-about">Say hello 👋</ContactBtn>
 </Section>

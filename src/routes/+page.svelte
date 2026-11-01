@@ -9,6 +9,7 @@
 	import Newsletter from '#lib/core/components/Newsletter.svelte';
 	import { cleanBodyStyles } from '#lib/core/utils/styles.utils.js';
 	import Hero from '#lib/core/components/Hero.svelte';
+	import Services from '#lib/core/components/Services.svelte';
 
 	interface Props {
 		data: ServerPageData;
@@ -50,6 +51,8 @@
 <Hero />
 
 <Work projects={work} />
+
+<Services />
 
 <Play projects={play} />
 

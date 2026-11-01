@@ -18,7 +18,7 @@
 
 	<p>
 		New skills I have learned and technologies I have used are part of my blog series, where I share
-		the results of my recent work. That said, I’ve been blogging less lately as my focus is on
+		the results of my recent work. That said, I've been blogging less lately as my focus is on
 		building <a href="https://juno.build" rel="noopener noreferrer" target="_blank">Juno</a>.
 	</p>
 

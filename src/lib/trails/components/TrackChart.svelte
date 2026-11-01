@@ -29,6 +29,8 @@
 			xAxis: { format: (v: number) => `${v}km` },
 			yAxis: { format: (v: number) => `${v}m` }
 		}}
+		yBaseline={null}
+		yNice
 	>
 		{#snippet tooltip()}
 			<Tooltip.Root>

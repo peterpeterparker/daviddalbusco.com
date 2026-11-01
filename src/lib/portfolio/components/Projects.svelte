@@ -24,7 +24,7 @@
 </Section>
 
 <style lang="scss">
-	@use '../../../theme/_grid.scss';
+	@use '../../../theme/_grid';
 
 	.grid {
 		@include grid.panel;

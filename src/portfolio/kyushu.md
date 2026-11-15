@@ -2,7 +2,7 @@
 title: "Kyushu"
 description: "A self-hostable WebAssembly sandbox for JavaScript workers."
 type: "play"
-order: "1"
+order: "2"
 ---
 
 # Kyushu

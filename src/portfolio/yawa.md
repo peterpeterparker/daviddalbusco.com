@@ -2,7 +2,7 @@
 title: "Yet Another Web Analytics"
 description: "A self-hosted web analytics, with MCP."
 type: "play"
-order: "2"
+order: "3"
 ---
 
 # Yet Another Web Analytics

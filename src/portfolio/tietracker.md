@@ -5,7 +5,7 @@ icon: "/images/portfolio/icons/tietracker-icon.png"
 background: "#230f29"
 type: "play"
 status: "active"
-order: "7"
+order: "8"
 ---
 
 # Tie Tracker

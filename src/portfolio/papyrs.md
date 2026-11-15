@@ -5,7 +5,7 @@ icon: "/images/portfolio/icons/papyrs-icon.png"
 background: "#ffecd6"
 type: "play"
 status: "archived"
-order: "6"
+order: "7"
 ---
 
 # Papyrs

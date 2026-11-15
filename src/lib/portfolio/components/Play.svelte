@@ -14,8 +14,8 @@
 	<h2 id="projects">Side Projects</h2>
 
 	<p>
-		I build things on the side. Some grew into real products, some are just tools I made for myself,
-		some were pure learning experiments.
+		I also build and ship my own software, from products that run real businesses to tools that
+		started as itches I needed to scratch.
 	</p>
 </SideProjects>
 
